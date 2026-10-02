@@ -1,0 +1,23 @@
+{
+  "embedding_status": "ready",
+  "answer_generated": true,
+  "semantic_used": true,
+  "citation_check": {
+    "invalid": [],
+    "has_citations": true,
+    "entailment_checked": false
+  },
+  "answer_warning": null,
+  "proposal_status_code": 200,
+  "proposal_status": "draft_unverified",
+  "proposal_error": null,
+  "proposal_test_count": 1,
+  "proposal_patch_present": true,
+  "proposal_execution": {
+    "status": "complete",
+    "baseline_exit": 1,
+    "patched_exit": 0,
+    "regression_demonstrated": true,
+    "error": null
+  }
+}

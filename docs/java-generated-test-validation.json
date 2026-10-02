@@ -1,0 +1,32 @@
+{
+  "snapshot": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+  "test_path": "src/test/java/org/apache/commons/lang3/DevPilotStringUtilsTest.java",
+  "baseline": {
+    "exit_code": 1,
+    "status": "failed",
+    "output": "[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.041 s <<< FAILURE! -- in org.apache.commons.lang3.DevPilotStringUtilsTest\n[ERROR] org.apache.commons.lang3.DevPilotStringUtilsTest.whitespaceIsEmpty -- Time elapsed: 0.024 s <<< FAILURE!\norg.opentest4j.AssertionFailedError: expected: <true> but was: <false>\n\tat org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)\n\tat org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)\n\tat org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)\n\tat org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)\n\tat org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)\n\tat org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)\n\tat org.apache.commons.lang3.DevPilotStringUtilsTest.whitespaceIsEmpty(DevPilotStringUtilsTest.java:21)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:569)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1511)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1511)\n\n[ERROR] Failures: \n[ERROR]   DevPilotStringUtilsTest.whitespaceIsEmpty:21 expected: <true> but was: <false>\n[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.6.0:test (default-test) on project commons-lang3: There are test failures.\n[ERROR] \n[ERROR] See /workspace/target/surefire-reports for the individual test results.\n[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
+    "elapsed_ms": 15005,
+    "image": "devpilot-java-commons-lang:local",
+    "target": "DevPilotStringUtilsTest",
+    "output_truncated": false,
+    "snapshot": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+    "network": "disabled",
+    "patch_applied": false,
+    "runner": "maven"
+  },
+  "patched": {
+    "exit_code": 0,
+    "status": "passed",
+    "output": "",
+    "elapsed_ms": 13883,
+    "image": "devpilot-java-commons-lang:local",
+    "target": "DevPilotStringUtilsTest",
+    "output_truncated": false,
+    "snapshot": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+    "network": "disabled",
+    "patch_applied": true,
+    "runner": "maven"
+  },
+  "regression_demonstrated": true,
+  "fixture_only": true
+}

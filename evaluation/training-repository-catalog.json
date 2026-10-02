@@ -1,0 +1,27 @@
+{
+  "source_document": "testreposlink.docx",
+  "purpose": "Repository corpus for indexing and future human-reviewed learning cases; repository source alone is not a verified training label.",
+  "groups": {
+    "simple": [
+      {"name": "requests", "url": "https://github.com/psf/requests"},
+      {"name": "flask", "url": "https://github.com/pallets/flask"},
+      {"name": "commons-lang", "url": "https://github.com/apache/commons-lang"},
+      {"name": "petclinic", "url": "https://github.com/spring-projects/spring-petclinic"},
+      {"name": "rich", "url": "https://github.com/Textualize/rich"}
+    ],
+    "medium": [
+      {"name": "httpx", "url": "https://github.com/encode/httpx"},
+      {"name": "pytest", "url": "https://github.com/pytest-dev/pytest"},
+      {"name": "fastapi", "url": "https://github.com/fastapi/fastapi"},
+      {"name": "mockito", "url": "https://github.com/mockito/mockito"},
+      {"name": "spring-data-elasticsearch", "url": "https://github.com/spring-projects/spring-data-elasticsearch"}
+    ],
+    "complex": [
+      {"name": "django", "url": "https://github.com/django/django", "index_scope": "django/"},
+      {"name": "numpy", "url": "https://github.com/numpy/numpy"},
+      {"name": "scikit-learn", "url": "https://github.com/scikit-learn/scikit-learn"},
+      {"name": "pytorch", "url": "https://github.com/pytorch/pytorch", "index_scope": "torch/", "index_limits": {"max_files": 10000, "max_total_bytes": 100000000}},
+      {"name": "elasticsearch-java", "url": "https://github.com/elastic/elasticsearch-java", "index_scope": "java-client/src/main/java/", "index_limits": {"max_files": 10000, "max_total_bytes": 100000000}}
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+cp -a /opt/gradle-cache /tmp/gradle-home
+export GRADLE_USER_HOME=/tmp/gradle-home
+exec gradle "$@"

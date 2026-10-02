@@ -1,0 +1,12 @@
+{
+  "repository": "parcel_service_demo",
+  "run_id": "c2df28f0ba56402fae4da9a6489f781a",
+  "proposal_model": "qwen2.5-coder:7b",
+  "draft_reached_review": true,
+  "review_decision": "declined",
+  "outcome": "declined",
+  "reason": "The draft proposed a successful quote for zero weight, contrary to the existing Parcel.validate rule. Its change followed the validation call, so it could not make the generated test pass.",
+  "baseline_run": false,
+  "patched_run": false,
+  "model_authored_repair_verified": false
+}

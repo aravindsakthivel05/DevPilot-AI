@@ -1,0 +1,44 @@
+{
+  "validated_at": "2026-09-25T17:00:36.589237+00:00",
+  "results": {
+    "petclinic": {
+      "exit_code": 0,
+      "status": "passed",
+      "output": "16:59:49.176 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.springframework.samples.petclinic.owner.OwnerControllerTests]: OwnerControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.\n16:59:49.354 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.springframework.samples.petclinic.PetClinicApplication for test class org.springframework.samples.petclinic.owner.OwnerControllerTests\n16:59:49.356 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.springframework.samples.petclinic.owner.OwnerControllerTests]: OwnerControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.\n16:59:49.369 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.springframework.samples.petclinic.PetClinicApplication for test class org.springframework.samples.petclinic.owner.OwnerControllerTests\n16:59:49.457 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running\n\n\n              |\\      _,,,--,,_\n             /,`.-'`'   ._  \\-;;,_\n  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______\n |       | '---''(_/._)-'(_\\_)   |   |   |   |  |  | |   |       |\n |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _\n |   |_| |   |___  |   | |       |   |   |   |       |   |       | \\ \\ \\ \\\n |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \\ \\ \\ \\\n |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )\n |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /\n ==================================================================/_/_/_/\n\n:: Built with Spring Boot :: 4.1.0\n\n\n2026-09-25T16:59:49.808Z  INFO 54 --- [           main] o.s.s.p.owner.OwnerControllerTests       : Starting OwnerControllerTests using Java 17.0.20 with PID 54 (started by nobody in /workspace)\n2026-09-25T16:59:49.810Z  INFO 54 --- [           main] o.s.s.p.owner.OwnerControllerTests       : No active profile set, falling back to 1 default profile: \"default\"\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\n2026-09-25T16:59:52.086Z  INFO 54 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''\n2026-09-25T16:59:52.087Z  INFO 54 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''\n2026-09-25T16:59:52.089Z  INFO 54 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms\n2026-09-25T16:59:52.127Z  INFO 54 --- [           main] o.s.s.p.owner.OwnerControllerTests       : Started OwnerControllerTests in 2.68 seconds (process running for 3.896)\n",
+      "elapsed_ms": 9767,
+      "image": "devpilot-java-petclinic:local",
+      "target": "OwnerControllerTests",
+      "output_truncated": false,
+      "snapshot": "1d70b28e2e23ccdc6b1d2d3ebb4ba5f9b781ce0bf59d072e76106bbaca57a4c9",
+      "network": "disabled",
+      "patch_applied": false,
+      "runner": "maven"
+    },
+    "commons-lang": {
+      "exit_code": 0,
+      "status": "passed",
+      "output": "",
+      "elapsed_ms": 16335,
+      "image": "devpilot-java-commons-lang:local",
+      "target": "StringUtilsTest",
+      "output_truncated": false,
+      "snapshot": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+      "network": "disabled",
+      "patch_applied": false,
+      "runner": "maven"
+    },
+    "mockito": {
+      "exit_code": 0,
+      "status": "passed",
+      "output": "To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.\nDaemon will be stopped at the end of the build \n> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED\n> Task :buildSrc:generateExternalPluginSpecBuilders FROM-CACHE\n> Task :buildSrc:extractPrecompiledScriptPluginPlugins FROM-CACHE\n> Task :buildSrc:compilePluginsBlocks FROM-CACHE\n> Task :buildSrc:generatePrecompiledScriptPluginAccessors FROM-CACHE\n> Task :buildSrc:generateScriptPluginAdapters FROM-CACHE\n> Task :buildSrc:compileKotlin FROM-CACHE\n> Task :buildSrc:compileJava NO-SOURCE\n> Task :buildSrc:compileGroovy NO-SOURCE\n> Task :buildSrc:pluginDescriptors\n> Task :buildSrc:processResources\n> Task :buildSrc:classes\n> Task :buildSrc:jar\n\n> Configure project :\nBuilding version '0.0.1-SNAPSHOT'\n  - reason: shipkit-auto-version caught an exception, falling back to reasonable default\n  - run with --debug for more info\n\n> Task :mockito-core:compileJava FROM-CACHE\n> Task :mockito-core:copyMockMethodDispatcher\n> Task :mockito-core:processResources NO-SOURCE\n> Task :mockito-core:removeInjectionPackageFromModuleInfo\n> Task :mockito-core:classes\n> Task :mockito-core:jar\n> Task :mockito-core:compileTestFixturesJava FROM-CACHE\n> Task :mockito-core:processTestFixturesResources NO-SOURCE\n> Task :mockito-core:testFixturesClasses UP-TO-DATE\n> Task :mockito-core:testFixturesJar\n> Task :mockito-core:compileTestJava FROM-CACHE\n> Task :mockito-core:createTestResources\n> Task :mockito-core:processTestResources NO-SOURCE\n> Task :mockito-core:testClasses\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\n\n> Task :mockito-core:test\n\n\n\n  \u001b[0K\u001b[32m9 passing \u001b[90m(2.8s)\u001b[m\n\n\n> Task :mockito-core:retryTest SKIPPED\n\n[Incubating] Problems report is available at: file:///workspace/build/reports/problems/problems-report.html\n\nDeprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.\n\nYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.\n\nFor more on this, please refer to https://docs.gradle.org/8.14.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.\n\nBUILD SUCCESSFUL in 23s\n18 actionable tasks: 9 executed, 9 from cache\nThe build is running offline. A build scan will not be published at this time, but it can be published if you run the 'buildScanPublishPrevious' task in the next build.\n",
+      "elapsed_ms": 25517,
+      "image": "devpilot-java-mockito:local",
+      "target": "org.mockito.internal.util.MockUtilTest",
+      "output_truncated": false,
+      "snapshot": "1b90fc029afe9ef76b5020f9141e884688c3b56e53f297d4e14ca99280b63e45",
+      "network": "disabled",
+      "patch_applied": false,
+      "runner": "gradle"
+    }
+  }
+}

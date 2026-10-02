@@ -1,0 +1,109 @@
+{
+  "evaluated_at": "2026-09-25T16:43:40.125888+00:00",
+  "results": [
+    {
+      "case_id": "flask-001",
+      "repository": "flask",
+      "question": "How does Flask.wsgi_app handle a WSGI request and app context?",
+      "model": "llama3.2:latest",
+      "evidence_symbols": [
+        "flask.app.Flask.wsgi_app",
+        "flask.app.Flask.request_context",
+        "flask.app.Flask",
+        "flask.ctx.AppContext.request",
+        "flask.app.Flask.handle_user_exception",
+        "flask.app.Flask.full_dispatch_request",
+        "flask.app.Flask.__init_subclass__",
+        "flask.ctx.AppContext.from_environ"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 29540,
+      "answer": "The `flask.wsgi_app` function handles a WSGI request and app context by creating an instance of the `AppContext` class from the given WSGI environment. The `AppContext` class is responsible for managing the request and response data.\n\nHere's a step-by-step explanation of how it works:\n\n1. When a WSGI request is received, the `wsgi_app` function creates an instance of the `AppContext` class using the `from_environ` method.\n2. The `from_environ` method takes the application object and the WSGI environment as parameters and returns an instance of the `AppContext` class.\n3. The `AppContext` instance is then used to manage the request and response data, including setting up the request context and handling exceptions.\n\nThe code that handles the WSGI request and app context can be found in the `flask.app.Flask.wsgi_app` method, which is shown below:\n\n```python\ndef wsgi_app(self, environ: WSGIEnvironment, start_response: StartResponse) -> cabc.Iterable[bytes]:\n    ctx = self.request_context(environ)\n    error: BaseException | None = None\n    try:\n        try:\n            ctx.push()\n            response = self.full_dispatch_request(ctx)\n        except Exception as e:\n            error = e\n            response = self.handle_exception(ctx, e)\n        except:\n            error = sys.exc_info()[1]\n            raise\n        return response(environ, start_response)\n    finally:\n        if \"werkzeug.debug.preserve_context\" in environ:\n            environ[\"werkzeug.debug.preserve_context\"](ctx)\n\n        if (error is not None and self.should_ignore_error is not None and self.should_ignore_error(error)):\n            error = None\n\n        ctx.pop(error)\n```\n\nThis code uses the `request_context` method to create an instance of the `AppContext` class, which is then used to manage the request and response data.\n\nHere are some key points about how this code works:\n\n*   The `wsgi_app` function takes a WSGI environment and a start response as parameters.\n*   It creates an instance of the `AppContext` class using the `request_context` method, which is then used to manage the request and response data.\n*   The `full_dispatch_request` method is called on the `AppContext` instance to handle the WSGI request.\n*   If an exception occurs during the handling of the WSGI request, it is caught and handled using the `handle_exception` method.\n\nHere are some evidence citations that support this explanation:\n\n[1] src/flask/app.py:1569-1619\n\n    def wsgi_app(self, environ: WSGIEnvironment, start_response: StartResponse) -> cabc.Iterable[bytes]:\n        ...\n\n[2] src/flask/app.py:1504-1518\n\n    def request_context(self, environ: WSGIEnvironment) -> AppContext:\n        ...\n\n[3] src/flask/ctx.py:370-379\n\n    @property\n    def request(self) -> Request:\n        ...\n\n[4] src/flask/app.py:868-898\n\n    def handle_user_exception(self, ctx: AppContext, e: Exception) -> HTTPException | ft.ResponseReturnValue:\n        ...\n\n[5] src/flask/app.py:995-1022\n\n    def full_dispatch_request(self, ctx: AppContext) -> Response:\n        ...\n\n[6] src/flask/ctx.py:339-348\n\n    @classmethod\n    def from_environ(cls, app: Flask, environ: WSGIEnvironment, /) -> te.Self:\n        ...\n```\n\nOverall, the `flask.wsgi_app` function handles a WSGI request and app context by creating an instance of the `AppContext` class using the `from_environ` method. The `AppContext` instance is then used to manage the request and response data, including setting up the request context and handling exceptions.\n\nHowever, there are some uncertainties and unresolved dependencies in this code:\n\n*   The `should_ignore_error` attribute of the `Flask` object is not defined in the provided code.\n*   The `handle_http_exception` method of the `Flask` object is not defined in the provided code.\n*   The `make_default_options_response` method of the `Flask` object is not defined in the provided code.\n*   The `process_response` method of the `Flask` object is not defined in the provided code.\n*   The `do_teardown_request` method of the `Flask` object is not defined in the provided code.\n*   The `do_teardown_appcontext` method of the `Flask` object is not defined in the provided code.\n\nThese uncertainties and unresolved dependencies may affect the correctness and reliability of the code.",
+      "usage": {
+        "prompt_tokens": 3238,
+        "completion_tokens": 1004,
+        "total_tokens": 4242
+      },
+      "has_citations": true,
+      "invalid_citations": []
+    },
+    {
+      "case_id": "flask-001",
+      "repository": "flask",
+      "question": "How does Flask.wsgi_app handle a WSGI request and app context?",
+      "model": "qwen2.5-coder:7b",
+      "evidence_symbols": [
+        "flask.app.Flask.wsgi_app",
+        "flask.app.Flask.request_context",
+        "flask.app.Flask",
+        "flask.ctx.AppContext.request",
+        "flask.app.Flask.handle_user_exception",
+        "flask.app.Flask.full_dispatch_request",
+        "flask.app.Flask.__init_subclass__",
+        "flask.ctx.AppContext.from_environ"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 26767,
+      "answer": "Flask's `wsgi_app` method is the entry point for handling WSGI requests. It creates an application context and processes the request through several stages:\n\n1. **Creating the App Context**: The `request_context` method [2] is called with the WSGI environment to create an `AppContext`. This context provides access to various objects like `request`, `session`, and `g`.\n\n2. **Pushing the Context**: The created context is pushed onto the stack using `ctx.push()`. This makes the application context available for the duration of the request.\n\n3. **Dispatching the Request**: The `full_dispatch_request` method [6] is called to handle the actual dispatching of the request. It includes pre-processing, dispatching, and post-processing steps.\n\n4. **Handling Exceptions**: If an exception occurs during any of these stages, it is caught by the `handle_user_exception` method [5]. This method determines if the exception should be handled or re-raised based on its type and the application's configuration.\n\n5. **Finalizing the Response**: The `finalize_request` method is called to finalize the response after processing. It includes tasks like logging exceptions, calling post-request callbacks, and making sure the response is ready for delivery.\n\n6. **Popping the Context**: Regardless of whether an exception occurred or not, the context is popped using `ctx.pop(error)`. This cleans up any resources associated with the request.\n\nThroughout this process, Flask ensures that the application context is properly managed to maintain state across different parts of the request handling pipeline. The use of context managers and explicit pushing/popping helps in managing the lifecycle of the application context effectively.",
+      "usage": {
+        "prompt_tokens": 3259,
+        "completion_tokens": 344,
+        "total_tokens": 3603
+      },
+      "has_citations": true,
+      "invalid_citations": []
+    },
+    {
+      "case_id": "requests-001",
+      "repository": "requests",
+      "question": "How does the top-level request function dispatch HTTP requests?",
+      "model": "llama3.2:latest",
+      "evidence_symbols": [
+        "requests.api.request",
+        "requests.sessions.Session.request",
+        "requests.models.Request",
+        "requests.models.PreparedRequest.prepare_cookies",
+        "requests.hooks.dispatch_hook",
+        "requests.api.patch",
+        "requests.sessions.Session.patch",
+        "requests.adapters.HTTPAdapter.request_url"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 20710,
+      "answer": "The top-level request function dispatches HTTP requests by calling the `request` method on an instance of the `requests.Session` class. This method takes in a method (e.g., GET, POST, PUT), URL, and optional parameters such as headers, data, and cookies.\n\nAccording to [1], the `request` method creates a new `Request` object with the specified method, URL, and parameters. It then calls the `prepare` method on this object to construct a `PreparedRequest` object, which contains the final request data.\n\nThe `patch` method is an example of how to send a PATCH request using the `requests` library. According to [7], this method calls the `request` method with the `PATCH` method and the URL specified in the `url` parameter.\n\nWhen sending a request, the `request_url` method (as shown in [8]) is called on an instance of the `HTTPAdapter` class. This method takes in a `PreparedRequest` object and returns the final URL to be used for the request.\n\nThe `dispatch_hook` function (as shown in [5]) is not directly related to the request dispatching process, but it can be used to modify or extend the behavior of the request by registering hooks that are called before or after the request is sent.\n\nIn summary, the top-level request function dispatches HTTP requests by calling the `request` method on an instance of the `requests.Session` class, which creates a new `Request` object and calls its `prepare` method to construct a `PreparedRequest` object. The `patch` method can be used to send a PATCH request using this library.\n\nHere is a high-level overview of the request dispatching process:\n```\n1. Create a new instance of the `requests.Session` class.\n2. Call the `request` method on this instance, passing in the method (e.g., GET, POST), URL, and optional parameters such as headers, data, and cookies.\n3. The `request` method creates a new `Request` object with the specified method, URL, and parameters.\n4. The `Request` object calls its `prepare` method to construct a `PreparedRequest` object.\n5. The `patch` method (if applicable) is called on an instance of the `requests.Session` class, passing in the URL and optional data.\n6. The `request_url` method (as shown in [8]) is called on an instance of the `HTTPAdapter` class, passing in the `PreparedRequest` object and proxies.\n7. The final URL is returned by the `request_url` method and used to send the request.\n\nNote that this is a high-level overview, and there may be additional steps or details involved in the actual request dispatching process.",
+      "usage": {
+        "prompt_tokens": 4012,
+        "completion_tokens": 576,
+        "total_tokens": 4588
+      },
+      "has_citations": true,
+      "invalid_citations": []
+    },
+    {
+      "case_id": "requests-001",
+      "repository": "requests",
+      "question": "How does the top-level request function dispatch HTTP requests?",
+      "model": "qwen2.5-coder:7b",
+      "evidence_symbols": [
+        "requests.api.request",
+        "requests.sessions.Session.request",
+        "requests.models.Request",
+        "requests.models.PreparedRequest.prepare_cookies",
+        "requests.hooks.dispatch_hook",
+        "requests.api.patch",
+        "requests.sessions.Session.patch",
+        "requests.adapters.HTTPAdapter.request_url"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 41616,
+      "answer": "The top-level request function dispatches HTTP requests through a series of functions, each handling different aspects of the request lifecycle. Here's how it works:\n\n1. **Top-Level Request Function (`request`)**:\n   - The `request` function in `src/requests/api.py` is the entry point for all HTTP methods (GET, POST, PUT, DELETE, etc.). It takes a method name and URL as parameters along with optional data and keyword arguments.\n   - This function calls another function based on the method provided. For example, if the method is \"patch\", it calls `patch`.\n\n2. **Method-Specific Functions (`get`, `post`, `put`, `delete`, `patch`)**:\n   - Each of these functions (e.g., `patch`) in their respective files (`src/requests/api.py`) simply call the generic `request` function with the appropriate method name.\n   - For example, `patch` calls `request(\"patch\", url, data=data, **kwargs)`.\n\n3. **Generic Request Function (`request`)**:\n   - The `request` function in `src/requests/api.py` constructs a `Request` object using the provided parameters and then prepares it by calling `prepare()`.\n   - It then passes this prepared request to the session's `request` method, which handles the actual sending of the request.\n\n4. **Session Request Method (`request`)**:\n   - The `request` method in `src/requests/sessions.py` is where the actual HTTP request is sent.\n   - It creates an instance of `HTTPAdapter` and uses it to send the prepared request.\n   - The adapter handles the specifics of sending the request, including handling proxies and retries.\n\n5. **HTTP Adapter (`request_url`)**:\n   - The `request_url` method in `src/requests/adapters.py` is responsible for determining the URL to use when making the final request.\n   - It checks if the request is being sent through a proxy and adjusts the URL accordingly.\n\n6. **Prepared Request (`prepare`)**:\n   - The `Request` object's `prepare` method constructs a `PreparedRequest` object, which is then passed to the session's adapter for sending.\n   - This method also handles setting headers, cookies, and other request parameters.\n\n7. **Dispatching Hooks**:\n   - Throughout the process, hooks can be dispatched using the `dispatch_hook` function in `src/requests/hooks.py`. These hooks allow for custom behavior before or after certain stages of the request lifecycle.\n\nIn summary, the top-level request function (`request`) serves as a dispatcher that routes requests to specific methods based on the HTTP method provided. It then constructs and prepares the request, passing it through the session's adapter to send the actual HTTP request. Hooks can be used to customize this process at various stages.",
+      "usage": {
+        "prompt_tokens": 4030,
+        "completion_tokens": 585,
+        "total_tokens": 4615
+      },
+      "has_citations": false,
+      "invalid_citations": []
+    }
+  ]
+}

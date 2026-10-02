@@ -1,0 +1,9 @@
+FROM maven:3.9-eclipse-temurin-17
+
+# Build from an indexed repository snapshot to cache precisely its test dependencies.
+COPY . /warmup
+ARG TEST_SELECTOR
+RUN mvn -B -q -f /warmup/pom.xml -Dmaven.repo.local=/opt/maven-cache -Dtest=${TEST_SELECTOR} test \
+    && chmod -R a+rX /opt/maven-cache
+
+WORKDIR /workspace

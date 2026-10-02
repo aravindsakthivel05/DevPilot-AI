@@ -1,0 +1,13 @@
+{
+  "fixture_only": true,
+  "model_generated": false,
+  "run_id": "78d6e66360f64860b7eee9efc6552a4a",
+  "snapshot": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+  "paused_for_review": true,
+  "status": "failed",
+  "outcome": null,
+  "baseline_status": null,
+  "patched_status": null,
+  "regression_demonstrated": false,
+  "error": "Docker engine is not running."
+}

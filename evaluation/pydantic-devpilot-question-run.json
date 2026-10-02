@@ -1,0 +1,579 @@
+{
+  "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+  "commit": "bb6da4cfbb1f559885ea2fa207ec93853bfeac64",
+  "mode": "hybrid",
+  "use_model": true,
+  "results": [
+    {
+      "id": "pydantic-easy-001",
+      "difficulty": "easy",
+      "path": "quick",
+      "http_status": 200,
+      "answer": "The provided code snippet is a part of the Pydantic library, which is used for building robust, scalable, and maintainable data models [1]. The specific function being documented here is `model_dump_json`, which generates a JSON representation of a model using Pydantic's `to_json` method. \n\n**Function Signature:** \n```python\ndef model_dump_json(self, indent=None, ensure_ascii=True, include=None, exclude=None, context=None, by_alias=False, exclude_unset=False, exclude_defaults=False, exclude_none=False, exclude_computed_fields=False, round_trip=False, warnings='warn', fallback=None, serialize_as_any=False, polymorphic_serialization=False):\n```\n**Parameters:** \n* `indent`: The indentation to use in the JSON output. If `None`, the output will be compact [2].\n* `ensure_ascii`: If `True`, the output is guaranteed to have all incoming non-ASCII characters escaped. If `False` (the default), these characters will be output as-is [3].\n\n[1] Pydantic library documentation\n[2] Pydantic library documentation, section \"model_dump_json\"\n[3] Pydantic library documentation, section \"ensure_ascii\"",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.dict",
+          "path": "pydantic/main.py",
+          "start_line": 1385,
+          "end_line": 1408,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump",
+          "path": "pydantic/main.py",
+          "start_line": 472,
+          "end_line": 536,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.v1.main.BaseModel.dict",
+          "path": "pydantic/v1/main.py",
+          "start_line": 450,
+          "end_line": 482,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.root_model.RootModel.model_dump",
+          "path": "pydantic/root_model.py",
+          "start_line": 128,
+          "end_line": 176,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump_json",
+          "path": "pydantic/main.py",
+          "start_line": 538,
+          "end_line": 604,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.json",
+          "path": "pydantic/main.py",
+          "start_line": 1410,
+          "end_line": 1442,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.copy",
+          "path": "pydantic/main.py",
+          "start_line": 1569,
+          "end_line": 1644,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "tests.test_computed_fields.test_exclude_none",
+          "path": "tests/test_computed_fields.py",
+          "start_line": 308,
+          "end_line": 325,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_dump"
+      ],
+      "expected_symbol_count": 1,
+      "recall_at_8": 1.0,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 2925,
+        "completion_tokens": 877,
+        "total_tokens": 3802
+      },
+      "elapsed_ms": 28387,
+      "wall_ms": 28434,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-easy-001",
+      "difficulty": "easy",
+      "path": "deep",
+      "http_status": 200,
+      "answer": "This code snippet appears to be part of the Pydantic library, specifically the `model_dump_json` function, which generates a JSON representation of a model using Pydantic's `to_json` method [1]. The function takes several arguments, including indentation options and flags for including or excluding specific fields in the output.\n\nThe function calls Pydantic's `to_json` method on the model instance, passing in the specified arguments, and then decodes the returned JSON string from bytes to a string using the `.decode()` method [2]. The code also includes some deprecated methods and warnings, indicating that these functions are no longer recommended for use.",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.dict",
+          "path": "pydantic/main.py",
+          "start_line": 1385,
+          "end_line": 1408,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump",
+          "path": "pydantic/main.py",
+          "start_line": 472,
+          "end_line": 536,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.v1.main.BaseModel.dict",
+          "path": "pydantic/v1/main.py",
+          "start_line": 450,
+          "end_line": 482,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.root_model.RootModel.model_dump",
+          "path": "pydantic/root_model.py",
+          "start_line": 128,
+          "end_line": 176,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump_json",
+          "path": "pydantic/main.py",
+          "start_line": 538,
+          "end_line": 604,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.json",
+          "path": "pydantic/main.py",
+          "start_line": 1410,
+          "end_line": 1442,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.copy",
+          "path": "pydantic/main.py",
+          "start_line": 1569,
+          "end_line": 1644,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "tests.test_computed_fields.test_exclude_none",
+          "path": "tests/test_computed_fields.py",
+          "start_line": 308,
+          "end_line": 325,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_dump"
+      ],
+      "expected_symbol_count": 1,
+      "recall_at_8": 1.0,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 2666,
+        "completion_tokens": 519,
+        "total_tokens": 3185
+      },
+      "elapsed_ms": 14635,
+      "wall_ms": 14682,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 1
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-medium-001",
+      "difficulty": "medium",
+      "path": "quick",
+      "http_status": 200,
+      "answer": "The following source locations are relevant to your question. This is a retrieval report; connect a model provider for a synthesised explanation.\n\n[1] pydantic.json_schema.GenerateJsonSchema.model_schema \u2014 pydantic/json_schema.py:1748\u20131767\nRetrieved through symbol / text match.\n\n[2] pydantic.json_schema.model_json_schema \u2014 pydantic/json_schema.py:2715\u20132760\nRetrieved through symbol / text match.\n\n[3] pydantic.main.BaseModel.model_json_schema \u2014 pydantic/main.py:606\u2013643\nRetrieved through symbol / text match.\n\n[4] pydantic.main.BaseModel.__get_pydantic_json_schema__ \u2014 pydantic/main.py:907\u2013931\nRetrieved through symbol / text match.\n\n[5] pydantic.json_schema.GenerateJsonSchema.model_field_schema \u2014 pydantic/json_schema.py:1726\u20131735\nRetrieved through symbol / text match.\n\n[6] pydantic.json_schema.models_json_schema \u2014 pydantic/json_schema.py:2763\u20132817\nRetrieved through symbol / text match.\n\n[7] pydantic.json_schema.GenerateJsonSchema.call_schema \u2014 pydantic/json_schema.py:2203\u20132212\nRetrieved through symbol / text match.\n\n[8] pydantic.json_schema.GenerateJsonSchema.model_fields_schema \u2014 pydantic/json_schema.py:1870\u20131891\nRetrieved through symbol / text match.",
+      "generated": false,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.model_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 1748,
+          "end_line": 1767,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.model_json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2715,
+          "end_line": 2760,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_json_schema",
+          "path": "pydantic/main.py",
+          "start_line": 606,
+          "end_line": 643,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__get_pydantic_json_schema__",
+          "path": "pydantic/main.py",
+          "start_line": 907,
+          "end_line": 931,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.model_field_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 1726,
+          "end_line": 1735,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.models_json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2763,
+          "end_line": 2817,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.call_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2203,
+          "end_line": 2212,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.model_fields_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 1870,
+          "end_line": 1891,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.json_schema.model_json_schema",
+        "pydantic.main.BaseModel.model_json_schema"
+      ],
+      "expected_symbol_count": 3,
+      "recall_at_8": 0.6666666666666666,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [
+          "The following source locations are relevant to your question. This is a retrieval report; connect a model provider for a synthesised explanation."
+        ],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": "Model answer omitted valid source citations; showing source locations.",
+      "usage": {
+        "prompt_tokens": 6058,
+        "completion_tokens": 247,
+        "total_tokens": 6305
+      },
+      "elapsed_ms": 13395,
+      "wall_ms": 13441,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-medium-001",
+      "difficulty": "medium",
+      "path": "deep",
+      "http_status": 200,
+      "answer": "The following source locations are relevant to your question. This is a retrieval report; connect a model provider for a synthesised explanation.\n\n[1] pydantic.json_schema.GenerateJsonSchema.model_schema \u2014 pydantic/json_schema.py:1748\u20131767\nRetrieved through symbol / text match.\n\n[2] pydantic.json_schema.model_json_schema \u2014 pydantic/json_schema.py:2715\u20132760\nRetrieved through symbol / text match.\n\n[3] pydantic.main.BaseModel.model_json_schema \u2014 pydantic/main.py:606\u2013643\nRetrieved through symbol / text match.\n\n[4] pydantic.main.BaseModel.__get_pydantic_json_schema__ \u2014 pydantic/main.py:907\u2013931\nRetrieved through symbol / text match.\n\n[5] pydantic.json_schema.GenerateJsonSchema.model_field_schema \u2014 pydantic/json_schema.py:1726\u20131735\nRetrieved through symbol / text match.\n\n[6] pydantic.json_schema.models_json_schema \u2014 pydantic/json_schema.py:2763\u20132817\nRetrieved through symbol / text match.\n\n[7] pydantic.json_schema.GenerateJsonSchema.call_schema \u2014 pydantic/json_schema.py:2203\u20132212\nRetrieved through symbol / text match.\n\n[8] pydantic.json_schema.GenerateJsonSchema.model_fields_schema \u2014 pydantic/json_schema.py:1870\u20131891\nRetrieved through symbol / text match.",
+      "generated": false,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.model_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 1748,
+          "end_line": 1767,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.model_json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2715,
+          "end_line": 2760,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_json_schema",
+          "path": "pydantic/main.py",
+          "start_line": 606,
+          "end_line": 643,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__get_pydantic_json_schema__",
+          "path": "pydantic/main.py",
+          "start_line": 907,
+          "end_line": 931,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.model_field_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 1726,
+          "end_line": 1735,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.models_json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2763,
+          "end_line": 2817,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.call_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2203,
+          "end_line": 2212,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.model_fields_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 1870,
+          "end_line": 1891,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.json_schema.model_json_schema",
+        "pydantic.main.BaseModel.model_json_schema"
+      ],
+      "expected_symbol_count": 3,
+      "recall_at_8": 0.6666666666666666,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [
+          "The following source locations are relevant to your question. This is a retrieval report; connect a model provider for a synthesised explanation."
+        ],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": "Model answer omitted valid source citations; showing source locations.",
+      "usage": {
+        "prompt_tokens": 6158,
+        "completion_tokens": 306,
+        "total_tokens": 6464
+      },
+      "elapsed_ms": 9842,
+      "wall_ms": 9894,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 1
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-hard-001",
+      "difficulty": "hard",
+      "path": "quick",
+      "http_status": 200,
+      "answer": "The `complete_model_class` function in Pydantic is not properly handling the case where a model has already been completed. When a model is completed, its fields are marked as complete and its schema is generated [1]. However, if another part of the code tries to rebuild the model's schema (e.g., by calling `rebuild_model_fields`), it will try to recreate the same fields that were already complete, which can lead to inconsistencies [2].\n\nTo fix this issue, a modification is needed in the `AfterFieldValidator` class. Specifically, the `valid_classmethod_info_default` method should be modified to check if the model has already been completed before calling `complete_model_class`. This can be achieved by adding a check at the beginning of the method: [3]. By doing so, the model's fields will not be recreated multiple times, which should fix the issue.",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.__pydantic_on_complete__",
+          "path": "pydantic/main.py",
+          "start_line": 956,
+          "end_line": 965,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__class_getitem__",
+          "path": "pydantic/main.py",
+          "start_line": 967,
+          "end_line": 1032,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.v1.main.BaseModel",
+          "path": "pydantic/v1/main.py",
+          "start_line": 333,
+          "end_line": 939,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_model_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 151,
+          "end_line": 189,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_rebuild",
+          "path": "pydantic/main.py",
+          "start_line": 677,
+          "end_line": 744,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.complete_model_class",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 561,
+          "end_line": 682,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "tests.typechecking.decorators.AfterFieldValidator",
+          "path": "tests/typechecking/decorators.py",
+          "start_line": 137,
+          "end_line": 152,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.type_adapter.TypeAdapter.rebuild",
+          "path": "pydantic/type_adapter.py",
+          "start_line": 316,
+          "end_line": 360,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic._internal._mock_val_ser.set_model_mocks",
+        "pydantic._internal._model_construction.complete_model_class",
+        "pydantic.main.BaseModel.model_rebuild"
+      ],
+      "expected_symbol_count": 6,
+      "recall_at_8": 0.5,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 2618,
+        "completion_tokens": 528,
+        "total_tokens": 3146
+      },
+      "elapsed_ms": 17541,
+      "wall_ms": 17585,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-hard-001",
+      "difficulty": "hard",
+      "path": "deep",
+      "http_status": 200,
+      "answer": "The issue here appears to be that the `complete_model_class` function in Pydantic is trying to rebuild the model class by calling the `rebuild_model_fields` function, but this function is not defined anywhere in the provided code snippet [1]. \n\nAfter some research, it seems that the `rebuild_model_fields` function is actually a part of the Pydantic library and it's used to rebuild the fields of a model class when there are undefined annotations [2]. To fix the issue, you need to make sure that the `rebuild_model_fields` function is properly imported or defined in your code.",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.__pydantic_on_complete__",
+          "path": "pydantic/main.py",
+          "start_line": 956,
+          "end_line": 965,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__class_getitem__",
+          "path": "pydantic/main.py",
+          "start_line": 967,
+          "end_line": 1032,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.v1.main.BaseModel",
+          "path": "pydantic/v1/main.py",
+          "start_line": 333,
+          "end_line": 939,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_model_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 151,
+          "end_line": 189,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_rebuild",
+          "path": "pydantic/main.py",
+          "start_line": 677,
+          "end_line": 744,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.complete_model_class",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 561,
+          "end_line": 682,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "tests.typechecking.decorators.AfterFieldValidator",
+          "path": "tests/typechecking/decorators.py",
+          "start_line": 137,
+          "end_line": 152,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.type_adapter.TypeAdapter.rebuild",
+          "path": "pydantic/type_adapter.py",
+          "start_line": 316,
+          "end_line": 360,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic._internal._mock_val_ser.set_model_mocks",
+        "pydantic._internal._model_construction.complete_model_class",
+        "pydantic.main.BaseModel.model_rebuild"
+      ],
+      "expected_symbol_count": 6,
+      "recall_at_8": 0.5,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 2619,
+        "completion_tokens": 474,
+        "total_tokens": 3093
+      },
+      "elapsed_ms": 12989,
+      "wall_ms": 13030,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 1
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    }
+  ]
+}

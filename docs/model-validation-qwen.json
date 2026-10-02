@@ -1,0 +1,14 @@
+{
+  "embedding_status": "ready",
+  "answer_generated": true,
+  "semantic_used": true,
+  "citation_check": {
+    "invalid": [],
+    "has_citations": true,
+    "entailment_checked": false
+  },
+  "answer_warning": null,
+  "proposal_status_code": 200,
+  "proposal_status": "draft_unverified",
+  "proposal_error": null
+}

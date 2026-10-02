@@ -1,0 +1,66 @@
+{
+  "flask": {
+    "id": "00eab36579a9407880d8e5862cf0a00f",
+    "status": "ready",
+    "commit": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+    "fingerprint": "afdfaa2c4dda20d77cb3b371c1e6d97d3c4284e0aca72783241bf280c3fc75c6",
+    "files": 205,
+    "error": null
+  },
+  "requests": {
+    "id": "ebd967eba6fc4c2e9086ce25db8f6973",
+    "status": "ready",
+    "commit": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+    "fingerprint": "997c369ec0df272a6f585ddd74a803920f79f8606dc48548cf54512c69a7a009",
+    "files": 65,
+    "error": null
+  },
+  "httpx": {
+    "id": "697c50f13e9b4c3fb182aaccb684f3ae",
+    "status": "ready",
+    "commit": "b5addb64f0161ff6bfe94c124ef76f6a1fba5254",
+    "fingerprint": "3eb94869d4f0af65dbbeba0e51e80c66c78cc965db20d4de0e9bc1f1641da2f0",
+    "files": 91,
+    "error": null
+  },
+  "pytest": {
+    "id": "23f2acfb0e0944bd80a289e767715593",
+    "status": "ready",
+    "commit": "8721173580390a9d297e5af06cac3f0b6841f425",
+    "fingerprint": "7243dac81a8d538f7452dc8fa9bde7a7ae3b65b7e4b2308840cedf126c466aa0",
+    "files": 648,
+    "error": null
+  },
+  "rich": {
+    "id": "2ab86a1ca8d44833966d8bff705253d4",
+    "status": "ready",
+    "commit": "9d8f9a372cc5916fd4781fec207ced7ddac2f08f",
+    "fingerprint": "734d198ce9da6a0a42b6ba511bf994d91273786476756860d9e9be10273c97e6",
+    "files": 504,
+    "error": null
+  },
+  "petclinic": {
+    "id": "d3b49c3e575f4dc39b368af31e112acb",
+    "status": "ready",
+    "commit": "818c4136ea971c21674525f9053de0d9c7ad8cfe",
+    "fingerprint": "1d70b28e2e23ccdc6b1d2d3ebb4ba5f9b781ce0bf59d072e76106bbaca57a4c9",
+    "files": 98,
+    "error": null
+  },
+  "commons-lang": {
+    "id": "d6dad469c9e142ebaacc59b9c9d479d9",
+    "status": "ready",
+    "commit": "699d7e67141daacc8115b2afaa5359f3468f9694",
+    "fingerprint": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+    "files": 692,
+    "error": null
+  },
+  "mockito": {
+    "id": "d3967d380d424fa79e3f38a0cd7dca0e",
+    "status": "ready",
+    "commit": "116a4d6231dc35f90543060af41dcde00fe4e2ae",
+    "fingerprint": "1b90fc029afe9ef76b5020f9141e884688c3b56e53f297d4e14ca99280b63e45",
+    "files": 1085,
+    "error": null
+  }
+}

@@ -1,0 +1,10 @@
+.venv
+.devpilot
+.git
+frontend/node_modules
+frontend/dist
+repository-review
+docs
+tests
+__pycache__
+*.pyc

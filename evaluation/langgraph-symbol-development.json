@@ -1,0 +1,587 @@
+{
+  "dataset": "evaluation/expanded-cases-v3.jsonl",
+  "manifest": "docs/indexed-reference-repositories.json",
+  "cases": 64,
+  "quick_recall_at_8": 0.84375,
+  "deep_recall_at_8": 0.8125,
+  "quick_mean_ms": 258,
+  "deep_mean_ms": 395,
+  "results": [
+    {
+      "id": "flask-001",
+      "repository": "flask",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 80,
+      "deep_ms": 154,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "flask-002",
+      "repository": "flask",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 76,
+      "deep_ms": 152,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "flask-003",
+      "repository": "flask",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 74,
+      "deep_ms": 78,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "requests-001",
+      "repository": "requests",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 41,
+      "deep_ms": 45,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "requests-002",
+      "repository": "requests",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 41,
+      "deep_ms": 59,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "requests-003",
+      "repository": "requests",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 42,
+      "deep_ms": 45,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "httpx-001",
+      "repository": "httpx",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 54,
+      "deep_ms": 59,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "httpx-002",
+      "repository": "httpx",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 54,
+      "deep_ms": 57,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "httpx-003",
+      "repository": "httpx",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 53,
+      "deep_ms": 56,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "pytest-001",
+      "repository": "pytest",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 393,
+      "deep_ms": 765,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "pytest-002",
+      "repository": "pytest",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 397,
+      "deep_ms": 771,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "pytest-003",
+      "repository": "pytest",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 381,
+      "deep_ms": 400,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "rich-001",
+      "repository": "rich",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 202,
+      "deep_ms": 180,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "rich-002",
+      "repository": "rich",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 174,
+      "deep_ms": 178,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "rich-003",
+      "repository": "rich",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 173,
+      "deep_ms": 352,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "petclinic-001",
+      "repository": "petclinic",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 22,
+      "deep_ms": 23,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "petclinic-002",
+      "repository": "petclinic",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 20,
+      "deep_ms": 23,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "petclinic-003",
+      "repository": "petclinic",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 20,
+      "deep_ms": 23,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "commons-lang-001",
+      "repository": "commons-lang",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 882,
+      "deep_ms": 820,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "commons-lang-002",
+      "repository": "commons-lang",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 811,
+      "deep_ms": 830,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "commons-lang-003",
+      "repository": "commons-lang",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 805,
+      "deep_ms": 835,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "mockito-001",
+      "repository": "mockito",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 458,
+      "deep_ms": 475,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "mockito-002",
+      "repository": "mockito",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 466,
+      "deep_ms": 491,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "mockito-003",
+      "repository": "mockito",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 456,
+      "deep_ms": 461,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "commons-lang-candidate-006",
+      "repository": "commons-lang",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 840,
+      "deep_ms": 863,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "commons-lang-candidate-013",
+      "repository": "commons-lang",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 821,
+      "deep_ms": 2505,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "flask-candidate-003",
+      "repository": "flask",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 77,
+      "deep_ms": 231,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "flask-candidate-009",
+      "repository": "flask",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 77,
+      "deep_ms": 81,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "httpx-candidate-003",
+      "repository": "httpx",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 55,
+      "deep_ms": 169,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "httpx-candidate-005",
+      "repository": "httpx",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 54,
+      "deep_ms": 180,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "mockito-candidate-004",
+      "repository": "mockito",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 462,
+      "deep_ms": 483,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "mockito-candidate-010",
+      "repository": "mockito",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 473,
+      "deep_ms": 1409,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "petclinic-candidate-010",
+      "repository": "petclinic",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 21,
+      "deep_ms": 67,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "petclinic-candidate-017",
+      "repository": "petclinic",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 22,
+      "deep_ms": 45,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "pytest-candidate-022",
+      "repository": "pytest",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 389,
+      "deep_ms": 393,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "pytest-candidate-023",
+      "repository": "pytest",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 383,
+      "deep_ms": 411,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "requests-candidate-012",
+      "repository": "requests",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 43,
+      "deep_ms": 134,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "requests-candidate-013",
+      "repository": "requests",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 42,
+      "deep_ms": 130,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "rich-candidate-011",
+      "repository": "rich",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 178,
+      "deep_ms": 360,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "rich-candidate-023",
+      "repository": "rich",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 179,
+      "deep_ms": 554,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "commons-lang-candidate-012",
+      "repository": "commons-lang",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 852,
+      "deep_ms": 834,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "commons-lang-candidate-018",
+      "repository": "commons-lang",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 843,
+      "deep_ms": 844,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "commons-lang-candidate-024",
+      "repository": "commons-lang",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 824,
+      "deep_ms": 2520,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "flask-candidate-008",
+      "repository": "flask",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 76,
+      "deep_ms": 82,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "flask-candidate-022",
+      "repository": "flask",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 76,
+      "deep_ms": 82,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "flask-candidate-024",
+      "repository": "flask",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 77,
+      "deep_ms": 156,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "httpx-candidate-004",
+      "repository": "httpx",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 57,
+      "deep_ms": 59,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "httpx-candidate-022",
+      "repository": "httpx",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 56,
+      "deep_ms": 61,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "httpx-candidate-025",
+      "repository": "httpx",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 56,
+      "deep_ms": 172,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "mockito-candidate-005",
+      "repository": "mockito",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 463,
+      "deep_ms": 485,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "mockito-candidate-007",
+      "repository": "mockito",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 463,
+      "deep_ms": 472,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "mockito-candidate-009",
+      "repository": "mockito",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 469,
+      "deep_ms": 488,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "petclinic-candidate-004",
+      "repository": "petclinic",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 21,
+      "deep_ms": 24,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "petclinic-candidate-008",
+      "repository": "petclinic",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 21,
+      "deep_ms": 24,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "petclinic-candidate-020",
+      "repository": "petclinic",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 21,
+      "deep_ms": 24,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "pytest-candidate-006",
+      "repository": "pytest",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 390,
+      "deep_ms": 397,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "pytest-candidate-012",
+      "repository": "pytest",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 387,
+      "deep_ms": 412,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "pytest-candidate-020",
+      "repository": "pytest",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 403,
+      "deep_ms": 1220,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "requests-candidate-006",
+      "repository": "requests",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 44,
+      "deep_ms": 91,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "requests-candidate-015",
+      "repository": "requests",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 43,
+      "deep_ms": 90,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "requests-candidate-021",
+      "repository": "requests",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 43,
+      "deep_ms": 133,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "rich-candidate-003",
+      "repository": "rich",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 178,
+      "deep_ms": 543,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "rich-candidate-017",
+      "repository": "rich",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 177,
+      "deep_ms": 553,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "rich-candidate-024",
+      "repository": "rich",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 191,
+      "deep_ms": 182,
+      "retrieval_passes": 1
+    }
+  ]
+}

@@ -1,0 +1,586 @@
+{
+  "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+  "commit": "bb6da4cfbb1f559885ea2fa207ec93853bfeac64",
+  "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019",
+  "model": "qwen2.5-coder:7b",
+  "mode": "hybrid",
+  "use_model": true,
+  "retrieval_version": "2026-09-29-multistage-relevance-order",
+  "answer_prompt_version": "2026-09-29-aspect-quoted-claims",
+  "results": [
+    {
+      "id": "pydantic-easy-001",
+      "difficulty": "easy",
+      "path": "quick",
+      "answer": "In `BaseModel.model_dump`, the method that produces the returned dictionary is `__pydantic_serializer__.to_python` [1]. `exclude_none` is passed to it as a parameter in the function signature and then used within the method call [1].",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump",
+          "path": "pydantic/main.py",
+          "start_line": 472,
+          "end_line": 536,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.dict",
+          "path": "pydantic/main.py",
+          "start_line": 1385,
+          "end_line": 1408,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.root_model.RootModel.model_dump",
+          "path": "pydantic/root_model.py",
+          "start_line": 128,
+          "end_line": 176,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.json",
+          "path": "pydantic/main.py",
+          "start_line": 1410,
+          "end_line": 1442,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump_json",
+          "path": "pydantic/main.py",
+          "start_line": 538,
+          "end_line": 604,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.copy",
+          "path": "pydantic/main.py",
+          "start_line": 1569,
+          "end_line": 1644,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.build_lenient_weakvaluedict",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 780,
+          "end_line": 797,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._type_refs.class_type_ref",
+          "path": "pydantic/_internal/_type_refs.py",
+          "start_line": 57,
+          "end_line": 66,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_dump"
+      ],
+      "expected_symbol_count": 1,
+      "recall_at_8": 1.0,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 616,
+        "completion_tokens": 112,
+        "total_tokens": 728
+      },
+      "elapsed_ms": 12780,
+      "wall_ms": 12787,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-easy-001",
+      "difficulty": "easy",
+      "path": "deep",
+      "answer": "In `BaseModel.model_dump`, the method that produces the returned dictionary is `__pydantic_serializer__.to_python` [1]. `exclude_none` is passed to it as a parameter in the function signature and then used within the method call [1].",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump",
+          "path": "pydantic/main.py",
+          "start_line": 472,
+          "end_line": 536,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.dict",
+          "path": "pydantic/main.py",
+          "start_line": 1385,
+          "end_line": 1408,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.root_model.RootModel.model_dump",
+          "path": "pydantic/root_model.py",
+          "start_line": 128,
+          "end_line": 176,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.json",
+          "path": "pydantic/main.py",
+          "start_line": 1410,
+          "end_line": 1442,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump_json",
+          "path": "pydantic/main.py",
+          "start_line": 538,
+          "end_line": 604,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.copy",
+          "path": "pydantic/main.py",
+          "start_line": 1569,
+          "end_line": 1644,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.build_lenient_weakvaluedict",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 780,
+          "end_line": 797,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._type_refs.class_type_ref",
+          "path": "pydantic/_internal/_type_refs.py",
+          "start_line": 57,
+          "end_line": 66,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_dump"
+      ],
+      "expected_symbol_count": 1,
+      "recall_at_8": 1.0,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 616,
+        "completion_tokens": 112,
+        "total_tokens": 728
+      },
+      "elapsed_ms": 5487,
+      "wall_ms": 5487,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 1
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-medium-001",
+      "difficulty": "medium",
+      "path": "quick",
+      "answer": "BaseModel.model_json_schema() calls the JSON-schema helper [2]. The helper handles a model whose core schema is still a mock by rebuilding it [2]. The call that generates the final schema is made by the JSON-schema helper's generate method [2].",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_json_schema",
+          "path": "pydantic/main.py",
+          "start_line": 606,
+          "end_line": 643,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.model_json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2715,
+          "end_line": 2760,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__get_pydantic_json_schema__",
+          "path": "pydantic/main.py",
+          "start_line": 907,
+          "end_line": 931,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__get_pydantic_core_schema__",
+          "path": "pydantic/main.py",
+          "start_line": 887,
+          "end_line": 905,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema",
+          "path": "pydantic/main.py",
+          "start_line": 1646,
+          "end_line": 1656,
+          "reason": "calls relationship with model_json_schema"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema_json",
+          "path": "pydantic/main.py",
+          "start_line": 1658,
+          "end_line": 1679,
+          "reason": "calls relationship with model_json_schema"
+        },
+        {
+          "qualified": "pydantic.deprecated.json.pydantic_encoder",
+          "path": "pydantic/deprecated/json.py",
+          "start_line": 83,
+          "end_line": 110,
+          "reason": "imports relationship with schema_json"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel",
+          "path": "pydantic/main.py",
+          "start_line": 136,
+          "end_line": 1760,
+          "reason": "contains relationship with model_json_schema"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_json_schema",
+        "pydantic.json_schema.model_json_schema"
+      ],
+      "expected_symbol_count": 3,
+      "recall_at_8": 0.6666666666666666,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 866,
+        "completion_tokens": 175,
+        "total_tokens": 1041
+      },
+      "elapsed_ms": 9818,
+      "wall_ms": 9821,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-medium-001",
+      "difficulty": "medium",
+      "path": "deep",
+      "answer": "BaseModel.model_json_schema() calls the JSON-schema helper to generate a schema [8]. The JSON-schema helper handles a model whose core schema is still a mock by rebuilding it [8]. The call that generates the final schema is made by the JSON-schema helper's generate method [8].",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_json_schema",
+          "path": "pydantic/main.py",
+          "start_line": 606,
+          "end_line": 643,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema_json",
+          "path": "pydantic/main.py",
+          "start_line": 1658,
+          "end_line": 1679,
+          "reason": "calls relationship with model_json_schema"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_model_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 151,
+          "end_line": 189,
+          "reason": "focused/graph search: symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema",
+          "path": "pydantic/main.py",
+          "start_line": 1646,
+          "end_line": 1656,
+          "reason": "calls relationship with model_json_schema"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.json",
+          "path": "pydantic/main.py",
+          "start_line": 1410,
+          "end_line": 1442,
+          "reason": "focused/graph search: contains relationship with BaseModel"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_validate_json",
+          "path": "pydantic/main.py",
+          "start_line": 800,
+          "end_line": 847,
+          "reason": "focused/graph search: contains relationship with BaseModel"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump_json",
+          "path": "pydantic/main.py",
+          "start_line": 538,
+          "end_line": 604,
+          "reason": "focused/graph search: contains relationship with BaseModel"
+        },
+        {
+          "qualified": "pydantic.json_schema.model_json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2715,
+          "end_line": 2760,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_json_schema",
+        "pydantic.json_schema.model_json_schema"
+      ],
+      "expected_symbol_count": 3,
+      "recall_at_8": 0.6666666666666666,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 1019,
+        "completion_tokens": 193,
+        "total_tokens": 1212
+      },
+      "elapsed_ms": 13239,
+      "wall_ms": 13239,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "focused retrieval",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 4
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-hard-001",
+      "difficulty": "hard",
+      "path": "quick",
+      "answer": "The following source locations are relevant to your question. This is a retrieval report; connect a model provider for a synthesised explanation.\n\n[1] pydantic._internal._mock_val_ser.set_model_mocks — pydantic/_internal/_mock_val_ser.py:151–189\nRetrieved through symbol / text match.\n\n[2] pydantic._internal._mock_val_ser.set_dataclass_mocks — pydantic/_internal/_mock_val_ser.py:192–232\nRetrieved through symbol / text match.\n\n[3] pydantic._internal._mock_val_ser.set_type_adapter_mocks — pydantic/_internal/_mock_val_ser.py:112–148\nRetrieved through symbol / text match.\n\n[4] pydantic._internal._model_construction.complete_model_class — pydantic/_internal/_model_construction.py:561–682\nRetrieved through symbol / text match.\n\n[5] pydantic.main.BaseModel.model_rebuild — pydantic/main.py:677–744\nRetrieved through calls relationship with set_model_mocks.\n\n[6] pydantic.dataclasses.rebuild_dataclass — pydantic/dataclasses.py:308–370\nRetrieved through imports relationship with set_dataclass_mocks.\n\n[7] pydantic.type_adapter.TypeAdapter._init_core_attrs — pydantic/type_adapter.py:227–297\nRetrieved through calls relationship with set_type_adapter_mocks.\n\n[8] pydantic._internal._dataclasses.complete_dataclass — pydantic/_internal/_dataclasses.py:85–190\nRetrieved through calls relationship with set_dataclass_mocks.",
+      "generated": false,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_model_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 151,
+          "end_line": 189,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_dataclass_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 192,
+          "end_line": 232,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_type_adapter_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 112,
+          "end_line": 148,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.complete_model_class",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 561,
+          "end_line": 682,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_rebuild",
+          "path": "pydantic/main.py",
+          "start_line": 677,
+          "end_line": 744,
+          "reason": "calls relationship with set_model_mocks"
+        },
+        {
+          "qualified": "pydantic.dataclasses.rebuild_dataclass",
+          "path": "pydantic/dataclasses.py",
+          "start_line": 308,
+          "end_line": 370,
+          "reason": "imports relationship with set_dataclass_mocks"
+        },
+        {
+          "qualified": "pydantic.type_adapter.TypeAdapter._init_core_attrs",
+          "path": "pydantic/type_adapter.py",
+          "start_line": 227,
+          "end_line": 297,
+          "reason": "calls relationship with set_type_adapter_mocks"
+        },
+        {
+          "qualified": "pydantic._internal._dataclasses.complete_dataclass",
+          "path": "pydantic/_internal/_dataclasses.py",
+          "start_line": 85,
+          "end_line": 190,
+          "reason": "calls relationship with set_dataclass_mocks"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic._internal._model_construction.complete_model_class",
+        "pydantic._internal._mock_val_ser.set_model_mocks",
+        "pydantic.main.BaseModel.model_rebuild"
+      ],
+      "expected_symbol_count": 6,
+      "recall_at_8": 0.5,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [
+          "The following source locations are relevant to your question. This is a retrieval report; connect a model provider for a synthesised explanation."
+        ],
+        "uncited_sentences": [
+          "The following source locations are relevant to your question.",
+          "This is a retrieval report; connect a model provider for a synthesised explanation."
+        ],
+        "reference_section": true,
+        "entailment_checked": false
+      },
+      "warning": "Model did not provide bounded source-backed claims.",
+      "usage": {},
+      "elapsed_ms": 43797,
+      "wall_ms": 43801,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-hard-001",
+      "difficulty": "hard",
+      "path": "deep",
+      "answer": "The following source locations are relevant to your question. This is a retrieval report; connect a model provider for a synthesised explanation.\n\n[1] pydantic._internal._mock_val_ser.set_model_mocks — pydantic/_internal/_mock_val_ser.py:151–189\nRetrieved through symbol / text match.\n\n[2] pydantic._internal._model_construction.ModelMetaclass.__new__ — pydantic/_internal/_model_construction.py:89–277\nRetrieved through focused/graph search: symbol / text match.\n\n[3] pydantic._internal._mock_val_ser.MockValSer.__getattr__ — pydantic/_internal/_mock_val_ser.py:91–100\nRetrieved through focused/graph search: contains relationship with MockValSer.\n\n[4] pydantic._internal._model_construction.complete_model_class — pydantic/_internal/_model_construction.py:561–682\nRetrieved through symbol / text match.\n\n[5] pydantic.main.BaseModel.model_validate — pydantic/main.py:746–798\nRetrieved through focused/graph search: contains relationship with BaseModel.\n\n[6] pydantic.main.BaseModel.model_rebuild — pydantic/main.py:677–744\nRetrieved through calls relationship with set_model_mocks.\n\n[7] pydantic.main.BaseModel.validate — pydantic/main.py:1681–1689\nRetrieved through focused/graph search: contains relationship with BaseModel.\n\n[8] pydantic._internal._mock_val_ser.set_dataclass_mocks — pydantic/_internal/_mock_val_ser.py:192–232\nRetrieved through symbol / text match.",
+      "generated": false,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_model_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 151,
+          "end_line": 189,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.ModelMetaclass.__new__",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 89,
+          "end_line": 277,
+          "reason": "focused/graph search: symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.MockValSer.__getattr__",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 91,
+          "end_line": 100,
+          "reason": "focused/graph search: contains relationship with MockValSer"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.complete_model_class",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 561,
+          "end_line": 682,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_validate",
+          "path": "pydantic/main.py",
+          "start_line": 746,
+          "end_line": 798,
+          "reason": "focused/graph search: contains relationship with BaseModel"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_rebuild",
+          "path": "pydantic/main.py",
+          "start_line": 677,
+          "end_line": 744,
+          "reason": "calls relationship with set_model_mocks"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.validate",
+          "path": "pydantic/main.py",
+          "start_line": 1681,
+          "end_line": 1689,
+          "reason": "focused/graph search: contains relationship with BaseModel"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_dataclass_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 192,
+          "end_line": 232,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic._internal._model_construction.ModelMetaclass.__new__",
+        "pydantic._internal._model_construction.complete_model_class",
+        "pydantic._internal._mock_val_ser.set_model_mocks",
+        "pydantic._internal._mock_val_ser.MockValSer.__getattr__",
+        "pydantic.main.BaseModel.model_rebuild",
+        "pydantic.main.BaseModel.model_validate"
+      ],
+      "expected_symbol_count": 6,
+      "recall_at_8": 1.0,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [
+          "The following source locations are relevant to your question. This is a retrieval report; connect a model provider for a synthesised explanation."
+        ],
+        "uncited_sentences": [
+          "The following source locations are relevant to your question.",
+          "This is a retrieval report; connect a model provider for a synthesised explanation."
+        ],
+        "reference_section": true,
+        "entailment_checked": false
+      },
+      "warning": "Model did not provide bounded source-backed claims.",
+      "usage": {},
+      "elapsed_ms": 48029,
+      "wall_ms": 48029,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "focused retrieval",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 4
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    }
+  ]
+}

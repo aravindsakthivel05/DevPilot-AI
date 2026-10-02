@@ -1,0 +1,577 @@
+{
+  "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+  "commit": "bb6da4cfbb1f559885ea2fa207ec93853bfeac64",
+  "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019",
+  "model": "qwen2.5-coder:7b",
+  "mode": "hybrid",
+  "use_model": true,
+  "results": [
+    {
+      "id": "pydantic-easy-001",
+      "difficulty": "easy",
+      "path": "quick",
+      "answer": "In BaseModel.model_dump(), the method that produces the returned dictionary is __pydantic_serializer__.to_python() [1]. exclude_none is passed to __pydantic_serializer__.to_python() as a keyword argument [1].",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump",
+          "path": "pydantic/main.py",
+          "start_line": 472,
+          "end_line": 536,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.dict",
+          "path": "pydantic/main.py",
+          "start_line": 1385,
+          "end_line": 1408,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.root_model.RootModel.model_dump",
+          "path": "pydantic/root_model.py",
+          "start_line": 128,
+          "end_line": 176,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump_json",
+          "path": "pydantic/main.py",
+          "start_line": 538,
+          "end_line": 604,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.json",
+          "path": "pydantic/main.py",
+          "start_line": 1410,
+          "end_line": 1442,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.copy",
+          "path": "pydantic/main.py",
+          "start_line": 1569,
+          "end_line": 1644,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.build_lenient_weakvaluedict",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 780,
+          "end_line": 797,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic-core.python.pydantic_core.core_schema.SerializationInfo.exclude_none",
+          "path": "pydantic-core/python/pydantic_core/core_schema.py",
+          "start_line": 174,
+          "end_line": 177,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_dump"
+      ],
+      "expected_symbol_count": 1,
+      "recall_at_8": 1.0,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 532,
+        "completion_tokens": 113,
+        "total_tokens": 645
+      },
+      "elapsed_ms": 11533,
+      "wall_ms": 11541,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-easy-001",
+      "difficulty": "easy",
+      "path": "deep",
+      "answer": "In BaseModel.model_dump(), the method that produces the returned dictionary is __pydantic_serializer__.to_python() [1]. exclude_none is passed to __pydantic_serializer__.to_python() as a keyword argument [1].",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump",
+          "path": "pydantic/main.py",
+          "start_line": 472,
+          "end_line": 536,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.dict",
+          "path": "pydantic/main.py",
+          "start_line": 1385,
+          "end_line": 1408,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.root_model.RootModel.model_dump",
+          "path": "pydantic/root_model.py",
+          "start_line": 128,
+          "end_line": 176,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump_json",
+          "path": "pydantic/main.py",
+          "start_line": 538,
+          "end_line": 604,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.json",
+          "path": "pydantic/main.py",
+          "start_line": 1410,
+          "end_line": 1442,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.copy",
+          "path": "pydantic/main.py",
+          "start_line": 1569,
+          "end_line": 1644,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.build_lenient_weakvaluedict",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 780,
+          "end_line": 797,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic-core.python.pydantic_core.core_schema.SerializationInfo.exclude_none",
+          "path": "pydantic-core/python/pydantic_core/core_schema.py",
+          "start_line": 174,
+          "end_line": 177,
+          "reason": "symbol / text match"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_dump"
+      ],
+      "expected_symbol_count": 1,
+      "recall_at_8": 1.0,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 532,
+        "completion_tokens": 113,
+        "total_tokens": 645
+      },
+      "elapsed_ms": 5374,
+      "wall_ms": 5374,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 1
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-medium-001",
+      "difficulty": "medium",
+      "path": "quick",
+      "answer": "BaseModel.model_json_schema() is a class method [1]. The helper function for JSON-schema generation is defined in pydantic/json_schema.py [6]. If the core schema of a model is a mock, it is rebuilt before generating the final schema [6]. The call to generate the final schema is made by calling schema_generator_instance.generate [6].",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_json_schema",
+          "path": "pydantic/main.py",
+          "start_line": 606,
+          "end_line": 643,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.call_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2203,
+          "end_line": 2212,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__get_pydantic_json_schema__",
+          "path": "pydantic/main.py",
+          "start_line": 907,
+          "end_line": 931,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2225,
+          "end_line": 2240,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.callable_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 1024,
+          "end_line": 1035,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.model_json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2715,
+          "end_line": 2760,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema",
+          "path": "pydantic/main.py",
+          "start_line": 1646,
+          "end_line": 1656,
+          "reason": "calls relationship with model_json_schema"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema_json",
+          "path": "pydantic/main.py",
+          "start_line": 1658,
+          "end_line": 1679,
+          "reason": "calls relationship with model_json_schema"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_json_schema",
+        "pydantic.json_schema.model_json_schema"
+      ],
+      "expected_symbol_count": 3,
+      "recall_at_8": 0.6666666666666666,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 726,
+        "completion_tokens": 222,
+        "total_tokens": 948
+      },
+      "elapsed_ms": 12035,
+      "wall_ms": 12040,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-medium-001",
+      "difficulty": "medium",
+      "path": "deep",
+      "answer": "BaseModel.model_json_schema() is a class method [1]. The helper function for JSON-schema generation is defined in pydantic/json_schema.py [6]. If the core schema of a model is a mock, it is rebuilt before generating the final schema [6]. The call to generate the final schema is made by calling schema_generator_instance.generate [6].",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_json_schema",
+          "path": "pydantic/main.py",
+          "start_line": 606,
+          "end_line": 643,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.call_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2203,
+          "end_line": 2212,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__get_pydantic_json_schema__",
+          "path": "pydantic/main.py",
+          "start_line": 907,
+          "end_line": 931,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2225,
+          "end_line": 2240,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.GenerateJsonSchema.callable_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 1024,
+          "end_line": 1035,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.json_schema.model_json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2715,
+          "end_line": 2760,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema",
+          "path": "pydantic/main.py",
+          "start_line": 1646,
+          "end_line": 1656,
+          "reason": "calls relationship with model_json_schema"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema_json",
+          "path": "pydantic/main.py",
+          "start_line": 1658,
+          "end_line": 1679,
+          "reason": "calls relationship with model_json_schema"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_json_schema",
+        "pydantic.json_schema.model_json_schema"
+      ],
+      "expected_symbol_count": 3,
+      "recall_at_8": 0.6666666666666666,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 726,
+        "completion_tokens": 222,
+        "total_tokens": 948
+      },
+      "elapsed_ms": 9989,
+      "wall_ms": 9989,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 1
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-hard-001",
+      "difficulty": "hard",
+      "path": "quick",
+      "answer": "During class creation, if a BaseModel field refers to an undefined type, a mock validator is set up [3]. The mock validator triggers a rebuild when the type is defined [3]. Rebuilding involves reinitializing core attributes and validators [1]. If the type is still undefined after validation, an error message is raised [3].",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.type_adapter.TypeAdapter.rebuild",
+          "path": "pydantic/type_adapter.py",
+          "start_line": 316,
+          "end_line": 360,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__pydantic_on_complete__",
+          "path": "pydantic/main.py",
+          "start_line": 956,
+          "end_line": 965,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_model_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 151,
+          "end_line": 189,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_dataclass_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 192,
+          "end_line": 232,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_type_adapter_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 112,
+          "end_line": 148,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_rebuild",
+          "path": "pydantic/main.py",
+          "start_line": 677,
+          "end_line": 744,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.complete_model_class",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 561,
+          "end_line": 682,
+          "reason": "calls relationship with set_model_mocks"
+        },
+        {
+          "qualified": "pydantic.dataclasses.rebuild_dataclass",
+          "path": "pydantic/dataclasses.py",
+          "start_line": 308,
+          "end_line": 370,
+          "reason": "imports relationship with set_dataclass_mocks"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic._internal._mock_val_ser.set_model_mocks",
+        "pydantic.main.BaseModel.model_rebuild",
+        "pydantic._internal._model_construction.complete_model_class"
+      ],
+      "expected_symbol_count": 6,
+      "recall_at_8": 0.5,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 2411,
+        "completion_tokens": 327,
+        "total_tokens": 2738
+      },
+      "elapsed_ms": 22483,
+      "wall_ms": 22488,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-hard-001",
+      "difficulty": "hard",
+      "path": "deep",
+      "answer": "During class creation, if a BaseModel field refers to an undefined type, a mock validator is set up [3]. The mock validator triggers a rebuild when the type is defined [3]. Rebuilding involves reinitializing core attributes and validators [1]. If the type is still undefined after validation, an error message is raised [3].",
+      "generated": true,
+      "abstained": false,
+      "evidence": [
+        {
+          "qualified": "pydantic.type_adapter.TypeAdapter.rebuild",
+          "path": "pydantic/type_adapter.py",
+          "start_line": 316,
+          "end_line": 360,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__pydantic_on_complete__",
+          "path": "pydantic/main.py",
+          "start_line": 956,
+          "end_line": 965,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_model_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 151,
+          "end_line": 189,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_dataclass_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 192,
+          "end_line": 232,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_type_adapter_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 112,
+          "end_line": 148,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_rebuild",
+          "path": "pydantic/main.py",
+          "start_line": 677,
+          "end_line": 744,
+          "reason": "symbol / text match"
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.complete_model_class",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 561,
+          "end_line": 682,
+          "reason": "calls relationship with set_model_mocks"
+        },
+        {
+          "qualified": "pydantic.dataclasses.rebuild_dataclass",
+          "path": "pydantic/dataclasses.py",
+          "start_line": 308,
+          "end_line": 370,
+          "reason": "imports relationship with set_dataclass_mocks"
+        }
+      ],
+      "expected_symbol_hits": [
+        "pydantic._internal._mock_val_ser.set_model_mocks",
+        "pydantic.main.BaseModel.model_rebuild",
+        "pydantic._internal._model_construction.complete_model_class"
+      ],
+      "expected_symbol_count": 6,
+      "recall_at_8": 0.5,
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 2411,
+        "completion_tokens": 327,
+        "total_tokens": 2738
+      },
+      "elapsed_ms": 15010,
+      "wall_ms": 15010,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 1
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    }
+  ]
+}

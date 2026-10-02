@@ -1,0 +1,271 @@
+{
+  "evaluated_at": "2026-09-27T16:33:19.644530+00:00",
+  "dataset": "evaluation/workflow-cases.jsonl",
+  "manifest": "docs/indexed-reference-repositories.json",
+  "case_count": 4,
+  "summary": [
+    {
+      "split": "development",
+      "mode": "graph",
+      "cases": 4,
+      "recall_at_8": 0.3125,
+      "mrr": 0.5833333333333334
+    },
+    {
+      "split": "development",
+      "mode": "hybrid",
+      "cases": 4,
+      "recall_at_8": 0.375,
+      "mrr": 0.5833333333333334
+    },
+    {
+      "split": "development",
+      "mode": "lexical",
+      "cases": 4,
+      "recall_at_8": 0.375,
+      "mrr": 0.5833333333333334
+    }
+  ],
+  "cases": [
+    {
+      "id": "requests-workflow-001",
+      "repository": "requests",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.6666666666666666,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.sessions.Session.request",
+        "requests.sessions.Session.send",
+        "requests.sessions.Session",
+        "requests.models.Request.prepare",
+        "requests.sessions.Session.delete",
+        "requests.models.PreparedRequest.prepare",
+        "requests.sessions.Session.options",
+        "requests.sessions.Session.head"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-workflow-001",
+      "repository": "requests",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.6666666666666666,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.sessions.Session.request",
+        "requests.sessions.Session.send",
+        "requests.sessions.Session",
+        "requests.models.Request.prepare",
+        "requests.sessions.Session.delete",
+        "requests.sessions.Session.options",
+        "requests.sessions.Session.head",
+        "requests.sessions.Session.prepare_request"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-workflow-001",
+      "repository": "requests",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.6666666666666666,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.sessions.Session.request",
+        "requests.sessions.Session.send",
+        "requests.sessions.Session",
+        "requests.models.Request.prepare",
+        "requests.sessions.Session.delete",
+        "requests.models.PreparedRequest.prepare",
+        "requests.sessions.Session.options",
+        "requests.sessions.Session.head"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-workflow-001",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.5,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "httpx._main.trace",
+        "httpx._transports.base.BaseTransport.handle_request",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.AsyncClient._send_single_request",
+        "httpx._api.request",
+        "httpx._models.Response.raise_for_status",
+        "httpx._client.Client._send_handling_auth",
+        "httpx._client.AsyncClient._send_handling_auth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-workflow-001",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.25,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "httpx._main.trace",
+        "httpx._transports.base.BaseTransport.handle_request",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.AsyncClient._send_single_request",
+        "httpx._client.Client._send_handling_redirects",
+        "httpx._main.print_request_headers",
+        "httpx._client.AsyncClient._send_handling_redirects",
+        "httpx._client.Client._transport_for_url"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-workflow-001",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.5,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "httpx._main.trace",
+        "httpx._transports.base.BaseTransport.handle_request",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.AsyncClient._send_single_request",
+        "httpx._api.request",
+        "httpx._models.Response.raise_for_status",
+        "httpx._client.Client._send_handling_auth",
+        "httpx._client.AsyncClient._send_handling_auth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-workflow-001",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.hookspec.pytest_sessionstart",
+        "_pytest.pathlib.make_numbered_dir_with_cleanup",
+        "_pytest.config.Config.InvocationParams",
+        "_pytest.legacypath.pytest_load_initial_conftests",
+        "_pytest._py.path.LocalPath.make_numbered_dir.atexit_remove_lockfile",
+        "_pytest.hookspec.pytest_runtestloop",
+        "_pytest.pytester.Pytester.run",
+        "_pytest.hookspec.pytest_collection_finish"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-workflow-001",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.hookspec.pytest_sessionstart",
+        "_pytest.pathlib.make_numbered_dir_with_cleanup",
+        "_pytest.config.Config.InvocationParams",
+        "_pytest.legacypath.pytest_load_initial_conftests",
+        "_pytest.config.Config.__init__",
+        "testing.test_config.test_invocation_args",
+        "_pytest.config.get_config",
+        "_pytest.pathlib.register_cleanup_lock_removal"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-workflow-001",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.hookspec.pytest_sessionstart",
+        "_pytest.pathlib.make_numbered_dir_with_cleanup",
+        "_pytest.config.Config.InvocationParams",
+        "_pytest.legacypath.pytest_load_initial_conftests",
+        "_pytest._py.path.LocalPath.make_numbered_dir.atexit_remove_lockfile",
+        "_pytest.hookspec.pytest_runtestloop",
+        "_pytest.pytester.Pytester.run",
+        "_pytest.hookspec.pytest_collection_finish"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-workflow-001",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.3333333333333333,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.internal.util.MockUtil.createMock",
+        "org.mockito.internal.util.MockUtil.createSingletonMock",
+        "org.mockito.internal.util.MockUtil.createStaticMock",
+        "org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock",
+        "org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock",
+        "org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock",
+        "org.mockito.plugins.MockMaker.createMock",
+        "org.mockito.internal.creation.proxy.ProxyMockMaker.createMock"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-workflow-001",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.3333333333333333,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.internal.util.MockUtil.createMock",
+        "org.mockito.internal.util.MockUtil.createSingletonMock",
+        "org.mockito.internal.util.MockUtil.createStaticMock",
+        "org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock",
+        "org.mockito.internal.MockitoCore",
+        "org.mockito.internal.util.MockUtil.getMockMaker",
+        "org.mockito.internal.util.MockUtil.createConstructionMock",
+        "org.mockito.internal.util.MockUtil.resetMock"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-workflow-001",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.3333333333333333,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.internal.util.MockUtil.createMock",
+        "org.mockito.internal.util.MockUtil.createSingletonMock",
+        "org.mockito.internal.util.MockUtil.createStaticMock",
+        "org.mockito.internal.creation.bytebuddy.ByteBuddyMockMaker.createMock",
+        "org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock",
+        "org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock",
+        "org.mockito.plugins.MockMaker.createMock",
+        "org.mockito.internal.creation.proxy.ProxyMockMaker.createMock"
+      ],
+      "warning": null
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+.devpilot/
+node_modules/
+frontend/dist/
+*.pyc
+.DS_Store

@@ -1,0 +1,16 @@
+{
+  "urllib3": {
+    "source": "https://github.com/urllib3/urllib3",
+    "id": "cc350df5787c47029c62572e27602dd5",
+    "commit": "ed0ed075c6b93f7c515ebd3abe9a7248507ef8c5",
+    "fingerprint": "8aaf760330ff8de0c7a30e0fa8871532d9137ec790433aa916ce45f92722bf88",
+    "files": 127
+  },
+  "commons-collections": {
+    "source": "https://github.com/apache/commons-collections",
+    "id": "b0ff001506c04a0db16c14d106968960",
+    "commit": "a350e2c73bf61230afad1bf6f3dc770b2ddb36ee",
+    "fingerprint": "7decc9734b40c6cf5913ac20e9a58d56686f65ce194a1701239d50fd357fe8e1",
+    "files": 728
+  }
+}

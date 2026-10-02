@@ -1,0 +1,16 @@
+{
+  "click": {
+    "commit_unchanged": true,
+    "old_fingerprint": "9853defc4e1a934f6b812beb1b91e3c0594a15c3cb8cbcefad105aa27e086d0a",
+    "new_fingerprint": "9853defc4e1a934f6b812beb1b91e3c0594a15c3cb8cbcefad105aa27e086d0a",
+    "old_indexed": 145,
+    "new_indexed": 145
+  },
+  "junit4": {
+    "commit_unchanged": true,
+    "old_fingerprint": "57d369866c337c18c2a1f917fe63bbeac121b411273ea84dd90797148da65441",
+    "new_fingerprint": "561ce1e9b2e04be1111cffa507580dd20f97382db55c4ed1782f99e0062cecd8",
+    "old_indexed": 522,
+    "new_indexed": 530
+  }
+}

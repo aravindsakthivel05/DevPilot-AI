@@ -1,0 +1,224 @@
+{
+  "flask": {
+    "indexed_files": 208,
+    "skipped_files": 17,
+    "ignored_directories": 3,
+    "reason_counts": {
+      "hidden_directory": 2,
+      "ignored_directory": 1,
+      "lockfile": 1,
+      "secret_file": 1,
+      "unsupported_extension": 15
+    },
+    "indexed_extensions": {
+      ".css": 2,
+      ".html": 20,
+      ".json": 1,
+      ".md": 3,
+      ".py": 83,
+      ".rst": 79,
+      ".sql": 2,
+      ".toml": 5,
+      ".txt": 10,
+      ".yaml": 2,
+      "[none]": 1
+    },
+    "recorded_entries": 228,
+    "entries_capped": false,
+    "ignored_directory_contents_scanned": false
+  },
+  "requests": {
+    "indexed_files": 75,
+    "skipped_files": 34,
+    "ignored_directories": 4,
+    "reason_counts": {
+      "hidden_directory": 1,
+      "ignored_directory": 1,
+      "symlink_directory": 2,
+      "unsupported_extension": 34
+    },
+    "indexed_extensions": {
+      ".css": 1,
+      ".html": 1,
+      ".in": 1,
+      ".ini": 1,
+      ".md": 5,
+      ".py": 37,
+      ".rst": 16,
+      ".toml": 1,
+      ".txt": 2,
+      ".yaml": 2,
+      "[none]": 8
+    },
+    "recorded_entries": 113,
+    "entries_capped": false,
+    "ignored_directory_contents_scanned": false
+  },
+  "httpx": {
+    "indexed_files": 92,
+    "skipped_files": 25,
+    "ignored_directories": 2,
+    "reason_counts": {
+      "hidden_directory": 1,
+      "ignored_directory": 1,
+      "unsupported_extension": 25
+    },
+    "indexed_extensions": {
+      ".css": 1,
+      ".html": 1,
+      ".json": 1,
+      ".md": 26,
+      ".py": 60,
+      ".toml": 1,
+      ".txt": 1,
+      ".yml": 1
+    },
+    "recorded_entries": 119,
+    "entries_capped": false,
+    "ignored_directory_contents_scanned": false
+  },
+  "pytest": {
+    "indexed_files": 659,
+    "skipped_files": 39,
+    "ignored_directories": 2,
+    "reason_counts": {
+      "file_too_large": 1,
+      "hidden_directory": 1,
+      "ignored_directory": 1,
+      "lockfile": 1,
+      "unsupported_extension": 37
+    },
+    "indexed_extensions": {
+      ".css": 1,
+      ".html": 1,
+      ".in": 1,
+      ".ini": 7,
+      ".json": 2,
+      ".md": 2,
+      ".py": 274,
+      ".pyi": 8,
+      ".rst": 352,
+      ".toml": 1,
+      ".txt": 5,
+      ".yaml": 3,
+      ".yml": 1,
+      "[none]": 1
+    },
+    "recorded_entries": 700,
+    "entries_capped": false,
+    "ignored_directory_contents_scanned": false
+  },
+  "rich": {
+    "indexed_files": 506,
+    "skipped_files": 34,
+    "ignored_directories": 3,
+    "reason_counts": {
+      "hidden_directory": 2,
+      "ignored_directory": 1,
+      "lockfile": 1,
+      "unsupported_extension": 33
+    },
+    "indexed_extensions": {
+      ".ini": 2,
+      ".json": 180,
+      ".md": 40,
+      ".py": 213,
+      ".rst": 63,
+      ".toml": 1,
+      ".txt": 2,
+      ".yaml": 1,
+      ".yml": 2,
+      "[none]": 2
+    },
+    "recorded_entries": 543,
+    "entries_capped": false,
+    "ignored_directory_contents_scanned": false
+  },
+  "petclinic": {
+    "indexed_files": 105,
+    "skipped_files": 20,
+    "ignored_directories": 4,
+    "reason_counts": {
+      "hidden_directory": 3,
+      "ignored_directory": 1,
+      "unsupported_extension": 20
+    },
+    "indexed_extensions": {
+      ".css": 1,
+      ".gradle": 2,
+      ".html": 12,
+      ".java": 50,
+      ".md": 1,
+      ".properties": 15,
+      ".scss": 4,
+      ".sql": 7,
+      ".txt": 4,
+      ".xml": 3,
+      ".yml": 4,
+      "[none]": 2
+    },
+    "recorded_entries": 129,
+    "entries_capped": false,
+    "ignored_directory_contents_scanned": false
+  },
+  "commons-lang": {
+    "indexed_files": 692,
+    "skipped_files": 19,
+    "ignored_directories": 2,
+    "reason_counts": {
+      "hidden_directory": 1,
+      "ignored_directory": 1,
+      "non_utf8": 4,
+      "nul_byte": 1,
+      "unsupported_extension": 14
+    },
+    "indexed_extensions": {
+      ".html": 1,
+      ".java": 628,
+      ".json": 1,
+      ".md": 4,
+      ".properties": 1,
+      ".txt": 25,
+      ".xml": 31,
+      ".yaml": 1
+    },
+    "recorded_entries": 713,
+    "entries_capped": false,
+    "ignored_directory_contents_scanned": false
+  },
+  "mockito": {
+    "indexed_files": 1102,
+    "skipped_files": 22,
+    "ignored_directories": 2,
+    "reason_counts": {
+      "hidden_directory": 1,
+      "ignored_directory": 1,
+      "unsupported_extension": 22
+    },
+    "indexed_extensions": {
+      ".css": 1,
+      ".donotmockenforcer": 1,
+      ".gradle": 1,
+      ".groovy": 2,
+      ".instantiatorprovider2": 1,
+      ".java": 1004,
+      ".kt": 13,
+      ".kts": 43,
+      ".md": 7,
+      ".memberaccessor": 3,
+      ".mockitologger": 1,
+      ".mockmaker": 6,
+      ".mockresolver": 1,
+      ".pluginswitch": 1,
+      ".properties": 5,
+      ".stacktracecleanerprovider": 1,
+      ".toml": 1,
+      ".txt": 5,
+      ".xml": 4,
+      "[none]": 1
+    },
+    "recorded_entries": 1126,
+    "entries_capped": false,
+    "ignored_directory_contents_scanned": false
+  }
+}

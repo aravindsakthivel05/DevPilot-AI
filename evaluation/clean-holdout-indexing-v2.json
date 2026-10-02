@@ -1,0 +1,751 @@
+{
+  "evaluated_at": "2026-09-27T16:21:18.326043+00:00",
+  "dataset": "evaluation/clean-holdout-cases.jsonl",
+  "manifest": "evaluation/clean-holdout-snapshots.json",
+  "case_count": 12,
+  "summary": [
+    {
+      "split": "holdout",
+      "mode": "graph",
+      "cases": 12,
+      "recall_at_8": 0.75,
+      "mrr": 0.3736111111111111
+    },
+    {
+      "split": "holdout",
+      "mode": "hybrid",
+      "cases": 12,
+      "recall_at_8": 0.8333333333333334,
+      "mrr": 0.37996031746031744
+    },
+    {
+      "split": "holdout",
+      "mode": "lexical",
+      "cases": 12,
+      "recall_at_8": 0.8333333333333334,
+      "mrr": 0.37996031746031744
+    }
+  ],
+  "cases": [
+    {
+      "id": "click-001",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "click.core.Context.invoke",
+        "click.core.Command.invoke",
+        "click.core.Parameter.process_value",
+        "click.core.Context.invoke",
+        "click.decorators.confirmation_option.callback",
+        "click.core.Context.invoke",
+        "click.core.Command.make_context",
+        "click.core.Command.__init__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-001",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "click.core.Context.invoke",
+        "click.core.Command.invoke",
+        "click.core.Parameter.process_value",
+        "click.core.Context.invoke",
+        "click.core.Context._make_sub_context",
+        "click.core.Command.main",
+        "click.core.Parameter.handle_parse_result",
+        "click.core.Command.make_context"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-001",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "click.core.Context.invoke",
+        "click.core.Command.invoke",
+        "click.core.Parameter.process_value",
+        "click.core.Context.invoke",
+        "click.decorators.confirmation_option.callback",
+        "click.core.Context.invoke",
+        "click.core.Command.make_context",
+        "click.core.Command.__init__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-002",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "click.core.Group.resolve_command",
+        "examples.completion.completion.group",
+        "click.core.Group.__init__",
+        "click.core.Group",
+        "click.core.Group.invoke",
+        "click.core.Group.group",
+        "click.core.Group.group",
+        "click.core.Group.group"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-002",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "click.core.Group.resolve_command",
+        "examples.completion.completion.group",
+        "click.core.Group.__init__",
+        "click.core.Group",
+        "click.core.Group.invoke",
+        "click.core.Group.get_command",
+        "click.core.Group.parse_args",
+        "click.core.Command"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-002",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "click.core.Group.resolve_command",
+        "examples.completion.completion.group",
+        "click.core.Group.__init__",
+        "click.core.Group",
+        "click.core.Group.invoke",
+        "click.core.Group.group",
+        "click.core.Group.group",
+        "click.core.Group.group"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-003",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "click.core.Context.get_usage",
+        "click.core.Context.get_help",
+        "click.core.Context.forward",
+        "click.core.Context.scope",
+        "click.core.Command.get_help_option_names",
+        "click.core.Parameter.process_value",
+        "click.core.Context",
+        "click.core.Command.make_context"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-003",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "click.core.Context.get_usage",
+        "click.core.Context.get_help",
+        "click.core.Context.forward",
+        "click.core.Context.scope",
+        "click.core.Context",
+        "click.core.Context.invoke",
+        "click.core.Context.with_resource",
+        "click.globals"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-003",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "click.core.Context.get_usage",
+        "click.core.Context.get_help",
+        "click.core.Context.forward",
+        "click.core.Context.scope",
+        "click.core.Command.get_help_option_names",
+        "click.core.Parameter.process_value",
+        "click.core.Context",
+        "click.core.Command.make_context"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-004",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "click.core.Option.value_from_envvar",
+        "click.core.Option.consume_value",
+        "click.decorators.help_option",
+        "click.core.Option._pick_type",
+        "click.decorators.password_option",
+        "click.shell_completion._resolve_incomplete",
+        "click.core.Option",
+        "click.shell_completion._is_incomplete_argument"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-004",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "click.core.Option.value_from_envvar",
+        "click.core.Option.consume_value",
+        "click.decorators.help_option",
+        "click.core.Option._pick_type",
+        "click.decorators.option",
+        "click.core.Option.prompt_for_value",
+        "click.core.Option.__init__",
+        "click.core.Option.resolve_envvar_value"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-004",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "click.core.Option.value_from_envvar",
+        "click.core.Option.consume_value",
+        "click.decorators.help_option",
+        "click.core.Option._pick_type",
+        "click.decorators.password_option",
+        "click.shell_completion._resolve_incomplete",
+        "click.core.Option",
+        "click.shell_completion._is_incomplete_argument"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-005",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "click.termui.prompt",
+        "click.termui.prompt",
+        "click.termui.prompt",
+        "click.termui.confirm",
+        "click.core.Option.prompt_for_value",
+        "click.decorators.confirmation_option",
+        "click.decorators.password_option",
+        "click.core.Option.__init__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-005",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "click.termui.prompt",
+        "click.termui.prompt",
+        "click.termui.prompt",
+        "click.termui.confirm",
+        "click.core.Option.prompt_for_value",
+        "click.termui._build_prompt",
+        "click.utils.echo",
+        "click.termui._readline_prompt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-005",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "click.termui.prompt",
+        "click.termui.prompt",
+        "click.termui.prompt",
+        "click.termui.confirm",
+        "click.core.Option.prompt_for_value",
+        "click.decorators.confirmation_option",
+        "click.decorators.password_option",
+        "click.core.Option.__init__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-006",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "click.core._echo_aborted",
+        "click.core.Group.result_callback.decorator.function",
+        "examples.inout.inout.cli",
+        "click.utils.open_file",
+        "click.formatting.HelpFormatter.write",
+        "click.utils.echo",
+        "click.termui.getchar",
+        "click._winconsole._WindowsConsoleWriter.write"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-006",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.2,
+      "retrieved": [
+        "click.core._echo_aborted",
+        "click.core.Group.result_callback.decorator.function",
+        "examples.inout.inout.cli",
+        "click.utils.open_file",
+        "click.utils.echo",
+        "click._compat.open_stream",
+        "click.termui.getchar",
+        "click.termui.prompt"
+      ],
+      "warning": null
+    },
+    {
+      "id": "click-006",
+      "repository": "click",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "click.core._echo_aborted",
+        "click.core.Group.result_callback.decorator.function",
+        "examples.inout.inout.cli",
+        "click.utils.open_file",
+        "click.formatting.HelpFormatter.write",
+        "click.utils.echo",
+        "click.termui.getchar",
+        "click._winconsole._WindowsConsoleWriter.write"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-001",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.junit.internal.Checks.Checks",
+        "org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest.BeforeClassWithIgnoredClass.test",
+        "org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest.BeforeClassWithIgnoredTest.test",
+        "org.junit.tests.running.methods.TestMethodTest.IgnoredTest.ignored",
+        "org.junit.tests.running.methods.TestMethodTest.OnlyTestIsIgnored.ignored",
+        "org.junit.tests.validation.BadlyFormedClassesTest.BadBeforeMethodWithLegacyRunner.before",
+        "org.junit.tests.junit3compatibility.SuiteMethodTest.CompatibilityTest.ignored",
+        "org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest.BeforeClassWithFilteredTest.test"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-001",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.junit.internal.Checks.Checks",
+        "org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest.BeforeClassWithIgnoredClass.test",
+        "org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest.BeforeClassWithIgnoredTest.test",
+        "org.junit.tests.running.methods.TestMethodTest.IgnoredTest.ignored",
+        "org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest.BeforeClassWithIgnoredTest.beforeClass",
+        "org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest.BeforeClassWithIgnoredClass.beforeClass",
+        "org.junit.internal.Checks",
+        "org.junit.internal.Checks.notNull"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-001",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.junit.internal.Checks.Checks",
+        "org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest.BeforeClassWithIgnoredClass.test",
+        "org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest.BeforeClassWithIgnoredTest.test",
+        "org.junit.tests.running.methods.TestMethodTest.IgnoredTest.ignored",
+        "org.junit.tests.running.methods.TestMethodTest.OnlyTestIsIgnored.ignored",
+        "org.junit.tests.validation.BadlyFormedClassesTest.BadBeforeMethodWithLegacyRunner.before",
+        "org.junit.tests.junit3compatibility.SuiteMethodTest.CompatibilityTest.ignored",
+        "org.junit.tests.running.classes.ClassLevelMethodsWithIgnoredTestsTest.BeforeClassWithFilteredTest.test"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-002",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "org.junit.rules.TemporaryFolder.TemporaryFolder",
+        "org.junit.rules.TemporaryFolder.TemporaryFolder",
+        "org.junit.rules.TemporaryFolder.getRoot",
+        "org.junit.rules.TemporaryFolder.newFolder",
+        "org.junit.rules.TemporaryFolder",
+        "org.junit.rules.TemporaryFolder.newFile",
+        "org.junit.rules.TemporaryFolder.newFile",
+        "org.junit.rules.TemporaryFolder.newFolder"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-002",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.2,
+      "retrieved": [
+        "org.junit.rules.TemporaryFolder.TemporaryFolder",
+        "org.junit.rules.TemporaryFolder.TemporaryFolder",
+        "org.junit.rules.TemporaryFolder.getRoot",
+        "org.junit.rules.TemporaryFolder.newFolder",
+        "org.junit.rules.TemporaryFolder.newFile",
+        "org.junit.rules.TemporaryFolder.newFile",
+        "org.junit.rules.TemporaryFolder.newFolder",
+        "org.junit.rules.TemporaryFolder.createTemporaryFolderIn"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-002",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "org.junit.rules.TemporaryFolder.TemporaryFolder",
+        "org.junit.rules.TemporaryFolder.TemporaryFolder",
+        "org.junit.rules.TemporaryFolder.getRoot",
+        "org.junit.rules.TemporaryFolder.newFolder",
+        "org.junit.rules.TemporaryFolder",
+        "org.junit.rules.TemporaryFolder.newFile",
+        "org.junit.rules.TemporaryFolder.newFile",
+        "org.junit.rules.TemporaryFolder.newFolder"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-003",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.14285714285714285,
+      "retrieved": [
+        "org.junit.runner.notification.ConcurrentRunNotifierTest.realUsage.run",
+        "org.junit.runner.JUnitCore.run",
+        "org.junit.runners.ParentRunner.run",
+        "org.junit.internal.runners.MethodRoadie.run",
+        "org.junit.runner.notification.RunNotifier.fireTestRunStarted",
+        "org.junit.runner.notification.RunNotifier.fireTestSuiteStarted",
+        "org.junit.runner.notification.RunNotifier.fireTestStarted",
+        "org.junit.runner.notification.RunNotifierTest.addAndRemoveWithNonThreadSafeListener"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-003",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.junit.runner.notification.ConcurrentRunNotifierTest.realUsage.run",
+        "org.junit.runner.JUnitCore.run",
+        "org.junit.runners.ParentRunner.run",
+        "org.junit.internal.runners.MethodRoadie.run",
+        "org.junit.runner.JUnitCore.removeListener",
+        "org.junit.runners.ParentRunner.classBlock",
+        "org.junit.internal.runners.MethodRoadie.runTest",
+        "org.junit.internal.runners.MethodRoadie.runWithTimeout"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-003",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.14285714285714285,
+      "retrieved": [
+        "org.junit.runner.notification.ConcurrentRunNotifierTest.realUsage.run",
+        "org.junit.runner.JUnitCore.run",
+        "org.junit.runners.ParentRunner.run",
+        "org.junit.internal.runners.MethodRoadie.run",
+        "org.junit.runner.notification.RunNotifier.fireTestRunStarted",
+        "org.junit.runner.notification.RunNotifier.fireTestSuiteStarted",
+        "org.junit.runner.notification.RunNotifier.fireTestStarted",
+        "org.junit.runner.notification.RunNotifierTest.addAndRemoveWithNonThreadSafeListener"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-004",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.junit.runner.Result.Result",
+        "org.junit.runner.Result.Result",
+        "org.junit.experimental.results.FailureList.result",
+        "org.junit.experimental.results.PrintableResult.failures",
+        "junit.framework.TestResult.failures",
+        "org.junit.runner.notification.RunNotifier.SafeNotifier.run",
+        "org.junit.internal.runners.MethodRoadie.runWithTimeout.run",
+        "junit.framework.TestCase.run"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-004",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.junit.runner.Result.Result",
+        "org.junit.runner.Result.Result",
+        "org.junit.experimental.results.FailureList.result",
+        "org.junit.experimental.results.PrintableResult.failures",
+        "org.junit.runner.Result",
+        "org.junit.experimental.results.PrintableResult",
+        "org.junit.experimental.results.PrintableResult",
+        "org.junit.experimental.results.FailureList"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-004",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.junit.runner.Result.Result",
+        "org.junit.runner.Result.Result",
+        "org.junit.experimental.results.FailureList.result",
+        "org.junit.experimental.results.PrintableResult.failures",
+        "junit.framework.TestResult.failures",
+        "org.junit.runner.notification.RunNotifier.SafeNotifier.run",
+        "org.junit.internal.runners.MethodRoadie.runWithTimeout.run",
+        "junit.framework.TestCase.run"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-005",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "org.junit.rules.ErrorCollector.checkThrows",
+        "org.junit.Assert.assertThrows",
+        "org.junit.Assert.assertThrows",
+        "org.junit.rules.ErrorCollector.checkThat",
+        "org.junit.rules.ErrorCollector",
+        "org.junit.Assert",
+        "org.junit.rules.ExpectedException.expect",
+        "org.junit.rules.ErrorCollector.checkThat.call"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-005",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "org.junit.rules.ErrorCollector.checkThrows",
+        "org.junit.Assert.assertThrows",
+        "org.junit.Assert.assertThrows",
+        "org.junit.rules.ErrorCollector.checkThat",
+        "org.junit.rules.ErrorCollector.checkSucceeds",
+        "org.junit.Assert.format",
+        "org.junit.rules.ErrorCollector",
+        "org.junit.Assert"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-005",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "org.junit.rules.ErrorCollector.checkThrows",
+        "org.junit.Assert.assertThrows",
+        "org.junit.Assert.assertThrows",
+        "org.junit.rules.ErrorCollector.checkThat",
+        "org.junit.rules.ErrorCollector",
+        "org.junit.Assert",
+        "org.junit.rules.ExpectedException.expect",
+        "org.junit.rules.ErrorCollector.checkThat.call"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-006",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.junit.runner.Request.method",
+        "org.junit.tests.manipulation.SingleMethodTest.ParameterizedOneTimeBeforeClass.one",
+        "org.junit.tests.manipulation.SingleMethodTest.OneTimeSetup.one",
+        "org.junit.tests.manipulation.SingleMethodTest.ParameterizedOneTimeSetup.one",
+        "org.junit.tests.experimental.parallel.ParallelMethodTest.Example.one",
+        "org.junit.tests.running.methods.AnnotationTest.RunAllAfterClasses.one",
+        "org.junit.tests.running.methods.AnnotationTest.RunAllAfterClassesRegardless.one",
+        "org.junit.tests.junit3compatibility.ForwardCompatibilityTest.BeforeClassTest.one"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-006",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.junit.runner.Request.method",
+        "org.junit.tests.manipulation.SingleMethodTest.ParameterizedOneTimeBeforeClass.one",
+        "org.junit.tests.manipulation.SingleMethodTest.OneTimeSetup.one",
+        "org.junit.tests.manipulation.SingleMethodTest.ParameterizedOneTimeSetup.one",
+        "org.junit.runner.Request.aClass",
+        "org.junit.runner.Request.classWithoutSuiteMethod",
+        "org.junit.runner.Request",
+        "org.junit.runner.FilterFactoriesTest.createSuiteRequest"
+      ],
+      "warning": null
+    },
+    {
+      "id": "junit4-006",
+      "repository": "junit4",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.junit.runner.Request.method",
+        "org.junit.tests.manipulation.SingleMethodTest.ParameterizedOneTimeBeforeClass.one",
+        "org.junit.tests.manipulation.SingleMethodTest.OneTimeSetup.one",
+        "org.junit.tests.manipulation.SingleMethodTest.ParameterizedOneTimeSetup.one",
+        "org.junit.tests.experimental.parallel.ParallelMethodTest.Example.one",
+        "org.junit.tests.running.methods.AnnotationTest.RunAllAfterClasses.one",
+        "org.junit.tests.running.methods.AnnotationTest.RunAllAfterClassesRegardless.one",
+        "org.junit.tests.junit3compatibility.ForwardCompatibilityTest.BeforeClassTest.one"
+      ],
+      "warning": null
+    }
+  ]
+}

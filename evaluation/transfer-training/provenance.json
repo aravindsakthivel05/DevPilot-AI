@@ -1,0 +1,993 @@
+{
+  "objective": "Transfer repository-tree interpretation and source-first analysis habits; not repo-specific factual memory.",
+  "training_source": "evaluation/training-repository-snapshots.json",
+  "training_examples": 76,
+  "validation_examples": 15,
+  "independent_holdout_examples": 4,
+  "content_policy": "Relative paths, indexed-file counts, extension counts, and configuration filenames only; no source code bodies or generated model answers.",
+  "training_snapshots": {
+    "requests": {
+      "id": "7d25176a2f154dcca6677677ec2aed96",
+      "commit": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+      "fingerprint": "0677d5d287f56c060415eacb15dbf10f3c002997aebf832ccbc5bc5143b6191a",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "requests",
+        "file_count": 75,
+        "top_dirs": [
+          "tests/ (24 indexed files)",
+          "docs/ (21 indexed files)",
+          "src/ (19 indexed files)"
+        ],
+        "root_files": [
+          ".pre-commit-config.yaml",
+          ".readthedocs.yaml",
+          "AUTHORS.rst",
+          "HISTORY.md",
+          "MANIFEST.in",
+          "Makefile",
+          "README.md",
+          "pyproject.toml"
+        ],
+        "test_samples": [
+          "tests/conftest.py",
+          "tests/test_adapters.py",
+          "tests/test_help.py",
+          "tests/test_hooks.py",
+          "tests/test_lowlevel.py",
+          "tests/test_packages.py",
+          "tests/test_requests.py",
+          "tests/test_structures.py"
+        ],
+        "doc_samples": [
+          "docs/Makefile",
+          "docs/_static/custom.css",
+          "docs/_templates/sidebar.html",
+          "docs/_themes/flask_theme_support.py",
+          "docs/api.rst"
+        ],
+        "build_and_test_config": [
+          "Makefile",
+          "pyproject.toml",
+          "setup.py",
+          "tox.ini"
+        ],
+        "extensions": [
+          ".py: 37",
+          ".rst: 16",
+          "[no extension]: 8",
+          ".md: 5",
+          ".yaml: 2",
+          ".txt: 2"
+        ],
+        "test_layout": "top-level test paths are present"
+      }
+    },
+    "flask": {
+      "id": "a1eebb44bf004027bd1a0a229d53a509",
+      "commit": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+      "fingerprint": "bd147fd6bb26c9a6cd05334010ff1d46cb03bbbdafc2f100d574de00f00fc548",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "flask",
+        "file_count": 208,
+        "top_dirs": [
+          "docs/ (78 indexed files)",
+          "tests/ (59 indexed files)",
+          "examples/ (40 indexed files)",
+          "src/ (25 indexed files)"
+        ],
+        "root_files": [
+          ".pre-commit-config.yaml",
+          ".readthedocs.yaml",
+          "CHANGES.rst",
+          "LICENSE.txt",
+          "README.md",
+          "pyproject.toml"
+        ],
+        "test_samples": [
+          "tests/conftest.py",
+          "tests/test_appctx.py",
+          "tests/test_async.py",
+          "tests/test_basic.py",
+          "tests/test_blueprints.py",
+          "tests/test_cli.py",
+          "tests/test_config.py",
+          "tests/test_converters.py"
+        ],
+        "doc_samples": [
+          "docs/Makefile",
+          "docs/api.rst",
+          "docs/appcontext.rst",
+          "docs/async-await.rst",
+          "docs/blueprints.rst"
+        ],
+        "build_and_test_config": [
+          "pyproject.toml"
+        ],
+        "extensions": [
+          ".py: 83",
+          ".rst: 79",
+          ".html: 20",
+          ".txt: 10",
+          ".toml: 5",
+          ".md: 3"
+        ],
+        "test_layout": "top-level test paths are present"
+      }
+    },
+    "commons-lang": {
+      "id": "d6dad469c9e142ebaacc59b9c9d479d9",
+      "commit": "699d7e67141daacc8115b2afaa5359f3468f9694",
+      "fingerprint": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "commons-lang",
+        "file_count": 692,
+        "top_dirs": [
+          "src/ (684 indexed files)"
+        ],
+        "root_files": [
+          ".asf.yaml",
+          "CODE_OF_CONDUCT.md",
+          "CONTRIBUTING.md",
+          "LICENSE.txt",
+          "NOTICE.txt",
+          "README.md",
+          "SECURITY.md",
+          "pom.xml"
+        ],
+        "test_samples": [
+          "src/test/java/org/apache/commons/lang3/AbstractLangTest.java",
+          "src/test/java/org/apache/commons/lang3/AnnotationUtilsTest.java",
+          "src/test/java/org/apache/commons/lang3/AppendableJoinerTest.java",
+          "src/test/java/org/apache/commons/lang3/ArchUtilsTest.java",
+          "src/test/java/org/apache/commons/lang3/ArrayFillTest.java",
+          "src/test/java/org/apache/commons/lang3/ArraySorterTest.java",
+          "src/test/java/org/apache/commons/lang3/ArrayUtilsAddTest.java",
+          "src/test/java/org/apache/commons/lang3/ArrayUtilsConcatTest.java"
+        ],
+        "doc_samples": [],
+        "build_and_test_config": [
+          "pom.xml"
+        ],
+        "extensions": [
+          ".java: 628",
+          ".xml: 31",
+          ".txt: 25",
+          ".md: 4",
+          ".yaml: 1",
+          ".properties: 1"
+        ],
+        "test_layout": "tests/specs are nested under package directories"
+      }
+    },
+    "petclinic": {
+      "id": "518278d728554af7861075022a107cd2",
+      "commit": "818c4136ea971c21674525f9053de0d9c7ad8cfe",
+      "fingerprint": "4383120b7107124b0483691464f16dc20d098934bfe01f31991187ffccf8a77c",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "petclinic",
+        "file_count": 105,
+        "top_dirs": [
+          "src/ (93 indexed files)",
+          "k8s/ (2 indexed files)",
+          "gradle/ (1 indexed files)"
+        ],
+        "root_files": [
+          ".gitpod.yml",
+          "LICENSE.txt",
+          "README.md",
+          "build.gradle",
+          "docker-compose.yml",
+          "gradlew",
+          "mvnw",
+          "pom.xml"
+        ],
+        "test_samples": [
+          "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+          "src/test/java/org/springframework/samples/petclinic/MysqlTestApplication.java",
+          "src/test/java/org/springframework/samples/petclinic/PetClinicConcurrencyTests.java",
+          "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+          "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+          "src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java",
+          "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
+          "src/test/java/org/springframework/samples/petclinic/owner/OwnerTests.java"
+        ],
+        "doc_samples": [],
+        "build_and_test_config": [
+          "build.gradle",
+          "pom.xml",
+          "settings.gradle"
+        ],
+        "extensions": [
+          ".java: 50",
+          ".properties: 15",
+          ".html: 12",
+          ".sql: 7",
+          ".yml: 4",
+          ".txt: 4"
+        ],
+        "test_layout": "tests/specs are nested under package directories"
+      }
+    },
+    "rich": {
+      "id": "2abee8e08ab64d8b8c81f9bf1ca4021d",
+      "commit": "9d8f9a372cc5916fd4781fec207ced7ddac2f08f",
+      "fingerprint": "2cf664fe204acab281481e7634bdccdfba2998733bc6855b77c7cd14885a63b2",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "rich",
+        "file_count": 506,
+        "top_dirs": [
+          "benchmarks/ (182 indexed files)",
+          "rich/ (100 indexed files)",
+          "tests/ (68 indexed files)",
+          "docs/ (66 indexed files)",
+          "examples/ (37 indexed files)",
+          "questions/ (11 indexed files)",
+          "tools/ (8 indexed files)",
+          "assets/ (1 indexed files)"
+        ],
+        "root_files": [
+          ".pre-commit-config.yaml",
+          ".readthedocs.yml",
+          "AI_POLICY.md",
+          "CHANGELOG.md",
+          "CODE_OF_CONDUCT.md",
+          "CONTRIBUTING.md",
+          "CONTRIBUTORS.md",
+          "FAQ.md"
+        ],
+        "test_samples": [
+          "tests/conftest.py",
+          "tests/test_align.py",
+          "tests/test_ansi.py",
+          "tests/test_bar.py",
+          "tests/test_block_bar.py",
+          "tests/test_box.py",
+          "tests/test_card.py",
+          "tests/test_cells.py"
+        ],
+        "doc_samples": [
+          "docs/Makefile",
+          "docs/requirements.txt",
+          "docs/source/appendix.rst",
+          "docs/source/appendix/box.rst",
+          "docs/source/appendix/colors.rst"
+        ],
+        "build_and_test_config": [
+          "Makefile",
+          "pyproject.toml",
+          "setup.py",
+          "tox.ini"
+        ],
+        "extensions": [
+          ".py: 213",
+          ".json: 180",
+          ".rst: 63",
+          ".md: 40",
+          ".yml: 2",
+          "[no extension]: 2"
+        ],
+        "test_layout": "top-level test paths are present"
+      }
+    },
+    "httpx": {
+      "id": "8330c0b7f9d145b1b3f0a0654eb4a45d",
+      "commit": "b5addb64f0161ff6bfe94c124ef76f6a1fba5254",
+      "fingerprint": "bf468a8c9bf9a4e55924c9451439a6177dad3cadb28db358d91115efcf21f935",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "httpx",
+        "file_count": 92,
+        "top_dirs": [
+          "tests/ (38 indexed files)",
+          "docs/ (25 indexed files)",
+          "httpx/ (23 indexed files)"
+        ],
+        "root_files": [
+          "CHANGELOG.md",
+          "LICENSE.md",
+          "README.md",
+          "mkdocs.yml",
+          "pyproject.toml",
+          "requirements.txt"
+        ],
+        "test_samples": [
+          "tests/client/test_async_client.py",
+          "tests/client/test_auth.py",
+          "tests/client/test_client.py",
+          "tests/client/test_cookies.py",
+          "tests/client/test_event_hooks.py",
+          "tests/client/test_headers.py",
+          "tests/client/test_properties.py",
+          "tests/client/test_proxies.py"
+        ],
+        "doc_samples": [
+          "docs/advanced/authentication.md",
+          "docs/advanced/clients.md",
+          "docs/advanced/event-hooks.md",
+          "docs/advanced/extensions.md",
+          "docs/advanced/proxies.md"
+        ],
+        "build_and_test_config": [
+          "pyproject.toml"
+        ],
+        "extensions": [
+          ".py: 60",
+          ".md: 26",
+          ".css: 1",
+          ".html: 1",
+          ".yml: 1",
+          ".toml: 1"
+        ],
+        "test_layout": "top-level test paths are present"
+      }
+    },
+    "pytest": {
+      "id": "85ca7fbc339443e58f7063a4afe0e2c2",
+      "commit": "8721173580390a9d297e5af06cac3f0b6841f425",
+      "fingerprint": "c03fbb7b4ecf96e3b234a33e99677a1144c8a6a7cb73ab3ae371897015070a22",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "pytest",
+        "file_count": 659,
+        "top_dirs": [
+          "doc/ (290 indexed files)",
+          "testing/ (174 indexed files)",
+          "changelog/ (82 indexed files)",
+          "src/ (81 indexed files)",
+          "scripts/ (9 indexed files)",
+          "bench/ (7 indexed files)",
+          "extra/ (1 indexed files)"
+        ],
+        "root_files": [
+          ".git_archival.txt",
+          ".pre-commit-config.yaml",
+          ".readthedocs.yaml",
+          "CHANGELOG.rst",
+          "CODE_OF_CONDUCT.md",
+          "CONTRIBUTING.rst",
+          "MANIFEST.in",
+          "OPENCOLLECTIVE.rst"
+        ],
+        "test_samples": [
+          "testing/_py/test_local.py",
+          "testing/acceptance_test.py",
+          "testing/code/test_code.py",
+          "testing/code/test_excinfo.py",
+          "testing/code/test_source.py",
+          "testing/conftest.py",
+          "testing/deprecated_test.py",
+          "testing/example_scripts/collect/collect_init_tests/tests/test_foo.py"
+        ],
+        "doc_samples": [
+          "doc/en/Makefile",
+          "doc/en/_static/pytest-custom.css",
+          "doc/en/_templates/links.html",
+          "doc/en/adopt.rst",
+          "doc/en/announce/index.rst"
+        ],
+        "build_and_test_config": [
+          "pyproject.toml",
+          "tox.ini"
+        ],
+        "extensions": [
+          ".rst: 352",
+          ".py: 274",
+          ".pyi: 8",
+          ".ini: 7",
+          ".txt: 5",
+          ".yaml: 3"
+        ],
+        "test_layout": "top-level test paths are present"
+      }
+    },
+    "fastapi": {
+      "id": "378e6d09aefc4c35b1a0be5c47e2ad8e",
+      "commit": "33d411dbc3236275dd64d200bfe18d5d60a49b2e",
+      "fingerprint": "7c7220afbbfa6df722ede89138b33ac6bcfc65f0be5b58a78184bdc7808e6bfe",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "fastapi",
+        "file_count": 2879,
+        "top_dirs": [
+          "docs/ (1679 indexed files)",
+          "tests/ (615 indexed files)",
+          "docs_src/ (467 indexed files)",
+          "scripts/ (63 indexed files)",
+          "fastapi/ (52 indexed files)"
+        ],
+        "root_files": [
+          ".pre-commit-config.yaml",
+          "README.md",
+          "pyproject.toml"
+        ],
+        "test_samples": [
+          "scripts/tests/test_translation_fixer/conftest.py",
+          "scripts/tests/test_translation_fixer/test_code_blocks/test_code_blocks_lines_number_mismatch.py",
+          "scripts/tests/test_translation_fixer/test_code_blocks/test_code_blocks_mermaid.py",
+          "scripts/tests/test_translation_fixer/test_code_blocks/test_code_blocks_number_mismatch.py",
+          "scripts/tests/test_translation_fixer/test_code_blocks/test_code_blocks_wrong_lang_code.py",
+          "scripts/tests/test_translation_fixer/test_code_includes/test_number_mismatch.py",
+          "scripts/tests/test_translation_fixer/test_complex_doc/test_compex_doc.py",
+          "scripts/tests/test_translation_fixer/test_header_permalinks/test_header_level_mismatch.py"
+        ],
+        "doc_samples": [
+          "docs/de/docs/_llm-test.md",
+          "docs/de/docs/about/index.md",
+          "docs/de/docs/advanced/additional-responses.md",
+          "docs/de/docs/advanced/additional-status-codes.md",
+          "docs/de/docs/advanced/advanced-dependencies.md"
+        ],
+        "build_and_test_config": [
+          "pyproject.toml"
+        ],
+        "extensions": [
+          ".md: 1686",
+          ".py: 1166",
+          ".yml: 13",
+          ".html: 5",
+          ".js: 4",
+          ".css: 3"
+        ],
+        "test_layout": "both top-level and nested test paths"
+      }
+    },
+    "mockito": {
+      "id": "8be8576387d341f98acc882f15a74b5e",
+      "commit": "116a4d6231dc35f90543060af41dcde00fe4e2ae",
+      "fingerprint": "5828041053a59b9b2c6d9248fed42335fcc6d67cb9d988d40275ba4ac20505f9",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "mockito",
+        "file_count": 1102,
+        "top_dirs": [
+          "mockito-core/ (918 indexed files)",
+          "mockito-integration-tests/ (109 indexed files)",
+          "mockito-extensions/ (37 indexed files)",
+          "buildSrc/ (20 indexed files)",
+          "doc/ (6 indexed files)",
+          "gradle/ (3 indexed files)",
+          "config/ (2 indexed files)",
+          "mockito-bom/ (1 indexed files)"
+        ],
+        "root_files": [
+          "README.md",
+          "SECURITY.md",
+          "build.gradle.kts",
+          "gradle.properties",
+          "gradlew",
+          "settings.gradle.kts"
+        ],
+        "test_samples": [
+          "mockito-core/src/test/java/org/concurrentmockito/ThreadVerifiesContinuouslyInteractingMockTest.java",
+          "mockito-core/src/test/java/org/concurrentmockito/ThreadsRunAllTestsHalfManualTest.java",
+          "mockito-core/src/test/java/org/concurrentmockito/ThreadsShareAMockTest.java",
+          "mockito-core/src/test/java/org/concurrentmockito/ThreadsShareGenerouslyStubbedMockTest.java",
+          "mockito-core/src/test/java/org/concurrentmockito/VerificationInOrderFromMultipleThreadsTest.java",
+          "mockito-core/src/test/java/org/mockito/AnnotationsAreCopiedFromMockedTypeTest.java",
+          "mockito-core/src/test/java/org/mockito/ArgumentCaptorTest.java",
+          "mockito-core/src/test/java/org/mockito/DescriptionTest.java"
+        ],
+        "doc_samples": [
+          "doc/design-docs/custom-argument-matching.md",
+          "doc/licenses/HEADER.txt",
+          "doc/licenses/commons-lang-license.txt",
+          "doc/licenses/easymock-license.txt",
+          "doc/licenses/jmock-license.txt"
+        ],
+        "build_and_test_config": [
+          "build.gradle.kts",
+          "buildSrc/build.gradle.kts",
+          "buildSrc/settings.gradle.kts",
+          "mockito-bom/build.gradle.kts",
+          "mockito-core/build.gradle.kts",
+          "mockito-extensions/mockito-android/build.gradle.kts",
+          "mockito-extensions/mockito-errorprone/build.gradle.kts",
+          "mockito-extensions/mockito-junit-jupiter/build.gradle.kts"
+        ],
+        "extensions": [
+          ".java: 1004",
+          ".kts: 43",
+          ".kt: 13",
+          ".md: 7",
+          ".mockmaker: 6",
+          ".txt: 5"
+        ],
+        "test_layout": "tests/specs are nested under package directories"
+      }
+    },
+    "spring-data-elasticsearch": {
+      "id": "eb074beed3de4940bcf9f00a22111734",
+      "commit": "83ff35044a14c408e725b30b385f0c33ab7c7438",
+      "fingerprint": "3ca0e779617c37b5ae7e19709f6a60d7484bf94db1ebeb21a7ef1dd77428e702",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "spring-data-elasticsearch",
+        "file_count": 805,
+        "top_dirs": [
+          "src/ (800 indexed files)"
+        ],
+        "root_files": [
+          "LICENSE.txt",
+          "SECURITY.md",
+          "mvnw",
+          "package.json",
+          "pom.xml"
+        ],
+        "test_samples": [
+          "src/test/java/org/springframework/data/elasticsearch/BulkFailureExceptionTest.java",
+          "src/test/java/org/springframework/data/elasticsearch/ClientArchitectureTests.java",
+          "src/test/java/org/springframework/data/elasticsearch/DocumentUnitTests.java",
+          "src/test/java/org/springframework/data/elasticsearch/FoobarIntegrationTest.java",
+          "src/test/java/org/springframework/data/elasticsearch/JUnit5ClusterConnectionTests.java",
+          "src/test/java/org/springframework/data/elasticsearch/JUnit5SampleElasticsearchTemplateTests.java",
+          "src/test/java/org/springframework/data/elasticsearch/JUnit5SampleReactiveELCTests.java",
+          "src/test/java/org/springframework/data/elasticsearch/NestedObjectELCIntegrationTests.java"
+        ],
+        "doc_samples": [],
+        "build_and_test_config": [
+          "package.json",
+          "pom.xml"
+        ],
+        "extensions": [
+          ".java: 738",
+          ".json: 37",
+          ".kt: 10",
+          ".xml: 5",
+          ".yml: 5",
+          ".txt: 4"
+        ],
+        "test_layout": "tests/specs are nested under package directories"
+      }
+    },
+    "django": {
+      "id": "dd4ec83f5ac340ae909b641e46c73997",
+      "commit": "5a4511adb247a44a1cada11fe4763abba0a42663",
+      "fingerprint": "4e388f9fcf623c391f7e31136b277fc42971cac3e7f9e27a4cbcafdd9573d43e",
+      "index_scope": "django/",
+      "inventory": {
+        "name": "django",
+        "file_count": 1114,
+        "top_dirs": [
+          "contrib/ (441 indexed files)",
+          "conf/ (176 indexed files)",
+          "db/ (123 indexed files)",
+          "core/ (112 indexed files)",
+          "forms/ (105 indexed files)",
+          "utils/ (48 indexed files)",
+          "views/ (29 indexed files)",
+          "template/ (27 indexed files)",
+          "middleware/ (10 indexed files)",
+          "tasks/ (9 indexed files)"
+        ],
+        "root_files": [
+          "__init__.py",
+          "__main__.py",
+          "shortcuts.py"
+        ],
+        "test_samples": [],
+        "doc_samples": [],
+        "build_and_test_config": [],
+        "extensions": [
+          ".py: 907",
+          ".html: 162",
+          ".js: 21",
+          ".css: 14",
+          ".txt: 7",
+          ".xml: 2"
+        ],
+        "test_layout": "no test directory appeared in the indexed paths"
+      }
+    },
+    "numpy": {
+      "id": "bd76851b24a54ed98f687f15d6270ae6",
+      "commit": "72251d527ef6712c791f5aed0cea1926b8d28000",
+      "fingerprint": "0407027d1aaed3781e60a3b504ca774c811946c3ada9ac8629983ecff440ae07",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "numpy",
+        "file_count": 1471,
+        "top_dirs": [
+          "numpy/ (722 indexed files)",
+          "doc/ (655 indexed files)",
+          "benchmarks/ (34 indexed files)",
+          "tools/ (30 indexed files)",
+          "requirements/ (12 indexed files)",
+          "pixi-packages/ (6 indexed files)",
+          "branding/ (1 indexed files)"
+        ],
+        "root_files": [
+          ".codecov.yml",
+          "CONTRIBUTING.rst",
+          "INSTALL.rst",
+          "LICENSE.txt",
+          "README.md",
+          "THANKS.txt",
+          "building_with_meson.md",
+          "environment.yml"
+        ],
+        "test_samples": [
+          "numpy/_core/tests/test__exceptions.py",
+          "numpy/_core/tests/test_abc.py",
+          "numpy/_core/tests/test_api.py",
+          "numpy/_core/tests/test_argparse.py",
+          "numpy/_core/tests/test_array_api_info.py",
+          "numpy/_core/tests/test_array_coercion.py",
+          "numpy/_core/tests/test_array_interface.py",
+          "numpy/_core/tests/test_arraymethod.py"
+        ],
+        "doc_samples": [
+          "doc/BRANCH_WALKTHROUGH.rst",
+          "doc/C_STYLE_GUIDE.rst",
+          "doc/EXAMPLE_DOCSTRING.rst",
+          "doc/HOWTO_DOCUMENT.rst",
+          "doc/HOWTO_RELEASE.rst"
+        ],
+        "build_and_test_config": [
+          "numpy/f2py/setup.cfg",
+          "pyproject.toml",
+          "pytest.ini",
+          "tools/swig/Makefile"
+        ],
+        "extensions": [
+          ".rst: 635",
+          ".py: 495",
+          ".pyi: 276",
+          ".txt: 29",
+          ".md: 12",
+          ".toml: 9"
+        ],
+        "test_layout": "tests/specs are nested under package directories"
+      }
+    },
+    "scikit-learn": {
+      "id": "259fc9a7660c48079232c826daff222c",
+      "commit": "bbf8863a869f118a1a42422d8cc67ec6c07f2fe0",
+      "fingerprint": "831a1eb163cfbeafd1c574137c592e8147a06eef7e22681704c058ce481dedb7",
+      "index_scope": "repository root",
+      "inventory": {
+        "name": "scikit-learn",
+        "file_count": 1348,
+        "top_dirs": [
+          "sklearn/ (701 indexed files)",
+          "examples/ (316 indexed files)",
+          "doc/ (227 indexed files)",
+          "benchmarks/ (42 indexed files)",
+          "build_tools/ (34 indexed files)",
+          "asv_benchmarks/ (15 indexed files)",
+          "maint_tools/ (3 indexed files)"
+        ],
+        "root_files": [
+          ".codecov.yml",
+          ".pre-commit-config.yaml",
+          "AGENTS.md",
+          "CODE_OF_CONDUCT.md",
+          "CONTRIBUTING.md",
+          "Makefile",
+          "README.rst",
+          "SECURITY.md"
+        ],
+        "test_samples": [
+          "sklearn/_loss/tests/test_link.py",
+          "sklearn/_loss/tests/test_loss.py",
+          "sklearn/callback/tests/conftest.py",
+          "sklearn/callback/tests/test_callback_context.py",
+          "sklearn/callback/tests/test_callback_support.py",
+          "sklearn/callback/tests/test_pickle.py",
+          "sklearn/callback/tests/test_progressbar.py",
+          "sklearn/callback/tests/test_scoring_monitor.py"
+        ],
+        "doc_samples": [
+          "doc/Makefile",
+          "doc/README.md",
+          "doc/about.rst",
+          "doc/api_reference.py",
+          "doc/binder/requirements.txt"
+        ],
+        "build_and_test_config": [
+          "Makefile",
+          "build_tools/Makefile",
+          "pyproject.toml"
+        ],
+        "extensions": [
+          ".py: 1033",
+          ".rst: 208",
+          ".txt: 52",
+          ".yml: 15",
+          ".md: 9",
+          ".css: 8"
+        ],
+        "test_layout": "tests/specs are nested under package directories"
+      }
+    },
+    "pytorch": {
+      "id": "e60d8777c3e047d78a336d53b4070378",
+      "commit": "6dcdae14be8163d69c5d4e06375968e3eeb652ea",
+      "fingerprint": "f291f7735492aa3c5b95bdc9f65acd131f735913725e05f0c87cb11fd80fbf96",
+      "index_scope": "torch/",
+      "inventory": {
+        "name": "pytorch",
+        "file_count": 2597,
+        "top_dirs": [
+          "_inductor/ (402 indexed files)",
+          "distributed/ (395 indexed files)",
+          "ao/ (186 indexed files)",
+          "utils/ (172 indexed files)",
+          "nn/ (137 indexed files)",
+          "_dynamo/ (123 indexed files)",
+          "testing/ (112 indexed files)",
+          "fx/ (111 indexed files)",
+          "onnx/ (94 indexed files)",
+          "_vendor/ (86 indexed files)"
+        ],
+        "root_files": [
+          "CMakeLists.txt",
+          "_VF.py",
+          "__config__.py",
+          "__future__.py",
+          "__init__.py",
+          "_appdirs.py",
+          "_classes.py",
+          "_compile.py"
+        ],
+        "test_samples": [
+          "ao/pruning/_experimental/data_sparsifier/lightning/tests/test_callbacks.py",
+          "fx/passes/tests/test_pass_manager.py",
+          "testing/_internal/distributed/_shard/test_common.py",
+          "testing/_internal/distributed/ddp_under_dist_autograd_test.py",
+          "testing/_internal/distributed/distributed_test.py",
+          "testing/_internal/distributed/nn/api/remote_module_test.py",
+          "testing/_internal/distributed/rpc/dist_autograd_test.py",
+          "testing/_internal/distributed/rpc/dist_optimizer_test.py"
+        ],
+        "doc_samples": [
+          "csrc/jit/docs/serialization.md"
+        ],
+        "build_and_test_config": [],
+        "extensions": [
+          ".py: 2493",
+          ".md: 52",
+          ".pyi: 37",
+          ".txt: 8",
+          ".js: 4",
+          ".json: 1"
+        ],
+        "test_layout": "both top-level and nested test paths"
+      }
+    },
+    "elasticsearch-java": {
+      "id": "c2a430382ce743a6939a4dd0f2f4ded3",
+      "commit": "f920563fb804f9a03aa9b77fbaeb21ba5bc3b3e5",
+      "fingerprint": "faa7bf83b34bba47779620d6156b3390f961125dcd797867963ee1ea6d3a021a",
+      "index_scope": "java-client/src/main/java/",
+      "inventory": {
+        "name": "elasticsearch-java",
+        "file_count": 4105,
+        "top_dirs": [
+          "co/ (4105 indexed files)"
+        ],
+        "root_files": [],
+        "test_samples": [],
+        "doc_samples": [],
+        "build_and_test_config": [],
+        "extensions": [
+          ".java: 4104",
+          ".html: 1"
+        ],
+        "test_layout": "no test directory appeared in the indexed paths"
+      }
+    }
+  },
+  "independent_holdout_snapshots": {
+    "click": {
+      "id": "d4bc7825e3044870a5555800988662ec",
+      "commit": "06b2a678741131fd577ce170e23e5ca0aeba0309",
+      "fingerprint": "9853defc4e1a934f6b812beb1b91e3c0594a15c3cb8cbcefad105aa27e086d0a",
+      "inventory": {
+        "name": "click",
+        "file_count": 145,
+        "top_dirs": [
+          "tests/ (59 indexed files)",
+          "docs/ (38 indexed files)",
+          "examples/ (25 indexed files)",
+          "src/ (17 indexed files)"
+        ],
+        "root_files": [
+          ".pre-commit-config.yaml",
+          ".readthedocs.yaml",
+          "CHANGES.md",
+          "LICENSE.txt",
+          "README.md",
+          "pyproject.toml"
+        ],
+        "test_samples": [
+          "tests/conftest.py",
+          "tests/test_abort_interrupt.py",
+          "tests/test_arguments.py",
+          "tests/test_basic.py",
+          "tests/test_chain.py",
+          "tests/test_command_decorators.py",
+          "tests/test_commands.py",
+          "tests/test_compat.py"
+        ],
+        "doc_samples": [
+          "docs/advanced.md",
+          "docs/api.md",
+          "docs/arguments.md",
+          "docs/changes.md",
+          "docs/click-concepts.md"
+        ],
+        "build_and_test_config": [
+          "pyproject.toml"
+        ],
+        "extensions": [
+          ".py: 91",
+          ".md: 39",
+          ".toml: 11",
+          ".yaml: 2",
+          ".txt: 1",
+          ".ini: 1"
+        ],
+        "test_layout": "top-level test paths are present"
+      }
+    },
+    "junit4": {
+      "id": "64a50c2421764aa5b8c6d574c5f3ec31",
+      "commit": "890f3c972647de378f25e7271d8fbbd9d3456b79",
+      "fingerprint": "561ce1e9b2e04be1111cffa507580dd20f97382db55c4ed1782f99e0062cecd8",
+      "inventory": {
+        "name": "junit4",
+        "file_count": 530,
+        "top_dirs": [
+          "src/ (481 indexed files)",
+          "doc/ (37 indexed files)"
+        ],
+        "root_files": [
+          "CODING_STYLE.txt",
+          "CONTRIBUTING.md",
+          "LEGACY_CODING_STYLE.txt",
+          "LICENSE-junit.txt",
+          "NOTICE.txt",
+          "README.md",
+          "SECURITY.md",
+          "acknowledgements.txt"
+        ],
+        "test_samples": [
+          "src/test/java/junit/samples/AllTests.java",
+          "src/test/java/junit/samples/ListTest.java",
+          "src/test/java/junit/samples/SimpleTest.java",
+          "src/test/java/junit/samples/money/MoneyTest.java",
+          "src/test/java/junit/tests/AllTests.java",
+          "src/test/java/junit/tests/SampleJUnit3Tests.java",
+          "src/test/java/junit/tests/extensions/ActiveTestTest.java",
+          "src/test/java/junit/tests/extensions/AllTests.java"
+        ],
+        "doc_samples": [
+          "doc/ReleaseNotes4.10.html",
+          "doc/ReleaseNotes4.10.md",
+          "doc/ReleaseNotes4.10.txt",
+          "doc/ReleaseNotes4.11.html",
+          "doc/ReleaseNotes4.11.md"
+        ],
+        "build_and_test_config": [
+          "pom.xml"
+        ],
+        "extensions": [
+          ".java: 471",
+          ".md: 19",
+          ".txt: 18",
+          ".html: 11",
+          ".css: 5",
+          ".xml: 3"
+        ],
+        "test_layout": "tests/specs are nested under package directories"
+      }
+    },
+    "urllib3": {
+      "id": "cc350df5787c47029c62572e27602dd5",
+      "commit": "ed0ed075c6b93f7c515ebd3abe9a7248507ef8c5",
+      "fingerprint": "8aaf760330ff8de0c7a30e0fa8871532d9137ec790433aa916ce45f92722bf88",
+      "inventory": {
+        "name": "urllib3",
+        "file_count": 127,
+        "top_dirs": [
+          "test/ (39 indexed files)",
+          "src/ (36 indexed files)",
+          "docs/ (23 indexed files)",
+          "changelog/ (8 indexed files)",
+          "dummyserver/ (7 indexed files)",
+          "notes/ (2 indexed files)"
+        ],
+        "root_files": [
+          ".pre-commit-config.yaml",
+          ".readthedocs.yml",
+          "CHANGES.rst",
+          "CODE_OF_CONDUCT.md",
+          "LICENSE.txt",
+          "README.md",
+          "SECURITY.md",
+          "noxfile.py"
+        ],
+        "test_samples": [
+          "test/conftest.py",
+          "test/contrib/emscripten/conftest.py",
+          "test/contrib/emscripten/test_emscripten.py",
+          "test/contrib/test_pyopenssl.py",
+          "test/contrib/test_pyopenssl_dependencies.py",
+          "test/contrib/test_socks.py",
+          "test/test_collections.py",
+          "test/test_compatibility.py"
+        ],
+        "doc_samples": [
+          "docs/Makefile",
+          "docs/advanced-usage.rst",
+          "docs/changelog.rst",
+          "docs/conf.py",
+          "docs/contributing.rst"
+        ],
+        "build_and_test_config": [
+          "pyproject.toml",
+          "setup.cfg"
+        ],
+        "extensions": [
+          ".py: 81",
+          ".rst: 31",
+          ".md: 5",
+          ".toml: 3",
+          ".yaml: 1",
+          ".yml: 1"
+        ],
+        "test_layout": "top-level test paths are present"
+      }
+    },
+    "commons-collections": {
+      "id": "b0ff001506c04a0db16c14d106968960",
+      "commit": "a350e2c73bf61230afad1bf6f3dc770b2ddb36ee",
+      "fingerprint": "7decc9734b40c6cf5913ac20e9a58d56686f65ce194a1701239d50fd357fe8e1",
+      "inventory": {
+        "name": "commons-collections",
+        "file_count": 728,
+        "top_dirs": [
+          "src/ (717 indexed files)"
+        ],
+        "root_files": [
+          ".asf.yaml",
+          "CODE_OF_CONDUCT.md",
+          "CONTRIBUTING.md",
+          "DEVELOPERS-GUIDE.html",
+          "LICENSE.txt",
+          "NOTICE.txt",
+          "PROPOSAL.html",
+          "README.md"
+        ],
+        "test_samples": [
+          "src/test/java/org/apache/commons/collections4/AbstractArrayListTest.java",
+          "src/test/java/org/apache/commons/collections4/AbstractLinkedListTest.java",
+          "src/test/java/org/apache/commons/collections4/AbstractObjectTest.java",
+          "src/test/java/org/apache/commons/collections4/AbstractTreeMapTest.java",
+          "src/test/java/org/apache/commons/collections4/ArrayStackTest.java",
+          "src/test/java/org/apache/commons/collections4/ArrayUtilsTest.java",
+          "src/test/java/org/apache/commons/collections4/BagUtilsTest.java",
+          "src/test/java/org/apache/commons/collections4/BulkTest.java"
+        ],
+        "doc_samples": [],
+        "build_and_test_config": [
+          "pom.xml"
+        ],
+        "extensions": [
+          ".java: 678",
+          ".xml: 28",
+          ".md: 9",
+          ".html: 4",
+          ".txt: 4",
+          ".css: 2"
+        ],
+        "test_layout": "tests/specs are nested under package directories"
+      }
+    }
+  }
+}

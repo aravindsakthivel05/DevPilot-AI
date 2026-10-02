@@ -1,0 +1,47 @@
+{
+  "click": {
+    "indexed_files": 145,
+    "skipped_files": 21,
+    "ignored_directories": 3,
+    "reason_counts": {
+      "hidden_directory": 2,
+      "ignored_directory": 1,
+      "lockfile": 1,
+      "unsupported_extension": 20
+    },
+    "indexed_extensions": {
+      ".ini": 1,
+      ".md": 39,
+      ".py": 91,
+      ".toml": 11,
+      ".txt": 1,
+      ".yaml": 2
+    },
+    "recorded_entries": 169,
+    "entries_capped": false,
+    "ignored_directory_contents_scanned": false
+  },
+  "junit4": {
+    "indexed_files": 530,
+    "skipped_files": 81,
+    "ignored_directories": 4,
+    "reason_counts": {
+      "hidden_directory": 3,
+      "ignored_directory": 1,
+      "unsupported_extension": 81
+    },
+    "indexed_extensions": {
+      ".css": 5,
+      ".html": 11,
+      ".java": 471,
+      ".js": 2,
+      ".md": 19,
+      ".txt": 18,
+      ".xml": 3,
+      "[none]": 1
+    },
+    "recorded_entries": 615,
+    "entries_capped": false,
+    "ignored_directory_contents_scanned": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "model": "qwen2.5-coder:7b",
+  "note": "Same Quick evidence; one model call, no API citation retry",
+  "results": [
+    {
+      "id": "pydantic-easy-001",
+      "difficulty": "easy",
+      "answer": " ```json\n{\n  \"response\": \"The provided code snippets demonstrate the usage of Pydantic's `BaseModel` class and its methods for serialization and copying models. The `to_json` method is used to generate a JSON representation of a model instance, while the `copy` method creates a copy of a model with specified fields included or excluded. The `model_dump` method is also mentioned as an alternative to `json`, which is recommended for new code. The examples in the test file show how to use these methods to handle computed fields and exclude certain values from the output.\"\n}\n```",
+      "usage": {
+        "prompt_tokens": 2050,
+        "completion_tokens": 122,
+        "total_tokens": 2172
+      },
+      "elapsed_ms": 16550
+    },
+    {
+      "id": "pydantic-medium-001",
+      "difficulty": "medium",
+      "answer": "The `BaseModel.model_json_schema()` method [1] calls the `model_json_schema` utility function [2], which handles the generation of a JSON schema for a model. If the model's core schema is still a mock, it rebuilds the schema [2]. The utility function then creates an instance of `GenerateJsonSchema` and calls its `generate` method with the rebuilt or original schema.\n\nThe `model_json_schema` utility function also handles cases where the input class is `BaseModel` itself by raising an AttributeError. For other classes, it ensures that the core schema is not a mock before calling the `schema_generator_instance.generate()` method [2], which ultimately leads to the generation of the JSON schema through various helper methods like `model_schema`, `model_field_schema`, and others [3-8]. The final JSON schema is returned by the utility function, which may include definitions if any are generated during the process.",
+      "usage": {
+        "prompt_tokens": 2973,
+        "completion_tokens": 190,
+        "total_tokens": 3163
+      },
+      "elapsed_ms": 18937
+    },
+    {
+      "id": "pydantic-hard-001",
+      "difficulty": "hard",
+      "answer": "The provided code snippets are from the Pydantic library, which is a popular data validation and settings management library for Python. The snippets cover various aspects of model construction, field validation, and type adaptation in Pydantic.\n\n### Key Points:\n\n1. **Model Construction (`complete_model_class`)**:\n   - This function completes the construction of a Pydantic model class.\n   - It ensures that all fields are properly defined and bound.\n   - It generates and cleans the schema for the model.\n   - It sets up validators, serializers, and other internal attributes.\n\n2. **Field Validators (`AfterFieldValidator`)**:\n   - This class demonstrates how to define field validators in Pydantic.\n   - The `@field_validator` decorator is used to specify validation logic for specific fields.\n   - Different modes of validation (e.g., 'after') can be specified.\n   - Type hints and additional information can be provided to the validator functions.\n\n3. **Type Adaptation (`TypeAdapter.rebuild`)**:\n   - This method attempts to rebuild the Pydantic-core schema for a type adapter.\n   - It is useful when forward references cannot be resolved during initial schema building.\n   - The method uses a namespace resolver to resolve annotations and rebuilds the schema if necessary.\n\n### Detailed Breakdown:\n\n#### `complete_model_class`:\n- **Parameters**:\n  - `cls`: The model class being built.\n  - `config_wrapper`: Configuration wrapper for the model.\n  - `ns_resolver`: Namespace resolver for schema building.\n  - `raise_errors`: Whether to raise errors if an undefined annotation is found.\n  - `call_on_complete_hook`: Whether to call the `__pydantic_on_complete__` hook after completion.\n  - `create_model_module`: Module of the class being created (if created by `create_model`).\n  - `is_force_rebuild`: Whether the model is being force-rebuilt.\n\n- **Process**:\n  - Rebuilds model fields if they are not already complete.\n  - Generates and cleans the schema for the model.\n  - Sets up validators, serializers, and other internal attributes.\n  - Calls the `__pydantic_on_complete__` hook if specified.\n\n#### `AfterFieldValidator`:\n- **Class Definition**:\n  - Defines a Pydantic model with field validators.\n  - Uses the `@field_validator` decorator to specify validation logic for the 'foo' field in different modes and with additional information.\n\n#### `TypeAdapter.rebuild`:\n- **Parameters**:\n  - `force`: Whether to force rebuilding of the schema.\n  - `raise_errors`: Whether to raise errors if rebuilding fails.\n  - `_parent_namespace_depth`: Depth at which to search for the parent frame.\n  - `_types_namespace`: Explicit types namespace to use.\n\n- **Process**:\n  - Checks if the schema is already complete and returns `None` if not required.\n  - Uses a namespace resolver to resolve annotations and rebuilds the schema if necessary.\n  - Fetches global namespaces manually since there's no type on the stack of the NsResolver.\n\n### Usage Example:\n\nHere's an example of how you might use these components in a Pydantic model:\n\n```python\nfrom pydantic import BaseModel, field_validator\n\nclass AfterFieldValidator(BaseModel):\n    foo: int\n\n    @field_validator('foo', mode='after')\n    @classmethod\n    def valid_classmethod(cls, value: Any) -> Any:\n        return value * 2\n\n# Create an instance of the model\nmodel = AfterFieldValidator(foo=5)\nprint(model.foo)  # Output will be 10\n```\n\nIn this example, the `AfterFieldValidator` class defines a field 'foo' and includes a validator that multiplies the value by 2 after it has been set. When an instance of `AfterFieldValidator` is created with `foo=5`, the validator correctly processes the value to produce `10`.",
+      "usage": {
+        "prompt_tokens": 2050,
+        "completion_tokens": 816,
+        "total_tokens": 2866
+      },
+      "elapsed_ms": 40150
+    }
+  ]
+}

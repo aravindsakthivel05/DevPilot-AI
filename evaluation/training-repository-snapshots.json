@@ -1,0 +1,212 @@
+{
+  "requests": {
+    "id": "7d25176a2f154dcca6677677ec2aed96",
+    "status": "ready",
+    "source": "https://github.com/psf/requests",
+    "index_scope": "repository root",
+    "difficulty": "simple",
+    "commit": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+    "fingerprint": "0677d5d287f56c060415eacb15dbf10f3c002997aebf832ccbc5bc5143b6191a",
+    "files": 75,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "flask": {
+    "id": "a1eebb44bf004027bd1a0a229d53a509",
+    "status": "ready",
+    "source": "https://github.com/pallets/flask",
+    "index_scope": "repository root",
+    "difficulty": "simple",
+    "commit": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+    "fingerprint": "bd147fd6bb26c9a6cd05334010ff1d46cb03bbbdafc2f100d574de00f00fc548",
+    "files": 208,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "commons-lang": {
+    "id": "d6dad469c9e142ebaacc59b9c9d479d9",
+    "status": "ready",
+    "source": "https://github.com/apache/commons-lang",
+    "index_scope": "repository root",
+    "difficulty": "simple",
+    "commit": "699d7e67141daacc8115b2afaa5359f3468f9694",
+    "fingerprint": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+    "files": 692,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "petclinic": {
+    "id": "518278d728554af7861075022a107cd2",
+    "status": "ready",
+    "source": "https://github.com/spring-projects/spring-petclinic",
+    "index_scope": "repository root",
+    "difficulty": "simple",
+    "commit": "818c4136ea971c21674525f9053de0d9c7ad8cfe",
+    "fingerprint": "4383120b7107124b0483691464f16dc20d098934bfe01f31991187ffccf8a77c",
+    "files": 105,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "rich": {
+    "id": "2abee8e08ab64d8b8c81f9bf1ca4021d",
+    "status": "ready",
+    "source": "https://github.com/Textualize/rich",
+    "index_scope": "repository root",
+    "difficulty": "simple",
+    "commit": "9d8f9a372cc5916fd4781fec207ced7ddac2f08f",
+    "fingerprint": "2cf664fe204acab281481e7634bdccdfba2998733bc6855b77c7cd14885a63b2",
+    "files": 506,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "httpx": {
+    "id": "8330c0b7f9d145b1b3f0a0654eb4a45d",
+    "status": "ready",
+    "source": "https://github.com/encode/httpx",
+    "index_scope": "repository root",
+    "difficulty": "medium",
+    "commit": "b5addb64f0161ff6bfe94c124ef76f6a1fba5254",
+    "fingerprint": "bf468a8c9bf9a4e55924c9451439a6177dad3cadb28db358d91115efcf21f935",
+    "files": 92,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "pytest": {
+    "id": "85ca7fbc339443e58f7063a4afe0e2c2",
+    "status": "ready",
+    "source": "https://github.com/pytest-dev/pytest",
+    "index_scope": "repository root",
+    "difficulty": "medium",
+    "commit": "8721173580390a9d297e5af06cac3f0b6841f425",
+    "fingerprint": "c03fbb7b4ecf96e3b234a33e99677a1144c8a6a7cb73ab3ae371897015070a22",
+    "files": 659,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "fastapi": {
+    "id": "378e6d09aefc4c35b1a0be5c47e2ad8e",
+    "status": "ready",
+    "source": "https://github.com/fastapi/fastapi",
+    "index_scope": "repository root",
+    "difficulty": "medium",
+    "commit": "33d411dbc3236275dd64d200bfe18d5d60a49b2e",
+    "fingerprint": "7c7220afbbfa6df722ede89138b33ac6bcfc65f0be5b58a78184bdc7808e6bfe",
+    "files": 2879,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "mockito": {
+    "id": "8be8576387d341f98acc882f15a74b5e",
+    "status": "ready",
+    "source": "https://github.com/mockito/mockito",
+    "index_scope": "repository root",
+    "difficulty": "medium",
+    "commit": "116a4d6231dc35f90543060af41dcde00fe4e2ae",
+    "fingerprint": "5828041053a59b9b2c6d9248fed42335fcc6d67cb9d988d40275ba4ac20505f9",
+    "files": 1102,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "spring-data-elasticsearch": {
+    "id": "eb074beed3de4940bcf9f00a22111734",
+    "status": "ready",
+    "source": "https://github.com/spring-projects/spring-data-elasticsearch",
+    "index_scope": "repository root",
+    "difficulty": "medium",
+    "commit": "83ff35044a14c408e725b30b385f0c33ab7c7438",
+    "fingerprint": "3ca0e779617c37b5ae7e19709f6a60d7484bf94db1ebeb21a7ef1dd77428e702",
+    "files": 805,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "django": {
+    "id": "dd4ec83f5ac340ae909b641e46c73997",
+    "status": "ready",
+    "source": "https://github.com/django/django",
+    "index_scope": "django/",
+    "difficulty": "complex",
+    "commit": "5a4511adb247a44a1cada11fe4763abba0a42663",
+    "fingerprint": "4e388f9fcf623c391f7e31136b277fc42971cac3e7f9e27a4cbcafdd9573d43e",
+    "files": 1114,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "numpy": {
+    "id": "bd76851b24a54ed98f687f15d6270ae6",
+    "status": "ready",
+    "source": "https://github.com/numpy/numpy",
+    "index_scope": "repository root",
+    "difficulty": "complex",
+    "commit": "72251d527ef6712c791f5aed0cea1926b8d28000",
+    "fingerprint": "0407027d1aaed3781e60a3b504ca774c811946c3ada9ac8629983ecff440ae07",
+    "files": 1471,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "scikit-learn": {
+    "id": "259fc9a7660c48079232c826daff222c",
+    "status": "ready",
+    "source": "https://github.com/scikit-learn/scikit-learn",
+    "index_scope": "repository root",
+    "difficulty": "complex",
+    "commit": "bbf8863a869f118a1a42422d8cc67ec6c07f2fe0",
+    "fingerprint": "831a1eb163cfbeafd1c574137c592e8147a06eef7e22681704c058ce481dedb7",
+    "files": 1348,
+    "index_limits": {
+      "max_files": 4000,
+      "max_total_bytes": 40000000
+    }
+  },
+  "pytorch": {
+    "id": "e60d8777c3e047d78a336d53b4070378",
+    "status": "ready",
+    "source": "https://github.com/pytorch/pytorch",
+    "index_scope": "torch/",
+    "difficulty": "complex",
+    "commit": "6dcdae14be8163d69c5d4e06375968e3eeb652ea",
+    "fingerprint": "f291f7735492aa3c5b95bdc9f65acd131f735913725e05f0c87cb11fd80fbf96",
+    "files": 2597,
+    "index_limits": {
+      "max_files": 10000,
+      "max_total_bytes": 100000000
+    }
+  },
+  "elasticsearch-java": {
+    "id": "c2a430382ce743a6939a4dd0f2f4ded3",
+    "status": "ready",
+    "source": "https://github.com/elastic/elasticsearch-java",
+    "index_scope": "java-client/src/main/java/",
+    "difficulty": "complex",
+    "commit": "f920563fb804f9a03aa9b77fbaeb21ba5bc3b3e5",
+    "fingerprint": "faa7bf83b34bba47779620d6156b3390f961125dcd797867963ee1ea6d3a021a",
+    "files": 4105,
+    "index_limits": {
+      "max_files": 10000,
+      "max_total_bytes": 100000000
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "dataset": "evaluation/clean-holdout-cases.jsonl",
+  "manifest": "evaluation/clean-holdout-snapshots.json",
+  "cases": 12,
+  "quick_recall_at_8": 0.8333333333333334,
+  "deep_recall_at_8": 0.8333333333333334,
+  "quick_mean_ms": 175,
+  "deep_mean_ms": 211,
+  "results": [
+    {
+      "id": "click-001",
+      "repository": "click",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 113,
+      "deep_ms": 106,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "click-002",
+      "repository": "click",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 104,
+      "deep_ms": 299,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "click-003",
+      "repository": "click",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 122,
+      "deep_ms": 104,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "click-004",
+      "repository": "click",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 100,
+      "deep_ms": 104,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "click-005",
+      "repository": "click",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 99,
+      "deep_ms": 104,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "click-006",
+      "repository": "click",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 100,
+      "deep_ms": 299,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "junit4-001",
+      "repository": "junit4",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 255,
+      "deep_ms": 247,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "junit4-002",
+      "repository": "junit4",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 240,
+      "deep_ms": 263,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "junit4-003",
+      "repository": "junit4",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 240,
+      "deep_ms": 243,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "junit4-004",
+      "repository": "junit4",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 244,
+      "deep_ms": 244,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "junit4-005",
+      "repository": "junit4",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 240,
+      "deep_ms": 268,
+      "retrieval_passes": 1
+    },
+    {
+      "id": "junit4-006",
+      "repository": "junit4",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 1.0,
+      "quick_ms": 240,
+      "deep_ms": 247,
+      "retrieval_passes": 1
+    }
+  ]
+}

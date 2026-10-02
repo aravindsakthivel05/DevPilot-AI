@@ -1,0 +1,10 @@
+FROM gradle:8.14.2-jdk17
+
+ENV GRADLE_USER_HOME=/opt/gradle-cache
+COPY . /warmup
+RUN gradle --no-daemon --no-scan -p /warmup :mockito-core:test --tests org.mockito.internal.util.MockUtilTest \
+    && chmod -R a+rX /opt/gradle-cache
+
+COPY infra/devpilot-gradle /usr/local/bin/devpilot-gradle
+RUN chmod 755 /usr/local/bin/devpilot-gradle
+WORKDIR /workspace

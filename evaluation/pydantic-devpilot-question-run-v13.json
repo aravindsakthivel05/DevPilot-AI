@@ -1,0 +1,748 @@
+{
+  "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+  "commit": "bb6da4cfbb1f559885ea2fa207ec93853bfeac64",
+  "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019",
+  "model": "qwen2.5-coder:7b",
+  "mode": "hybrid",
+  "use_model": true,
+  "retrieval_version": "2026-09-29-multistage-relevance-order",
+  "answer_prompt_version": "2026-09-30-schema-bounded-line-citations",
+  "results": [
+    {
+      "id": "pydantic-easy-001",
+      "difficulty": "easy",
+      "path": "quick",
+      "question": "In BaseModel.model_dump(), which method produces the returned dictionary, and how is exclude_none passed to it?",
+      "answer": "The method that produces the returned dictionary in BaseModel.model_dump() is __pydantic_serializer__.to_python() [1]. exclude_none is passed to it directly as a parameter [1].",
+      "generated": true,
+      "abstained": false,
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_dump"
+      ],
+      "expected_symbol_count": 1,
+      "recall_at_8": 1.0,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump",
+          "path": "pydantic/main.py",
+          "start_line": 472,
+          "end_line": 536
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.dict",
+          "path": "pydantic/main.py",
+          "start_line": 1385,
+          "end_line": 1408
+        },
+        {
+          "qualified": "pydantic.root_model.RootModel.model_dump",
+          "path": "pydantic/root_model.py",
+          "start_line": 128,
+          "end_line": 176
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.json",
+          "path": "pydantic/main.py",
+          "start_line": 1410,
+          "end_line": 1442
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump_json",
+          "path": "pydantic/main.py",
+          "start_line": 538,
+          "end_line": 604
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.copy",
+          "path": "pydantic/main.py",
+          "start_line": 1569,
+          "end_line": 1644
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.build_lenient_weakvaluedict",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 780,
+          "end_line": 797
+        },
+        {
+          "qualified": "pydantic._internal._type_refs.class_type_ref",
+          "path": "pydantic/_internal/_type_refs.py",
+          "start_line": 57,
+          "end_line": 66
+        }
+      ],
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 620,
+        "completion_tokens": 94,
+        "total_tokens": 714
+      },
+      "generation_diagnostics": {
+        "attempt_count": 1,
+        "total_request_ms": 5533,
+        "attempts": [
+          {
+            "load_duration_ms": 140,
+            "prompt_eval_duration_ms": 1966,
+            "eval_duration_ms": 3400,
+            "prompt_tokens": 620,
+            "completion_tokens": 94,
+            "request_ms": 5533,
+            "supporting_lines": [
+              {
+                "source_id": 1,
+                "excerpt_line": 19,
+                "text": "    return self.__pydantic_serializer__.to_python("
+              },
+              {
+                "source_id": 1,
+                "excerpt_line": 28,
+                "text": "        exclude_none=exclude_none,"
+              }
+            ],
+            "outcome": "accepted"
+          }
+        ]
+      },
+      "elapsed_ms": 6707,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-easy-001",
+      "difficulty": "easy",
+      "path": "deep",
+      "question": "In BaseModel.model_dump(), which method produces the returned dictionary, and how is exclude_none passed to it?",
+      "answer": "The method that produces the returned dictionary in BaseModel.model_dump() is __pydantic_serializer__.to_python() [1]. exclude_none is passed to it directly as a parameter [1].",
+      "generated": true,
+      "abstained": false,
+      "expected_symbol_hits": [
+        "pydantic.main.BaseModel.model_dump"
+      ],
+      "expected_symbol_count": 1,
+      "recall_at_8": 1.0,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump",
+          "path": "pydantic/main.py",
+          "start_line": 472,
+          "end_line": 536
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.dict",
+          "path": "pydantic/main.py",
+          "start_line": 1385,
+          "end_line": 1408
+        },
+        {
+          "qualified": "pydantic.root_model.RootModel.model_dump",
+          "path": "pydantic/root_model.py",
+          "start_line": 128,
+          "end_line": 176
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.json",
+          "path": "pydantic/main.py",
+          "start_line": 1410,
+          "end_line": 1442
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump_json",
+          "path": "pydantic/main.py",
+          "start_line": 538,
+          "end_line": 604
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.copy",
+          "path": "pydantic/main.py",
+          "start_line": 1569,
+          "end_line": 1644
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.build_lenient_weakvaluedict",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 780,
+          "end_line": 797
+        },
+        {
+          "qualified": "pydantic._internal._type_refs.class_type_ref",
+          "path": "pydantic/_internal/_type_refs.py",
+          "start_line": 57,
+          "end_line": 66
+        }
+      ],
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 620,
+        "completion_tokens": 94,
+        "total_tokens": 714
+      },
+      "generation_diagnostics": {
+        "attempt_count": 1,
+        "total_request_ms": 3593,
+        "attempts": [
+          {
+            "load_duration_ms": 133,
+            "prompt_eval_duration_ms": 46,
+            "eval_duration_ms": 3405,
+            "prompt_tokens": 620,
+            "completion_tokens": 94,
+            "request_ms": 3593,
+            "supporting_lines": [
+              {
+                "source_id": 1,
+                "excerpt_line": 19,
+                "text": "    return self.__pydantic_serializer__.to_python("
+              },
+              {
+                "source_id": 1,
+                "excerpt_line": 28,
+                "text": "        exclude_none=exclude_none,"
+              }
+            ],
+            "outcome": "accepted"
+          }
+        ]
+      },
+      "elapsed_ms": 4452,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 1
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-medium-001",
+      "difficulty": "medium",
+      "path": "quick",
+      "question": "Trace BaseModel.model_json_schema() into the JSON-schema helper. How does that helper handle a model whose core schema is still a mock, and which call generates the final schema?",
+      "answer": "BaseModel.model_json_schema() calls the JSON-schema helper method model_json_schema in pydantic/json_schema.py [2]. The JSON-schema helper handles a model whose core schema is still a mock by rebuilding it using cls.__pydantic_core_schema__.rebuild() if necessary [2]. The call that generates the final schema is made by schema_generator_instance.generate(cls.__pydantic_core_schema__, mode=mode) within the JSON-schema helper method [2].",
+      "generated": true,
+      "abstained": false,
+      "expected_symbol_hits": [
+        "pydantic.json_schema.model_json_schema",
+        "pydantic.main.BaseModel.model_json_schema"
+      ],
+      "expected_symbol_count": 3,
+      "recall_at_8": 0.6666666666666666,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_json_schema",
+          "path": "pydantic/main.py",
+          "start_line": 606,
+          "end_line": 643
+        },
+        {
+          "qualified": "pydantic.json_schema.model_json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2715,
+          "end_line": 2760
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__get_pydantic_json_schema__",
+          "path": "pydantic/main.py",
+          "start_line": 907,
+          "end_line": 931
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.__get_pydantic_core_schema__",
+          "path": "pydantic/main.py",
+          "start_line": 887,
+          "end_line": 905
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema",
+          "path": "pydantic/main.py",
+          "start_line": 1646,
+          "end_line": 1656
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema_json",
+          "path": "pydantic/main.py",
+          "start_line": 1658,
+          "end_line": 1679
+        },
+        {
+          "qualified": "pydantic.deprecated.json.pydantic_encoder",
+          "path": "pydantic/deprecated/json.py",
+          "start_line": 83,
+          "end_line": 110
+        },
+        {
+          "qualified": "pydantic.main.BaseModel",
+          "path": "pydantic/main.py",
+          "start_line": 136,
+          "end_line": 1760
+        }
+      ],
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 870,
+        "completion_tokens": 173,
+        "total_tokens": 1043
+      },
+      "generation_diagnostics": {
+        "attempt_count": 1,
+        "total_request_ms": 8886,
+        "attempts": [
+          {
+            "load_duration_ms": 133,
+            "prompt_eval_duration_ms": 2413,
+            "eval_duration_ms": 6329,
+            "prompt_tokens": 870,
+            "completion_tokens": 173,
+            "request_ms": 8886,
+            "supporting_lines": [
+              {
+                "source_id": 2,
+                "excerpt_line": 16,
+                "text": "        raise AttributeError('model_json_schema() must be called on a subclass of BaseModel, not BaseModel itself.')"
+              },
+              {
+                "source_id": 2,
+                "excerpt_line": 17,
+                "text": "    assert not isinstance(cls.__pydantic_core_schema__, _mock_val_ser.MockCoreSchema), 'this is a bug! please report it'"
+              },
+              {
+                "source_id": 2,
+                "excerpt_line": 18,
+                "text": "    return schema_generator_instance.generate(cls.__pydantic_core_schema__, mode=mode)"
+              }
+            ],
+            "outcome": "accepted"
+          }
+        ]
+      },
+      "elapsed_ms": 9740,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-medium-001",
+      "difficulty": "medium",
+      "path": "deep",
+      "question": "Trace BaseModel.model_json_schema() into the JSON-schema helper. How does that helper handle a model whose core schema is still a mock, and which call generates the final schema?",
+      "answer": "BaseModel.model_json_schema() calls pydantic.json_schema.model_json_schema() [8]. pydantic.json_schema.model_json_schema() handles a model whose core schema is still a mock by rebuilding it if necessary [8]. The final schema is generated by calling schema_generator_instance.generate(cls.__pydantic_core_schema__, mode=mode) [8].",
+      "generated": true,
+      "abstained": false,
+      "expected_symbol_hits": [
+        "pydantic.json_schema.model_json_schema",
+        "pydantic.main.BaseModel.model_json_schema"
+      ],
+      "expected_symbol_count": 3,
+      "recall_at_8": 0.6666666666666666,
+      "evidence": [
+        {
+          "qualified": "pydantic.main.BaseModel.model_json_schema",
+          "path": "pydantic/main.py",
+          "start_line": 606,
+          "end_line": 643
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema_json",
+          "path": "pydantic/main.py",
+          "start_line": 1658,
+          "end_line": 1679
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_model_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 151,
+          "end_line": 189
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.schema",
+          "path": "pydantic/main.py",
+          "start_line": 1646,
+          "end_line": 1656
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.json",
+          "path": "pydantic/main.py",
+          "start_line": 1410,
+          "end_line": 1442
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_validate_json",
+          "path": "pydantic/main.py",
+          "start_line": 800,
+          "end_line": 847
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_dump_json",
+          "path": "pydantic/main.py",
+          "start_line": 538,
+          "end_line": 604
+        },
+        {
+          "qualified": "pydantic.json_schema.model_json_schema",
+          "path": "pydantic/json_schema.py",
+          "start_line": 2715,
+          "end_line": 2760
+        }
+      ],
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 1023,
+        "completion_tokens": 151,
+        "total_tokens": 1174
+      },
+      "generation_diagnostics": {
+        "attempt_count": 1,
+        "total_request_ms": 7645,
+        "attempts": [
+          {
+            "load_duration_ms": 132,
+            "prompt_eval_duration_ms": 1933,
+            "eval_duration_ms": 5567,
+            "prompt_tokens": 1023,
+            "completion_tokens": 151,
+            "request_ms": 7645,
+            "supporting_lines": [
+              {
+                "source_id": 8,
+                "excerpt_line": 16,
+                "text": "        raise AttributeError('model_json_schema() must be called on a subclass of BaseModel, not BaseModel itself.')"
+              },
+              {
+                "source_id": 8,
+                "excerpt_line": 17,
+                "text": "    assert not isinstance(cls.__pydantic_core_schema__, _mock_val_ser.MockCoreSchema), 'this is a bug! please report it'"
+              },
+              {
+                "source_id": 8,
+                "excerpt_line": 18,
+                "text": "    return schema_generator_instance.generate(cls.__pydantic_core_schema__, mode=mode)"
+              }
+            ],
+            "outcome": "accepted"
+          }
+        ]
+      },
+      "elapsed_ms": 11024,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "focused retrieval",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 4
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-hard-001",
+      "difficulty": "hard",
+      "path": "quick",
+      "question": "A BaseModel field refers to a type that is undefined when the class is created. Trace what happens during class creation and on the first validation attempt after that type is defined: how is the validator mocked, how is rebuilding triggered, and where is the real validator installed? What happens if the type is still undefined?",
+      "answer": "During class creation, the `set_model_mocks` function is called to mock validators, serializers, and core schemas for undefined types [1]. On the first validation attempt after the type is defined, the `model_rebuild` method is called to rebuild the model and install the real validator [5]. The validator is mocked using the `MockValSer` class during class creation, which includes an attempt to rebuild if the type is defined later [1]. Rebuilding is triggered by calling the `model_rebuild` method on the model class, which attempts to resolve undefined types and update validators, serializers, and core schemas [5]. The real validator is installed in the `__pydantic_validator__` attribute of the model class after it has been rebuilt successfully [5]. If the type is still undefined, a `PydanticUndefinedAnnotation` exception will be raised during validation attempts until the type is defined and the model is rebuilt [4].",
+      "generated": true,
+      "abstained": false,
+      "expected_symbol_hits": [
+        "pydantic._internal._mock_val_ser.set_model_mocks",
+        "pydantic._internal._model_construction.complete_model_class",
+        "pydantic.main.BaseModel.model_rebuild"
+      ],
+      "expected_symbol_count": 6,
+      "recall_at_8": 0.5,
+      "evidence": [
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_model_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 151,
+          "end_line": 189
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_dataclass_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 192,
+          "end_line": 232
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_type_adapter_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 112,
+          "end_line": 148
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.complete_model_class",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 561,
+          "end_line": 682
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_rebuild",
+          "path": "pydantic/main.py",
+          "start_line": 677,
+          "end_line": 744
+        },
+        {
+          "qualified": "pydantic.dataclasses.rebuild_dataclass",
+          "path": "pydantic/dataclasses.py",
+          "start_line": 308,
+          "end_line": 370
+        },
+        {
+          "qualified": "pydantic.type_adapter.TypeAdapter._init_core_attrs",
+          "path": "pydantic/type_adapter.py",
+          "start_line": 227,
+          "end_line": 297
+        },
+        {
+          "qualified": "pydantic._internal._dataclasses.complete_dataclass",
+          "path": "pydantic/_internal/_dataclasses.py",
+          "start_line": 85,
+          "end_line": 190
+        }
+      ],
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 3630,
+        "completion_tokens": 340,
+        "total_tokens": 3970
+      },
+      "generation_diagnostics": {
+        "attempt_count": 1,
+        "total_request_ms": 26571,
+        "attempts": [
+          {
+            "load_duration_ms": 132,
+            "prompt_eval_duration_ms": 12848,
+            "eval_duration_ms": 13568,
+            "prompt_tokens": 3630,
+            "completion_tokens": 340,
+            "request_ms": 26571,
+            "supporting_lines": [
+              {
+                "source_id": 1,
+                "excerpt_line": 1,
+                "text": "def set_model_mocks(cls: type[BaseModel], undefined_name: str | None = None) -> None:"
+              },
+              {
+                "source_id": 5,
+                "excerpt_line": 2,
+                "text": "def model_rebuild("
+              },
+              {
+                "source_id": 1,
+                "excerpt_line": 18,
+                "text": "    cls.__pydantic_validator__ = MockValSer(  # pyright: ignore[reportAttributeAccessIssue]"
+              },
+              {
+                "source_id": 5,
+                "excerpt_line": 23,
+                "text": "            # we set back mocks for the model (we could also delete the complete core schema/validator/serializer,"
+              },
+              {
+                "source_id": 5,
+                "excerpt_line": 38,
+                "text": "        return _model_construction.complete_model_class("
+              },
+              {
+                "source_id": 4,
+                "excerpt_line": 42,
+                "text": "    except PydanticUndefinedAnnotation as e:"
+              }
+            ],
+            "outcome": "accepted"
+          }
+        ]
+      },
+      "elapsed_ms": 27437,
+      "workflow": null,
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    },
+    {
+      "id": "pydantic-hard-001",
+      "difficulty": "hard",
+      "path": "deep",
+      "question": "A BaseModel field refers to a type that is undefined when the class is created. Trace what happens during class creation and on the first validation attempt after that type is defined: how is the validator mocked, how is rebuilding triggered, and where is the real validator installed? What happens if the type is still undefined?",
+      "answer": "During class creation, the `ModelMetaclass.__new__` method is called [2]. It collects base data and configures the model namespace [2]. On the first validation attempt after the type is defined, the `model_rebuild` method is called to rebuild the model if necessary [6]. The validator is mocked in the `set_model_mocks` function within `_mock_val_ser.py` [1]. It attempts to rebuild the model and returns a handler for the validator [1]. Rebuilding is triggered by calling the `model_rebuild` method, which sets the model as incomplete and reconfigures its core schema and validators [6]. The real validator is installed in the `complete_model_class` function within `_model_construction.py` [4]. It creates a new schema validator for the model [4]. If the type is still undefined, calling `model_validate` will raise an error indicating that the model is not fully defined and suggesting to call `model_rebuild()` [1].",
+      "generated": true,
+      "abstained": false,
+      "expected_symbol_hits": [
+        "pydantic._internal._mock_val_ser.MockValSer.__getattr__",
+        "pydantic._internal._mock_val_ser.set_model_mocks",
+        "pydantic._internal._model_construction.ModelMetaclass.__new__",
+        "pydantic._internal._model_construction.complete_model_class",
+        "pydantic.main.BaseModel.model_rebuild",
+        "pydantic.main.BaseModel.model_validate"
+      ],
+      "expected_symbol_count": 6,
+      "recall_at_8": 1.0,
+      "evidence": [
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_model_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 151,
+          "end_line": 189
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.ModelMetaclass.__new__",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 89,
+          "end_line": 277
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.MockValSer.__getattr__",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 91,
+          "end_line": 100
+        },
+        {
+          "qualified": "pydantic._internal._model_construction.complete_model_class",
+          "path": "pydantic/_internal/_model_construction.py",
+          "start_line": 561,
+          "end_line": 682
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_validate",
+          "path": "pydantic/main.py",
+          "start_line": 746,
+          "end_line": 798
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.model_rebuild",
+          "path": "pydantic/main.py",
+          "start_line": 677,
+          "end_line": 744
+        },
+        {
+          "qualified": "pydantic.main.BaseModel.validate",
+          "path": "pydantic/main.py",
+          "start_line": 1681,
+          "end_line": 1689
+        },
+        {
+          "qualified": "pydantic._internal._mock_val_ser.set_dataclass_mocks",
+          "path": "pydantic/_internal/_mock_val_ser.py",
+          "start_line": 192,
+          "end_line": 232
+        }
+      ],
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [],
+        "uncited_sentences": [],
+        "reference_section": false,
+        "entailment_checked": false
+      },
+      "warning": null,
+      "usage": {
+        "prompt_tokens": 3568,
+        "completion_tokens": 343,
+        "total_tokens": 3911
+      },
+      "generation_diagnostics": {
+        "attempt_count": 1,
+        "total_request_ms": 24052,
+        "attempts": [
+          {
+            "load_duration_ms": 140,
+            "prompt_eval_duration_ms": 10435,
+            "eval_duration_ms": 13447,
+            "prompt_tokens": 3568,
+            "completion_tokens": 343,
+            "request_ms": 24052,
+            "supporting_lines": [
+              {
+                "source_id": 2,
+                "excerpt_line": 29,
+                "text": "        cls = cast('type[BaseModel]', super().__new__(mcs, cls_name, bases, namespace, **kwargs))"
+              },
+              {
+                "source_id": 6,
+                "excerpt_line": 2,
+                "text": "def model_rebuild("
+              },
+              {
+                "source_id": 1,
+                "excerpt_line": 1,
+                "text": "def set_model_mocks(cls: type[BaseModel], undefined_name: str | None = None) -> None:"
+              },
+              {
+                "source_id": 6,
+                "excerpt_line": 23,
+                "text": "            # we set back mocks for the model (we could also delete the complete core schema/validator/serializer,"
+              },
+              {
+                "source_id": 4,
+                "excerpt_line": 1,
+                "text": "def complete_model_class("
+              },
+              {
+                "source_id": 1,
+                "excerpt_line": 9,
+                "text": "            if cls.model_rebuild(raise_errors=False, _parent_namespace_depth=5) is not False:"
+              }
+            ],
+            "outcome": "accepted"
+          }
+        ]
+      },
+      "elapsed_ms": 28005,
+      "workflow": {
+        "engine": "langgraph",
+        "steps": [
+          "snapshot check",
+          "primary retrieval",
+          "query planning",
+          "focused retrieval",
+          "answer and citation check"
+        ],
+        "retrieval_passes": 4
+      },
+      "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019"
+    }
+  ]
+}

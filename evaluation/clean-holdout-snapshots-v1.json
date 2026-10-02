@@ -1,0 +1,16 @@
+{
+  "click": {
+    "source": "https://github.com/pallets/click",
+    "id": "d4bc7825e3044870a5555800988662ec",
+    "commit": "06b2a678741131fd577ce170e23e5ca0aeba0309",
+    "fingerprint": "9853defc4e1a934f6b812beb1b91e3c0594a15c3cb8cbcefad105aa27e086d0a",
+    "files": 145
+  },
+  "junit4": {
+    "source": "https://github.com/junit-team/junit4",
+    "id": "d7424cdc20274f53b3a83774a5b6295f",
+    "commit": "890f3c972647de378f25e7271d8fbbd9d3456b79",
+    "fingerprint": "57d369866c337c18c2a1f917fe63bbeac121b411273ea84dd90797148da65441",
+    "files": 522
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "evaluated_at": "2026-09-25T16:40:46.771660+00:00",
+  "results": [
+    {
+      "case_id": "flask-001",
+      "repository": "flask",
+      "question": "How does Flask.wsgi_app handle a WSGI request and app context?",
+      "model": "llama3.2:latest",
+      "evidence_symbols": [
+        "flask.app.Flask.wsgi_app",
+        "flask.app.Flask.request_context",
+        "flask.app.Flask",
+        "flask.ctx.AppContext.request",
+        "flask.app.Flask.handle_user_exception",
+        "flask.app.Flask.full_dispatch_request",
+        "flask.app.Flask.__init_subclass__",
+        "flask.ctx.AppContext.from_environ"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 18549,
+      "answer": "Based on the provided source code evidence, here's an explanation of how Flask.wsgi_app handles a WSGI request and app context:\n\n1.  The `wsgi_app` method is defined in `flask.app.Flask` and takes two parameters: `environ` (a `WSGIEnvironment`) and `start_response` (a callable accepting a status code, headers, and an optional exception context).\n2.  When the request is received, the `request_context` method (`src/flask/app.py:1504-1518`) creates an `AppContext` with request information representing the given WSGI environment.\n3.  The `full_dispatch_request` method (`src/flask/app.py:995-1022`) dispatches the request and performs request pre-processing, HTTP exception catching, and error handling.\n4.  If an exception occurs during request processing, the `handle_user_exception` method (`src/flask/app.py:868-898`) is called to handle the exception.\n5.  The `full_dispatch_request` method returns a response value or raises the original exception with the same traceback.\n\nHere's a high-level overview of how Flask handles WSGI requests and app contexts:\n\n*   When a request is received, an `AppContext` is created with request information from the given WSGI environment.\n*   The `full_dispatch_request` method dispatches the request and performs request pre-processing, HTTP exception catching, and error handling.\n*   If an exception occurs during request processing, the `handle_user_exception` method handles the exception.\n\nThe provided source code evidence does not explicitly show how Flask.wsgi_app handles a WSGI request and app context. However, based on the methods mentioned above, we can infer that Flask uses the following steps to handle a WSGI request and app context:\n\n1.  Create an `AppContext` with request information from the given WSGI environment.\n2.  Dispatch the request using the `full_dispatch_request` method.\n3.  Perform request pre-processing, HTTP exception catching, and error handling.\n\nPlease note that this explanation is based on inference from the provided source code evidence and may not be exhaustive or definitive.",
+      "usage": {
+        "prompt_tokens": 3216,
+        "completion_tokens": 450,
+        "total_tokens": 3666
+      },
+      "has_citations": false,
+      "invalid_citations": []
+    },
+    {
+      "case_id": "flask-001",
+      "repository": "flask",
+      "question": "How does Flask.wsgi_app handle a WSGI request and app context?",
+      "model": "qwen2.5-coder:7b",
+      "evidence_symbols": [
+        "flask.app.Flask.wsgi_app",
+        "flask.app.Flask.request_context",
+        "flask.app.Flask",
+        "flask.ctx.AppContext.request",
+        "flask.app.Flask.handle_user_exception",
+        "flask.app.Flask.full_dispatch_request",
+        "flask.app.Flask.__init_subclass__",
+        "flask.ctx.AppContext.from_environ"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 33969,
+      "answer": "Flask's `wsgi_app` method handles a WSGI request and manages the application context as follows:\n\n1. **Request Context Creation**: When a WSGI request is received, Flask creates an `AppContext` using the `request_context` method [2]. This context includes information about the current request, such as headers, form data, and URL parameters.\n\n2. **Error Handling Setup**: The `wsgi_app` method sets up error handling by initializing a variable `error` to `None`. It will be used later to capture any exceptions that occur during request processing.\n\n3. **Context Pushing**: The created context is pushed onto the stack using `ctx.push()`. This makes the current request available through Flask's global variables like `request`, `session`, and `g`.\n\n4. **Request Dispatch**: The `full_dispatch_request` method [6] is called to handle the actual dispatch of the request. This method performs several steps:\n   - It sends a signal indicating that a request has started.\n   - It preprocesses the request using any registered preprocessors.\n   - If preprocessing returns a response, it is returned immediately; otherwise, it proceeds to dispatch the request.\n\n5. **Exception Handling**: If an exception occurs during request processing (either in `preprocess_request` or `dispatch_request`), it is caught and handled by the `handle_user_exception` method [5]. This method checks if the exception is an instance of `HTTPException`. If not, it attempts to find a custom error handler for the exception. If no handler is found, it re-raises the exception.\n\n6. **Finalization**: Regardless of whether an exception occurred or not, the request context is popped using `ctx.pop(error)`. This cleans up any resources associated with the request and makes the application ready to handle another request.\n\n7. **Response Generation**: If no exceptions were raised during request processing, the response generated by `dispatch_request` is returned directly. If an exception was handled, the response from `handle_user_exception` is returned instead.\n\nThis process ensures that each request is processed in a clean and isolated environment, with proper error handling and resource management.",
+      "usage": {
+        "prompt_tokens": 3237,
+        "completion_tokens": 444,
+        "total_tokens": 3681
+      },
+      "has_citations": true,
+      "invalid_citations": []
+    },
+    {
+      "case_id": "requests-001",
+      "repository": "requests",
+      "question": "How does the top-level request function dispatch HTTP requests?",
+      "model": "llama3.2:latest",
+      "evidence_symbols": [
+        "requests.api.request",
+        "requests.sessions.Session.request",
+        "requests.models.Request",
+        "requests.models.PreparedRequest.prepare_cookies",
+        "requests.hooks.dispatch_hook",
+        "requests.api.patch",
+        "requests.sessions.Session.patch",
+        "requests.adapters.HTTPAdapter.request_url"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 21176,
+      "answer": "Based on the provided source code evidence, here's an explanation of how the top-level request function dispatches HTTP requests:\n\n1.  The `request` function in `src/requests/api.py` is the top-level function that dispatches HTTP requests. It takes in a method (e.g., GET, POST, PUT), URL, and optional parameters such as headers, data, and cookies.\n2.  When the `request` function is called, it creates a new `Request` object using the provided method, URL, and parameters.\n3.  The `Request` object is then prepared for transmission by calling its `prepare` method, which sets up the request headers, files, data, and other parameters.\n4.  After preparation, the `request` function calls the `patch` function in `src/requests/api.py`, passing in the prepared `Request` object and any additional optional parameters.\n5.  The `patch` function is a wrapper around the `request` function with a specific method (PATCH) and returns the response from the server.\n\nHere's a high-level overview of how this process works:\n\n1.  Create a new `Request` object with the provided method, URL, and parameters.\n2.  Prepare the request by setting up the headers, files, data, and other parameters.\n3.  Call the `patch` function with the prepared request and any additional optional parameters.\n4.  The `patch` function calls the `request` function with a specific method (PATCH) and returns the response from the server.\n\nIn terms of how this process is implemented in code, it involves calling various functions and methods to set up the request and handle the response. For example:\n\n*   The `Request` object's `prepare` method sets up the request headers, files, data, and other parameters.\n*   The `patch` function calls the `request` function with a specific method (PATCH) and returns the response from the server.\n*   The `request` function creates a new `PreparedRequest` object using the provided method, URL, and parameters.\n\nOverall, the top-level request function dispatches HTTP requests by creating a new `Request` object, preparing it for transmission, and then calling the `patch` function to send the request and retrieve the response.",
+      "usage": {
+        "prompt_tokens": 3990,
+        "completion_tokens": 471,
+        "total_tokens": 4461
+      },
+      "has_citations": false,
+      "invalid_citations": []
+    },
+    {
+      "case_id": "requests-001",
+      "repository": "requests",
+      "question": "How does the top-level request function dispatch HTTP requests?",
+      "model": "qwen2.5-coder:7b",
+      "evidence_symbols": [
+        "requests.api.request",
+        "requests.sessions.Session.request",
+        "requests.models.Request",
+        "requests.models.PreparedRequest.prepare_cookies",
+        "requests.hooks.dispatch_hook",
+        "requests.api.patch",
+        "requests.sessions.Session.patch",
+        "requests.adapters.HTTPAdapter.request_url"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 35553,
+      "answer": "The top-level request function dispatches HTTP requests through a series of functions, starting from the `request` method in `requests.api.py`. This method constructs a `Request` object and passes it to the `Session.request` method in `requests/sessions.py`.\n\nHere's how the process unfolds:\n\n1. **Top-Level Request Function (`requests.api.request`)**:\n   - The `request` function is called with parameters such as `method`, `url`, `data`, etc.\n   - It constructs a `Request` object using these parameters.\n\n2. **Session Request Method (`requests/sessions.py:Session.request`)**:\n   - This method takes the constructed `Request` object and additional keyword arguments.\n   - It calls the `prepare` method on the `Request` object to create a `PreparedRequest`.\n\n3. **Prepare Method (`requests/models.py:Request.prepare`)**:\n   - The `prepare` method constructs a `PreparedRequest` by copying attributes from the original `Request`.\n   - It also prepares cookies, headers, and other components of the request.\n\n4. **Dispatch Hooks (`requests/hooks.py:dispatch_hook`)**:\n   - If any hooks are registered for the current event (e.g., 'pre_request'), they are dispatched.\n   - Each hook can modify the `PreparedRequest` or return a new one.\n\n5. **Adapter Request URL (`requests/adapters.py:HTTPAdapter.request_url`)**:\n   - The adapter's `request_url` method is called to determine the final URL to use for the request.\n   - This method considers whether the request is being proxied and adjusts the URL accordingly.\n\n6. **Send Request (`requests/adapters.py:HTTPAdapter.send`)**:\n   - The actual HTTP request is sent using the adapter's `send` method.\n   - This method handles the connection, sending the request, and receiving the response.\n\n7. **Response Handling**:\n   - The response from the server is processed by the session and returned to the user.\n\nThroughout this process, various hooks can be registered to modify or intercept parts of the request or response. For example, authentication hooks can add necessary headers, logging hooks can log requests and responses, and error handling hooks can manage exceptions.\n\nThis modular design allows for flexibility and extensibility in how HTTP requests are handled, making it easy to add custom behavior without modifying core functionality.",
+      "usage": {
+        "prompt_tokens": 4008,
+        "completion_tokens": 489,
+        "total_tokens": 4497
+      },
+      "has_citations": false,
+      "invalid_citations": []
+    },
+    {
+      "case_id": "httpx-001",
+      "repository": "httpx",
+      "question": "How does the synchronous Client send a request?",
+      "model": "llama3.2:latest",
+      "evidence_symbols": [
+        "httpx._client.Client.request",
+        "httpx._client.Client.send",
+        "httpx._client.AsyncClient.request",
+        "httpx._client.AsyncClient.send",
+        "httpx._client.Client",
+        "httpx._transports.asgi.ASGITransport.handle_async_request.send",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.Client._send_handling_auth"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 13434,
+      "answer": "Based on the provided source code evidence, here's an explanation of how a synchronous Client sends a request:\n\n1. The `request` method is called on the Client instance, passing in various parameters such as the HTTP method, URL, content, data, files, JSON payload, query parameters, headers, cookies, authentication details, and timeout configuration.\n2. If cookies are provided, a deprecation warning is raised, suggesting that per-request cookies should be set directly on the client instance instead.\n3. The `build_request` method is called to construct an HTTP request object based on the provided parameters.\n4. The `send` method is then called on the Client instance, passing in the constructed request object and any additional authentication details.\n5. The `send` method sends the request over the network using a transport object (e.g., ASGI or TCP).\n6. If the response contains a redirect, the `send_handling_redirects` method is called to handle the redirect.\n7. Once the redirect has been handled, the response is read and returned.\n\nHere's a high-level overview of the code path:\n\n```\nClient.request -> Client.build_request -> Client.send\n```\n\nNote that this explanation only covers the synchronous Client implementation and does not provide information on how the asynchronous Client or other transports handle requests.",
+      "usage": {
+        "prompt_tokens": 3765,
+        "completion_tokens": 266,
+        "total_tokens": 4031
+      },
+      "has_citations": false,
+      "invalid_citations": []
+    },
+    {
+      "case_id": "httpx-001",
+      "repository": "httpx",
+      "question": "How does the synchronous Client send a request?",
+      "model": "qwen2.5-coder:7b",
+      "evidence_symbols": [
+        "httpx._client.Client.request",
+        "httpx._client.Client.send",
+        "httpx._client.AsyncClient.request",
+        "httpx._client.AsyncClient.send",
+        "httpx._client.Client",
+        "httpx._transports.asgi.ASGITransport.handle_async_request.send",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.Client._send_handling_auth"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 35949,
+      "answer": "The synchronous `Client` in the `httpx` library sends a request through the following steps:\n\n1. **Initialization and Configuration**: The `Client` is initialized with various parameters such as authentication, headers, cookies, etc. [5]\n\n2. **Building the Request**: When the `request` method of the `Client` is called, it builds an HTTP request object using the provided parameters. This includes setting up the URL, method, headers, and other optional parameters like cookies, data, JSON content, etc. [1]\n\n3. **Sending the Request**: After building the request, the `send` method of the `Client` is called with this request object. The `send` method handles the actual sending of the request. It checks if the client is closed and raises an error if it is. Then, it sets the timeout for the request, builds authentication details, and calls `_send_handling_auth`. [2]\n\n4. **Handling Authentication**: Inside `_send_handling_auth`, it processes any authentication flow provided by the user. This involves calling the `sync_auth_flow` method of the authentication object to get an iterator over the authentication steps. It then iterates through these steps, sending each request and handling responses until the authentication process is complete or an error occurs. [8]\n\n5. **Handling Redirects**: If redirects are enabled (default behavior), `_send_handling_auth` also handles following redirects by calling `_send_handling_redirects`. This method sends the current request and checks if the response indicates a redirect. If so, it constructs a new request based on the redirect information and repeats the process until no more redirects are needed or an error occurs. [8]\n\n6. **Sending Single Request**: Once authentication and redirection handling are complete, `_send_single_request` is called to send the final request using the appropriate transport (HTTP/1.1 or HTTP/2). This method uses the transport's `handle_request` method to send the request and receive a response. It then processes the response by setting up the response object with necessary details like cookies, encoding, etc., and logs the request information. [7]\n\n7. **Returning the Response**: Finally, `_send_single_request` returns the fully processed response object.\n\nThis process ensures that the synchronous `Client` can handle requests with authentication, redirections, and other complexities while maintaining a clean and efficient interface for the user.",
+      "usage": {
+        "prompt_tokens": 3785,
+        "completion_tokens": 487,
+        "total_tokens": 4272
+      },
+      "has_citations": true,
+      "invalid_citations": []
+    },
+    {
+      "case_id": "pytest-001",
+      "repository": "pytest",
+      "question": "Where is the pytest session wrapped for execution and cleanup?",
+      "model": "llama3.2:latest",
+      "evidence_symbols": [
+        "_pytest.threadexception.cleanup",
+        "_pytest.unraisableexception.cleanup",
+        "_pytest.fixtures.FixtureRequest.session",
+        "testing.python.integration.test_wrapped_getfslineno.wrap",
+        "testing.python.integration.TestMockDecoration.test_wrapped_getfuncargnames.wrap",
+        "testing.python.fixtures.test_subfixture_teardown_order",
+        "_pytest.pathlib.make_numbered_dir_with_cleanup",
+        "_pytest.main.Session"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 12814,
+      "answer": "Based on the provided source code evidence, it appears that the pytest session is wrapped for execution and cleanup in several places.\n\nIn `_pytest/main.py`, the `Session` class is defined with a `pytest_collectstart` hook that is called when a test item is collected. This hook checks if the `shouldstop` or `shouldfail` properties are set, and raises an `Interrupted` or `Failed` exception accordingly.\n\nIn `_pytest/pathlib.py`, the `make_numbered_dir_with_cleanup` function creates a numbered directory with a cleanup function registered for program exit. The cleanup function is called when the session is about to exit.\n\nIn `_pytest/fixtures.py`, the `FixtureRequest` class has a `session` property that returns the pytest session object. This property is used in several places, including in the `test_subfixture_teardown_order` test case.\n\nIt appears that the pytest session is wrapped for execution and cleanup through these various hooks and functions. However, without more information about how these hooks are triggered and what happens when they are called, it's difficult to say exactly how the session is wrapped for execution and cleanup.\n\nOne possible inference is that the `pytest_collectstart` hook in `_pytest/main.py` is responsible for setting up the pytest session and registering any necessary cleanup functions. The `make_numbered_dir_with_cleanup` function in `_pytest/pathlib.py` may be called when a test item is collected, and registers a cleanup function for program exit.\n\nHowever, this is just an inference based on the provided source code evidence, and it's possible that there are other hooks or functions involved in wrapping the pytest session for execution and cleanup.",
+      "usage": {
+        "prompt_tokens": 2833,
+        "completion_tokens": 338,
+        "total_tokens": 3171
+      },
+      "has_citations": false,
+      "invalid_citations": []
+    },
+    {
+      "case_id": "pytest-001",
+      "repository": "pytest",
+      "question": "Where is the pytest session wrapped for execution and cleanup?",
+      "model": "qwen2.5-coder:7b",
+      "evidence_symbols": [
+        "_pytest.threadexception.cleanup",
+        "_pytest.unraisableexception.cleanup",
+        "_pytest.fixtures.FixtureRequest.session",
+        "testing.python.integration.test_wrapped_getfslineno.wrap",
+        "testing.python.integration.TestMockDecoration.test_wrapped_getfuncargnames.wrap",
+        "testing.python.fixtures.test_subfixture_teardown_order",
+        "_pytest.pathlib.make_numbered_dir_with_cleanup",
+        "_pytest.main.Session"
+      ],
+      "retrieval_warning": null,
+      "elapsed_ms": 26533,
+      "answer": "The pytest session is wrapped for execution and cleanup primarily through the `Session` class defined in `_pytest/main.py`. This class represents the root of the collection tree and manages the lifecycle of a pytest run.\n\n1. **Initialization**: The `Session` class is initialized with a `Config` object, which contains all the configuration settings for the pytest run.\n2. **Collection**: During the collection phase, the session collects all test items from the specified paths.\n3. **Execution**: Once the collection is complete, the session executes the collected tests.\n4. **Cleanup**: After all tests have been executed, the session performs cleanup operations.\n\nThe `Session` class has several methods and properties that facilitate this lifecycle:\n\n- `pytest_collectstart`: This method is called at the start of the collection phase. It checks if the session should fail or interrupt based on configuration settings.\n- `pytest_runtest_logreport`: This method logs test reports and updates the session's state based on the outcome of each test.\n\nThe cleanup process for the pytest session involves several components:\n\n1. **Thread Exception Handling**: The `_pytest.threadexception.cleanup` function is responsible for handling exceptions raised in threads during the test run.\n2. **Unraisable Exceptions**: The `_pytest.unraisableexception.cleanup` function handles unraisable exceptions that occur during the test run, especially on platforms like PyPy where objects can survive garbage collection.\n\nThese cleanup functions are typically called at the end of a pytest session to ensure that all resources are properly released and any remaining exceptions or unraisable objects are handled appropriately.\n\nIn summary, the pytest session is wrapped for execution and cleanup through the `Session` class in `_pytest/main.py`, which manages the lifecycle of a pytest run from collection to execution and cleanup. The specific cleanup operations are performed by helper functions like `_pytest.threadexception.cleanup` and `_pytest.unraisableexception.cleanup`.",
+      "usage": {
+        "prompt_tokens": 2853,
+        "completion_tokens": 383,
+        "total_tokens": 3236
+      },
+      "has_citations": false,
+      "invalid_citations": []
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "snapshot": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+  "model": "qwen2.5-coder:7b",
+  "scenario": "bitfield",
+  "model_attempts": [
+    {
+      "edit_paths": [
+        "src/main/java/org/apache/commons/lang3/BitField.java",
+        "src/main/java/org/apache/commons/lang3/BitField.java"
+      ],
+      "test_paths": [
+        "src/test/java/org/apache/commons/lang3/DevPilotBitFieldTest.java"
+      ],
+      "patch_supplied": false
+    }
+  ],
+  "draft": {
+    "summary": "Change BitField.clear(int) to return the holder unchanged and add a new JUnit 5 regression test named DevPilotBitFieldTest.",
+    "patch": "diff --git a/src/main/java/org/apache/commons/lang3/BitField.java b/src/main/java/org/apache/commons/lang3/BitField.java\n--- a/src/main/java/org/apache/commons/lang3/BitField.java\n+++ b/src/main/java/org/apache/commons/lang3/BitField.java\n@@ -111,7 +111,7 @@\n      *         represented in this holder type.\n      */\n     public int clear(final int holder) {\n-        return (int) (holder & ~intMask());\n+        return holder;\n     }\n \n     /**\n@@ -122,7 +122,7 @@\n      * @since 3.21.0\n      */\n     public long clear(final long holder) {\n-        return holder & ~mask;\n+        return holder;\n     }\n \n     /**\n",
+    "extra_tests": {
+      "src/test/java/org/apache/commons/lang3/DevPilotBitFieldTest.java": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      https://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage org.apache.commons.lang3;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\n\nimport org.junit.jupiter.api.Test;\n\npublic class DevPilotBitFieldTest extends AbstractLangTest {\n\n    @Test\n    public void testClearInt() {\n        BitField bitField = new BitField(0x80000000);\n        assertEquals(-1, bitField.clear(0));\n    }\n\n    @Test\n    public void testClearLong() {\n        BitField bitField = new BitField(0x80000000L);\n        assertEquals(-1L, bitField.clear(0L));\n    }\n}\n"
+    },
+    "ignored_model_patch": false,
+    "evidence": [
+      {
+        "path": "src/main/java/org/apache/commons/lang3/BitField.java",
+        "qualified": "org.apache.commons.lang3.BitField.clear",
+        "start_line": 113
+      },
+      {
+        "path": "src/main/java/org/apache/commons/lang3/BitField.java",
+        "qualified": "org.apache.commons.lang3.BitField.clear",
+        "start_line": 124
+      },
+      {
+        "path": "src/main/java/org/apache/commons/lang3/BitField.java",
+        "qualified": "org.apache.commons.lang3.BitField",
+        "start_line": 73
+      },
+      {
+        "path": "src/test/java/org/apache/commons/lang3/BitFieldTest.java",
+        "qualified": "org.apache.commons.lang3.BitFieldTest.testIntMaskHighBitOnLongHolder",
+        "start_line": 170
+      },
+      {
+        "path": "src/test/java/org/apache/commons/lang3/BitFieldTest.java",
+        "qualified": "org.apache.commons.lang3.BitFieldTest.testWideMaskRejectsNarrowHolderAccessors",
+        "start_line": 314
+      },
+      {
+        "path": "src/main/java/org/apache/commons/lang3/BitField.java",
+        "qualified": "org.apache.commons.lang3.BitField.clearByte",
+        "start_line": 136
+      },
+      {
+        "path": "src/main/java/org/apache/commons/lang3/BitField.java",
+        "qualified": "org.apache.commons.lang3.BitField.clearShort",
+        "start_line": 148
+      },
+      {
+        "path": "src/main/java/org/apache/commons/lang3/BitField.java",
+        "qualified": "org.apache.commons.lang3.BitField.setBoolean",
+        "start_line": 348
+      }
+    ],
+    "warning": null,
+    "status": "draft_unverified",
+    "language": "java",
+    "usage": {
+      "prompt_tokens": 3010,
+      "completion_tokens": 551,
+      "total_tokens": 3561
+    }
+  },
+  "baseline": {
+    "exit_code": 1,
+    "status": "failed",
+    "output": "[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.040 s <<< FAILURE! -- in org.apache.commons.lang3.DevPilotBitFieldTest\n[ERROR] org.apache.commons.lang3.DevPilotBitFieldTest.testClearLong -- Time elapsed: 0.023 s <<< FAILURE!\norg.opentest4j.AssertionFailedError: expected: <-1> but was: <0>\n\tat org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)\n\tat org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)\n\tat org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:161)\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:632)\n\tat org.apache.commons.lang3.DevPilotBitFieldTest.testClearLong(DevPilotBitFieldTest.java:35)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:569)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1511)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1511)\n\n[ERROR] org.apache.commons.lang3.DevPilotBitFieldTest.testClearInt -- Time elapsed: 0.001 s <<< FAILURE!\norg.opentest4j.AssertionFailedError: expected: <-1> but was: <0>\n\tat org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)\n\tat org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)\n\tat org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)\n\tat org.apache.commons.lang3.DevPilotBitFieldTest.testClearInt(DevPilotBitFieldTest.java:29)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:569)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1511)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1511)\n\n[ERROR] Failures: \n[ERROR]   DevPilotBitFieldTest.testClearInt:29 expected: <-1> but was: <0>\n[ERROR]   DevPilotBitFieldTest.testClearLong:35 expected: <-1> but was: <0>\n[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.6.0:test (default-test) on project commons-lang3: There are test failures.\n[ERROR] \n[ERROR] See /workspace/target/surefire-reports for the individual test results.\n[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
+    "elapsed_ms": 14313,
+    "image": "devpilot-java-commons-lang:local",
+    "target": "DevPilotBitFieldTest",
+    "output_truncated": false,
+    "snapshot": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+    "network": "disabled",
+    "patch_applied": false,
+    "runner": "maven"
+  },
+  "patched": {
+    "exit_code": 1,
+    "status": "failed",
+    "output": "[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.043 s <<< FAILURE! -- in org.apache.commons.lang3.DevPilotBitFieldTest\n[ERROR] org.apache.commons.lang3.DevPilotBitFieldTest.testClearLong -- Time elapsed: 0.025 s <<< FAILURE!\norg.opentest4j.AssertionFailedError: expected: <-1> but was: <0>\n\tat org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)\n\tat org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)\n\tat org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:161)\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:632)\n\tat org.apache.commons.lang3.DevPilotBitFieldTest.testClearLong(DevPilotBitFieldTest.java:35)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:569)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1511)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1511)\n\n[ERROR] org.apache.commons.lang3.DevPilotBitFieldTest.testClearInt -- Time elapsed: 0.002 s <<< FAILURE!\norg.opentest4j.AssertionFailedError: expected: <-1> but was: <0>\n\tat org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)\n\tat org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)\n\tat org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)\n\tat org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)\n\tat org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)\n\tat org.apache.commons.lang3.DevPilotBitFieldTest.testClearInt(DevPilotBitFieldTest.java:29)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:569)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1511)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1511)\n\n[ERROR] Failures: \n[ERROR]   DevPilotBitFieldTest.testClearInt:29 expected: <-1> but was: <0>\n[ERROR]   DevPilotBitFieldTest.testClearLong:35 expected: <-1> but was: <0>\n[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.6.0:test (default-test) on project commons-lang3: There are test failures.\n[ERROR] \n[ERROR] See /workspace/target/surefire-reports for the individual test results.\n[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException\n",
+    "elapsed_ms": 14306,
+    "image": "devpilot-java-commons-lang:local",
+    "target": "DevPilotBitFieldTest",
+    "output_truncated": false,
+    "snapshot": "22206ab9be04418428d65cd63cbcfec9a2f09be29ede410a00727ddff05b7575",
+    "network": "disabled",
+    "patch_applied": true,
+    "runner": "maven"
+  },
+  "regression_demonstrated": false
+}
