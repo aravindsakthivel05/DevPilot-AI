@@ -49,6 +49,23 @@ snapshot deletion controls.
 
 ## Run locally
 
+For an automated setup and launch on macOS or Linux, run this once from a terminal in the
+project folder:
+
+```sh
+chmod +x setup_and_run.sh
+./setup_and_run.sh
+```
+
+The script installs the Python package into `.venv`, installs frontend dependencies, builds the UI,
+starts the local server, and opens it in your browser. Choose **Try the example** to get a working
+sample immediately, or add a local repository folder or public GitHub URL. It needs Python 3.11+,
+Node.js 18+, and npm. Docker and an LLM provider are optional: without them you can still index
+repositories and use **Evidence only**; Docker enables test execution, and a model enables generated
+AI explanations and code proposals. Pass `--setup-only` to install/build without launching, or
+`--no-browser` to launch without opening a browser. See the script's `--help` output for provider
+configuration examples.
+
 Requirements: Python 3.11+, Node.js, and npm. Docker is needed only to run indexed repositories'
 tests inside the isolation container. A model provider is optional.
 
