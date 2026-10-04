@@ -33,14 +33,43 @@ def question_aspects(question, limit=8):
             aspect = question[match.start() : end].strip(" ,:;.!?-")
             aspect = re.sub(r"\s+", " ", aspect)
             aspect = re.sub(r",?\s+and\s*$", "", aspect, flags=re.I)
+            # Preserve coordinated noun obligations, not only verb phrases.
+            # "arguments, options, priority and queue" must not collapse into
+            # one aspect with a three-claim limit.
+            listing = re.match(
+                r"(how\s+are\s+)(.+?,.+?)(\s+(?:carried|configured|handled|passed|restored)\b.*)",
+                aspect,
+                re.I,
+            )
+            categories = re.match(r"(.*\bdistinguish\s+)(.+?,.+?)(\s+exceptions)$", aspect, re.I)
+            if listing or categories:
+                parts = re.split(r",\s*|\s+and\s+", (listing or categories).group(2))
+                if 2 <= len(parts) <= 6:
+                    header, _, tail = (listing or categories).groups()
+                    aspects.extend(header + part.strip() + tail for part in parts if part.strip())
+                    continue
             steps = re.split(r"\band\s+(?=(?:then|after|before|on|when)\b)", aspect, flags=re.I)
             for step in steps:
                 step = step.strip(" ,:;.!?-")
-                if step and step.lower() not in {a.lower() for a in aspects}:
-                    aspects.append(step)
+                # Split coordinated actions, not arbitrary nouns or code names.
+                # "fetch and cache results and hand off SQL" has three obligations
+                # even though it has only one interrogative and is a short question.
+                actions = re.split(
+                    r",\s*(?=(?:call|run|fetch|cache|hand|populate|assemble|return|validate|install|rebuild|prepare|reach|construct|send|select|create|configure|clean|finish|obtain|handle|delegate)\b)"
+                    r"|\s+and\s+(?=(?:call|run|fetch|cache|hand|populate|assemble|return|validate|install|rebuild|prepare|reach|construct|send|select|create|configure|clean|finish|obtain|handle|delegate)\b)",
+                    step,
+                    flags=re.I,
+                )
+                for action in actions:
+                    if action and action.lower() not in {a.lower() for a in aspects}:
+                        aspects.append(action)
 
     if not aspects:
         aspects = [question.strip()]
+    if _TRACE.search(question) and len(aspects) == 1:
+        steps = re.split(r"\s+(?:through|into|then|to)\s+", aspects[0], flags=re.I)
+        if len(steps) > 1 and all(len(re.findall(r"[A-Za-z0-9_]+", step)) >= 3 for step in steps):
+            aspects = steps
     return aspects[:limit]
 
 
@@ -54,3 +83,26 @@ def answer_aspects(question, limit=6):
         "; ".join(aspects[start : start + group_size])
         for start in range(0, len(aspects), group_size)
     ]
+
+
+def analyze_query(question):
+    patterns = [
+        ("test_suggestion", r"regression|test.*(?:add|suggest|generate)"),
+        ("fix_suggestion", r"\bfix|patch|repair"),
+        ("root_cause", r"root.cause|why.*fail"),
+        ("error", r"\bbug|error|exception|failing"),
+        ("call_flow", r"\btrace|flow|reach|callers|callees|calls"),
+        ("dependency", r"depend|import|inherit"),
+        ("architecture", r"architecture|structure|overview"),
+        ("comparison", r"compare|difference|versus"),
+        ("symbol_lookup", r"where.*(?:defined|implemented)|definition"),
+        ("repository_summary", r"summar|purpose"),
+    ]
+    return {
+        "type": next(
+            (name for name, pattern in patterns if re.search(pattern, question, re.I)),
+            "implementation",
+        ),
+        "entities": re.findall(r"\b[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)+\b", question),
+        "aspects": answer_aspects(question),
+    }

@@ -1,0 +1,1 @@
+The initial run was interrupted after one SQLAlchemy answer to correct the Celery medium rubric against the pinned source. It confused None defaults with truthiness and priority overwrite with set-if-absent. Expected answers are not supplied to the model. Final results use the corrected rubric frozen before the full run; this initial checkpoint is excluded from all scores.

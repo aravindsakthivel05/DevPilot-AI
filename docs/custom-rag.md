@@ -1,0 +1,19 @@
+# Custom RAG
+
+The engine lives in `backend/rag/`; `backend/retrieval.py` is a compatibility alias. It runs independently of orchestration frameworks.
+
+1. **Query analysis:** deterministic aspects, explicit symbol references and question categories. Nominal lists are split where recognizable. This is heuristic, not full natural-language understanding.
+2. **Lexical candidates:** SQLite FTS5 gives bounded candidates; our BM25 uses repository-local term statistics. Exact names, qualified names, owner/name terms and source roles affect rank. Adding an unrelated repository does not alter another repository's corpus statistics.
+3. **Semantic candidates:** a configured embedding provider embeds the question. Our NumPy vector store validates nonempty finite, nonzero, consistent-dimension vectors and ranks by cosine similarity. A complete corpus with matching provider/model/revision signature is required. No mandatory Chroma/FAISS dependency is introduced.
+4. **Fusion:** weighted reciprocal-rank fusion combines lexical and semantic ranks, with exact-reference boosts. Configurable weights are not asserted to be optimal.
+5. **Graph expansion:** seed definitions expand through bounded typed relationships. Confidence, direction, relationship kind and hop distance influence scores. Parameters and type references receive smaller graph weights than calls. Graph-only mode uses lexical seeds; it is not a seedless graph query language.
+6. **Reranking:** at most 50 candidates are reranked deterministically. Exact references, owners/scopes, requested language and metadata roles help distinguish homonyms. The requested language is a preference, not an absolute exclusion. Semantic-only ranking preserves cosine order.
+7. **Context:** at most eight excerpt sources receive a shared budget, with original-file line mappings, source roles, aliases and bounded stored relationships. Dependencies/tests/configuration retain identity and graph paths. Large bodies are excerpted; retrieved full files are not simply concatenated.
+8. **Generation:** the configured model emits structured aspect claims with source/range references. Claims must cover requested aspects or explicitly mark missing/outside evidence. Identity/range/relevance checks reject malformed or mismatched citations; selected behavioral guards reject a return claim citing only a declaration and unsupported global consistency claims. A separate model audit can reject unsupported/uncertain claims, but is fallible.
+9. **Abstention:** explicit live/private/future questions bypass generation. Missing evidence, validation failure or rejected claims yield an abstention/partial result or an evidence report. A retrieval hit is never promoted to a proven answer merely because it has a high score.
+
+Outputs include answer, accepted claims, confidence (`model_supported`, `partial`, `insufficient`), missing information, source evidence, graph paths, original excerpts, citation provenance, provider usage and diagnostics. `model_supported` means the model passed implemented checks; it does not mean independently proven correctness.
+
+Retrieval traces record query analysis, settings, lexical scores, semantic similarities, seeds, graph paths, fusion scores, reranking and stage timings. Scores from BM25, cosine, graph propagation and structural boosts have different scales; final ranks come from weighted RRF/structural scoring, not an undocumented sum of raw BM25 and cosine. Optional Deep investigation stores separate retrieval passes.
+
+Settings are exported from `.env.example`: lexical/semantic/graph/structural weights, exact boost and reranking. Research experiments include ablations and alternative graph weights. Long-tail retrieval, all-aspect coverage, language weighting, huge vector-corpus memory and model latency remain research limitations; no universal optimum is claimed.

@@ -1,0 +1,47 @@
+{
+  "dataset": "evaluation/workflow-cases.jsonl",
+  "manifest": "docs/indexed-reference-repositories.json",
+  "cases": 4,
+  "quick_recall_at_8": 0.47916666666666663,
+  "deep_recall_at_8": 0.3333333333333333,
+  "quick_mean_ms": 418,
+  "deep_mean_ms": 849,
+  "results": [
+    {
+      "id": "requests-workflow-001",
+      "repository": "requests",
+      "quick_recall_at_8": 1.0,
+      "deep_recall_at_8": 0.6666666666666666,
+      "quick_ms": 227,
+      "deep_ms": 565,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "httpx-workflow-001",
+      "repository": "httpx",
+      "quick_recall_at_8": 0.25,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 272,
+      "deep_ms": 711,
+      "retrieval_passes": 2
+    },
+    {
+      "id": "pytest-workflow-001",
+      "repository": "pytest",
+      "quick_recall_at_8": 0.0,
+      "deep_recall_at_8": 0.0,
+      "quick_ms": 557,
+      "deep_ms": 1250,
+      "retrieval_passes": 3
+    },
+    {
+      "id": "mockito-workflow-001",
+      "repository": "mockito",
+      "quick_recall_at_8": 0.6666666666666666,
+      "deep_recall_at_8": 0.6666666666666666,
+      "quick_ms": 617,
+      "deep_ms": 871,
+      "retrieval_passes": 2
+    }
+  ]
+}

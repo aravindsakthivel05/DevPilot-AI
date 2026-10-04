@@ -1,0 +1,6 @@
+{
+  "issues": [],
+  "snapshot": "1b959c9fe9bed77e0254aa17fc8c3113ca43b1b20a5648c24adb6af4e99b286f",
+  "detector_version": "2026-10-04-conservative-static-v1",
+  "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+}

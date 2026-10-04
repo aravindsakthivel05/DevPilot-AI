@@ -12,6 +12,11 @@ def is_test_path(path):
         any(part in ("test", "tests", "testing") for part in parts[:-1])
         or name.startswith("test_")
         or name.endswith(("_test.py", "Test.java", "Tests.java"))
+        or name.endswith(
+            ("_test.go", ".test.js", ".spec.js", ".test.ts", ".spec.ts", "Tests.cs", "Test.cs")
+        )
+        or name.startswith("test_")
+        and name.endswith((".cpp", ".c", ".rs"))
     )
 
 
@@ -67,4 +72,11 @@ def related_tests(repo_id, source_path):
                 "signals": [{"kind": "name_match"}],
                 "confidence": "heuristic",
             }
-    return sorted(found.values(), key=lambda item: (item["confidence"] != "static", item["path"]))
+    return sorted(
+        found.values(),
+        key=lambda item: (
+            test_stem(item["path"]) != target_stem,
+            item["confidence"] != "static",
+            item["path"],
+        ),
+    )

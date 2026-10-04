@@ -1,0 +1,22 @@
+Processing ./.
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: devpilot-ai
+  Building wheel for devpilot-ai (pyproject.toml): started
+  Building wheel for devpilot-ai (pyproject.toml): finished with status 'done'
+  Created wheel for devpilot-ai: filename=devpilot_ai-0.1.0-py3-none-any.whl size=118701 sha256=f5e96cca2d50371b0773861c8e098b0c9189bf0eab1ac68093ccc437f8708a5b
+  Stored in directory: /private/var/folders/_c/36b3wh_97qb9517n2cknvnrc0000gn/T/pip-ephem-wheel-cache-zi7kmzw1/wheels/40/64/b5/3675eea35594760e54a76cb7e4f676475bd7568e64f14ba8b6
+Successfully built devpilot-ai
+Installing collected packages: devpilot-ai
+  Attempting uninstall: devpilot-ai
+    Found existing installation: devpilot-ai 0.1.0
+    Uninstalling devpilot-ai-0.1.0:
+      Successfully uninstalled devpilot-ai-0.1.0
+Successfully installed devpilot-ai-0.1.0
+
+[notice] A new release of pip is available: 26.1.2 -> 26.2.1
+[notice] To update, run: /Users/aravinds/Documents/ChatGPT/Final year project/.devpilot/core-validation-env/bin/python -m pip install --upgrade pip

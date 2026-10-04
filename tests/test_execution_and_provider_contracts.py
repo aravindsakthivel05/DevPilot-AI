@@ -2,6 +2,7 @@
 
 import subprocess
 import time
+from pathlib import Path
 from types import SimpleNamespace
 
 import httpx
@@ -34,6 +35,11 @@ def test_runner_command_isolated_and_logs_persist(client, repo, monkeypatch, cod
         def __init__(self, cmd, stdout, stderr):
             captured.append(cmd)
             stdout.write(b"Fixture-only container output\n")
+            mount = cmd[cmd.index("-v") + 1].removesuffix(":/workspace:rw")
+            failure = '<failure type="AssertionError">wrong result</failure>' if code else ""
+            (Path(mount) / ".devpilot-test-results.xml").write_text(
+                f'<testsuite><testcase classname="fixture" name="test_one">{failure}</testcase></testsuite>'
+            )
 
         def wait(self, timeout=None):
             return code
@@ -89,6 +95,16 @@ def test_java_runner_command(client, repo, monkeypatch, runner, manifest, target
     class Process:
         def __init__(self, cmd, stdout, stderr):
             captured.append(cmd)
+            mount = Path(cmd[cmd.index("-v") + 1].removesuffix(":/workspace:rw"))
+            report = mount / (
+                "target/surefire-reports/TEST.xml"
+                if runner == "maven"
+                else "build/test-results/test/TEST.xml"
+            )
+            report.parent.mkdir(parents=True, exist_ok=True)
+            report.write_text(
+                '<testsuite><testcase classname="fixture" name="test_one"/></testsuite>'
+            )
 
         def wait(self, timeout=None):
             return 0
@@ -126,7 +142,7 @@ def test_java_runner_rejects_invalid_target(client, repo, monkeypatch, target):
 
 
 def test_before_after_execution_job_persists_result(client, repo, monkeypatch):
-    monkeypatch.setattr("backend.main.docker_status", lambda: {"available": True})
+    monkeypatch.setattr("backend.legacy.routes.docker_status", lambda: {"available": True})
 
     def fixture_execute(
         repo_id, image, target, timeout, patch=None, extra_tests=None, runner="python"
@@ -135,6 +151,14 @@ def test_before_after_execution_job_persists_result(client, repo, monkeypatch):
             "exit_code": 0 if patch else 1,
             "status": "passed" if patch else "failed",
             "output": "simulated",
+            "test_report": {
+                "available": True,
+                "total": 1,
+                "passed": 1 if patch else 0,
+                "failures": 0 if patch else 1,
+                "errors": 0,
+                "cases": [{"id": "regression", "status": "passed" if patch else "failed"}],
+            },
         }
 
     monkeypatch.setattr(execution, "execute", fixture_execute)

@@ -1,87 +1,54 @@
-# Architecture and data flow
+# Architecture
 
-DevPilot is a local prototype with a small FastAPI backend, React client, and SQLite database. The
-browser talks to the local backend. The backend owns repository paths, storage, provider
-configuration, and Docker calls.
+DevPilot is a local research prototype with a React/Vite UI, FastAPI backend, SQLite database and immutable source snapshots. The core is recommendation based: indexed code is not executed, and suggested patches are not applied.
 
-## Indexing flow
-
-```text
-POST /api/repositories or POST /api/demo
-  → background job in backend/ingestion.py
-  → collect bounded Python, Java, and text files
-  → calculate commit and content fingerprint
-  → parse Python with backend/analysis.py and Java with backend/java_analysis.py
-  → store files, symbols, and edges through backend/db.py
-  → optionally request provider embeddings
-  → publish indexing state and extraction counts
+```mermaid
+flowchart TD
+  R[GitHub URL or local directory] --> I[Bounded ingestion and coverage]
+  I --> A[Nine language adapters]
+  A --> N[Normalized entities and source ranges]
+  N --> G[Repository Structural Graph]
+  N --> C[Structural chunks and documents]
+  C --> S[(SQLite FTS5 and optional vectors)]
+  Q[Question] --> X[Query analysis]
+  X --> L[Custom BM25]
+  X --> V[Local cosine vector retrieval]
+  L --> H[Weighted RRF and structural reranking]
+  V --> H
+  G --> H
+  S --> L
+  S --> V
+  H --> E[Bounded structured source context]
+  E --> M[Configured LLM]
+  M --> P[Claims, original-line checks, fallible audit and abstention]
+  P --> U[Answer with clickable source evidence]
+  N --> D[Static candidate detection]
+  D --> B[Localisation and graph neighbors]
+  B --> E
+  B --> F[Unverified fix and test drafts]
+  M --> F
 ```
 
-Files in `.git`, virtual environments, build output, dependency locks, environment secret files,
-and oversized files are skipped. A snapshot fingerprint represents included file contents, even
-when a local source directory has no Git commit. This graph is a structural index, not a complete
-compiler-grade Code Property Graph. Calls that cannot be resolved remain unresolved instead of
-being presented as proven edges.
+## Boundaries
 
-## Question flow
+`languages.registry` dispatches by extension. Each adapter returns an `AnalysisResult` with normalized symbols, relationships, parser diagnostics and unresolved references. Adding a language requires a grammar dependency, parser/resolver adapter and registry entry, not changes to RAG. Python retains its tested AST resolver and Java retains its tested Tree-sitter resolver. The remaining adapters share extraction machinery with language-specific declaration maps and conservative resolution policies.
 
-```text
-POST /api/repositories/{id}/ask
-  → backend/retrieval.py ranks text matches
-  → optional vector search adds semantic matches
-  → graph expansion follows selected relationships
-  → bounded source excerpts are returned with locations and reasons
-  → optional backend/providers.py request synthesises an answer
-  → result and evidence are stored in SQLite history
-```
+Symbols keep stable repository/file identity, language, kind, name, qualified name, signature, original line range, source, docstring, parent and file role. Compatibility names (`repo_id`, `qualified`, `parent_id`, `source`) stay available. Documents use overlapping original-coordinate windows; functions and classes remain structural chunks. Declared manifest dependencies and annotation/exception references are explicitly reference entities, not imaginary library implementations.
 
-Text, graph, and hybrid modes work without a model. Semantic mode requires indexed vectors and a
-configured embedding provider. Without a chat model, the result is a retrieval report. Range checks
-can detect a citation number with no matching source entry; they do not validate factual support.
-With LangGraph enabled, `deep=true` selects the bounded investigation graph. It reuses retrieval
-and the same citation policy, preserves distinct primary matches, and may run focused searches.
-The standard route remains one-pass. See [the LangGraph design](langgraph.md).
+The graph combines stored static relationships with factual repository/file containment. Queries support symbol or file seeds, relationship filters, incoming/outgoing/both and 0–3 hops, with a maximum 500 output nodes. Normal retrieval expands a smaller bounded candidate set. It does not have control/data-flow analysis or compiler-grade typing.
 
-## Storage map
+The custom RAG modules own retrieval, fusion and ranking. No LangChain or LlamaIndex engine is used. Optional LangGraph orchestrates additional bounded passes and reuses the same engine and answer policy. It is not imported for ordinary questions. Its traces retain each pass.
 
-`repositories` tracks index state and snapshot fingerprints. `files` stores included file text.
-`symbols` stores modules, documents, functions, classes, and methods with source ranges. `edges`
-stores typed relationships. `embeddings` stores optional provider vectors. `investigations` and
-`executions` hold question and run history. SQLite and indexed snapshot files live under
-`.devpilot/`, which Git ignores. `learning_cases` stores pending or human-reviewed questions
-against immutable repository snapshots; `learning_repository_splits` keeps each repository
-entirely in either development or holdout. A saved investigation can be queued only once.
-`agent_runs` records review and completion state for guided repairs. LangGraph checkpoints live in
-a separate local `.devpilot/agent-checkpoints.sqlite3` file so a review can resume.
+## Storage and migration
 
-## Test execution boundary
+SQLite tables retain repositories, files, symbols, edges, embeddings, investigations, coverage, unresolved references, persistent search statistics and prior reviewed-learning data. Schema v2 adds `chunks`, `issues`, `suggestions`, `retrieval_traces`, `evaluations`, normalized columns and indexes. Migration is additive and idempotent. Derived reindexing is transactional for symbols/edges/chunks; replaced symbol vectors are invalidated. Existing snapshots and fingerprints are preserved. Missing old file types require a fresh ingestion, not a derived rebuild.
 
-Indexing reads files without running them. The execution route copies an indexed snapshot into a
-temporary directory, disables network access, drops Linux capabilities, makes the container root
-read-only, and applies CPU, memory, process, and time limits. A writable mount lets Python,
-Maven, or Gradle create temporary test artifacts; the indexed snapshot itself remains unchanged.
-Java runner images cache project dependencies during a separate image build, then use Maven's or
-Gradle's offline mode for verification. Mockito's Gradle test task bypasses cached test results
-while reusing compilation artifacts. A passed result covers only the selected command and snapshot.
+The original database was backed up through SQLite's online backup API before migration under `.devpilot/refactor-backup-2026-10-04/`. This local backup and snapshot/model data are Git ignored.
 
-`POST /api/repositories/{id}/propose` retrieves source evidence and asks the configured chat model
-for a JSON draft containing tests and an optional unified diff. The backend checks the draft's
-paths, size, syntax, and indexed-file scope. The UI presents it for review; only the separate
-execution request runs tests. Patch application is confined to the disposable copy by preventing
-Git from finding the parent project repository.
-The guided LangGraph repair route uses the same proposal validation and Docker runner. It saves
-the draft at a review interrupt, resumes only on an explicit approve/decline request, and reports
-the before/after result. A before/after transition verifies the selected generated test, not a
-general repair claim.
+## Providers and execution
 
-Mocks test command construction and failure handling without claiming Docker ran. The Python
-smoke test runs only when Docker and `devpilot-runner:local` exist. The repeatable Java validation
-command runs selected tests from Petclinic, Commons Lang, and Mockito; its results are in
-[`java-runner-validation.json`](java-runner-validation.json).
+`model_providers.py` defines chat and embedding contracts; configured implementations reuse the existing HTTP transport, connection pooling and local Ollama generation lock. Ollama's native chat supports schema-constrained output. OpenAI-compatible chat/embedding endpoints remain configurable; dimensions and provider/model/revision signatures invalidate incompatible vectors.
 
-## Current scope
+`backend/legacy/` retains historical Docker and guided repair experiments. Routes require an explicit flag, and the UI hides Verification by default. No Docker probe or execution is required by the core. Compatibility imports preserve earlier clients/tests.
 
-Python analysis uses AST, and Java analysis uses Tree-sitter. Neither fully resolves reflection,
-dynamic dispatch, or runtime dependency injection. Java method overloads can share a qualified
-name; those references stay unresolved when ambiguous. SQLite serves one local workspace.
-Citation entailment checks, production hosting, and multi-user access remain outside this prototype.
+See [RAG](custom-rag.md), [errors](error-analysis.md), [language limits](language-support.md) and [evaluation](research-evaluation.md) for actual behavior and limits.

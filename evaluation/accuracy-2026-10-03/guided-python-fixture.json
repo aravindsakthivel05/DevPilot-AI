@@ -1,0 +1,178 @@
+{
+  "fixture_only": true,
+  "model_generated": false,
+  "run": {
+    "id": "5c67b104f2f442bc846627227cc17dce",
+    "repo_id": "885b889f3fab4c49a4fe60e68ab11f2d",
+    "snapshot": "835d068446387ef99dd437a09af904cfa5ca895ec25d8b9497d50ba5708a9e27",
+    "created_at": "2026-10-02T20:04:16.795691+00:00",
+    "status": "complete",
+    "result": {
+      "draft": {
+        "summary": "Synthetic finite-weight requirement; authored fixture, not an LLM repair.",
+        "patch": "diff --git a/parcel/models.py b/parcel/models.py\n--- a/parcel/models.py\n+++ b/parcel/models.py\n@@ -1,3 +1,4 @@\n+import math\n from dataclasses import dataclass\n \n \n@@ -7,7 +8,7 @@\n     destination: str\n \n     def validate(self):\n-        if self.weight_kg <= 0:\n+        if not math.isfinite(self.weight_kg) or self.weight_kg <= 0:\n             raise ValueError(\"Weight must be positive\")\n         if self.destination not in (\"domestic\", \"international\"):\n             raise ValueError(\"Unsupported destination\")\n",
+        "extra_tests": {
+          "tests/test_devpilot_nan.py": "import pytest\nfrom parcel.api import shipping_quote\n\ndef test_nan_weight_is_rejected():\n    with pytest.raises(ValueError):\n        shipping_quote(float(\"nan\"), \"domestic\")\n"
+        }
+      },
+      "snapshot": "835d068446387ef99dd437a09af904cfa5ca895ec25d8b9497d50ba5708a9e27",
+      "target": "tests/test_devpilot_nan.py",
+      "baseline": {
+        "exit_code": 1,
+        "status": "failed",
+        "test_report": {
+          "available": true,
+          "total": 1,
+          "passed": 0,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0,
+          "cases": [
+            {
+              "id": "tests.test_devpilot_nan::test_nan_weight_is_rejected",
+              "status": "failed",
+              "failure_type": "",
+              "detail": "Failed: DID NOT RAISE <class 'ValueError'> tests/test_devpilot_nan.py:5: in test_nan_weight_is_rejected\n    with pytest.raises(ValueError):\nE   Failed: DID NOT RAISE <class 'ValueError'>",
+              "report": ".devpilot-test-results.xml"
+            }
+          ],
+          "parse_errors": []
+        },
+        "output": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_________________________ test_nan_weight_is_rejected __________________________\ntests/test_devpilot_nan.py:5: in test_nan_weight_is_rejected\n    with pytest.raises(ValueError):\nE   Failed: DID NOT RAISE <class 'ValueError'>\n---------- generated xml file: /workspace/.devpilot-test-results.xml -----------\n=========================== short test summary info ============================\nFAILED tests/test_devpilot_nan.py::test_nan_weight_is_rejected - Failed: DID ...\n1 failed in 0.01s\n",
+        "elapsed_ms": 292,
+        "image": "devpilot-runner:local",
+        "target": "tests/test_devpilot_nan.py",
+        "output_truncated": false,
+        "snapshot": "835d068446387ef99dd437a09af904cfa5ca895ec25d8b9497d50ba5708a9e27",
+        "network": "disabled",
+        "patch_applied": false,
+        "runner": "python"
+      },
+      "existing_baseline": {
+        "exit_code": 0,
+        "status": "passed",
+        "test_report": {
+          "available": true,
+          "total": 3,
+          "passed": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "cases": [
+            {
+              "id": "tests.test_pricing.PricingTests::test_international_quote",
+              "status": "passed",
+              "failure_type": "",
+              "detail": "",
+              "report": ".devpilot-test-results.xml"
+            },
+            {
+              "id": "tests.test_pricing.PricingTests::test_invalid_weight",
+              "status": "passed",
+              "failure_type": "",
+              "detail": "",
+              "report": ".devpilot-test-results.xml"
+            },
+            {
+              "id": "tests.test_pricing.PricingTests::test_minimum",
+              "status": "passed",
+              "failure_type": "",
+              "detail": "",
+              "report": ".devpilot-test-results.xml"
+            }
+          ],
+          "parse_errors": []
+        },
+        "output": "...                                                                      [100%]\n---------- generated xml file: /workspace/.devpilot-test-results.xml -----------\n3 passed in 0.01s\n",
+        "elapsed_ms": 389,
+        "image": "devpilot-runner:local",
+        "target": "tests",
+        "output_truncated": false,
+        "snapshot": "835d068446387ef99dd437a09af904cfa5ca895ec25d8b9497d50ba5708a9e27",
+        "network": "disabled",
+        "patch_applied": false,
+        "runner": "python"
+      },
+      "existing_patched": {
+        "exit_code": 0,
+        "status": "passed",
+        "test_report": {
+          "available": true,
+          "total": 3,
+          "passed": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "cases": [
+            {
+              "id": "tests.test_pricing.PricingTests::test_international_quote",
+              "status": "passed",
+              "failure_type": "",
+              "detail": "",
+              "report": ".devpilot-test-results.xml"
+            },
+            {
+              "id": "tests.test_pricing.PricingTests::test_invalid_weight",
+              "status": "passed",
+              "failure_type": "",
+              "detail": "",
+              "report": ".devpilot-test-results.xml"
+            },
+            {
+              "id": "tests.test_pricing.PricingTests::test_minimum",
+              "status": "passed",
+              "failure_type": "",
+              "detail": "",
+              "report": ".devpilot-test-results.xml"
+            }
+          ],
+          "parse_errors": []
+        },
+        "output": "...                                                                      [100%]\n---------- generated xml file: /workspace/.devpilot-test-results.xml -----------\n3 passed in 0.01s\n",
+        "elapsed_ms": 292,
+        "image": "devpilot-runner:local",
+        "target": "tests",
+        "output_truncated": false,
+        "snapshot": "835d068446387ef99dd437a09af904cfa5ca895ec25d8b9497d50ba5708a9e27",
+        "network": "disabled",
+        "patch_applied": true,
+        "runner": "python"
+      },
+      "existing_target": "tests",
+      "verification_scope": "selected existing test target plus generated regression; not a proof of all repository behavior",
+      "patched": {
+        "exit_code": 0,
+        "status": "passed",
+        "test_report": {
+          "available": true,
+          "total": 1,
+          "passed": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "cases": [
+            {
+              "id": "tests.test_devpilot_nan::test_nan_weight_is_rejected",
+              "status": "passed",
+              "failure_type": "",
+              "detail": "",
+              "report": ".devpilot-test-results.xml"
+            }
+          ],
+          "parse_errors": []
+        },
+        "output": ".                                                                        [100%]\n---------- generated xml file: /workspace/.devpilot-test-results.xml -----------\n1 passed in 0.01s\n",
+        "elapsed_ms": 286,
+        "image": "devpilot-runner:local",
+        "target": "tests/test_devpilot_nan.py",
+        "output_truncated": false,
+        "snapshot": "835d068446387ef99dd437a09af904cfa5ca895ec25d8b9497d50ba5708a9e27",
+        "network": "disabled",
+        "patch_applied": true,
+        "runner": "python"
+      },
+      "outcome": "verified_test_transition",
+      "regression_demonstrated": true
+    }
+  }
+}

@@ -1,0 +1,720 @@
+{
+  "investigation_id": "6a16469000cf45948c9771e8161849e7",
+  "question": "In BaseModel.model_dump(), which method produces the returned dictionary, and how is exclude_none passed to it?",
+  "result": {
+    "answer": "In BaseModel.model_dump(), the method that produces the returned dictionary is __pydantic_serializer__.to_python() [1].\n\nexclude_none is passed to __pydantic_serializer__.to_python() through the model_dump() method's parameters [1].",
+    "evidence": [
+      {
+        "id": "eab91bb32f4abaa66f6b7096",
+        "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+        "path": "pydantic/main.py",
+        "name": "model_dump",
+        "qualified": "pydantic.main.BaseModel.model_dump",
+        "kind": "method",
+        "start_line": 472,
+        "end_line": 536,
+        "source": "    def model_dump(\n        self,\n        *,\n        mode: Literal['json', 'python'] | str = 'python',\n        include: IncEx | None = None,\n        exclude: IncEx | None = None,\n        context: Any | None = None,\n        by_alias: bool | None = None,\n        exclude_unset: bool = False,\n        exclude_defaults: bool = False,\n        exclude_none: bool = False,\n        exclude_computed_fields: bool = False,\n        round_trip: bool = False,\n        warnings: bool | Literal['none', 'warn', 'error'] = True,\n        fallback: Callable[[Any], Any] | None = None,\n        serialize_as_any: bool = False,\n        polymorphic_serialization: bool | None = None,\n    ) -> Dict[str, Any]:  # noqa: UP006\n        \"\"\"!!! abstract \"Usage Documentation\"\n            [`model_dump`](../concepts/serialization.md#python-mode)\n\n        Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.\n\n        Args:\n            mode: The mode in which `to_python` should run.\n                If mode is 'json', the output will only contain JSON serializable types.\n                If mode is 'python', the output may contain non-JSON-serializable Python objects.\n            include: A set of fields to include in the output.\n            exclude: A set of fields to exclude from the output.\n            context: Additional context to pass to the serializer.\n            by_alias: Whether to use the field's alias in the dictionary key if defined.\n            exclude_unset: Whether to exclude fields that have not been explicitly set.\n            exclude_defaults: Whether to exclude fields that are set to their default value.\n            exclude_none: Whether to exclude fields that have a value of `None`.\n            exclude_computed_fields: Whether to exclude computed fields.\n                While this can be useful for round-tripping, it is usually recommended to use the dedicated\n                `round_trip` parameter instead.\n            round_trip: If True, dumped values should be valid as input for non-idempotent types such as Json[T].\n            warnings: How to handle serialization errors. False/\"none\" ignores them, True/\"warn\" logs errors,\n                \"error\" raises a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError].\n            fallback: A function to call when an unknown value is encountered. If not provided,\n                a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError] error is raised.\n            serialize_as_any: Whether to serialize fields with duck-typing serialization behavior.\n            polymorphic_serialization: Whether to use model and dataclass polymorphic serialization for this call.\n\n        Returns:\n            A dictionary representation of the model.\n        \"\"\"\n        return self.__pydantic_serializer__.to_python(\n            self,\n            mode=mode,\n            by_alias=by_alias,\n            include=include,\n            exclude=exclude,\n            context=context,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n            exclude_computed_fields=exclude_computed_fields,\n            round_trip=round_trip,\n            warnings=warnings,\n            fallback=fallback,\n            serialize_as_any=serialize_as_any,\n            polymorphic_serialization=polymorphic_serialization,\n        )",
+        "docstring": "!!! abstract \"Usage Documentation\"\n    [`model_dump`](../concepts/serialization.md#python-mode)\n\nGenerate a dictionary representation of the model, optionally specifying which fields to include or exclude.\n\nArgs:\n    mode: The mode in which `to_python` should run.\n        If mode is 'json', the output will only contain JSON serializable types.\n        If mode is 'python', the output may contain non-JSON-serializable Python objects.\n    include: A set of fields to include in the output.\n    exclude: A set of fields to exclude from the output.\n    context: Additional context to pass to the serializer.\n    by_alias: Whether to use the field's alias in the dictionary key if defined.\n    exclude_unset: Whether to exclude fields that have not been explicitly set.\n    exclude_defaults: Whether to exclude fields that are set to their default value.\n    exclude_none: Whether to exclude fields that have a value of `None`.\n    exclude_computed_fields: Whether to exclude computed fields.\n        While this can be useful for round-tripping, it is usually recommended to use the dedicated\n        `round_trip` parameter instead.\n    round_trip: If True, dumped values should be valid as input for non-idempotent types such as Json[T].\n    warnings: How to handle serialization errors. False/\"none\" ignores them, True/\"warn\" logs errors,\n        \"error\" raises a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError].\n    fallback: A function to call when an unknown value is encountered. If not provided,\n        a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError] error is raised.\n    serialize_as_any: Whether to serialize fields with duck-typing serialization behavior.\n    polymorphic_serialization: Whether to use model and dataclass polymorphic serialization for this call.\n\nReturns:\n    A dictionary representation of the model.",
+        "parent_id": "4a1727fc25ecf280b4fec484",
+        "public_aliases": [
+          "pydantic.main.BaseModel.model_dump"
+        ],
+        "score": 0.11667,
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "9bb9c2d05b69d50bd2e1f163",
+        "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+        "path": "pydantic/root_model.py",
+        "name": "model_dump",
+        "qualified": "pydantic.root_model.RootModel.model_dump",
+        "kind": "method",
+        "start_line": 128,
+        "end_line": 176,
+        "source": "        def model_dump(  # type: ignore\n            self,\n            *,\n            mode: Literal['json', 'python'] | str = 'python',\n            include: IncEx | None = None,\n            exclude: IncEx | None = None,\n            context: Any | None = None,\n            by_alias: bool | None = None,\n            exclude_unset: bool = False,\n            exclude_defaults: bool = False,\n            exclude_none: bool = False,\n            exclude_computed_fields: bool = False,\n            round_trip: bool = False,\n            warnings: bool | Literal['none', 'warn', 'error'] = True,\n            fallback: Callable[[Any], Any] | None = None,\n            serialize_as_any: bool = False,\n            polymorphic_serialization: bool | None = None,\n        ) -> Any:\n            \"\"\"!!! abstract \"Usage Documentation\"\n                [`model_dump`](../concepts/serialization.md#python-mode)\n\n            Generate a dictionary representation of the model, optionally specifying which fields to include or exclude.\n\n            Args:\n                mode: The mode in which `to_python` should run.\n                    If mode is 'json', the output will only contain JSON serializable types.\n                    If mode is 'python', the output may contain non-JSON-serializable Python objects.\n                include: A set of fields to include in the output.\n                exclude: A set of fields to exclude from the output.\n                context: Additional context to pass to the serializer.\n                by_alias: Whether to use the field's alias in the dictionary key if defined.\n                exclude_unset: Whether to exclude fields that have not been explicitly set.\n                exclude_defaults: Whether to exclude fields that are set to their default value.\n                exclude_none: Whether to exclude fields that have a value of `None`.\n                exclude_computed_fields: Whether to exclude computed fields.\n                    While this can be useful for round-tripping, it is usually recommended to use the dedicated\n                    `round_trip` parameter instead.\n                round_trip: If True, dumped values should be valid as input for non-idempotent types such as Json[T].\n                warnings: How to handle serialization errors. False/\"none\" ignores them, True/\"warn\" logs errors,\n                    \"error\" raises a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError].\n                fallback: A function to call when an unknown value is encountered. If not provided,\n                    a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError] error is raised.\n                serialize_as_any: Whether to serialize fields with duck-typing serialization behavior.\n                polymorphic_serialization: Whether to use model and dataclass polymorphic serialization for this call.\n\n            Returns:\n                A dictionary representation of the model.\n            \"\"\"\n            ...",
+        "docstring": "!!! abstract \"Usage Documentation\"\n    [`model_dump`](../concepts/serialization.md#python-mode)\n\nGenerate a dictionary representation of the model, optionally specifying which fields to include or exclude.\n\nArgs:\n    mode: The mode in which `to_python` should run.\n        If mode is 'json', the output will only contain JSON serializable types.\n        If mode is 'python', the output may contain non-JSON-serializable Python objects.\n    include: A set of fields to include in the output.\n    exclude: A set of fields to exclude from the output.\n    context: Additional context to pass to the serializer.\n    by_alias: Whether to use the field's alias in the dictionary key if defined.\n    exclude_unset: Whether to exclude fields that have not been explicitly set.\n    exclude_defaults: Whether to exclude fields that are set to their default value.\n    exclude_none: Whether to exclude fields that have a value of `None`.\n    exclude_computed_fields: Whether to exclude computed fields.\n        While this can be useful for round-tripping, it is usually recommended to use the dedicated\n        `round_trip` parameter instead.\n    round_trip: If True, dumped values should be valid as input for non-idempotent types such as Json[T].\n    warnings: How to handle serialization errors. False/\"none\" ignores them, True/\"warn\" logs errors,\n        \"error\" raises a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError].\n    fallback: A function to call when an unknown value is encountered. If not provided,\n        a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError] error is raised.\n    serialize_as_any: Whether to serialize fields with duck-typing serialization behavior.\n    polymorphic_serialization: Whether to use model and dataclass polymorphic serialization for this call.\n\nReturns:\n    A dictionary representation of the model.",
+        "parent_id": "5497cbfcad4d5b65375a848f",
+        "public_aliases": [
+          "pydantic.root_model.RootModel.model_dump"
+        ],
+        "score": 0.01639,
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "73b0fb5296f978bef34a7833",
+        "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+        "path": "pydantic/main.py",
+        "name": "dict",
+        "qualified": "pydantic.main.BaseModel.dict",
+        "kind": "method",
+        "start_line": 1385,
+        "end_line": 1408,
+        "source": "    @typing_extensions.deprecated('The `dict` method is deprecated; use `model_dump` instead.', category=None)\n    def dict(  # noqa: D102\n        self,\n        *,\n        include: IncEx | None = None,\n        exclude: IncEx | None = None,\n        by_alias: bool = False,\n        exclude_unset: bool = False,\n        exclude_defaults: bool = False,\n        exclude_none: bool = False,\n    ) -> Dict[str, Any]:  # noqa UP006\n        warnings.warn(\n            'The `dict` method is deprecated; use `model_dump` instead.',\n            category=PydanticDeprecatedSince20,\n            stacklevel=2,\n        )\n        return self.model_dump(\n            include=include,\n            exclude=exclude,\n            by_alias=by_alias,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n        )",
+        "docstring": "",
+        "parent_id": "4a1727fc25ecf280b4fec484",
+        "public_aliases": [
+          "pydantic.main.BaseModel.dict"
+        ],
+        "score": 0.01613,
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "263c3f72dfed52e6b8220a1c",
+        "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+        "path": "pydantic/main.py",
+        "name": "copy",
+        "qualified": "pydantic.main.BaseModel.copy",
+        "kind": "method",
+        "start_line": 1569,
+        "end_line": 1644,
+        "source": "    @typing_extensions.deprecated(\n        'The `copy` method is deprecated; use `model_copy` instead. '\n        'See the docstring of `BaseModel.copy` for details about how to handle `include` and `exclude`.',\n        category=None,\n    )\n    def copy(\n        self,\n        *,\n        include: AbstractSetIntStr | MappingIntStrAny | None = None,\n        exclude: AbstractSetIntStr | MappingIntStrAny | None = None,\n        update: Dict[str, Any] | None = None,  # noqa UP006\n        deep: bool = False,\n    ) -> Self:  # pragma: no cover\n        \"\"\"Returns a copy of the model.\n\n        !!! warning \"Deprecated\"\n            This method is now deprecated; use `model_copy` instead.\n\n        If you need `include` or `exclude`, use:\n\n        ```python {test=\"skip\" lint=\"skip\"}\n        data = self.model_dump(include=include, exclude=exclude, round_trip=True)\n        data = {**data, **(update or {})}\n        copied = self.model_validate(data)\n        ```\n\n        Args:\n            include: Optional set or mapping specifying which fields to include in the copied model.\n            exclude: Optional set or mapping specifying which fields to exclude in the copied model.\n            update: Optional dictionary of field-value pairs to override field values in the copied model.\n            deep: If True, the values of fields that are Pydantic models will be deep-copied.\n\n        Returns:\n            A copy of the model with included, excluded and updated fields as specified.\n        \"\"\"\n        warnings.warn(\n            'The `copy` method is deprecated; use `model_copy` instead. '\n            'See the docstring of `BaseModel.copy` for details about how to handle `include` and `exclude`.',\n            category=PydanticDeprecatedSince20,\n            stacklevel=2,\n        )\n        from .deprecated import copy_internals\n\n        values = dict(\n            copy_internals._iter(\n                self, to_dict=False, by_alias=False, include=include, exclude=exclude, exclude_unset=False\n            ),\n            **(update or {}),\n        )\n        if self.__pydantic_private__ is None:\n            private = None\n        else:\n            private = {k: v for k, v in self.__pydantic_private__.items() if v is not PydanticUndefined}\n\n        if self.__pydantic_extra__ is None:\n            extra: dict[str, Any] | None = None\n        else:\n            extra = self.__pydantic_extra__.copy()\n            for k in list(self.__pydantic_extra__):\n                if k not in values:  # k was in the exclude\n                    extra.pop(k)\n            for k in list(values):\n                if k in self.__pydantic_extra__:  # k must have come from extra\n                    extra[k] = values.pop(k)\n\n        # new `__pydantic_fields_set__` can have unset optional fields with a set value in `update` kwarg\n        if update:\n            fields_set = self.__pydantic_fields_set__ | update.keys()\n        else:\n            fields_set = set(self.__pydantic_fields_set__)\n\n        # removing excluded fields from `__pydantic_fields_set__`\n        if exclude:\n            fields_set -= set(exclude)\n\n        return copy_internals._copy_and_set_values(self, values, fields_set, extra, private, deep=deep)",
+        "docstring": "Returns a copy of the model.\n\n!!! warning \"Deprecated\"\n    This method is now deprecated; use `model_copy` instead.\n\nIf you need `include` or `exclude`, use:\n\n```python {test=\"skip\" lint=\"skip\"}\ndata = self.model_dump(include=include, exclude=exclude, round_trip=True)\ndata = {**data, **(update or {})}\ncopied = self.model_validate(data)\n```\n\nArgs:\n    include: Optional set or mapping specifying which fields to include in the copied model.\n    exclude: Optional set or mapping specifying which fields to exclude in the copied model.\n    update: Optional dictionary of field-value pairs to override field values in the copied model.\n    deep: If True, the values of fields that are Pydantic models will be deep-copied.\n\nReturns:\n    A copy of the model with included, excluded and updated fields as specified.",
+        "parent_id": "4a1727fc25ecf280b4fec484",
+        "public_aliases": [
+          "pydantic.main.BaseModel.copy"
+        ],
+        "score": 0.01587,
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "4a1727fc25ecf280b4fec484",
+        "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+        "path": "pydantic/main.py",
+        "name": "BaseModel",
+        "qualified": "pydantic.main.BaseModel",
+        "kind": "class",
+        "start_line": 136,
+        "end_line": 1760,
+        "source": "class BaseModel(metaclass=_model_construction.ModelMetaclass):\n    \"\"\"!!! abstract \"Usage Documentation\"\n        [Models](../concepts/models.md)\n\n    A base class for creating Pydantic models.\n\n    Attributes:\n        __class_vars__: The names of the class variables defined on the model.\n        __private_attributes__: Metadata about the private attributes of the model.\n        __signature__: The synthesized `__init__` [`Signature`][inspect.Signature] of the model.\n\n        __pydantic_complete__: Whether model building is completed, or if there are still undefined fields.\n        __pydantic_core_schema__: The core schema of the model.\n        __pydantic_custom_init__: Whether the model has a custom `__init__` function.\n        __pydantic_decorators__: Metadata containing the decorators defined on the model.\n            This replaces `Model.__validators__` and `Model.__root_validators__` from Pydantic V1.\n        __pydantic_generic_metadata__: A dictionary containing metadata about generic Pydantic models.\n            The `origin` and `args` items map to the [`__origin__`][genericalias.__origin__]\n            and [`__args__`][genericalias.__args__] attributes of [generic aliases][types-genericalias],\n            and the `parameter` item maps to the `__parameter__` attribute of generic classes.\n        __pydantic_parent_namespace__: Parent namespace of the model, used for automatic rebuilding of models.\n        __pydantic_post_init__: The name of the post-init method for the model, if defined.\n        __pydantic_root_model__: Whether the model is a [`RootModel`][pydantic.root_model.RootModel].\n        __pydantic_serializer__: The `pydantic-core` `SchemaSerializer` used to dump instances of the model.\n        __pydantic_validator__: The `pydantic-core` `SchemaValidator` used to validate instances of the model.\n\n        __pydantic_fields__: A dictionary of field names and their corresponding [`FieldInfo`][pydantic.fields.FieldInfo] objects.\n        __pydantic_computed_fields__: A dictionary of computed field names and their corresponding [`ComputedFieldInfo`][pydantic.fields.ComputedFieldInfo] objects.\n\n        __pydantic_extra__: A dictionary containing extra values, if [`extra`][pydantic.config.ConfigDict.extra]\n            is set to `'allow'`.\n        __pydantic_fields_set__: The names of fields explicitly set during instantiation.\n        __pydantic_private__: Values of private attributes set on the model instance.\n    \"\"\"\n\n    # Note: Many of the below class vars are defined in the metaclass, but we define them here for type checking purposes.\n\n    model_config: ClassVar[ConfigDict] = ConfigDict()\n    \"\"\"\n    Configuration for the model, should be a dictionary conforming to [`ConfigDict`][pydantic.config.ConfigDict].\n    \"\"\"\n\n    __class_vars__: ClassVar[set[str]]\n    \"\"\"The names of the class variables defined on the model.\"\"\"\n\n    __private_attributes__: ClassVar[Dict[str, ModelPrivateAttr]]  # noqa: UP006\n    \"\"\"Metadata about the private attributes of the model.\"\"\"\n\n    __signature__: ClassVar[Signature]\n    \"\"\"The synthesized `__init__` [`Signature`][inspect.Signature] of the model.\"\"\"\n\n    __pydantic_complete__: ClassVar[bool] = False\n    \"\"\"Whether model building is completed, or if there are still undefined fields.\"\"\"\n\n    __pydantic_core_schema__: ClassVar[CoreSchema]\n    \"\"\"The core schema of the model.\"\"\"\n\n    __pydantic_custom_init__: ClassVar[bool]\n    \"\"\"Whether the model has a custom `__init__` method.\"\"\"\n\n    # Must be set for `GenerateSchema.model_schema` to work for a plain `BaseModel` annotation.\n    __pydantic_decorators__: ClassVar[_decorators.DecoratorInfos] = _decorators.DecoratorInfos()\n    \"\"\"Metadata containing the decorators defined on the model.\n    This replaces `Model.__validators__` and `Model.__root_validators__` from Pydantic V1.\"\"\"\n\n    __pydantic_generic_metadata__: ClassVar[_generics.PydanticGenericMetadata]\n    \"\"\"A dictionary containing metadata about generic Pydantic models.\n\n    The `origin` and `args` items map to the [`__origin__`][genericalias.__origin__]\n    and [`__args__`][genericalias.__args__] attributes of [generic aliases][types-genericalias],\n    and the `parameter` item maps to the `__parameter__` attribute of generic classes.\n    \"\"\"\n\n    __pydantic_parent_namespace__: ClassVar[Dict[str, Any] | None] = None  # noqa: UP006\n    \"\"\"Parent namespace of the model, used for automatic rebuilding of models.\"\"\"\n\n    __pydantic_post_init__: ClassVar[None | Literal['model_post_init']]\n    \"\"\"The name of the post-init method for the model, if defined.\"\"\"\n\n    __pydantic_root_model__: ClassVar[bool] = False\n    \"\"\"Whether the model is a [`RootModel`][pydantic.root_model.RootModel].\"\"\"\n\n    __pydantic_serializer__: ClassVar[SchemaSerializer]\n    \"\"\"The `pydantic-core` `SchemaSerializer` used to dump instances of the model.\"\"\"\n\n    __pydantic_validator__: ClassVar[SchemaValidator | PluggableSchemaValidator]\n    \"\"\"The `pydantic-core` `SchemaValidator` used to validate ",
+        "docstring": "!!! abstract \"Usage Documentation\"\n    [Models](../concepts/models.md)\n\nA base class for creating Pydantic models.\n\nAttributes:\n    __class_vars__: The names of the class variables defined on the model.\n    __private_attributes__: Metadata about the private attributes of the model.\n    __signature__: The synthesized `__init__` [`Signature`][inspect.Signature] of the model.\n\n    __pydantic_complete__: Whether model building is completed, or if there are still undefined fields.\n    __pydantic_core_schema__: The core schema of the model.\n    __pydantic_custom_init__: Whether the model has a custom `__init__` function.\n    __pydantic_decorators__: Metadata containing the decorators defined on the model.\n        This replaces `Model.__validators__` and `Model.__root_validators__` from Pydantic V1.\n    __pydantic_generic_metadata__: A dictionary containing metadata about generic Pydantic models.\n        The `origin` and `args` items map to the [`__origin__`][genericalias.__origin__]\n        and [`__args__`][genericalias.__args__] attributes of [generic aliases][types-genericalias],\n        and the `parameter` item maps to the `__parameter__` attribute of generic classes.\n    __pydantic_parent_namespace__: Parent namespace of the model, used for automatic rebuilding of models.\n    __pydantic_post_init__: The name of the post-init method for the model, if defined.\n    __pydantic_root_model__: Whether the model is a [`RootModel`][pydantic.root_model.RootModel].\n    __pydantic_serializer__: The `pydantic-core` `SchemaSerializer` used to dump instances of the model.\n    __pydantic_validator__: The `pydantic-core` `SchemaValidator` used to validate instances of the model.\n\n    __pydantic_fields__: A dictionary of field names and their corresponding [`FieldInfo`][pydantic.fields.FieldInfo] objects.\n    __pydantic_computed_fields__: A dictionary of computed field names and their corresponding [`ComputedFieldInfo`][pydantic.fields.ComputedFieldInfo] objects.\n\n    __pydantic_extra__: A dictionary containing extra values, if [`extra`][pydantic.config.ConfigDict.extra]\n        is set to `'allow'`.\n    __pydantic_fields_set__: The names of fields explicitly set during instantiation.\n    __pydantic_private__: Values of private attributes set on the model instance.",
+        "parent_id": "25f7e5a6a44d35ed8dc2d960",
+        "public_aliases": [
+          "pydantic.main.BaseModel"
+        ],
+        "score": 0.04538,
+        "reason": "contains relationship with model_dump",
+        "traversal": [
+          {
+            "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+            "source": "4a1727fc25ecf280b4fec484",
+            "target": "eab91bb32f4abaa66f6b7096",
+            "kind": "contains",
+            "line": 472,
+            "confidence": "exact",
+            "label": "model_dump"
+          }
+        ],
+        "truncated": true
+      },
+      {
+        "id": "4c5d346d8bd5ce3561127aec",
+        "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+        "path": "pydantic/main.py",
+        "name": "model_dump_json",
+        "qualified": "pydantic.main.BaseModel.model_dump_json",
+        "kind": "method",
+        "start_line": 538,
+        "end_line": 604,
+        "source": "    def model_dump_json(\n        self,\n        *,\n        indent: int | None = None,\n        ensure_ascii: bool = False,\n        include: IncEx | None = None,\n        exclude: IncEx | None = None,\n        context: Any | None = None,\n        by_alias: bool | None = None,\n        exclude_unset: bool = False,\n        exclude_defaults: bool = False,\n        exclude_none: bool = False,\n        exclude_computed_fields: bool = False,\n        round_trip: bool = False,\n        warnings: bool | Literal['none', 'warn', 'error'] = True,\n        fallback: Callable[[Any], Any] | None = None,\n        serialize_as_any: bool = False,\n        polymorphic_serialization: bool | None = None,\n    ) -> str:\n        \"\"\"!!! abstract \"Usage Documentation\"\n            [`model_dump_json`](../concepts/serialization.md#json-mode)\n\n        Generates a JSON representation of the model using Pydantic's `to_json` method.\n\n        Args:\n            indent: Indentation to use in the JSON output. If None is passed, the output will be compact.\n            ensure_ascii: If `True`, the output is guaranteed to have all incoming non-ASCII characters escaped.\n                If `False` (the default), these characters will be output as-is.\n            include: Field(s) to include in the JSON output.\n            exclude: Field(s) to exclude from the JSON output.\n            context: Additional context to pass to the serializer.\n            by_alias: Whether to serialize using field aliases.\n            exclude_unset: Whether to exclude fields that have not been explicitly set.\n            exclude_defaults: Whether to exclude fields that are set to their default value.\n            exclude_none: Whether to exclude fields that have a value of `None`.\n            exclude_computed_fields: Whether to exclude computed fields.\n                While this can be useful for round-tripping, it is usually recommended to use the dedicated\n                `round_trip` parameter instead.\n            round_trip: If True, dumped values should be valid as input for non-idempotent types such as Json[T].\n            warnings: How to handle serialization errors. False/\"none\" ignores them, True/\"warn\" logs errors,\n                \"error\" raises a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError].\n            fallback: A function to call when an unknown value is encountered. If not provided,\n                a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError] error is raised.\n            serialize_as_any: Whether to serialize fields with duck-typing serialization behavior.\n            polymorphic_serialization: Whether to use model and dataclass polymorphic serialization for this call.\n\n        Returns:\n            A JSON string representation of the model.\n        \"\"\"\n        return self.__pydantic_serializer__.to_json(\n            self,\n            indent=indent,\n            ensure_ascii=ensure_ascii,\n            include=include,\n            exclude=exclude,\n            context=context,\n            by_alias=by_alias,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n            exclude_computed_fields=exclude_computed_fields,\n            round_trip=round_trip,\n            warnings=warnings,\n            fallback=fallback,\n            serialize_as_any=serialize_as_any,\n            polymorphic_serialization=polymorphic_serialization,\n        ).decode()",
+        "docstring": "!!! abstract \"Usage Documentation\"\n    [`model_dump_json`](../concepts/serialization.md#json-mode)\n\nGenerates a JSON representation of the model using Pydantic's `to_json` method.\n\nArgs:\n    indent: Indentation to use in the JSON output. If None is passed, the output will be compact.\n    ensure_ascii: If `True`, the output is guaranteed to have all incoming non-ASCII characters escaped.\n        If `False` (the default), these characters will be output as-is.\n    include: Field(s) to include in the JSON output.\n    exclude: Field(s) to exclude from the JSON output.\n    context: Additional context to pass to the serializer.\n    by_alias: Whether to serialize using field aliases.\n    exclude_unset: Whether to exclude fields that have not been explicitly set.\n    exclude_defaults: Whether to exclude fields that are set to their default value.\n    exclude_none: Whether to exclude fields that have a value of `None`.\n    exclude_computed_fields: Whether to exclude computed fields.\n        While this can be useful for round-tripping, it is usually recommended to use the dedicated\n        `round_trip` parameter instead.\n    round_trip: If True, dumped values should be valid as input for non-idempotent types such as Json[T].\n    warnings: How to handle serialization errors. False/\"none\" ignores them, True/\"warn\" logs errors,\n        \"error\" raises a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError].\n    fallback: A function to call when an unknown value is encountered. If not provided,\n        a [`PydanticSerializationError`][pydantic_core.PydanticSerializationError] error is raised.\n    serialize_as_any: Whether to serialize fields with duck-typing serialization behavior.\n    polymorphic_serialization: Whether to use model and dataclass polymorphic serialization for this call.\n\nReturns:\n    A JSON string representation of the model.",
+        "parent_id": "4a1727fc25ecf280b4fec484",
+        "public_aliases": [
+          "pydantic.main.BaseModel.model_dump_json"
+        ],
+        "score": 0.01562,
+        "reason": "contains relationship with BaseModel",
+        "traversal": [
+          {
+            "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+            "source": "4a1727fc25ecf280b4fec484",
+            "target": "eab91bb32f4abaa66f6b7096",
+            "kind": "contains",
+            "line": 472,
+            "confidence": "exact",
+            "label": "model_dump"
+          },
+          {
+            "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+            "source": "4a1727fc25ecf280b4fec484",
+            "target": "4c5d346d8bd5ce3561127aec",
+            "kind": "contains",
+            "line": 538,
+            "confidence": "exact",
+            "label": "model_dump_json"
+          }
+        ],
+        "truncated": false
+      },
+      {
+        "id": "dc66d22424b67e2aea46f533",
+        "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+        "path": "pydantic/main.py",
+        "name": "json",
+        "qualified": "pydantic.main.BaseModel.json",
+        "kind": "method",
+        "start_line": 1410,
+        "end_line": 1442,
+        "source": "    @typing_extensions.deprecated('The `json` method is deprecated; use `model_dump_json` instead.', category=None)\n    def json(  # noqa: D102\n        self,\n        *,\n        include: IncEx | None = None,\n        exclude: IncEx | None = None,\n        by_alias: bool = False,\n        exclude_unset: bool = False,\n        exclude_defaults: bool = False,\n        exclude_none: bool = False,\n        encoder: Callable[[Any], Any] | None = PydanticUndefined,  # type: ignore[assignment]\n        models_as_dict: bool = PydanticUndefined,  # type: ignore[assignment]\n        **dumps_kwargs: Any,\n    ) -> str:\n        warnings.warn(\n            'The `json` method is deprecated; use `model_dump_json` instead.',\n            category=PydanticDeprecatedSince20,\n            stacklevel=2,\n        )\n        if encoder is not PydanticUndefined:\n            raise TypeError('The `encoder` argument is no longer supported; use field serializers instead.')\n        if models_as_dict is not PydanticUndefined:\n            raise TypeError('The `models_as_dict` argument is no longer supported; use a model serializer instead.')\n        if dumps_kwargs:\n            raise TypeError('`dumps_kwargs` keyword arguments are no longer supported.')\n        return self.model_dump_json(\n            include=include,\n            exclude=exclude,\n            by_alias=by_alias,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n        )",
+        "docstring": "",
+        "parent_id": "4a1727fc25ecf280b4fec484",
+        "public_aliases": [
+          "pydantic.main.BaseModel.json"
+        ],
+        "score": 0.01538,
+        "reason": "contains relationship with BaseModel",
+        "traversal": [
+          {
+            "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+            "source": "4a1727fc25ecf280b4fec484",
+            "target": "eab91bb32f4abaa66f6b7096",
+            "kind": "contains",
+            "line": 472,
+            "confidence": "exact",
+            "label": "model_dump"
+          },
+          {
+            "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+            "source": "4a1727fc25ecf280b4fec484",
+            "target": "dc66d22424b67e2aea46f533",
+            "kind": "contains",
+            "line": 1410,
+            "confidence": "exact",
+            "label": "json"
+          }
+        ],
+        "truncated": false
+      },
+      {
+        "id": "4d49eaa6437d38b70d0d716c",
+        "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+        "path": "pydantic/root_model.py",
+        "name": "root_model.py",
+        "qualified": "pydantic.root_model",
+        "kind": "module",
+        "start_line": 1,
+        "end_line": 186,
+        "source": "\"\"\"RootModel class and type definitions.\"\"\"\n\nfrom __future__ import annotations as _annotations\n\nfrom collections.abc import Callable\nfrom copy import copy, deepcopy\nfrom typing import TYPE_CHECKING, Any, Generic, Literal, TypeVar\n\nfrom pydantic_core import PydanticUndefined\nfrom typing_extensions import Self, dataclass_transform\n\nfrom . import PydanticUserError\nfrom ._internal import _model_construction, _repr\nfrom .main import BaseModel, _object_setattr\n\nif TYPE_CHECKING:\n    from .fields import Field as PydanticModelField\n    from .fields import PrivateAttr as PydanticModelPrivateAttr\n    from .main import IncEx\n\n    # dataclass_transform could be applied to RootModel directly, but `ModelMetaclass`'s dataclass_transform\n    # takes priority (at least with pyright). We trick type checkers into thinking we apply dataclass_transform\n    # on a new metaclass.\n    @dataclass_transform(kw_only_default=False, field_specifiers=(PydanticModelField, PydanticModelPrivateAttr))\n    class _RootModelMetaclass(_model_construction.ModelMetaclass): ...\nelse:\n    _RootModelMetaclass = _model_construction.ModelMetaclass\n\n__all__ = ('RootModel',)\n\nRootModelRootType = TypeVar('RootModelRootType')\n\n\nclass RootModel(BaseModel, Generic[RootModelRootType], metaclass=_RootModelMetaclass):\n    \"\"\"!!! abstract \"Usage Documentation\"\n        [`RootModel` and Custom Root Types](../concepts/models.md#rootmodel-and-custom-root-types)\n\n    A Pydantic `BaseModel` for the root object of the model.\n\n    Attributes:\n        root: The root object of the model.\n        __pydantic_root_model__: Whether the model is a RootModel.\n        __pydantic_private__: Private fields in the model.\n        __pydantic_extra__: Extra fields in the model.\n\n    \"\"\"\n\n    __pydantic_root_model__ = True\n    __pydantic_private__ = None\n    __pydantic_extra__ = None\n\n    root: RootModelRootType\n\n    def __init_subclass__(cls, **kwargs):\n        extra = cls.model_config.get('extra')\n        if extra is not None:\n            raise PydanticUserError(\n                \"`RootModel` does not support setting `model_config['extra']`\", code='root-model-extra'\n            )\n        super().__init_subclass__(**kwargs)\n\n    def __init__(self, /, root: RootModelRootType = PydanticUndefined, **data) -> None:  # type: ignore\n        __tracebackhide__ = True\n        if data:\n            if root is not PydanticUndefined:\n                raise ValueError(\n                    '\"RootModel.__init__\" accepts either a single positional argument or arbitrary keyword arguments'\n                )\n            root = data  # type: ignore\n        self.__pydantic_validator__.validate_python(root, self_instance=self)\n\n    __init__.__pydantic_base_init__ = True  # pyright: ignore[reportFunctionMemberAccess]\n\n    @classmethod\n    def model_construct(cls, root: RootModelRootType, _fields_set: set[str] | None = None) -> Self:  # type: ignore\n        \"\"\"Create a new model using the provided root object and update fields set.\n\n        Args:\n            root: The root object of the model.\n            _fields_set: The set of fields to be updated.\n\n        Returns:\n            The new model.\n\n        Raises:\n            NotImplemented: If the model is not a subclass of `RootModel`.\n        \"\"\"\n        return super().model_construct(root=root, _fields_set=_fields_set)\n\n    def __getstate__(self) -> dict[Any, Any]:\n        return {\n            '__dict__': self.__dict__,\n            '__pydantic_fields_set__': self.__pydantic_fields_set__,\n        }\n\n    def __setstate__(self, state: dict[Any, Any])",
+        "docstring": "RootModel class and type definitions.",
+        "parent_id": null,
+        "public_aliases": [],
+        "score": 0.0149,
+        "reason": "imports relationship with BaseModel",
+        "traversal": [
+          {
+            "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+            "source": "4a1727fc25ecf280b4fec484",
+            "target": "eab91bb32f4abaa66f6b7096",
+            "kind": "contains",
+            "line": 472,
+            "confidence": "exact",
+            "label": "model_dump"
+          },
+          {
+            "repo_id": "e687bcb5c1234b15aff2acb21c30e523",
+            "source": "4d49eaa6437d38b70d0d716c",
+            "target": "4a1727fc25ecf280b4fec484",
+            "kind": "imports",
+            "line": 14,
+            "confidence": "static",
+            "label": "pydantic.main.BaseModel"
+          }
+        ],
+        "truncated": true
+      }
+    ],
+    "mode": "hybrid",
+    "semantic_used": false,
+    "generated": true,
+    "abstained": false,
+    "partial": false,
+    "aspect_statuses": [
+      {
+        "aspect_id": 1,
+        "question": "which method produces the returned dictionary",
+        "status": "supported"
+      },
+      {
+        "aspect_id": 2,
+        "question": "how is exclude_none passed to it",
+        "status": "supported"
+      }
+    ],
+    "generation_context": [
+      {
+        "source_id": 1,
+        "id": "eab91bb32f4abaa66f6b7096",
+        "qualified": "pydantic.main.BaseModel.model_dump",
+        "path": "pydantic/main.py",
+        "source_line_numbers": [
+          472,
+          473,
+          474,
+          475,
+          476,
+          477,
+          478,
+          479,
+          480,
+          481,
+          482,
+          483,
+          484,
+          485,
+          486,
+          520,
+          521,
+          522,
+          523,
+          524,
+          525,
+          526,
+          527,
+          528,
+          529,
+          530,
+          531,
+          532,
+          533
+        ],
+        "source": "    def model_dump(\n        self,\n        *,\n        mode: Literal['json', 'python'] | str = 'python',\n        include: IncEx | None = None,\n        exclude: IncEx | None = None,\n        context: Any | None = None,\n        by_alias: bool | None = None,\n        exclude_unset: bool = False,\n        exclude_defaults: bool = False,\n        exclude_none: bool = False,\n        exclude_computed_fields: bool = False,\n        round_trip: bool = False,\n        warnings: bool | Literal['none', 'warn', 'error'] = True,\n        fallback: Callable[[Any], Any] | None = None,\n        return self.__pydantic_serializer__.to_python(\n            self,\n            mode=mode,\n            by_alias=by_alias,\n            include=include,\n            exclude=exclude,\n            context=context,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n            exclude_computed_fields=exclude_computed_fields,\n            round_trip=round_trip,\n            warnings=warnings,\n            fallback=fallback,",
+        "truncated": true
+      },
+      {
+        "source_id": 3,
+        "id": "73b0fb5296f978bef34a7833",
+        "qualified": "pydantic.main.BaseModel.dict",
+        "path": "pydantic/main.py",
+        "source_line_numbers": [
+          1385,
+          1386,
+          1387,
+          1388,
+          1389,
+          1390,
+          1391,
+          1392,
+          1393,
+          1394,
+          1395,
+          1396,
+          1397,
+          1398,
+          1399,
+          1400,
+          1401,
+          1402,
+          1403,
+          1404,
+          1405,
+          1406,
+          1407,
+          1408
+        ],
+        "source": "    @typing_extensions.deprecated('The `dict` method is deprecated; use `model_dump` instead.', category=None)\n    def dict(  # noqa: D102\n        self,\n        *,\n        include: IncEx | None = None,\n        exclude: IncEx | None = None,\n        by_alias: bool = False,\n        exclude_unset: bool = False,\n        exclude_defaults: bool = False,\n        exclude_none: bool = False,\n    ) -> Dict[str, Any]:  # noqa UP006\n        warnings.warn(\n            'The `dict` method is deprecated; use `model_dump` instead.',\n            category=PydanticDeprecatedSince20,\n            stacklevel=2,\n        )\n        return self.model_dump(\n            include=include,\n            exclude=exclude,\n            by_alias=by_alias,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n        )",
+        "truncated": false
+      },
+      {
+        "source_id": 2,
+        "id": "9bb9c2d05b69d50bd2e1f163",
+        "qualified": "pydantic.root_model.RootModel.model_dump",
+        "path": "pydantic/root_model.py",
+        "source_line_numbers": [
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          176
+        ],
+        "source": "        def model_dump(  # type: ignore\n            self,\n            *,\n            mode: Literal['json', 'python'] | str = 'python',\n            include: IncEx | None = None,\n            exclude: IncEx | None = None,\n            context: Any | None = None,\n            by_alias: bool | None = None,\n            exclude_unset: bool = False,\n            exclude_defaults: bool = False,\n            exclude_none: bool = False,\n            exclude_computed_fields: bool = False,\n            round_trip: bool = False,\n            warnings: bool | Literal['none', 'warn', 'error'] = True,\n            fallback: Callable[[Any], Any] | None = None,\n            serialize_as_any: bool = False,\n            polymorphic_serialization: bool | None = None,\n        ) -> Any:\n            ...",
+        "truncated": true
+      },
+      {
+        "source_id": 4,
+        "id": "263c3f72dfed52e6b8220a1c",
+        "qualified": "pydantic.main.BaseModel.copy",
+        "path": "pydantic/main.py",
+        "source_line_numbers": [
+          1569,
+          1570,
+          1571,
+          1572,
+          1573,
+          1574,
+          1604,
+          1605,
+          1606,
+          1607,
+          1608,
+          1609,
+          1611,
+          1612,
+          1613,
+          1614,
+          1615,
+          1616,
+          1617,
+          1626,
+          1627,
+          1628,
+          1629,
+          1630,
+          1631,
+          1643,
+          1644
+        ],
+        "source": "    @typing_extensions.deprecated(\n        'The `copy` method is deprecated; use `model_copy` instead. '\n        'See the docstring of `BaseModel.copy` for details about how to handle `include` and `exclude`.',\n        category=None,\n    )\n    def copy(\n        warnings.warn(\n            'The `copy` method is deprecated; use `model_copy` instead. '\n            'See the docstring of `BaseModel.copy` for details about how to handle `include` and `exclude`.',\n            category=PydanticDeprecatedSince20,\n            stacklevel=2,\n        )\n\n        values = dict(\n            copy_internals._iter(\n                self, to_dict=False, by_alias=False, include=include, exclude=exclude, exclude_unset=False\n            ),\n            **(update or {}),\n        )\n            extra = self.__pydantic_extra__.copy()\n            for k in list(self.__pydantic_extra__):\n                if k not in values:  # k was in the exclude\n                    extra.pop(k)\n            for k in list(values):\n                if k in self.__pydantic_extra__:  # k must have come from extra\n\n        return copy_internals._copy_and_set_values(self, values, fields_set, extra, private, deep=deep)",
+        "truncated": true
+      },
+      {
+        "source_id": 5,
+        "id": "4a1727fc25ecf280b4fec484",
+        "qualified": "pydantic.main.BaseModel",
+        "path": "pydantic/main.py",
+        "source_line_numbers": [
+          136,
+          892,
+          893,
+          894,
+          895,
+          896,
+          897,
+          898,
+          1383,
+          1384,
+          1385,
+          1386,
+          1387,
+          1388,
+          1408,
+          1409,
+          1410,
+          1411,
+          1412,
+          1413,
+          1568,
+          1569,
+          1570,
+          1571,
+          1572,
+          1573,
+          1574,
+          1575
+        ],
+        "source": "class BaseModel(metaclass=_model_construction.ModelMetaclass):\n        warnings.warn(\n            'The `__get_pydantic_core_schema__` method of the `BaseModel` class is deprecated. If you are calling '\n            '`super().__get_pydantic_core_schema__` when overriding the method on a Pydantic model, consider using '\n            '`handler(source)` instead. However, note that overriding this method on models can lead to unexpected '\n            'side effects.',\n            PydanticDeprecatedSince211,\n            stacklevel=2,\n        return self.__pydantic_fields_set__\n\n    @typing_extensions.deprecated('The `dict` method is deprecated; use `model_dump` instead.', category=None)\n    def dict(  # noqa: D102\n        self,\n        *,\n        )\n\n    @typing_extensions.deprecated('The `json` method is deprecated; use `model_dump_json` instead.', category=None)\n    def json(  # noqa: D102\n        self,\n        *,\n\n    @typing_extensions.deprecated(\n        'The `copy` method is deprecated; use `model_copy` instead. '\n        'See the docstring of `BaseModel.copy` for details about how to handle `include` and `exclude`.',\n        category=None,\n    )\n    def copy(\n        self,",
+        "truncated": true
+      },
+      {
+        "source_id": 6,
+        "id": "4c5d346d8bd5ce3561127aec",
+        "qualified": "pydantic.main.BaseModel.model_dump_json",
+        "path": "pydantic/main.py",
+        "source_line_numbers": [
+          538,
+          539,
+          540,
+          541,
+          542,
+          543,
+          544,
+          545,
+          546,
+          547,
+          548,
+          549,
+          550,
+          551,
+          552,
+          553,
+          554,
+          555,
+          556,
+          587,
+          588,
+          589,
+          590,
+          593,
+          594,
+          595,
+          596,
+          597,
+          598,
+          599,
+          600,
+          601
+        ],
+        "source": "    def model_dump_json(\n        self,\n        *,\n        indent: int | None = None,\n        ensure_ascii: bool = False,\n        include: IncEx | None = None,\n        exclude: IncEx | None = None,\n        context: Any | None = None,\n        by_alias: bool | None = None,\n        exclude_unset: bool = False,\n        exclude_defaults: bool = False,\n        exclude_none: bool = False,\n        exclude_computed_fields: bool = False,\n        round_trip: bool = False,\n        warnings: bool | Literal['none', 'warn', 'error'] = True,\n        fallback: Callable[[Any], Any] | None = None,\n        serialize_as_any: bool = False,\n        polymorphic_serialization: bool | None = None,\n    ) -> str:\n        return self.__pydantic_serializer__.to_json(\n            self,\n            indent=indent,\n            ensure_ascii=ensure_ascii,\n            context=context,\n            by_alias=by_alias,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n            exclude_computed_fields=exclude_computed_fields,\n            round_trip=round_trip,\n            warnings=warnings,\n            fallback=fallback,",
+        "truncated": true
+      },
+      {
+        "source_id": 7,
+        "id": "dc66d22424b67e2aea46f533",
+        "qualified": "pydantic.main.BaseModel.json",
+        "path": "pydantic/main.py",
+        "source_line_numbers": [
+          1410,
+          1411,
+          1412,
+          1413,
+          1414,
+          1415,
+          1416,
+          1417,
+          1418,
+          1419,
+          1420,
+          1421,
+          1422,
+          1423,
+          1424,
+          1425,
+          1426,
+          1427,
+          1428,
+          1433,
+          1434,
+          1435,
+          1436,
+          1437,
+          1438,
+          1439,
+          1440,
+          1441,
+          1442
+        ],
+        "source": "    @typing_extensions.deprecated('The `json` method is deprecated; use `model_dump_json` instead.', category=None)\n    def json(  # noqa: D102\n        self,\n        *,\n        include: IncEx | None = None,\n        exclude: IncEx | None = None,\n        by_alias: bool = False,\n        exclude_unset: bool = False,\n        exclude_defaults: bool = False,\n        exclude_none: bool = False,\n        encoder: Callable[[Any], Any] | None = PydanticUndefined,  # type: ignore[assignment]\n        models_as_dict: bool = PydanticUndefined,  # type: ignore[assignment]\n        **dumps_kwargs: Any,\n    ) -> str:\n        warnings.warn(\n            'The `json` method is deprecated; use `model_dump_json` instead.',\n            category=PydanticDeprecatedSince20,\n            stacklevel=2,\n        )\n        if dumps_kwargs:\n            raise TypeError('`dumps_kwargs` keyword arguments are no longer supported.')\n        return self.model_dump_json(\n            include=include,\n            exclude=exclude,\n            by_alias=by_alias,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n        )",
+        "truncated": true
+      },
+      {
+        "source_id": 8,
+        "id": "4d49eaa6437d38b70d0d716c",
+        "qualified": "pydantic.root_model",
+        "path": "pydantic/root_model.py",
+        "source_line_numbers": [
+          2,
+          3,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          32,
+          33,
+          34,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136
+        ],
+        "source": "\nfrom __future__ import annotations as _annotations\n\nfrom . import PydanticUserError\nfrom ._internal import _model_construction, _repr\nfrom .main import BaseModel, _object_setattr\n\nif TYPE_CHECKING:\n    from .fields import Field as PydanticModelField\n\n\nclass RootModel(BaseModel, Generic[RootModelRootType], metaclass=_RootModelMetaclass):\n\n    def __init_subclass__(cls, **kwargs):\n        extra = cls.model_config.get('extra')\n        if extra is not None:\n            raise PydanticUserError(\n                \"`RootModel` does not support setting `model_config['extra']`\", code='root-model-extra'\n            )\n        super().__init_subclass__(**kwargs)\n\n    def __init__(self, /, root: RootModelRootType = PydanticUndefined, **data) -> None:  # type: ignore\n        __tracebackhide__ = True\n        if data:\n            if root is not PydanticUndefined:\n\n        def model_dump(  # type: ignore\n            self,\n            *,\n            mode: Literal['json', 'python'] | str = 'python',\n            include: IncEx | None = None,\n            exclude: IncEx | None = None,\n            context: Any | None = None,\n            by_alias: bool | None = None,\n            exclude_unset: bool = False,",
+        "truncated": true
+      }
+    ],
+    "verification": "not_executed",
+    "citation_check": {
+      "invalid": [],
+      "has_citations": true,
+      "uncited_paragraphs": [],
+      "uncited_sentences": [],
+      "reference_section": false,
+      "entailment_checked": false,
+      "source_identity_checked": true
+    },
+    "warning": null,
+    "usage": {
+      "prompt_tokens": 6440,
+      "completion_tokens": 326,
+      "total_tokens": 6766
+    },
+    "generation_diagnostics": {
+      "attempt_count": 1,
+      "total_request_ms": 40495,
+      "attempts": [
+        {
+          "load_duration_ms": 2626,
+          "prompt_eval_duration_ms": 22056,
+          "eval_duration_ms": 7104,
+          "prompt_tokens": 5626,
+          "completion_tokens": 174,
+          "request_ms": 40495,
+          "estimated_prompt_tokens": 5775,
+          "context_window": 8192,
+          "entailment_checked": false,
+          "provider_calls": 2,
+          "usage": {
+            "prompt_tokens": 6440,
+            "completion_tokens": 326,
+            "total_tokens": 6766
+          },
+          "draft_claims": [
+            {
+              "text": "In BaseModel.model_dump(), the method that produces the returned dictionary is __pydantic_serializer__.to_python().",
+              "aspect_id": 1,
+              "status": "supported",
+              "citations": [
+                {
+                  "source_id": 1,
+                  "start_line": 520,
+                  "end_line": 533
+                }
+              ]
+            },
+            {
+              "text": "exclude_none is passed to __pydantic_serializer__.to_python() through the model_dump() method's parameters.",
+              "aspect_id": 2,
+              "status": "supported",
+              "citations": [
+                {
+                  "source_id": 1,
+                  "start_line": 529,
+                  "end_line": 530
+                }
+              ]
+            }
+          ],
+          "claim_audit": {
+            "status": "completed",
+            "decisions": [
+              {
+                "claim_index": 0,
+                "verdict": "supported",
+                "reason": "The claim is supported by the cited source. The `model_dump()` method in `pydantic/main.py` calls `__pydantic_serializer__.to_python()` and passes several parameters, including `exclude_none`, to it."
+              },
+              {
+                "claim_index": 1,
+                "verdict": "supported",
+                "reason": "The claim is supported by the cited source. The `model_dump()` method in `pydantic/main.py` explicitly passes the `exclude_none` parameter to `__pydantic_serializer__.to_python()`."
+              }
+            ],
+            "provider_calls": 1,
+            "elapsed_ms": 8568,
+            "model": "qwen2.5-coder:7b",
+            "factual_support_proven": false
+          },
+          "supporting_lines": [
+            {
+              "source_id": 1,
+              "path": "pydantic/main.py",
+              "qualified": "pydantic.main.BaseModel.model_dump",
+              "start_line": 520,
+              "end_line": 533,
+              "text": "        return self.__pydantic_serializer__.to_python(\n            self,\n            mode=mode,\n            by_alias=by_alias,\n            include=include,\n            exclude=exclude,\n            context=context,\n            exclude_unset=exclude_unset,\n            exclude_defaults=exclude_defaults,\n            exclude_none=exclude_none,\n            exclude_computed_fields=exclude_computed_fields,\n            round_trip=round_trip,\n            warnings=warnings,\n            fallback=fallback,"
+            },
+            {
+              "source_id": 1,
+              "path": "pydantic/main.py",
+              "qualified": "pydantic.main.BaseModel.model_dump",
+              "start_line": 529,
+              "end_line": 530,
+              "text": "            exclude_none=exclude_none,\n            exclude_computed_fields=exclude_computed_fields,"
+            }
+          ],
+          "aspect_statuses": [
+            {
+              "aspect_id": 1,
+              "question": "which method produces the returned dictionary",
+              "status": "supported"
+            },
+            {
+              "aspect_id": 2,
+              "question": "how is exclude_none passed to it",
+              "status": "supported"
+            }
+          ],
+          "claims": [
+            {
+              "text": "In BaseModel.model_dump(), the method that produces the returned dictionary is __pydantic_serializer__.to_python().",
+              "aspect_id": 1,
+              "status": "supported",
+              "citations": [
+                {
+                  "source_id": 1,
+                  "start_line": 520,
+                  "end_line": 533
+                }
+              ]
+            },
+            {
+              "text": "exclude_none is passed to __pydantic_serializer__.to_python() through the model_dump() method's parameters.",
+              "aspect_id": 2,
+              "status": "supported",
+              "citations": [
+                {
+                  "source_id": 1,
+                  "start_line": 529,
+                  "end_line": 530
+                }
+              ]
+            }
+          ],
+          "source_identity_checked": true,
+          "outcome": "accepted"
+        }
+      ],
+      "provider_calls": 2
+    },
+    "elapsed_ms": 43383,
+    "snapshot": "96e7fe6b9ebf73cf2f4115fc363b36a3b34dfc9d0cb70149ecb2c51c6559a019",
+    "model": "qwen2.5-coder:7b",
+    "answer_prompt_version": "2026-10-03-aspects-cited-lines-audit-v2",
+    "retrieval_version": "2026-10-03-coverage-fts-return-context-v2",
+    "id": "6a16469000cf45948c9771e8161849e7"
+  },
+  "ui_review": {
+    "browser": "Safari",
+    "answer_and_aspects_visible": true,
+    "exact_model_excerpts_expanded": true,
+    "source_navigation_checked_on_demo": true,
+    "generation_readiness_probe_passed": true,
+    "default_backend_model": "qwen2.5-coder:7b",
+    "backend_url": "http://127.0.0.1:8000"
+  },
+  "source_review": {
+    "author": "Codex; not independent human grading",
+    "correct": true,
+    "complete": true,
+    "notes": "Matches the pinned return self.__pydantic_serializer__.to_python call and exclude_none=exclude_none argument. Tests were not executed in Pydantic."
+  }
+}

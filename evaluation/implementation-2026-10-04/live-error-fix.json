@@ -1,0 +1,1678 @@
+{
+  "issue": {
+    "id": "6d6311e5e48f9a08da4fbfa5fd464fde",
+    "repository_id": "research-prototype-1791100765437626000",
+    "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+    "type": "signature_mismatch",
+    "severity": "error",
+    "confidence": "high",
+    "file": "python/static_candidates.py",
+    "line": 6,
+    "end_line": 6,
+    "symbol": "python.static_candidates",
+    "message": "Call to combine supplies 3 positional arguments; its direct definition accepts at most 2.",
+    "evidence": [
+      {
+        "file": "python/static_candidates.py",
+        "start_line": 6,
+        "end_line": 6
+      }
+    ],
+    "related_symbols": [
+      {
+        "id": "1756eb2d8016b14b8b9896f2",
+        "symbol": "python.static_candidates.combine",
+        "file": "python/static_candidates.py",
+        "line": 3,
+        "relationship": "contains",
+        "confidence": "exact"
+      },
+      {
+        "id": "1eb7a3f1816d4d80d371fff5",
+        "symbol": "python.static_candidates.unreachable_example",
+        "file": "python/static_candidates.py",
+        "line": 9,
+        "relationship": "contains",
+        "confidence": "exact"
+      },
+      {
+        "id": "1756eb2d8016b14b8b9896f2",
+        "symbol": "python.static_candidates.combine",
+        "file": "python/static_candidates.py",
+        "line": 3,
+        "relationship": "calls",
+        "confidence": "static"
+      }
+    ],
+    "root_cause": "A direct, undecorated top-level function is called with too many positional arguments.",
+    "suggested_fix": "Adjust the arguments to match combine's declared signature, or update that signature if intentional.",
+    "suggested_test": "Add a regression case calling the function with its intended argument count and asserting the expected result.",
+    "status": "static_candidate",
+    "verified": false
+  },
+  "explanation": {
+    "issue": {
+      "id": "6d6311e5e48f9a08da4fbfa5fd464fde",
+      "repository_id": "research-prototype-1791100765437626000",
+      "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+      "type": "signature_mismatch",
+      "severity": "error",
+      "confidence": "high",
+      "file": "python/static_candidates.py",
+      "line": 6,
+      "end_line": 6,
+      "symbol": "python.static_candidates",
+      "message": "Call to combine supplies 3 positional arguments; its direct definition accepts at most 2.",
+      "evidence": [
+        {
+          "file": "python/static_candidates.py",
+          "start_line": 6,
+          "end_line": 6
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "1756eb2d8016b14b8b9896f2",
+          "symbol": "python.static_candidates.combine",
+          "file": "python/static_candidates.py",
+          "line": 3,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1eb7a3f1816d4d80d371fff5",
+          "symbol": "python.static_candidates.unreachable_example",
+          "file": "python/static_candidates.py",
+          "line": 9,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1756eb2d8016b14b8b9896f2",
+          "symbol": "python.static_candidates.combine",
+          "file": "python/static_candidates.py",
+          "line": 3,
+          "relationship": "calls",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "A direct, undecorated top-level function is called with too many positional arguments.",
+      "suggested_fix": "Adjust the arguments to match combine's declared signature, or update that signature if intentional.",
+      "suggested_test": "Add a regression case calling the function with its intended argument count and asserting the expected result.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    "investigation": {
+      "answer": "No validated explanation is available. These retrieved source locations may help you investigate; their relevance does not establish an answer.\n\n[1] python.static_candidates \u2014 python/static_candidates.py:1\u201311\nRetrieved through symbol / text match.\n\n[2] python.static_candidates.combine \u2014 python/static_candidates.py:3\u20134\nRetrieved through symbol / text match.\n\n[3] python.static_candidates.unreachable_example \u2014 python/static_candidates.py:9\u201311\nRetrieved through symbol / text match.\n\n[4] python.pricing \u2014 python/pricing.py:1\u20137\nRetrieved through symbol / text match.\n\n[5] python.api \u2014 python/api.py:1\u20136\nRetrieved through imports relationship with shipping_cost.\n\n[6] python.api.quote_request \u2014 python/api.py:4\u20136\nRetrieved through calls relationship with shipping_cost.\n\n[7] python.pricing.shipping_cost \u2014 python/pricing.py:3\u20137\nRetrieved through contains relationship with pricing.py.\n\n[8] python.static_candidates.combine.right \u2014 python/static_candidates.py:3\u20133\nRetrieved through accepts relationship with combine.\n\n[9] python.static_candidates.combine.left \u2014 python/static_candidates.py:3\u20133\nRetrieved through accepts relationship with combine.\n\n[10] python.pricing.shipping_cost.raise ValueError(\"weight must be positive\") \u2014 python/pricing.py:6\u20136\nRetrieved through raises relationship with shipping_cost.\n\n[11] python.pricing.shipping_cost.weight \u2014 python/pricing.py:3\u20133\nRetrieved through accepts relationship with shipping_cost.\n\n[12] python.api.quote_request.weight \u2014 python/api.py:4\u20134\nRetrieved through accepts relationship with quote_request.\n\n[13] README.md \u2014 README.md:1\u201311\nRetrieved through fused lexical / semantic candidate.\n\n[14] package.json \u2014 package.json:1\u20131\nRetrieved through fused lexical / semantic candidate.\n\n[15] package.json.example-library 1.0.0 \u2014 package.json:1\u20131\nRetrieved through fused lexical / semantic candidate.",
+      "citation_provenance": [],
+      "claims": [],
+      "missing_information": [],
+      "confidence": "insufficient",
+      "related_symbols": [
+        "python.static_candidates",
+        "python.static_candidates.combine",
+        "python.static_candidates.unreachable_example",
+        "python.pricing",
+        "python.api",
+        "python.api.quote_request",
+        "python.pricing.shipping_cost",
+        "python.static_candidates.combine.right",
+        "python.static_candidates.combine.left",
+        "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")",
+        "python.pricing.shipping_cost.weight",
+        "python.api.quote_request.weight",
+        "README.md",
+        "package.json",
+        "package.json.example-library 1.0.0"
+      ],
+      "retrieval_trace": {
+        "question": "Explain the potential signature_mismatch at python/static_candidates.py line 6: Call to combine supplies 3 positional arguments; its direct definition accepts at most 2. What related source supports this hypothesis, and what remains uncertain?",
+        "query_analysis": {
+          "type": "symbol_lookup",
+          "entities": [
+            "static_candidates.py"
+          ],
+          "aspects": [
+            "the potential signature_mismatch at python/static_candidates.py line 6: Call to combine supplies 3 positional arguments; its direct definition accepts at most 2",
+            "What related source supports this hypothesis",
+            "what remains uncertain"
+          ]
+        },
+        "mode": "hybrid",
+        "hops": 2,
+        "settings": {
+          "lexical_weight": 1.0,
+          "semantic_weight": 1.0,
+          "graph_weight": 1.0,
+          "structural_weight": 0.02,
+          "exact_boost": 50.0,
+          "candidate_limit": 50,
+          "rerank": true
+        },
+        "lexical_candidates": [
+          {
+            "id": "1756eb2d8016b14b8b9896f2",
+            "score": 19.34114583257647
+          },
+          {
+            "id": "bfa97db36b270a0f54cd55be",
+            "score": 11.120482823352129
+          },
+          {
+            "id": "1eb7a3f1816d4d80d371fff5",
+            "score": 8.202426119407082
+          },
+          {
+            "id": "3054eb67386525a481e3c120",
+            "score": 3.5570049719222965
+          },
+          {
+            "id": "ca1c22388f083d98b927e7ba",
+            "score": 3.285490803638037
+          },
+          {
+            "id": "194fbc130a70204c0a1c8c81",
+            "score": 2.891999164962552
+          },
+          {
+            "id": "542572af5dfe0f7f72b03920",
+            "score": 2.461406087123478
+          },
+          {
+            "id": "e59eda69554fdd4800ebd6aa",
+            "score": 2.461406087123478
+          },
+          {
+            "id": "3d5e5d9de77fd9ef94c0a714",
+            "score": 1.7674259596307007
+          },
+          {
+            "id": "b05d6da2936aa87108c99704",
+            "score": 1.3154407774510062
+          },
+          {
+            "id": "32a364ab3113c0d4cfde4dba",
+            "score": 1.309689013223536
+          },
+          {
+            "id": "268e4bbf4045b4a0832858d9",
+            "score": 1.176646029098784
+          },
+          {
+            "id": "164b38ee0c4516056c58e331",
+            "score": 1.1475041163259792
+          },
+          {
+            "id": "b66463dc3ac335637682d604",
+            "score": 1.1415036280264215
+          },
+          {
+            "id": "8c100fa30c5f951633b74fed",
+            "score": 1.0710888991764667
+          },
+          {
+            "id": "598f1d850092fd28fdd3b77b",
+            "score": 0.982266759917652
+          },
+          {
+            "id": "4910a25006ebaac2bca155e1",
+            "score": 0.9054800119047084
+          },
+          {
+            "id": "d26d59de8f2f11803acb68d1",
+            "score": 0.8579068992877907
+          },
+          {
+            "id": "586a6aae29bba36147733adb",
+            "score": 0.8057451854604896
+          },
+          {
+            "id": "b6a6e37ea64bd05cd10f9fe0",
+            "score": 0.7847493436507473
+          },
+          {
+            "id": "af613313349fc30c788689a2",
+            "score": 0.31996959098524613
+          },
+          {
+            "id": "d232c66831dd0b161c0d2648",
+            "score": 0.31996959098524613
+          },
+          {
+            "id": "0e9a4495a4e4896e7c7ab93d",
+            "score": 0.25473704395088376
+          },
+          {
+            "id": "ec944225e7d6cd708323e661",
+            "score": 0.22395416556475456
+          }
+        ],
+        "semantic_candidates": [
+          {
+            "id": "bfa97db36b270a0f54cd55be",
+            "similarity": 0.7231708765029907
+          },
+          {
+            "id": "e59eda69554fdd4800ebd6aa",
+            "similarity": 0.7208489179611206
+          },
+          {
+            "id": "542572af5dfe0f7f72b03920",
+            "similarity": 0.72072434425354
+          },
+          {
+            "id": "1756eb2d8016b14b8b9896f2",
+            "similarity": 0.7024192810058594
+          },
+          {
+            "id": "3d5e5d9de77fd9ef94c0a714",
+            "similarity": 0.6367969512939453
+          },
+          {
+            "id": "1eb7a3f1816d4d80d371fff5",
+            "similarity": 0.6044943332672119
+          },
+          {
+            "id": "ca1c22388f083d98b927e7ba",
+            "similarity": 0.5948805809020996
+          },
+          {
+            "id": "b05d6da2936aa87108c99704",
+            "similarity": 0.5695510506629944
+          },
+          {
+            "id": "d26d59de8f2f11803acb68d1",
+            "similarity": 0.564346194267273
+          },
+          {
+            "id": "b66463dc3ac335637682d604",
+            "similarity": 0.5316651463508606
+          },
+          {
+            "id": "d232c66831dd0b161c0d2648",
+            "similarity": 0.5297669172286987
+          },
+          {
+            "id": "af613313349fc30c788689a2",
+            "similarity": 0.5234856605529785
+          },
+          {
+            "id": "e4d8df7c0bd3134e9a563a1a",
+            "similarity": 0.5173326730728149
+          },
+          {
+            "id": "3054eb67386525a481e3c120",
+            "similarity": 0.5119563341140747
+          },
+          {
+            "id": "32a364ab3113c0d4cfde4dba",
+            "similarity": 0.5073517560958862
+          },
+          {
+            "id": "9452541a0aa231eaebed6182",
+            "similarity": 0.5042747855186462
+          },
+          {
+            "id": "0e9a4495a4e4896e7c7ab93d",
+            "similarity": 0.5016165971755981
+          },
+          {
+            "id": "8c100fa30c5f951633b74fed",
+            "similarity": 0.49706584215164185
+          },
+          {
+            "id": "eca2593c2d8b907727232721",
+            "similarity": 0.496136337518692
+          },
+          {
+            "id": "194fbc130a70204c0a1c8c81",
+            "similarity": 0.4875112771987915
+          },
+          {
+            "id": "164b38ee0c4516056c58e331",
+            "similarity": 0.4812607765197754
+          },
+          {
+            "id": "ec944225e7d6cd708323e661",
+            "similarity": 0.48036056756973267
+          },
+          {
+            "id": "598f1d850092fd28fdd3b77b",
+            "similarity": 0.4785318374633789
+          },
+          {
+            "id": "86cfcf72f3374ca5310e5079",
+            "similarity": 0.47766292095184326
+          },
+          {
+            "id": "586a6aae29bba36147733adb",
+            "similarity": 0.4768613278865814
+          },
+          {
+            "id": "156041a913fd006005915bb5",
+            "similarity": 0.4749720096588135
+          },
+          {
+            "id": "535053194aab4c47fa62ecb7",
+            "similarity": 0.4749279320240021
+          },
+          {
+            "id": "c6ed9f0f2c22a64b379f2229",
+            "similarity": 0.4736560583114624
+          },
+          {
+            "id": "268e4bbf4045b4a0832858d9",
+            "similarity": 0.47339192032814026
+          },
+          {
+            "id": "b6a6e37ea64bd05cd10f9fe0",
+            "similarity": 0.46992021799087524
+          },
+          {
+            "id": "30cdcc9c1a5dbf5f030ddf98",
+            "similarity": 0.4678669273853302
+          },
+          {
+            "id": "47b114a140a6a7a4043a56a4",
+            "similarity": 0.4668335020542145
+          },
+          {
+            "id": "4910a25006ebaac2bca155e1",
+            "similarity": 0.46645742654800415
+          },
+          {
+            "id": "6f712390f4b9820a133e033e",
+            "similarity": 0.4637850522994995
+          },
+          {
+            "id": "49ae24fdefa4abaabc1df5b5",
+            "similarity": 0.4609168767929077
+          },
+          {
+            "id": "9e9f5ea9b590b534359d2685",
+            "similarity": 0.4605781137943268
+          },
+          {
+            "id": "8f4e48cb3c48b52824b6fa8d",
+            "similarity": 0.4598221778869629
+          },
+          {
+            "id": "2aec9b75810fd3eff4dfe173",
+            "similarity": 0.45235273241996765
+          },
+          {
+            "id": "50cd709a29c771da36dec4d6",
+            "similarity": 0.45087164640426636
+          },
+          {
+            "id": "041ba39bb421ae1a3cf48eea",
+            "similarity": 0.4468446969985962
+          },
+          {
+            "id": "825b1decddd53ae890874f72",
+            "similarity": 0.44235754013061523
+          },
+          {
+            "id": "3a25678727c5224131382ca6",
+            "similarity": 0.4411395192146301
+          },
+          {
+            "id": "acd6e528f65e503ba1cfad6e",
+            "similarity": 0.4384879469871521
+          },
+          {
+            "id": "fbbe94b9f7a828ad5e10ec49",
+            "similarity": 0.4369580149650574
+          },
+          {
+            "id": "df1aa9cdb6ff2d47410d9bcf",
+            "similarity": 0.4364240765571594
+          },
+          {
+            "id": "ee1938b2280b982a2b1ea684",
+            "similarity": 0.43222105503082275
+          },
+          {
+            "id": "6acdd5e72a6ba9cc5a927087",
+            "similarity": 0.4296126961708069
+          },
+          {
+            "id": "c218bd6283805de2d1d605f0",
+            "similarity": 0.4283691644668579
+          },
+          {
+            "id": "73570f0401393fb6f82e54f4",
+            "similarity": 0.42728161811828613
+          }
+        ],
+        "graph_seeds": [
+          "bfa97db36b270a0f54cd55be",
+          "1756eb2d8016b14b8b9896f2",
+          "1eb7a3f1816d4d80d371fff5",
+          "ca1c22388f083d98b927e7ba",
+          "3054eb67386525a481e3c120",
+          "b66463dc3ac335637682d604",
+          "d26d59de8f2f11803acb68d1"
+        ],
+        "graph_expanded": [
+          {
+            "id": "e59eda69554fdd4800ebd6aa",
+            "path": [
+              {
+                "repo_id": "research-prototype-1791100765437626000",
+                "source": "1756eb2d8016b14b8b9896f2",
+                "target": "e59eda69554fdd4800ebd6aa",
+                "kind": "accepts",
+                "line": 3,
+                "confidence": "exact",
+                "label": "right"
+              }
+            ]
+          },
+          {
+            "id": "d232c66831dd0b161c0d2648",
+            "path": [
+              {
+                "repo_id": "research-prototype-1791100765437626000",
+                "source": "d26d59de8f2f11803acb68d1",
+                "target": "d232c66831dd0b161c0d2648",
+                "kind": "accepts",
+                "line": 3,
+                "confidence": "exact",
+                "label": "weight"
+              }
+            ]
+          },
+          {
+            "id": "af613313349fc30c788689a2",
+            "path": [
+              {
+                "repo_id": "research-prototype-1791100765437626000",
+                "source": "b66463dc3ac335637682d604",
+                "target": "af613313349fc30c788689a2",
+                "kind": "accepts",
+                "line": 4,
+                "confidence": "exact",
+                "label": "weight"
+              }
+            ]
+          },
+          {
+            "id": "b05d6da2936aa87108c99704",
+            "path": [
+              {
+                "repo_id": "research-prototype-1791100765437626000",
+                "source": "d26d59de8f2f11803acb68d1",
+                "target": "b05d6da2936aa87108c99704",
+                "kind": "raises",
+                "line": 6,
+                "confidence": "declared",
+                "label": "raise ValueError(\"weight must be positive\")"
+              }
+            ]
+          },
+          {
+            "id": "542572af5dfe0f7f72b03920",
+            "path": [
+              {
+                "repo_id": "research-prototype-1791100765437626000",
+                "source": "1756eb2d8016b14b8b9896f2",
+                "target": "542572af5dfe0f7f72b03920",
+                "kind": "accepts",
+                "line": 3,
+                "confidence": "exact",
+                "label": "left"
+              }
+            ]
+          }
+        ],
+        "fused_candidates": [
+          {
+            "id": "bfa97db36b270a0f54cd55be",
+            "score": 0.03252247488101534
+          },
+          {
+            "id": "1756eb2d8016b14b8b9896f2",
+            "score": 0.032018442622950824
+          },
+          {
+            "id": "1eb7a3f1816d4d80d371fff5",
+            "score": 0.031024531024531024
+          },
+          {
+            "id": "ca1c22388f083d98b927e7ba",
+            "score": 0.030309988518943745
+          },
+          {
+            "id": "3054eb67386525a481e3c120",
+            "score": 0.029138513513513514
+          },
+          {
+            "id": "b66463dc3ac335637682d604",
+            "score": 0.027799227799227798
+          },
+          {
+            "id": "d26d59de8f2f11803acb68d1",
+            "score": 0.027313266443701224
+          },
+          {
+            "id": "e59eda69554fdd4800ebd6aa",
+            "score": 0.030834914611005692
+          },
+          {
+            "id": "542572af5dfe0f7f72b03920",
+            "score": 0.030798389007344232
+          },
+          {
+            "id": "b05d6da2936aa87108c99704",
+            "score": 0.028991596638655463
+          },
+          {
+            "id": "d232c66831dd0b161c0d2648",
+            "score": 0.026279628993473032
+          },
+          {
+            "id": "af613313349fc30c788689a2",
+            "score": 0.026234567901234566
+          },
+          {
+            "id": "3d5e5d9de77fd9ef94c0a714",
+            "score": 0.029877369007803793
+          },
+          {
+            "id": "8c100fa30c5f951633b74fed",
+            "score": 0.026153846153846153
+          },
+          {
+            "id": "194fbc130a70204c0a1c8c81",
+            "score": 0.027651515151515153
+          },
+          {
+            "id": "32a364ab3113c0d4cfde4dba",
+            "score": 0.027417840375586856
+          },
+          {
+            "id": "164b38ee0c4516056c58e331",
+            "score": 0.02604430914933198
+          },
+          {
+            "id": "598f1d850092fd28fdd3b77b",
+            "score": 0.025206087507926443
+          },
+          {
+            "id": "268e4bbf4045b4a0832858d9",
+            "score": 0.025124843945068663
+          },
+          {
+            "id": "586a6aae29bba36147733adb",
+            "score": 0.024422933730454205
+          },
+          {
+            "id": "4910a25006ebaac2bca155e1",
+            "score": 0.023739701159056
+          },
+          {
+            "id": "b6a6e37ea64bd05cd10f9fe0",
+            "score": 0.02361111111111111
+          },
+          {
+            "id": "9452541a0aa231eaebed6182",
+            "score": 0.013157894736842105
+          },
+          {
+            "id": "eca2593c2d8b907727232721",
+            "score": 0.012658227848101266
+          },
+          {
+            "id": "86cfcf72f3374ca5310e5079",
+            "score": 0.011904761904761904
+          },
+          {
+            "id": "156041a913fd006005915bb5",
+            "score": 0.011627906976744186
+          },
+          {
+            "id": "c6ed9f0f2c22a64b379f2229",
+            "score": 0.011363636363636364
+          },
+          {
+            "id": "6f712390f4b9820a133e033e",
+            "score": 0.010638297872340425
+          },
+          {
+            "id": "49ae24fdefa4abaabc1df5b5",
+            "score": 0.010526315789473684
+          },
+          {
+            "id": "9e9f5ea9b590b534359d2685",
+            "score": 0.010416666666666666
+          },
+          {
+            "id": "8f4e48cb3c48b52824b6fa8d",
+            "score": 0.010309278350515464
+          },
+          {
+            "id": "2aec9b75810fd3eff4dfe173",
+            "score": 0.01020408163265306
+          },
+          {
+            "id": "041ba39bb421ae1a3cf48eea",
+            "score": 0.01
+          },
+          {
+            "id": "3a25678727c5224131382ca6",
+            "score": 0.00980392156862745
+          },
+          {
+            "id": "fbbe94b9f7a828ad5e10ec49",
+            "score": 0.009615384615384616
+          },
+          {
+            "id": "c218bd6283805de2d1d605f0",
+            "score": 0.009259259259259259
+          },
+          {
+            "id": "73570f0401393fb6f82e54f4",
+            "score": 0.009174311926605505
+          },
+          {
+            "id": "0e9a4495a4e4896e7c7ab93d",
+            "score": 0.025035205758097326
+          },
+          {
+            "id": "ec944225e7d6cd708323e661",
+            "score": 0.024099883855981417
+          },
+          {
+            "id": "e4d8df7c0bd3134e9a563a1a",
+            "score": 0.0136986301369863
+          },
+          {
+            "id": "535053194aab4c47fa62ecb7",
+            "score": 0.011494252873563218
+          },
+          {
+            "id": "30cdcc9c1a5dbf5f030ddf98",
+            "score": 0.01098901098901099
+          },
+          {
+            "id": "47b114a140a6a7a4043a56a4",
+            "score": 0.010869565217391304
+          },
+          {
+            "id": "50cd709a29c771da36dec4d6",
+            "score": 0.010101010101010102
+          },
+          {
+            "id": "825b1decddd53ae890874f72",
+            "score": 0.009900990099009901
+          },
+          {
+            "id": "acd6e528f65e503ba1cfad6e",
+            "score": 0.009708737864077669
+          },
+          {
+            "id": "df1aa9cdb6ff2d47410d9bcf",
+            "score": 0.009523809523809525
+          },
+          {
+            "id": "ee1938b2280b982a2b1ea684",
+            "score": 0.009433962264150943
+          },
+          {
+            "id": "6acdd5e72a6ba9cc5a927087",
+            "score": 0.009345794392523364
+          }
+        ],
+        "reranked_candidates": [
+          "bfa97db36b270a0f54cd55be",
+          "1756eb2d8016b14b8b9896f2",
+          "1eb7a3f1816d4d80d371fff5",
+          "ca1c22388f083d98b927e7ba",
+          "3054eb67386525a481e3c120",
+          "b66463dc3ac335637682d604",
+          "d26d59de8f2f11803acb68d1",
+          "e59eda69554fdd4800ebd6aa",
+          "542572af5dfe0f7f72b03920",
+          "b05d6da2936aa87108c99704",
+          "d232c66831dd0b161c0d2648",
+          "af613313349fc30c788689a2",
+          "3d5e5d9de77fd9ef94c0a714",
+          "8c100fa30c5f951633b74fed",
+          "194fbc130a70204c0a1c8c81"
+        ],
+        "timings_ms": {
+          "lexical": 5.434,
+          "semantic": 46.721,
+          "fusion_and_seed_reranking": 1.188,
+          "graph": 0.029,
+          "reranking": 1.086,
+          "context_records": 1.537,
+          "retrieval": 55.996
+        }
+      },
+      "evidence": [
+        {
+          "id": "bfa97db36b270a0f54cd55be",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/static_candidates.py",
+          "name": "static_candidates.py",
+          "qualified": "python.static_candidates",
+          "kind": "module",
+          "start_line": 1,
+          "end_line": 11,
+          "source": "\"\"\"Intentional static diagnostic fixture; never execute this file.\"\"\"\n\ndef combine(left, right):\n    return left + right\n\ncombine(1, 2, 3)\n\n\ndef unreachable_example():\n    return 1\n    print(\"unreachable\")",
+          "docstring": "Intentional static diagnostic fixture; never execute this file.",
+          "parent_id": null,
+          "file_id": "23403040b21e387f267097d2f73d1e0e",
+          "language": "python",
+          "signature": "def combine(left, right):",
+          "role": "source",
+          "public_aliases": [],
+          "score": 0.03252,
+          "component_scores": {
+            "lexical": 11.120482823352129,
+            "semantic": 0.7231708765029907,
+            "graph": 0,
+            "structural": 4,
+            "final": 0.11252247488101534
+          },
+          "reason": "symbol / text match",
+          "traversal": [],
+          "truncated": false
+        },
+        {
+          "id": "1756eb2d8016b14b8b9896f2",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/static_candidates.py",
+          "name": "combine",
+          "qualified": "python.static_candidates.combine",
+          "kind": "function",
+          "start_line": 3,
+          "end_line": 4,
+          "source": "def combine(left, right):\n    return left + right",
+          "docstring": "",
+          "parent_id": "bfa97db36b270a0f54cd55be",
+          "file_id": "23403040b21e387f267097d2f73d1e0e",
+          "language": "python",
+          "signature": "def combine(left, right):",
+          "role": "source",
+          "public_aliases": [
+            "python.static_candidates.combine"
+          ],
+          "score": 0.03202,
+          "component_scores": {
+            "lexical": 19.34114583257647,
+            "semantic": 0.7024192810058594,
+            "graph": 0,
+            "structural": 4,
+            "final": 0.11201844262295083
+          },
+          "reason": "symbol / text match",
+          "traversal": [],
+          "truncated": false
+        },
+        {
+          "id": "1eb7a3f1816d4d80d371fff5",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/static_candidates.py",
+          "name": "unreachable_example",
+          "qualified": "python.static_candidates.unreachable_example",
+          "kind": "function",
+          "start_line": 9,
+          "end_line": 11,
+          "source": "def unreachable_example():\n    return 1\n    print(\"unreachable\")",
+          "docstring": "",
+          "parent_id": "bfa97db36b270a0f54cd55be",
+          "file_id": "23403040b21e387f267097d2f73d1e0e",
+          "language": "python",
+          "signature": "def unreachable_example():",
+          "role": "source",
+          "public_aliases": [
+            "python.static_candidates.unreachable_example"
+          ],
+          "score": 0.03102,
+          "component_scores": {
+            "lexical": 8.202426119407082,
+            "semantic": 0.6044943332672119,
+            "graph": 0,
+            "structural": 4,
+            "final": 0.11102453102453103
+          },
+          "reason": "symbol / text match",
+          "traversal": [],
+          "truncated": false
+        },
+        {
+          "id": "ca1c22388f083d98b927e7ba",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/pricing.py",
+          "name": "pricing.py",
+          "qualified": "python.pricing",
+          "kind": "module",
+          "start_line": 1,
+          "end_line": 7,
+          "source": "\"\"\"Small research fixture. Positive weight is part of the public contract.\"\"\"\n\ndef shipping_cost(weight):\n    \"\"\"Return five currency units per unit weight; reject nonpositive weights.\"\"\"\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+          "docstring": "Small research fixture. Positive weight is part of the public contract.",
+          "parent_id": null,
+          "file_id": "179f80bc7b74526196c25ee85228e325",
+          "language": "python",
+          "signature": "def shipping_cost(weight):",
+          "role": "source",
+          "public_aliases": [],
+          "score": 0.03031,
+          "component_scores": {
+            "lexical": 3.285490803638037,
+            "semantic": 0.5948805809020996,
+            "graph": 0,
+            "structural": 4,
+            "final": 0.11030998851894375
+          },
+          "reason": "symbol / text match",
+          "traversal": [],
+          "truncated": false
+        },
+        {
+          "id": "3054eb67386525a481e3c120",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/api.py",
+          "name": "api.py",
+          "qualified": "python.api",
+          "kind": "module",
+          "start_line": 1,
+          "end_line": 6,
+          "source": "from .pricing import shipping_cost\n\n\ndef quote_request(weight):\n    \"\"\"Delegate quote calculation to the pricing function.\"\"\"\n    return shipping_cost(weight)",
+          "docstring": "",
+          "parent_id": null,
+          "file_id": "db164dfee8db25786e334f008625d427",
+          "language": "python",
+          "signature": "def quote_request(weight):",
+          "role": "source",
+          "public_aliases": [],
+          "score": 0.02914,
+          "component_scores": {
+            "lexical": 3.5570049719222965,
+            "semantic": 0.5119563341140747,
+            "graph": 0.015706436997197867,
+            "structural": 4,
+            "final": 0.10913851351351352
+          },
+          "reason": "imports relationship with shipping_cost",
+          "traversal": [
+            {
+              "repo_id": "research-prototype-1791100765437626000",
+              "source": "ca1c22388f083d98b927e7ba",
+              "target": "d26d59de8f2f11803acb68d1",
+              "kind": "contains",
+              "line": 3,
+              "confidence": "exact",
+              "label": "shipping_cost"
+            },
+            {
+              "repo_id": "research-prototype-1791100765437626000",
+              "source": "3054eb67386525a481e3c120",
+              "target": "d26d59de8f2f11803acb68d1",
+              "kind": "imports",
+              "line": 1,
+              "confidence": "static",
+              "label": "python.pricing.shipping_cost"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "id": "b66463dc3ac335637682d604",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/api.py",
+          "name": "quote_request",
+          "qualified": "python.api.quote_request",
+          "kind": "function",
+          "start_line": 4,
+          "end_line": 6,
+          "source": "def quote_request(weight):\n    \"\"\"Delegate quote calculation to the pricing function.\"\"\"\n    return shipping_cost(weight)",
+          "docstring": "Delegate quote calculation to the pricing function.",
+          "parent_id": "3054eb67386525a481e3c120",
+          "file_id": "db164dfee8db25786e334f008625d427",
+          "language": "python",
+          "signature": "def quote_request(weight):",
+          "role": "source",
+          "public_aliases": [
+            "python.api.quote_request"
+          ],
+          "score": 0.0278,
+          "component_scores": {
+            "lexical": 1.1415036280264215,
+            "semantic": 0.5316651463508606,
+            "graph": 0.012866942252811818,
+            "structural": 3,
+            "final": 0.0877992277992278
+          },
+          "reason": "calls relationship with shipping_cost",
+          "traversal": [
+            {
+              "repo_id": "research-prototype-1791100765437626000",
+              "source": "ca1c22388f083d98b927e7ba",
+              "target": "d26d59de8f2f11803acb68d1",
+              "kind": "contains",
+              "line": 3,
+              "confidence": "exact",
+              "label": "shipping_cost"
+            },
+            {
+              "repo_id": "research-prototype-1791100765437626000",
+              "source": "b66463dc3ac335637682d604",
+              "target": "d26d59de8f2f11803acb68d1",
+              "kind": "calls",
+              "line": 6,
+              "confidence": "static",
+              "label": "shipping_cost"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "id": "d26d59de8f2f11803acb68d1",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/pricing.py",
+          "name": "shipping_cost",
+          "qualified": "python.pricing.shipping_cost",
+          "kind": "function",
+          "start_line": 3,
+          "end_line": 7,
+          "source": "def shipping_cost(weight):\n    \"\"\"Return five currency units per unit weight; reject nonpositive weights.\"\"\"\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+          "docstring": "Return five currency units per unit weight; reject nonpositive weights.",
+          "parent_id": "ca1c22388f083d98b927e7ba",
+          "file_id": "179f80bc7b74526196c25ee85228e325",
+          "language": "python",
+          "signature": "def shipping_cost(weight):",
+          "role": "source",
+          "public_aliases": [
+            "python.pricing.shipping_cost"
+          ],
+          "score": 0.02731,
+          "component_scores": {
+            "lexical": 0.8579068992877907,
+            "semantic": 0.564346194267273,
+            "graph": 0.015771477062846304,
+            "structural": 3,
+            "final": 0.08731326644370122
+          },
+          "reason": "contains relationship with pricing.py",
+          "traversal": [
+            {
+              "repo_id": "research-prototype-1791100765437626000",
+              "source": "ca1c22388f083d98b927e7ba",
+              "target": "d26d59de8f2f11803acb68d1",
+              "kind": "contains",
+              "line": 3,
+              "confidence": "exact",
+              "label": "shipping_cost"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "id": "e59eda69554fdd4800ebd6aa",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/static_candidates.py",
+          "name": "right",
+          "qualified": "python.static_candidates.combine.right",
+          "kind": "parameter",
+          "start_line": 3,
+          "end_line": 3,
+          "source": "def combine(left, right):",
+          "docstring": "",
+          "parent_id": "1756eb2d8016b14b8b9896f2",
+          "file_id": "23403040b21e387f267097d2f73d1e0e",
+          "language": "python",
+          "signature": "def combine(left, right):",
+          "role": "source",
+          "public_aliases": [
+            "python.static_candidates.combine.right"
+          ],
+          "score": 0.03083,
+          "component_scores": {
+            "lexical": 2.461406087123478,
+            "semantic": 0.7208489179611206,
+            "graph": 0.011811949793137773,
+            "structural": 2,
+            "final": 0.07083491461100569
+          },
+          "reason": "accepts relationship with combine",
+          "traversal": [
+            {
+              "repo_id": "research-prototype-1791100765437626000",
+              "source": "1756eb2d8016b14b8b9896f2",
+              "target": "e59eda69554fdd4800ebd6aa",
+              "kind": "accepts",
+              "line": 3,
+              "confidence": "exact",
+              "label": "right"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "id": "542572af5dfe0f7f72b03920",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/static_candidates.py",
+          "name": "left",
+          "qualified": "python.static_candidates.combine.left",
+          "kind": "parameter",
+          "start_line": 3,
+          "end_line": 3,
+          "source": "def combine(left, right):",
+          "docstring": "",
+          "parent_id": "1756eb2d8016b14b8b9896f2",
+          "file_id": "23403040b21e387f267097d2f73d1e0e",
+          "language": "python",
+          "signature": "def combine(left, right):",
+          "role": "source",
+          "public_aliases": [
+            "python.static_candidates.combine.left"
+          ],
+          "score": 0.0308,
+          "component_scores": {
+            "lexical": 2.461406087123478,
+            "semantic": 0.72072434425354,
+            "graph": 0.011800992112039336,
+            "structural": 2,
+            "final": 0.07079838900734423
+          },
+          "reason": "accepts relationship with combine",
+          "traversal": [
+            {
+              "repo_id": "research-prototype-1791100765437626000",
+              "source": "1756eb2d8016b14b8b9896f2",
+              "target": "542572af5dfe0f7f72b03920",
+              "kind": "accepts",
+              "line": 3,
+              "confidence": "exact",
+              "label": "left"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "id": "b05d6da2936aa87108c99704",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/pricing.py",
+          "name": "raise ValueError(\"weight must be positive\")",
+          "qualified": "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")",
+          "kind": "exception_reference",
+          "start_line": 6,
+          "end_line": 6,
+          "source": "        raise ValueError(\"weight must be positive\")",
+          "docstring": "",
+          "parent_id": "d26d59de8f2f11803acb68d1",
+          "file_id": "179f80bc7b74526196c25ee85228e325",
+          "language": "python",
+          "signature": "        raise ValueError(\"weight must be positive\")",
+          "role": "source",
+          "public_aliases": [
+            "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")"
+          ],
+          "score": 0.02899,
+          "component_scores": {
+            "lexical": 1.3154407774510062,
+            "semantic": 0.5695510506629944,
+            "graph": 0.010664034175543126,
+            "structural": 1,
+            "final": 0.04899159663865546
+          },
+          "reason": "raises relationship with shipping_cost",
+          "traversal": [
+            {
+              "repo_id": "research-prototype-1791100765437626000",
+              "source": "d26d59de8f2f11803acb68d1",
+              "target": "b05d6da2936aa87108c99704",
+              "kind": "raises",
+              "line": 6,
+              "confidence": "declared",
+              "label": "raise ValueError(\"weight must be positive\")"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "id": "d232c66831dd0b161c0d2648",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/pricing.py",
+          "name": "weight",
+          "qualified": "python.pricing.shipping_cost.weight",
+          "kind": "parameter",
+          "start_line": 3,
+          "end_line": 3,
+          "source": "def shipping_cost(weight):",
+          "docstring": "",
+          "parent_id": "d26d59de8f2f11803acb68d1",
+          "file_id": "179f80bc7b74526196c25ee85228e325",
+          "language": "python",
+          "signature": "def shipping_cost(weight):",
+          "role": "source",
+          "public_aliases": [
+            "python.pricing.shipping_cost.weight"
+          ],
+          "score": 0.02628,
+          "component_scores": {
+            "lexical": 0.31996959098524613,
+            "semantic": 0.5297669172286987,
+            "graph": 0.010068950013538008,
+            "structural": 1,
+            "final": 0.04627962899347303
+          },
+          "reason": "accepts relationship with shipping_cost",
+          "traversal": [
+            {
+              "repo_id": "research-prototype-1791100765437626000",
+              "source": "d26d59de8f2f11803acb68d1",
+              "target": "d232c66831dd0b161c0d2648",
+              "kind": "accepts",
+              "line": 3,
+              "confidence": "exact",
+              "label": "weight"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "id": "af613313349fc30c788689a2",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "python/api.py",
+          "name": "weight",
+          "qualified": "python.api.quote_request.weight",
+          "kind": "parameter",
+          "start_line": 4,
+          "end_line": 4,
+          "source": "def quote_request(weight):",
+          "docstring": "",
+          "parent_id": "b66463dc3ac335637682d604",
+          "file_id": "db164dfee8db25786e334f008625d427",
+          "language": "python",
+          "signature": "def quote_request(weight):",
+          "role": "source",
+          "public_aliases": [
+            "python.api.quote_request.weight"
+          ],
+          "score": 0.02623,
+          "component_scores": {
+            "lexical": 0.31996959098524613,
+            "semantic": 0.5234856605529785,
+            "graph": 0.010094308594308593,
+            "structural": 1,
+            "final": 0.04623456790123456
+          },
+          "reason": "accepts relationship with quote_request",
+          "traversal": [
+            {
+              "repo_id": "research-prototype-1791100765437626000",
+              "source": "b66463dc3ac335637682d604",
+              "target": "af613313349fc30c788689a2",
+              "kind": "accepts",
+              "line": 4,
+              "confidence": "exact",
+              "label": "weight"
+            }
+          ],
+          "truncated": false
+        },
+        {
+          "id": "3d5e5d9de77fd9ef94c0a714",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "README.md",
+          "name": "README.md",
+          "qualified": "README.md",
+          "kind": "document",
+          "start_line": 1,
+          "end_line": 11,
+          "source": "# DevPilot source fixture\n\nA deliberately small, mixed-language source repository for integration checks. It is **not** a production application or a representative complex repository benchmark. Do not install dependencies or execute `python/static_candidates.py`; two intentional diagnostic candidates are included. The declared `example-library` dependency is synthetic fixture data, not a recommended package.\n\nIndex this folder in DevPilot, then ask:\n\n- In the Python pricing module, how does a shipping quote handle a nonpositive weight?\n- How does the TypeScript API delegate quote computation to pricing?\n- What is the current production deployment state? (The snapshot cannot establish this.)\n\nThe expected retrieval and error labels are in `evaluation/implementation-2026-10-04/research-cases.json`. These are authored development fixtures, not held-out evidence of generalization.",
+          "docstring": "",
+          "parent_id": null,
+          "file_id": "0b2ea4da7db2feddd31860bfedb41d3f",
+          "language": "text",
+          "signature": "# DevPilot source fixture",
+          "role": "documentation",
+          "public_aliases": [],
+          "score": 0.02988,
+          "component_scores": {
+            "lexical": 1.7674259596307007,
+            "semantic": 0.6367969512939453,
+            "graph": 0,
+            "structural": 0,
+            "final": 0.029877369007803793
+          },
+          "reason": "fused lexical / semantic candidate",
+          "traversal": [],
+          "truncated": false
+        },
+        {
+          "id": "8c100fa30c5f951633b74fed",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "package.json",
+          "name": "package.json",
+          "qualified": "package.json",
+          "kind": "document",
+          "start_line": 1,
+          "end_line": 1,
+          "source": "{\"name\":\"devpilot-source-fixture\",\"private\":true,\"dependencies\":{\"example-library\":\"1.0.0\"}}",
+          "docstring": "",
+          "parent_id": null,
+          "file_id": "69c9d14c1ba06c5a219d693bfe3ac167",
+          "language": "text",
+          "signature": "{\"name\":\"devpilot-source-fixture\",\"private\":true,\"dependencies\":{\"example-library\":\"1.0.0\"}}",
+          "role": "dependency_manifest",
+          "public_aliases": [],
+          "score": 0.02615,
+          "component_scores": {
+            "lexical": 1.0710888991764667,
+            "semantic": 0.49706584215164185,
+            "graph": 0,
+            "structural": 0,
+            "final": 0.026153846153846153
+          },
+          "reason": "fused lexical / semantic candidate",
+          "traversal": [],
+          "truncated": false
+        },
+        {
+          "id": "194fbc130a70204c0a1c8c81",
+          "repo_id": "research-prototype-1791100765437626000",
+          "path": "package.json",
+          "name": "example-library 1.0.0",
+          "qualified": "package.json.example-library 1.0.0",
+          "kind": "dependency",
+          "start_line": 1,
+          "end_line": 1,
+          "source": "{\"name\":\"devpilot-source-fixture\",\"private\":true,\"dependencies\":{\"example-library\":\"1.0.0\"}}",
+          "docstring": "",
+          "parent_id": "8c100fa30c5f951633b74fed",
+          "file_id": "69c9d14c1ba06c5a219d693bfe3ac167",
+          "language": "text",
+          "signature": "{\"name\":\"devpilot-source-fixture\",\"private\":true,\"dependencies\":{\"example-library\":\"1.0.0\"}}",
+          "role": "dependency_manifest",
+          "public_aliases": [],
+          "score": 0.02765,
+          "component_scores": {
+            "lexical": 2.891999164962552,
+            "semantic": 0.4875112771987915,
+            "graph": 0,
+            "structural": -2,
+            "final": -0.012348484848484848
+          },
+          "reason": "fused lexical / semantic candidate",
+          "traversal": [],
+          "truncated": false
+        }
+      ],
+      "mode": "hybrid",
+      "semantic_used": true,
+      "generated": false,
+      "abstained": false,
+      "partial": false,
+      "aspect_statuses": [],
+      "generation_context": [
+        {
+          "source_id": 8,
+          "id": "e59eda69554fdd4800ebd6aa",
+          "qualified": "python.static_candidates.combine.right",
+          "path": "python/static_candidates.py",
+          "source_line_numbers": [
+            3
+          ],
+          "source": "def combine(left, right):",
+          "truncated": false
+        },
+        {
+          "source_id": 6,
+          "id": "b66463dc3ac335637682d604",
+          "qualified": "python.api.quote_request",
+          "path": "python/api.py",
+          "source_line_numbers": [
+            4,
+            6
+          ],
+          "source": "def quote_request(weight):\n    return shipping_cost(weight)",
+          "truncated": true
+        },
+        {
+          "source_id": 1,
+          "id": "bfa97db36b270a0f54cd55be",
+          "qualified": "python.static_candidates",
+          "path": "python/static_candidates.py",
+          "source_line_numbers": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "source": "\ndef combine(left, right):\n    return left + right\n\ncombine(1, 2, 3)\n\n\ndef unreachable_example():\n    return 1\n    print(\"unreachable\")",
+          "truncated": true
+        },
+        {
+          "source_id": 2,
+          "id": "1756eb2d8016b14b8b9896f2",
+          "qualified": "python.static_candidates.combine",
+          "path": "python/static_candidates.py",
+          "source_line_numbers": [
+            3,
+            4
+          ],
+          "source": "def combine(left, right):\n    return left + right",
+          "truncated": false
+        },
+        {
+          "source_id": 3,
+          "id": "1eb7a3f1816d4d80d371fff5",
+          "qualified": "python.static_candidates.unreachable_example",
+          "path": "python/static_candidates.py",
+          "source_line_numbers": [
+            9,
+            10,
+            11
+          ],
+          "source": "def unreachable_example():\n    return 1\n    print(\"unreachable\")",
+          "truncated": false
+        },
+        {
+          "source_id": 4,
+          "id": "ca1c22388f083d98b927e7ba",
+          "qualified": "python.pricing",
+          "path": "python/pricing.py",
+          "source_line_numbers": [
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "source": "\ndef shipping_cost(weight):\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+          "truncated": true
+        },
+        {
+          "source_id": 5,
+          "id": "3054eb67386525a481e3c120",
+          "qualified": "python.api",
+          "path": "python/api.py",
+          "source_line_numbers": [
+            1,
+            2,
+            3,
+            4,
+            6
+          ],
+          "source": "from .pricing import shipping_cost\n\n\ndef quote_request(weight):\n    return shipping_cost(weight)",
+          "truncated": true
+        },
+        {
+          "source_id": 7,
+          "id": "d26d59de8f2f11803acb68d1",
+          "qualified": "python.pricing.shipping_cost",
+          "path": "python/pricing.py",
+          "source_line_numbers": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "source": "def shipping_cost(weight):\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+          "truncated": true
+        }
+      ],
+      "verification": "not_executed",
+      "citation_check": {
+        "invalid": [],
+        "has_citations": true,
+        "uncited_paragraphs": [
+          "No validated explanation is available. These retrieved source locations may help you investigate; their relevance does not establish an answer."
+        ],
+        "uncited_sentences": [
+          "No validated explanation is available.",
+          "These retrieved source locations may help you investigate; their relevance does not establish an answer."
+        ],
+        "reference_section": true,
+        "entailment_checked": false,
+        "source_identity_checked": false
+      },
+      "warning": "The cited code does not support the claim lexically.",
+      "usage": {
+        "prompt_tokens": 4167,
+        "completion_tokens": 582,
+        "total_tokens": 4749
+      },
+      "generation_diagnostics": {
+        "attempt_count": 2,
+        "total_request_ms": 60141,
+        "attempts": [
+          {
+            "load_duration_ms": 125,
+            "prompt_eval_duration_ms": 15640,
+            "eval_duration_ms": 17864,
+            "prompt_tokens": 2058,
+            "completion_tokens": 238,
+            "request_ms": 33672,
+            "estimated_prompt_tokens": 2267,
+            "context_window": 8192,
+            "entailment_checked": false,
+            "provider_calls": 1,
+            "usage": {
+              "prompt_tokens": 2058,
+              "completion_tokens": 238,
+              "total_tokens": 2296
+            },
+            "draft_claims": [
+              {
+                "text": "The potential signature_mismatch at python/static_candidates.py line 6: Call to combine supplies 3 positional arguments; its direct definition accepts at most 2.",
+                "aspect_id": 1,
+                "status": "supported",
+                "citations": [
+                  {
+                    "source_id": 1,
+                    "start_line": 3,
+                    "end_line": 4
+                  },
+                  {
+                    "source_id": 1,
+                    "start_line": 6,
+                    "end_line": 6
+                  }
+                ]
+              },
+              {
+                "text": "What related source supports this hypothesis",
+                "aspect_id": 2,
+                "status": "supported",
+                "citations": [
+                  {
+                    "source_id": 1,
+                    "start_line": 3,
+                    "end_line": 4
+                  },
+                  {
+                    "source_id": 1,
+                    "start_line": 6,
+                    "end_line": 6
+                  }
+                ]
+              },
+              {
+                "text": "what remains uncertain",
+                "aspect_id": 3,
+                "status": "insufficient_evidence",
+                "citations": []
+              }
+            ],
+            "outcome": "invalid_model_output",
+            "reason": "The cited code does not support the claim lexically."
+          },
+          {
+            "load_duration_ms": 100,
+            "prompt_eval_duration_ms": 567,
+            "eval_duration_ms": 25790,
+            "prompt_tokens": 2109,
+            "completion_tokens": 344,
+            "request_ms": 26469,
+            "estimated_prompt_tokens": 2353,
+            "context_window": 8192,
+            "entailment_checked": false,
+            "provider_calls": 1,
+            "usage": {
+              "prompt_tokens": 2109,
+              "completion_tokens": 344,
+              "total_tokens": 2453
+            },
+            "draft_claims": [
+              {
+                "text": "The function `combine` in `python/static_candidates.py` is defined to accept at most two positional arguments.",
+                "aspect_id": 1,
+                "status": "supported",
+                "citations": [
+                  {
+                    "source_id": 2,
+                    "start_line": 3,
+                    "end_line": 4
+                  }
+                ]
+              },
+              {
+                "text": "The call to `combine` on line 6 of `python/static_candidates.py` supplies three positional arguments.",
+                "aspect_id": 1,
+                "status": "supported",
+                "citations": [
+                  {
+                    "source_id": 1,
+                    "start_line": 6,
+                    "end_line": 6
+                  }
+                ]
+              },
+              {
+                "text": "The hypothesis of a signature mismatch is supported by the discrepancy between the number of arguments defined and the number supplied in the call.",
+                "aspect_id": 2,
+                "status": "supported",
+                "citations": [
+                  {
+                    "source_id": 1,
+                    "start_line": 6,
+                    "end_line": 6
+                  },
+                  {
+                    "source_id": 2,
+                    "start_line": 3,
+                    "end_line": 4
+                  }
+                ]
+              },
+              {
+                "text": "What remains uncertain is the runtime behavior or error handling of this mismatch, as the provided evidence does not include execution details.",
+                "aspect_id": 3,
+                "status": "insufficient_evidence",
+                "citations": []
+              }
+            ],
+            "outcome": "invalid_model_output",
+            "reason": "The cited code does not support the claim lexically."
+          }
+        ],
+        "provider_calls": 2
+      },
+      "elapsed_ms": 60379,
+      "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+      "model": "qwen2.5-coder:14b",
+      "answer_prompt_version": "2026-10-03-aspects-cited-lines-audit-v2",
+      "retrieval_version": "2026-10-04-custom-modular-rag-v1",
+      "evidence_sufficiency": {
+        "supported_aspects": 0,
+        "requested_aspects": 0,
+        "all_aspects_supported": false,
+        "confidence": "insufficient",
+        "factual_correctness_proven": false
+      }
+    },
+    "verified": false
+  },
+  "fix": {
+    "summary": "Fixed the module-level call to combine in static_candidates.py and added a new regression test.",
+    "patch": "diff --git a/python/static_candidates.py b/python/static_candidates.py\n--- a/python/static_candidates.py\n+++ b/python/static_candidates.py\n@@ -3,7 +3,7 @@\n def combine(left, right):\n     return left + right\n \n-combine(1, 2, 3)\n+combine(1, 2)\n \n \n def unreachable_example():\n",
+    "extra_tests": {
+      "tests/test_devpilot_regression.py": "\"\"\"\nThis is a regression test for the combine function in static_candidates.py.\n\"\"\"\n\nfrom python.static_candidates import combine\ndef test_combine_basic():\n    assert combine(1, 2) == 3"
+    },
+    "ignored_model_patch": false,
+    "evidence": [
+      {
+        "id": "1756eb2d8016b14b8b9896f2",
+        "path": "python/static_candidates.py",
+        "qualified": "python.static_candidates.combine",
+        "start_line": 3,
+        "end_line": 4
+      },
+      {
+        "id": "bfa97db36b270a0f54cd55be",
+        "path": "python/static_candidates.py",
+        "qualified": "python.static_candidates",
+        "start_line": 1,
+        "end_line": 11
+      },
+      {
+        "id": "1eb7a3f1816d4d80d371fff5",
+        "path": "python/static_candidates.py",
+        "qualified": "python.static_candidates.unreachable_example",
+        "start_line": 9,
+        "end_line": 11
+      },
+      {
+        "id": "ca1c22388f083d98b927e7ba",
+        "path": "python/pricing.py",
+        "qualified": "python.pricing",
+        "start_line": 1,
+        "end_line": 7
+      },
+      {
+        "id": "3054eb67386525a481e3c120",
+        "path": "python/api.py",
+        "qualified": "python.api",
+        "start_line": 1,
+        "end_line": 6
+      },
+      {
+        "id": "b66463dc3ac335637682d604",
+        "path": "python/api.py",
+        "qualified": "python.api.quote_request",
+        "start_line": 4,
+        "end_line": 6
+      },
+      {
+        "id": "d26d59de8f2f11803acb68d1",
+        "path": "python/pricing.py",
+        "qualified": "python.pricing.shipping_cost",
+        "start_line": 3,
+        "end_line": 7
+      },
+      {
+        "id": "e59eda69554fdd4800ebd6aa",
+        "path": "python/static_candidates.py",
+        "qualified": "python.static_candidates.combine.right",
+        "start_line": 3,
+        "end_line": 3
+      }
+    ],
+    "warning": null,
+    "status": "draft_unverified",
+    "verified": false,
+    "kind": "fix_and_test",
+    "missing_information": [
+      "Behavioral correctness, imports, framework compatibility and regression effectiveness have not been verified."
+    ],
+    "language": "python",
+    "usage": {
+      "prompt_tokens": 838,
+      "completion_tokens": 153,
+      "total_tokens": 991
+    }
+  }
+}

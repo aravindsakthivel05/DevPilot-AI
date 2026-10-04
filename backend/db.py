@@ -43,6 +43,10 @@ def init():
             PRIMARY KEY(repo_id,path)
         );
         CREATE INDEX IF NOT EXISTS coverage_repo_status ON coverage(repo_id,status);
+        CREATE TABLE IF NOT EXISTS unresolved_references (
+            repo_id TEXT NOT NULL REFERENCES repositories(id) ON DELETE CASCADE,
+            reference TEXT NOT NULL
+        );
         CREATE TABLE IF NOT EXISTS symbols (
             id TEXT PRIMARY KEY, repo_id TEXT NOT NULL REFERENCES repositories(id) ON DELETE CASCADE,
             path TEXT NOT NULL, name TEXT NOT NULL, qualified TEXT NOT NULL,
@@ -61,6 +65,58 @@ def init():
             symbol_id TEXT PRIMARY KEY REFERENCES symbols(id) ON DELETE CASCADE,
             model TEXT NOT NULL, vector TEXT NOT NULL
         );
+        CREATE TABLE IF NOT EXISTS search_revisions (
+            repo_id TEXT PRIMARY KEY, revision INTEGER NOT NULL DEFAULT 0
+        );
+        CREATE TABLE IF NOT EXISTS search_state (
+            repo_id TEXT PRIMARY KEY, revision INTEGER NOT NULL, version TEXT NOT NULL
+        );
+        CREATE TABLE IF NOT EXISTS search_terms (
+            repo_id TEXT NOT NULL, term TEXT NOT NULL, frequency INTEGER NOT NULL,
+            PRIMARY KEY(repo_id,term)
+        );
+        CREATE TABLE IF NOT EXISTS search_lengths (
+            symbol_id TEXT PRIMARY KEY REFERENCES symbols(id) ON DELETE CASCADE,
+            length INTEGER NOT NULL
+        );
+        CREATE VIRTUAL TABLE IF NOT EXISTS symbols_fts USING fts5(
+            symbol_id UNINDEXED, repo_id UNINDEXED, names, body
+        );
+        CREATE TRIGGER IF NOT EXISTS symbols_search_insert AFTER INSERT ON symbols BEGIN
+            INSERT INTO search_revisions VALUES (new.repo_id,1)
+            ON CONFLICT(repo_id) DO UPDATE SET revision=revision+1;
+        END;
+        CREATE TRIGGER IF NOT EXISTS symbols_search_delete AFTER DELETE ON symbols BEGIN
+            INSERT INTO search_revisions VALUES (old.repo_id,1)
+            ON CONFLICT(repo_id) DO UPDATE SET revision=revision+1;
+        END;
+        CREATE TRIGGER IF NOT EXISTS symbols_search_update AFTER UPDATE ON symbols BEGIN
+            INSERT INTO search_revisions VALUES (new.repo_id,1)
+            ON CONFLICT(repo_id) DO UPDATE SET revision=revision+1;
+            INSERT INTO search_revisions VALUES (old.repo_id,1)
+            ON CONFLICT(repo_id) DO UPDATE SET revision=revision+1;
+        END;
+        CREATE TRIGGER IF NOT EXISTS edges_search_insert AFTER INSERT ON edges BEGIN
+            INSERT INTO search_revisions VALUES (new.repo_id,1)
+            ON CONFLICT(repo_id) DO UPDATE SET revision=revision+1;
+        END;
+        CREATE TRIGGER IF NOT EXISTS edges_search_delete AFTER DELETE ON edges BEGIN
+            INSERT INTO search_revisions VALUES (old.repo_id,1)
+            ON CONFLICT(repo_id) DO UPDATE SET revision=revision+1;
+        END;
+        CREATE TRIGGER IF NOT EXISTS edges_search_update AFTER UPDATE ON edges BEGIN
+            INSERT INTO search_revisions VALUES (new.repo_id,1)
+            ON CONFLICT(repo_id) DO UPDATE SET revision=revision+1;
+        END;
+        CREATE TRIGGER IF NOT EXISTS repositories_search_delete AFTER DELETE ON repositories BEGIN
+            DELETE FROM symbols_fts WHERE repo_id=old.id;
+            DELETE FROM search_state WHERE repo_id=old.id;
+            DELETE FROM search_revisions WHERE repo_id=old.id;
+            DELETE FROM search_terms WHERE repo_id=old.id;
+        END;
+        CREATE TRIGGER IF NOT EXISTS repositories_terms_delete AFTER DELETE ON repositories BEGIN
+            DELETE FROM search_terms WHERE repo_id=old.id;
+        END;
         CREATE TABLE IF NOT EXISTS investigations (
             id TEXT PRIMARY KEY, repo_id TEXT REFERENCES repositories(id) ON DELETE CASCADE,
             created_at TEXT NOT NULL, question TEXT NOT NULL, result TEXT NOT NULL
@@ -97,6 +153,11 @@ def init():
             status TEXT NOT NULL, result TEXT NOT NULL
         );
         """)
+        if "signature" not in {row["name"] for row in c.execute("PRAGMA table_info(embeddings)")}:
+            c.execute("ALTER TABLE embeddings ADD COLUMN signature TEXT NOT NULL DEFAULT ''")
+        from .migrations import migrate
+
+        migrate(c)
 
 
 def repository(repo_id):

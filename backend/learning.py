@@ -84,6 +84,9 @@ def create_case(repo_id, question, investigation_id=None):
             "model": result.get("model"),
             "answer_prompt_version": result.get("answer_prompt_version"),
             "retrieval_version": result.get("retrieval_version"),
+            "aspect_statuses": result.get("aspect_statuses", []),
+            "generation_context": result.get("generation_context", []),
+            "generation_diagnostics": result.get("generation_diagnostics", {}),
             "evidence": [
                 {
                     key: item.get(key)

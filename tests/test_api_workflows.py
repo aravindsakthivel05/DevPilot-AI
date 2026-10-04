@@ -2,7 +2,6 @@
 
 import hashlib
 import json
-import re
 
 import pytest
 from conftest import wait_repo
@@ -261,14 +260,20 @@ def fake_provider(monkeypatch):
                 data.append({"index": i, "embedding": [v / 255 for v in digest[:8]]})
             return {"data": data}
         request_data = json.loads(payload["messages"][1]["content"])
-        contexts = request_data["source_evidence"].split("\n\n")
-        header = contexts[0].splitlines()[0]
-        source_id = int(re.search(r"\[(\d+)\]", header).group(1))
-        qualifier = header.rsplit(" ", 1)[-1]
+        context = request_data["source_evidence"][0]
+        source_id = context["source_id"]
+        qualifier = context["qualified"]
         claims = [
             {
                 "text": f"The {aspect['question']} is handled by {qualifier}.",
-                "source_id": source_id,
+                "citations": [
+                    {
+                        "source_id": source_id,
+                        "start_line": context["lines"][0]["line"],
+                        "end_line": context["lines"][0]["line"],
+                    }
+                ],
+                "status": "supported",
                 "aspect_id": aspect["aspect_id"],
             }
             for aspect in request_data["requested_aspects"]
@@ -374,10 +379,9 @@ def test_model_answer_must_cover_every_question_aspect(client, repo, monkeypatch
 
     def one_aspect_only(_endpoint, payload):
         request_data = json.loads(payload["messages"][1]["content"])
-        context = request_data["source_evidence"].split("\n\n")[0]
-        header = context.splitlines()[0]
-        source_id = int(re.search(r"\[(\d+)\]", header).group(1))
-        qualifier = header.rsplit(" ", 1)[-1]
+        context = request_data["source_evidence"][0]
+        source_id = context["source_id"]
+        qualifier = context["qualified"]
         return {
             "choices": [
                 {
@@ -387,7 +391,14 @@ def test_model_answer_must_cover_every_question_aspect(client, repo, monkeypatch
                                 "claims": [
                                     {
                                         "text": f"The method returns the requested dictionary through {qualifier}",
-                                        "source_id": source_id,
+                                        "citations": [
+                                            {
+                                                "source_id": source_id,
+                                                "start_line": context["lines"][0]["line"],
+                                                "end_line": context["lines"][0]["line"],
+                                            }
+                                        ],
+                                        "status": "supported",
                                         "aspect_id": 1,
                                     }
                                 ]
@@ -404,7 +415,7 @@ def test_model_answer_must_cover_every_question_aspect(client, repo, monkeypatch
         json={"question": "Which method returns the dictionary, and how is exclude_none passed?"},
     ).json()
     assert result["generated"] is False
-    assert "did not cover every part" in result["warning"]
+    assert "for each aspect" in result["warning"]
     assert "The serializer returns" not in result["answer"]
 
 

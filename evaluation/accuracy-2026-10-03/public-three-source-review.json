@@ -1,0 +1,74 @@
+{
+  "review_author": "Codex manual source review; not independent human grading",
+  "raw_report_sha256": "4bcce1a873c6751d5f97ecbc9946a946a7a07de095531cc17da95deaeaec2be2",
+  "accepted_model_answers": 5,
+  "source_reviewed_correct_and_complete": 0,
+  "results": [
+    {
+      "id": "fastapi-medium-001",
+      "mode": "quick",
+      "generated": true,
+      "reported_partial": false,
+      "answer_correct": false,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "The get_openapi call is correctly identified, but adding routes to a router is not where OpenAPI route schemas are assembled. Cited routes=self.routes parameter lines do not support the assembly claims.",
+      "elapsed_ms": 26273
+    },
+    {
+      "id": "fastapi-medium-001",
+      "mode": "deep",
+      "generated": true,
+      "reported_partial": true,
+      "answer_correct": true,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": true,
+      "notes": "Correct get_openapi delegation. Route-schema assembly remains missing, and the caching/version condition is not explained.",
+      "elapsed_ms": 37805
+    },
+    {
+      "id": "django-complex-001",
+      "mode": "quick",
+      "generated": false,
+      "reported_partial": false,
+      "answer_correct": null,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": null,
+      "notes": "Both attempts rejected an SQLCompiler source-identity mismatch. Fallback explicitly provides locations without a validated explanation.",
+      "elapsed_ms": 39965
+    },
+    {
+      "id": "django-complex-001",
+      "mode": "deep",
+      "generated": true,
+      "reported_partial": true,
+      "answer_correct": true,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "Fetch/cache behavior is consistent with source, but citations to _fetch_all do not show __iter__ invoking it. SQL execution handoff is missing.",
+      "elapsed_ms": 36236
+    },
+    {
+      "id": "pytorch-very-complex-001",
+      "mode": "quick",
+      "generated": true,
+      "reported_partial": true,
+      "answer_correct": true,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "Broad hook-before-forward order is consistent with the full implementation, but the citations contain a constraint-hook check and kwargs condition instead of the actual forward call. Forward hooks remain missing.",
+      "elapsed_ms": 52430
+    },
+    {
+      "id": "pytorch-very-complex-001",
+      "mode": "deep",
+      "generated": true,
+      "reported_partial": true,
+      "answer_correct": true,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "Broad pre-hook and forward statements are consistent with the implementation, but cites a hook-registration signature, result initialization and function selection instead of hook/forward invocation. Forward hooks are missing.",
+      "elapsed_ms": 53141
+    }
+  ]
+}

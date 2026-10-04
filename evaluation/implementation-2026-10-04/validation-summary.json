@@ -1,0 +1,174 @@
+{
+  "dataset": "Authored nine-language development fixture; not held-out or independently reviewed.",
+  "retrieval": [
+    {
+      "variant": "lexical",
+      "cases": 4,
+      "recall_at_5_mean": 0.625,
+      "recall_at_10_mean": 0.625,
+      "mrr_at_5_mean": 0.425,
+      "ndcg_at_5_mean": 0.4670318665851884,
+      "all_evidence_at_5": 2,
+      "latency_ms_mean": 5.94825
+    },
+    {
+      "variant": "lexical_structured",
+      "cases": 4,
+      "recall_at_5_mean": 1.0,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.675,
+      "ndcg_at_5_mean": 0.7343758374885467,
+      "all_evidence_at_5": 4,
+      "latency_ms_mean": 4.85225
+    },
+    {
+      "variant": "semantic",
+      "cases": 4,
+      "recall_at_5_mean": 0.625,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.41666666666666663,
+      "ndcg_at_5_mean": 0.4516433990956823,
+      "all_evidence_at_5": 2,
+      "latency_ms_mean": 50.6875
+    },
+    {
+      "variant": "graph",
+      "cases": 4,
+      "recall_at_5_mean": 1.0,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.675,
+      "ndcg_at_5_mean": 0.7343758374885467,
+      "all_evidence_at_5": 4,
+      "latency_ms_mean": 4.76
+    },
+    {
+      "variant": "hybrid",
+      "cases": 4,
+      "recall_at_5_mean": 1.0,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.5625,
+      "ndcg_at_5_mean": 0.6887581788155304,
+      "all_evidence_at_5": 4,
+      "latency_ms_mean": 43.292
+    },
+    {
+      "variant": "hybrid_no_reranking",
+      "cases": 4,
+      "recall_at_5_mean": 0.625,
+      "recall_at_10_mean": 0.75,
+      "mrr_at_5_mean": 0.5833333333333334,
+      "ndcg_at_5_mean": 0.5766433990956823,
+      "all_evidence_at_5": 2,
+      "latency_ms_mean": 39.28175
+    },
+    {
+      "variant": "hybrid_no_graph",
+      "cases": 4,
+      "recall_at_5_mean": 1.0,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.5625,
+      "ndcg_at_5_mean": 0.6887581788155304,
+      "all_evidence_at_5": 4,
+      "latency_ms_mean": 36.317499999999995
+    },
+    {
+      "variant": "hybrid_1hop",
+      "cases": 4,
+      "recall_at_5_mean": 1.0,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.5625,
+      "ndcg_at_5_mean": 0.6887581788155304,
+      "all_evidence_at_5": 4,
+      "latency_ms_mean": 33.8785
+    },
+    {
+      "variant": "hybrid_3hop",
+      "cases": 4,
+      "recall_at_5_mean": 1.0,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.5625,
+      "ndcg_at_5_mean": 0.6887581788155304,
+      "all_evidence_at_5": 4,
+      "latency_ms_mean": 36.692
+    },
+    {
+      "variant": "hybrid_no_semantic",
+      "cases": 4,
+      "recall_at_5_mean": 1.0,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.675,
+      "ndcg_at_5_mean": 0.7343758374885467,
+      "all_evidence_at_5": 4,
+      "latency_ms_mean": 4.0225
+    },
+    {
+      "variant": "hybrid_no_lexical",
+      "cases": 4,
+      "recall_at_5_mean": 1.0,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.5625,
+      "ndcg_at_5_mean": 0.6887581788155304,
+      "all_evidence_at_5": 4,
+      "latency_ms_mean": 37.536
+    },
+    {
+      "variant": "hybrid_graph_half",
+      "cases": 4,
+      "recall_at_5_mean": 1.0,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.5625,
+      "ndcg_at_5_mean": 0.6887581788155304,
+      "all_evidence_at_5": 4,
+      "latency_ms_mean": 33.4105
+    },
+    {
+      "variant": "hybrid_graph_double",
+      "cases": 4,
+      "recall_at_5_mean": 1.0,
+      "recall_at_10_mean": 1.0,
+      "mrr_at_5_mean": 0.5625,
+      "ndcg_at_5_mean": 0.6887581788155304,
+      "all_evidence_at_5": 4,
+      "latency_ms_mean": 34.1265
+    },
+    {
+      "variant": "hybrid_no_structure",
+      "cases": 4,
+      "recall_at_5_mean": 0.625,
+      "recall_at_10_mean": 0.75,
+      "mrr_at_5_mean": 0.5833333333333334,
+      "ndcg_at_5_mean": 0.5766433990956823,
+      "all_evidence_at_5": 2,
+      "latency_ms_mean": 36.96825
+    }
+  ],
+  "error_metrics": {
+    "true_positives": 2,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "true_negatives": null,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "matching": "exact type/file/line",
+    "notice": "Scores depend on complete reviewed labels; static candidates are not execution-confirmed bugs. True negatives require a labelled negative population and are not inferred from unflagged lines."
+  },
+  "answer_review": {
+    "reviewer": "Codex source inspection, not independent human review",
+    "python_guard": "Claim includes nonpositive condition and ValueError; cited lines contain the condition and raise.",
+    "typescript_delegation": "Claims cite quoteRequest body including shippingCost(weight) and return, and the helper body for its return.",
+    "cause": "Cited combine definition accepts two positional parameters; call passes three. No runtime exception is claimed."
+  },
+  "fix_review": {
+    "reviewer": "Codex source inspection, not independent human review",
+    "patch": "Draft replaces combine(1, 2, 3) with combine(1, 2); applicability checked only.",
+    "test": "Draft asserts combine(1, 2) == 3; syntax checked only. No target tests or patches executed.",
+    "limitations": "Imports, intended contract and regression effectiveness require developer review."
+  },
+  "claims_not_established": [
+    "General accuracy gain across new repositories",
+    "Graph-only contribution on the four retrieval cases",
+    "Equal semantic coverage across nine languages",
+    "Successful or behaviorally verified repairs"
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "review_author": "Codex manual source review; not independent human grading",
+  "raw_report_sha256": "fe368945911f387ef0d0728b179a197a9ee2a200eca1561671217d171dc1f997",
+  "judgment_scope": "Correctness versus full pinned implementation; exact citation support separately. No answer or abstention is not a completed answer. One repeat, six answerable cases and two live-state guards per model.",
+  "summary": [
+    {
+      "model": "qwen2.5-coder:14b",
+      "answerable_cases": 6,
+      "source_reviewed_correct_and_complete": 3,
+      "strictly_supported_correct_complete": 2,
+      "rejected": 1,
+      "median_ms": 81341.0,
+      "max_ms": 105961
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "answerable_cases": 6,
+      "source_reviewed_correct_and_complete": 1,
+      "strictly_supported_correct_complete": 1,
+      "rejected": 1,
+      "median_ms": 23054.5,
+      "max_ms": 59120
+    }
+  ],
+  "results": [
+    {
+      "id": "jinja-render",
+      "model": "qwen2.5-coder:7b",
+      "answer_correct": false,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "Incorrectly says the async path executes when the environment is not async. Source executes asyncio.run only when is_async is true; the cited async call omits that guard. Synchronous concatenation is also omitted.",
+      "expected_sources_in_model_context": 1,
+      "expected_source_count": 1,
+      "elapsed_ms": 24573,
+      "rejected": false
+    },
+    {
+      "id": "jinja-get-template",
+      "model": "qwen2.5-coder:7b",
+      "answer_correct": true,
+      "all_aspects_complete": true,
+      "all_claims_supported_by_exact_citations": true,
+      "notes": "Correct for the two requested cases: an existing Template is returned unchanged and a supplied parent is passed to join_path.",
+      "expected_sources_in_model_context": 1,
+      "expected_source_count": 1,
+      "elapsed_ms": 15726,
+      "rejected": false
+    },
+    {
+      "id": "jinja-cache-compile",
+      "model": "qwen2.5-coder:7b",
+      "answer_correct": null,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": null,
+      "notes": "Generation rejected for owner mismatch. No substantive answer was returned by the single-attempt comparison.",
+      "expected_sources_in_model_context": 2,
+      "expected_source_count": 2,
+      "elapsed_ms": 21536,
+      "rejected": true
+    },
+    {
+      "id": "jinja-runtime",
+      "model": "qwen2.5-coder:7b",
+      "answer_correct": true,
+      "all_aspects_complete": true,
+      "all_claims_supported_by_exact_citations": true,
+      "notes": "Correctly declines a private live runtime value without a provider call.",
+      "expected_sources_in_model_context": 0,
+      "expected_source_count": 0,
+      "elapsed_ms": 0,
+      "rejected": false
+    },
+    {
+      "id": "gson-empty",
+      "model": "qwen2.5-coder:7b",
+      "answer_correct": null,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": null,
+      "notes": "Both requested aspects are marked insufficient evidence. Does not answer the empty-input behavior; the uncited exception text is not a supported claim.",
+      "expected_sources_in_model_context": 1,
+      "expected_source_count": 1,
+      "elapsed_ms": 17369,
+      "rejected": false
+    },
+    {
+      "id": "gson-writer",
+      "model": "qwen2.5-coder:7b",
+      "answer_correct": false,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "The fallback to LENIENT applies only to LEGACY_STRICT, not every writer whenever instance strictness is null. The htmlSafe/serializeNulls citation saves old values but does not show their application.",
+      "expected_sources_in_model_context": 1,
+      "expected_source_count": 1,
+      "elapsed_ms": 39750,
+      "rejected": false
+    },
+    {
+      "id": "gson-adapter",
+      "model": "qwen2.5-coder:7b",
+      "answer_correct": true,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "Broad cache/recursion description is consistent with source, but omits factory selection and delegate wiring. Publication citation shows removing thread-local state, not typeTokenCache.putAll or its initial-request condition.",
+      "expected_sources_in_model_context": 1,
+      "expected_source_count": 1,
+      "elapsed_ms": 59120,
+      "rejected": false
+    },
+    {
+      "id": "gson-runtime",
+      "model": "qwen2.5-coder:7b",
+      "answer_correct": true,
+      "all_aspects_complete": true,
+      "all_claims_supported_by_exact_citations": true,
+      "notes": "Correctly declines a private live runtime value without a provider call.",
+      "expected_sources_in_model_context": 0,
+      "expected_source_count": 0,
+      "elapsed_ms": 0,
+      "rejected": false
+    },
+    {
+      "id": "jinja-render",
+      "model": "qwen2.5-coder:14b",
+      "answer_correct": true,
+      "all_aspects_complete": true,
+      "all_claims_supported_by_exact_citations": true,
+      "notes": "Correct synchronous context, root_render_func concatenation and exception handling, with matching implementation statements.",
+      "expected_sources_in_model_context": 1,
+      "expected_source_count": 1,
+      "elapsed_ms": 85825,
+      "rejected": false
+    },
+    {
+      "id": "jinja-get-template",
+      "model": "qwen2.5-coder:14b",
+      "answer_correct": true,
+      "all_aspects_complete": true,
+      "all_claims_supported_by_exact_citations": true,
+      "notes": "Correct existing-Template return and parent join_path behavior.",
+      "expected_sources_in_model_context": 1,
+      "expected_source_count": 1,
+      "elapsed_ms": 66221,
+      "rejected": false
+    },
+    {
+      "id": "jinja-cache-compile",
+      "model": "qwen2.5-coder:14b",
+      "answer_correct": null,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": null,
+      "notes": "Generation rejected for absent lexical support. No substantive answer from the single attempt.",
+      "expected_sources_in_model_context": 2,
+      "expected_source_count": 2,
+      "elapsed_ms": 76857,
+      "rejected": true
+    },
+    {
+      "id": "jinja-runtime",
+      "model": "qwen2.5-coder:14b",
+      "answer_correct": true,
+      "all_aspects_complete": true,
+      "all_claims_supported_by_exact_citations": true,
+      "notes": "Correctly declines a private live runtime value without a provider call.",
+      "expected_sources_in_model_context": 0,
+      "expected_source_count": 0,
+      "elapsed_ms": 0,
+      "rejected": false
+    },
+    {
+      "id": "gson-empty",
+      "model": "qwen2.5-coder:14b",
+      "answer_correct": true,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": true,
+      "notes": "Correct empty-input null return. Nonempty EOF behavior remains explicitly incomplete.",
+      "expected_sources_in_model_context": 1,
+      "expected_source_count": 1,
+      "elapsed_ms": 46764,
+      "rejected": false
+    },
+    {
+      "id": "gson-writer",
+      "model": "qwen2.5-coder:14b",
+      "answer_correct": true,
+      "all_aspects_complete": true,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "Behavior is correct, including LEGACY_STRICT condition and restoring all three settings. Exact restoration citations contain assignments but omit the finally header; strict citation-only support is incomplete.",
+      "expected_sources_in_model_context": 1,
+      "expected_source_count": 1,
+      "elapsed_ms": 94431,
+      "rejected": false
+    },
+    {
+      "id": "gson-adapter",
+      "model": "qwen2.5-coder:14b",
+      "answer_correct": false,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "Says FutureTypeAdapter is not explicitly in the evidence despite its cited documentation. Describes cached returns as publication and omits the initial-request-only putAll condition; cited lines do not show publication.",
+      "expected_sources_in_model_context": 1,
+      "expected_source_count": 1,
+      "elapsed_ms": 105961,
+      "rejected": false
+    },
+    {
+      "id": "gson-runtime",
+      "model": "qwen2.5-coder:14b",
+      "answer_correct": true,
+      "all_aspects_complete": true,
+      "all_claims_supported_by_exact_citations": true,
+      "notes": "Correctly declines a private live runtime value without a provider call.",
+      "expected_sources_in_model_context": 0,
+      "expected_source_count": 0,
+      "elapsed_ms": 0,
+      "rejected": false
+    }
+  ],
+  "default_decision": "Retain qwen2.5-coder:7b for setup speed. qwen2.5-coder:14b is installed and available as a slower accuracy option, but neither is trusted without source review."
+}

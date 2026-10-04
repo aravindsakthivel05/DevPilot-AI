@@ -1,0 +1,72 @@
+{
+  "answerable_unique_questions": 15,
+  "answerable_runs": 20,
+  "guard_runs": 10,
+  "correct_and_complete": 2,
+  "correct_complete_exact_citation_support": 1,
+  "no_validated_answers": 7,
+  "incorrect_answers": 2,
+  "correct_but_incomplete_answers": 9,
+  "mean_expected_symbol_recall_at_8": 0.8733333333333333,
+  "median_answer_seconds": 37.41,
+  "minimum_answer_seconds": 16.73,
+  "maximum_answer_seconds": 72.95,
+  "accepted_generated": 13,
+  "partial_generated": 2,
+  "errors": 0,
+  "guards_passed": 10,
+  "review_author": "Codex source review; not independent human review",
+  "backend_unchanged": true,
+  "by_repository": {
+    "sqlalchemy": {
+      "quick_correct_complete": 0,
+      "quick_strict_supported_complete": 0,
+      "quick_questions": 3,
+      "quick_recall_at_8": 1.0,
+      "quick_median_seconds": 36.95,
+      "hard_deep_correct_complete": false,
+      "hard_deep_strict_supported_complete": false,
+      "hard_deep_seconds": 48.38
+    },
+    "celery": {
+      "quick_correct_complete": 1,
+      "quick_strict_supported_complete": 0,
+      "quick_questions": 3,
+      "quick_recall_at_8": 1.0,
+      "quick_median_seconds": 50.3,
+      "hard_deep_correct_complete": false,
+      "hard_deep_strict_supported_complete": false,
+      "hard_deep_seconds": 41.94
+    },
+    "scrapy": {
+      "quick_correct_complete": 0,
+      "quick_strict_supported_complete": 0,
+      "quick_questions": 3,
+      "quick_recall_at_8": 1.0,
+      "quick_median_seconds": 39.7,
+      "hard_deep_correct_complete": false,
+      "hard_deep_strict_supported_complete": false,
+      "hard_deep_seconds": 54.45
+    },
+    "mybatis": {
+      "quick_correct_complete": 1,
+      "quick_strict_supported_complete": 1,
+      "quick_questions": 3,
+      "quick_recall_at_8": 0.7777777777777778,
+      "quick_median_seconds": 32.92,
+      "hard_deep_correct_complete": false,
+      "hard_deep_strict_supported_complete": false,
+      "hard_deep_seconds": 35.54
+    },
+    "resilience4j": {
+      "quick_correct_complete": 0,
+      "quick_strict_supported_complete": 0,
+      "quick_questions": 3,
+      "quick_recall_at_8": 0.8,
+      "quick_median_seconds": 32.49,
+      "hard_deep_correct_complete": false,
+      "hard_deep_strict_supported_complete": false,
+      "hard_deep_seconds": 35.56
+    }
+  }
+}

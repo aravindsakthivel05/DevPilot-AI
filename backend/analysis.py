@@ -74,12 +74,35 @@ def analyse(repo_id, files):
             kind="module" if path.endswith(".py") else "document",
             start_line=1,
             end_line=max(1, len(lines)),
-            source="\n".join(lines[:100]),
+            source="\n".join(lines if path.endswith(".py") else lines[:120]),
             docstring="",
             parent_id=None,
         )
         symbols.append(module)
         if not path.endswith(".py"):
+            module["end_line"] = max(1, min(120, len(lines)))
+            for offset in range(100, len(lines), 100):
+                chunk = dict(module)
+                chunk.update(
+                    id=symbol_id(repo_id, path, mod, offset + 1),
+                    qualified=f"{mod}#L{offset + 1}",
+                    start_line=offset + 1,
+                    end_line=min(offset + 120, len(lines)),
+                    source="\n".join(lines[offset : offset + 120]),
+                    parent_id=mid,
+                )
+                symbols.append(chunk)
+                edges.append(
+                    dict(
+                        repo_id=repo_id,
+                        source=mid,
+                        target=chunk["id"],
+                        kind="contains",
+                        line=offset + 1,
+                        confidence="exact",
+                        label="document chunk",
+                    )
+                )
             continue
         modules[mod] = mid
         by_qualified.setdefault(mod, []).append(mid)
@@ -136,6 +159,12 @@ def analyse(repo_id, files):
                 if kind == "function":
                     bindings[sid] = local_bindings(node)
                     imports[sid] = {}
+                for decorator in node.decorator_list:
+                    label = dotted(decorator.func if isinstance(decorator, ast.Call) else decorator)
+                    if label:
+                        pending.append(
+                            (sid, mid, prefix, label, "decorated_by", decorator.lineno, None)
+                        )
                 self.stack.append((sid, qualified, kind))
                 # Decorators/default expressions run in the surrounding scope; don't invent body-call edges for them.
                 for child in node.body:
@@ -190,6 +219,30 @@ def analyse(repo_id, files):
                             cls,
                         )
                     )
+                self.generic_visit(node)
+
+            def visit_Assign(self, node):
+                # A declared callable alias such as __call__ = wrapper is a
+                # static relationship, not proof of dynamic dispatch at runtime.
+                if self.stack[-1][2] == "class" and any(
+                    isinstance(target, ast.Name)
+                    and target.id.startswith("__")
+                    and target.id.endswith("__")
+                    for target in node.targets
+                ):
+                    label = dotted(node.value)
+                    if label:
+                        pending.append(
+                            (
+                                self.stack[-1][0],
+                                mid,
+                                self.stack[-1][1],
+                                label,
+                                "aliases",
+                                node.lineno,
+                                None,
+                            )
+                        )
                 self.generic_visit(node)
 
         Visitor().visit(tree)

@@ -34,9 +34,30 @@ def test_repair_result_requires_expected_failure(tmp_path, monkeypatch):
     def fake_execute(*args, **kwargs):
         calls.append(kwargs)
         return (
-            {"status": "failed", "exit_code": 1, "output": "assertion failed"}
+            {
+                "status": "failed",
+                "exit_code": 1,
+                "output": "assertion failed",
+                "test_report": {
+                    "available": True,
+                    "failures": 1,
+                    "errors": 0,
+                    "cases": [{"id": "r", "status": "failed"}],
+                },
+            }
             if not kwargs.get("patch")
-            else {"status": "passed", "exit_code": 0, "output": ""}
+            else {
+                "status": "passed",
+                "exit_code": 0,
+                "output": "",
+                "test_report": {
+                    "available": True,
+                    "passed": 1,
+                    "failures": 0,
+                    "errors": 0,
+                    "cases": [{"id": "r", "status": "passed"}],
+                },
+            }
         )
 
     monkeypatch.setattr(evaluate_repairs, "execute", fake_execute)

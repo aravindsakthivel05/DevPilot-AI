@@ -1,0 +1,13 @@
+
+> devpilot-ui@0.1.0 build
+> vite build
+
+vite v6.4.3 building for production...
+transforming...
+✓ 1581 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.75 kB │ gzip:  0.47 kB
+dist/assets/index-ykYUPs4W.css   22.91 kB │ gzip:  5.83 kB
+dist/assets/index-BSi0hvI5.js   275.04 kB │ gzip: 83.02 kB
+✓ built in 1.15s

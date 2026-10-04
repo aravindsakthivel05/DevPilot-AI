@@ -1,0 +1,10 @@
+{
+  "backend_package_path": "/Users/aravinds/Documents/ChatGPT/Final year project/.devpilot/core-validation-env/lib/python3.14/site-packages/backend/__init__.py",
+  "langgraph_installed": false,
+  "core_startup": true,
+  "openapi": true,
+  "nine_language_capabilities": true,
+  "typescript_parse": true,
+  "cwd": "/private/tmp",
+  "checked_latest_package": true
+}

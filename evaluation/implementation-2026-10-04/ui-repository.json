@@ -1,0 +1,78 @@
+{
+  "id": "0888c31b0c0946ca8bab2f05ad91958d",
+  "name": "research-repository",
+  "source": "/Users/aravinds/Documents/ChatGPT/Final year project/examples/research-repository",
+  "commit_id": "c43a135d67f91b6226073b5cdc257643cc47bd31",
+  "fingerprint": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+  "status": "ready",
+  "progress": "Ready for investigation",
+  "created_at": "2026-10-04T08:12:08.458221+00:00",
+  "stats": {
+    "files": 14,
+    "python_files": 3,
+    "java_files": 1,
+    "languages": {
+      "text": 2,
+      "c": 1,
+      "cpp": 1,
+      "csharp": 1,
+      "go": 1,
+      "java": 1,
+      "javascript": 1,
+      "python": 3,
+      "rust": 1,
+      "typescript": 2
+    },
+    "symbols": 49,
+    "edges": 40,
+    "parse_errors": [],
+    "unresolved_count": 2,
+    "unresolved": [
+      {
+        "source": "85ba18bbd07b7bbd7d8ce4a7",
+        "label": "ValueError",
+        "kind": "calls",
+        "line": 6
+      },
+      {
+        "source": "f0654bce5a21061e3e904011",
+        "label": "print",
+        "kind": "calls",
+        "line": 11
+      }
+    ],
+    "skipped_files": 0,
+    "coverage": {
+      "indexed_files": 14,
+      "skipped_files": 0,
+      "ignored_directories": 0,
+      "reason_counts": {},
+      "indexed_extensions": {
+        ".c": 1,
+        ".cpp": 1,
+        ".cs": 1,
+        ".go": 1,
+        ".java": 1,
+        ".js": 1,
+        ".json": 1,
+        ".md": 1,
+        ".py": 3,
+        ".rs": 1,
+        ".ts": 2
+      },
+      "recorded_entries": 14,
+      "entries_capped": false,
+      "ignored_directory_contents_scanned": false
+    },
+    "embedding_status": "ready",
+    "index_version": "2026-10-04-language-adapters-v1",
+    "timings_ms": {
+      "read_and_snapshot": 23.687,
+      "analysis_and_graph": 39.779,
+      "chunks_and_storage": 25.609,
+      "embeddings": 1174.862,
+      "total_index": 1263.947
+    }
+  },
+  "error": null
+}

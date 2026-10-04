@@ -54,6 +54,24 @@ SUFFIXES = {
     ".jsx",
     ".ts",
     ".tsx",
+    ".mjs",
+    ".cjs",
+    ".c",
+    ".h",
+    ".cpp",
+    ".cc",
+    ".cxx",
+    ".hpp",
+    ".hh",
+    ".hxx",
+    ".go",
+    ".rs",
+    ".cs",
+    ".csproj",
+    ".sln",
+    ".mod",
+    ".sum",
+    ".cmake",
 }
 
 TEXT_FILENAMES = {"Dockerfile", "Makefile", "MANIFEST.in", "gradlew", "mvnw"}
@@ -66,8 +84,14 @@ def provider_settings():
         "proposal_model": os.environ.get("DEVPILOT_PROPOSAL_MODEL", ""),
         "api_key": os.environ.get("DEVPILOT_API_KEY", ""),
         "embedding_model": os.environ.get("DEVPILOT_EMBEDDING_MODEL", ""),
+        "embedding_base_url": os.environ.get("DEVPILOT_EMBEDDING_BASE_URL", "").rstrip("/"),
+        "embedding_revision": os.environ.get("DEVPILOT_EMBEDDING_REVISION", ""),
     }
 
 
 def agent_enabled():
     return os.environ.get("DEVPILOT_LANGGRAPH_ENABLED", "").lower() in ("1", "true", "yes")
+
+
+def legacy_execution_enabled():
+    return os.environ.get("DEVPILOT_LEGACY_EXECUTION", "0").lower() in ("1", "true", "yes")

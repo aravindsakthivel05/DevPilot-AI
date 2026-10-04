@@ -1,0 +1,742 @@
+{
+  "started_at": "2026-10-04T06:39:03.316410+00:00",
+  "data_directory": "/Users/aravinds/Documents/ChatGPT/Final year project/.devpilot/complex-five-2026-10-04",
+  "model": "qwen2.5-coder:7b",
+  "embedding_model": null,
+  "answer_prompt_version": "2026-10-03-aspects-cited-lines-audit-v2",
+  "retrieval_version": "2026-10-03-coverage-fts-return-context-v2",
+  "context_window": "8192",
+  "source_token_budget": "4096",
+  "claim_audit": "1",
+  "backend_hashes": {
+    "backend/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend/agent_investigation.py": "2dfc682e03fea47923065cba1944847154e25a1977d76c3d840c81a4c33fe1ae",
+    "backend/agent_repair.py": "27839882006566c206ddb40e8f9b5fdda47c3ef5284ce7a7a4fb684616744ccb",
+    "backend/analysis.py": "27182c8db480f02c22a9fb7e66dc04224d48669b28ee2bd73b82d3a6fbc20573",
+    "backend/claim_audit.py": "581aad95911046c60d67ff5dbfb4eadcaba127c29ddc2a65692dfda6aa105704",
+    "backend/config.py": "ecba68655ad9e5eed69ff35e81e4082066c5f3863e1e086ad9187a347243055f",
+    "backend/config_links.py": "ee0b19ab0e7ea7d9f3c2241a11d295f65eb3f90e6618ab3cb2e27daa50474063",
+    "backend/db.py": "21046e3a084a2f4d9afe13a3b42cbbc5d9bd8218841afc8a4a0647e58429d270",
+    "backend/evidence.py": "7cfc3ff7806491031dcc2620cb881c7f9a9d806135c80477e8069f488e673bd3",
+    "backend/execution.py": "33d8edbf603955949c692bf92a52b3003b114c89c79a18b89ce4a4a4d6cb321e",
+    "backend/ingestion.py": "9d2c4c62c762d08b25f7c2f2c140306923566028a0821003aaf0b50c037a5f25",
+    "backend/java_analysis.py": "d5c8aca7f722b463e5b59d9982d22d6b206ab7645b33e16eef71f2fa1fbb1e6c",
+    "backend/learning.py": "1282cbb283263a7850f88a6cc889eec4957a9ba613409461c2fbd4a03166d6fb",
+    "backend/main.py": "86865b4ec42419b32781f4e79d909d55e799b388b5dd0951acad71028f9de16c",
+    "backend/namespaces.py": "e42ebc55dea6f490acc51ea06ac15567be6b9f01e03fefda8e52bd5656c5b273",
+    "backend/proposals.py": "f480626240b3ffa42502be23c64c4d4a4e1ca1b7136b9087b85ee66856286b5c",
+    "backend/providers.py": "2385314639e527e5741e8a0e2810b0491ee2142216d5ac0dc47ea2159f815fdf",
+    "backend/question_analysis.py": "82b5329a01ffe7868c5ddd1e5c4e24fc80be70d59bdb5375fe43748dd2e0ae5c",
+    "backend/readiness.py": "8efc97aaf9221b9d0c0f0ef66670d3cc0b6e5f5959f5f157dc363aa2f9c04a44",
+    "backend/retrieval.py": "deaf1cf9c0959c184428a4575ca4e998206d3ebe6d8eda1c6cd91836eeab8c5d",
+    "backend/search.py": "f0757bb030ddaffaf97f0f9eeaf183ef51d54ea032a351f03b223f17696bc0bc",
+    "backend/test_links.py": "967a30c1bdf17431151e34d6e9855874f1fb97022b1b9ef55e094d6754823f03",
+    "backend/test_results.py": "ff754e0e4fb9cacd9dde380f21155da933cfc1cdb2438591ee9977065f507956"
+  },
+  "questions_sha256": "de50ff35c751cc43dcf7c4322a322bdf403b8dbc0de9a4f3ac6b75cbc0c7d888",
+  "repeats": 1,
+  "provider_readiness": {
+    "model": "qwen2.5-coder:7b",
+    "configured": true,
+    "context_window": 8192,
+    "reachable": true,
+    "generation_probe": "passed",
+    "embedding_probe": "not_requested",
+    "model_installed": true,
+    "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "model_details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "7.6B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 32768,
+      "embedding_length": 3584
+    },
+    "loaded_models": [
+      {
+        "name": "qwen2.5-coder:7b",
+        "digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+        "context_length": 8192,
+        "size_vram": 4913826364
+      }
+    ]
+  },
+  "results": [
+    {
+      "case_id": "sqlalchemy-easy",
+      "repository": "sqlalchemy",
+      "mode": "quick",
+      "question": "In Session.flush, what happens if a flush is already in progress, and how is the _flushing flag reset after _flush runs?",
+      "answerable": true,
+      "commit": "a9956b1ab72561c4642ff9dfdf9ae52f3eb5d307",
+      "snapshot": "3bf4546667a35acdc94119c0798b9d2f6ed762d463ffa38f9ea7dc9bfd46b0e2",
+      "expected_sources": [
+        {
+          "qualified": "lib.sqlalchemy.orm.session.Session.flush",
+          "path": "lib/sqlalchemy/orm/session.py",
+          "start_line": 4504,
+          "end_line": 4538
+        }
+      ],
+      "expected_answer": "An existing _flushing flag raises InvalidRequestError. A clean session returns immediately. Otherwise the flag is set true before _flush(objects) and reset false in finally, even on an exception.",
+      "source_review": null,
+      "result": {
+        "answer": "If a flush is already in progress, an InvalidRequestError is raised [1].\n\nThe _flushing flag is reset after the _flush method runs [1].",
+        "evidence": [
+          {
+            "id": "6d6d5521499b3cd39788c9e0",
+            "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "name": "flush",
+            "qualified": "lib.sqlalchemy.orm.session.Session.flush",
+            "kind": "method",
+            "start_line": 4504,
+            "end_line": 4538,
+            "source": "    def flush(self, objects: Optional[Sequence[Any]] = None) -> None:\n        \"\"\"Flush all the object changes to the database.\n\n        Writes out all pending object creations, deletions and modifications\n        to the database as INSERTs, DELETEs, UPDATEs, etc.  Operations are\n        automatically ordered by the Session's unit of work dependency\n        solver.\n\n        Database operations will be issued in the current transactional\n        context and do not affect the state of the transaction, unless an\n        error occurs, in which case the entire transaction is rolled back.\n        You may flush() as often as you like within a transaction to move\n        changes from Python to the database's transaction buffer.\n\n        :param objects: Optional; restricts the flush operation to operate\n          only on elements that are in the given collection.\n\n          This feature is for an extremely narrow set of use cases where\n          particular objects may need to be operated upon before the\n          full flush() occurs.  It is not intended for general use.\n\n          .. deprecated:: 2.1\n\n        \"\"\"\n\n        if self._flushing:\n            raise sa_exc.InvalidRequestError(\"Session is already flushing\")\n\n        if self._is_clean():\n            return\n        try:\n            self._flushing = True\n            self._flush(objects)\n        finally:\n            self._flushing = False",
+            "docstring": "Flush all the object changes to the database.\n\nWrites out all pending object creations, deletions and modifications\nto the database as INSERTs, DELETEs, UPDATEs, etc.  Operations are\nautomatically ordered by the Session's unit of work dependency\nsolver.\n\nDatabase operations will be issued in the current transactional\ncontext and do not affect the state of the transaction, unless an\nerror occurs, in which case the entire transaction is rolled back.\nYou may flush() as often as you like within a transaction to move\nchanges from Python to the database's transaction buffer.\n\n:param objects: Optional; restricts the flush operation to operate\n  only on elements that are in the given collection.\n\n  This feature is for an extremely narrow set of use cases where\n  particular objects may need to be operated upon before the\n  full flush() occurs.  It is not intended for general use.\n\n  .. deprecated:: 2.1",
+            "parent_id": "1abd0c0ca801ad2ca6b96b72",
+            "public_aliases": [
+              "lib.sqlalchemy.orm.Session.flush",
+              "lib.sqlalchemy.orm.session.Session.flush"
+            ],
+            "score": 0.11667,
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "cdc62b86901ae1f9e97aa83e",
+            "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "name": "reset",
+            "qualified": "lib.sqlalchemy.orm.session.Session.reset",
+            "kind": "method",
+            "start_line": 2644,
+            "end_line": 2667,
+            "source": "    def reset(self) -> None:\n        \"\"\"Close out the transactional resources and ORM objects used by this\n        :class:`_orm.Session`, resetting the session to its initial state.\n\n        This method provides for same \"reset-only\" behavior that the\n        :meth:`_orm.Session.close` method has provided historically, where the\n        state of the :class:`_orm.Session` is reset as though the object were\n        brand new, and ready to be used again.\n        This method may then be useful for :class:`_orm.Session` objects\n        which set :paramref:`_orm.Session.close_resets_only` to ``False``,\n        so that \"reset only\" behavior is still available.\n\n        .. versionadded:: 2.0.22\n\n        .. seealso::\n\n            :ref:`session_closing` - detail on the semantics of\n            :meth:`_orm.Session.close` and :meth:`_orm.Session.reset`.\n\n            :meth:`_orm.Session.close` - a similar method will additionally\n            prevent reuse of the Session when the parameter\n            :paramref:`_orm.Session.close_resets_only` is set to ``False``.\n        \"\"\"\n        self._close_impl(invalidate=False, is_reset=True)",
+            "docstring": "Close out the transactional resources and ORM objects used by this\n:class:`_orm.Session`, resetting the session to its initial state.\n\nThis method provides for same \"reset-only\" behavior that the\n:meth:`_orm.Session.close` method has provided historically, where the\nstate of the :class:`_orm.Session` is reset as though the object were\nbrand new, and ready to be used again.\nThis method may then be useful for :class:`_orm.Session` objects\nwhich set :paramref:`_orm.Session.close_resets_only` to ``False``,\nso that \"reset only\" behavior is still available.\n\n.. versionadded:: 2.0.22\n\n.. seealso::\n\n    :ref:`session_closing` - detail on the semantics of\n    :meth:`_orm.Session.close` and :meth:`_orm.Session.reset`.\n\n    :meth:`_orm.Session.close` - a similar method will additionally\n    prevent reuse of the Session when the parameter\n    :paramref:`_orm.Session.close_resets_only` is set to ``False``.",
+            "parent_id": "1abd0c0ca801ad2ca6b96b72",
+            "public_aliases": [
+              "lib.sqlalchemy.orm.Session.reset",
+              "lib.sqlalchemy.orm.session.Session.reset"
+            ],
+            "score": 0.01639,
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "8db309d315f604a877b3d81d",
+            "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "name": "_flush",
+            "qualified": "lib.sqlalchemy.orm.session.Session._flush",
+            "kind": "method",
+            "start_line": 4557,
+            "end_line": 4680,
+            "source": "    @deprecated_params(\n        objects=(\n            \"2.1\",\n            \"The `objects` parameter of `Session.flush` is deprecated\",\n        )\n    )\n    def _flush(self, objects: Optional[Sequence[object]] = None) -> None:\n        dirty = self._dirty_states\n        if not dirty and not self._deleted and not self._new:\n            self.identity_map._modified.clear()\n            return\n\n        flush_context = UOWTransaction(self)\n\n        if self.dispatch.before_flush:\n            self.dispatch.before_flush(self, flush_context, objects)\n            # re-establish \"dirty states\" in case the listeners\n            # added\n            dirty = self._dirty_states\n\n        deleted = set(self._deleted)\n        new = set(self._new)\n\n        dirty = set(dirty).difference(deleted)\n\n        # create the set of all objects we want to operate upon\n        if objects:\n            # specific list passed in\n            objset = set()\n            for o in objects:\n                try:\n                    state = attributes.instance_state(o)\n\n                except exc.NO_STATE as err:\n                    raise exc.UnmappedInstanceError(o) from err\n                objset.add(state)\n        else:\n            objset = None\n\n        # store objects whose fate has been decided\n        processed = set()\n\n        # put all saves/updates into the flush context.  detect top-level\n        # orphans and throw them into deleted.\n        if objset:\n            proc = new.union(dirty).intersection(objset).difference(deleted)\n        else:\n            proc = new.union(dirty).difference(deleted)\n\n        for state in proc:\n            is_orphan = _state_mapper(state)._is_orphan(state)\n\n            is_persistent_orphan = is_orphan and state.has_identity\n\n            if (\n                is_orphan\n                and not is_persistent_orphan\n                and state._orphaned_outside_of_session\n            ):\n                self._expunge_states([state])\n            else:\n                _reg = flush_context.register_object(\n                    state, isdelete=is_persistent_orphan\n                )\n                assert _reg, \"Failed to add object to the flush context!\"\n                processed.add(state)\n\n        # put all remaining deletes into the flush context.\n        if objset:\n            proc = deleted.intersection(objset).difference(processed)\n        else:\n            proc = deleted.difference(processed)\n        for state in proc:\n            _reg = flush_context.register_object(state, isdelete=True)\n            assert _reg, \"Failed to add object to the flush context!\"\n\n        if not flush_context.has_work:\n            return\n\n        flush_context.transaction = transaction = self._autobegin_t()._begin()\n        try:\n            self._warn_on_events = True\n            try:\n                flush_context.execute()\n            finally:\n                self._warn_on_events = False\n\n            self.dispatch.after_flush(self, flush_context)\n\n            flush_context.finalize_flush_changes()\n\n            if not objects and self.identity_map._modified:\n                len_ = len(self.identity_map._modified)\n\n                statelib.InstanceState._commit_all_states(\n                    [\n                        (state, state.dict)\n                        for state in self.identity_map._modified\n                    ],\n                    instance_dict=self.identity_map,\n                )\n                util.warn(\n                    \"Attribute history events accumulated on %d \"\n                    \"previously clean instances \"\n                    \"within inner-flush event handlers have been \"\n                    \"reset, and will not result in database updates. \"\n                    \"Consider using set_committed_value() within \"\n                    \"inner-flush event handlers to avoid this warning.\" % len_\n                )\n\n            # useful assertions:\n            # if not objects:\n            #    assert not self.identity_map._modified\n            # else:\n            #    assert self.identity_map._modified == \\\n            #            self.identity_map._modified.difference(objects)\n\n            self.dispatch.after_flush_postexec(self, flush_context)\n\n            transaction.commit()\n\n        except:\n            with util.safe_reraise():\n                transaction.rollback(_capture_exception=True)",
+            "docstring": "",
+            "parent_id": "1abd0c0ca801ad2ca6b96b72",
+            "public_aliases": [
+              "lib.sqlalchemy.orm.Session._flush",
+              "lib.sqlalchemy.orm.session.Session._flush"
+            ],
+            "score": 0.01613,
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "b57ad5636225d26b75416d93",
+            "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+            "path": "lib/sqlalchemy/orm/attributes.py",
+            "name": "get_history",
+            "qualified": "lib.sqlalchemy.orm.attributes.get_history",
+            "kind": "function",
+            "start_line": 2551,
+            "end_line": 2588,
+            "source": "def get_history(\n    obj: object, key: str, passive: PassiveFlag = PASSIVE_OFF\n) -> History:\n    \"\"\"Return a :class:`.History` record for the given object\n    and attribute key.\n\n    This is the **pre-flush** history for a given attribute, which is\n    reset each time the :class:`.Session` flushes changes to the\n    current database transaction.\n\n    .. note::\n\n        Prefer to use the :attr:`.AttributeState.history` and\n        :meth:`.AttributeState.load_history` accessors to retrieve the\n        :class:`.History` for instance attributes.\n\n\n    :param obj: an object whose class is instrumented by the\n      attributes package.\n\n    :param key: string attribute name.\n\n    :param passive: indicates loading behavior for the attribute\n       if the value is not already present.   This is a\n       bitflag attribute, which defaults to the symbol\n       :attr:`.PASSIVE_OFF` indicating all necessary SQL\n       should be emitted.\n\n    .. seealso::\n\n        :attr:`.AttributeState.history`\n\n        :meth:`.AttributeState.load_history` - retrieve history\n        using loader callables if the value is not locally present.\n\n    \"\"\"\n\n    return get_state_history(instance_state(obj), key, passive)",
+            "docstring": "Return a :class:`.History` record for the given object\nand attribute key.\n\nThis is the **pre-flush** history for a given attribute, which is\nreset each time the :class:`.Session` flushes changes to the\ncurrent database transaction.\n\n.. note::\n\n    Prefer to use the :attr:`.AttributeState.history` and\n    :meth:`.AttributeState.load_history` accessors to retrieve the\n    :class:`.History` for instance attributes.\n\n\n:param obj: an object whose class is instrumented by the\n  attributes package.\n\n:param key: string attribute name.\n\n:param passive: indicates loading behavior for the attribute\n   if the value is not already present.   This is a\n   bitflag attribute, which defaults to the symbol\n   :attr:`.PASSIVE_OFF` indicating all necessary SQL\n   should be emitted.\n\n.. seealso::\n\n    :attr:`.AttributeState.history`\n\n    :meth:`.AttributeState.load_history` - retrieve history\n    using loader callables if the value is not locally present.",
+            "parent_id": "a76c9727506fd066a30be0a9",
+            "public_aliases": [
+              "lib.sqlalchemy.orm.attributes.get_history"
+            ],
+            "score": 0.01587,
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "d00d61b455dc9494a779f9a7",
+            "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "name": "_is_clean",
+            "qualified": "lib.sqlalchemy.orm.session.Session._is_clean",
+            "kind": "method",
+            "start_line": 4548,
+            "end_line": 4553,
+            "source": "    def _is_clean(self) -> bool:\n        return (\n            not self.identity_map.check_modified()\n            and not self._deleted\n            and not self._new\n        )",
+            "docstring": "",
+            "parent_id": "1abd0c0ca801ad2ca6b96b72",
+            "public_aliases": [
+              "lib.sqlalchemy.orm.Session._is_clean",
+              "lib.sqlalchemy.orm.session.Session._is_clean"
+            ],
+            "score": 0.0595,
+            "reason": "calls relationship with flush",
+            "traversal": [
+              {
+                "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+                "source": "6d6d5521499b3cd39788c9e0",
+                "target": "d00d61b455dc9494a779f9a7",
+                "kind": "calls",
+                "line": 4532,
+                "confidence": "inferred",
+                "label": "self._is_clean"
+              }
+            ],
+            "truncated": false
+          },
+          {
+            "id": "4e584f072d4dec542301dfa6",
+            "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+            "path": "lib/sqlalchemy/exc.py",
+            "name": "InvalidRequestError",
+            "qualified": "lib.sqlalchemy.exc.InvalidRequestError",
+            "kind": "class",
+            "start_line": 328,
+            "end_line": 333,
+            "source": "class InvalidRequestError(SQLAlchemyError):\n    \"\"\"SQLAlchemy was asked to do something it can't do.\n\n    This error generally corresponds to runtime state errors.\n\n    \"\"\"",
+            "docstring": "SQLAlchemy was asked to do something it can't do.\n\nThis error generally corresponds to runtime state errors.",
+            "parent_id": "2b0847d0aa293d0d92e1d397",
+            "public_aliases": [
+              "lib.sqlalchemy.exc.InvalidRequestError"
+            ],
+            "score": 0.0595,
+            "reason": "calls relationship with flush",
+            "traversal": [
+              {
+                "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+                "source": "6d6d5521499b3cd39788c9e0",
+                "target": "4e584f072d4dec542301dfa6",
+                "kind": "calls",
+                "line": 4530,
+                "confidence": "static",
+                "label": "sa_exc.InvalidRequestError"
+              }
+            ],
+            "truncated": false
+          },
+          {
+            "id": "1abd0c0ca801ad2ca6b96b72",
+            "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "name": "Session",
+            "qualified": "lib.sqlalchemy.orm.session.Session",
+            "kind": "class",
+            "start_line": 1472,
+            "end_line": 5119,
+            "source": "class Session(_SessionClassMethods, EventTarget):\n    \"\"\"Manages persistence operations for ORM-mapped objects.\n\n    The :class:`_orm.Session` is **not safe for use in concurrent threads.**.\n    See :ref:`session_faq_threadsafe` for background.\n\n    The Session's usage paradigm is described at :doc:`/orm/session`.\n\n\n    \"\"\"\n\n    _is_asyncio = False\n\n    dispatch: dispatcher[Session]\n\n    identity_map: IdentityMap\n    \"\"\"A mapping of object identities to objects themselves.\n\n    Iterating through ``Session.identity_map.values()`` provides\n    access to the full set of persistent objects (i.e., those\n    that have row identity) currently in the session.\n\n    .. seealso::\n\n        :func:`.identity_key` - helper function to produce the keys used\n        in this dictionary.\n\n    \"\"\"\n\n    binds: Mapping[_SessionBindKey, _SessionBind]\n    \"\"\"An immutable mapping of bind targets to :class:`_engine.Engine` or\n    :class:`_engine.Connection` objects.\n\n    This collection is established from the\n    :paramref:`_orm.Session.binds` parameter as well as the\n    :meth:`_orm.Session.bind_mapper` and :meth:`_orm.Session.bind_table`\n    methods, and is consulted by :meth:`_orm.Session.get_bind`.  The keys are\n    normalized from what was originally passed; a mapper or mapped class is\n    entered both under the mapped class and under each of its selectables.\n\n    The collection is replaced, rather than mutated, whenever a new bind is\n    added, so a reference to it will not observe subsequent changes.\n\n    .. versionadded:: 2.1  Previously this collection was stored\n       privately.\n\n    \"\"\"\n\n    _new: Dict[InstanceState[Any], Any]\n    _deleted: Dict[InstanceState[Any], Any]\n    bind: Optional[Union[Engine, Connection]]\n    _flushing: bool\n    _warn_on_events: bool\n    _transaction: Optional[SessionTransaction]\n    _nested_transaction: Optional[SessionTransaction]\n    hash_key: int\n    autoflush: bool\n    expire_on_commit: bool\n    enable_baked_queries: bool\n    twophase: bool\n    join_transaction_mode: JoinTransactionMode\n    execution_options: _ExecuteOptions = util.EMPTY_DICT\n    _query_cls: Type[Query[Any]]\n    _close_state: _SessionCloseState\n\n    def __init__(\n        self,\n        bind: Optional[_SessionBind] = None,\n        *,\n        autoflush: bool = True,\n        future: Literal[True] = True,\n        expire_on_commit: bool = True,\n        autobegin: bool = True,\n        twophase: bool = False,\n        binds: Optional[Dict[_SessionBindKey, _SessionBind]] = None,\n        enable_baked_queries: bool = True,\n        info: Optional[_InfoType] = None,\n        query_cls: Optional[Type[Query[Any]]] = None,\n        autocommit: Literal[False] = False,\n        join_transaction_mode: JoinTransactionMode = \"conditional_savepoint\",\n        close_resets_only: Union[bool, _NoArg] = _NoArg.NO_ARG,\n        execution_options: OrmExecuteOptionsParameter = util.EMPTY_DICT,\n    ):\n        r\"\"\"Construct a new :class:`_orm.Session`.\n\n        See also the :class:`.sessionmaker` function which is used to\n        generate a :class:`.Session`-producing callable with a given\n        set of arguments.\n\n        :param autoflush: When ``True``, all query operations will issue a\n           :meth:`~.Session.flush` call to this ``Session`` before proceeding.\n           This is a convenience feature so that :meth:`~.Session.flush` need\n           not be called repeatedly in order for database queries to retrieve\n           results.\n\n           .. seealso::\n\n               :ref:`session_flushing` - additional background on autoflush\n\n        :param autobegin: Automatically start transactions (i.e. equivalent to\n           invoking :meth:`_orm.Session.begin`) when database access is\n           requested by an operation.   Defaults to ``True``.    Set to\n           ``False`` to prevent a :class:`_orm.Session` from implicitly\n           beginning transactions after construction, as well as after any of\n           the :meth:`_orm.Session.rollback`, :meth:`_orm.Session.commit`,\n           or :meth:`_orm.Session.close` methods are called.\n\n           .. versionadded:: 2.0\n\n           .. seealso::\n\n                :ref:`session_autobegin_disable`\n\n        :param bind: An optional :class:`_engine.Engine` or\n           :class:`_engine.Connection` to\n           which this ``Session`` should be bound. When specified, all SQL\n           operations performed by this session will execute via this\n           connectable.\n\n        :param binds: A dictionary which may specify any number of\n           :class:`_engine.Engine` or :class:`_engine.Connection`\n           objects as the source of\n           connectivity for SQL operations on a per-entity basis.   The keys\n           of the dictionary consist of any series of mapped classes,\n           arbitrary Python classes that are bases for mapped classes,\n           :class:`_schema.Table` objects and :class:`_orm.Mapper` objects.\n           The\n           values of the dictionary are then instances of\n           :class:",
+            "docstring": "Manages persistence operations for ORM-mapped objects.\n\nThe :class:`_orm.Session` is **not safe for use in concurrent threads.**.\nSee :ref:`session_faq_threadsafe` for background.\n\nThe Session's usage paradigm is described at :doc:`/orm/session`.",
+            "parent_id": "2afeea8d3e04db64c43e8bf1",
+            "public_aliases": [
+              "lib.sqlalchemy.orm.Session",
+              "lib.sqlalchemy.orm.session.Session"
+            ],
+            "score": 0.04506,
+            "reason": "contains relationship with flush",
+            "traversal": [
+              {
+                "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+                "source": "1abd0c0ca801ad2ca6b96b72",
+                "target": "6d6d5521499b3cd39788c9e0",
+                "kind": "contains",
+                "line": 4504,
+                "confidence": "exact",
+                "label": "flush"
+              }
+            ],
+            "truncated": true
+          },
+          {
+            "id": "a3af045e56fc8cc304f66df1",
+            "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "name": "_autoflush",
+            "qualified": "lib.sqlalchemy.orm.session.Session._autoflush",
+            "kind": "method",
+            "start_line": 3179,
+            "end_line": 3200,
+            "source": "    @util.langhelpers.tag_method_for_warnings(\n        \"This warning originated from the Session 'autoflush' process, \"\n        \"which was invoked automatically in response to a user-initiated \"\n        \"operation. Consider using ``no_autoflush`` context manager if this \"\n        \"warning happened while initializing objects.\",\n        sa_exc.SAWarning,\n    )\n    def _autoflush(self) -> None:\n        if self.autoflush and not self._flushing:\n            try:\n                self.flush()\n            except sa_exc.StatementError as e:\n                # note we are reraising StatementError as opposed to\n                # raising FlushError with \"chaining\" to remain compatible\n                # with code that catches StatementError, IntegrityError,\n                # etc.\n                e.add_detail(\n                    \"raised as a result of Query-invoked autoflush; \"\n                    \"consider using a session.no_autoflush block if this \"\n                    \"flush is occurring prematurely\"\n                )\n                raise e.with_traceback(sys.exc_info()[2])",
+            "docstring": "",
+            "parent_id": "1abd0c0ca801ad2ca6b96b72",
+            "public_aliases": [
+              "lib.sqlalchemy.orm.Session._autoflush",
+              "lib.sqlalchemy.orm.session.Session._autoflush"
+            ],
+            "score": 0.03868,
+            "reason": "calls relationship with flush",
+            "traversal": [
+              {
+                "repo_id": "61aeb10f6d6b40478bf07e38b592cd77",
+                "source": "a3af045e56fc8cc304f66df1",
+                "target": "6d6d5521499b3cd39788c9e0",
+                "kind": "calls",
+                "line": 3189,
+                "confidence": "inferred",
+                "label": "self.flush"
+              }
+            ],
+            "truncated": false
+          }
+        ],
+        "mode": "hybrid",
+        "semantic_used": false,
+        "generated": true,
+        "abstained": false,
+        "partial": false,
+        "aspect_statuses": [
+          {
+            "aspect_id": 1,
+            "question": "what happens if a flush is already in progress",
+            "status": "supported"
+          },
+          {
+            "aspect_id": 2,
+            "question": "how is the _flushing flag reset after _flush runs",
+            "status": "supported"
+          }
+        ],
+        "generation_context": [
+          {
+            "source_id": 1,
+            "id": "6d6d5521499b3cd39788c9e0",
+            "qualified": "lib.sqlalchemy.orm.session.Session.flush",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "source_line_numbers": [
+              4504,
+              4528,
+              4529,
+              4530,
+              4531,
+              4532,
+              4533,
+              4534,
+              4535,
+              4536,
+              4537,
+              4538
+            ],
+            "source": "    def flush(self, objects: Optional[Sequence[Any]] = None) -> None:\n\n        if self._flushing:\n            raise sa_exc.InvalidRequestError(\"Session is already flushing\")\n\n        if self._is_clean():\n            return\n        try:\n            self._flushing = True\n            self._flush(objects)\n        finally:\n            self._flushing = False",
+            "truncated": true
+          },
+          {
+            "source_id": 2,
+            "id": "cdc62b86901ae1f9e97aa83e",
+            "qualified": "lib.sqlalchemy.orm.session.Session.reset",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "source_line_numbers": [
+              2644,
+              2667
+            ],
+            "source": "    def reset(self) -> None:\n        self._close_impl(invalidate=False, is_reset=True)",
+            "truncated": true
+          },
+          {
+            "source_id": 3,
+            "id": "8db309d315f604a877b3d81d",
+            "qualified": "lib.sqlalchemy.orm.session.Session._flush",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "source_line_numbers": [
+              4557,
+              4558,
+              4559,
+              4560,
+              4561,
+              4562,
+              4563,
+              4564,
+              4565,
+              4566,
+              4567,
+              4568,
+              4569,
+              4570,
+              4571,
+              4572,
+              4605,
+              4606,
+              4607,
+              4608,
+              4609,
+              4610,
+              4611,
+              4612,
+              4642,
+              4643,
+              4644,
+              4645,
+              4646,
+              4647,
+              4660,
+              4661,
+              4662,
+              4663,
+              4664,
+              4665,
+              4673,
+              4674,
+              4675,
+              4676
+            ],
+            "source": "    @deprecated_params(\n        objects=(\n            \"2.1\",\n            \"The `objects` parameter of `Session.flush` is deprecated\",\n        )\n    )\n    def _flush(self, objects: Optional[Sequence[object]] = None) -> None:\n        dirty = self._dirty_states\n        if not dirty and not self._deleted and not self._new:\n            self.identity_map._modified.clear()\n            return\n\n        flush_context = UOWTransaction(self)\n\n        if self.dispatch.before_flush:\n            self.dispatch.before_flush(self, flush_context, objects)\n\n        for state in proc:\n            is_orphan = _state_mapper(state)._is_orphan(state)\n\n            is_persistent_orphan = is_orphan and state.has_identity\n\n            if (\n                is_orphan\n                self._warn_on_events = False\n\n            self.dispatch.after_flush(self, flush_context)\n\n            flush_context.finalize_flush_changes()\n\n                    \"previously clean instances \"\n                    \"within inner-flush event handlers have been \"\n                    \"reset, and will not result in database updates. \"\n                    \"Consider using set_committed_value() within \"\n                    \"inner-flush event handlers to avoid this warning.\" % len_\n                )\n\n            self.dispatch.after_flush_postexec(self, flush_context)\n\n            transaction.commit()",
+            "truncated": true
+          },
+          {
+            "source_id": 4,
+            "id": "b57ad5636225d26b75416d93",
+            "qualified": "lib.sqlalchemy.orm.attributes.get_history",
+            "path": "lib/sqlalchemy/orm/attributes.py",
+            "source_line_numbers": [
+              2551,
+              2552,
+              2553,
+              2587,
+              2588
+            ],
+            "source": "def get_history(\n    obj: object, key: str, passive: PassiveFlag = PASSIVE_OFF\n) -> History:\n\n    return get_state_history(instance_state(obj), key, passive)",
+            "truncated": true
+          },
+          {
+            "source_id": 5,
+            "id": "d00d61b455dc9494a779f9a7",
+            "qualified": "lib.sqlalchemy.orm.session.Session._is_clean",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "source_line_numbers": [
+              4548,
+              4549,
+              4550,
+              4551,
+              4552,
+              4553
+            ],
+            "source": "    def _is_clean(self) -> bool:\n        return (\n            not self.identity_map.check_modified()\n            and not self._deleted\n            and not self._new\n        )",
+            "truncated": false
+          },
+          {
+            "source_id": 6,
+            "id": "4e584f072d4dec542301dfa6",
+            "qualified": "lib.sqlalchemy.exc.InvalidRequestError",
+            "path": "lib/sqlalchemy/exc.py",
+            "source_line_numbers": [
+              328
+            ],
+            "source": "class InvalidRequestError(SQLAlchemyError):",
+            "truncated": true
+          },
+          {
+            "source_id": 7,
+            "id": "1abd0c0ca801ad2ca6b96b72",
+            "qualified": "lib.sqlalchemy.orm.session.Session",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "source_line_numbers": [
+              1472,
+              1489,
+              1490,
+              1491,
+              1492,
+              1493,
+              1494,
+              1495,
+              1504,
+              1505,
+              1506,
+              1507,
+              1508,
+              1509,
+              1510,
+              1511,
+              1802,
+              1839,
+              1840,
+              1841,
+              1842,
+              1843,
+              2005,
+              2006,
+              2007,
+              2008,
+              2009,
+              2010,
+              2011,
+              2667,
+              2668,
+              2669,
+              2704,
+              2705,
+              2706,
+              2707,
+              2708,
+              2709,
+              2912,
+              2913,
+              2914,
+              2915,
+              3185,
+              3186,
+              3187,
+              3188,
+              3189,
+              3190,
+              3441,
+              3442,
+              3443,
+              3444,
+              3445,
+              3446,
+              3447,
+              3448,
+              4179,
+              4180,
+              4181,
+              4182,
+              4183,
+              4184,
+              4185,
+              4207,
+              4208,
+              4209,
+              4210,
+              4211,
+              4212,
+              4455,
+              4456,
+              4457,
+              4458,
+              4459,
+              4460,
+              4461,
+              4462,
+              4463,
+              4528,
+              4529,
+              4530,
+              4531,
+              4532,
+              4533,
+              4558,
+              4559,
+              4560,
+              4561,
+              4562,
+              4563
+            ],
+            "source": "class Session(_SessionClassMethods, EventTarget):\n\n    Iterating through ``Session.identity_map.values()`` provides\n    access to the full set of persistent objects (i.e., those\n    that have row identity) currently in the session.\n\n    .. seealso::\n\n\n    This collection is established from the\n    :paramref:`_orm.Session.binds` parameter as well as the\n    :meth:`_orm.Session.bind_mapper` and :meth:`_orm.Session.bind_table`\n    methods, and is consulted by :meth:`_orm.Session.get_bind`.  The keys are\n    normalized from what was originally passed; a mapper or mapped class is\n    entered both under the mapped class and under each of its selectables.\n\n\n        if close_resets_only in (True, _NoArg.NO_ARG):\n            self._close_state = _SessionCloseState.CLOSE_IS_RESET\n        else:\n            self._close_state = _SessionCloseState.ACTIVE\n        if (\n        else:\n            raise sa_exc.InvalidRequestError(\n                \"A transaction is already begun on this Session.\"\n            )\n\n        return trans  # needed for __enter__/__exit__ hook\n\n        self._close_impl(invalidate=False, is_reset=True)\n\n    def invalidate(self) -> None:\n\n    def _close_impl(self, invalidate: bool, is_reset: bool = False) -> None:\n        if not is_reset and self._close_state is _SessionCloseState.ACTIVE:\n            self._close_state = _SessionCloseState.CLOSED\n        self.expunge_all()\n        if self._transaction is not None:\n        if mapper is None and clause is None:\n            if self.bind:\n                return self.bind\n            else:\n    )\n    def _autoflush(self) -> None:\n        if self.autoflush and not self._flushing:\n            try:\n                self.flush()\n            except sa_exc.StatementError as e:\n        except exc.NO_STATE as err:\n            raise exc.UnmappedInstanceError(instance) from err\n        if state.session_id is not self.hash_key:\n            raise sa_exc.InvalidRequestError(\n                \"Instance %s is not present in this Session\" % state_str(state)\n            )\n\n        cascaded = list(\n            if state in self._new:\n                util.warn(\n                    \"Instance %s is already pending in this Session yet is \"\n                    \"being merged again; this is probably not what you want \"\n                    \"to do\" % state_str(state)\n                )\n\n\n        if merged is None:\n            if key_is_persistent and key in _resolve_conflict_map:\n                merged = cast(_O, _resolve_conflict_map[key])\n\n            elif not load:\n            return False\n\n        if state.session_id and state.session_id in _sessions:\n            raise sa_exc.InvalidRequestError(\n                \"Object '%s' is already attached to session '%s' \"\n                \"(this is '%s')\"\n                % (state_str(state), state.session_id, self.hash_key)\n            )\n\n\n        if self._flushing:\n            raise sa_exc.InvalidRequestError(\"Session is already flushing\")\n\n        if self._is_clean():\n            return\n        objects=(\n            \"2.1\",\n            \"The `objects` parameter of `Session.flush` is deprecated\",\n        )\n    )\n    def _flush(self, objects: Optional[Sequence[object]] = None) -> None:",
+            "truncated": true
+          },
+          {
+            "source_id": 8,
+            "id": "a3af045e56fc8cc304f66df1",
+            "qualified": "lib.sqlalchemy.orm.session.Session._autoflush",
+            "path": "lib/sqlalchemy/orm/session.py",
+            "source_line_numbers": [
+              3179,
+              3180,
+              3181,
+              3182,
+              3183,
+              3184,
+              3185,
+              3186,
+              3187,
+              3188,
+              3189,
+              3190,
+              3195,
+              3196,
+              3197,
+              3198,
+              3199,
+              3200
+            ],
+            "source": "    @util.langhelpers.tag_method_for_warnings(\n        \"This warning originated from the Session 'autoflush' process, \"\n        \"which was invoked automatically in response to a user-initiated \"\n        \"operation. Consider using ``no_autoflush`` context manager if this \"\n        \"warning happened while initializing objects.\",\n        sa_exc.SAWarning,\n    )\n    def _autoflush(self) -> None:\n        if self.autoflush and not self._flushing:\n            try:\n                self.flush()\n            except sa_exc.StatementError as e:\n                e.add_detail(\n                    \"raised as a result of Query-invoked autoflush; \"\n                    \"consider using a session.no_autoflush block if this \"\n                    \"flush is occurring prematurely\"\n                )\n                raise e.with_traceback(sys.exc_info()[2])",
+            "truncated": true
+          }
+        ],
+        "verification": "not_executed",
+        "citation_check": {
+          "invalid": [],
+          "has_citations": true,
+          "uncited_paragraphs": [],
+          "uncited_sentences": [],
+          "reference_section": false,
+          "entailment_checked": false,
+          "source_identity_checked": true
+        },
+        "warning": null,
+        "usage": {
+          "prompt_tokens": 5228,
+          "completion_tokens": 368,
+          "total_tokens": 5596
+        },
+        "generation_diagnostics": {
+          "attempt_count": 1,
+          "total_request_ms": 34688,
+          "attempts": [
+            {
+              "load_duration_ms": 128,
+              "prompt_eval_duration_ms": 17248,
+              "eval_duration_ms": 7930,
+              "prompt_tokens": 4522,
+              "completion_tokens": 190,
+              "request_ms": 34688,
+              "estimated_prompt_tokens": 4773,
+              "context_window": 8192,
+              "entailment_checked": false,
+              "provider_calls": 2,
+              "usage": {
+                "prompt_tokens": 5228,
+                "completion_tokens": 368,
+                "total_tokens": 5596
+              },
+              "draft_claims": [
+                {
+                  "text": "If a flush is already in progress, an InvalidRequestError is raised.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 4529,
+                      "end_line": 4530
+                    }
+                  ]
+                },
+                {
+                  "text": "The _flushing flag is reset after the _flush method runs.",
+                  "aspect_id": 2,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 4536,
+                      "end_line": 4537
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 4538,
+                      "end_line": 4538
+                    }
+                  ]
+                }
+              ],
+              "claim_audit": {
+                "status": "completed",
+                "decisions": [
+                  {
+                    "claim_index": 0,
+                    "verdict": "supported",
+                    "reason": "The claim is supported by the cited source. If a flush is already in progress, the code checks if `self._flushing` is true and raises an `InvalidRequestError` with the message 'Session is already flushing'. This directly supports the claim."
+                  },
+                  {
+                    "claim_index": 1,
+                    "verdict": "supported",
+                    "reason": "The claim is supported by the cited source. After the `_flush` method runs, regardless of whether an exception occurs or not, the code sets `self._flushing = False` in a `finally` block. This ensures that the `_flushing` flag is reset after the flush operation completes, supporting the claim."
+                  }
+                ],
+                "provider_calls": 1,
+                "elapsed_ms": 9360,
+                "model": "qwen2.5-coder:7b",
+                "factual_support_proven": false
+              },
+              "supporting_lines": [
+                {
+                  "source_id": 1,
+                  "path": "lib/sqlalchemy/orm/session.py",
+                  "qualified": "lib.sqlalchemy.orm.session.Session.flush",
+                  "start_line": 4529,
+                  "end_line": 4530,
+                  "text": "        if self._flushing:\n            raise sa_exc.InvalidRequestError(\"Session is already flushing\")"
+                },
+                {
+                  "source_id": 1,
+                  "path": "lib/sqlalchemy/orm/session.py",
+                  "qualified": "lib.sqlalchemy.orm.session.Session.flush",
+                  "start_line": 4536,
+                  "end_line": 4537,
+                  "text": "            self._flush(objects)\n        finally:"
+                },
+                {
+                  "source_id": 1,
+                  "path": "lib/sqlalchemy/orm/session.py",
+                  "qualified": "lib.sqlalchemy.orm.session.Session.flush",
+                  "start_line": 4538,
+                  "end_line": 4538,
+                  "text": "            self._flushing = False"
+                }
+              ],
+              "aspect_statuses": [
+                {
+                  "aspect_id": 1,
+                  "question": "what happens if a flush is already in progress",
+                  "status": "supported"
+                },
+                {
+                  "aspect_id": 2,
+                  "question": "how is the _flushing flag reset after _flush runs",
+                  "status": "supported"
+                }
+              ],
+              "claims": [
+                {
+                  "text": "If a flush is already in progress, an InvalidRequestError is raised.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 4529,
+                      "end_line": 4530
+                    }
+                  ]
+                },
+                {
+                  "text": "The _flushing flag is reset after the _flush method runs.",
+                  "aspect_id": 2,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 4536,
+                      "end_line": 4537
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 4538,
+                      "end_line": 4538
+                    }
+                  ]
+                }
+              ],
+              "source_identity_checked": true,
+              "outcome": "accepted"
+            }
+          ],
+          "provider_calls": 2
+        },
+        "elapsed_ms": 35625,
+        "snapshot": "3bf4546667a35acdc94119c0798b9d2f6ed762d463ffa38f9ea7dc9bfd46b0e2",
+        "model": "qwen2.5-coder:7b",
+        "answer_prompt_version": "2026-10-03-aspects-cited-lines-audit-v2",
+        "retrieval_version": "2026-10-03-coverage-fts-return-context-v2"
+      },
+      "recall_at_8": 1.0,
+      "recall_all_evidence": 1.0,
+      "wall_ms": 35631
+    }
+  ]
+}

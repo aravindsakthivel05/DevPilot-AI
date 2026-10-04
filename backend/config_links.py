@@ -9,7 +9,7 @@ def configuration_edges(repo_id, files, symbols):
     modules = {}
     for symbol in symbols:
         by_qualified.setdefault(symbol["qualified"], []).append(symbol)
-        if symbol["kind"] == "document":
+        if symbol["kind"] == "document" and symbol.get("start_line", 1) == 1:
             documents[symbol["path"]] = symbol
         elif symbol["kind"] == "module":
             modules[symbol["path"]] = symbol

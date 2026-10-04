@@ -1,0 +1,20 @@
+{
+  "jinja": {
+    "id": "afd746d84ead4fbf9641bad268fa9798",
+    "commit": "5ef70112a1ff19c05324ff889dd30405b1002044",
+    "fingerprint": "79f07efdab4d33c2ef1e7e8aa48b9c3a0fabf3f8e772c34abcd9983a1134a235",
+    "index_scope": "repository root",
+    "url": "https://github.com/pallets/jinja",
+    "split": "holdout",
+    "purpose": "Final evaluation; excluded from training and tuning"
+  },
+  "gson": {
+    "id": "e70e7bdb24014690b7b04a4b3eb612cc",
+    "commit": "854c8255b625cf1e13c701a83ea9ccb4caaa576a",
+    "fingerprint": "ef2d40470bd1779f23ea267f1d078ec3ac2d0bc2758eeb5ef0c6d01b03da3dac",
+    "index_scope": "repository root",
+    "url": "https://github.com/google/gson",
+    "split": "holdout",
+    "purpose": "Final evaluation; excluded from training and tuning"
+  }
+}

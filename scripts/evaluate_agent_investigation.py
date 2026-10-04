@@ -44,9 +44,11 @@ def evaluate(dataset, manifest_path):
             {
                 "id": case["id"],
                 "repository": case["repository"],
-                "quick_recall_at_8": len(expected & {s["qualified"] for s in quick["evidence"]})
+                "quick_recall_at_8": len(expected & {s["qualified"] for s in quick["evidence"][:8]})
                 / len(expected),
-                "deep_recall_at_8": len(expected & {s["qualified"] for s in deep["evidence"]})
+                "deep_recall_at_8": len(expected & {s["qualified"] for s in deep["evidence"][:8]})
+                / len(expected),
+                "deep_recall_at_15": len(expected & {s["qualified"] for s in deep["evidence"][:15]})
                 / len(expected),
                 "quick_ms": quick_ms,
                 "deep_ms": deep["elapsed_ms"],
@@ -59,6 +61,7 @@ def evaluate(dataset, manifest_path):
         "cases": len(results),
         "quick_recall_at_8": sum(row["quick_recall_at_8"] for row in results) / len(results),
         "deep_recall_at_8": sum(row["deep_recall_at_8"] for row in results) / len(results),
+        "deep_recall_at_15": sum(row["deep_recall_at_15"] for row in results) / len(results),
         "quick_mean_ms": round(sum(row["quick_ms"] for row in results) / len(results)),
         "deep_mean_ms": round(sum(row["deep_ms"] for row in results) / len(results)),
         "results": results,

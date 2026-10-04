@@ -1,0 +1,20 @@
+{
+  "review_author": "Codex pinned-source review; not independent human grading",
+  "raw_sha256": "578c8cda0aeea213dad9409b06a40952abde7750869ae397a992dd56fc9b2757",
+  "results": [
+    {
+      "model": "qwen2.5-coder:7b",
+      "answer_correct": true,
+      "all_aspects_complete": true,
+      "notes": "Both named the actual returned serializer call and the requested keyword forwarding. Review is limited to this development regression.",
+      "elapsed_ms": 41944
+    },
+    {
+      "model": "qwen2.5-coder:14b",
+      "answer_correct": true,
+      "all_aspects_complete": true,
+      "notes": "Both named the actual returned serializer call and the requested keyword forwarding. Review is limited to this development regression.",
+      "elapsed_ms": 82007
+    }
+  ]
+}

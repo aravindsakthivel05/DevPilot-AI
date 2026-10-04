@@ -12,10 +12,11 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator, model_validator
 
 from . import db
-from .config import ROOT, SNAPSHOTS, agent_enabled, provider_settings
-from .execution import docker_status, run_job
+from .config import ROOT, SNAPSHOTS, agent_enabled, legacy_execution_enabled, provider_settings
+from .execution import docker_status
 from .ingestion import ingest
 from .proposals import propose
+from .readiness import index_status, provider_status
 from .retrieval import answer, retrieve
 from .test_links import related_tests
 
@@ -155,11 +156,28 @@ def health():
     return {
         "status": "ok",
         "model_configured": bool(cfg["model"] and cfg["base_url"]),
-        "embedding_configured": bool(cfg["embedding_model"] and cfg["base_url"]),
+        "embedding_configured": bool(
+            cfg["embedding_model"] and (cfg["embedding_base_url"] or cfg["base_url"])
+        ),
         "model": cfg["model"] or None,
-        "docker": docker_status(),
+        "docker": docker_status()
+        if legacy_execution_enabled()
+        else {"available": False, "reason": "Optional legacy execution is disabled"},
+        "legacy_execution_enabled": legacy_execution_enabled(),
+        "core_workflow": "evidence_grounded_suggestions",
         "langgraph_enabled": agent_enabled(),
     }
+
+
+@app.get("/api/provider-status")
+def provider_readiness(probe: bool = False):
+    return provider_status(probe)
+
+
+@app.get("/api/repositories/{repo_id}/index-status")
+def repository_index_status(repo_id: str):
+    require_repo(repo_id)
+    return index_status(repo_id)
 
 
 @app.get("/api/repositories")
@@ -291,6 +309,42 @@ def file(repo_id: str, path: str):
     return dict(row)
 
 
+class RebuildInput(BaseModel):
+    embeddings: bool = True
+
+
+@app.post("/api/repositories/{repo_id}/rebuild-index", status_code=202)
+def rebuild_index(repo_id: str, body: RebuildInput):
+    require_repo(repo_id)
+    from .indexing import rebuild
+
+    with db.connection() as connection:
+        changed = connection.execute(
+            "UPDATE repositories SET status='indexing',progress='Rebuilding derived indexes',error=NULL WHERE id=? AND status='ready'",
+            (repo_id,),
+        ).rowcount
+    if changed != 1:
+        raise HTTPException(409, "An indexing job is already active")
+
+    def job():
+        try:
+            rebuild(repo_id, body.embeddings)
+            db.update_repository(
+                repo_id, status="ready", progress="Ready for investigation", error=None
+            )
+        except Exception as exc:
+            db.update_repository(
+                repo_id, status="failed", progress="Rebuild failed", error=str(exc)[:2000]
+            )
+
+    pool.submit(job)
+    return {
+        "id": repo_id,
+        "status": "indexing",
+        "notice": "Derived indexes only; stored snapshot files stay unchanged. Previously excluded files require a new snapshot.",
+    }
+
+
 @app.get("/api/repositories/{repo_id}/graph")
 def graph(repo_id: str):
     require_repo(repo_id)
@@ -317,11 +371,20 @@ def ask(repo_id: str, body: Question):
         raise HTTPException(422, str(e)) from e
     iid = uuid.uuid4().hex
     result["id"] = iid
+    if result.get("retrieval_trace"):
+        result["retrieval_trace"]["final_context"] = result.get("generation_context", [])
+        result["retrieval_trace"]["answer"] = result["answer"]
+        result["retrieval_trace"]["claims"] = result.get("claims", [])
     with db.connection() as c:
         c.execute(
             "INSERT INTO investigations VALUES (?,?,?,?,?)",
             (iid, repo_id, now(), body.question, json.dumps(result)),
         )
+        if result.get("retrieval_trace"):
+            c.execute(
+                "INSERT INTO retrieval_traces VALUES (?,?,?,?,?)",
+                (iid, repo_id, now(), result["snapshot"], json.dumps(result["retrieval_trace"])),
+            )
     return result
 
 
@@ -390,35 +453,6 @@ def localise(repo_id: str, body: Question):
         raise HTTPException(422, str(e)) from e
 
 
-@app.post("/api/repositories/{repo_id}/execute", status_code=202)
-def execute(repo_id: str, body: ExecutionInput):
-    require_repo(repo_id)
-    status = docker_status()
-    if not status["available"]:
-        raise HTTPException(503, status["reason"])
-    if body.extra_tests and (
-        len(body.extra_tests) > 10 or sum(len(v) for v in body.extra_tests.values()) > 100000
-    ):
-        raise HTTPException(422, "Generated tests exceed size limits.")
-    run_id = uuid.uuid4().hex
-    with db.connection() as c:
-        c.execute(
-            "INSERT INTO executions VALUES (?,?,?,?,?)", (run_id, repo_id, now(), "running", "{}")
-        )
-    pool.submit(
-        run_job,
-        run_id,
-        repo_id,
-        body.image,
-        body.target,
-        body.timeout,
-        body.patch,
-        body.extra_tests,
-        body.runner,
-    )
-    return {"id": run_id, "status": "running"}
-
-
 @app.post("/api/repositories/{repo_id}/propose")
 def create_proposal(repo_id: str, body: ProposalInput):
     require_repo(repo_id)
@@ -426,70 +460,6 @@ def create_proposal(repo_id: str, body: ProposalInput):
         return propose(repo_id, body.request)
     except ValueError as exc:
         raise HTTPException(422, str(exc)) from exc
-
-
-@app.post("/api/repositories/{repo_id}/guided-repairs")
-def create_guided_repair(repo_id: str, body: GuidedRepairInput):
-    require_repo(repo_id)
-    if not agent_enabled():
-        raise HTTPException(503, "LangGraph workflows are disabled on this server.")
-    from .agent_repair import create_run
-
-    try:
-        return create_run(repo_id, **body.model_dump())
-    except ValueError as exc:
-        raise HTTPException(422, str(exc)) from exc
-
-
-@app.get("/api/repositories/{repo_id}/guided-repairs")
-def list_guided_repairs(
-    repo_id: str, status: Literal["review", "running", "complete", "failed"] | None = None
-):
-    require_repo(repo_id)
-    if not agent_enabled():
-        raise HTTPException(503, "LangGraph workflows are disabled on this server.")
-    from .agent_repair import list_runs
-
-    return list_runs(repo_id, status)
-
-
-@app.post("/api/repositories/{repo_id}/guided-repairs/{run_id}/review", status_code=202)
-def review_guided_repair(repo_id: str, run_id: str, body: ReviewDecision):
-    require_repo(repo_id)
-    if not agent_enabled():
-        raise HTTPException(503, "LangGraph workflows are disabled on this server.")
-    from .agent_repair import get_run, queue_review, resume_run
-
-    run = get_run(run_id)
-    if not run or run["repo_id"] != repo_id:
-        raise HTTPException(404, "Guided run not found for this repository.")
-    try:
-        queue_review(run_id)
-    except ValueError as exc:
-        raise HTTPException(409, str(exc)) from exc
-    pool.submit(resume_run, run_id, body.approved)
-    return {"id": run_id, "status": "running"}
-
-
-@app.get("/api/guided-repairs/{run_id}")
-def guided_repair(run_id: str):
-    if not agent_enabled():
-        raise HTTPException(503, "LangGraph workflows are disabled on this server.")
-    from .agent_repair import get_run
-
-    result = get_run(run_id)
-    if not result:
-        raise HTTPException(404, "Guided run not found.")
-    return result
-
-
-@app.get("/api/executions/{run_id}")
-def execution(run_id: str):
-    with db.connection() as c:
-        row = c.execute("SELECT * FROM executions WHERE id=?", (run_id,)).fetchone()
-    if not row:
-        raise HTTPException(404, "Execution not found.")
-    return {**dict(row), "result": json.loads(row["result"])}
 
 
 class EvaluationCase(BaseModel):
@@ -546,6 +516,14 @@ def evaluate(repo_id: str, body: EvaluationInput):
         "note": "Retrieval metrics only. Graph mode uses lexical seeds; hybrid falls back to lexical + graph without embeddings.",
     }
 
+
+from .api.research import router as research_router  # noqa: E402
+
+# Legacy routes reuse the existing request contracts defined above.
+from .legacy.routes import router as legacy_router  # noqa: E402
+
+app.include_router(research_router)
+app.include_router(legacy_router)
 
 dist = ROOT / "frontend" / "dist"
 if dist.exists():

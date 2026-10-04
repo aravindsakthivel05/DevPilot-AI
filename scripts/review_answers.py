@@ -54,16 +54,22 @@ def prepare(dataset, manifest_path, output, limit=None, only_unanswerable=False)
                         "path": item["path"],
                         "start_line": item["start_line"],
                         "end_line": item["end_line"],
-                        "source_excerpt": item["source"][:1200],
+                        "source_excerpt": item["source"],
                     }
                     for item in result["evidence"]
                 ],
                 "citation_check": result["citation_check"],
                 "warning": result["warning"],
+                "elapsed_ms": result.get("elapsed_ms"),
+                "aspect_statuses": result.get("aspect_statuses", []),
+                "generation_context": result.get("generation_context", []),
+                "generation_diagnostics": result.get("generation_diagnostics", {}),
                 "review": {
                     "answer_correct": None,
                     "all_claims_supported": None,
                     "appropriate_abstention": None,
+                    "all_aspects_complete": None,
+                    "wrong_symbol_attribution": None,
                     "notes": "",
                 },
             }
@@ -87,8 +93,20 @@ def score(path):
                 raise ValueError(f"Incomplete review {row['id']}: {field}")
     n = len(rows)
     generated = [row for row in rows if row["generated"]]
+    timings = sorted(
+        row["elapsed_ms"] for row in rows if isinstance(row.get("elapsed_ms"), (int, float))
+    )
     return {
         "cases": n,
+        "latency_median_ms": timings[len(timings) // 2] if timings else None,
+        "latency_p95_ms": timings[min(len(timings) - 1, int(len(timings) * 0.95))]
+        if timings
+        else None,
+        "all_aspects_complete": (
+            sum(row["review"]["all_aspects_complete"] for row in rows) / n
+            if all(type(row["review"].get("all_aspects_complete")) is bool for row in rows)
+            else None
+        ),
         "generated": len(generated),
         "abstained": sum(row.get("abstained", False) for row in rows),
         "answer_correct": sum(row["review"]["answer_correct"] for row in rows) / n,

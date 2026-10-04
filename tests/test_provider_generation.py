@@ -11,9 +11,10 @@ def test_answer_schema_bounds_claims_to_aspects_and_source_ids():
 
     assert schema["required"] == ["claims"]
     claims = schema["properties"]["claims"]
-    assert claims["minItems"] == claims["maxItems"] == 2
+    assert claims["minItems"] == 2
+    assert claims["maxItems"] == 6
     assert claims["items"]["properties"]["aspect_id"]["enum"] == [1, 2]
-    assert set(claims["items"]["required"]) == {"text", "source_id", "aspect_id"}
+    assert set(claims["items"]["required"]) == {"text", "citations", "aspect_id", "status"}
 
 
 def test_answer_aspects_keep_all_six_hard_trace_obligations():
@@ -49,7 +50,7 @@ def test_generated_claim_cites_each_sentence(monkeypatch):
                 {
                     "message": {
                         "content": '{"claims":[{"text":"It computes the quote. It applies the rate.",'
-                        '"source_id":1,"aspect_id":1}]}'
+                        '"citations":[{"source_id":1,"start_line":1,"end_line":3}],"status":"supported","aspect_id":1}]}'
                     }
                 }
             ],
@@ -68,20 +69,23 @@ def test_generated_claim_cites_each_sentence(monkeypatch):
                 "citation_number": 1,
                 "path": "pricing.py",
                 "start_line": 1,
-                "end_line": 2,
+                "end_line": 3,
                 "qualified": "pricing.calculate_quote",
                 "source": "def calculate_quote(base_rate, weight):\n\n    return base_rate * weight\n",
             }
         ],
     )
 
-    assert answer == "It computes the quote [1]. It applies the rate [1]."
+    assert answer == "It computes the quote [1].\n\nIt applies the rate [1]."
     assert usage["total_tokens"] == 30
     assert metrics["request_ms"] >= 0
     assert check_citations(answer, 1)["uncited_sentences"] == []
     evidence = json.loads(request_payloads[0]["messages"][1]["content"])["source_evidence"]
-    assert "def calculate_quote(base_rate, weight)" in evidence
-    assert metrics["supporting_lines"][0]["text"].startswith("def calculate_quote")
+    assert evidence[0]["lines"][0]["text"] == "def calculate_quote(base_rate, weight):"
+    assert evidence[0]["lines"][2]["line"] == 3
+    assert metrics["supporting_lines"][0]["start_line"] == 1
+    assert metrics["supporting_lines"][0]["end_line"] == 3
+    assert metrics["entailment_checked"] is False
 
 
 def test_irrelevant_claim_is_rejected_even_with_a_valid_source_id(monkeypatch):
@@ -93,7 +97,7 @@ def test_irrelevant_claim_is_rejected_even_with_a_valid_source_id(monkeypatch):
                 {
                     "message": {
                         "content": '{"claims":[{"text":"Database migrations are applied with Alembic",'
-                        '"source_id":1,"aspect_id":1}]}'
+                        '"citations":[{"source_id":1,"start_line":1,"end_line":2}],"status":"supported","aspect_id":1}]}'
                     }
                 }
             ]
@@ -179,3 +183,89 @@ def test_ollama_native_request_uses_schema_keepalive_and_reports_timing(monkeypa
     assert result["usage"]["total_tokens"] == 142
     assert result["_devpilot_metrics"]["load_duration_ms"] == 3
     assert result["_devpilot_metrics"]["eval_duration_ms"] == 7
+
+
+def test_bounded_citations_cannot_prove_global_consistency(monkeypatch):
+    monkeypatch.setattr(
+        providers,
+        "request",
+        lambda *_: {
+            "choices": [
+                {
+                    "message": {
+                        "content": json.dumps(
+                            {
+                                "claims": [
+                                    {
+                                        "text": "The shipping logic is consistent across different parts of the code.",
+                                        "citations": [
+                                            {"source_id": 1, "start_line": 1, "end_line": 2}
+                                        ],
+                                        "status": "supported",
+                                        "aspect_id": 1,
+                                    }
+                                ]
+                            }
+                        )
+                    }
+                }
+            ]
+        },
+    )
+    with pytest.raises(providers.AnswerValidationError, match="repository-wide consistency"):
+        providers.generate(
+            "How does shipping handle a weight?",
+            [
+                {
+                    "citation_number": 1,
+                    "path": "pricing.py",
+                    "start_line": 1,
+                    "end_line": 2,
+                    "qualified": "pricing.shipping_cost",
+                    "source": "def shipping_cost(weight):\n    return weight * 5",
+                }
+            ],
+        )
+
+
+def test_return_claim_requires_body_evidence_not_signature_only(monkeypatch):
+    monkeypatch.setattr(
+        providers,
+        "request",
+        lambda *_: {
+            "choices": [
+                {
+                    "message": {
+                        "content": json.dumps(
+                            {
+                                "claims": [
+                                    {
+                                        "text": "run returns the result of shippingCost.",
+                                        "citations": [
+                                            {"source_id": 1, "start_line": 1, "end_line": 1}
+                                        ],
+                                        "status": "supported",
+                                        "aspect_id": 1,
+                                    }
+                                ]
+                            }
+                        )
+                    }
+                }
+            ]
+        },
+    )
+    with pytest.raises(providers.AnswerValidationError, match="return expression"):
+        providers.generate(
+            "What does run return?",
+            [
+                {
+                    "citation_number": 1,
+                    "path": "api.ts",
+                    "start_line": 1,
+                    "end_line": 3,
+                    "qualified": "api.run",
+                    "source": "function run(weight: number): number {\n  return shippingCost(weight);\n}",
+                }
+            ],
+        )

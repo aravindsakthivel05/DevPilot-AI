@@ -1,0 +1,284 @@
+{
+  "clap": {
+    "files": 448,
+    "adapter_symbols": 6935,
+    "added_metadata_symbols": 238,
+    "duplicate_ids": 1,
+    "duplicates": {
+      "f34739a59c949a6a0de7d571": [
+        {
+          "path": "clap_builder/src/parser/features/suggestions.rs",
+          "qualified": "clap_builder.src.parser.features.suggestions.did_you_mean._",
+          "name": "_",
+          "kind": "parameter",
+          "start_line": 40,
+          "end_line": 40,
+          "parent_id": "cdd59a72ffd2b2fff6df4010",
+          "stage": "adapter",
+          "source_preview": "pub(crate) fn did_you_mean<T, I>(_: &str, _: I) -> Vec<String>"
+        },
+        {
+          "path": "clap_builder/src/parser/features/suggestions.rs",
+          "qualified": "clap_builder.src.parser.features.suggestions.did_you_mean._",
+          "name": "_",
+          "kind": "parameter",
+          "start_line": 40,
+          "end_line": 40,
+          "parent_id": "cdd59a72ffd2b2fff6df4010",
+          "stage": "adapter",
+          "source_preview": "pub(crate) fn did_you_mean<T, I>(_: &str, _: I) -> Vec<String>"
+        }
+      ]
+    },
+    "notice": "Read-only reproduction; no fix, insertion or target execution."
+  },
+  "fmt": {
+    "files": 121,
+    "adapter_symbols": 7061,
+    "added_metadata_symbols": 239,
+    "duplicate_ids": 10,
+    "duplicates": {
+      "19eab814160ff5ae25229307": [
+        {
+          "path": "include/fmt/chrono.h",
+          "qualified": "include.fmt.chrono.detail.numeric_system.tm_format_checker.on_text.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 877,
+          "end_line": 877,
+          "parent_id": "c007c3e1f0308aac8364a030",
+          "stage": "adapter",
+          "source_preview": "  FMT_CONSTEXPR void on_text(const Char*, const Char*) {}"
+        },
+        {
+          "path": "include/fmt/chrono.h",
+          "qualified": "include.fmt.chrono.detail.numeric_system.tm_format_checker.on_text.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 877,
+          "end_line": 877,
+          "parent_id": "c007c3e1f0308aac8364a030",
+          "stage": "adapter",
+          "source_preview": "  FMT_CONSTEXPR void on_text(const Char*, const Char*) {}"
+        }
+      ],
+      "283d485eb0e3a829af0b7b80": [
+        {
+          "path": "include/fmt/chrono.h",
+          "qualified": "include.fmt.chrono.iso_week_num.()",
+          "name": "()",
+          "kind": "parameter",
+          "start_line": 1159,
+          "end_line": 1159,
+          "parent_id": "00a9544746ef7a05f6bd6d31",
+          "stage": "adapter",
+          "source_preview": "    auto w = iso_week_num(tm_yday(), tm_wday());"
+        },
+        {
+          "path": "include/fmt/chrono.h",
+          "qualified": "include.fmt.chrono.iso_week_num.()",
+          "name": "()",
+          "kind": "parameter",
+          "start_line": 1159,
+          "end_line": 1159,
+          "parent_id": "00a9544746ef7a05f6bd6d31",
+          "stage": "adapter",
+          "source_preview": "    auto w = iso_week_num(tm_yday(), tm_wday());"
+        }
+      ],
+      "551eb79bb80f0b9ed2554763": [
+        {
+          "path": "include/fmt/chrono.h",
+          "qualified": "include.fmt.chrono.iso_week_num.()",
+          "name": "()",
+          "kind": "parameter",
+          "start_line": 1166,
+          "end_line": 1166,
+          "parent_id": "53fe90350ec9a4630614d126",
+          "stage": "adapter",
+          "source_preview": "    auto w = iso_week_num(tm_yday(), tm_wday());"
+        },
+        {
+          "path": "include/fmt/chrono.h",
+          "qualified": "include.fmt.chrono.iso_week_num.()",
+          "name": "()",
+          "kind": "parameter",
+          "start_line": 1166,
+          "end_line": 1166,
+          "parent_id": "53fe90350ec9a4630614d126",
+          "stage": "adapter",
+          "source_preview": "    auto w = iso_week_num(tm_yday(), tm_wday());"
+        }
+      ],
+      "630bbd7cc8990758b45d5a06": [
+        {
+          "path": "include/fmt/chrono.h",
+          "qualified": "include.fmt.chrono.chrono_format_checker.on_text.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 1521,
+          "end_line": 1521,
+          "parent_id": "290255d958bef3d0aa973bea",
+          "stage": "adapter",
+          "source_preview": "  FMT_CONSTEXPR void on_text(const Char*, const Char*) {}"
+        },
+        {
+          "path": "include/fmt/chrono.h",
+          "qualified": "include.fmt.chrono.chrono_format_checker.on_text.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 1521,
+          "end_line": 1521,
+          "parent_id": "290255d958bef3d0aa973bea",
+          "stage": "adapter",
+          "source_preview": "  FMT_CONSTEXPR void on_text(const Char*, const Char*) {}"
+        }
+      ],
+      "36bc89ec870b6844bc3bd7ac": [
+        {
+          "path": "test/gtest-extra.h",
+          "qualified": "test.gtest-extra.suppress_assert.handle_invalid_parameter.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 125,
+          "end_line": 125,
+          "parent_id": "90f9698ae6595ad5ae1c0d95",
+          "stage": "adapter",
+          "source_preview": "  static void handle_invalid_parameter(const wchar_t*, const wchar_t*,"
+        },
+        {
+          "path": "test/gtest-extra.h",
+          "qualified": "test.gtest-extra.suppress_assert.handle_invalid_parameter.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 125,
+          "end_line": 125,
+          "parent_id": "90f9698ae6595ad5ae1c0d95",
+          "stage": "adapter",
+          "source_preview": "  static void handle_invalid_parameter(const wchar_t*, const wchar_t*,"
+        }
+      ],
+      "abdf27606730f5e03916621e": [
+        {
+          "path": "test/gtest/gtest/gtest.h",
+          "qualified": "test.gtest.gtest.gtest.testing.internal.GTEST_API_.testing.Register.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 4136,
+          "end_line": 4136,
+          "parent_id": "d735dd7d0ab0a66a132fceaa",
+          "stage": "adapter",
+          "source_preview": "                       const char* /*case_name*/, const char* /*test_names*/,"
+        },
+        {
+          "path": "test/gtest/gtest/gtest.h",
+          "qualified": "test.gtest.gtest.gtest.testing.internal.GTEST_API_.testing.Register.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 4136,
+          "end_line": 4136,
+          "parent_id": "d735dd7d0ab0a66a132fceaa",
+          "stage": "adapter",
+          "source_preview": "                       const char* /*case_name*/, const char* /*test_names*/,"
+        }
+      ],
+      "4062578752547561278067c1": [
+        {
+          "path": "test/gtest/gtest/gtest.h",
+          "qualified": "test.gtest.gtest.gtest.testing.internal.Register.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 4195,
+          "end_line": 4195,
+          "parent_id": "e0689be534b7291081b82056",
+          "stage": "adapter",
+          "source_preview": "                       const char* /*case_name*/, const char* /*test_names*/,"
+        },
+        {
+          "path": "test/gtest/gtest/gtest.h",
+          "qualified": "test.gtest.gtest.gtest.testing.internal.Register.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 4195,
+          "end_line": 4195,
+          "parent_id": "e0689be534b7291081b82056",
+          "stage": "adapter",
+          "source_preview": "                       const char* /*case_name*/, const char* /*test_names*/,"
+        }
+      ],
+      "0dfffaf26dc15a312569cb82": [
+        {
+          "path": "test/gtest/gtest/gtest.h",
+          "qualified": "test.gtest.gtest.gtest.test.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 4345,
+          "end_line": 4345,
+          "parent_id": "7ac3a6ce5ecb7570583f33bd",
+          "stage": "adapter",
+          "source_preview": "  static char test(typename U::hasher*, typename U::reverse_iterator*);"
+        },
+        {
+          "path": "test/gtest/gtest/gtest.h",
+          "qualified": "test.gtest.gtest.gtest.test.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 4345,
+          "end_line": 4345,
+          "parent_id": "7ac3a6ce5ecb7570583f33bd",
+          "stage": "adapter",
+          "source_preview": "  static char test(typename U::hasher*, typename U::reverse_iterator*);"
+        }
+      ],
+      "5e66c78382bb78979de2ec3f": [
+        {
+          "path": "test/gtest/gtest/gtest.h",
+          "qualified": "test.gtest.gtest.gtest.ArrayEq.[N]",
+          "name": "[N]",
+          "kind": "parameter",
+          "start_line": 4402,
+          "end_line": 4402,
+          "parent_id": "010ca25de55f25c184ee35c1",
+          "stage": "adapter",
+          "source_preview": "inline bool ArrayEq(const T(&lhs)[N], const U(&rhs)[N]) {"
+        },
+        {
+          "path": "test/gtest/gtest/gtest.h",
+          "qualified": "test.gtest.gtest.gtest.ArrayEq.[N]",
+          "name": "[N]",
+          "kind": "parameter",
+          "start_line": 4402,
+          "end_line": 4402,
+          "parent_id": "010ca25de55f25c184ee35c1",
+          "stage": "adapter",
+          "source_preview": "inline bool ArrayEq(const T(&lhs)[N], const U(&rhs)[N]) {"
+        }
+      ],
+      "e6d578b15384edaa3ae89afb": [
+        {
+          "path": "test/core-test.cc",
+          "qualified": "test.core-test.test_format_string_handler.on_text.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 530,
+          "end_line": 530,
+          "parent_id": "0949047e1312529d682e9c32",
+          "stage": "adapter",
+          "source_preview": "  constexpr void on_text(const char*, const char*) {}"
+        },
+        {
+          "path": "test/core-test.cc",
+          "qualified": "test.core-test.test_format_string_handler.on_text.*",
+          "name": "*",
+          "kind": "parameter",
+          "start_line": 530,
+          "end_line": 530,
+          "parent_id": "0949047e1312529d682e9c32",
+          "stage": "adapter",
+          "source_preview": "  constexpr void on_text(const char*, const char*) {}"
+        }
+      ]
+    },
+    "notice": "Read-only reproduction; no fix, insertion or target execution."
+  }
+}

@@ -1,5 +1,9 @@
 # DevPilot improvement status
 
+**Latest checkpoint: October 3, 2026.** See [the accuracy report](accuracy-2026-10-03.md)
+for current behavior, test results and remaining gates. The chronological notes below retain earlier
+experiments; their model settings, validation claims and test counts describe those earlier runs.
+
 The application indexes the eight reference repositories at commits recorded in
 [`indexed-reference-repositories.json`](indexed-reference-repositories.json). Python and Java
 symbols, source locations, and graph relationships are searchable. The frontend builds, the
@@ -141,7 +145,8 @@ Still required before claiming the broader improvement plan complete:
 3. Curate and verify 30–50 real-repository repair tasks with pinned commits, failing-before and
    passing-after tests, and patch provenance. The demo change is not a substitute.
 4. Reassess local adapter training only after those data exist and the untouched holdout shows
-   a specific model limitation. No fine-tuning has been run.
+   a specific model limitation. At that checkpoint no fine-tuning had been run; the later tree-only
+   adapter experiment in [local-training.md](local-training.md) failed its transfer check and remains unused.
 
 The most useful commands are `make check`, `cd frontend && npm run build`, `make eval-dataset`,
 `make validate-java`, and `DEVPILOT_PROPOSAL_MODEL=qwen2.5-coder:7b make validate-local` with
@@ -192,3 +197,7 @@ candidate cards, all pending review. No labels from those cards have been export
 has not demonstrated a generalization gain. Optional local fine-tuning remains gated on collecting
 enough reviewed examples and establishing a clean repository-level holdout. The suite passes 96
 tests with one Docker-dependent skip; the frontend formatter and production build pass.
+
+## October 4 recommendation-based research refactor
+
+The current default architecture supersedes the execution-focused core described in older entries. Nine-language adapters, normalized entities, structural chunks, bounded graph queries, custom modular RAG, conservative static errors, unverified suggestions and research diagnostics are implemented. Docker/guided execution remains an explicit legacy experiment. See [the current implementation report](implementation-2026-10-04.md) for actual verification and remaining limits. Historical evaluation results are retained and are not evidence that new broad accuracy milestones have been completed.

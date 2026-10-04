@@ -1,0 +1,1654 @@
+{
+  "health": {
+    "status": "ok",
+    "model_configured": true,
+    "embedding_configured": true,
+    "model": "qwen2.5-coder:14b",
+    "docker": {
+      "available": false,
+      "reason": "Optional legacy execution is disabled"
+    },
+    "legacy_execution_enabled": false,
+    "core_workflow": "evidence_grounded_suggestions",
+    "langgraph_enabled": false
+  },
+  "language_count": 9,
+  "openapi": true,
+  "rebuild_request": {
+    "id": "0888c31b0c0946ca8bab2f05ad91958d",
+    "status": "indexing",
+    "notice": "Derived indexes only; stored snapshot files stay unchanged. Previously excluded files require a new snapshot."
+  },
+  "rebuild": {
+    "status": "ready",
+    "snapshot_unchanged": true,
+    "stats": {
+      "files": 14,
+      "python_files": 3,
+      "java_files": 1,
+      "languages": {
+        "text": 2,
+        "c": 1,
+        "cpp": 1,
+        "csharp": 1,
+        "go": 1,
+        "java": 1,
+        "javascript": 1,
+        "python": 3,
+        "rust": 1,
+        "typescript": 2
+      },
+      "symbols": 49,
+      "edges": 40,
+      "parse_errors": [],
+      "unresolved_count": 2,
+      "unresolved": [
+        {
+          "source": "85ba18bbd07b7bbd7d8ce4a7",
+          "label": "ValueError",
+          "kind": "calls",
+          "line": 6
+        },
+        {
+          "source": "f0654bce5a21061e3e904011",
+          "label": "print",
+          "kind": "calls",
+          "line": 11
+        }
+      ],
+      "skipped_files": 0,
+      "coverage": {
+        "indexed_files": 14,
+        "skipped_files": 0,
+        "ignored_directories": 0,
+        "reason_counts": {},
+        "indexed_extensions": {
+          ".c": 1,
+          ".cpp": 1,
+          ".cs": 1,
+          ".go": 1,
+          ".java": 1,
+          ".js": 1,
+          ".json": 1,
+          ".md": 1,
+          ".py": 3,
+          ".rs": 1,
+          ".ts": 2
+        },
+        "recorded_entries": 14,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v1",
+      "timings_ms": {
+        "read_and_snapshot": 23.687,
+        "analysis_and_graph": 39.779,
+        "chunks_and_storage": 25.609,
+        "embeddings": 1174.862,
+        "total_index": 1263.947
+      }
+    }
+  },
+  "static_analysis": {
+    "issues": [
+      {
+        "id": "d5ffd041d9e55e12b310c46c0cf88e7f",
+        "repository_id": "0888c31b0c0946ca8bab2f05ad91958d",
+        "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+        "type": "unreachable_statement",
+        "severity": "warning",
+        "confidence": "high",
+        "file": "python/static_candidates.py",
+        "line": 11,
+        "end_line": 11,
+        "symbol": "python.static_candidates.unreachable_example",
+        "message": "Statement follows an unconditional terminating statement in the same block.",
+        "evidence": [
+          {
+            "file": "python/static_candidates.py",
+            "start_line": 11,
+            "end_line": 11
+          }
+        ],
+        "related_symbols": [
+          {
+            "id": "02e393ce979137b27cad58e6",
+            "symbol": "python.static_candidates",
+            "file": "python/static_candidates.py",
+            "line": 1,
+            "relationship": "contains",
+            "confidence": "exact"
+          }
+        ],
+        "root_cause": "The preceding return, raise, break or continue exits this block before this statement.",
+        "suggested_fix": "Remove the unreachable statement or move it before the terminator if it must execute.",
+        "suggested_test": "Exercise the enclosing function\u2019s exit path and assert the intended return value or exception.",
+        "status": "static_candidate",
+        "verified": false
+      },
+      {
+        "id": "a5d0e4f3414b4ab9c6af27669d825c45",
+        "repository_id": "0888c31b0c0946ca8bab2f05ad91958d",
+        "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+        "type": "signature_mismatch",
+        "severity": "error",
+        "confidence": "high",
+        "file": "python/static_candidates.py",
+        "line": 6,
+        "end_line": 6,
+        "symbol": "python.static_candidates",
+        "message": "Call to combine supplies 3 positional arguments; its direct definition accepts at most 2.",
+        "evidence": [
+          {
+            "file": "python/static_candidates.py",
+            "start_line": 6,
+            "end_line": 6
+          }
+        ],
+        "related_symbols": [
+          {
+            "id": "355acbc0ebceaa0606a3d70a",
+            "symbol": "python.static_candidates.combine",
+            "file": "python/static_candidates.py",
+            "line": 3,
+            "relationship": "contains",
+            "confidence": "exact"
+          },
+          {
+            "id": "f0654bce5a21061e3e904011",
+            "symbol": "python.static_candidates.unreachable_example",
+            "file": "python/static_candidates.py",
+            "line": 9,
+            "relationship": "contains",
+            "confidence": "exact"
+          },
+          {
+            "id": "355acbc0ebceaa0606a3d70a",
+            "symbol": "python.static_candidates.combine",
+            "file": "python/static_candidates.py",
+            "line": 3,
+            "relationship": "calls",
+            "confidence": "static"
+          }
+        ],
+        "root_cause": "A direct, undecorated top-level function is called with too many positional arguments.",
+        "suggested_fix": "Adjust the arguments to match combine's declared signature, or update that signature if intentional.",
+        "suggested_test": "Add a regression case calling the function with its intended argument count and asserting the expected result.",
+        "status": "static_candidate",
+        "verified": false
+      }
+    ],
+    "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+    "detector_version": "2026-10-04-conservative-static-v1",
+    "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+  },
+  "chunk_metadata_fields": [
+    "callees",
+    "callers",
+    "calls",
+    "end_line",
+    "file",
+    "imports",
+    "inheritance",
+    "kind",
+    "language",
+    "parent",
+    "qualified_name",
+    "related_tests",
+    "relationship_count",
+    "relationships",
+    "repository",
+    "start_line",
+    "symbol"
+  ],
+  "answer": {
+    "answer": "The shipping quote raises a ValueError if the weight is nonpositive [8] [1].",
+    "citation_provenance": [
+      {
+        "file": "python/pricing.py",
+        "symbol": "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")",
+        "start_line": 6,
+        "end_line": 6,
+        "relationship": [],
+        "text": "        raise ValueError(\"weight must be positive\")",
+        "entailment_proven": false
+      },
+      {
+        "file": "python/pricing.py",
+        "symbol": "python.pricing.shipping_cost",
+        "start_line": 5,
+        "end_line": 6,
+        "relationship": [],
+        "text": "    if weight <= 0:\n        raise ValueError(\"weight must be positive\")",
+        "entailment_proven": false
+      }
+    ],
+    "claims": [
+      {
+        "text": "The shipping quote raises a ValueError if the weight is nonpositive.",
+        "aspect_id": 1,
+        "status": "supported",
+        "citations": [
+          {
+            "source_id": 8,
+            "start_line": 6,
+            "end_line": 6
+          },
+          {
+            "source_id": 1,
+            "start_line": 5,
+            "end_line": 6
+          }
+        ]
+      }
+    ],
+    "missing_information": [],
+    "confidence": "model_supported",
+    "related_symbols": [
+      "python.pricing.shipping_cost",
+      "python.pricing",
+      "python.api",
+      "python.static_candidates",
+      "python.api.quote_request",
+      "python.static_candidates.unreachable_example",
+      "python.static_candidates.combine",
+      "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")"
+    ],
+    "retrieval_trace": {
+      "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+      "query_analysis": {
+        "type": "implementation",
+        "entities": [],
+        "aspects": [
+          "how does a shipping quote handle a nonpositive weight"
+        ]
+      },
+      "mode": "hybrid",
+      "hops": 2,
+      "settings": {
+        "lexical_weight": 1.0,
+        "semantic_weight": 1.0,
+        "graph_weight": 1.0,
+        "structural_weight": 0.02,
+        "exact_boost": 50.0,
+        "candidate_limit": 50,
+        "rerank": true
+      },
+      "lexical_candidates": [
+        {
+          "id": "2a178bdbb57c252a2c5b7bf8",
+          "score": 8.566271856139604
+        },
+        {
+          "id": "85ba18bbd07b7bbd7d8ce4a7",
+          "score": 8.478447841622746
+        },
+        {
+          "id": "437d2a35fd231c5eb03b901b",
+          "score": 6.294103640509293
+        },
+        {
+          "id": "ee05b922f52394a9af1a5a0f",
+          "score": 6.2913040490954355
+        },
+        {
+          "id": "0eb1bc620d2f802845a525de",
+          "score": 5.9494378367751946
+        },
+        {
+          "id": "0aa3547e1c1bdca09b2bb6c5",
+          "score": 5.228070353976936
+        },
+        {
+          "id": "d984c0f5ea625a9b0bda98e1",
+          "score": 5.196246216193034
+        },
+        {
+          "id": "7a4fb25a7df5e9480bfa650e",
+          "score": 5.173300045029913
+        },
+        {
+          "id": "42ebb03806afafd9361e7793",
+          "score": 5.152570826730797
+        },
+        {
+          "id": "1fc12220b92320d269e5a348",
+          "score": 5.132790283872259
+        },
+        {
+          "id": "371ecd5e128074cb68e349fa",
+          "score": 5.132790283872259
+        },
+        {
+          "id": "502da2e7f10806394e711541",
+          "score": 5.132790283872259
+        },
+        {
+          "id": "1f6c4339627f0718e7a7a82b",
+          "score": 5.056575459263053
+        },
+        {
+          "id": "766968630e3e0ce97dcb0757",
+          "score": 4.816312003189743
+        },
+        {
+          "id": "97d048b7cd4cc1bc091f4e85",
+          "score": 4.721967785739553
+        },
+        {
+          "id": "499412181c906fb9f0b209ec",
+          "score": 4.208762136481809
+        },
+        {
+          "id": "6b7794bbcd5b76ee113359ed",
+          "score": 3.821528330675472
+        },
+        {
+          "id": "02c0d93eba2a829186efe36e",
+          "score": 2.809213852134727
+        },
+        {
+          "id": "02e393ce979137b27cad58e6",
+          "score": 2.5691705135647984
+        },
+        {
+          "id": "ebf5226128af07aa2bb99fb7",
+          "score": 2.455692338019203
+        },
+        {
+          "id": "491fd06242d4fd6d577f047e",
+          "score": 2.427838184435565
+        },
+        {
+          "id": "068312f22bf2be735647d6d5",
+          "score": 2.2017142335846414
+        },
+        {
+          "id": "aa0021354690ad5704305e26",
+          "score": 2.0736919690342392
+        },
+        {
+          "id": "ae23fbe02ce79a3c102e4788",
+          "score": 2.00897985322101
+        },
+        {
+          "id": "53b3cc8c08b091148fc3751c",
+          "score": 1.8567579097750835
+        },
+        {
+          "id": "e1d7c9eaa241010a55793abc",
+          "score": 1.698030463141091
+        },
+        {
+          "id": "df76e096cadf0fc21b964688",
+          "score": 1.692931993591039
+        },
+        {
+          "id": "4089b2f0f46ea48accbf2932",
+          "score": 1.6862382017574469
+        },
+        {
+          "id": "8d4377895ffccc42e1942051",
+          "score": 1.6824338823194882
+        },
+        {
+          "id": "f440c4f38c4ac8e7f26f907b",
+          "score": 1.6787934313551185
+        },
+        {
+          "id": "51e7b56df5e9a40cf1c6e30b",
+          "score": 1.6787934313551185
+        },
+        {
+          "id": "55b53237d366c38ace454a30",
+          "score": 1.6787934313551185
+        },
+        {
+          "id": "9a1c411c85aad11615806e12",
+          "score": 1.6765580567744518
+        },
+        {
+          "id": "b1549bf8e2e68fde6cabca0e",
+          "score": 1.6458872075004731
+        },
+        {
+          "id": "355acbc0ebceaa0606a3d70a",
+          "score": 1.5067697295802585
+        },
+        {
+          "id": "f0654bce5a21061e3e904011",
+          "score": 1.5067697295802585
+        },
+        {
+          "id": "495d90cf6c8afa6f1f53f986",
+          "score": 1.3923898217747204
+        },
+        {
+          "id": "e7d633b7fcd0bef6007c5446",
+          "score": 1.3732690277171242
+        },
+        {
+          "id": "1137e046e24e122d3473d8f2",
+          "score": 1.3684612749214193
+        },
+        {
+          "id": "2d2e2330404077e2e69bdd2e",
+          "score": 1.3582087506678622
+        },
+        {
+          "id": "863eae6eb4df6eef32331950",
+          "score": 1.3572482089420723
+        },
+        {
+          "id": "d4ac0769eac791a346e16f7a",
+          "score": 1.3304577762066803
+        },
+        {
+          "id": "12662e7527f52eb9feee9c84",
+          "score": 1.2967874082393203
+        },
+        {
+          "id": "d797fc08ec7785a95fd9a981",
+          "score": 1.1563596704903718
+        },
+        {
+          "id": "f42afc41ff4a09dbd7765ff9",
+          "score": 0.8235442908357923
+        },
+        {
+          "id": "dad6fcb2655a38423a379c7d",
+          "score": 0.31996959098524613
+        },
+        {
+          "id": "c32789f2cbc5c792fd2c193e",
+          "score": 0.31996959098524613
+        }
+      ],
+      "semantic_candidates": [
+        {
+          "id": "85ba18bbd07b7bbd7d8ce4a7",
+          "similarity": 0.8551290035247803
+        },
+        {
+          "id": "ae23fbe02ce79a3c102e4788",
+          "similarity": 0.8357324600219727
+        },
+        {
+          "id": "97d048b7cd4cc1bc091f4e85",
+          "similarity": 0.8353010416030884
+        },
+        {
+          "id": "ebf5226128af07aa2bb99fb7",
+          "similarity": 0.8279863595962524
+        },
+        {
+          "id": "766968630e3e0ce97dcb0757",
+          "similarity": 0.8081692457199097
+        },
+        {
+          "id": "0eb1bc620d2f802845a525de",
+          "similarity": 0.8068161010742188
+        },
+        {
+          "id": "e1d7c9eaa241010a55793abc",
+          "similarity": 0.7396736145019531
+        },
+        {
+          "id": "0aa3547e1c1bdca09b2bb6c5",
+          "similarity": 0.733284592628479
+        },
+        {
+          "id": "1fc12220b92320d269e5a348",
+          "similarity": 0.7318848371505737
+        },
+        {
+          "id": "df76e096cadf0fc21b964688",
+          "similarity": 0.7295398116111755
+        },
+        {
+          "id": "491fd06242d4fd6d577f047e",
+          "similarity": 0.7273955941200256
+        },
+        {
+          "id": "f440c4f38c4ac8e7f26f907b",
+          "similarity": 0.7219479084014893
+        },
+        {
+          "id": "1f6c4339627f0718e7a7a82b",
+          "similarity": 0.7206935286521912
+        },
+        {
+          "id": "d797fc08ec7785a95fd9a981",
+          "similarity": 0.7143919467926025
+        },
+        {
+          "id": "d984c0f5ea625a9b0bda98e1",
+          "similarity": 0.7129052877426147
+        },
+        {
+          "id": "2a178bdbb57c252a2c5b7bf8",
+          "similarity": 0.7117105722427368
+        },
+        {
+          "id": "4089b2f0f46ea48accbf2932",
+          "similarity": 0.711543083190918
+        },
+        {
+          "id": "7a4fb25a7df5e9480bfa650e",
+          "similarity": 0.7115089893341064
+        },
+        {
+          "id": "12662e7527f52eb9feee9c84",
+          "similarity": 0.7109932899475098
+        },
+        {
+          "id": "068312f22bf2be735647d6d5",
+          "similarity": 0.7096195816993713
+        },
+        {
+          "id": "51e7b56df5e9a40cf1c6e30b",
+          "similarity": 0.7085179686546326
+        },
+        {
+          "id": "495d90cf6c8afa6f1f53f986",
+          "similarity": 0.7076282501220703
+        },
+        {
+          "id": "371ecd5e128074cb68e349fa",
+          "similarity": 0.7057063579559326
+        },
+        {
+          "id": "ee05b922f52394a9af1a5a0f",
+          "similarity": 0.7052159309387207
+        },
+        {
+          "id": "55b53237d366c38ace454a30",
+          "similarity": 0.7042792439460754
+        },
+        {
+          "id": "9a1c411c85aad11615806e12",
+          "similarity": 0.7034701108932495
+        },
+        {
+          "id": "437d2a35fd231c5eb03b901b",
+          "similarity": 0.7015142440795898
+        },
+        {
+          "id": "b1549bf8e2e68fde6cabca0e",
+          "similarity": 0.6986379623413086
+        },
+        {
+          "id": "d4ac0769eac791a346e16f7a",
+          "similarity": 0.6964125633239746
+        },
+        {
+          "id": "53b3cc8c08b091148fc3751c",
+          "similarity": 0.6917375326156616
+        },
+        {
+          "id": "502da2e7f10806394e711541",
+          "similarity": 0.6900691390037537
+        },
+        {
+          "id": "1137e046e24e122d3473d8f2",
+          "similarity": 0.6882357001304626
+        },
+        {
+          "id": "8d4377895ffccc42e1942051",
+          "similarity": 0.6834408044815063
+        },
+        {
+          "id": "42ebb03806afafd9361e7793",
+          "similarity": 0.6825973391532898
+        },
+        {
+          "id": "e7d633b7fcd0bef6007c5446",
+          "similarity": 0.68210768699646
+        },
+        {
+          "id": "6b7794bbcd5b76ee113359ed",
+          "similarity": 0.6794586777687073
+        },
+        {
+          "id": "863eae6eb4df6eef32331950",
+          "similarity": 0.6787455081939697
+        },
+        {
+          "id": "2d2e2330404077e2e69bdd2e",
+          "similarity": 0.6778828501701355
+        },
+        {
+          "id": "f42afc41ff4a09dbd7765ff9",
+          "similarity": 0.6750587224960327
+        },
+        {
+          "id": "499412181c906fb9f0b209ec",
+          "similarity": 0.674396276473999
+        },
+        {
+          "id": "aa0021354690ad5704305e26",
+          "similarity": 0.6565924882888794
+        },
+        {
+          "id": "02c0d93eba2a829186efe36e",
+          "similarity": 0.6292766332626343
+        },
+        {
+          "id": "02e393ce979137b27cad58e6",
+          "similarity": 0.5652042627334595
+        },
+        {
+          "id": "f0654bce5a21061e3e904011",
+          "similarity": 0.5567586421966553
+        },
+        {
+          "id": "dad6fcb2655a38423a379c7d",
+          "similarity": 0.5513416528701782
+        },
+        {
+          "id": "355acbc0ebceaa0606a3d70a",
+          "similarity": 0.547835111618042
+        },
+        {
+          "id": "c32789f2cbc5c792fd2c193e",
+          "similarity": 0.544681966304779
+        },
+        {
+          "id": "98ca5c69d80152b8e66badad",
+          "similarity": 0.48177969455718994
+        },
+        {
+          "id": "5478f5b18e9b987f67cc5761",
+          "similarity": 0.4625668525695801
+        }
+      ],
+      "graph_seeds": [
+        "85ba18bbd07b7bbd7d8ce4a7",
+        "97d048b7cd4cc1bc091f4e85",
+        "766968630e3e0ce97dcb0757",
+        "02e393ce979137b27cad58e6",
+        "0eb1bc620d2f802845a525de",
+        "f0654bce5a21061e3e904011",
+        "355acbc0ebceaa0606a3d70a",
+        "ebf5226128af07aa2bb99fb7"
+      ],
+      "graph_expanded": [
+        {
+          "id": "491fd06242d4fd6d577f047e",
+          "path": [
+            {
+              "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+              "source": "0eb1bc620d2f802845a525de",
+              "target": "491fd06242d4fd6d577f047e",
+              "kind": "accepts",
+              "line": 4,
+              "confidence": "exact",
+              "label": "weight"
+            }
+          ]
+        },
+        {
+          "id": "ae23fbe02ce79a3c102e4788",
+          "path": [
+            {
+              "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+              "source": "85ba18bbd07b7bbd7d8ce4a7",
+              "target": "ae23fbe02ce79a3c102e4788",
+              "kind": "accepts",
+              "line": 3,
+              "confidence": "exact",
+              "label": "weight"
+            }
+          ]
+        },
+        {
+          "id": "c32789f2cbc5c792fd2c193e",
+          "path": [
+            {
+              "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+              "source": "355acbc0ebceaa0606a3d70a",
+              "target": "c32789f2cbc5c792fd2c193e",
+              "kind": "accepts",
+              "line": 3,
+              "confidence": "exact",
+              "label": "right"
+            }
+          ]
+        },
+        {
+          "id": "dad6fcb2655a38423a379c7d",
+          "path": [
+            {
+              "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+              "source": "355acbc0ebceaa0606a3d70a",
+              "target": "dad6fcb2655a38423a379c7d",
+              "kind": "accepts",
+              "line": 3,
+              "confidence": "exact",
+              "label": "left"
+            }
+          ]
+        }
+      ],
+      "fused_candidates": [
+        {
+          "id": "85ba18bbd07b7bbd7d8ce4a7",
+          "score": 0.03252247488101534
+        },
+        {
+          "id": "97d048b7cd4cc1bc091f4e85",
+          "score": 0.029206349206349208
+        },
+        {
+          "id": "766968630e3e0ce97dcb0757",
+          "score": 0.0288981288981289
+        },
+        {
+          "id": "02e393ce979137b27cad58e6",
+          "score": 0.022366965712178936
+        },
+        {
+          "id": "0eb1bc620d2f802845a525de",
+          "score": 0.030536130536130537
+        },
+        {
+          "id": "f0654bce5a21061e3e904011",
+          "score": 0.02003205128205128
+        },
+        {
+          "id": "355acbc0ebceaa0606a3d70a",
+          "score": 0.019960278053624627
+        },
+        {
+          "id": "ebf5226128af07aa2bb99fb7",
+          "score": 0.028125
+        },
+        {
+          "id": "ae23fbe02ce79a3c102e4788",
+          "score": 0.02803379416282642
+        },
+        {
+          "id": "491fd06242d4fd6d577f047e",
+          "score": 0.0264301860545992
+        },
+        {
+          "id": "dad6fcb2655a38423a379c7d",
+          "score": 0.018957771787960466
+        },
+        {
+          "id": "c32789f2cbc5c792fd2c193e",
+          "score": 0.018691588785046728
+        },
+        {
+          "id": "53b3cc8c08b091148fc3751c",
+          "score": 0.022875816993464054
+        },
+        {
+          "id": "0aa3547e1c1bdca09b2bb6c5",
+          "score": 0.029857397504456328
+        },
+        {
+          "id": "2a178bdbb57c252a2c5b7bf8",
+          "score": 0.029551337359792925
+        },
+        {
+          "id": "98ca5c69d80152b8e66badad",
+          "score": 0.009259259259259259
+        },
+        {
+          "id": "1fc12220b92320d269e5a348",
+          "score": 0.02877846790890269
+        },
+        {
+          "id": "d984c0f5ea625a9b0bda98e1",
+          "score": 0.028258706467661692
+        },
+        {
+          "id": "7a4fb25a7df5e9480bfa650e",
+          "score": 0.027526395173453996
+        },
+        {
+          "id": "1f6c4339627f0718e7a7a82b",
+          "score": 0.0273972602739726
+        },
+        {
+          "id": "371ecd5e128074cb68e349fa",
+          "score": 0.026132699813337858
+        },
+        {
+          "id": "42ebb03806afafd9361e7793",
+          "score": 0.02513105149552883
+        },
+        {
+          "id": "502da2e7f10806394e711541",
+          "score": 0.02487789987789988
+        },
+        {
+          "id": "6b7794bbcd5b76ee113359ed",
+          "score": 0.023403679653679656
+        },
+        {
+          "id": "ee05b922f52394a9af1a5a0f",
+          "score": 0.027529761904761904
+        },
+        {
+          "id": "437d2a35fd231c5eb03b901b",
+          "score": 0.02736726874657909
+        },
+        {
+          "id": "068312f22bf2be735647d6d5",
+          "score": 0.024695121951219513
+        },
+        {
+          "id": "499412181c906fb9f0b209ec",
+          "score": 0.023157894736842106
+        },
+        {
+          "id": "495d90cf6c8afa6f1f53f986",
+          "score": 0.022504400301734978
+        },
+        {
+          "id": "12662e7527f52eb9feee9c84",
+          "score": 0.022366965712178936
+        },
+        {
+          "id": "b1549bf8e2e68fde6cabca0e",
+          "score": 0.022001934235976787
+        },
+        {
+          "id": "d4ac0769eac791a346e16f7a",
+          "score": 0.021039876624807226
+        },
+        {
+          "id": "1137e046e24e122d3473d8f2",
+          "score": 0.020970575318401408
+        },
+        {
+          "id": "e7d633b7fcd0bef6007c5446",
+          "score": 0.020730397422126744
+        },
+        {
+          "id": "863eae6eb4df6eef32331950",
+          "score": 0.020210268449525365
+        },
+        {
+          "id": "2d2e2330404077e2e69bdd2e",
+          "score": 0.02020408163265306
+        },
+        {
+          "id": "5478f5b18e9b987f67cc5761",
+          "score": 0.009174311926605505
+        },
+        {
+          "id": "e1d7c9eaa241010a55793abc",
+          "score": 0.026553280111072546
+        },
+        {
+          "id": "df76e096cadf0fc21b964688",
+          "score": 0.025779967159277502
+        },
+        {
+          "id": "f440c4f38c4ac8e7f26f907b",
+          "score": 0.025
+        },
+        {
+          "id": "4089b2f0f46ea48accbf2932",
+          "score": 0.024350649350649352
+        },
+        {
+          "id": "51e7b56df5e9a40cf1c6e30b",
+          "score": 0.02333469000135667
+        },
+        {
+          "id": "d797fc08ec7785a95fd9a981",
+          "score": 0.02312889812889813
+        },
+        {
+          "id": "55b53237d366c38ace454a30",
+          "score": 0.022634271099744245
+        },
+        {
+          "id": "02c0d93eba2a829186efe36e",
+          "score": 0.02262443438914027
+        },
+        {
+          "id": "9a1c411c85aad11615806e12",
+          "score": 0.022380595148787197
+        },
+        {
+          "id": "8d4377895ffccc42e1942051",
+          "score": 0.021988643228222787
+        },
+        {
+          "id": "aa0021354690ad5704305e26",
+          "score": 0.021949182870094237
+        },
+        {
+          "id": "f42afc41ff4a09dbd7765ff9",
+          "score": 0.01962481962481963
+        }
+      ],
+      "reranked_candidates": [
+        "85ba18bbd07b7bbd7d8ce4a7",
+        "97d048b7cd4cc1bc091f4e85",
+        "766968630e3e0ce97dcb0757",
+        "02e393ce979137b27cad58e6",
+        "0eb1bc620d2f802845a525de",
+        "f0654bce5a21061e3e904011",
+        "355acbc0ebceaa0606a3d70a",
+        "ebf5226128af07aa2bb99fb7"
+      ],
+      "timings_ms": {
+        "lexical": 91.792,
+        "semantic": 59.061,
+        "fusion_and_seed_reranking": 0.842,
+        "graph": 0.029,
+        "reranking": 0.498,
+        "context_records": 1.238,
+        "retrieval": 153.461
+      },
+      "final_context": [
+        {
+          "source_id": 8,
+          "id": "ebf5226128af07aa2bb99fb7",
+          "qualified": "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")",
+          "path": "python/pricing.py",
+          "source_line_numbers": [
+            6
+          ],
+          "source": "        raise ValueError(\"weight must be positive\")",
+          "truncated": false
+        },
+        {
+          "source_id": 1,
+          "id": "85ba18bbd07b7bbd7d8ce4a7",
+          "qualified": "python.pricing.shipping_cost",
+          "path": "python/pricing.py",
+          "source_line_numbers": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "source": "def shipping_cost(weight):\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+          "truncated": true
+        },
+        {
+          "source_id": 2,
+          "id": "97d048b7cd4cc1bc091f4e85",
+          "qualified": "python.pricing",
+          "path": "python/pricing.py",
+          "source_line_numbers": [
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "source": "\ndef shipping_cost(weight):\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+          "truncated": true
+        },
+        {
+          "source_id": 3,
+          "id": "766968630e3e0ce97dcb0757",
+          "qualified": "python.api",
+          "path": "python/api.py",
+          "source_line_numbers": [
+            1,
+            2,
+            3,
+            4,
+            6
+          ],
+          "source": "from .pricing import shipping_cost\n\n\ndef quote_request(weight):\n    return shipping_cost(weight)",
+          "truncated": true
+        },
+        {
+          "source_id": 4,
+          "id": "02e393ce979137b27cad58e6",
+          "qualified": "python.static_candidates",
+          "path": "python/static_candidates.py",
+          "source_line_numbers": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "source": "\ndef combine(left, right):\n    return left + right\n\ncombine(1, 2, 3)\n\n\ndef unreachable_example():\n    return 1\n    print(\"unreachable\")",
+          "truncated": true
+        },
+        {
+          "source_id": 5,
+          "id": "0eb1bc620d2f802845a525de",
+          "qualified": "python.api.quote_request",
+          "path": "python/api.py",
+          "source_line_numbers": [
+            4,
+            6
+          ],
+          "source": "def quote_request(weight):\n    return shipping_cost(weight)",
+          "truncated": true
+        },
+        {
+          "source_id": 6,
+          "id": "f0654bce5a21061e3e904011",
+          "qualified": "python.static_candidates.unreachable_example",
+          "path": "python/static_candidates.py",
+          "source_line_numbers": [
+            9,
+            10,
+            11
+          ],
+          "source": "def unreachable_example():\n    return 1\n    print(\"unreachable\")",
+          "truncated": false
+        },
+        {
+          "source_id": 7,
+          "id": "355acbc0ebceaa0606a3d70a",
+          "qualified": "python.static_candidates.combine",
+          "path": "python/static_candidates.py",
+          "source_line_numbers": [
+            3,
+            4
+          ],
+          "source": "def combine(left, right):\n    return left + right",
+          "truncated": false
+        }
+      ],
+      "answer": "The shipping quote raises a ValueError if the weight is nonpositive [8] [1].",
+      "claims": [
+        {
+          "text": "The shipping quote raises a ValueError if the weight is nonpositive.",
+          "aspect_id": 1,
+          "status": "supported",
+          "citations": [
+            {
+              "source_id": 8,
+              "start_line": 6,
+              "end_line": 6
+            },
+            {
+              "source_id": 1,
+              "start_line": 5,
+              "end_line": 6
+            }
+          ]
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "85ba18bbd07b7bbd7d8ce4a7",
+        "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+        "path": "python/pricing.py",
+        "name": "shipping_cost",
+        "qualified": "python.pricing.shipping_cost",
+        "kind": "function",
+        "start_line": 3,
+        "end_line": 7,
+        "source": "def shipping_cost(weight):\n    \"\"\"Return five currency units per unit weight; reject nonpositive weights.\"\"\"\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+        "docstring": "Return five currency units per unit weight; reject nonpositive weights.",
+        "parent_id": "97d048b7cd4cc1bc091f4e85",
+        "file_id": "2a2a259506acf1f8eb57b0534e4171bc",
+        "language": "python",
+        "signature": "def shipping_cost(weight):",
+        "role": "source",
+        "public_aliases": [
+          "python.pricing.shipping_cost"
+        ],
+        "score": 0.03252,
+        "component_scores": {
+          "lexical": 8.478447841622746,
+          "semantic": 0.8551290035247803,
+          "graph": 0,
+          "structural": 4,
+          "final": 0.11252247488101534
+        },
+        "retrieval_sources": [
+          "lexical",
+          "semantic"
+        ],
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "97d048b7cd4cc1bc091f4e85",
+        "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+        "path": "python/pricing.py",
+        "name": "pricing.py",
+        "qualified": "python.pricing",
+        "kind": "module",
+        "start_line": 1,
+        "end_line": 7,
+        "source": "\"\"\"Small research fixture. Positive weight is part of the public contract.\"\"\"\n\ndef shipping_cost(weight):\n    \"\"\"Return five currency units per unit weight; reject nonpositive weights.\"\"\"\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+        "docstring": "Small research fixture. Positive weight is part of the public contract.",
+        "parent_id": null,
+        "file_id": "2a2a259506acf1f8eb57b0534e4171bc",
+        "language": "python",
+        "signature": "def shipping_cost(weight):",
+        "role": "source",
+        "public_aliases": [],
+        "score": 0.02921,
+        "component_scores": {
+          "lexical": 4.721967785739553,
+          "semantic": 0.8353010416030884,
+          "graph": 0,
+          "structural": 4,
+          "final": 0.10920634920634921
+        },
+        "retrieval_sources": [
+          "lexical",
+          "semantic"
+        ],
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "766968630e3e0ce97dcb0757",
+        "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+        "path": "python/api.py",
+        "name": "api.py",
+        "qualified": "python.api",
+        "kind": "module",
+        "start_line": 1,
+        "end_line": 6,
+        "source": "from .pricing import shipping_cost\n\n\ndef quote_request(weight):\n    \"\"\"Delegate quote calculation to the pricing function.\"\"\"\n    return shipping_cost(weight)",
+        "docstring": "",
+        "parent_id": null,
+        "file_id": "a9f50fb6157a9e214c82b43dfcbd30b3",
+        "language": "python",
+        "signature": "def quote_request(weight):",
+        "role": "source",
+        "public_aliases": [],
+        "score": 0.0289,
+        "component_scores": {
+          "lexical": 4.816312003189743,
+          "semantic": 0.8081692457199097,
+          "graph": 0,
+          "structural": 4,
+          "final": 0.1088981288981289
+        },
+        "retrieval_sources": [
+          "lexical",
+          "semantic"
+        ],
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "02e393ce979137b27cad58e6",
+        "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+        "path": "python/static_candidates.py",
+        "name": "static_candidates.py",
+        "qualified": "python.static_candidates",
+        "kind": "module",
+        "start_line": 1,
+        "end_line": 11,
+        "source": "\"\"\"Intentional static diagnostic fixture; never execute this file.\"\"\"\n\ndef combine(left, right):\n    return left + right\n\ncombine(1, 2, 3)\n\n\ndef unreachable_example():\n    return 1\n    print(\"unreachable\")",
+        "docstring": "Intentional static diagnostic fixture; never execute this file.",
+        "parent_id": null,
+        "file_id": "74980c5a989c6057777b7e732ce570a8",
+        "language": "python",
+        "signature": "def combine(left, right):",
+        "role": "source",
+        "public_aliases": [],
+        "score": 0.02237,
+        "component_scores": {
+          "lexical": 2.5691705135647984,
+          "semantic": 0.5652042627334595,
+          "graph": 0,
+          "structural": 4,
+          "final": 0.10236696571217893
+        },
+        "retrieval_sources": [
+          "lexical",
+          "semantic"
+        ],
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "0eb1bc620d2f802845a525de",
+        "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+        "path": "python/api.py",
+        "name": "quote_request",
+        "qualified": "python.api.quote_request",
+        "kind": "function",
+        "start_line": 4,
+        "end_line": 6,
+        "source": "def quote_request(weight):\n    \"\"\"Delegate quote calculation to the pricing function.\"\"\"\n    return shipping_cost(weight)",
+        "docstring": "Delegate quote calculation to the pricing function.",
+        "parent_id": "766968630e3e0ce97dcb0757",
+        "file_id": "a9f50fb6157a9e214c82b43dfcbd30b3",
+        "language": "python",
+        "signature": "def quote_request(weight):",
+        "role": "source",
+        "public_aliases": [
+          "python.api.quote_request"
+        ],
+        "score": 0.03054,
+        "component_scores": {
+          "lexical": 5.9494378367751946,
+          "semantic": 0.8068161010742188,
+          "graph": 0,
+          "structural": 3,
+          "final": 0.09053613053613054
+        },
+        "retrieval_sources": [
+          "lexical",
+          "semantic"
+        ],
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "f0654bce5a21061e3e904011",
+        "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+        "path": "python/static_candidates.py",
+        "name": "unreachable_example",
+        "qualified": "python.static_candidates.unreachable_example",
+        "kind": "function",
+        "start_line": 9,
+        "end_line": 11,
+        "source": "def unreachable_example():\n    return 1\n    print(\"unreachable\")",
+        "docstring": "",
+        "parent_id": "02e393ce979137b27cad58e6",
+        "file_id": "74980c5a989c6057777b7e732ce570a8",
+        "language": "python",
+        "signature": "def unreachable_example():",
+        "role": "source",
+        "public_aliases": [
+          "python.static_candidates.unreachable_example"
+        ],
+        "score": 0.02003,
+        "component_scores": {
+          "lexical": 1.5067697295802585,
+          "semantic": 0.5567586421966553,
+          "graph": 0,
+          "structural": 3,
+          "final": 0.08003205128205128
+        },
+        "retrieval_sources": [
+          "lexical",
+          "semantic"
+        ],
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "355acbc0ebceaa0606a3d70a",
+        "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+        "path": "python/static_candidates.py",
+        "name": "combine",
+        "qualified": "python.static_candidates.combine",
+        "kind": "function",
+        "start_line": 3,
+        "end_line": 4,
+        "source": "def combine(left, right):\n    return left + right",
+        "docstring": "",
+        "parent_id": "02e393ce979137b27cad58e6",
+        "file_id": "74980c5a989c6057777b7e732ce570a8",
+        "language": "python",
+        "signature": "def combine(left, right):",
+        "role": "source",
+        "public_aliases": [
+          "python.static_candidates.combine"
+        ],
+        "score": 0.01996,
+        "component_scores": {
+          "lexical": 1.5067697295802585,
+          "semantic": 0.547835111618042,
+          "graph": 0,
+          "structural": 3,
+          "final": 0.07996027805362463
+        },
+        "retrieval_sources": [
+          "lexical",
+          "semantic"
+        ],
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      },
+      {
+        "id": "ebf5226128af07aa2bb99fb7",
+        "repo_id": "0888c31b0c0946ca8bab2f05ad91958d",
+        "path": "python/pricing.py",
+        "name": "raise ValueError(\"weight must be positive\")",
+        "qualified": "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")",
+        "kind": "exception_reference",
+        "start_line": 6,
+        "end_line": 6,
+        "source": "        raise ValueError(\"weight must be positive\")",
+        "docstring": "",
+        "parent_id": "85ba18bbd07b7bbd7d8ce4a7",
+        "file_id": "2a2a259506acf1f8eb57b0534e4171bc",
+        "language": "python",
+        "signature": "        raise ValueError(\"weight must be positive\")",
+        "role": "source",
+        "public_aliases": [
+          "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")"
+        ],
+        "score": 0.02813,
+        "component_scores": {
+          "lexical": 2.455692338019203,
+          "semantic": 0.8279863595962524,
+          "graph": 0,
+          "structural": 1,
+          "final": 0.048125
+        },
+        "retrieval_sources": [
+          "lexical",
+          "semantic"
+        ],
+        "reason": "symbol / text match",
+        "traversal": [],
+        "truncated": false
+      }
+    ],
+    "mode": "hybrid",
+    "semantic_used": true,
+    "generated": true,
+    "abstained": false,
+    "partial": false,
+    "aspect_statuses": [
+      {
+        "aspect_id": 1,
+        "question": "how does a shipping quote handle a nonpositive weight",
+        "status": "supported"
+      }
+    ],
+    "generation_context": [
+      {
+        "source_id": 8,
+        "id": "ebf5226128af07aa2bb99fb7",
+        "qualified": "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")",
+        "path": "python/pricing.py",
+        "source_line_numbers": [
+          6
+        ],
+        "source": "        raise ValueError(\"weight must be positive\")",
+        "truncated": false
+      },
+      {
+        "source_id": 1,
+        "id": "85ba18bbd07b7bbd7d8ce4a7",
+        "qualified": "python.pricing.shipping_cost",
+        "path": "python/pricing.py",
+        "source_line_numbers": [
+          3,
+          5,
+          6,
+          7
+        ],
+        "source": "def shipping_cost(weight):\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+        "truncated": true
+      },
+      {
+        "source_id": 2,
+        "id": "97d048b7cd4cc1bc091f4e85",
+        "qualified": "python.pricing",
+        "path": "python/pricing.py",
+        "source_line_numbers": [
+          2,
+          3,
+          5,
+          6,
+          7
+        ],
+        "source": "\ndef shipping_cost(weight):\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+        "truncated": true
+      },
+      {
+        "source_id": 3,
+        "id": "766968630e3e0ce97dcb0757",
+        "qualified": "python.api",
+        "path": "python/api.py",
+        "source_line_numbers": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "source": "from .pricing import shipping_cost\n\n\ndef quote_request(weight):\n    return shipping_cost(weight)",
+        "truncated": true
+      },
+      {
+        "source_id": 4,
+        "id": "02e393ce979137b27cad58e6",
+        "qualified": "python.static_candidates",
+        "path": "python/static_candidates.py",
+        "source_line_numbers": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "source": "\ndef combine(left, right):\n    return left + right\n\ncombine(1, 2, 3)\n\n\ndef unreachable_example():\n    return 1\n    print(\"unreachable\")",
+        "truncated": true
+      },
+      {
+        "source_id": 5,
+        "id": "0eb1bc620d2f802845a525de",
+        "qualified": "python.api.quote_request",
+        "path": "python/api.py",
+        "source_line_numbers": [
+          4,
+          6
+        ],
+        "source": "def quote_request(weight):\n    return shipping_cost(weight)",
+        "truncated": true
+      },
+      {
+        "source_id": 6,
+        "id": "f0654bce5a21061e3e904011",
+        "qualified": "python.static_candidates.unreachable_example",
+        "path": "python/static_candidates.py",
+        "source_line_numbers": [
+          9,
+          10,
+          11
+        ],
+        "source": "def unreachable_example():\n    return 1\n    print(\"unreachable\")",
+        "truncated": false
+      },
+      {
+        "source_id": 7,
+        "id": "355acbc0ebceaa0606a3d70a",
+        "qualified": "python.static_candidates.combine",
+        "path": "python/static_candidates.py",
+        "source_line_numbers": [
+          3,
+          4
+        ],
+        "source": "def combine(left, right):\n    return left + right",
+        "truncated": false
+      }
+    ],
+    "verification": "not_executed",
+    "citation_check": {
+      "invalid": [],
+      "has_citations": true,
+      "uncited_paragraphs": [],
+      "uncited_sentences": [],
+      "reference_section": false,
+      "entailment_checked": false,
+      "source_identity_checked": true
+    },
+    "warning": null,
+    "usage": {
+      "prompt_tokens": 1854,
+      "completion_tokens": 182,
+      "total_tokens": 2036
+    },
+    "generation_diagnostics": {
+      "attempt_count": 1,
+      "total_request_ms": 35526,
+      "attempts": [
+        {
+          "load_duration_ms": 9305,
+          "prompt_eval_duration_ms": 9850,
+          "eval_duration_ms": 6956,
+          "prompt_tokens": 1351,
+          "completion_tokens": 99,
+          "request_ms": 35526,
+          "estimated_prompt_tokens": 1742,
+          "context_window": 8192,
+          "entailment_checked": false,
+          "provider_calls": 2,
+          "usage": {
+            "prompt_tokens": 1854,
+            "completion_tokens": 182,
+            "total_tokens": 2036
+          },
+          "draft_claims": [
+            {
+              "text": "The shipping quote raises a ValueError if the weight is nonpositive.",
+              "aspect_id": 1,
+              "status": "supported",
+              "citations": [
+                {
+                  "source_id": 8,
+                  "start_line": 6,
+                  "end_line": 6
+                },
+                {
+                  "source_id": 1,
+                  "start_line": 5,
+                  "end_line": 6
+                }
+              ]
+            }
+          ],
+          "claim_audit": {
+            "status": "completed",
+            "decisions": [
+              {
+                "claim_index": 0,
+                "verdict": "supported",
+                "reason": "The cited source lines show that the shipping quote raises a ValueError if the weight is nonpositive. The code checks if the weight is less than or equal to zero and then raises the exception with the message 'weight must be positive'."
+              }
+            ],
+            "provider_calls": 1,
+            "elapsed_ms": 9390,
+            "model": "qwen2.5-coder:14b",
+            "factual_support_proven": false
+          },
+          "supporting_lines": [
+            {
+              "source_id": 8,
+              "path": "python/pricing.py",
+              "qualified": "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")",
+              "start_line": 6,
+              "end_line": 6,
+              "text": "        raise ValueError(\"weight must be positive\")"
+            },
+            {
+              "source_id": 1,
+              "path": "python/pricing.py",
+              "qualified": "python.pricing.shipping_cost",
+              "start_line": 5,
+              "end_line": 6,
+              "text": "    if weight <= 0:\n        raise ValueError(\"weight must be positive\")"
+            }
+          ],
+          "aspect_statuses": [
+            {
+              "aspect_id": 1,
+              "question": "how does a shipping quote handle a nonpositive weight",
+              "status": "supported"
+            }
+          ],
+          "claims": [
+            {
+              "text": "The shipping quote raises a ValueError if the weight is nonpositive.",
+              "aspect_id": 1,
+              "status": "supported",
+              "citations": [
+                {
+                  "source_id": 8,
+                  "start_line": 6,
+                  "end_line": 6
+                },
+                {
+                  "source_id": 1,
+                  "start_line": 5,
+                  "end_line": 6
+                }
+              ]
+            }
+          ],
+          "source_identity_checked": true,
+          "outcome": "accepted"
+        }
+      ],
+      "provider_calls": 2
+    },
+    "elapsed_ms": 35686,
+    "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+    "model": "qwen2.5-coder:14b",
+    "answer_prompt_version": "2026-10-03-aspects-cited-lines-audit-v2",
+    "retrieval_version": "2026-10-04-custom-modular-rag-v1",
+    "evidence_sufficiency": {
+      "supported_aspects": 1,
+      "requested_aspects": 1,
+      "all_aspects_supported": true,
+      "confidence": "model_supported",
+      "factual_correctness_proven": false
+    },
+    "id": "b31626b2810840d2a135e9af6a440ea4"
+  },
+  "response_seconds": 35.783,
+  "external_state": {
+    "answer": "The indexed source snapshot cannot establish that live, private, or future value. Check the running system, its configuration, or its logs for the actual result.",
+    "evidence": [],
+    "mode": "hybrid",
+    "semantic_used": false,
+    "generated": false,
+    "abstained": true,
+    "claims": [],
+    "confidence": "insufficient",
+    "missing_information": [
+      "Live/private/future state is outside the source snapshot."
+    ],
+    "related_symbols": [],
+    "verification": "not_executed",
+    "citation_check": {
+      "invalid": [],
+      "has_citations": false,
+      "uncited_paragraphs": [],
+      "uncited_sentences": [],
+      "reference_section": false,
+      "entailment_checked": false
+    },
+    "warning": null,
+    "usage": {},
+    "elapsed_ms": 0,
+    "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+    "model": "qwen2.5-coder:14b",
+    "answer_prompt_version": "2026-10-03-aspects-cited-lines-audit-v2",
+    "retrieval_version": "2026-10-04-custom-modular-rag-v1",
+    "id": "da454fc6a7404a9c8406fcbd1ee36c63"
+  },
+  "repository_count": 41
+}

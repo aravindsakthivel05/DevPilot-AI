@@ -1,0 +1,242 @@
+{
+  "sqlalchemy:lib/sqlalchemy/orm/session.py:4504": {
+    "qualified": "lib.sqlalchemy.orm.session.Session.flush",
+    "path": "lib/sqlalchemy/orm/session.py",
+    "start_line": 4504,
+    "end_line": 4538,
+    "commit": "a9956b1ab72561c4642ff9dfdf9ae52f3eb5d307",
+    "source_url": "https://github.com/sqlalchemy/sqlalchemy/blob/a9956b1ab72561c4642ff9dfdf9ae52f3eb5d307/lib/sqlalchemy/orm/session.py#L4504",
+    "file_sha256": "ebe9dec6d3d6a958f003b856efda28ce6ea95db1875c5ec9b371cb7c9720c944",
+    "numbered_source": "4504:     def flush(self, objects: Optional[Sequence[Any]] = None) -> None:\n4505:         \"\"\"Flush all the object changes to the database.\n4506: \n4507:         Writes out all pending object creations, deletions and modifications\n4508:         to the database as INSERTs, DELETEs, UPDATEs, etc.  Operations are\n4509:         automatically ordered by the Session's unit of work dependency\n4510:         solver.\n4511: \n4512:         Database operations will be issued in the current transactional\n4513:         context and do not affect the state of the transaction, unless an\n4514:         error occurs, in which case the entire transaction is rolled back.\n4515:         You may flush() as often as you like within a transaction to move\n4516:         changes from Python to the database's transaction buffer.\n4517: \n4518:         :param objects: Optional; restricts the flush operation to operate\n4519:           only on elements that are in the given collection.\n4520: \n4521:           This feature is for an extremely narrow set of use cases where\n4522:           particular objects may need to be operated upon before the\n4523:           full flush() occurs.  It is not intended for general use.\n4524: \n4525:           .. deprecated:: 2.1\n4526: \n4527:         \"\"\"\n4528: \n4529:         if self._flushing:\n4530:             raise sa_exc.InvalidRequestError(\"Session is already flushing\")\n4531: \n4532:         if self._is_clean():\n4533:             return\n4534:         try:\n4535:             self._flushing = True\n4536:             self._flush(objects)\n4537:         finally:\n4538:             self._flushing = False"
+  },
+  "sqlalchemy:lib/sqlalchemy/orm/session.py:3179": {
+    "qualified": "lib.sqlalchemy.orm.session.Session._autoflush",
+    "path": "lib/sqlalchemy/orm/session.py",
+    "start_line": 3179,
+    "end_line": 3200,
+    "commit": "a9956b1ab72561c4642ff9dfdf9ae52f3eb5d307",
+    "source_url": "https://github.com/sqlalchemy/sqlalchemy/blob/a9956b1ab72561c4642ff9dfdf9ae52f3eb5d307/lib/sqlalchemy/orm/session.py#L3179",
+    "file_sha256": "ebe9dec6d3d6a958f003b856efda28ce6ea95db1875c5ec9b371cb7c9720c944",
+    "numbered_source": "3179:     @util.langhelpers.tag_method_for_warnings(\n3180:         \"This warning originated from the Session 'autoflush' process, \"\n3181:         \"which was invoked automatically in response to a user-initiated \"\n3182:         \"operation. Consider using ``no_autoflush`` context manager if this \"\n3183:         \"warning happened while initializing objects.\",\n3184:         sa_exc.SAWarning,\n3185:     )\n3186:     def _autoflush(self) -> None:\n3187:         if self.autoflush and not self._flushing:\n3188:             try:\n3189:                 self.flush()\n3190:             except sa_exc.StatementError as e:\n3191:                 # note we are reraising StatementError as opposed to\n3192:                 # raising FlushError with \"chaining\" to remain compatible\n3193:                 # with code that catches StatementError, IntegrityError,\n3194:                 # etc.\n3195:                 e.add_detail(\n3196:                     \"raised as a result of Query-invoked autoflush; \"\n3197:                     \"consider using a session.no_autoflush block if this \"\n3198:                     \"flush is occurring prematurely\"\n3199:                 )\n3200:                 raise e.with_traceback(sys.exc_info()[2])"
+  },
+  "sqlalchemy:lib/sqlalchemy/orm/session.py:1323": {
+    "qualified": "lib.sqlalchemy.orm.session.SessionTransaction.commit",
+    "path": "lib/sqlalchemy/orm/session.py",
+    "start_line": 1323,
+    "end_line": 1348,
+    "commit": "a9956b1ab72561c4642ff9dfdf9ae52f3eb5d307",
+    "source_url": "https://github.com/sqlalchemy/sqlalchemy/blob/a9956b1ab72561c4642ff9dfdf9ae52f3eb5d307/lib/sqlalchemy/orm/session.py#L1323",
+    "file_sha256": "ebe9dec6d3d6a958f003b856efda28ce6ea95db1875c5ec9b371cb7c9720c944",
+    "numbered_source": "1323:     @_StateChange.declare_states(\n1324:         (SessionTransactionState.ACTIVE, SessionTransactionState.PREPARED),\n1325:         SessionTransactionState.CLOSED,\n1326:     )\n1327:     def commit(self, _to_root: bool = False) -> None:\n1328:         if self._state is not SessionTransactionState.PREPARED:\n1329:             with self._expect_state(SessionTransactionState.PREPARED):\n1330:                 self._prepare_impl()\n1331: \n1332:         if self._parent is None or self.nested:\n1333:             for conn, trans, should_commit, autoclose in set(\n1334:                 self._connections.values()\n1335:             ):\n1336:                 if should_commit:\n1337:                     trans.commit()\n1338: \n1339:             self._state = SessionTransactionState.COMMITTED\n1340:             self.session.dispatch.after_commit(self.session)\n1341: \n1342:             self._remove_snapshot()\n1343: \n1344:         with self._expect_state(SessionTransactionState.CLOSED):\n1345:             self.close()\n1346: \n1347:         if _to_root and self._parent:\n1348:             self._parent.commit(_to_root=True)"
+  },
+  "sqlalchemy:lib/sqlalchemy/orm/session.py:1287": {
+    "qualified": "lib.sqlalchemy.orm.session.SessionTransaction._prepare_impl",
+    "path": "lib/sqlalchemy/orm/session.py",
+    "start_line": 1287,
+    "end_line": 1321,
+    "commit": "a9956b1ab72561c4642ff9dfdf9ae52f3eb5d307",
+    "source_url": "https://github.com/sqlalchemy/sqlalchemy/blob/a9956b1ab72561c4642ff9dfdf9ae52f3eb5d307/lib/sqlalchemy/orm/session.py#L1287",
+    "file_sha256": "ebe9dec6d3d6a958f003b856efda28ce6ea95db1875c5ec9b371cb7c9720c944",
+    "numbered_source": "1287:     @_StateChange.declare_states(\n1288:         (SessionTransactionState.ACTIVE,), SessionTransactionState.PREPARED\n1289:     )\n1290:     def _prepare_impl(self) -> None:\n1291:         if self._parent is None or self.nested:\n1292:             self.session.dispatch.before_commit(self.session)\n1293: \n1294:         stx = self.session._transaction\n1295:         assert stx is not None\n1296:         if stx is not self:\n1297:             for subtransaction in stx._iterate_self_and_parents(upto=self):\n1298:                 subtransaction.commit()\n1299: \n1300:         if not self.session._flushing:\n1301:             for _flush_guard in range(100):\n1302:                 if self.session._is_clean():\n1303:                     break\n1304:                 self.session.flush()\n1305:             else:\n1306:                 raise exc.FlushError(\n1307:                     \"Over 100 subsequent flushes have occurred within \"\n1308:                     \"session.commit() - is an after_flush() hook \"\n1309:                     \"creating new objects?\"\n1310:                 )\n1311: \n1312:         if self._parent is None and self.session.twophase:\n1313:             try:\n1314:                 for t in set(self._connections.values()):\n1315:                     cast(\"TwoPhaseTransaction\", t[1]).prepare()\n1316:             except:\n1317:                 with util.safe_reraise():\n1318:                     with self._expect_state(SessionTransactionState.CLOSED):\n1319:                         self.rollback()\n1320: \n1321:         self._state = SessionTransactionState.PREPARED"
+  },
+  "celery:celery/app/task.py:534": {
+    "qualified": "celery.app.task.Task.delay",
+    "path": "celery/app/task.py",
+    "start_line": 534,
+    "end_line": 545,
+    "commit": "3cfe8de4352e665882f2c4e39cded26fe6c65871",
+    "source_url": "https://github.com/celery/celery/blob/3cfe8de4352e665882f2c4e39cded26fe6c65871/celery/app/task.py#L534",
+    "file_sha256": "0816e65771ed59f59196ce22b5f03ffd1331e6b6f3505934bbf94b4d727135c3",
+    "numbered_source": "534:     def delay(self, *args, **kwargs):\n535:         \"\"\"Star argument version of :meth:`apply_async`.\n536: \n537:         Does not support the extra options enabled by :meth:`apply_async`.\n538: \n539:         Arguments:\n540:             *args (Any): Positional arguments passed on to the task.\n541:             **kwargs (Any): Keyword arguments passed on to the task.\n542:         Returns:\n543:             celery.result.AsyncResult: Future promise.\n544:         \"\"\"\n545:         return self.apply_async(args, kwargs)"
+  },
+  "celery:celery/app/task.py:742": {
+    "qualified": "celery.app.task.Task.signature_from_request",
+    "path": "celery/app/task.py",
+    "start_line": 742,
+    "end_line": 764,
+    "commit": "3cfe8de4352e665882f2c4e39cded26fe6c65871",
+    "source_url": "https://github.com/celery/celery/blob/3cfe8de4352e665882f2c4e39cded26fe6c65871/celery/app/task.py#L742",
+    "file_sha256": "0816e65771ed59f59196ce22b5f03ffd1331e6b6f3505934bbf94b4d727135c3",
+    "numbered_source": "742:     def signature_from_request(self, request=None, args=None, kwargs=None,\n743:                                queue=None, **extra_options):\n744:         request = self.request if request is None else request\n745:         args = request.args if args is None else args\n746:         kwargs = request.kwargs if kwargs is None else kwargs\n747:         options = {**request.as_execution_options(), **extra_options}\n748:         delivery_info = request.delivery_info or {}\n749:         priority = delivery_info.get('priority')\n750:         if priority is not None:\n751:             options['priority'] = priority\n752:         if queue:\n753:             options['queue'] = queue\n754:         else:\n755:             exchange = delivery_info.get('exchange')\n756:             routing_key = delivery_info.get('routing_key')\n757:             if exchange == '' and routing_key:\n758:                 # sent to anon-exchange\n759:                 options['queue'] = routing_key\n760:             else:\n761:                 options.update(delivery_info)\n762:         return self.signature(\n763:             args, kwargs, options, type=self, **extra_options\n764:         )"
+  },
+  "celery:celery/app/task.py:767": {
+    "qualified": "celery.app.task.Task.retry",
+    "path": "celery/app/task.py",
+    "start_line": 767,
+    "end_line": 878,
+    "commit": "3cfe8de4352e665882f2c4e39cded26fe6c65871",
+    "source_url": "https://github.com/celery/celery/blob/3cfe8de4352e665882f2c4e39cded26fe6c65871/celery/app/task.py#L767",
+    "file_sha256": "0816e65771ed59f59196ce22b5f03ffd1331e6b6f3505934bbf94b4d727135c3",
+    "numbered_source": "767:     def retry(self, args=None, kwargs=None, exc=None, throw=True,\n768:               eta=None, countdown=None, max_retries=None, **options):\n769:         \"\"\"Retry the task, adding it to the back of the queue.\n770: \n771:         Example:\n772:             >>> from imaginary_twitter_lib import Twitter\n773:             >>> from proj.celery import app\n774: \n775:             >>> @app.task(bind=True)\n776:             ... def tweet(self, auth, message):\n777:             ...     twitter = Twitter(oauth=auth)\n778:             ...     try:\n779:             ...         twitter.post_status_update(message)\n780:             ...     except twitter.FailWhale as exc:\n781:             ...         # Retry in 5 minutes.\n782:             ...         raise self.retry(countdown=60 * 5, exc=exc)\n783: \n784:         Note:\n785:             Although the task will never return above as `retry` raises an\n786:             exception to notify the worker, we use `raise` in front of the\n787:             retry to convey that the rest of the block won't be executed.\n788: \n789:         Arguments:\n790:             args (Tuple): Positional arguments to retry with.\n791:             kwargs (Dict): Keyword arguments to retry with.\n792:             exc (Exception): Custom exception to report when the max retry\n793:                 limit has been exceeded (default:\n794:                 :exc:`~@MaxRetriesExceededError`).\n795: \n796:                 If this argument is set and retry is called while\n797:                 an exception was raised (``sys.exc_info()`` is set)\n798:                 it will attempt to re-raise the current exception.\n799: \n800:                 If no exception was raised it will raise the ``exc``\n801:                 argument provided.\n802:             countdown (float): Time in seconds to delay the retry for.\n803:             eta (~datetime.datetime): Explicit time and date to run the\n804:                 retry at.\n805:             max_retries (int): If set, overrides the default retry limit for\n806:                 this execution.  Changes to this parameter don't propagate to\n807:                 subsequent task retry attempts.  A value of :const:`None`,\n808:                 means \"use the default\", so if you want infinite retries you'd\n809:                 have to set the :attr:`max_retries` attribute of the task to\n810:                 :const:`None` first.\n811:             time_limit (int): If set, overrides the default time limit.\n812:             soft_time_limit (int): If set, overrides the default soft\n813:                 time limit.\n814:             throw (bool): If this is :const:`False`, don't raise the\n815:                 :exc:`~@Retry` exception, that tells the worker to mark\n816:                 the task as being retried.  Note that this means the task\n817:                 will be marked as failed if the task raises an exception,\n818:                 or successful if it returns after the retry call.\n819:             **options (Any): Extra options to pass on to :meth:`apply_async`.\n820: \n821:         Raises:\n822: \n823:             celery.exceptions.Retry:\n824:                 To tell the worker that the task has been re-sent for retry.\n825:                 This always happens, unless the `throw` keyword argument\n826:                 has been explicitly set to :const:`False`, and is considered\n827:                 normal operation.\n828:         \"\"\"\n829:         request = self.request\n830:         retries = request.retries + 1\n831:         if max_retries is not None:\n832:             self.override_max_retries = max_retries\n833:         max_retries = self.max_retries if max_retries is None else max_retries\n834: \n835:         # Not in worker or emulated by (apply/always_eager),\n836:         # so just raise the original exception.\n837:         if request.called_directly:\n838:             # raises orig stack if PyErr_Occurred,\n839:             # and augments with exc' if that argument is defined.\n840:             raise_with_context(exc or Retry('Task can be retried', None))\n841: \n842:         if not eta and countdown is None:\n843:             countdown = self.default_retry_delay\n844: \n845:         is_eager = request.is_eager\n846:         S = self.signature_from_request(\n847:             request, args, kwargs,\n848:             countdown=countdown, eta=eta, retries=retries,\n849:             **options\n850:         )\n851: \n852:         if max_retries is not None and retries > max_retries:\n853:             if exc:\n854:                 # On Py3: will augment any current exception with\n855:                 # the exc' argument provided (raise exc from orig)\n856:                 raise_with_context(exc)\n857:             raise self.MaxRetriesExceededError(\n858:                 \"Can't retry {}[{}] args:{} kwargs:{}\".format(\n859:                     self.name, request.id, S.args, S.kwargs\n860:                 ), task_args=S.args, task_kwargs=S.kwargs\n861:             )\n862: \n863:         ret = Retry(exc=exc, when=eta or countdown, is_eager=is_eager, sig=S)\n864: \n865:         if is_eager:\n866:             # if task was executed eagerly using apply(),\n867:             # then the retry must also be executed eagerly in apply method\n868:             if throw:\n869:                 raise ret\n870:             return ret\n871: \n872:         try:\n873:             S.apply_async()\n874:         except Exception as exc:\n875:             raise Reject(exc, requeue=False)\n876:         if throw:\n877:             raise ret\n878:         return ret"
+  },
+  "scrapy:scrapy/core/scheduler.py:392": {
+    "qualified": "scrapy.core.scheduler.Scheduler.next_request",
+    "path": "scrapy/core/scheduler.py",
+    "start_line": 392,
+    "end_line": 411,
+    "commit": "9558c60ed5174ac609feecca0cc3fdd8cdfcab76",
+    "source_url": "https://github.com/scrapy/scrapy/blob/9558c60ed5174ac609feecca0cc3fdd8cdfcab76/scrapy/core/scheduler.py#L392",
+    "file_sha256": "66428bf9351932e53400405d8085753997f7f64412b1111e9091f461c8264522",
+    "numbered_source": "392:     def next_request(self) -> Request | None:\n393:         \"\"\"\n394:         Return a :class:`~scrapy.Request` object from the memory queue,\n395:         falling back to the disk queue if the memory queue is empty.\n396:         Return ``None`` if there are no more enqueued requests.\n397: \n398:         Increment the appropriate stats, such as: :stat:`scheduler/dequeued`,\n399:         :stat:`scheduler/dequeued/disk`, :stat:`scheduler/dequeued/memory`.\n400:         \"\"\"\n401:         request: Request | None = self.mqs.pop()\n402:         assert self.stats is not None\n403:         if request is not None:\n404:             self.stats.inc_value(\"scheduler/dequeued/memory\")\n405:         else:\n406:             request = self._dqpop()\n407:             if request is not None:\n408:                 self.stats.inc_value(\"scheduler/dequeued/disk\")\n409:         if request is not None:\n410:             self.stats.inc_value(\"scheduler/dequeued\")\n411:         return request"
+  },
+  "scrapy:scrapy/dupefilters.py:140": {
+    "qualified": "scrapy.dupefilters.RFPDupeFilter.request_seen",
+    "path": "scrapy/dupefilters.py",
+    "start_line": 140,
+    "end_line": 147,
+    "commit": "9558c60ed5174ac609feecca0cc3fdd8cdfcab76",
+    "source_url": "https://github.com/scrapy/scrapy/blob/9558c60ed5174ac609feecca0cc3fdd8cdfcab76/scrapy/dupefilters.py#L140",
+    "file_sha256": "3a3e045d0e3115e3de5816915731ba4ea2f2c1b4356013a77778cf97101d69d4",
+    "numbered_source": "140:     def request_seen(self, request: Request) -> bool:\n141:         fp = self._fingerprint(request)\n142:         if fp in self._fingerprints:\n143:             return True\n144:         self._fingerprints.add(fp)\n145:         if self.file:\n146:             self.file.write(len(fp).to_bytes(_SIZE_BYTES, \"big\") + fp)\n147:         return False"
+  },
+  "scrapy:scrapy/dupefilters.py:149": {
+    "qualified": "scrapy.dupefilters.RFPDupeFilter._fingerprint",
+    "path": "scrapy/dupefilters.py",
+    "start_line": 149,
+    "end_line": 152,
+    "commit": "9558c60ed5174ac609feecca0cc3fdd8cdfcab76",
+    "source_url": "https://github.com/scrapy/scrapy/blob/9558c60ed5174ac609feecca0cc3fdd8cdfcab76/scrapy/dupefilters.py#L149",
+    "file_sha256": "3a3e045d0e3115e3de5816915731ba4ea2f2c1b4356013a77778cf97101d69d4",
+    "numbered_source": "149:     def _fingerprint(self, request: Request) -> bytes:\n150:         if self._legacy_fingerprint:\n151:             return bytes.fromhex(self.request_fingerprint(request))\n152:         return self.fingerprinter.fingerprint(request)"
+  },
+  "scrapy:scrapy/core/scheduler.py:369": {
+    "qualified": "scrapy.core.scheduler.Scheduler.enqueue_request",
+    "path": "scrapy/core/scheduler.py",
+    "start_line": 369,
+    "end_line": 390,
+    "commit": "9558c60ed5174ac609feecca0cc3fdd8cdfcab76",
+    "source_url": "https://github.com/scrapy/scrapy/blob/9558c60ed5174ac609feecca0cc3fdd8cdfcab76/scrapy/core/scheduler.py#L369",
+    "file_sha256": "66428bf9351932e53400405d8085753997f7f64412b1111e9091f461c8264522",
+    "numbered_source": "369:     def enqueue_request(self, request: Request) -> bool:\n370:         \"\"\"\n371:         Unless the received request is filtered out by the Dupefilter, attempt to push\n372:         it into the disk queue, falling back to pushing it into the memory queue.\n373: \n374:         Increment the appropriate stats, such as: :stat:`scheduler/enqueued`,\n375:         :stat:`scheduler/enqueued/disk`, :stat:`scheduler/enqueued/memory`.\n376: \n377:         Return ``True`` if the request was stored successfully, ``False`` otherwise.\n378:         \"\"\"\n379:         if not request.dont_filter and self.df.request_seen(request):\n380:             self.df.log(request, self.spider)\n381:             return False\n382:         dqok = self._dqpush(request)\n383:         assert self.stats is not None\n384:         if dqok:\n385:             self.stats.inc_value(\"scheduler/enqueued/disk\")\n386:         else:\n387:             self._mqpush(request)\n388:             self.stats.inc_value(\"scheduler/enqueued/memory\")\n389:         self.stats.inc_value(\"scheduler/enqueued\")\n390:         return True"
+  },
+  "mybatis:src/main/java/org/apache/ibatis/reflection/ParamNameResolver.java:157": {
+    "qualified": "org.apache.ibatis.reflection.ParamNameResolver.getNamedParams",
+    "path": "src/main/java/org/apache/ibatis/reflection/ParamNameResolver.java",
+    "start_line": 157,
+    "end_line": 180,
+    "commit": "34147d0bd2f5ed0016ef367c92b25e174149326b",
+    "source_url": "https://github.com/mybatis/mybatis-3/blob/34147d0bd2f5ed0016ef367c92b25e174149326b/src/main/java/org/apache/ibatis/reflection/ParamNameResolver.java#L157",
+    "file_sha256": "692f37ad7243d2bacc992bb692631d4780704d01e0655a77ca3d22d08a659dd7",
+    "numbered_source": "157:   public Object getNamedParams(Object[] args) {\n158:     final int paramCount = names.size();\n159:     if (args == null || paramCount == 0) {\n160:       return null;\n161:     }\n162:     if (!hasParamAnnotation && paramCount == 1) {\n163:       Object value = args[names.firstKey()];\n164:       return wrapToMapIfCollection(value, useActualParamName ? names.get(names.firstKey()) : null);\n165:     } else {\n166:       final Map<String, Object> param = new ParamMap<>();\n167:       int i = 0;\n168:       for (Map.Entry<Integer, String> entry : names.entrySet()) {\n169:         param.put(entry.getValue(), args[entry.getKey()]);\n170:         // add generic param names (param1, param2, ...)\n171:         final String genericParamName = i < 10 ? GENERIC_NAME_CACHE[i] : GENERIC_NAME_PREFIX + (i + 1);\n172:         // ensure not to overwrite parameter named with @Param\n173:         if (!names.containsValue(genericParamName)) {\n174:           param.put(genericParamName, args[entry.getKey()]);\n175:         }\n176:         i++;\n177:       }\n178:       return param;\n179:     }\n180:   }"
+  },
+  "mybatis:src/main/java/org/apache/ibatis/binding/MapperMethod.java:140": {
+    "qualified": "org.apache.ibatis.binding.MapperMethod.executeForMany",
+    "path": "src/main/java/org/apache/ibatis/binding/MapperMethod.java",
+    "start_line": 140,
+    "end_line": 157,
+    "commit": "34147d0bd2f5ed0016ef367c92b25e174149326b",
+    "source_url": "https://github.com/mybatis/mybatis-3/blob/34147d0bd2f5ed0016ef367c92b25e174149326b/src/main/java/org/apache/ibatis/binding/MapperMethod.java#L140",
+    "file_sha256": "1b7b774fd8cef122e2b90b921c59e1b8ef4c09c4fffc9b2e4b4b39c2d6fbf841",
+    "numbered_source": "140:   private <E> Object executeForMany(SqlSession sqlSession, Object[] args) {\n141:     List<E> result;\n142:     Object param = method.convertArgsToSqlCommandParam(args);\n143:     if (method.hasRowBounds()) {\n144:       RowBounds rowBounds = method.extractRowBounds(args);\n145:       result = sqlSession.selectList(command.getName(), param, rowBounds);\n146:     } else {\n147:       result = sqlSession.selectList(command.getName(), param);\n148:     }\n149:     // issue #510 Collections & arrays support\n150:     if (!method.getReturnType().isAssignableFrom(result.getClass())) {\n151:       if (method.getReturnType().isArray()) {\n152:         return convertToArray(result);\n153:       }\n154:       return convertToDeclaredCollection(sqlSession.getConfiguration(), result);\n155:     }\n156:     return result;\n157:   }"
+  },
+  "mybatis:src/main/java/org/apache/ibatis/executor/CachingExecutor.java:93": {
+    "qualified": "org.apache.ibatis.executor.CachingExecutor.query",
+    "path": "src/main/java/org/apache/ibatis/executor/CachingExecutor.java",
+    "start_line": 93,
+    "end_line": 111,
+    "commit": "34147d0bd2f5ed0016ef367c92b25e174149326b",
+    "source_url": "https://github.com/mybatis/mybatis-3/blob/34147d0bd2f5ed0016ef367c92b25e174149326b/src/main/java/org/apache/ibatis/executor/CachingExecutor.java#L93",
+    "file_sha256": "5fb301c41266b24bac77412acb0a87393331a83879ac192bf769c3186bffc5be",
+    "numbered_source": "93:   @Override\n94:   public <E> List<E> query(MappedStatement ms, Object parameterObject, RowBounds rowBounds, ResultHandler resultHandler,\n95:       CacheKey key, BoundSql boundSql) throws SQLException {\n96:     Cache cache = ms.getCache();\n97:     if (cache != null) {\n98:       flushCacheIfRequired(ms);\n99:       if (ms.isUseCache() && resultHandler == null) {\n100:         ensureNoOutParams(ms, boundSql);\n101:         @SuppressWarnings(\"unchecked\")\n102:         List<E> list = (List<E>) tcm.getObject(cache, key);\n103:         if (list == null) {\n104:           list = delegate.query(ms, parameterObject, rowBounds, resultHandler, key, boundSql);\n105:           tcm.putObject(cache, key, list); // issue #578 and #116\n106:         }\n107:         return list;\n108:       }\n109:     }\n110:     return delegate.query(ms, parameterObject, rowBounds, resultHandler, key, boundSql);\n111:   }"
+  },
+  "mybatis:src/main/java/org/apache/ibatis/executor/CachingExecutor.java:118": {
+    "qualified": "org.apache.ibatis.executor.CachingExecutor.commit",
+    "path": "src/main/java/org/apache/ibatis/executor/CachingExecutor.java",
+    "start_line": 118,
+    "end_line": 122,
+    "commit": "34147d0bd2f5ed0016ef367c92b25e174149326b",
+    "source_url": "https://github.com/mybatis/mybatis-3/blob/34147d0bd2f5ed0016ef367c92b25e174149326b/src/main/java/org/apache/ibatis/executor/CachingExecutor.java#L118",
+    "file_sha256": "5fb301c41266b24bac77412acb0a87393331a83879ac192bf769c3186bffc5be",
+    "numbered_source": "118:   @Override\n119:   public void commit(boolean required) throws SQLException {\n120:     delegate.commit(required);\n121:     tcm.commit();\n122:   }"
+  },
+  "mybatis:src/main/java/org/apache/ibatis/executor/CachingExecutor.java:124": {
+    "qualified": "org.apache.ibatis.executor.CachingExecutor.rollback",
+    "path": "src/main/java/org/apache/ibatis/executor/CachingExecutor.java",
+    "start_line": 124,
+    "end_line": 133,
+    "commit": "34147d0bd2f5ed0016ef367c92b25e174149326b",
+    "source_url": "https://github.com/mybatis/mybatis-3/blob/34147d0bd2f5ed0016ef367c92b25e174149326b/src/main/java/org/apache/ibatis/executor/CachingExecutor.java#L124",
+    "file_sha256": "5fb301c41266b24bac77412acb0a87393331a83879ac192bf769c3186bffc5be",
+    "numbered_source": "124:   @Override\n125:   public void rollback(boolean required) throws SQLException {\n126:     try {\n127:       delegate.rollback(required);\n128:     } finally {\n129:       if (required) {\n130:         tcm.rollback();\n131:       }\n132:     }\n133:   }"
+  },
+  "resilience4j:resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java:609": {
+    "qualified": "io.github.resilience4j.circuitbreaker.internal.CircuitBreakerStateMachine.ClosedState.tryAcquirePermission",
+    "path": "resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java",
+    "start_line": 609,
+    "end_line": 612,
+    "commit": "7e3ab5252ed380b596e25240f19376a4435570b8",
+    "source_url": "https://github.com/resilience4j/resilience4j/blob/7e3ab5252ed380b596e25240f19376a4435570b8/resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java#L609",
+    "file_sha256": "00984d1771d03b47556f927f3ab96c446edd97cc56dfa6e850ee1ea4ffee687f",
+    "numbered_source": "609:         @Override\n610:         public boolean tryAcquirePermission() {\n611:             return isClosed.get();\n612:         }"
+  },
+  "resilience4j:resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java:194": {
+    "qualified": "io.github.resilience4j.circuitbreaker.internal.CircuitBreakerStateMachine.onError",
+    "path": "resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java",
+    "start_line": 194,
+    "end_line": 204,
+    "commit": "7e3ab5252ed380b596e25240f19376a4435570b8",
+    "source_url": "https://github.com/resilience4j/resilience4j/blob/7e3ab5252ed380b596e25240f19376a4435570b8/resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java#L194",
+    "file_sha256": "00984d1771d03b47556f927f3ab96c446edd97cc56dfa6e850ee1ea4ffee687f",
+    "numbered_source": "194:     @Override\n195:     public void onError(long duration, TimeUnit durationUnit, Throwable throwable) {\n196:         // Handle the case if the completable future throws a CompletionException wrapping the original exception\n197:         // where original exception is the one to retry not the CompletionException.\n198:         if (throwable instanceof CompletionException || throwable instanceof ExecutionException) {\n199:             Throwable cause = throwable.getCause();\n200:             handleThrowable(duration, durationUnit, cause);\n201:         } else {\n202:             handleThrowable(duration, durationUnit, throwable);\n203:         }\n204:     }"
+  },
+  "resilience4j:resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java:206": {
+    "qualified": "io.github.resilience4j.circuitbreaker.internal.CircuitBreakerStateMachine.handleThrowable",
+    "path": "resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java",
+    "start_line": 206,
+    "end_line": 223,
+    "commit": "7e3ab5252ed380b596e25240f19376a4435570b8",
+    "source_url": "https://github.com/resilience4j/resilience4j/blob/7e3ab5252ed380b596e25240f19376a4435570b8/resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java#L206",
+    "file_sha256": "00984d1771d03b47556f927f3ab96c446edd97cc56dfa6e850ee1ea4ffee687f",
+    "numbered_source": "206:     private void handleThrowable(long duration, TimeUnit durationUnit, Throwable throwable) {\n207:         if (evaluatePredicate(circuitBreakerConfig.getIgnoreExceptionPredicate(), throwable)) {\n208:             LOG.debug(\"CircuitBreaker '{}' ignored an exception:\", name, throwable);\n209:             releasePermission();\n210:             publishCircuitIgnoredErrorEvent(name, duration, durationUnit, throwable);\n211:             return;\n212:         }\n213:         if (evaluatePredicate(circuitBreakerConfig.getRecordExceptionPredicate(), throwable)) {\n214:             LOG.debug(\"CircuitBreaker '{}' recorded an exception as failure:\", name, throwable);\n215:             publishCircuitErrorEvent(name, duration, durationUnit, throwable);\n216:             stateReference.get().onError(duration, durationUnit, throwable);\n217:         } else {\n218:             LOG.debug(\"CircuitBreaker '{}' recorded an exception as success:\", name, throwable);\n219:             publishSuccessEvent(duration, durationUnit);\n220:             stateReference.get().onSuccess(duration, durationUnit);\n221:         }\n222:         handlePossibleTransition(Either.right(throwable));\n223:     }"
+  },
+  "resilience4j:resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java:1116": {
+    "qualified": "io.github.resilience4j.circuitbreaker.internal.CircuitBreakerStateMachine.HalfOpenState.tryAcquirePermission",
+    "path": "resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java",
+    "start_line": 1116,
+    "end_line": 1124,
+    "commit": "7e3ab5252ed380b596e25240f19376a4435570b8",
+    "source_url": "https://github.com/resilience4j/resilience4j/blob/7e3ab5252ed380b596e25240f19376a4435570b8/resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java#L1116",
+    "file_sha256": "00984d1771d03b47556f927f3ab96c446edd97cc56dfa6e850ee1ea4ffee687f",
+    "numbered_source": "1116:         @Override\n1117:         public boolean tryAcquirePermission() {\n1118:             if (permittedNumberOfCalls.getAndUpdate(current -> current == 0 ? current : --current)\n1119:                 > 0) {\n1120:                 return true;\n1121:             }\n1122:             circuitBreakerMetrics.onCallNotPermitted();\n1123:             return false;\n1124:         }"
+  },
+  "resilience4j:resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java:1155": {
+    "qualified": "io.github.resilience4j.circuitbreaker.internal.CircuitBreakerStateMachine.HalfOpenState.releasePermission",
+    "path": "resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java",
+    "start_line": 1155,
+    "end_line": 1158,
+    "commit": "7e3ab5252ed380b596e25240f19376a4435570b8",
+    "source_url": "https://github.com/resilience4j/resilience4j/blob/7e3ab5252ed380b596e25240f19376a4435570b8/resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java#L1155",
+    "file_sha256": "00984d1771d03b47556f927f3ab96c446edd97cc56dfa6e850ee1ea4ffee687f",
+    "numbered_source": "1155:         @Override\n1156:         public void releasePermission() {\n1157:             permittedNumberOfCalls.incrementAndGet();\n1158:         }"
+  },
+  "resilience4j:resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java:1160": {
+    "qualified": "io.github.resilience4j.circuitbreaker.internal.CircuitBreakerStateMachine.HalfOpenState.onError",
+    "path": "resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java",
+    "start_line": 1160,
+    "end_line": 1164,
+    "commit": "7e3ab5252ed380b596e25240f19376a4435570b8",
+    "source_url": "https://github.com/resilience4j/resilience4j/blob/7e3ab5252ed380b596e25240f19376a4435570b8/resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java#L1160",
+    "file_sha256": "00984d1771d03b47556f927f3ab96c446edd97cc56dfa6e850ee1ea4ffee687f",
+    "numbered_source": "1160:         @Override\n1161:         public void onError(long duration, TimeUnit durationUnit, Throwable throwable) {\n1162:             // CircuitBreakerMetrics is thread-safe\n1163:             checkIfThresholdsExceeded(circuitBreakerMetrics.onError(duration, durationUnit));\n1164:         }"
+  },
+  "resilience4j:resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java:1166": {
+    "qualified": "io.github.resilience4j.circuitbreaker.internal.CircuitBreakerStateMachine.HalfOpenState.onSuccess",
+    "path": "resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java",
+    "start_line": 1166,
+    "end_line": 1170,
+    "commit": "7e3ab5252ed380b596e25240f19376a4435570b8",
+    "source_url": "https://github.com/resilience4j/resilience4j/blob/7e3ab5252ed380b596e25240f19376a4435570b8/resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java#L1166",
+    "file_sha256": "00984d1771d03b47556f927f3ab96c446edd97cc56dfa6e850ee1ea4ffee687f",
+    "numbered_source": "1166:         @Override\n1167:         public void onSuccess(long duration, TimeUnit durationUnit) {\n1168:             // CircuitBreakerMetrics is thread-safe\n1169:             checkIfThresholdsExceeded(circuitBreakerMetrics.onSuccess(duration, durationUnit));\n1170:         }"
+  },
+  "resilience4j:resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java:1188": {
+    "qualified": "io.github.resilience4j.circuitbreaker.internal.CircuitBreakerStateMachine.HalfOpenState.checkIfThresholdsExceeded",
+    "path": "resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java",
+    "start_line": 1188,
+    "end_line": 1195,
+    "commit": "7e3ab5252ed380b596e25240f19376a4435570b8",
+    "source_url": "https://github.com/resilience4j/resilience4j/blob/7e3ab5252ed380b596e25240f19376a4435570b8/resilience4j-circuitbreaker/src/main/java/io/github/resilience4j/circuitbreaker/internal/CircuitBreakerStateMachine.java#L1188",
+    "file_sha256": "00984d1771d03b47556f927f3ab96c446edd97cc56dfa6e850ee1ea4ffee687f",
+    "numbered_source": "1188:         private void checkIfThresholdsExceeded(Result result) {\n1189:             if (Result.hasExceededThresholds(result) && isHalfOpen.compareAndSet(true, false)) {\n1190:                 transitionToOpenState();\n1191:             }\n1192:             if (result == BELOW_THRESHOLDS && isHalfOpen.compareAndSet(true, false)) {\n1193:                 transitionToClosedState();\n1194:             }\n1195:         }"
+  }
+}

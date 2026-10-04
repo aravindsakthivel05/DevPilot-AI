@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-04",
+  "model": "qwen2.5-coder:14b",
+  "embedding_model": "nomic-embed-text:latest",
+  "backend_unchanged": true,
+  "repositories_planned": 5,
+  "repositories_indexed": 3,
+  "index_failures": 2,
+  "answerable_planned": 15,
+  "answerable_executed": 9,
+  "answerable_blocked": 6,
+  "accepted_generated_answers": 6,
+  "no_validated_answers": 3,
+  "fully_correct_complete_supported_answers_under_source_review": 0,
+  "guard_cases_planned": 5,
+  "guard_cases_executed": 3,
+  "guard_cases_passed": 3,
+  "guard_cases_blocked": 2,
+  "symbol_recall_at_5_mean": {
+    "lexical": 0.6851851851851852,
+    "semantic": 0.2037037037037037,
+    "graph": 0.4444444444444444,
+    "hybrid": 0.3333333333333333
+  },
+  "answerable_wall_seconds_median": 95.932,
+  "reviewer": "Codex manual comparison against pinned source and actual cited excerpts; not independent human evaluation.",
+  "notice": "Fresh repositories and source-authored questions; Codex review is not independent human evaluation. No tuning, training, patch application or target code execution.",
+  "project_checks": {
+    "pytest": "186 passed, 1 skipped (Docker-dependent)",
+    "ruff": "check passed; 151 files formatted",
+    "frontend": "Prettier passed; Vite build passed"
+  }
+}

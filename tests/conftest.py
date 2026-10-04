@@ -25,6 +25,7 @@ def client(tmp_path, monkeypatch):
         "DEVPILOT_EMBEDDING_MODEL",
     ):
         monkeypatch.delenv(name, raising=False)
+    monkeypatch.setenv("DEVPILOT_LEGACY_EXECUTION", "1")
     with TestClient(app) as session:
         yield session
         # All submitted test jobs must finish before restoring the temporary paths.
@@ -49,3 +50,10 @@ def repo(client):
     result = wait_repo(client, response.json()["id"])
     assert result["status"] == "ready", result
     return result
+
+
+@pytest.fixture(autouse=True)
+def isolated_model_audit(monkeypatch):
+    # Most protocol fixtures exercise generation alone; audit tests explicitly
+    # enable the separate reviewer. Never call a live provider in unit tests.
+    monkeypatch.setenv("DEVPILOT_VERIFY_CLAIMS", "0")

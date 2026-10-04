@@ -1,0 +1,19 @@
+{
+  "original_repositories": 40,
+  "current_repositories": 41,
+  "original_repository_ids_fingerprints_sources_names_preserved": true,
+  "original_indexed_file_counts_preserved": true,
+  "history_learning_counts": {
+    "investigations": {
+      "before": 19,
+      "after": 22,
+      "original_repo_records_preserved": true
+    },
+    "learning_cases": {
+      "before": 0,
+      "after": 0,
+      "original_repo_records_preserved": true
+    }
+  },
+  "check_scope": "Metadata, snapshot fingerprints and per-repository file/history/review counts compared to the online pre-migration backup; not a fresh byte-by-byte hash of all source content."
+}

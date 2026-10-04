@@ -7,7 +7,7 @@ from tree_sitter import Language, Parser
 
 from .analysis import symbol_id
 
-PARSER = Parser(Language(tree_sitter_java.language()))
+JAVA_LANGUAGE = Language(tree_sitter_java.language())
 TYPES = {
     "class_declaration": "class",
     "interface_declaration": "interface",
@@ -19,12 +19,14 @@ TYPES = {
 def analyse_java(repo_id, files):
     symbols, edges, errors, unresolved, pending = [], [], [], [], []
     qualified = {}
+    parser = Parser(JAVA_LANGUAGE)
+    import_aliases, field_types, parameter_types = {}, {}, {}
 
     for path, content in sorted(files.items()):
         if not path.endswith(".java"):
             continue
         data = content.encode("utf-8")
-        root = PARSER.parse(data).root_node
+        root = parser.parse(data).root_node
         if root.has_error:
             errors.append({"path": path, "error": "Java syntax contains parser errors"})
         package = ""
@@ -36,10 +38,23 @@ def analyse_java(repo_id, files):
                     .removeprefix("package")
                     .strip(" ;")
                 )
+        aliases = {}
+        for child in root.children:
+            if child.type == "import_declaration":
+                target = (
+                    data[child.start_byte : child.end_byte]
+                    .decode()
+                    .removeprefix("import")
+                    .strip(" ;")
+                )
+                target = target.removeprefix("static ").strip()
+                if not target.endswith(".*"):
+                    aliases[target.rsplit(".", 1)[-1]] = target
+        import_aliases[path] = aliases
         module_name = (
             package + "." + PurePosixPath(path).stem if package else PurePosixPath(path).stem
         )
-        mid = symbol_id(repo_id, path, module_name, 1)
+        mid = symbol_id(repo_id, path, module_name + "#module", 1)
         symbols.append(
             dict(
                 id=mid,
@@ -50,7 +65,7 @@ def analyse_java(repo_id, files):
                 kind="module",
                 start_line=1,
                 end_line=max(1, len(content.splitlines())),
-                source=content[:5000],
+                source="\n".join(content.splitlines()),
                 docstring="",
                 parent_id=None,
             )
@@ -64,7 +79,9 @@ def analyse_java(repo_id, files):
                     return
                 name = data[name_node.start_byte : name_node.end_byte].decode()
                 qname = prefix + "." + name if prefix else name
-                sid = symbol_id(repo_id, path, qname, node.start_point.row + 1)
+                sid = symbol_id(
+                    repo_id, path, qname + f"#byte{node.start_byte}", node.start_point.row + 1
+                )
                 actual_kind = kind or (
                     "constructor" if node.type == "constructor_declaration" else "method"
                 )
@@ -110,7 +127,32 @@ def analyse_java(repo_id, files):
                                     node.start_point.row + 1,
                                 )
                             )
+                if not kind:
+                    parameters = node.child_by_field_name("parameters")
+                    bindings = {}
+                    if parameters:
+                        for param in parameters.named_children:
+                            pname, ptype = (
+                                param.child_by_field_name("name"),
+                                param.child_by_field_name("type"),
+                            )
+                            if pname and ptype:
+                                bindings[data[pname.start_byte : pname.end_byte].decode()] = data[
+                                    ptype.start_byte : ptype.end_byte
+                                ].decode()
+                    parameter_types[sid] = bindings
                 parent, prefix = sid, qname
+            elif node.type == "field_declaration" and cls:
+                type_node = node.child_by_field_name("type")
+                if type_node:
+                    declared = data[type_node.start_byte : type_node.end_byte].decode()
+                    for declarator in node.named_children:
+                        if declarator.type == "variable_declarator":
+                            name_node = declarator.child_by_field_name("name")
+                            if name_node:
+                                field_types[
+                                    (cls, data[name_node.start_byte : name_node.end_byte].decode())
+                                ] = declared
             elif node.type == "method_invocation":
                 name = node.child_by_field_name("name")
                 owner = node.child_by_field_name("object")
@@ -144,20 +186,68 @@ def analyse_java(repo_id, files):
 
         visit(root)
 
+    # Resolve only indexed, unambiguous direct superclass declarations. Never
+    # interpret super as this; unknown/external parents remain unresolved.
+    source_paths = {item["id"]: item["path"] for item in symbols}
+
+    def qualify_type(value, package, aliases):
+        value = value.split("<", 1)[0].strip().removesuffix("[]")
+        return aliases.get(value, package + "." + value if "." not in value and package else value)
+
+    bases = {}
+    for source, kind, label, package, cls, _ in pending:
+        if kind == "inherits" and label.startswith("extends "):
+            base = label.removeprefix("extends ").split("<", 1)[0].strip()
+            candidates = [
+                qualify_type(base, package, import_aliases[source_paths[source]]),
+                package + "." + base,
+                base,
+            ]
+            resolved = next((c for c in candidates if len(qualified.get(c, [])) == 1), None)
+            if resolved:
+                bases[cls] = resolved
+
     for source, kind, label, package, cls, line in pending:
         cleaned = (
             label.removeprefix("extends ").removeprefix("implements ").split("<", 1)[0].strip()
         )
+        aliases = import_aliases.get(source_paths[source], {})
+        confidence = "static"
         if kind == "calls":
             if cls and "." not in cleaned:
                 candidates = [cls + "." + cleaned]
-            elif cls and cleaned.startswith(("this.", "super.")):
+                if cleaned in aliases:
+                    candidates.append(aliases[cleaned])
+            elif cls and cleaned.startswith("super."):
+                parent = bases.get(cls)
+                candidates = []
+                seen = set()
+                while parent and parent not in seen:
+                    seen.add(parent)
+                    candidate = parent + "." + cleaned.split(".", 1)[1]
+                    candidates.append(candidate)
+                    if candidate in qualified:
+                        break
+                    parent = bases.get(parent)
+            elif cls and cleaned.startswith("this."):
                 candidates = [cls + "." + cleaned.split(".", 1)[1]]
             else:
-                candidates = [package + "." + cleaned, cleaned]
+                head, separator, tail = cleaned.partition(".")
+                declared = parameter_types.get(source, {}).get(head, field_types.get((cls, head)))
+                if declared and separator:
+                    candidates = [qualify_type(declared, package, aliases) + "." + tail]
+                    confidence = "declared_type"
+                elif head in aliases and separator:
+                    candidates = [aliases[head] + "." + tail]
+                else:
+                    candidates = [package + "." + cleaned, cleaned]
         else:
             candidates = [package + "." + cleaned, cleaned]
-        matches = next((qualified[c] for c in candidates if len(qualified.get(c, [])) == 1), [])
+        matches = []
+        for candidate in candidates:
+            if candidate in qualified:
+                matches = qualified[candidate] if len(qualified[candidate]) == 1 else []
+                break
         if matches:
             edges.append(
                 dict(
@@ -166,7 +256,7 @@ def analyse_java(repo_id, files):
                     target=matches[0],
                     kind=kind,
                     line=line,
-                    confidence="static",
+                    confidence=confidence,
                     label=label,
                 )
             )

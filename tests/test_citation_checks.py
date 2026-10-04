@@ -12,13 +12,13 @@ def test_citations_do_not_validate_a_separate_reference_list():
     assert result["entailment_checked"] is False
 
 
-def test_answer_is_scoped_to_the_named_symbol_when_the_claim_omits_it():
+def test_answer_is_not_automatically_relabelled_with_the_question_symbol():
     question = "In BaseModel.model_dump(), which serializer method returns the dictionary?"
     answer = anchor_named_symbols(
         question, "__pydantic_serializer__.to_python() produces the returned dictionary [1]."
     )
-    assert "BaseModel.model_dump" in answer
-    assert answer_focus_warning(question, answer) is None
+    assert "BaseModel.model_dump" not in answer
+    assert answer_focus_warning(question, answer)
 
 
 def test_answer_is_not_relabelled_when_it_names_a_similar_wrong_method():
@@ -37,7 +37,7 @@ def test_multistage_generation_uses_a_bounded_front_page(monkeypatch):
     monkeypatch.setattr(
         "backend.retrieval.db.symbols_by_ids",
         lambda _repo_id, ids: [
-            {"id": item_id, "path": "pkg.py", "source": "x" * 3000} for item_id in ids
+            {"id": item_id, "path": "pkg.py", "source": "value = 1\n" * 250} for item_id in ids
         ],
     )
 
@@ -47,6 +47,9 @@ def test_multistage_generation_uses_a_bounded_front_page(monkeypatch):
         evidence,
     )
 
-    assert 1 <= len(context) <= 6
+    assert 1 <= len(context) <= 8
     assert [item["citation_number"] for item in context] == list(range(1, len(context) + 1))
-    assert sum(len(item["source"]) for item in context) <= 12_000
+    assert sum(item["estimated_source_tokens"] for item in context) <= 4096
+    assert all(
+        len(item["source_line_numbers"]) == len(item["source"].splitlines()) for item in context
+    )

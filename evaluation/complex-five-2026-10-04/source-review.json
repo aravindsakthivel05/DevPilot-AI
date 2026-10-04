@@ -1,0 +1,146 @@
+{
+  "review_author": "Codex source review; not independent human review",
+  "rubric": "Correct: no false substantive claims. Complete: all explicit requested obligations explained with relevant branch conditions. Exact support: every delivered substantive claim follows from its cited original lines. Safe fallback is tracked separately.",
+  "results": {
+    "sqlalchemy-easy:quick": {
+      "correct": true,
+      "complete": false,
+      "all_claims_supported": true,
+      "verdict": "correct_but_incomplete",
+      "notes": "Correct exception and flag reset, but the answer does not say finally or False, so it does not explain how the flag is reset. Both cited ranges support the limited claims."
+    },
+    "sqlalchemy-medium:quick": {
+      "correct": null,
+      "complete": false,
+      "all_claims_supported": null,
+      "verdict": "no_validated_answer",
+      "notes": "Both drafts were rejected because StatementError identity was not established by the identity validator. The pinned implementation catches sa_exc.StatementError. No substantive answer was delivered; safe fallback is not answer accuracy."
+    },
+    "sqlalchemy-hard:quick": {
+      "correct": true,
+      "complete": false,
+      "all_claims_supported": false,
+      "verdict": "correct_but_incomplete",
+      "notes": "The outline is broadly accurate but omits the should_commit condition and root-or-nested guard when asked which transactions commit. Its first citation (1327-1329) ends before the actual _prepare_impl call at 1330, so that claim lacks exact cited-line support. The 100-flush bound is correct."
+    },
+    "sqlalchemy-hard:deep": {
+      "correct": false,
+      "complete": false,
+      "all_claims_supported": false,
+      "verdict": "incorrect_and_incomplete",
+      "notes": "The 100-iteration loop raises on exhaustion (after 100 attempted iterations without a clean check), not after executing more than 100 flushes. It also omits should_commit and the root-or-nested guard and substitutes vague current-connection wording. The message text says Over 100 but that is not the actual loop condition. The audit accepted these claims."
+    },
+    "celery-easy:quick": {
+      "correct": true,
+      "complete": true,
+      "all_claims_supported": false,
+      "verdict": "correct_and_complete_but_citations_insufficient",
+      "notes": "Correctly explains forwarding to apply_async. However its citations are only the delay declaration at 534 and apply_async signature at 547-548. Neither includes the actual forwarding call at 545; the explanation is true but not established by its cited lines."
+    },
+    "celery-medium:quick": {
+      "correct": true,
+      "complete": false,
+      "all_claims_supported": false,
+      "verdict": "correct_but_incomplete",
+      "notes": "The limited statements are true, but the requested explicit queue behavior is entirely omitted, as are None-only argument defaults. The claim that arguments reach the new signature cites 742-745 (declaration/default selection), excluding self.signature at 762-764. Options merge and priority claims have relevant citations."
+    },
+    "celery-hard:quick": {
+      "correct": null,
+      "complete": false,
+      "all_claims_supported": null,
+      "verdict": "no_validated_answer",
+      "notes": "Both attempts were rejected: first lexical claim support, then Task.retry source-identity validation. The expected retry method was retrieved, but no substantive validated answer reached the user. This is safe fallback, not a successful answer."
+    },
+    "celery-hard:deep": {
+      "correct": null,
+      "complete": false,
+      "all_claims_supported": null,
+      "verdict": "no_validated_answer",
+      "notes": "Both attempts were rejected: first lexical claim support, then Task.retry source-identity validation. The expected retry method was retrieved, but no substantive validated answer reached the user. This is safe fallback, not a successful answer."
+    },
+    "scrapy-easy:quick": {
+      "correct": null,
+      "complete": false,
+      "all_claims_supported": null,
+      "verdict": "no_validated_answer",
+      "notes": "The expected Scheduler.next_request method was retrieved. Both attempts were rejected by lexical claim support validation and a source-location fallback was delivered. Drafts describe the actual memory-first behavior but their short citations omit some of the surrounding branch conditions; delivered fallback is not a complete answer."
+    },
+    "scrapy-medium:quick": {
+      "correct": true,
+      "complete": false,
+      "all_claims_supported": true,
+      "verdict": "correct_but_incomplete",
+      "notes": "Fingerprint generation, membership check and duplicate True are correct and supported by source 1. However the requested recording of a new request is not explained: it omits adding the fingerprint to _fingerprints, optional length-prefixed file persistence, and the new-request False result."
+    },
+    "scrapy-hard:quick": {
+      "correct": null,
+      "complete": false,
+      "all_claims_supported": null,
+      "verdict": "no_validated_answer",
+      "notes": "Both expected scheduler methods were retrieved. The first draft failed aspect relevance and the retry failed Scheduler.enqueue_request source-identity validation. The delivered source-location fallback does not explain duplicate filtering and disk-enqueue/memory-dequeue ordering."
+    },
+    "scrapy-hard:deep": {
+      "correct": null,
+      "complete": false,
+      "all_claims_supported": null,
+      "verdict": "no_validated_answer",
+      "notes": "As in Quick, both expected scheduler methods were retrieved but the drafts failed aspect relevance and source-identity validation. Deep did not yield a validated explanation."
+    },
+    "mybatis-easy:quick": {
+      "correct": true,
+      "complete": true,
+      "all_claims_supported": true,
+      "verdict": "correct_complete_and_supported",
+      "notes": "Directly answers both null/no-parameter conditions and the null return. Lines 159-160 explicitly contain the combined condition and return null."
+    },
+    "mybatis-medium:quick": {
+      "correct": false,
+      "complete": false,
+      "all_claims_supported": false,
+      "verdict": "incorrect_and_incomplete",
+      "notes": "RowBounds behavior is correct. But collection conversion is not performed merely because the return type is not an array: the outer isAssignableFrom check must first fail; an assignable list is returned unchanged. The claimed conversion condition is too broad, and its 151-153 citation shows the array branch rather than the collection branch at 154."
+    },
+    "mybatis-hard:quick": {
+      "correct": true,
+      "complete": false,
+      "all_claims_supported": false,
+      "verdict": "correct_but_incomplete",
+      "notes": "Cache lookup and delegate-on-miss outline are broadly correct, but non-null cache and transactional staging/required rollback distinctions are not explained. Neither CachingExecutor.commit nor rollback was retrieved in the top eight; the commit/rollback claim cites TransactionalCacheManager.getObject and putObject (34-36 and 38-40), which establish neither operation. The lookup claim citation 98-99 omits the outer non-null guard at 97."
+    },
+    "mybatis-hard:deep": {
+      "correct": true,
+      "complete": false,
+      "all_claims_supported": false,
+      "verdict": "correct_but_incomplete",
+      "notes": "Deep correctly states all three lookup conditions and the delegate/tcm write on miss. It still omits the critical commit-versus-required-only-rollback behavior. Its commit/rollback claim cites TransactionalCacheManager.rollback and getObject, not CachingExecutor.commit/rollback or manager.commit. Exact cited support is incomplete even though the broad delegation claim is true."
+    },
+    "resilience4j-easy:quick": {
+      "correct": null,
+      "complete": false,
+      "all_claims_supported": null,
+      "verdict": "no_validated_answer",
+      "notes": "The exact ClosedState.tryAcquirePermission method was retrieved and drafts included the correct isClosed.get() return. Both attempts nevertheless failed named-symbol source-identity validation, so the delivered output was a fallback rather than the requested answer."
+    },
+    "resilience4j-medium:quick": {
+      "correct": true,
+      "complete": false,
+      "all_claims_supported": true,
+      "verdict": "correct_but_incomplete",
+      "notes": "Wrapped, ignored and recorded exception explanations are correct and supported by their cited lines. The explicitly requested non-recorded exception path is entirely missing: it publishes success and calls state.onSuccess. Ignored-event publication/early return and the subsequent transition check are also omitted."
+    },
+    "resilience4j-hard:quick": {
+      "correct": true,
+      "complete": false,
+      "all_claims_supported": false,
+      "verdict": "honest_partial_answer",
+      "notes": "Correctly describes the counter and permit restoration, then explicitly marks the state-transition aspect insufficient. Only two of the five expected methods were retrieved, with no supplemental improvement. However the zero-counter false-return claim cites 1117-1120, ending before onCallNotPermitted and return false at 1122-1123. The transition abstention is honest; the full question is unanswered."
+    },
+    "resilience4j-hard:deep": {
+      "correct": true,
+      "complete": false,
+      "all_claims_supported": false,
+      "verdict": "honest_partial_answer",
+      "notes": "Deep again retrieves only the permit-acquire and release methods among five expected methods. The draft incorrectly used OpenState.onSuccess for the HalfOpenState transition claim; the audit rejected that claim, producing an honest missing-evidence message. The remaining zero-counter false-return claim still cites only the positive branch and an unrelated OpenState delegation, so exact citation support is incomplete."
+    }
+  }
+}

@@ -1,0 +1,3452 @@
+{
+  "sqlalchemy": {
+    "id": "61aeb10f6d6b40478bf07e38b592cd77",
+    "url": "https://github.com/sqlalchemy/sqlalchemy",
+    "commit": "a9956b1ab72561c4642ff9dfdf9ae52f3eb5d307",
+    "fingerprint": "3bf4546667a35acdc94119c0798b9d2f6ed762d463ffa38f9ea7dc9bfd46b0e2",
+    "index_scope": "repository root; supported files only",
+    "index_ms": 12180,
+    "stats": {
+      "files": 700,
+      "python_files": 675,
+      "java_files": 0,
+      "symbols": 41447,
+      "edges": 64520,
+      "parse_errors": [],
+      "unresolved_count": 178500,
+      "unresolved": [
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "typing.Dict",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "typing.Optional",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.create_engine",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.ForeignKey",
+          "kind": "imports",
+          "line": 7
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.select",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.orm.DeclarativeBase",
+          "kind": "imports",
+          "line": 9
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.orm.Mapped",
+          "kind": "imports",
+          "line": 10
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.orm.mapped_column",
+          "kind": "imports",
+          "line": 11
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.orm.MappedAsDataclass",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.orm.relationship",
+          "kind": "imports",
+          "line": 13
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.orm.selectinload",
+          "kind": "imports",
+          "line": 14
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.orm.Session",
+          "kind": "imports",
+          "line": 15
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "sqlalchemy.orm.collections.attribute_keyed_dict",
+          "kind": "imports",
+          "line": 16
+        },
+        {
+          "source": "c55d31289ea3cf716dac7ead",
+          "label": "DeclarativeBase",
+          "kind": "inherits",
+          "line": 19
+        },
+        {
+          "source": "a2267e63ecc5d70e5c5c135a",
+          "label": "MappedAsDataclass",
+          "kind": "inherits",
+          "line": 23
+        },
+        {
+          "source": "a2267e63ecc5d70e5c5c135a",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 26
+        },
+        {
+          "source": "a2267e63ecc5d70e5c5c135a",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 27
+        },
+        {
+          "source": "a2267e63ecc5d70e5c5c135a",
+          "label": "ForeignKey",
+          "kind": "calls",
+          "line": 28
+        },
+        {
+          "source": "a2267e63ecc5d70e5c5c135a",
+          "label": "relationship",
+          "kind": "calls",
+          "line": 32
+        },
+        {
+          "source": "a2267e63ecc5d70e5c5c135a",
+          "label": "attribute_keyed_dict",
+          "kind": "calls",
+          "line": 35
+        },
+        {
+          "source": "a2267e63ecc5d70e5c5c135a",
+          "label": "relationship",
+          "kind": "calls",
+          "line": 40
+        },
+        {
+          "source": "f2bb4142f539401a14f7a621",
+          "label": "repr",
+          "kind": "calls",
+          "line": 47
+        },
+        {
+          "source": "f2bb4142f539401a14f7a621",
+          "label": "c.dump",
+          "kind": "calls",
+          "line": 49
+        },
+        {
+          "source": "f2bb4142f539401a14f7a621",
+          "label": "self.children.values",
+          "kind": "calls",
+          "line": 49
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "create_engine",
+          "kind": "calls",
+          "line": 54
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "print",
+          "kind": "calls",
+          "line": 56
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "Base.metadata.create_all",
+          "kind": "calls",
+          "line": 58
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "Session",
+          "kind": "calls",
+          "line": 60
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "print",
+          "kind": "calls",
+          "line": 70
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "node.dump",
+          "kind": "calls",
+          "line": 70
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "print",
+          "kind": "calls",
+          "line": 72
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "session.add",
+          "kind": "calls",
+          "line": 74
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "session.commit",
+          "kind": "calls",
+          "line": 75
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "print",
+          "kind": "calls",
+          "line": 77
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "node.dump",
+          "kind": "calls",
+          "line": 77
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "session.add_all",
+          "kind": "calls",
+          "line": 79
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "print",
+          "kind": "calls",
+          "line": 95
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "session.commit",
+          "kind": "calls",
+          "line": 96
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "print",
+          "kind": "calls",
+          "line": 98
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "print",
+          "kind": "calls",
+          "line": 99
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "node.dump",
+          "kind": "calls",
+          "line": 99
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "Session",
+          "kind": "calls",
+          "line": 101
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "print",
+          "kind": "calls",
+          "line": 102
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "session.scalars",
+          "kind": "calls",
+          "line": 106
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "select",
+          "kind": "calls",
+          "line": 107
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "selectinload",
+          "kind": "calls",
+          "line": 108
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "print",
+          "kind": "calls",
+          "line": 112
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "node.dump",
+          "kind": "calls",
+          "line": 112
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "print",
+          "kind": "calls",
+          "line": 114
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "session.delete",
+          "kind": "calls",
+          "line": 116
+        },
+        {
+          "source": "aeb6db7dc43e4d73df998505",
+          "label": "session.commit",
+          "kind": "calls",
+          "line": 117
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 13
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "datetime.datetime",
+          "kind": "imports",
+          "line": 15
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "sqlalchemy.create_engine",
+          "kind": "imports",
+          "line": 17
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "sqlalchemy.ForeignKey",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "sqlalchemy.select",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "sqlalchemy.String",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "sqlalchemy.orm.DeclarativeBase",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "sqlalchemy.orm.Mapped",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "sqlalchemy.orm.mapped_column",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "sqlalchemy.orm.relationship",
+          "kind": "imports",
+          "line": 24
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "sqlalchemy.orm.Session",
+          "kind": "imports",
+          "line": 25
+        },
+        {
+          "source": "df6953766fc87230419c5ce9",
+          "label": "DeclarativeBase",
+          "kind": "inherits",
+          "line": 28
+        },
+        {
+          "source": "792c87bc0b21f68a29bac6a5",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 35
+        },
+        {
+          "source": "792c87bc0b21f68a29bac6a5",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 36
+        },
+        {
+          "source": "792c87bc0b21f68a29bac6a5",
+          "label": "String",
+          "kind": "calls",
+          "line": 36
+        },
+        {
+          "source": "792c87bc0b21f68a29bac6a5",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "792c87bc0b21f68a29bac6a5",
+          "label": "datetime.now",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "792c87bc0b21f68a29bac6a5",
+          "label": "relationship",
+          "kind": "calls",
+          "line": 38
+        },
+        {
+          "source": "f2964b26223394482dd12e13",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 48
+        },
+        {
+          "source": "f2964b26223394482dd12e13",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 49
+        },
+        {
+          "source": "f2964b26223394482dd12e13",
+          "label": "String",
+          "kind": "calls",
+          "line": 49
+        },
+        {
+          "source": "6ad867394aeab9fcdad29a7a",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 62
+        },
+        {
+          "source": "6ad867394aeab9fcdad29a7a",
+          "label": "ForeignKey",
+          "kind": "calls",
+          "line": 63
+        },
+        {
+          "source": "6ad867394aeab9fcdad29a7a",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 65
+        },
+        {
+          "source": "6ad867394aeab9fcdad29a7a",
+          "label": "ForeignKey",
+          "kind": "calls",
+          "line": 66
+        },
+        {
+          "source": "6ad867394aeab9fcdad29a7a",
+          "label": "relationship",
+          "kind": "calls",
+          "line": 74
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "create_engine",
+          "kind": "calls",
+          "line": 78
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "Base.metadata.create_all",
+          "kind": "calls",
+          "line": 79
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "Session",
+          "kind": "calls",
+          "line": 81
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "session.add_all",
+          "kind": "calls",
+          "line": 90
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "session.commit",
+          "kind": "calls",
+          "line": 91
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "order.order_items.append",
+          "kind": "calls",
+          "line": 97
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "order.order_items.append",
+          "kind": "calls",
+          "line": 98
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "order.order_items.append",
+          "kind": "calls",
+          "line": 99
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "session.add",
+          "kind": "calls",
+          "line": 100
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "session.commit",
+          "kind": "calls",
+          "line": 101
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "session.scalars",
+          "kind": "calls",
+          "line": 104
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "select",
+          "kind": "calls",
+          "line": 105
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "print",
+          "kind": "calls",
+          "line": 107
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "select",
+          "kind": "calls",
+          "line": 116
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "print",
+          "kind": "calls",
+          "line": 125
+        },
+        {
+          "source": "9960728b127fbaeb58216b13",
+          "label": "session.scalars",
+          "kind": "calls",
+          "line": 125
+        },
+        {
+          "source": "ebe120c2e8a4dff904417458",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 15
+        },
+        {
+          "source": "ebe120c2e8a4dff904417458",
+          "label": "operator",
+          "kind": "imports",
+          "line": 17
+        },
+        {
+          "source": "ebe120c2e8a4dff904417458",
+          "label": "typing.Mapping",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "ebe120c2e8a4dff904417458",
+          "label": "sqlalchemy.create_engine",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "ebe120c2e8a4dff904417458",
+          "label": "sqlalchemy.ForeignKey",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "ebe120c2e8a4dff904417458",
+          "label": "sqlalchemy.select",
+          "kind": "imports",
+          "line": 22
+        }
+      ],
+      "skipped_files": 10,
+      "coverage": {
+        "indexed_files": 700,
+        "skipped_files": 10,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "ignored_directory": 2,
+          "unsupported_extension": 10
+        },
+        "indexed_extensions": {
+          ".cfg": 1,
+          ".in": 1,
+          ".ini": 1,
+          ".md": 4,
+          ".py": 675,
+          ".rst": 4,
+          ".toml": 1,
+          ".txt": 2,
+          ".yaml": 7,
+          ".yml": 4
+        },
+        "recorded_entries": 712,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "not_configured",
+      "index_version": "2026-10-03-complete-documents-super-decorators"
+    },
+    "index_status": {
+      "snapshot": "3bf4546667a35acdc94119c0798b9d2f6ed762d463ffa38f9ea7dc9bfd46b0e2",
+      "index_version": "2026-10-03-complete-documents-super-decorators",
+      "symbols": 41447,
+      "embedded_symbols": 0,
+      "embedding_coverage": 0.0,
+      "semantic_ready": false,
+      "lexical_ready": true,
+      "unresolved_references_stored": 178500,
+      "analysis_scope": {
+        "python": "AST symbols and conservative static relationships",
+        "java": "Tree-sitter symbols and conservative static relationships",
+        "other_text": "Searchable documents; no semantic call graph"
+      },
+      "coverage": {
+        "indexed_files": 700,
+        "skipped_files": 10,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "ignored_directory": 2,
+          "unsupported_extension": 10
+        },
+        "indexed_extensions": {
+          ".cfg": 1,
+          ".in": 1,
+          ".ini": 1,
+          ".md": 4,
+          ".py": 675,
+          ".rst": 4,
+          ".toml": 1,
+          ".txt": 2,
+          ".yaml": 7,
+          ".yml": 4
+        },
+        "recorded_entries": 712,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "split": "evaluation_only"
+  },
+  "celery": {
+    "id": "457fece903c3427c839ddeda6b704edc",
+    "url": "https://github.com/celery/celery",
+    "commit": "3cfe8de4352e665882f2c4e39cded26fe6c65871",
+    "fingerprint": "79820fa25837186c8c4f53c245deaccf522a792b09528647266fd20440c67f48",
+    "index_scope": "repository root; supported files only",
+    "index_ms": 3623,
+    "stats": {
+      "files": 790,
+      "python_files": 440,
+      "java_files": 0,
+      "symbols": 11459,
+      "edges": 20839,
+      "parse_errors": [],
+      "unresolved_count": 33690,
+      "unresolved": [
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "os",
+          "kind": "imports",
+          "line": 10
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "re",
+          "kind": "imports",
+          "line": 11
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "sys",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "collections.namedtuple",
+          "kind": "imports",
+          "line": 13
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "typing.TYPE_CHECKING",
+          "kind": "imports",
+          "line": 14
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "namedtuple",
+          "kind": "calls",
+          "line": 46
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "re.match",
+          "kind": "calls",
+          "line": 52
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "version_info_t",
+          "kind": "calls",
+          "line": 54
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "int",
+          "kind": "calls",
+          "line": 55
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "int",
+          "kind": "calls",
+          "line": 55
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "int",
+          "kind": "calls",
+          "line": 55
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "os.environ.get",
+          "kind": "calls",
+          "line": 59
+        },
+        {
+          "source": "c24ee7efe13b1df7becc158d",
+          "label": "builtins",
+          "kind": "imports",
+          "line": 60
+        },
+        {
+          "source": "bbfea549b3b902c51d9a6a81",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 64
+        },
+        {
+          "source": "bbfea549b3b902c51d9a6a81",
+          "label": "glob.get",
+          "kind": "calls",
+          "line": 65
+        },
+        {
+          "source": "bbfea549b3b902c51d9a6a81",
+          "label": "print",
+          "kind": "calls",
+          "line": 66
+        },
+        {
+          "source": "bbfea549b3b902c51d9a6a81",
+          "label": "real_import",
+          "kind": "calls",
+          "line": 67
+        },
+        {
+          "source": "36076439d8be6a2b74a70c64",
+          "label": "enumerate",
+          "kind": "calls",
+          "line": 92
+        },
+        {
+          "source": "36076439d8be6a2b74a70c64",
+          "label": "arg.startswith",
+          "kind": "calls",
+          "line": 93
+        },
+        {
+          "source": "36076439d8be6a2b74a70c64",
+          "label": "arg.startswith",
+          "kind": "calls",
+          "line": 94
+        },
+        {
+          "source": "36076439d8be6a2b74a70c64",
+          "label": "arg.partition",
+          "kind": "calls",
+          "line": 95
+        },
+        {
+          "source": "36076439d8be6a2b74a70c64",
+          "label": "KeyError",
+          "kind": "calls",
+          "line": 100
+        },
+        {
+          "source": "719031fe67658fe04127b4b1",
+          "label": "eventlet.debug",
+          "kind": "imports",
+          "line": 104
+        },
+        {
+          "source": "719031fe67658fe04127b4b1",
+          "label": "eventlet.monkey_patch",
+          "kind": "calls",
+          "line": 106
+        },
+        {
+          "source": "719031fe67658fe04127b4b1",
+          "label": "float",
+          "kind": "calls",
+          "line": 107
+        },
+        {
+          "source": "719031fe67658fe04127b4b1",
+          "label": "os.environ.get",
+          "kind": "calls",
+          "line": 107
+        },
+        {
+          "source": "719031fe67658fe04127b4b1",
+          "label": "eventlet.debug.hub_blocking_detection",
+          "kind": "calls",
+          "line": 109
+        },
+        {
+          "source": "2747128e33102b5f851f72d3",
+          "label": "gevent.monkey",
+          "kind": "imports",
+          "line": 113
+        },
+        {
+          "source": "2747128e33102b5f851f72d3",
+          "label": "gevent.signal",
+          "kind": "imports",
+          "line": 114
+        },
+        {
+          "source": "2747128e33102b5f851f72d3",
+          "label": "gevent.monkey.patch_all",
+          "kind": "calls",
+          "line": 116
+        },
+        {
+          "source": "629494295ba78ad7b7674f78",
+          "label": "patcher",
+          "kind": "calls",
+          "line": 143
+        },
+        {
+          "source": "7182fd5c247985bb2dcea571",
+          "label": "sys",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "f9bcb6cf41a23f52b24b1bdb",
+          "label": "sys.exit",
+          "kind": "calls",
+          "line": 15
+        },
+        {
+          "source": "5b8750a2b841347afe921e6a",
+          "label": "os",
+          "kind": "imports",
+          "line": 9
+        },
+        {
+          "source": "5b8750a2b841347afe921e6a",
+          "label": "sys",
+          "kind": "imports",
+          "line": 10
+        },
+        {
+          "source": "5b8750a2b841347afe921e6a",
+          "label": "threading",
+          "kind": "imports",
+          "line": 11
+        },
+        {
+          "source": "5b8750a2b841347afe921e6a",
+          "label": "weakref",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "5b8750a2b841347afe921e6a",
+          "label": "weakref.WeakSet",
+          "kind": "calls",
+          "line": 34
+        },
+        {
+          "source": "5b8750a2b841347afe921e6a",
+          "label": "set",
+          "kind": "calls",
+          "line": 38
+        },
+        {
+          "source": "10ed6c540c5a4b31d750f8fa",
+          "label": "_on_app_finalizers.add",
+          "kind": "calls",
+          "line": 45
+        },
+        {
+          "source": "2e5a20d68ffb34fe05d0a582",
+          "label": "set",
+          "kind": "calls",
+          "line": 50
+        },
+        {
+          "source": "2e5a20d68ffb34fe05d0a582",
+          "label": "callback",
+          "kind": "calls",
+          "line": 52
+        },
+        {
+          "source": "cca5e661c0d16832f6889aa7",
+          "label": "threading.local",
+          "kind": "inherits",
+          "line": 64
+        },
+        {
+          "source": "5b8750a2b841347afe921e6a",
+          "label": "LocalStack",
+          "kind": "calls",
+          "line": 73
+        },
+        {
+          "source": "5f3499c47376fd69bbc6acfa",
+          "label": "os.environ.get",
+          "kind": "calls",
+          "line": 98
+        },
+        {
+          "source": "5b8750a2b841347afe921e6a",
+          "label": "os.environ.get",
+          "kind": "calls",
+          "line": 107
+        },
+        {
+          "source": "5ec0356024e11ed1ef1aeb9b",
+          "label": "RuntimeError",
+          "kind": "calls",
+          "line": 110
+        },
+        {
+          "source": "5b8750a2b841347afe921e6a",
+          "label": "os.environ.get",
+          "kind": "calls",
+          "line": 111
+        },
+        {
+          "source": "8752e4632d1e6aa1d378e258",
+          "label": "traceback",
+          "kind": "imports",
+          "line": 113
+        },
+        {
+          "source": "8752e4632d1e6aa1d378e258",
+          "label": "print",
+          "kind": "calls",
+          "line": 114
+        },
+        {
+          "source": "8752e4632d1e6aa1d378e258",
+          "label": "traceback.print_stack",
+          "kind": "calls",
+          "line": 115
+        },
+        {
+          "source": "df1dd1ddb581302c9df88971",
+          "label": "reversed",
+          "kind": "calls",
+          "line": 133
+        },
+        {
+          "source": "ed5bb4862fbe8e5475b706ae",
+          "label": "_apps.add",
+          "kind": "calls",
+          "line": 146
+        },
+        {
+          "source": "41231fa4fb27ba4f8be8a36b",
+          "label": "_apps.discard",
+          "kind": "calls",
+          "line": 150
+        },
+        {
+          "source": "bee1d6d822ae9632b18ecc71",
+          "label": "get_current_app",
+          "kind": "calls",
+          "line": 159
+        },
+        {
+          "source": "aceae0a4f9ec65fae982bd90",
+          "label": "traceback.print_stack",
+          "kind": "imports",
+          "line": 164
+        },
+        {
+          "source": "aceae0a4f9ec65fae982bd90",
+          "label": "billiard.process.current_process",
+          "kind": "imports",
+          "line": 166
+        },
+        {
+          "source": "aceae0a4f9ec65fae982bd90",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 170
+        },
+        {
+          "source": "aceae0a4f9ec65fae982bd90",
+          "label": "print",
+          "kind": "calls",
+          "line": 171
+        },
+        {
+          "source": "aceae0a4f9ec65fae982bd90",
+          "label": "print_stack",
+          "kind": "calls",
+          "line": 172
+        },
+        {
+          "source": "aceae0a4f9ec65fae982bd90",
+          "label": "current_process",
+          "kind": "calls",
+          "line": 174
+        },
+        {
+          "source": "aceae0a4f9ec65fae982bd90",
+          "label": "Exception",
+          "kind": "calls",
+          "line": 175
+        },
+        {
+          "source": "aceae0a4f9ec65fae982bd90",
+          "label": "print",
+          "kind": "calls",
+          "line": 176
+        },
+        {
+          "source": "aceae0a4f9ec65fae982bd90",
+          "label": "print_stack",
+          "kind": "calls",
+          "line": 177
+        },
+        {
+          "source": "5b8750a2b841347afe921e6a",
+          "label": "os.environ.get",
+          "kind": "calls",
+          "line": 194
+        },
+        {
+          "source": "4b17af90291d6bc7447c550d",
+          "label": "_state.get_current_app",
+          "kind": "calls",
+          "line": 21
+        },
+        {
+          "source": "dea69b98caecc75958e60e38",
+          "label": "options.get",
+          "kind": "calls",
+          "line": 51
+        },
+        {
+          "source": "dea69b98caecc75958e60e38",
+          "label": "app._task_from_fun",
+          "kind": "calls",
+          "line": 55
+        },
+        {
+          "source": "dea69b98caecc75958e60e38",
+          "label": "app._task_from_fun",
+          "kind": "calls",
+          "line": 62
+        },
+        {
+          "source": "49f4ced88a221bfc9202e46f",
+          "label": "_state.get_current_app",
+          "kind": "calls",
+          "line": 67
+        },
+        {
+          "source": "49f4ced88a221bfc9202e46f",
+          "label": "app.gen_task_name",
+          "kind": "calls",
+          "line": 69
+        },
+        {
+          "source": "11575de1145ce4baf0aa08e2",
+          "label": "len",
+          "kind": "calls",
+          "line": 74
+        },
+        {
+          "source": "11575de1145ce4baf0aa08e2",
+          "label": "callable",
+          "kind": "calls",
+          "line": 74
+        },
+        {
+          "source": "11575de1145ce4baf0aa08e2",
+          "label": "create_shared_task",
+          "kind": "calls",
+          "line": 75
+        },
+        {
+          "source": "11575de1145ce4baf0aa08e2",
+          "label": "create_shared_task",
+          "kind": "calls",
+          "line": 76
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "numbers",
+          "kind": "imports",
+          "line": 2
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "collections.namedtuple",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "collections.abc.Mapping",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "datetime.timedelta",
+          "kind": "imports",
+          "line": 5
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "weakref.WeakValueDictionary",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "kombu.Connection",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "kombu.Consumer",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "kombu.Exchange",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "kombu.Producer",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "kombu.Queue",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "kombu.pools",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "kombu.common.Broadcast",
+          "kind": "imports",
+          "line": 9
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "kombu.utils.functional.maybe_list",
+          "kind": "imports",
+          "line": 10
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "kombu.utils.objects.cached_property",
+          "kind": "imports",
+          "line": 11
+        },
+        {
+          "source": "34d9153b0861db0a075ed31e",
+          "label": "namedtuple",
+          "kind": "calls",
+          "line": 32
+        },
+        {
+          "source": "d92e8300ddfb410df24de37d",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "d92e8300ddfb410df24de37d",
+          "label": "k.decode",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "d92e8300ddfb410df24de37d",
+          "label": "d.items",
+          "kind": "calls",
+          "line": 38
+        },
+        {
+          "source": "20c36972c0c69fc6bad7cb15",
+          "label": "dict",
+          "kind": "inherits",
+          "line": 41
+        },
+        {
+          "source": "863e9d248d9cc32edf18fd88",
+          "label": "super",
+          "kind": "calls",
+          "line": 69
+        },
+        {
+          "source": "863e9d248d9cc32edf18fd88",
+          "label": "WeakValueDictionary",
+          "kind": "calls",
+          "line": 70
+        },
+        {
+          "source": "863e9d248d9cc32edf18fd88",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 78
+        },
+        {
+          "source": "863e9d248d9cc32edf18fd88",
+          "label": "queues.items",
+          "kind": "calls",
+          "line": 81
+        },
+        {
+          "source": "863e9d248d9cc32edf18fd88",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 82
+        },
+        {
+          "source": "3d20737d137f63fe6d74e7a7",
+          "label": "super",
+          "kind": "calls",
+          "line": 90
+        }
+      ],
+      "skipped_files": 55,
+      "coverage": {
+        "indexed_files": 790,
+        "skipped_files": 55,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 55
+        },
+        "indexed_extensions": {
+          ".cfg": 2,
+          ".html": 4,
+          ".in": 1,
+          ".ini": 1,
+          ".json": 1,
+          ".md": 11,
+          ".py": 440,
+          ".rst": 243,
+          ".toml": 1,
+          ".txt": 61,
+          ".yaml": 8,
+          ".yml": 13,
+          "[none]": 4
+        },
+        "recorded_entries": 846,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "not_configured",
+      "index_version": "2026-10-03-complete-documents-super-decorators"
+    },
+    "index_status": {
+      "snapshot": "79820fa25837186c8c4f53c245deaccf522a792b09528647266fd20440c67f48",
+      "index_version": "2026-10-03-complete-documents-super-decorators",
+      "symbols": 11459,
+      "embedded_symbols": 0,
+      "embedding_coverage": 0.0,
+      "semantic_ready": false,
+      "lexical_ready": true,
+      "unresolved_references_stored": 33690,
+      "analysis_scope": {
+        "python": "AST symbols and conservative static relationships",
+        "java": "Tree-sitter symbols and conservative static relationships",
+        "other_text": "Searchable documents; no semantic call graph"
+      },
+      "coverage": {
+        "indexed_files": 790,
+        "skipped_files": 55,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 55
+        },
+        "indexed_extensions": {
+          ".cfg": 2,
+          ".html": 4,
+          ".in": 1,
+          ".ini": 1,
+          ".json": 1,
+          ".md": 11,
+          ".py": 440,
+          ".rst": 243,
+          ".toml": 1,
+          ".txt": 61,
+          ".yaml": 8,
+          ".yml": 13,
+          "[none]": 4
+        },
+        "recorded_entries": 846,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "split": "evaluation_only"
+  },
+  "scrapy": {
+    "id": "4afc9b760b204e5ba6fed6bbd6258af8",
+    "url": "https://github.com/scrapy/scrapy",
+    "commit": "9558c60ed5174ac609feecca0cc3fdd8cdfcab76",
+    "fingerprint": "37059dde36426722405eb6d90925b1acf4e2bbb89ab5b0134e956fa9e4a2961b",
+    "index_scope": "repository root; supported files only",
+    "index_ms": 3059,
+    "stats": {
+      "files": 639,
+      "python_files": 512,
+      "java_files": 0,
+      "symbols": 9029,
+      "edges": 19680,
+      "parse_errors": [],
+      "unresolved_count": 22259,
+      "unresolved": [
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "os",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "importlib.util.find_spec",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "pathlib.Path",
+          "kind": "imports",
+          "line": 5
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "typing.TYPE_CHECKING",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "pytest",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "twisted.web.http.H2_ENABLED",
+          "kind": "imports",
+          "line": 9
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "collections.abc.Generator",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "b7d3d05b72cc42940fc581c5",
+          "label": "str",
+          "kind": "calls",
+          "line": 23
+        },
+        {
+          "source": "b7d3d05b72cc42940fc581c5",
+          "label": "Path",
+          "kind": "calls",
+          "line": 23
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "Path",
+          "kind": "calls",
+          "line": 39
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "ignore_file_path.open",
+          "kind": "calls",
+          "line": 41
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "line.strip",
+          "kind": "calls",
+          "line": 43
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "collect_ignore.append",
+          "kind": "calls",
+          "line": 45
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "collect_ignore.extend",
+          "kind": "calls",
+          "line": 48
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "find_spec",
+          "kind": "calls",
+          "line": 55
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "find_spec",
+          "kind": "calls",
+          "line": 55
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "collect_ignore.append",
+          "kind": "calls",
+          "line": 56
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "find_spec",
+          "kind": "calls",
+          "line": 58
+        },
+        {
+          "source": "6332a5a7fc9bf9b49db94992",
+          "label": "collect_ignore.append",
+          "kind": "calls",
+          "line": 59
+        },
+        {
+          "source": "7caf742137209679a265aa2f",
+          "label": "pluginmanager.hasplugin",
+          "kind": "calls",
+          "line": 63
+        },
+        {
+          "source": "7caf742137209679a265aa2f",
+          "label": "parser.addoption",
+          "kind": "calls",
+          "line": 66
+        },
+        {
+          "source": "f69bc182ed2cc43ff0153ba7",
+          "label": "pytest.fixture",
+          "kind": "decorated_by",
+          "line": 73
+        },
+        {
+          "source": "f69bc182ed2cc43ff0153ba7",
+          "label": "monkeypatch.setattr",
+          "kind": "calls",
+          "line": 81
+        },
+        {
+          "source": "c2c9f4a85b2fa93be0afd9a5",
+          "label": "pytest.fixture",
+          "kind": "decorated_by",
+          "line": 84
+        },
+        {
+          "source": "9be9f6d86f8fb0cbedf6262d",
+          "label": "pytest.fixture",
+          "kind": "decorated_by",
+          "line": 90
+        },
+        {
+          "source": "9be9f6d86f8fb0cbedf6262d",
+          "label": "proxies.values",
+          "kind": "calls",
+          "line": 96
+        },
+        {
+          "source": "9be9f6d86f8fb0cbedf6262d",
+          "label": "proxy.stop",
+          "kind": "calls",
+          "line": 97
+        },
+        {
+          "source": "8be5e6a1a19463d0ce05291e",
+          "label": "pytest.fixture",
+          "kind": "decorated_by",
+          "line": 100
+        },
+        {
+          "source": "8be5e6a1a19463d0ce05291e",
+          "label": "proxy.start",
+          "kind": "calls",
+          "line": 109
+        },
+        {
+          "source": "8be5e6a1a19463d0ce05291e",
+          "label": "url.replace",
+          "kind": "calls",
+          "line": 112
+        },
+        {
+          "source": "8be5e6a1a19463d0ce05291e",
+          "label": "monkeypatch.setenv",
+          "kind": "calls",
+          "line": 113
+        },
+        {
+          "source": "8be5e6a1a19463d0ce05291e",
+          "label": "monkeypatch.setenv",
+          "kind": "calls",
+          "line": 114
+        },
+        {
+          "source": "c58df86e5823190dfed82adc",
+          "label": "pytest.fixture",
+          "kind": "decorated_by",
+          "line": 118
+        },
+        {
+          "source": "c58df86e5823190dfed82adc",
+          "label": "request.config.getoption",
+          "kind": "calls",
+          "line": 120
+        },
+        {
+          "source": "abdd2d7ba5a537ac234cfb90",
+          "label": "config.getoption",
+          "kind": "calls",
+          "line": 124
+        },
+        {
+          "source": "abdd2d7ba5a537ac234cfb90",
+          "label": "config.getoption",
+          "kind": "calls",
+          "line": 129
+        },
+        {
+          "source": "7568227bc8cb2530b622f92f",
+          "label": "item.path.as_posix",
+          "kind": "calls",
+          "line": 159
+        },
+        {
+          "source": "e4cd68f2ce943c3d5a582b4f",
+          "label": "is_heavy",
+          "kind": "calls",
+          "line": 165
+        },
+        {
+          "source": "e4cd68f2ce943c3d5a582b4f",
+          "label": "is_heavy",
+          "kind": "calls",
+          "line": 166
+        },
+        {
+          "source": "e4cd68f2ce943c3d5a582b4f",
+          "label": "len",
+          "kind": "calls",
+          "line": 169
+        },
+        {
+          "source": "e4cd68f2ce943c3d5a582b4f",
+          "label": "len",
+          "kind": "calls",
+          "line": 169
+        },
+        {
+          "source": "e4cd68f2ce943c3d5a582b4f",
+          "label": "len",
+          "kind": "calls",
+          "line": 170
+        },
+        {
+          "source": "e4cd68f2ce943c3d5a582b4f",
+          "label": "len",
+          "kind": "calls",
+          "line": 171
+        },
+        {
+          "source": "e4cd68f2ce943c3d5a582b4f",
+          "label": "len",
+          "kind": "calls",
+          "line": 172
+        },
+        {
+          "source": "e4cd68f2ce943c3d5a582b4f",
+          "label": "result.append",
+          "kind": "calls",
+          "line": 173
+        },
+        {
+          "source": "e4cd68f2ce943c3d5a582b4f",
+          "label": "result.append",
+          "kind": "calls",
+          "line": 176
+        },
+        {
+          "source": "fa66724fb946864fc8cfeeaf",
+          "label": "item.get_closest_marker",
+          "kind": "calls",
+          "line": 184
+        },
+        {
+          "source": "fa66724fb946864fc8cfeeaf",
+          "label": "item.add_marker",
+          "kind": "calls",
+          "line": 187
+        },
+        {
+          "source": "fa66724fb946864fc8cfeeaf",
+          "label": "pytest.mark.flaky",
+          "kind": "calls",
+          "line": 187
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "item.config.getoption",
+          "kind": "calls",
+          "line": 192
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "item.get_closest_marker",
+          "kind": "calls",
+          "line": 194
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "pytest.skip",
+          "kind": "calls",
+          "line": 195
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "item.get_closest_marker",
+          "kind": "calls",
+          "line": 197
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "pytest.skip",
+          "kind": "calls",
+          "line": 198
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "item.get_closest_marker",
+          "kind": "calls",
+          "line": 202
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "pytest.skip",
+          "kind": "calls",
+          "line": 203
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "item.get_closest_marker",
+          "kind": "calls",
+          "line": 215
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "find_spec",
+          "kind": "calls",
+          "line": 215
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "pytest.skip",
+          "kind": "calls",
+          "line": 216
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "item.get_closest_marker",
+          "kind": "calls",
+          "line": 218
+        },
+        {
+          "source": "f602595f6f8674ddf9e8c010",
+          "label": "pytest.skip",
+          "kind": "calls",
+          "line": 219
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "collections.abc.Sequence",
+          "kind": "imports",
+          "line": 2
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "operator.itemgetter",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "typing.Any",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "typing.TypedDict",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "docutils.nodes",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "docutils.nodes.Element",
+          "kind": "imports",
+          "line": 7
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "docutils.nodes.General",
+          "kind": "imports",
+          "line": 7
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "docutils.nodes.Node",
+          "kind": "imports",
+          "line": 7
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "docutils.nodes.document",
+          "kind": "imports",
+          "line": 7
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "docutils.parsers.rst.Directive",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "sphinx.application.Sphinx",
+          "kind": "imports",
+          "line": 9
+        },
+        {
+          "source": "9913a5b38bd452e643a46f29",
+          "label": "sphinx.util.nodes.make_refnode",
+          "kind": "imports",
+          "line": 10
+        },
+        {
+          "source": "b96d0732f721d434d7fad8eb",
+          "label": "TypedDict",
+          "kind": "inherits",
+          "line": 13
+        },
+        {
+          "source": "fe747d0492eabfc8f29c15fb",
+          "label": "General",
+          "kind": "inherits",
+          "line": 19
+        },
+        {
+          "source": "fe747d0492eabfc8f29c15fb",
+          "label": "Element",
+          "kind": "inherits",
+          "line": 19
+        },
+        {
+          "source": "06129cc5b912ad7ed2679080",
+          "label": "Directive",
+          "kind": "inherits",
+          "line": 23
+        },
+        {
+          "source": "c7d594e76d522dea63c0d6f2",
+          "label": "info.endswith",
+          "kind": "calls",
+          "line": 33
+        },
+        {
+          "source": "fbd8f0ad6d06b028f1c36876",
+          "label": "info.replace",
+          "kind": "calls",
+          "line": 40
+        },
+        {
+          "source": "1686ffc2a81aa55fcefdc4bb",
+          "label": "hasattr",
+          "kind": "calls",
+          "line": 46
+        },
+        {
+          "source": "1686ffc2a81aa55fcefdc4bb",
+          "label": "doctree.findall",
+          "kind": "calls",
+          "line": 50
+        },
+        {
+          "source": "1686ffc2a81aa55fcefdc4bb",
+          "label": "env.scrapy_all_settings.append",
+          "kind": "calls",
+          "line": 53
+        },
+        {
+          "source": "0025eec698fb5b7a689117e1",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 64
+        },
+        {
+          "source": "a4c0d83ddefaa38828add1c2",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 71
+        },
+        {
+          "source": "a4c0d83ddefaa38828add1c2",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 72
+        },
+        {
+          "source": "8b7f51d07a51dcde4f268c67",
+          "label": "make_refnode",
+          "kind": "calls",
+          "line": 79
+        },
+        {
+          "source": "8b7f51d07a51dcde4f268c67",
+          "label": "nodes.Text",
+          "kind": "calls",
+          "line": 84
+        },
+        {
+          "source": "8b7f51d07a51dcde4f268c67",
+          "label": "nodes.paragraph",
+          "kind": "calls",
+          "line": 86
+        },
+        {
+          "source": "8b7f51d07a51dcde4f268c67",
+          "label": "nodes.list_item",
+          "kind": "calls",
+          "line": 89
+        },
+        {
+          "source": "aed8cb6daf7d3ecc957f229a",
+          "label": "sorted",
+          "kind": "calls",
+          "line": 97
+        },
+        {
+          "source": "aed8cb6daf7d3ecc957f229a",
+          "label": "itemgetter",
+          "kind": "calls",
+          "line": 97
+        },
+        {
+          "source": "855380eb8b28e87a0496c851",
+          "label": "doctree.findall",
+          "kind": "calls",
+          "line": 107
+        },
+        {
+          "source": "855380eb8b28e87a0496c851",
+          "label": "nodes.bullet_list",
+          "kind": "calls",
+          "line": 108
+        },
+        {
+          "source": "855380eb8b28e87a0496c851",
+          "label": "settings_list.extend",
+          "kind": "calls",
+          "line": 109
+        },
+        {
+          "source": "855380eb8b28e87a0496c851",
+          "label": "node.replace_self",
+          "kind": "calls",
+          "line": 115
+        },
+        {
+          "source": "4ce7940e2fc793eb0e5dd47d",
+          "label": "nodes.reference",
+          "kind": "calls",
+          "line": 122
+        },
+        {
+          "source": "e45d670ce6b4958e495b7e44",
+          "label": "nodes.reference",
+          "kind": "calls",
+          "line": 130
+        },
+        {
+          "source": "2b36ef896b3b2947446f89ea",
+          "label": "nodes.reference",
+          "kind": "calls",
+          "line": 138
+        },
+        {
+          "source": "f4a3faf6e1d6f64279320335",
+          "label": "app.add_role",
+          "kind": "calls",
+          "line": 143
+        }
+      ],
+      "skipped_files": 72,
+      "coverage": {
+        "indexed_files": 639,
+        "skipped_files": 72,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 72
+        },
+        "indexed_extensions": {
+          ".cfg": 2,
+          ".css": 1,
+          ".html": 13,
+          ".ini": 1,
+          ".md": 9,
+          ".py": 512,
+          ".rst": 81,
+          ".toml": 1,
+          ".txt": 4,
+          ".xml": 3,
+          ".yaml": 1,
+          ".yml": 10,
+          "[none]": 1
+        },
+        "recorded_entries": 712,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "not_configured",
+      "index_version": "2026-10-03-complete-documents-super-decorators"
+    },
+    "index_status": {
+      "snapshot": "37059dde36426722405eb6d90925b1acf4e2bbb89ab5b0134e956fa9e4a2961b",
+      "index_version": "2026-10-03-complete-documents-super-decorators",
+      "symbols": 9029,
+      "embedded_symbols": 0,
+      "embedding_coverage": 0.0,
+      "semantic_ready": false,
+      "lexical_ready": true,
+      "unresolved_references_stored": 22259,
+      "analysis_scope": {
+        "python": "AST symbols and conservative static relationships",
+        "java": "Tree-sitter symbols and conservative static relationships",
+        "other_text": "Searchable documents; no semantic call graph"
+      },
+      "coverage": {
+        "indexed_files": 639,
+        "skipped_files": 72,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 72
+        },
+        "indexed_extensions": {
+          ".cfg": 2,
+          ".css": 1,
+          ".html": 13,
+          ".ini": 1,
+          ".md": 9,
+          ".py": 512,
+          ".rst": 81,
+          ".toml": 1,
+          ".txt": 4,
+          ".xml": 3,
+          ".yaml": 1,
+          ".yml": 10,
+          "[none]": 1
+        },
+        "recorded_entries": 712,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "split": "evaluation_only"
+  },
+  "mybatis": {
+    "id": "f6bbc1450d0b42499e8812733e5c53e9",
+    "url": "https://github.com/mybatis/mybatis-3",
+    "commit": "34147d0bd2f5ed0016ef367c92b25e174149326b",
+    "fingerprint": "584f3259beaeec912a8e3f42fc7fe88c6a13c0360f87fed05dc26afea0ac3ab4",
+    "index_scope": "repository root; supported files only",
+    "index_ms": 3555,
+    "stats": {
+      "files": 2048,
+      "python_files": 0,
+      "java_files": 1395,
+      "symbols": 12569,
+      "edges": 17282,
+      "parse_errors": [],
+      "unresolved_count": 30903,
+      "unresolved": [
+        {
+          "source": "d489ec8dedb277ea27c09b0a",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "d489ec8dedb277ea27c09b0a",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "d489ec8dedb277ea27c09b0a",
+          "label": "java.lang.annotation.Repeatable",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "d489ec8dedb277ea27c09b0a",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "d489ec8dedb277ea27c09b0a",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "d489ec8dedb277ea27c09b0a",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "4345e83f5eae2edf94f176ac",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "4345e83f5eae2edf94f176ac",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "4345e83f5eae2edf94f176ac",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "4345e83f5eae2edf94f176ac",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "4345e83f5eae2edf94f176ac",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "64351d84df182ddba2508db6",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "64351d84df182ddba2508db6",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "64351d84df182ddba2508db6",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "64351d84df182ddba2508db6",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "64351d84df182ddba2508db6",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "a7bd55d18272ad1c8e2490da",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "a7bd55d18272ad1c8e2490da",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "a7bd55d18272ad1c8e2490da",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "a7bd55d18272ad1c8e2490da",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "a7bd55d18272ad1c8e2490da",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "ed302609a7e7f279e5a23a00",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "ed302609a7e7f279e5a23a00",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "ed302609a7e7f279e5a23a00",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "ed302609a7e7f279e5a23a00",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "dea8e70df265d78c81959668",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "dea8e70df265d78c81959668",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "dea8e70df265d78c81959668",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "dea8e70df265d78c81959668",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "dea8e70df265d78c81959668",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "1e6f3354e4bb1923095c5644",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "1e6f3354e4bb1923095c5644",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "1e6f3354e4bb1923095c5644",
+          "label": "java.lang.annotation.Repeatable",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "1e6f3354e4bb1923095c5644",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "1e6f3354e4bb1923095c5644",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "1e6f3354e4bb1923095c5644",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "3e663243275a2292155fc7c5",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "3e663243275a2292155fc7c5",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "3e663243275a2292155fc7c5",
+          "label": "java.lang.annotation.Repeatable",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "3e663243275a2292155fc7c5",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "3e663243275a2292155fc7c5",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "3e663243275a2292155fc7c5",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "07a580536c31eb0a6dbcdd8f",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "07a580536c31eb0a6dbcdd8f",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "07a580536c31eb0a6dbcdd8f",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "07a580536c31eb0a6dbcdd8f",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "07a580536c31eb0a6dbcdd8f",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "7543afaff7357ec54452311e",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "7543afaff7357ec54452311e",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "7543afaff7357ec54452311e",
+          "label": "java.lang.annotation.Repeatable",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "7543afaff7357ec54452311e",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "7543afaff7357ec54452311e",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "7543afaff7357ec54452311e",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "49b662a6b80dde3113927d51",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "49b662a6b80dde3113927d51",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "49b662a6b80dde3113927d51",
+          "label": "java.lang.annotation.Repeatable",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "49b662a6b80dde3113927d51",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "49b662a6b80dde3113927d51",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "49b662a6b80dde3113927d51",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "142e46c84c2874c98a9606bb",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "142e46c84c2874c98a9606bb",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "142e46c84c2874c98a9606bb",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "142e46c84c2874c98a9606bb",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "142e46c84c2874c98a9606bb",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "3fbab2dac4a7faa37d104016",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "3fbab2dac4a7faa37d104016",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "3fbab2dac4a7faa37d104016",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "3fbab2dac4a7faa37d104016",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "4ee1143cf623e8d7312711d6",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "4ee1143cf623e8d7312711d6",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "4ee1143cf623e8d7312711d6",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "4ee1143cf623e8d7312711d6",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "4ee1143cf623e8d7312711d6",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "b0b0bdccae5b1d7e05bd09dd",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "b0b0bdccae5b1d7e05bd09dd",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "b0b0bdccae5b1d7e05bd09dd",
+          "label": "java.lang.annotation.Inherited",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "b0b0bdccae5b1d7e05bd09dd",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "b0b0bdccae5b1d7e05bd09dd",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "b0b0bdccae5b1d7e05bd09dd",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "be0699706b1dae065d4e1bf1",
+          "label": "org.apache.ibatis.annotations.AnnotationConstants.NULL_TYPE_DISCRIMINATOR",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "be0699706b1dae065d4e1bf1",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "be0699706b1dae065d4e1bf1",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "be0699706b1dae065d4e1bf1",
+          "label": "java.lang.annotation.Repeatable",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "be0699706b1dae065d4e1bf1",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "be0699706b1dae065d4e1bf1",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 24
+        },
+        {
+          "source": "be0699706b1dae065d4e1bf1",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 25
+        },
+        {
+          "source": "7cdb723334782fc0d253b2c0",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "7cdb723334782fc0d253b2c0",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "7cdb723334782fc0d253b2c0",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "7cdb723334782fc0d253b2c0",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "7cdb723334782fc0d253b2c0",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "d953b08a9e904ce6ef0dbc37",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "d953b08a9e904ce6ef0dbc37",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "d953b08a9e904ce6ef0dbc37",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "d953b08a9e904ce6ef0dbc37",
+          "label": "java.lang.annotation.Target",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "15816dec6a7d88b484dd887f",
+          "label": "java.lang.annotation.Documented",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "15816dec6a7d88b484dd887f",
+          "label": "java.lang.annotation.ElementType",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "15816dec6a7d88b484dd887f",
+          "label": "java.lang.annotation.Repeatable",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "15816dec6a7d88b484dd887f",
+          "label": "java.lang.annotation.Retention",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "15816dec6a7d88b484dd887f",
+          "label": "java.lang.annotation.RetentionPolicy",
+          "kind": "imports",
+          "line": 22
+        }
+      ],
+      "skipped_files": 19,
+      "coverage": {
+        "indexed_files": 2048,
+        "skipped_files": 19,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "hidden_directory": 1,
+          "ignored_directory": 1,
+          "unsupported_extension": 19
+        },
+        "indexed_extensions": {
+          ".css": 6,
+          ".java": 1395,
+          ".json": 1,
+          ".md": 23,
+          ".properties": 6,
+          ".sql": 168,
+          ".xml": 439,
+          ".yaml": 8,
+          ".yml": 1,
+          "[none]": 1
+        },
+        "recorded_entries": 2069,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "not_configured",
+      "index_version": "2026-10-03-complete-documents-super-decorators"
+    },
+    "index_status": {
+      "snapshot": "584f3259beaeec912a8e3f42fc7fe88c6a13c0360f87fed05dc26afea0ac3ab4",
+      "index_version": "2026-10-03-complete-documents-super-decorators",
+      "symbols": 12569,
+      "embedded_symbols": 0,
+      "embedding_coverage": 0.0,
+      "semantic_ready": false,
+      "lexical_ready": true,
+      "unresolved_references_stored": 30903,
+      "analysis_scope": {
+        "python": "AST symbols and conservative static relationships",
+        "java": "Tree-sitter symbols and conservative static relationships",
+        "other_text": "Searchable documents; no semantic call graph"
+      },
+      "coverage": {
+        "indexed_files": 2048,
+        "skipped_files": 19,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "hidden_directory": 1,
+          "ignored_directory": 1,
+          "unsupported_extension": 19
+        },
+        "indexed_extensions": {
+          ".css": 6,
+          ".java": 1395,
+          ".json": 1,
+          ".md": 23,
+          ".properties": 6,
+          ".sql": 168,
+          ".xml": 439,
+          ".yaml": 8,
+          ".yml": 1,
+          "[none]": 1
+        },
+        "recorded_entries": 2069,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "split": "evaluation_only"
+  },
+  "resilience4j": {
+    "id": "09dc5de82ade4d2985acab4796fbcb03",
+    "url": "https://github.com/resilience4j/resilience4j",
+    "commit": "7e3ab5252ed380b596e25240f19376a4435570b8",
+    "fingerprint": "dc0d7e87896132ad313abbf593715f6684b10400f0d4ce8d6b5fc57ed22041a2",
+    "index_scope": "repository root; supported files only",
+    "index_ms": 3784,
+    "stats": {
+      "files": 1368,
+      "python_files": 0,
+      "java_files": 1241,
+      "symbols": 10872,
+      "edges": 19970,
+      "parse_errors": [],
+      "unresolved_count": 54447,
+      "unresolved": [
+        {
+          "source": "c8a0c8b3a6daac2df012b000",
+          "label": "io.github.resilience4j.core.*",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "c8a0c8b3a6daac2df012b000",
+          "label": "io.github.resilience4j.core.functions.*",
+          "kind": "imports",
+          "line": 9
+        },
+        {
+          "source": "c8a0c8b3a6daac2df012b000",
+          "label": "java.util.List",
+          "kind": "imports",
+          "line": 15
+        },
+        {
+          "source": "c8a0c8b3a6daac2df012b000",
+          "label": "java.util.concurrent.Callable",
+          "kind": "imports",
+          "line": 16
+        },
+        {
+          "source": "c8a0c8b3a6daac2df012b000",
+          "label": "java.util.concurrent.CompletableFuture",
+          "kind": "imports",
+          "line": 17
+        },
+        {
+          "source": "c8a0c8b3a6daac2df012b000",
+          "label": "java.util.concurrent.CompletionStage",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "c8a0c8b3a6daac2df012b000",
+          "label": "java.util.concurrent.ScheduledExecutorService",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "c8a0c8b3a6daac2df012b000",
+          "label": "java.util.function.*",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "767704cd38b10cfc655a1bc1",
+          "label": "CircuitBreaker.decorateSupplier",
+          "kind": "calls",
+          "line": 100
+        },
+        {
+          "source": "6fda6a2d5841057dbd3c372d",
+          "label": "Retry.decorateSupplier",
+          "kind": "calls",
+          "line": 105
+        },
+        {
+          "source": "8b22822ee3f158b70c0cf1d6",
+          "label": "withRateLimiter",
+          "kind": "calls",
+          "line": 114
+        },
+        {
+          "source": "0cccda17910789f68c55c7fd",
+          "label": "RateLimiter.decorateSupplier",
+          "kind": "calls",
+          "line": 118
+        },
+        {
+          "source": "da6748c91fa93f186a2ed2f7",
+          "label": "SupplierUtils.recover",
+          "kind": "calls",
+          "line": 128
+        },
+        {
+          "source": "db51540f7fce2e7f7cf030cd",
+          "label": "SupplierUtils.recover",
+          "kind": "calls",
+          "line": 133
+        },
+        {
+          "source": "d9337a3767224148406c2c54",
+          "label": "SupplierUtils.andThen",
+          "kind": "calls",
+          "line": 138
+        },
+        {
+          "source": "11e6d4759c89f16760bcbdb0",
+          "label": "SupplierUtils.recover",
+          "kind": "calls",
+          "line": 143
+        },
+        {
+          "source": "24b66d44a92a2b081b971b64",
+          "label": "future.completeExceptionally",
+          "kind": "calls",
+          "line": 158
+        },
+        {
+          "source": "e9b5c9c90273323d5c040c08",
+          "label": "supplier.get",
+          "kind": "calls",
+          "line": 169
+        },
+        {
+          "source": "6d3bf46ace85b5f921862503",
+          "label": "withRateLimiter",
+          "kind": "calls",
+          "line": 197
+        },
+        {
+          "source": "8b9dc207baeb05e7fdc4a51d",
+          "label": "RateLimiter.decorateFunction",
+          "kind": "calls",
+          "line": 201
+        },
+        {
+          "source": "20916bd5c1bb7773c822becc",
+          "label": "RateLimiter.decorateFunction",
+          "kind": "calls",
+          "line": 207
+        },
+        {
+          "source": "cc5686d0bbc40c8368339e00",
+          "label": "FunctionUtils.andThen",
+          "kind": "calls",
+          "line": 217
+        },
+        {
+          "source": "a3c5851df3b91af87d144999",
+          "label": "FunctionUtils.recover",
+          "kind": "calls",
+          "line": 222
+        },
+        {
+          "source": "10a888a2d75dd5541e3de172",
+          "label": "FunctionUtils.recover",
+          "kind": "calls",
+          "line": 227
+        },
+        {
+          "source": "6ee25eafa84a927ac36c3fb6",
+          "label": "FunctionUtils.recover",
+          "kind": "calls",
+          "line": 232
+        },
+        {
+          "source": "e3affaf6838aea4c40aaf79a",
+          "label": "FunctionUtils.recover",
+          "kind": "calls",
+          "line": 237
+        },
+        {
+          "source": "f9c6c94ab514045770ddcad2",
+          "label": "function.apply",
+          "kind": "calls",
+          "line": 246
+        },
+        {
+          "source": "c9c056efc5bac9b2ffa222c8",
+          "label": "CircuitBreaker.decorateRunnable",
+          "kind": "calls",
+          "line": 264
+        },
+        {
+          "source": "9d5e41d4ff5fb394a5628723",
+          "label": "Retry.decorateRunnable",
+          "kind": "calls",
+          "line": 269
+        },
+        {
+          "source": "1d140d7af15feb6c04836a1c",
+          "label": "withRateLimiter",
+          "kind": "calls",
+          "line": 274
+        },
+        {
+          "source": "2253b2a37a8355544fcb1f6f",
+          "label": "RateLimiter.decorateRunnable",
+          "kind": "calls",
+          "line": 278
+        },
+        {
+          "source": "9f1882a28d3f4530d8ac8c4a",
+          "label": "future.completeExceptionally",
+          "kind": "calls",
+          "line": 298
+        },
+        {
+          "source": "839df4d086e048f2400ee4a3",
+          "label": "runnable.run",
+          "kind": "calls",
+          "line": 309
+        },
+        {
+          "source": "ddd7f2dbe4d245ea36e65a7c",
+          "label": "CircuitBreaker.decorateCallable",
+          "kind": "calls",
+          "line": 327
+        },
+        {
+          "source": "edb74ffe49541b5c9d527edd",
+          "label": "Retry.decorateCallable",
+          "kind": "calls",
+          "line": 332
+        },
+        {
+          "source": "6af15c74d4097da38b802e9c",
+          "label": "withRateLimiter",
+          "kind": "calls",
+          "line": 337
+        },
+        {
+          "source": "ebfe4f54b769fc1dec0f369f",
+          "label": "RateLimiter.decorateCallable",
+          "kind": "calls",
+          "line": 341
+        },
+        {
+          "source": "99577b14a1985629e5df6147",
+          "label": "CallableUtils.andThen",
+          "kind": "calls",
+          "line": 351
+        },
+        {
+          "source": "b55e817b0729bcada2ffb658",
+          "label": "CallableUtils.recover",
+          "kind": "calls",
+          "line": 356
+        },
+        {
+          "source": "811150ab1d4425a5aff5d957",
+          "label": "CallableUtils.recover",
+          "kind": "calls",
+          "line": 361
+        },
+        {
+          "source": "17a206ad8233e49e6847f98d",
+          "label": "CallableUtils.recover",
+          "kind": "calls",
+          "line": 366
+        },
+        {
+          "source": "ce8adb6a938be7be46df2e4d",
+          "label": "CallableUtils.recover",
+          "kind": "calls",
+          "line": 371
+        },
+        {
+          "source": "93eae20fc04c44a19d64d9ff",
+          "label": "future.completeExceptionally",
+          "kind": "calls",
+          "line": 386
+        },
+        {
+          "source": "59df65d3021ee6836729480c",
+          "label": "callable.call",
+          "kind": "calls",
+          "line": 397
+        },
+        {
+          "source": "4e115aae9ebf0e9a16ccf30b",
+          "label": "CircuitBreaker.decorateCheckedSupplier",
+          "kind": "calls",
+          "line": 415
+        },
+        {
+          "source": "da09f4b8ace240982aa34cd6",
+          "label": "Retry.decorateCheckedSupplier",
+          "kind": "calls",
+          "line": 420
+        },
+        {
+          "source": "ffba73ac1563a056992a2b68",
+          "label": "withRateLimiter",
+          "kind": "calls",
+          "line": 425
+        },
+        {
+          "source": "eafba41bd0f13c00eb0ea535",
+          "label": "RateLimiter.decorateCheckedSupplier",
+          "kind": "calls",
+          "line": 429
+        },
+        {
+          "source": "7a566ea9ae50b01b1ea2e526",
+          "label": "threadPoolBulkhead.submit",
+          "kind": "calls",
+          "line": 445
+        },
+        {
+          "source": "7a566ea9ae50b01b1ea2e526",
+          "label": "supplier.unchecked",
+          "kind": "calls",
+          "line": 445
+        },
+        {
+          "source": "7a566ea9ae50b01b1ea2e526",
+          "label": "CompletableFuture.failedStage",
+          "kind": "calls",
+          "line": 447
+        },
+        {
+          "source": "d0e68207bb11c9ae86d1494e",
+          "label": "CheckedSupplierUtils.andThen",
+          "kind": "calls",
+          "line": 453
+        },
+        {
+          "source": "75288af9f4c388ba66ab9bd1",
+          "label": "CheckedSupplierUtils.recover",
+          "kind": "calls",
+          "line": 458
+        },
+        {
+          "source": "64141c5367281aced4e8e835",
+          "label": "CheckedSupplierUtils.recover",
+          "kind": "calls",
+          "line": 463
+        },
+        {
+          "source": "99bb482b3c595e980dd491f7",
+          "label": "CheckedSupplierUtils.recover",
+          "kind": "calls",
+          "line": 468
+        },
+        {
+          "source": "c9e60b726ea34d1dfa055f1c",
+          "label": "CheckedSupplierUtils.recover",
+          "kind": "calls",
+          "line": 473
+        },
+        {
+          "source": "d48ce23009f31c906b9dcfb8",
+          "label": "supplier.get",
+          "kind": "calls",
+          "line": 482
+        },
+        {
+          "source": "47a582c9b801ecb28ccffb41",
+          "label": "Retry.decorateCheckedFunction",
+          "kind": "calls",
+          "line": 505
+        },
+        {
+          "source": "bd827a4d1a79c6d2f83b5a02",
+          "label": "withRateLimiter",
+          "kind": "calls",
+          "line": 510
+        },
+        {
+          "source": "ed2afd6329fe623c1f2d333b",
+          "label": "RateLimiter.decorateCheckedFunction",
+          "kind": "calls",
+          "line": 514
+        },
+        {
+          "source": "0dffce8ec567bfbd3ac2966d",
+          "label": "RateLimiter.decorateCheckedFunction",
+          "kind": "calls",
+          "line": 520
+        },
+        {
+          "source": "62e5342560be444ceac68976",
+          "label": "CheckedFunctionUtils.andThen",
+          "kind": "calls",
+          "line": 531
+        },
+        {
+          "source": "6ebc4f8b9057d11381fa8295",
+          "label": "CheckedFunctionUtils.recover",
+          "kind": "calls",
+          "line": 536
+        },
+        {
+          "source": "582f7a300bd5928430109309",
+          "label": "CheckedFunctionUtils.recover",
+          "kind": "calls",
+          "line": 541
+        },
+        {
+          "source": "5c7f27b2fd9e83ceecfd1601",
+          "label": "CheckedFunctionUtils.recover",
+          "kind": "calls",
+          "line": 546
+        },
+        {
+          "source": "b658692df97fe7c6f1f61f9c",
+          "label": "CheckedFunctionUtils.recover",
+          "kind": "calls",
+          "line": 551
+        },
+        {
+          "source": "7bd4c0b559ac039129234153",
+          "label": "function.apply",
+          "kind": "calls",
+          "line": 560
+        },
+        {
+          "source": "aa18c966c3049fe001e8fd90",
+          "label": "CircuitBreaker.decorateCheckedRunnable",
+          "kind": "calls",
+          "line": 578
+        },
+        {
+          "source": "074cdf317ca5a11b594d7c7b",
+          "label": "Retry.decorateCheckedRunnable",
+          "kind": "calls",
+          "line": 583
+        },
+        {
+          "source": "32ed842b733ac0ba832db81f",
+          "label": "RateLimiter.decorateCheckedRunnable",
+          "kind": "calls",
+          "line": 588
+        },
+        {
+          "source": "8c94a7073ff397f6452794fd",
+          "label": "RateLimiter.decorateCheckedRunnable",
+          "kind": "calls",
+          "line": 593
+        },
+        {
+          "source": "b031f43d89c8fc3fc41eedbc",
+          "label": "threadPoolBulkhead.submit",
+          "kind": "calls",
+          "line": 605
+        },
+        {
+          "source": "b031f43d89c8fc3fc41eedbc",
+          "label": "runnable.unchecked",
+          "kind": "calls",
+          "line": 605
+        },
+        {
+          "source": "b031f43d89c8fc3fc41eedbc",
+          "label": "CompletableFuture.failedStage",
+          "kind": "calls",
+          "line": 608
+        },
+        {
+          "source": "5066f46a41cc4a5cf61c737a",
+          "label": "runnable.run",
+          "kind": "calls",
+          "line": 618
+        },
+        {
+          "source": "5341079b8cbb6944057e68b8",
+          "label": "CircuitBreaker.decorateCheckedConsumer",
+          "kind": "calls",
+          "line": 636
+        },
+        {
+          "source": "225e98261a0daea1fde49633",
+          "label": "Retry.decorateCheckedConsumer",
+          "kind": "calls",
+          "line": 641
+        },
+        {
+          "source": "ab58cb107795905a159a6a18",
+          "label": "RateLimiter.decorateCheckedConsumer",
+          "kind": "calls",
+          "line": 646
+        },
+        {
+          "source": "481dd9e950964598cb587a46",
+          "label": "RateLimiter.decorateCheckedConsumer",
+          "kind": "calls",
+          "line": 651
+        },
+        {
+          "source": "ed29340aa888e2f52e18a286",
+          "label": "consumer.accept",
+          "kind": "calls",
+          "line": 665
+        },
+        {
+          "source": "7176ac40618956bdb537c183",
+          "label": "CircuitBreaker.decorateCompletionStage",
+          "kind": "calls",
+          "line": 683
+        },
+        {
+          "source": "9ff10d55a08f6474c457086b",
+          "label": "Retry.decorateCompletionStage",
+          "kind": "calls",
+          "line": 689
+        },
+        {
+          "source": "ecc73980b60b174119bbd98b",
+          "label": "timeLimiter.decorateCompletionStage",
+          "kind": "calls",
+          "line": 700
+        },
+        {
+          "source": "52f946e318524a4d666c2d8e",
+          "label": "withRateLimiter",
+          "kind": "calls",
+          "line": 705
+        },
+        {
+          "source": "69236eee02ff1eb15dbb3c09",
+          "label": "RateLimiter.decorateCompletionStage",
+          "kind": "calls",
+          "line": 709
+        },
+        {
+          "source": "d3e7dcc2c96b209f7f285091",
+          "label": "CompletionStageUtils.recover",
+          "kind": "calls",
+          "line": 715
+        },
+        {
+          "source": "38f2c2086d1ed0103f57814b",
+          "label": "CompletionStageUtils.andThen",
+          "kind": "calls",
+          "line": 720
+        },
+        {
+          "source": "81d5c2e806de8a18a8dd0452",
+          "label": "CompletionStageUtils.recover",
+          "kind": "calls",
+          "line": 725
+        },
+        {
+          "source": "76684c3704a6dcdea9a32afa",
+          "label": "CompletionStageUtils.recover",
+          "kind": "calls",
+          "line": 730
+        },
+        {
+          "source": "4f59487a97178f9ba2e5ec87",
+          "label": "CompletionStageUtils.recover",
+          "kind": "calls",
+          "line": 735
+        },
+        {
+          "source": "cad357b19584d753c089e758",
+          "label": "stageSupplier.get",
+          "kind": "calls",
+          "line": 744
+        },
+        {
+          "source": "5ae5af48274fd548989881bf",
+          "label": "CircuitBreaker.decorateConsumer",
+          "kind": "calls",
+          "line": 762
+        },
+        {
+          "source": "51f12c5e4c928bd9a4acc684",
+          "label": "Retry.decorateConsumer",
+          "kind": "calls",
+          "line": 767
+        },
+        {
+          "source": "39ffc0a485372a347d349a2a",
+          "label": "withRateLimiter",
+          "kind": "calls",
+          "line": 772
+        },
+        {
+          "source": "4ce071ee0c08fc405cc5248d",
+          "label": "RateLimiter.decorateConsumer",
+          "kind": "calls",
+          "line": 776
+        },
+        {
+          "source": "5cf9912072c0d6b708e6c846",
+          "label": "RateLimiter.decorateConsumer",
+          "kind": "calls",
+          "line": 782
+        },
+        {
+          "source": "3dca5795784ba8c9e34fc0ab",
+          "label": "consumer.accept",
+          "kind": "calls",
+          "line": 796
+        },
+        {
+          "source": "3b26fea32a4163d78e871a11",
+          "label": "io.github.resilience4j.core.lang.NonNullApi",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "3b26fea32a4163d78e871a11",
+          "label": "io.github.resilience4j.core.lang.NonNullFields",
+          "kind": "imports",
+          "line": 24
+        },
+        {
+          "source": "296a957d9d97fec6538be3ce",
+          "label": "org.junit.jupiter.api.BeforeEach",
+          "kind": "imports",
+          "line": 43
+        }
+      ],
+      "skipped_files": 22,
+      "coverage": {
+        "indexed_files": 1368,
+        "skipped_files": 22,
+        "ignored_directories": 3,
+        "reason_counts": {
+          "hidden_directory": 2,
+          "ignored_directory": 1,
+          "unsupported_extension": 22
+        },
+        "indexed_extensions": {
+          ".gradle": 32,
+          ".groovy": 25,
+          ".java": 1241,
+          ".json": 3,
+          ".kt": 48,
+          ".properties": 3,
+          ".toml": 1,
+          ".txt": 3,
+          ".xml": 3,
+          ".yaml": 3,
+          ".yml": 4,
+          "[none]": 2
+        },
+        "recorded_entries": 1393,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "not_configured",
+      "index_version": "2026-10-03-complete-documents-super-decorators"
+    },
+    "index_status": {
+      "snapshot": "dc0d7e87896132ad313abbf593715f6684b10400f0d4ce8d6b5fc57ed22041a2",
+      "index_version": "2026-10-03-complete-documents-super-decorators",
+      "symbols": 10872,
+      "embedded_symbols": 0,
+      "embedding_coverage": 0.0,
+      "semantic_ready": false,
+      "lexical_ready": true,
+      "unresolved_references_stored": 54447,
+      "analysis_scope": {
+        "python": "AST symbols and conservative static relationships",
+        "java": "Tree-sitter symbols and conservative static relationships",
+        "other_text": "Searchable documents; no semantic call graph"
+      },
+      "coverage": {
+        "indexed_files": 1368,
+        "skipped_files": 22,
+        "ignored_directories": 3,
+        "reason_counts": {
+          "hidden_directory": 2,
+          "ignored_directory": 1,
+          "unsupported_extension": 22
+        },
+        "indexed_extensions": {
+          ".gradle": 32,
+          ".groovy": 25,
+          ".java": 1241,
+          ".json": 3,
+          ".kt": 48,
+          ".properties": 3,
+          ".toml": 1,
+          ".txt": 3,
+          ".xml": 3,
+          ".yaml": 3,
+          ".yml": 4,
+          "[none]": 2
+        },
+        "recorded_entries": 1393,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "split": "evaluation_only"
+  }
+}

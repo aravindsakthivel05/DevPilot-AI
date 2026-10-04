@@ -1,0 +1,713 @@
+{
+  "repository": {
+    "id": "da038a11abc14312869747ad09971ae4",
+    "name": "Pydantic structure regression",
+    "source": "/Users/aravinds/Documents/ChatGPT/Final year project/.devpilot/sources/pydantic",
+    "commit_id": "bb6da4cfbb1f559885ea2fa207ec93853bfeac64",
+    "fingerprint": "8cc27b83d88278539b1cfe0322a108d832dc65725580605fa99eb466fec74aab",
+    "status": "ready",
+    "progress": "Ready for investigation",
+    "created_at": "2026-10-04T08:02:57.653884+00:00",
+    "stats": {
+      "files": 765,
+      "python_files": 453,
+      "java_files": 0,
+      "languages": {
+        "text": 163,
+        "python": 453,
+        "javascript": 5,
+        "rust": 144
+      },
+      "symbols": 33301,
+      "edges": 44923,
+      "parse_errors": [
+        {
+          "path": "tests/mypy/outputs/mypy-plugin_ini/frozen_field.py",
+          "line": 1,
+          "error": "Tree-sitter syntax recovery error",
+          "language": "python"
+        }
+      ],
+      "unresolved_count": 59019,
+      "unresolved": [
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "logging",
+          "kind": "imports",
+          "line": 10
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "subprocess",
+          "kind": "imports",
+          "line": 11
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "sys",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "collections.Counter",
+          "kind": "imports",
+          "line": 13
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "collections.abc.Container",
+          "kind": "imports",
+          "line": 14
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "datetime.datetime",
+          "kind": "imports",
+          "line": 15
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "datetime.timedelta",
+          "kind": "imports",
+          "line": 15
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "datetime.timezone",
+          "kind": "imports",
+          "line": 15
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "pathlib.Path",
+          "kind": "imports",
+          "line": 16
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "typing.Any",
+          "kind": "imports",
+          "line": 17
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "requests",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "yaml",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "github.Github",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "pydantic_settings.BaseSettings",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "277dea2ddb828e5fdbc2929b",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 153
+        },
+        {
+          "source": "89fcfcba3500c5c1152a819d",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 164
+        },
+        {
+          "source": "c0efef0bb433b6cf1eb43429",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 171
+        },
+        {
+          "source": "dc2fec5c506c9299a3b440fe",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 183
+        },
+        {
+          "source": "7f28e32b4603a9514b37f560",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 189
+        },
+        {
+          "source": "da2f484836974af038126e30",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 195
+        },
+        {
+          "source": "91b52ab308c15d85418eaac7",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 206
+        },
+        {
+          "source": "7c5f9fa6531fc7d73eb35c77",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 216
+        },
+        {
+          "source": "9813b0e3427098350cd27330",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 223
+        },
+        {
+          "source": "ffb4d59a8e6dc1fb9e1f8f8d",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 230
+        },
+        {
+          "source": "4b770bb1c72a72277cbfbf7e",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 236
+        },
+        {
+          "source": "ac1898511729bdabe6591814",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 242
+        },
+        {
+          "source": "0745a8e9b46b14a24a95edec",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 248
+        },
+        {
+          "source": "de68b13c271199fc891a678c",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 254
+        },
+        {
+          "source": "958ed504135b6adaba7ea90c",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 260
+        },
+        {
+          "source": "04cb468501c53b2f4445de27",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 266
+        },
+        {
+          "source": "c4c5e24d338333983b03fe04",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 272
+        },
+        {
+          "source": "8d9bd38528f112b59bea906a",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 281
+        },
+        {
+          "source": "0bbd1cb5470e8ad7a846f868",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 287
+        },
+        {
+          "source": "271821fe8027977db25cf616",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 293
+        },
+        {
+          "source": "00093c0a11115b6c076c713c",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 300
+        },
+        {
+          "source": "0a48b97c603bae7be2b4653e",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 306
+        },
+        {
+          "source": "96ec1a93aec3f905701c6cf5",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 319
+        },
+        {
+          "source": "f6feea99a1ab76db8265d8a8",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 326
+        },
+        {
+          "source": "2e3eafc589dfc6852b36042f",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 332
+        },
+        {
+          "source": "0d23665de500f2b91b8cd120",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 338
+        },
+        {
+          "source": "8887356fe47482961cba6bc1",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 344
+        },
+        {
+          "source": "d391924cc2c53178a118dd30",
+          "label": "BaseSettings",
+          "kind": "inherits",
+          "line": 350
+        },
+        {
+          "source": "e6862a005ab5ff647215409f",
+          "label": "settings.input_token.get_secret_value",
+          "kind": "calls",
+          "line": 377
+        },
+        {
+          "source": "e6862a005ab5ff647215409f",
+          "label": "requests.post",
+          "kind": "calls",
+          "line": 379
+        },
+        {
+          "source": "e6862a005ab5ff647215409f",
+          "label": "logging.error",
+          "kind": "calls",
+          "line": 386
+        },
+        {
+          "source": "e6862a005ab5ff647215409f",
+          "label": "logging.error",
+          "kind": "calls",
+          "line": 387
+        },
+        {
+          "source": "e6862a005ab5ff647215409f",
+          "label": "RuntimeError",
+          "kind": "calls",
+          "line": 388
+        },
+        {
+          "source": "e6862a005ab5ff647215409f",
+          "label": "response.json",
+          "kind": "calls",
+          "line": 389
+        },
+        {
+          "source": "e6862a005ab5ff647215409f",
+          "label": "logging.error",
+          "kind": "calls",
+          "line": 391
+        },
+        {
+          "source": "e6862a005ab5ff647215409f",
+          "label": "logging.error",
+          "kind": "calls",
+          "line": 392
+        },
+        {
+          "source": "e6862a005ab5ff647215409f",
+          "label": "logging.error",
+          "kind": "calls",
+          "line": 393
+        },
+        {
+          "source": "e6862a005ab5ff647215409f",
+          "label": "RuntimeError",
+          "kind": "calls",
+          "line": 394
+        },
+        {
+          "source": "61ba4ba5c3e031af8870a889",
+          "label": "IssuesResponse.model_validate",
+          "kind": "calls",
+          "line": 409
+        },
+        {
+          "source": "32ee49bf3880be7494c72c5d",
+          "label": "DiscussionsResponse.model_validate",
+          "kind": "calls",
+          "line": 432
+        },
+        {
+          "source": "8acd2482d0eb38c2153568c2",
+          "label": "PRsResponse.model_validate",
+          "kind": "calls",
+          "line": 447
+        },
+        {
+          "source": "007f1f1a1eba40e76e8d9382",
+          "label": "issue_nodes.extend",
+          "kind": "calls",
+          "line": 467
+        },
+        {
+          "source": "007f1f1a1eba40e76e8d9382",
+          "label": "Counter",
+          "kind": "calls",
+          "line": 471
+        },
+        {
+          "source": "007f1f1a1eba40e76e8d9382",
+          "label": "Counter",
+          "kind": "calls",
+          "line": 472
+        },
+        {
+          "source": "007f1f1a1eba40e76e8d9382",
+          "label": "datetime.now",
+          "kind": "calls",
+          "line": 475
+        },
+        {
+          "source": "007f1f1a1eba40e76e8d9382",
+          "label": "timedelta",
+          "kind": "calls",
+          "line": 476
+        },
+        {
+          "source": "007f1f1a1eba40e76e8d9382",
+          "label": "set",
+          "kind": "calls",
+          "line": 483
+        },
+        {
+          "source": "007f1f1a1eba40e76e8d9382",
+          "label": "issue_commentors.add",
+          "kind": "calls",
+          "line": 488
+        },
+        {
+          "source": "203c85b71b0646dcec22026c",
+          "label": "discussion_nodes.extend",
+          "kind": "calls",
+          "line": 513
+        },
+        {
+          "source": "203c85b71b0646dcec22026c",
+          "label": "Counter",
+          "kind": "calls",
+          "line": 517
+        },
+        {
+          "source": "203c85b71b0646dcec22026c",
+          "label": "Counter",
+          "kind": "calls",
+          "line": 518
+        },
+        {
+          "source": "203c85b71b0646dcec22026c",
+          "label": "datetime.now",
+          "kind": "calls",
+          "line": 521
+        },
+        {
+          "source": "203c85b71b0646dcec22026c",
+          "label": "timedelta",
+          "kind": "calls",
+          "line": 522
+        },
+        {
+          "source": "203c85b71b0646dcec22026c",
+          "label": "set",
+          "kind": "calls",
+          "line": 529
+        },
+        {
+          "source": "203c85b71b0646dcec22026c",
+          "label": "discussion_commentors.add",
+          "kind": "calls",
+          "line": 534
+        },
+        {
+          "source": "203c85b71b0646dcec22026c",
+          "label": "discussion_commentors.add",
+          "kind": "calls",
+          "line": 539
+        },
+        {
+          "source": "2482ecb032e8b29c293cfd75",
+          "label": "pr_nodes.extend",
+          "kind": "calls",
+          "line": 598
+        },
+        {
+          "source": "2482ecb032e8b29c293cfd75",
+          "label": "Counter",
+          "kind": "calls",
+          "line": 602
+        },
+        {
+          "source": "2482ecb032e8b29c293cfd75",
+          "label": "Counter",
+          "kind": "calls",
+          "line": 603
+        },
+        {
+          "source": "2482ecb032e8b29c293cfd75",
+          "label": "Counter",
+          "kind": "calls",
+          "line": 604
+        },
+        {
+          "source": "2482ecb032e8b29c293cfd75",
+          "label": "set",
+          "kind": "calls",
+          "line": 612
+        },
+        {
+          "source": "2482ecb032e8b29c293cfd75",
+          "label": "set",
+          "kind": "calls",
+          "line": 613
+        },
+        {
+          "source": "2482ecb032e8b29c293cfd75",
+          "label": "pr_commentors.add",
+          "kind": "calls",
+          "line": 619
+        },
+        {
+          "source": "2482ecb032e8b29c293cfd75",
+          "label": "pr_reviewers.add",
+          "kind": "calls",
+          "line": 625
+        },
+        {
+          "source": "c275f71653f7ed39687ade1b",
+          "label": "counter.most_common",
+          "kind": "calls",
+          "line": 656
+        },
+        {
+          "source": "c275f71653f7ed39687ade1b",
+          "label": "users.append",
+          "kind": "calls",
+          "line": 661
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "logging.basicConfig",
+          "kind": "calls",
+          "line": 673
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "logging.info",
+          "kind": "calls",
+          "line": 675
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "settings.model_dump_json",
+          "kind": "calls",
+          "line": 675
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "Github",
+          "kind": "calls",
+          "line": 676
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "settings.input_token.get_secret_value",
+          "kind": "calls",
+          "line": 676
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "g.get_repo",
+          "kind": "calls",
+          "line": 677
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "maintainers.append",
+          "kind": "calls",
+          "line": 695
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "experts.extend",
+          "kind": "calls",
+          "line": 743
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "Path",
+          "kind": "calls",
+          "line": 752
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "people_path.read_text",
+          "kind": "calls",
+          "line": 753
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "yaml.dump",
+          "kind": "calls",
+          "line": 754
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "logging.info",
+          "kind": "calls",
+          "line": 756
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "sys.exit",
+          "kind": "calls",
+          "line": 757
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "people_path.write_text",
+          "kind": "calls",
+          "line": 758
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "logging.info",
+          "kind": "calls",
+          "line": 760
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "subprocess.run",
+          "kind": "calls",
+          "line": 761
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "subprocess.run",
+          "kind": "calls",
+          "line": 762
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "logging.info",
+          "kind": "calls",
+          "line": 765
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "subprocess.run",
+          "kind": "calls",
+          "line": 766
+        },
+        {
+          "source": "467e7e7f6cf5b85e4c40e668",
+          "label": "logging.info",
+          "kind": "calls",
+          "line": 767
+        }
+      ],
+      "skipped_files": 79,
+      "coverage": {
+        "indexed_files": 765,
+        "skipped_files": 79,
+        "ignored_directories": 5,
+        "reason_counts": {
+          "hidden_directory": 3,
+          "ignored_directory": 1,
+          "lockfile": 3,
+          "symlink_directory": 1,
+          "symlink_file": 1,
+          "unsupported_extension": 75
+        },
+        "indexed_extensions": {
+          ".css": 2,
+          ".html": 5,
+          ".ini": 6,
+          ".js": 5,
+          ".json": 2,
+          ".md": 99,
+          ".py": 453,
+          ".pyi": 2,
+          ".rs": 144,
+          ".toml": 18,
+          ".yaml": 4,
+          ".yml": 23,
+          "[none]": 2
+        },
+        "recorded_entries": 849,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "not_configured",
+      "index_version": "2026-10-04-language-adapters-v1",
+      "timings_ms": {
+        "read_and_snapshot": 239.039,
+        "analysis_and_graph": 11318.405,
+        "chunks_and_storage": 3494.332,
+        "embeddings": 9.528,
+        "total_index": 15061.307
+      }
+    },
+    "error": null
+  },
+  "index_seconds": 18.297,
+  "retrieval": [
+    {
+      "question": "Where does BaseModel.model_validate delegate validation?",
+      "qualified": [
+        "pydantic.main.BaseModel.model_validate",
+        "pydantic.main.BaseModel.parse_obj",
+        "pydantic.errors.PydanticUserError",
+        "pydantic.main.BaseModel.from_orm",
+        "pydantic.main.BaseModel.parse_raw",
+        "pydantic.main.BaseModel.validate",
+        "pydantic.main.BaseModel.model_extra",
+        "pydantic.main.BaseModel.model_validate_strings"
+      ],
+      "warning": null
+    },
+    {
+      "question": "How are create_model field definitions processed?",
+      "qualified": [
+        "pydantic-core.src.definitions.Definitions",
+        "pydantic-core.src.definitions.DefinitionsBuilder",
+        "pydantic-core.src.validators.definitions.DefinitionsValidatorBuilder",
+        "pydantic-core.src.serializers.type_serializers.definitions.DefinitionsSerializerBuilder",
+        "pydantic.main.create_model",
+        "pydantic.main.create_model",
+        "pydantic.main.create_model",
+        "pydantic._internal._generics._late_cache_key"
+      ],
+      "warning": null
+    }
+  ],
+  "graph_nodes": 100,
+  "graph_edges": 187,
+  "graph_truncated": true,
+  "notice": "Index/retrieval smoke check on a previously used source snapshot; no model generation, embeddings or repository tests run. Not a held-out accuracy benchmark."
+}

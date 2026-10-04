@@ -1,0 +1,2806 @@
+{
+  "source_manifest": "evaluation/training-repository-snapshots.json",
+  "questions": "evaluation/public-repository-tier-questions.jsonl",
+  "llm_configured": true,
+  "model": "qwen2.5-coder:7b",
+  "embedding_model": null,
+  "use_model": true,
+  "answer_prompt_version": "2026-10-03-aspect-status-original-lines",
+  "retrieval_version": "2026-10-03-coverage-fts-context",
+  "context_window": 8192,
+  "cases": 3,
+  "mean_recall_at_8": 0.75,
+  "results": [
+    {
+      "id": "fastapi-medium-001",
+      "tier": "medium",
+      "repository": "fastapi",
+      "url": "https://github.com/fastapi/fastapi",
+      "commit": "33d411dbc3236275dd64d200bfe18d5d60a49b2e",
+      "fingerprint": "7c7220afbbfa6df722ede89138b33ac6bcfc65f0be5b58a78184bdc7808e6bfe",
+      "index_scope": "repository root",
+      "indexed_files": 2879,
+      "indexed_symbols": 10592,
+      "question": "How does FastAPI.openapi() obtain the OpenAPI schema for the app, and where are route schemas assembled?",
+      "expected_symbols": [
+        "fastapi.applications.FastAPI.openapi",
+        "fastapi.openapi.utils.get_openapi"
+      ],
+      "runs": {
+        "quick": {
+          "elapsed_ms": 16560,
+          "retrieved_expected": [
+            "fastapi.applications.FastAPI.openapi"
+          ],
+          "expected_count": 2,
+          "recall_at_8": 0.5,
+          "evidence": [
+            {
+              "qualified": "fastapi.applications.FastAPI.openapi",
+              "path": "fastapi/applications.py",
+              "start_line": 1106,
+              "end_line": 1139
+            }
+          ],
+          "answer": "FastAPI.openapi() obtains the OpenAPI schema for the app by calling get_openapi() with various parameters such as title, version, and routes [1].\n\nAspect 2: The supplied evidence did not establish all requested details for this aspect.",
+          "generated": true,
+          "semantic_used": false,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [],
+            "uncited_sentences": [],
+            "reference_section": false,
+            "entailment_checked": false,
+            "source_identity_checked": true
+          },
+          "warning": null,
+          "model": "qwen2.5-coder:7b",
+          "workflow": null,
+          "abstained": false,
+          "partial": true,
+          "aspect_statuses": [
+            {
+              "aspect_id": 1,
+              "question": "How does FastAPI.openapi() obtain the OpenAPI schema for the app",
+              "status": "supported"
+            },
+            {
+              "aspect_id": 2,
+              "question": "where are route schemas assembled",
+              "status": "insufficient_evidence"
+            }
+          ],
+          "generation_context": [
+            {
+              "source_id": 1,
+              "id": "ac05816ac0705f3e4465076e",
+              "qualified": "fastapi.applications.FastAPI.openapi",
+              "path": "fastapi/applications.py",
+              "source_line_numbers": [
+                1106,
+                1120,
+                1121,
+                1122,
+                1123,
+                1124,
+                1125,
+                1126,
+                1127,
+                1128,
+                1129,
+                1130,
+                1131,
+                1132,
+                1133,
+                1134,
+                1135,
+                1136,
+                1137,
+                1138,
+                1139
+              ],
+              "source": "    def openapi(self) -> dict[str, Any]:\n        routes_version = self.router._get_routes_version()\n        if not self.openapi_schema or self._openapi_routes_version != routes_version:\n            self.openapi_schema = get_openapi(\n                title=self.title,\n                version=self.version,\n                openapi_version=self.openapi_version,\n                summary=self.summary,\n                description=self.description,\n                terms_of_service=self.terms_of_service,\n                contact=self.contact,\n                license_info=self.license_info,\n                routes=self.routes,\n                webhooks=self.webhooks.routes,\n                tags=self.openapi_tags,\n                servers=self.servers,\n                separate_input_output_schemas=self.separate_input_output_schemas,\n                external_docs=self.openapi_external_docs,\n            )\n            self._openapi_routes_version = routes_version\n        return self.openapi_schema",
+              "truncated": true
+            }
+          ],
+          "generation_diagnostics": {
+            "attempt_count": 1,
+            "total_request_ms": 16177,
+            "attempts": [
+              {
+                "load_duration_ms": 130,
+                "prompt_eval_duration_ms": 2166,
+                "eval_duration_ms": 7900,
+                "prompt_tokens": 783,
+                "completion_tokens": 196,
+                "request_ms": 16177,
+                "estimated_prompt_tokens": 1022,
+                "context_window": 8192,
+                "entailment_checked": false,
+                "provider_calls": 1,
+                "usage": {
+                  "prompt_tokens": 1638,
+                  "completion_tokens": 346,
+                  "total_tokens": 1984
+                },
+                "draft_claims": [
+                  {
+                    "text": "FastAPI.openapi() obtains the OpenAPI schema for the app by calling get_openapi() with various parameters such as title, version, and routes.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 1122,
+                        "end_line": 1136
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Route schemas are assembled in the FastAPI application by adding routes to the app's router. These routes include information about the endpoint paths, methods, and request/response models.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 1131,
+                        "end_line": 1134
+                      }
+                    ]
+                  }
+                ],
+                "claim_audit": {
+                  "status": "completed",
+                  "decisions": [
+                    {
+                      "claim_index": 0,
+                      "verdict": "supported",
+                      "reason": "The claim is supported by the code snippet. The `FastAPI.openapi()` method calls `get_openapi()` with various parameters such as title, version, and routes."
+                    },
+                    {
+                      "claim_index": 1,
+                      "verdict": "unsupported",
+                      "reason": "The claim is not fully supported by the provided code snippet. While it mentions that route schemas are assembled in the FastAPI application, it does not specify how this is done. The code snippet only shows where the `get_openapi()` function is called with parameters including routes."
+                    }
+                  ],
+                  "provider_calls": 1,
+                  "elapsed_ms": 5878,
+                  "model": "qwen2.5-coder:7b",
+                  "factual_support_proven": false
+                },
+                "supporting_lines": [
+                  {
+                    "source_id": 1,
+                    "path": "fastapi/applications.py",
+                    "qualified": "fastapi.applications.FastAPI.openapi",
+                    "start_line": 1122,
+                    "end_line": 1136,
+                    "text": "            self.openapi_schema = get_openapi(\n                title=self.title,\n                version=self.version,\n                openapi_version=self.openapi_version,\n                summary=self.summary,\n                description=self.description,\n                terms_of_service=self.terms_of_service,\n                contact=self.contact,\n                license_info=self.license_info,\n                routes=self.routes,\n                webhooks=self.webhooks.routes,\n                tags=self.openapi_tags,\n                servers=self.servers,\n                separate_input_output_schemas=self.separate_input_output_schemas,\n                external_docs=self.openapi_external_docs,"
+                  }
+                ],
+                "aspect_statuses": [
+                  {
+                    "aspect_id": 1,
+                    "question": "How does FastAPI.openapi() obtain the OpenAPI schema for the app",
+                    "status": "supported"
+                  },
+                  {
+                    "aspect_id": 2,
+                    "question": "where are route schemas assembled",
+                    "status": "insufficient_evidence"
+                  }
+                ],
+                "claims": [
+                  {
+                    "text": "FastAPI.openapi() obtains the OpenAPI schema for the app by calling get_openapi() with various parameters such as title, version, and routes.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 1122,
+                        "end_line": 1136
+                      }
+                    ]
+                  },
+                  {
+                    "text": "The supplied evidence did not establish all requested details for this aspect.",
+                    "aspect_id": 2,
+                    "status": "insufficient_evidence",
+                    "citations": []
+                  }
+                ],
+                "source_identity_checked": true,
+                "outcome": "accepted"
+              }
+            ],
+            "provider_calls": 1
+          },
+          "evidence_count": 1,
+          "answer_correct": null,
+          "all_claims_supported": null,
+          "all_aspects_complete": null,
+          "usage": {
+            "prompt_tokens": 1638,
+            "completion_tokens": 346,
+            "total_tokens": 1984
+          }
+        },
+        "deep": {
+          "elapsed_ms": 33451,
+          "retrieved_expected": [
+            "fastapi.applications.FastAPI.openapi",
+            "fastapi.openapi.utils.get_openapi"
+          ],
+          "expected_count": 2,
+          "recall_at_8": 1.0,
+          "evidence": [
+            {
+              "qualified": "fastapi.applications.FastAPI.openapi",
+              "path": "fastapi/applications.py",
+              "start_line": 1106,
+              "end_line": 1139
+            },
+            {
+              "qualified": "fastapi.openapi.models.OpenAPI",
+              "path": "fastapi/openapi/models.py",
+              "start_line": 419,
+              "end_line": 430
+            },
+            {
+              "qualified": "fastapi.openapi.utils.get_fields_from_routes",
+              "path": "fastapi/openapi/utils.py",
+              "start_line": 551,
+              "end_line": 582
+            },
+            {
+              "qualified": "fastapi.openapi.utils._get_api_route_for_openapi",
+              "path": "fastapi/openapi/utils.py",
+              "start_line": 543,
+              "end_line": 548
+            },
+            {
+              "qualified": "fastapi.routing.iter_route_contexts",
+              "path": "fastapi/routing.py",
+              "start_line": 1871,
+              "end_line": 1882
+            },
+            {
+              "qualified": "fastapi.openapi.utils.get_openapi",
+              "path": "fastapi/openapi/utils.py",
+              "start_line": 585,
+              "end_line": 679
+            },
+            {
+              "qualified": "fastapi.openapi.utils.get_openapi_path",
+              "path": "fastapi/openapi/utils.py",
+              "start_line": 311,
+              "end_line": 540
+            },
+            {
+              "qualified": "fastapi.routing.APIRouter.route",
+              "path": "fastapi/routing.py",
+              "start_line": 2950,
+              "end_line": 2967
+            }
+          ],
+          "answer": "No validated explanation is available. These retrieved source locations may help you investigate; their relevance does not establish an answer.\n\n[1] fastapi.applications.FastAPI.openapi — fastapi/applications.py:1106–1139\nRetrieved through symbol / text match.\n\n[2] fastapi.openapi.models.OpenAPI — fastapi/openapi/models.py:419–430\nRetrieved through calls relationship with get_openapi.\n\n[3] fastapi.openapi.utils.get_fields_from_routes — fastapi/openapi/utils.py:551–582\nRetrieved through symbol / text match.\n\n[4] fastapi.openapi.utils._get_api_route_for_openapi — fastapi/openapi/utils.py:543–548\nRetrieved through calls relationship with get_openapi.\n\n[5] fastapi.routing.iter_route_contexts — fastapi/routing.py:1871–1882\nRetrieved through calls relationship with get_openapi.\n\n[6] fastapi.openapi.utils.get_openapi — fastapi/openapi/utils.py:585–679\nRetrieved through symbol / text match.\n\n[7] fastapi.openapi.utils.get_openapi_path — fastapi/openapi/utils.py:311–540\nRetrieved through symbol / text match.\n\n[8] fastapi.routing.APIRouter.route — fastapi/routing.py:2950–2967\nRetrieved through symbol / text match.",
+          "generated": false,
+          "semantic_used": false,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [
+              "No validated explanation is available. These retrieved source locations may help you investigate; their relevance does not establish an answer."
+            ],
+            "uncited_sentences": [
+              "No validated explanation is available.",
+              "These retrieved source locations may help you investigate; their relevance does not establish an answer."
+            ],
+            "reference_section": true,
+            "entailment_checked": false,
+            "source_identity_checked": false
+          },
+          "warning": "Named symbol routing.py is not established by its cited source identity.",
+          "model": "qwen2.5-coder:7b",
+          "workflow": {
+            "engine": "langgraph",
+            "steps": [
+              "snapshot check",
+              "primary retrieval",
+              "aspect candidate coverage",
+              "targeted aspect and outgoing-relationship retrieval",
+              "aspect candidate coverage",
+              "answer provenance and citation checks"
+            ],
+            "retrieval_passes": 3,
+            "investigation_rounds": 1,
+            "candidate_coverage": [
+              {
+                "aspect_id": 1,
+                "question": "How does FastAPI.openapi() obtain the OpenAPI schema for the app",
+                "status": "candidate_evidence",
+                "candidate_ids": [
+                  "ac05816ac0705f3e4465076e",
+                  "64a26ec18cd2d1f39d53b4d0"
+                ],
+                "factual_support_verified": false
+              },
+              {
+                "aspect_id": 2,
+                "question": "where are route schemas assembled",
+                "status": "candidate_evidence",
+                "candidate_ids": [
+                  "ac05816ac0705f3e4465076e",
+                  "fd15c336c834c43eab2a6e85"
+                ],
+                "factual_support_verified": false
+              }
+            ]
+          },
+          "abstained": false,
+          "partial": false,
+          "aspect_statuses": [],
+          "generation_context": [
+            {
+              "source_id": 1,
+              "id": "ac05816ac0705f3e4465076e",
+              "qualified": "fastapi.applications.FastAPI.openapi",
+              "path": "fastapi/applications.py",
+              "source_line_numbers": [
+                1106,
+                1120,
+                1121,
+                1122,
+                1123,
+                1124,
+                1125,
+                1126,
+                1127,
+                1128,
+                1129,
+                1130,
+                1131,
+                1132,
+                1133,
+                1134,
+                1135,
+                1136,
+                1137,
+                1138,
+                1139
+              ],
+              "source": "    def openapi(self) -> dict[str, Any]:\n        routes_version = self.router._get_routes_version()\n        if not self.openapi_schema or self._openapi_routes_version != routes_version:\n            self.openapi_schema = get_openapi(\n                title=self.title,\n                version=self.version,\n                openapi_version=self.openapi_version,\n                summary=self.summary,\n                description=self.description,\n                terms_of_service=self.terms_of_service,\n                contact=self.contact,\n                license_info=self.license_info,\n                routes=self.routes,\n                webhooks=self.webhooks.routes,\n                tags=self.openapi_tags,\n                servers=self.servers,\n                separate_input_output_schemas=self.separate_input_output_schemas,\n                external_docs=self.openapi_external_docs,\n            )\n            self._openapi_routes_version = routes_version\n        return self.openapi_schema",
+              "truncated": true
+            },
+            {
+              "source_id": 4,
+              "id": "a1f7163c1055c11a4773d75b",
+              "qualified": "fastapi.openapi.utils._get_api_route_for_openapi",
+              "path": "fastapi/openapi/utils.py",
+              "source_line_numbers": [
+                543,
+                544,
+                545,
+                546,
+                547,
+                548
+              ],
+              "source": "def _get_api_route_for_openapi(\n    route_context: routing.RouteContext,\n) -> routing._APIRouteLike | None:\n    if isinstance(route_context.original_route, routing.APIRoute):\n        return cast(routing._APIRouteLike, route_context)\n    return None",
+              "truncated": false
+            },
+            {
+              "source_id": 5,
+              "id": "b35b3615b610850feb52c003",
+              "qualified": "fastapi.routing.iter_route_contexts",
+              "path": "fastapi/routing.py",
+              "source_line_numbers": [
+                1871,
+                1872,
+                1873,
+                1874,
+                1875,
+                1876,
+                1877,
+                1878,
+                1879,
+                1880,
+                1881,
+                1882
+              ],
+              "source": "def iter_route_contexts(\n    routes: Sequence[BaseRoute | RouteContext],\n) -> Iterator[RouteContext]:\n    for route in routes:\n        if isinstance(route, RouteContext):\n            yield route\n            continue\n        for original_route, route_context in _iter_routes_with_context([route]):\n            if route_context is None:\n                yield RouteContext(original_route)\n            else:\n                yield RouteContext(original_route, route_context)",
+              "truncated": false
+            },
+            {
+              "source_id": 2,
+              "id": "64a26ec18cd2d1f39d53b4d0",
+              "qualified": "fastapi.openapi.models.OpenAPI",
+              "path": "fastapi/openapi/models.py",
+              "source_line_numbers": [
+                419,
+                420,
+                421,
+                422,
+                423,
+                425,
+                426,
+                427,
+                428,
+                429,
+                430
+              ],
+              "source": "class OpenAPI(BaseModelWithConfig):\n    openapi: str\n    info: Info\n    jsonSchemaDialect: str | None = None\n    servers: list[Server] | None = None\n    paths: dict[str, PathItem | Any] | None = None\n    webhooks: dict[str, PathItem | Reference] | None = None\n    components: Components | None = None\n    security: list[dict[str, list[str]]] | None = None\n    tags: list[Tag] | None = None\n    externalDocs: ExternalDocumentation | None = None",
+              "truncated": true
+            },
+            {
+              "source_id": 3,
+              "id": "1df658ec0f0ed1ec078b5105",
+              "qualified": "fastapi.openapi.utils.get_fields_from_routes",
+              "path": "fastapi/openapi/utils.py",
+              "source_line_numbers": [
+                551,
+                552,
+                553,
+                554,
+                555,
+                556,
+                557,
+                558,
+                559,
+                560,
+                561,
+                562,
+                563,
+                564,
+                565,
+                566,
+                567,
+                568,
+                569,
+                570,
+                571,
+                572,
+                573,
+                574,
+                575,
+                576,
+                577,
+                578,
+                579,
+                580,
+                581,
+                582
+              ],
+              "source": "def get_fields_from_routes(\n    routes: Sequence[BaseRoute | routing.RouteContext],\n) -> list[ModelField]:\n    body_fields_from_routes: list[ModelField] = []\n    responses_from_routes: list[ModelField] = []\n    request_fields_from_routes: list[ModelField] = []\n    callback_flat_models: list[ModelField] = []\n    for route_context in routing.iter_route_contexts(routes):\n        api_route = _get_api_route_for_openapi(route_context)\n        if api_route is None:\n            continue\n        if api_route.include_in_schema:\n            if api_route.body_field:\n                assert isinstance(api_route.body_field, ModelField), (\n                    \"A request body must be a Pydantic Field\"\n                )\n                body_fields_from_routes.append(api_route.body_field)\n            if api_route.response_field:\n                responses_from_routes.append(api_route.response_field)\n            if api_route.response_fields:\n                responses_from_routes.extend(api_route.response_fields.values())\n            if api_route.stream_item_field:\n                responses_from_routes.append(api_route.stream_item_field)\n            if api_route.callbacks:\n                callback_flat_models.extend(get_fields_from_routes(api_route.callbacks))\n            params = get_flat_params(api_route.dependant)\n            request_fields_from_routes.extend(params)\n\n    flat_models = callback_flat_models + list(\n        body_fields_from_routes + responses_from_routes + request_fields_from_routes\n    )\n    return flat_models",
+              "truncated": false
+            },
+            {
+              "source_id": 6,
+              "id": "fd99c1860d44c2b34c0adb7e",
+              "qualified": "fastapi.openapi.utils.get_openapi",
+              "path": "fastapi/openapi/utils.py",
+              "source_line_numbers": [
+                585,
+                586,
+                587,
+                588,
+                589,
+                618,
+                619,
+                620,
+                621,
+                622,
+                623,
+                626,
+                627,
+                628,
+                629,
+                630,
+                631,
+                632,
+                633,
+                634,
+                635,
+                639,
+                640,
+                641,
+                642,
+                643,
+                644,
+                646,
+                647,
+                648,
+                649,
+                650,
+                651,
+                652,
+                653,
+                654,
+                655
+              ],
+              "source": "def get_openapi(\n    *,\n    title: str,\n    version: str,\n    openapi_version: str = \"3.1.0\",\n    webhook_paths: dict[str, dict[str, Any]] = {}\n    operation_ids: set[str] = set()\n    all_fields = get_fields_from_routes(list(routes) + list(webhooks or []))\n    flat_models = get_flat_models_from_fields(all_fields, known_models=set())\n    model_name_map = get_model_name_map(flat_models)\n    field_mapping, definitions = get_definitions(\n        separate_input_output_schemas=separate_input_output_schemas,\n    )\n    for route_context in routing.iter_route_contexts(routes):\n        api_route = _get_api_route_for_openapi(route_context)\n        if api_route is not None:\n            result = get_openapi_path(\n                route=api_route,\n                operation_ids=operation_ids,\n                model_name_map=model_name_map,\n                field_mapping=field_mapping,\n                path, security_schemes, path_definitions = result\n                if path:\n                    paths.setdefault(api_route.path_format, {}).update(path)\n                if security_schemes:\n                    components.setdefault(\"securitySchemes\", {}).update(\n                        security_schemes\n                if path_definitions:\n                    definitions.update(path_definitions)\n    for webhook_context in routing.iter_route_contexts(webhooks or []):\n        api_webhook = _get_api_route_for_openapi(webhook_context)\n        if api_webhook is not None:\n            result = get_openapi_path(\n                route=api_webhook,\n                operation_ids=operation_ids,\n                model_name_map=model_name_map,\n                field_mapping=field_mapping,",
+              "truncated": true
+            },
+            {
+              "source_id": 7,
+              "id": "b047be192a2f83c8fa03153c",
+              "qualified": "fastapi.openapi.utils.get_openapi_path",
+              "path": "fastapi/openapi/utils.py",
+              "source_line_numbers": [
+                311,
+                312,
+                313,
+                314,
+                315,
+                316,
+                322,
+                323,
+                324,
+                325,
+                326,
+                327,
+                328,
+                329,
+                330,
+                331,
+                332,
+                333,
+                334,
+                335,
+                336,
+                341,
+                342,
+                343,
+                344,
+                345,
+                346,
+                347,
+                386,
+                387,
+                388,
+                389,
+                390,
+                391,
+                417,
+                418,
+                419,
+                421,
+                422
+              ],
+              "source": "def get_openapi_path(\n    *,\n    route: routing._APIRouteLike,\n    operation_ids: set[str],\n    model_name_map: ModelNameMap,\n    field_mapping: dict[\n    security_schemes: dict[str, Any] = {}\n    definitions: dict[str, Any] = {}\n    assert route.methods is not None, \"Methods must be a list\"\n    if isinstance(route.response_class, DefaultPlaceholder):\n        current_response_class: type[Response] = route.response_class.value\n    else:\n        current_response_class = route.response_class\n    assert current_response_class, \"A response class is needed to generate OpenAPI\"\n    route_response_media_type: str | None = current_response_class.media_type\n    if route.include_in_schema:\n        dependency_data = _get_openapi_dependency_data(route.dependant)\n        all_route_params = [\n            field\n            for fields in (\n                dependency_data.path_params,\n            for field in _get_flat_fields_from_params(fields)\n        ]\n        for method in route.methods:\n            operation = get_openapi_operation_metadata(\n                route=route, method=method, operation_ids=operation_ids\n            )\n            parameters: list[dict[str, Any]] = []\n            if route.callbacks:\n                callbacks = {}\n                for callback in route.callbacks:\n                    if isinstance(callback, routing.APIRoute):\n                        (\n                            cb_path,\n                \"description\"\n            ] = route.response_description\n            if is_body_allowed_for_status_code(route.status_code):\n                if route.is_json_stream:\n                    jsonl_content: dict[str, Any] = {}",
+              "truncated": true
+            },
+            {
+              "source_id": 8,
+              "id": "fd15c336c834c43eab2a6e85",
+              "qualified": "fastapi.routing.APIRouter.route",
+              "path": "fastapi/routing.py",
+              "source_line_numbers": [
+                2950,
+                2951,
+                2952,
+                2953,
+                2954,
+                2955,
+                2956,
+                2957,
+                2958,
+                2959,
+                2960,
+                2961,
+                2962,
+                2963,
+                2964,
+                2965,
+                2966,
+                2967
+              ],
+              "source": "    def route(\n        self,\n        path: str,\n        methods: Collection[str] | None = None,\n        name: str | None = None,\n        include_in_schema: bool = True,\n    ) -> Callable[[DecoratedCallable], DecoratedCallable]:\n        def decorator(func: DecoratedCallable) -> DecoratedCallable:\n            self.add_route(\n                path,\n                func,\n                methods=methods,\n                name=name,\n                include_in_schema=include_in_schema,\n            )\n            return func\n\n        return decorator",
+              "truncated": false
+            }
+          ],
+          "generation_diagnostics": {
+            "attempt_count": 2,
+            "total_request_ms": 32019,
+            "attempts": [
+              {
+                "load_duration_ms": 132,
+                "prompt_eval_duration_ms": 14298,
+                "eval_duration_ms": 8621,
+                "prompt_tokens": 4405,
+                "completion_tokens": 214,
+                "request_ms": 23073,
+                "estimated_prompt_tokens": 4890,
+                "context_window": 8192,
+                "entailment_checked": false,
+                "provider_calls": 1,
+                "usage": {
+                  "prompt_tokens": 4405,
+                  "completion_tokens": 214,
+                  "total_tokens": 4619
+                },
+                "draft_claims": [
+                  {
+                    "text": "FastAPI.openapi() obtains the OpenAPI schema for the app by calling get_openapi() with various parameters such as title, version, and routes.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 1120,
+                        "end_line": 1139
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Route schemas are assembled by iterating through the routes and webhooks using iter_route_contexts() in fastapi/routing.py.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 5,
+                        "start_line": 1871,
+                        "end_line": 1882
+                      },
+                      {
+                        "source_id": 6,
+                        "start_line": 585,
+                        "end_line": 589
+                      }
+                    ]
+                  }
+                ],
+                "outcome": "invalid_model_output",
+                "reason": "Named symbol routing.py is not established by its cited source identity."
+              },
+              {
+                "load_duration_ms": 139,
+                "prompt_eval_duration_ms": 324,
+                "eval_duration_ms": 8465,
+                "prompt_tokens": 4458,
+                "completion_tokens": 210,
+                "request_ms": 8946,
+                "estimated_prompt_tokens": 4983,
+                "context_window": 8192,
+                "entailment_checked": false,
+                "provider_calls": 1,
+                "usage": {
+                  "prompt_tokens": 4458,
+                  "completion_tokens": 210,
+                  "total_tokens": 4668
+                },
+                "draft_claims": [
+                  {
+                    "text": "FastAPI.openapi() obtains the OpenAPI schema for the app by calling get_openapi() with various parameters such as title, version, and routes.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 1120,
+                        "end_line": 1139
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Route schemas are assembled by iterating through routes and webhooks using iter_route_contexts() in routing.py.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 5,
+                        "start_line": 1871,
+                        "end_line": 1882
+                      },
+                      {
+                        "source_id": 6,
+                        "start_line": 585,
+                        "end_line": 589
+                      }
+                    ]
+                  }
+                ],
+                "outcome": "invalid_model_output",
+                "reason": "Named symbol routing.py is not established by its cited source identity."
+              }
+            ],
+            "provider_calls": 2
+          },
+          "evidence_count": 8,
+          "answer_correct": null,
+          "all_claims_supported": null,
+          "all_aspects_complete": null,
+          "usage": {
+            "prompt_tokens": 8863,
+            "completion_tokens": 424,
+            "total_tokens": 9287
+          }
+        }
+      }
+    },
+    {
+      "id": "django-complex-001",
+      "tier": "complex",
+      "repository": "django",
+      "url": "https://github.com/django/django",
+      "commit": "5a4511adb247a44a1cada11fe4763abba0a42663",
+      "fingerprint": "4e388f9fcf623c391f7e31136b277fc42971cac3e7f9e27a4cbcafdd9573d43e",
+      "index_scope": "django/",
+      "indexed_files": 1114,
+      "indexed_symbols": 12812,
+      "question": "When a Django QuerySet is iterated, how does it fetch and cache results and hand off SQL execution?",
+      "expected_symbols": [
+        "db.models.query.QuerySet.__iter__",
+        "db.models.query.QuerySet._fetch_all",
+        "db.models.sql.compiler.SQLCompiler.execute_sql"
+      ],
+      "runs": {
+        "quick": {
+          "elapsed_ms": 47608,
+          "retrieved_expected": [
+            "db.models.query.QuerySet.__iter__",
+            "db.models.query.QuerySet._fetch_all",
+            "db.models.sql.compiler.SQLCompiler.execute_sql"
+          ],
+          "expected_count": 3,
+          "recall_at_8": 1.0,
+          "evidence": [
+            {
+              "qualified": "db.models.query.QuerySet.__iter__",
+              "path": "db/models/query.py",
+              "start_line": 468,
+              "end_line": 484
+            },
+            {
+              "qualified": "db.models.sql.compiler.SQLCompiler.results_iter",
+              "path": "db/models/sql/compiler.py",
+              "start_line": 1589,
+              "end_line": 1610
+            },
+            {
+              "qualified": "db.models.sql.compiler.SQLCompiler.execute_sql",
+              "path": "db/models/sql/compiler.py",
+              "start_line": 1619,
+              "end_line": 1691
+            },
+            {
+              "qualified": "db.models.query.QuerySet._iterator",
+              "path": "db/models/query.py",
+              "start_line": 594,
+              "end_line": 607
+            },
+            {
+              "qualified": "db.models.query.QuerySet.aiterator",
+              "path": "db/models/query.py",
+              "start_line": 628,
+              "end_line": 681
+            },
+            {
+              "qualified": "db.models.query.QuerySet.iterator",
+              "path": "db/models/query.py",
+              "start_line": 609,
+              "end_line": 626
+            },
+            {
+              "qualified": "db.models.query.QuerySet._fetch_all",
+              "path": "db/models/query.py",
+              "start_line": 2327,
+              "end_line": 2331
+            },
+            {
+              "qualified": "db.models.query.QuerySet.__bool__",
+              "path": "db/models/query.py",
+              "start_line": 496,
+              "end_line": 498
+            }
+          ],
+          "answer": "When a Django QuerySet is iterated, it fetches results by calling `_fetch_all` which checks if the result cache is None and then populates it with the results of an iterable class [7].\n\nThe results are cached in the `_result_cache` attribute of the QuerySet instance [7].\n\nThis caching is done within the `_fetch_all` method [7].\n\nAspect 3: The supplied evidence did not establish all requested details for this aspect.",
+          "generated": true,
+          "semantic_used": false,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [],
+            "uncited_sentences": [],
+            "reference_section": false,
+            "entailment_checked": false,
+            "source_identity_checked": true
+          },
+          "warning": null,
+          "model": "qwen2.5-coder:7b",
+          "workflow": null,
+          "abstained": false,
+          "partial": true,
+          "aspect_statuses": [
+            {
+              "aspect_id": 1,
+              "question": "how does it fetch",
+              "status": "supported"
+            },
+            {
+              "aspect_id": 2,
+              "question": "cache results",
+              "status": "supported"
+            },
+            {
+              "aspect_id": 3,
+              "question": "hand off SQL execution",
+              "status": "insufficient_evidence"
+            }
+          ],
+          "generation_context": [
+            {
+              "source_id": 7,
+              "id": "15e2a5eacd1906d1bb74a9c8",
+              "qualified": "db.models.query.QuerySet._fetch_all",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                2327,
+                2328,
+                2329,
+                2330,
+                2331
+              ],
+              "source": "    def _fetch_all(self):\n        if self._result_cache is None:\n            self._result_cache = list(self._iterable_class(self))\n        if self._prefetch_related_lookups and not self._prefetch_done:\n            self._prefetch_related_objects()",
+              "truncated": false
+            },
+            {
+              "source_id": 8,
+              "id": "6933dfbfb5c076c4c9e24af6",
+              "qualified": "db.models.query.QuerySet.__bool__",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                496,
+                497,
+                498
+              ],
+              "source": "    def __bool__(self):\n        self._fetch_all()\n        return bool(self._result_cache)",
+              "truncated": false
+            },
+            {
+              "source_id": 3,
+              "id": "c105d20bd0e0d402af904ab6",
+              "qualified": "db.models.sql.compiler.SQLCompiler.execute_sql",
+              "path": "db/models/sql/compiler.py",
+              "source_line_numbers": [
+                1619,
+                1620,
+                1621,
+                1634,
+                1635,
+                1636,
+                1637,
+                1638,
+                1639,
+                1640,
+                1641,
+                1642,
+                1643,
+                1644,
+                1645,
+                1646,
+                1647,
+                1648,
+                1649,
+                1650,
+                1652,
+                1656,
+                1657,
+                1658,
+                1659,
+                1660,
+                1661,
+                1662,
+                1663,
+                1665,
+                1666,
+                1667,
+                1668,
+                1669,
+                1676,
+                1677,
+                1678,
+                1679,
+                1680,
+                1681,
+                1682,
+                1690,
+                1691
+              ],
+              "source": "    def execute_sql(\n        self, result_type=MULTI, chunked_fetch=False, chunk_size=GET_ITERATOR_CHUNK_SIZE\n    ):\n        result_type = result_type or NO_RESULTS\n        try:\n            sql, params = self.as_sql()\n            if not sql:\n                raise EmptyResultSet\n        except EmptyResultSet:\n            if result_type == MULTI:\n                return iter([])\n            else:\n                return\n        if chunked_fetch:\n            cursor = self.connection.chunked_cursor()\n        else:\n            cursor = self.connection.cursor()\n        try:\n            cursor.execute(sql, params)\n        except Exception as e:\n            try:\n            raise\n\n        if result_type == ROW_COUNT:\n            try:\n                return cursor.rowcount\n            finally:\n                cursor.close()\n        if result_type == CURSOR:\n            return cursor\n        if result_type == SINGLE:\n            try:\n                val = cursor.fetchone()\n                if val:\n            cursor.close()\n            return\n\n        result = cursor_iter(\n            cursor,\n            self.connection.features.empty_fetchmany_value,\n            self.col_count if self.has_extra_select else None,\n            return list(result)\n        return result",
+              "truncated": true
+            },
+            {
+              "source_id": 1,
+              "id": "f8ef7c6cc16d4129ebabbdc3",
+              "qualified": "db.models.query.QuerySet.__iter__",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                468,
+                483,
+                484
+              ],
+              "source": "    def __iter__(self):\n        self._fetch_all()\n        return iter(self._result_cache)",
+              "truncated": true
+            },
+            {
+              "source_id": 2,
+              "id": "ed84151684938be4a09abae4",
+              "qualified": "db.models.sql.compiler.SQLCompiler.results_iter",
+              "path": "db/models/sql/compiler.py",
+              "source_line_numbers": [
+                1589,
+                1590,
+                1591,
+                1592,
+                1593,
+                1594,
+                1595,
+                1597,
+                1598,
+                1599,
+                1600,
+                1601,
+                1602,
+                1603,
+                1604,
+                1605,
+                1606,
+                1607,
+                1608,
+                1609,
+                1610
+              ],
+              "source": "    def results_iter(\n        self,\n        results=None,\n        tuple_expected=False,\n        chunked_fetch=False,\n        chunk_size=GET_ITERATOR_CHUNK_SIZE,\n    ):\n        if results is None:\n            results = self.execute_sql(\n                MULTI, chunked_fetch=chunked_fetch, chunk_size=chunk_size\n            )\n        fields = [s[0] for s in self.select[0 : self.col_count]]\n        converters = self.get_converters(fields)\n        rows = chain.from_iterable(results)\n        if converters:\n            rows = self.apply_converters(rows, converters)\n        if self.has_composite_fields(fields):\n            rows = self.composite_fields_to_tuples(rows, fields)\n        if tuple_expected:\n            rows = map(tuple, rows)\n        return rows",
+              "truncated": true
+            },
+            {
+              "source_id": 4,
+              "id": "18d8f0d03187ae66784b88b0",
+              "qualified": "db.models.query.QuerySet._iterator",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                594,
+                595,
+                596,
+                597,
+                598,
+                599,
+                600,
+                601,
+                602,
+                603,
+                604,
+                605,
+                606,
+                607
+              ],
+              "source": "    def _iterator(self, use_chunked_fetch, chunk_size):\n        iterable = self._iterable_class(\n            self,\n            chunked_fetch=use_chunked_fetch,\n            chunk_size=chunk_size or 2000,\n        )\n        if not self._prefetch_related_lookups or chunk_size is None:\n            yield from iterable\n            return\n\n        iterator = iter(iterable)\n        while results := list(islice(iterator, chunk_size)):\n            prefetch_related_objects(results, *self._prefetch_related_lookups)\n            yield from results",
+              "truncated": false
+            },
+            {
+              "source_id": 5,
+              "id": "f0faaeafd6455d445550b55b",
+              "qualified": "db.models.query.QuerySet.aiterator",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                628,
+                633,
+                634,
+                640,
+                641,
+                642,
+                643,
+                644,
+                645,
+                646,
+                648,
+                649,
+                650,
+                651,
+                652,
+                653,
+                654,
+                655,
+                656,
+                657,
+                658,
+                659,
+                660,
+                661,
+                662,
+                663,
+                664,
+                665,
+                666,
+                667,
+                668,
+                669,
+                670,
+                671,
+                672,
+                673,
+                674,
+                675,
+                676,
+                677,
+                678,
+                679,
+                680,
+                681
+              ],
+              "source": "    async def aiterator(self, chunk_size=None):\n        if chunk_size is None:\n            if self._prefetch_related_lookups:\n                warnings.warn(\n                    \"Using QuerySet.aiterator() after prefetch_related() without \"\n                    \"providing a chunk_size is deprecated and will raise a \"\n                    \"ValueError in Django 2029.\",\n                    category=RemovedInDjango2029Warning,\n                    skip_file_prefixes=django_file_prefixes(),\n                )\n                chunk_size = 2000\n        elif chunk_size <= 0:\n            raise ValueError(\"Chunk size must be strictly positive.\")\n        use_chunked_fetch = not connections[self.db].settings_dict.get(\n            \"DISABLE_SERVER_SIDE_CURSORS\"\n        )\n        iterable = self._iterable_class(\n            self,\n            chunked_fetch=use_chunked_fetch,\n            chunk_size=chunk_size or 2000,\n        )\n        async with aclosing(aiter(iterable)) as iterator:\n            if self._prefetch_related_lookups:\n                results = []\n\n                async for item in iterator:\n                    results.append(item)\n                    if len(results) >= chunk_size:\n                        await aprefetch_related_objects(\n                            results, *self._prefetch_related_lookups\n                        )\n                        for result in results:\n                            yield result\n                        results.clear()\n\n                if results:\n                    await aprefetch_related_objects(\n                        results, *self._prefetch_related_lookups\n                    )\n                    for result in results:\n                        yield result\n            else:\n                async for item in iterator:\n                    yield item",
+              "truncated": true
+            },
+            {
+              "source_id": 6,
+              "id": "860c767766f84f5952d93e4f",
+              "qualified": "db.models.query.QuerySet.iterator",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                609,
+                615,
+                616,
+                617,
+                618,
+                619,
+                620,
+                621,
+                622,
+                623,
+                624,
+                625,
+                626
+              ],
+              "source": "    def iterator(self, chunk_size=None):\n        if chunk_size is None:\n            if self._prefetch_related_lookups:\n                raise ValueError(\n                    \"chunk_size must be provided when using QuerySet.iterator() after \"\n                    \"prefetch_related().\"\n                )\n        elif chunk_size <= 0:\n            raise ValueError(\"Chunk size must be strictly positive.\")\n        use_chunked_fetch = not connections[self.db].settings_dict.get(\n            \"DISABLE_SERVER_SIDE_CURSORS\"\n        )\n        return self._iterator(use_chunked_fetch, chunk_size)",
+              "truncated": true
+            }
+          ],
+          "generation_diagnostics": {
+            "attempt_count": 1,
+            "total_request_ms": 46929,
+            "attempts": [
+              {
+                "load_duration_ms": 137,
+                "prompt_eval_duration_ms": 12722,
+                "eval_duration_ms": 11546,
+                "prompt_tokens": 3595,
+                "completion_tokens": 291,
+                "request_ms": 46929,
+                "estimated_prompt_tokens": 3899,
+                "context_window": 8192,
+                "entailment_checked": false,
+                "provider_calls": 1,
+                "usage": {
+                  "prompt_tokens": 7342,
+                  "completion_tokens": 501,
+                  "total_tokens": 7843
+                },
+                "draft_claims": [
+                  {
+                    "text": "When a Django QuerySet is iterated, it fetches results by calling `_fetch_all` which checks if the result cache is None and then populates it with the results of an iterable class.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 7,
+                        "start_line": 2328,
+                        "end_line": 2330
+                      }
+                    ]
+                  },
+                  {
+                    "text": "The results are cached in the `_result_cache` attribute of the QuerySet instance. This caching is done within the `_fetch_all` method.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 7,
+                        "start_line": 2328,
+                        "end_line": 2330
+                      }
+                    ]
+                  },
+                  {
+                    "text": "SQL execution is handed off to the `execute_sql` method in the `SQLCompiler` class. This method constructs and executes the SQL query.",
+                    "aspect_id": 3,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 3,
+                        "start_line": 1619,
+                        "end_line": 1620
+                      }
+                    ]
+                  }
+                ],
+                "claim_audit": {
+                  "status": "completed",
+                  "decisions": [
+                    {
+                      "claim_index": 0,
+                      "verdict": "supported",
+                      "reason": "The claim is supported by the citation from `db/models/query.py` where `_fetch_all` checks if `_result_cache` is None and populates it with results of an iterable class."
+                    },
+                    {
+                      "claim_index": 1,
+                      "verdict": "supported",
+                      "reason": "The claim is supported by the citation from `db/models/query.py` where `_result_cache` attribute is used to cache results within the `_fetch_all` method."
+                    },
+                    {
+                      "claim_index": 2,
+                      "verdict": "unsupported",
+                      "reason": "The claim contradicts the evidence. The SQL execution is not handed off to `execute_sql` in the `SQLCompiler` class, but rather through various methods like `_iterator`, `aiterator`, and `iterator`. The actual SQL execution happens within these methods."
+                    }
+                  ],
+                  "provider_calls": 1,
+                  "elapsed_ms": 22480,
+                  "model": "qwen2.5-coder:7b",
+                  "factual_support_proven": false
+                },
+                "supporting_lines": [
+                  {
+                    "source_id": 7,
+                    "path": "db/models/query.py",
+                    "qualified": "db.models.query.QuerySet._fetch_all",
+                    "start_line": 2328,
+                    "end_line": 2330,
+                    "text": "        if self._result_cache is None:\n            self._result_cache = list(self._iterable_class(self))\n        if self._prefetch_related_lookups and not self._prefetch_done:"
+                  },
+                  {
+                    "source_id": 7,
+                    "path": "db/models/query.py",
+                    "qualified": "db.models.query.QuerySet._fetch_all",
+                    "start_line": 2328,
+                    "end_line": 2330,
+                    "text": "        if self._result_cache is None:\n            self._result_cache = list(self._iterable_class(self))\n        if self._prefetch_related_lookups and not self._prefetch_done:"
+                  }
+                ],
+                "aspect_statuses": [
+                  {
+                    "aspect_id": 1,
+                    "question": "how does it fetch",
+                    "status": "supported"
+                  },
+                  {
+                    "aspect_id": 2,
+                    "question": "cache results",
+                    "status": "supported"
+                  },
+                  {
+                    "aspect_id": 3,
+                    "question": "hand off SQL execution",
+                    "status": "insufficient_evidence"
+                  }
+                ],
+                "claims": [
+                  {
+                    "text": "When a Django QuerySet is iterated, it fetches results by calling `_fetch_all` which checks if the result cache is None and then populates it with the results of an iterable class.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 7,
+                        "start_line": 2328,
+                        "end_line": 2330
+                      }
+                    ]
+                  },
+                  {
+                    "text": "The results are cached in the `_result_cache` attribute of the QuerySet instance. This caching is done within the `_fetch_all` method.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 7,
+                        "start_line": 2328,
+                        "end_line": 2330
+                      }
+                    ]
+                  },
+                  {
+                    "text": "The supplied evidence did not establish all requested details for this aspect.",
+                    "aspect_id": 3,
+                    "status": "insufficient_evidence",
+                    "citations": []
+                  }
+                ],
+                "source_identity_checked": true,
+                "outcome": "accepted"
+              }
+            ],
+            "provider_calls": 1
+          },
+          "evidence_count": 8,
+          "answer_correct": null,
+          "all_claims_supported": null,
+          "all_aspects_complete": null,
+          "usage": {
+            "prompt_tokens": 7342,
+            "completion_tokens": 501,
+            "total_tokens": 7843
+          }
+        },
+        "deep": {
+          "elapsed_ms": 48120,
+          "retrieved_expected": [
+            "db.models.query.QuerySet.__iter__",
+            "db.models.query.QuerySet._fetch_all",
+            "db.models.sql.compiler.SQLCompiler.execute_sql"
+          ],
+          "expected_count": 3,
+          "recall_at_8": 1.0,
+          "evidence": [
+            {
+              "qualified": "db.models.query.QuerySet.__iter__",
+              "path": "db/models/query.py",
+              "start_line": 468,
+              "end_line": 484
+            },
+            {
+              "qualified": "db.models.sql.compiler.SQLCompiler.results_iter",
+              "path": "db/models/sql/compiler.py",
+              "start_line": 1589,
+              "end_line": 1610
+            },
+            {
+              "qualified": "db.models.sql.compiler.SQLCompiler.execute_sql",
+              "path": "db/models/sql/compiler.py",
+              "start_line": 1619,
+              "end_line": 1691
+            },
+            {
+              "qualified": "db.models.query.QuerySet._iterator",
+              "path": "db/models/query.py",
+              "start_line": 594,
+              "end_line": 607
+            },
+            {
+              "qualified": "db.models.query.QuerySet.aiterator",
+              "path": "db/models/query.py",
+              "start_line": 628,
+              "end_line": 681
+            },
+            {
+              "qualified": "db.models.query.QuerySet.iterator",
+              "path": "db/models/query.py",
+              "start_line": 609,
+              "end_line": 626
+            },
+            {
+              "qualified": "db.models.query.QuerySet._fetch_all",
+              "path": "db/models/query.py",
+              "start_line": 2327,
+              "end_line": 2331
+            },
+            {
+              "qualified": "db.models.query.QuerySet.__bool__",
+              "path": "db/models/query.py",
+              "start_line": 496,
+              "end_line": 498
+            },
+            {
+              "qualified": "db.models.query.QuerySet._prefetch_related_objects",
+              "path": "db/models/query.py",
+              "start_line": 1542,
+              "end_line": 1545
+            },
+            {
+              "qualified": "db.models.sql.compiler.SQLUpdateCompiler.execute_sql",
+              "path": "db/models/sql/compiler.py",
+              "start_line": 2138,
+              "end_line": 2157
+            },
+            {
+              "qualified": "db.models.query.QuerySet.fetch_mode",
+              "path": "db/models/query.py",
+              "start_line": 2054,
+              "end_line": 2058
+            }
+          ],
+          "answer": "When a Django QuerySet is iterated, it fetches results by calling `_fetch_all` method [7].\n\nThe results are cached in `_result_cache` attribute of the QuerySet [7].\n\nAspect 3: The supplied evidence did not establish all requested details for this aspect.",
+          "generated": true,
+          "semantic_used": false,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [],
+            "uncited_sentences": [],
+            "reference_section": false,
+            "entailment_checked": false,
+            "source_identity_checked": true
+          },
+          "warning": null,
+          "model": "qwen2.5-coder:7b",
+          "workflow": {
+            "engine": "langgraph",
+            "steps": [
+              "snapshot check",
+              "primary retrieval",
+              "aspect candidate coverage",
+              "targeted aspect and outgoing-relationship retrieval",
+              "aspect candidate coverage",
+              "answer provenance and citation checks"
+            ],
+            "retrieval_passes": 4,
+            "investigation_rounds": 1,
+            "candidate_coverage": [
+              {
+                "aspect_id": 1,
+                "question": "how does it fetch",
+                "status": "candidate_evidence",
+                "candidate_ids": [
+                  "15e2a5eacd1906d1bb74a9c8",
+                  "e9698d776ea6cd7c75fbcceb"
+                ],
+                "factual_support_verified": false
+              },
+              {
+                "aspect_id": 2,
+                "question": "cache results",
+                "status": "candidate_evidence",
+                "candidate_ids": [
+                  "ed84151684938be4a09abae4",
+                  "f8ef7c6cc16d4129ebabbdc3"
+                ],
+                "factual_support_verified": false
+              },
+              {
+                "aspect_id": 3,
+                "question": "hand off SQL execution",
+                "status": "candidate_evidence",
+                "candidate_ids": [
+                  "c105d20bd0e0d402af904ab6",
+                  "7d45471a6109d83e59d582e5"
+                ],
+                "factual_support_verified": false
+              }
+            ]
+          },
+          "abstained": false,
+          "partial": true,
+          "aspect_statuses": [
+            {
+              "aspect_id": 1,
+              "question": "how does it fetch",
+              "status": "supported"
+            },
+            {
+              "aspect_id": 2,
+              "question": "cache results",
+              "status": "supported"
+            },
+            {
+              "aspect_id": 3,
+              "question": "hand off SQL execution",
+              "status": "insufficient_evidence"
+            }
+          ],
+          "generation_context": [
+            {
+              "source_id": 7,
+              "id": "15e2a5eacd1906d1bb74a9c8",
+              "qualified": "db.models.query.QuerySet._fetch_all",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                2327,
+                2328,
+                2329,
+                2330,
+                2331
+              ],
+              "source": "    def _fetch_all(self):\n        if self._result_cache is None:\n            self._result_cache = list(self._iterable_class(self))\n        if self._prefetch_related_lookups and not self._prefetch_done:\n            self._prefetch_related_objects()",
+              "truncated": false
+            },
+            {
+              "source_id": 8,
+              "id": "6933dfbfb5c076c4c9e24af6",
+              "qualified": "db.models.query.QuerySet.__bool__",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                496,
+                497,
+                498
+              ],
+              "source": "    def __bool__(self):\n        self._fetch_all()\n        return bool(self._result_cache)",
+              "truncated": false
+            },
+            {
+              "source_id": 10,
+              "id": "7d45471a6109d83e59d582e5",
+              "qualified": "db.models.sql.compiler.SQLUpdateCompiler.execute_sql",
+              "path": "db/models/sql/compiler.py",
+              "source_line_numbers": [
+                2138,
+                2145,
+                2146,
+                2147,
+                2148,
+                2149,
+                2151,
+                2152,
+                2155,
+                2156,
+                2157
+              ],
+              "source": "    def execute_sql(self, result_type):\n        row_count = super().execute_sql(result_type)\n        is_empty = row_count is None\n        row_count = row_count or 0\n\n        for query in self.query.get_related_updates():\n            aux_row_count = query.get_compiler(self.using).execute_sql(result_type)\n            if is_empty and aux_row_count:\n                row_count = aux_row_count\n                is_empty = False\n        return row_count",
+              "truncated": true
+            },
+            {
+              "source_id": 1,
+              "id": "f8ef7c6cc16d4129ebabbdc3",
+              "qualified": "db.models.query.QuerySet.__iter__",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                468,
+                483,
+                484
+              ],
+              "source": "    def __iter__(self):\n        self._fetch_all()\n        return iter(self._result_cache)",
+              "truncated": true
+            },
+            {
+              "source_id": 2,
+              "id": "ed84151684938be4a09abae4",
+              "qualified": "db.models.sql.compiler.SQLCompiler.results_iter",
+              "path": "db/models/sql/compiler.py",
+              "source_line_numbers": [
+                1589,
+                1590,
+                1591,
+                1592,
+                1593,
+                1594,
+                1595,
+                1597,
+                1598,
+                1599,
+                1600,
+                1601,
+                1602,
+                1603,
+                1604,
+                1605,
+                1606,
+                1607,
+                1608,
+                1609,
+                1610
+              ],
+              "source": "    def results_iter(\n        self,\n        results=None,\n        tuple_expected=False,\n        chunked_fetch=False,\n        chunk_size=GET_ITERATOR_CHUNK_SIZE,\n    ):\n        if results is None:\n            results = self.execute_sql(\n                MULTI, chunked_fetch=chunked_fetch, chunk_size=chunk_size\n            )\n        fields = [s[0] for s in self.select[0 : self.col_count]]\n        converters = self.get_converters(fields)\n        rows = chain.from_iterable(results)\n        if converters:\n            rows = self.apply_converters(rows, converters)\n        if self.has_composite_fields(fields):\n            rows = self.composite_fields_to_tuples(rows, fields)\n        if tuple_expected:\n            rows = map(tuple, rows)\n        return rows",
+              "truncated": true
+            },
+            {
+              "source_id": 3,
+              "id": "c105d20bd0e0d402af904ab6",
+              "qualified": "db.models.sql.compiler.SQLCompiler.execute_sql",
+              "path": "db/models/sql/compiler.py",
+              "source_line_numbers": [
+                1619,
+                1620,
+                1621,
+                1634,
+                1635,
+                1636,
+                1637,
+                1638,
+                1639,
+                1640,
+                1641,
+                1642,
+                1643,
+                1644,
+                1645,
+                1646,
+                1647,
+                1648,
+                1649,
+                1650,
+                1652,
+                1653,
+                1654,
+                1655,
+                1656,
+                1657,
+                1658,
+                1659,
+                1660,
+                1661,
+                1662,
+                1663,
+                1665,
+                1666,
+                1667,
+                1668,
+                1669,
+                1670,
+                1671,
+                1672,
+                1674,
+                1675,
+                1676,
+                1677,
+                1678,
+                1679,
+                1680,
+                1681,
+                1682,
+                1683,
+                1684,
+                1685,
+                1690,
+                1691
+              ],
+              "source": "    def execute_sql(\n        self, result_type=MULTI, chunked_fetch=False, chunk_size=GET_ITERATOR_CHUNK_SIZE\n    ):\n        result_type = result_type or NO_RESULTS\n        try:\n            sql, params = self.as_sql()\n            if not sql:\n                raise EmptyResultSet\n        except EmptyResultSet:\n            if result_type == MULTI:\n                return iter([])\n            else:\n                return\n        if chunked_fetch:\n            cursor = self.connection.chunked_cursor()\n        else:\n            cursor = self.connection.cursor()\n        try:\n            cursor.execute(sql, params)\n        except Exception as e:\n            try:\n                cursor.close()\n            except DatabaseError:\n                raise e from None\n            raise\n\n        if result_type == ROW_COUNT:\n            try:\n                return cursor.rowcount\n            finally:\n                cursor.close()\n        if result_type == CURSOR:\n            return cursor\n        if result_type == SINGLE:\n            try:\n                val = cursor.fetchone()\n                if val:\n                    return val[0 : self.col_count]\n                return val\n            finally:\n                cursor.close()\n        if result_type == NO_RESULTS:\n            cursor.close()\n            return\n\n        result = cursor_iter(\n            cursor,\n            self.connection.features.empty_fetchmany_value,\n            self.col_count if self.has_extra_select else None,\n            chunk_size,\n        )\n        if not chunked_fetch or not self.connection.features.can_use_chunked_reads:\n            return list(result)\n        return result",
+              "truncated": true
+            },
+            {
+              "source_id": 4,
+              "id": "18d8f0d03187ae66784b88b0",
+              "qualified": "db.models.query.QuerySet._iterator",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                594,
+                595,
+                596,
+                597,
+                598,
+                599,
+                600,
+                601,
+                602,
+                603,
+                604,
+                605,
+                606,
+                607
+              ],
+              "source": "    def _iterator(self, use_chunked_fetch, chunk_size):\n        iterable = self._iterable_class(\n            self,\n            chunked_fetch=use_chunked_fetch,\n            chunk_size=chunk_size or 2000,\n        )\n        if not self._prefetch_related_lookups or chunk_size is None:\n            yield from iterable\n            return\n\n        iterator = iter(iterable)\n        while results := list(islice(iterator, chunk_size)):\n            prefetch_related_objects(results, *self._prefetch_related_lookups)\n            yield from results",
+              "truncated": false
+            },
+            {
+              "source_id": 5,
+              "id": "f0faaeafd6455d445550b55b",
+              "qualified": "db.models.query.QuerySet.aiterator",
+              "path": "db/models/query.py",
+              "source_line_numbers": [
+                628,
+                633,
+                634,
+                640,
+                641,
+                642,
+                643,
+                644,
+                645,
+                646,
+                648,
+                649,
+                650,
+                651,
+                652,
+                653,
+                654,
+                655,
+                656,
+                657,
+                658,
+                659,
+                660,
+                661,
+                662,
+                663,
+                664,
+                665,
+                666,
+                667,
+                668,
+                669,
+                670,
+                671,
+                672,
+                673,
+                674,
+                675,
+                676,
+                677,
+                678,
+                679,
+                680,
+                681
+              ],
+              "source": "    async def aiterator(self, chunk_size=None):\n        if chunk_size is None:\n            if self._prefetch_related_lookups:\n                warnings.warn(\n                    \"Using QuerySet.aiterator() after prefetch_related() without \"\n                    \"providing a chunk_size is deprecated and will raise a \"\n                    \"ValueError in Django 2029.\",\n                    category=RemovedInDjango2029Warning,\n                    skip_file_prefixes=django_file_prefixes(),\n                )\n                chunk_size = 2000\n        elif chunk_size <= 0:\n            raise ValueError(\"Chunk size must be strictly positive.\")\n        use_chunked_fetch = not connections[self.db].settings_dict.get(\n            \"DISABLE_SERVER_SIDE_CURSORS\"\n        )\n        iterable = self._iterable_class(\n            self,\n            chunked_fetch=use_chunked_fetch,\n            chunk_size=chunk_size or 2000,\n        )\n        async with aclosing(aiter(iterable)) as iterator:\n            if self._prefetch_related_lookups:\n                results = []\n\n                async for item in iterator:\n                    results.append(item)\n                    if len(results) >= chunk_size:\n                        await aprefetch_related_objects(\n                            results, *self._prefetch_related_lookups\n                        )\n                        for result in results:\n                            yield result\n                        results.clear()\n\n                if results:\n                    await aprefetch_related_objects(\n                        results, *self._prefetch_related_lookups\n                    )\n                    for result in results:\n                        yield result\n            else:\n                async for item in iterator:\n                    yield item",
+              "truncated": true
+            }
+          ],
+          "generation_diagnostics": {
+            "attempt_count": 1,
+            "total_request_ms": 47088,
+            "attempts": [
+              {
+                "load_duration_ms": 135,
+                "prompt_eval_duration_ms": 14285,
+                "eval_duration_ms": 9433,
+                "prompt_tokens": 3781,
+                "completion_tokens": 237,
+                "request_ms": 47088,
+                "estimated_prompt_tokens": 4073,
+                "context_window": 8192,
+                "entailment_checked": false,
+                "provider_calls": 1,
+                "usage": {
+                  "prompt_tokens": 7672,
+                  "completion_tokens": 446,
+                  "total_tokens": 8118
+                },
+                "draft_claims": [
+                  {
+                    "text": "When a Django QuerySet is iterated, it fetches results by calling `_fetch_all` method.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 7,
+                        "start_line": 2328,
+                        "end_line": 2330
+                      }
+                    ]
+                  },
+                  {
+                    "text": "The results are cached in `_result_cache` attribute of the QuerySet.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 7,
+                        "start_line": 2328,
+                        "end_line": 2329
+                      }
+                    ]
+                  },
+                  {
+                    "text": "SQL execution is handed off to the `execute_sql` method in `SQLCompiler` class.",
+                    "aspect_id": 3,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 10,
+                        "start_line": 2138,
+                        "end_line": 2138
+                      }
+                    ]
+                  }
+                ],
+                "claim_audit": {
+                  "status": "completed",
+                  "decisions": [
+                    {
+                      "claim_index": 0,
+                      "verdict": "supported",
+                      "reason": "The claim is supported by the citation from `db/models/query.py` where `_fetch_all` method checks if `_result_cache` is None and fetches results into it."
+                    },
+                    {
+                      "claim_index": 1,
+                      "verdict": "supported",
+                      "reason": "The claim is supported by the citation from `db/models/query.py` where `_result_cache` attribute of the QuerySet stores the fetched results."
+                    },
+                    {
+                      "claim_index": 2,
+                      "verdict": "unsupported",
+                      "reason": "The claim is not directly supported by the provided evidence. The SQL execution is handled in various methods like `execute_sql` in `SQLCompiler`, but it's not explicitly handed off to a single method named `execute_sql`. The actual SQL execution might be spread across different parts of Django's DB"
+                    }
+                  ],
+                  "provider_calls": 1,
+                  "elapsed_ms": 23208,
+                  "model": "qwen2.5-coder:7b",
+                  "factual_support_proven": false
+                },
+                "supporting_lines": [
+                  {
+                    "source_id": 7,
+                    "path": "db/models/query.py",
+                    "qualified": "db.models.query.QuerySet._fetch_all",
+                    "start_line": 2328,
+                    "end_line": 2330,
+                    "text": "        if self._result_cache is None:\n            self._result_cache = list(self._iterable_class(self))\n        if self._prefetch_related_lookups and not self._prefetch_done:"
+                  },
+                  {
+                    "source_id": 7,
+                    "path": "db/models/query.py",
+                    "qualified": "db.models.query.QuerySet._fetch_all",
+                    "start_line": 2328,
+                    "end_line": 2329,
+                    "text": "        if self._result_cache is None:\n            self._result_cache = list(self._iterable_class(self))"
+                  }
+                ],
+                "aspect_statuses": [
+                  {
+                    "aspect_id": 1,
+                    "question": "how does it fetch",
+                    "status": "supported"
+                  },
+                  {
+                    "aspect_id": 2,
+                    "question": "cache results",
+                    "status": "supported"
+                  },
+                  {
+                    "aspect_id": 3,
+                    "question": "hand off SQL execution",
+                    "status": "insufficient_evidence"
+                  }
+                ],
+                "claims": [
+                  {
+                    "text": "When a Django QuerySet is iterated, it fetches results by calling `_fetch_all` method.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 7,
+                        "start_line": 2328,
+                        "end_line": 2330
+                      }
+                    ]
+                  },
+                  {
+                    "text": "The results are cached in `_result_cache` attribute of the QuerySet.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 7,
+                        "start_line": 2328,
+                        "end_line": 2329
+                      }
+                    ]
+                  },
+                  {
+                    "text": "The supplied evidence did not establish all requested details for this aspect.",
+                    "aspect_id": 3,
+                    "status": "insufficient_evidence",
+                    "citations": []
+                  }
+                ],
+                "source_identity_checked": true,
+                "outcome": "accepted"
+              }
+            ],
+            "provider_calls": 1
+          },
+          "evidence_count": 11,
+          "answer_correct": null,
+          "all_claims_supported": null,
+          "all_aspects_complete": null,
+          "usage": {
+            "prompt_tokens": 7672,
+            "completion_tokens": 446,
+            "total_tokens": 8118
+          }
+        }
+      }
+    },
+    {
+      "id": "pytorch-very-complex-001",
+      "tier": "very complex",
+      "repository": "pytorch",
+      "url": "https://github.com/pytorch/pytorch",
+      "commit": "6dcdae14be8163d69c5d4e06375968e3eeb652ea",
+      "fingerprint": "f291f7735492aa3c5b95bdc9f65acd131f735913725e05f0c87cb11fd80fbf96",
+      "index_scope": "torch/",
+      "indexed_files": 2597,
+      "indexed_symbols": 61152,
+      "question": "When a torch.nn.Module instance is called, how does it run forward pre-hooks, call forward(), and run forward hooks?",
+      "expected_symbols": [
+        "nn.modules.module.Module._wrapped_call_impl",
+        "nn.modules.module.Module._call_impl",
+        "nn.modules.module.Module.register_forward_pre_hook",
+        "nn.modules.module.Module.register_forward_hook"
+      ],
+      "runs": {
+        "quick": {
+          "elapsed_ms": 59865,
+          "retrieved_expected": [
+            "nn.modules.module.Module._call_impl",
+            "nn.modules.module.Module.register_forward_pre_hook"
+          ],
+          "expected_count": 4,
+          "recall_at_8": 0.5,
+          "evidence": [
+            {
+              "qualified": "export._trace._non_strict_export._tuplify_outputs._aot_export_non_strict.Wrapper.forward",
+              "path": "export/_trace.py",
+              "start_line": 2296,
+              "end_line": 2318
+            },
+            {
+              "qualified": "nn.modules.module.Module._call_impl",
+              "path": "nn/modules/module.py",
+              "start_line": 1791,
+              "end_line": 1923
+            },
+            {
+              "qualified": "fx.passes.split_module._make_lite_graph_module",
+              "path": "fx/passes/split_module.py",
+              "start_line": 749,
+              "end_line": 791
+            },
+            {
+              "qualified": "_dynamo.aot_compile._warn_dropped_module_dispatch",
+              "path": "_dynamo/aot_compile.py",
+              "start_line": 1641,
+              "end_line": 1782
+            },
+            {
+              "qualified": "nn.modules.module.Module.register_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 1633,
+              "end_line": 1694
+            },
+            {
+              "qualified": "nn.modules.module.Module.register_full_backward_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 1394,
+              "end_line": 1441
+            },
+            {
+              "qualified": "nn.modules.module.Module.register_load_state_dict_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 2313,
+              "end_line": 2323
+            },
+            {
+              "qualified": "nn.modules.module.Module._register_load_state_dict_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 2293,
+              "end_line": 2311
+            },
+            {
+              "qualified": "nn.modules.module.register_module_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 217,
+              "end_line": 246
+            },
+            {
+              "qualified": "distributed.fsdp._runtime_utils._pre_backward_hook",
+              "path": "distributed/fsdp/_runtime_utils.py",
+              "start_line": 629,
+              "end_line": 696
+            },
+            {
+              "qualified": "nn.modules.module.register_module_forward_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 249,
+              "end_line": 293
+            }
+          ],
+          "answer": "No validated explanation is available. These retrieved source locations may help you investigate; their relevance does not establish an answer.\n\n[1] export._trace._non_strict_export._tuplify_outputs._aot_export_non_strict.Wrapper.forward — export/_trace.py:2296–2318\nRetrieved through symbol / text match.\n\n[2] nn.modules.module.Module._call_impl — nn/modules/module.py:1791–1923\nRetrieved through symbol / text match.\n\n[3] fx.passes.split_module._make_lite_graph_module — fx/passes/split_module.py:749–791\nRetrieved through symbol / text match.\n\n[4] _dynamo.aot_compile._warn_dropped_module_dispatch — _dynamo/aot_compile.py:1641–1782\nRetrieved through symbol / text match.\n\n[5] nn.modules.module.Module.register_forward_pre_hook — nn/modules/module.py:1633–1694\nRetrieved through contains relationship with Module.\n\n[6] nn.modules.module.Module.register_full_backward_pre_hook — nn/modules/module.py:1394–1441\nRetrieved through contains relationship with Module.\n\n[7] nn.modules.module.Module.register_load_state_dict_pre_hook — nn/modules/module.py:2313–2323\nRetrieved through contains relationship with Module.\n\n[8] nn.modules.module.Module._register_load_state_dict_pre_hook — nn/modules/module.py:2293–2311\nRetrieved through contains relationship with Module.\n\n[9] nn.modules.module.register_module_forward_pre_hook — nn/modules/module.py:217–246\nRetrieved through symbol / text match.\n\n[10] distributed.fsdp._runtime_utils._pre_backward_hook — distributed/fsdp/_runtime_utils.py:629–696\nRetrieved through symbol / text match.\n\n[11] nn.modules.module.register_module_forward_hook — nn/modules/module.py:249–293\nRetrieved through contains relationship with module.py.",
+          "generated": false,
+          "semantic_used": false,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [
+              "No validated explanation is available. These retrieved source locations may help you investigate; their relevance does not establish an answer."
+            ],
+            "uncited_sentences": [
+              "No validated explanation is available.",
+              "These retrieved source locations may help you investigate; their relevance does not establish an answer."
+            ],
+            "reference_section": true,
+            "entailment_checked": false,
+            "source_identity_checked": false
+          },
+          "warning": "Named symbol torch.nn.Module is not established by its cited source identity.",
+          "model": "qwen2.5-coder:7b",
+          "workflow": null,
+          "abstained": false,
+          "partial": false,
+          "aspect_statuses": [],
+          "generation_context": [
+            {
+              "source_id": 9,
+              "id": "c96de13020c890dd7ad1f24d",
+              "qualified": "nn.modules.module.register_module_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "source_line_numbers": [
+                217,
+                244,
+                245,
+                246
+              ],
+              "source": "def register_module_forward_pre_hook(hook: Callable[..., None]) -> RemovableHandle:\n    handle = RemovableHandle(_global_forward_pre_hooks)\n    _global_forward_pre_hooks[handle.id] = hook\n    return handle",
+              "truncated": true
+            },
+            {
+              "source_id": 11,
+              "id": "7e29f12928f00cca52aa7a41",
+              "qualified": "nn.modules.module.register_module_forward_hook",
+              "path": "nn/modules/module.py",
+              "source_line_numbers": [
+                249,
+                250,
+                251,
+                252,
+                253,
+                254,
+                285,
+                286,
+                287,
+                288,
+                289,
+                290,
+                291,
+                292,
+                293
+              ],
+              "source": "def register_module_forward_hook(\n    hook: Callable[..., None],\n    *,\n    with_kwargs: bool = False,\n    always_call: bool = False,\n) -> RemovableHandle:\n    handle = RemovableHandle(\n        _global_forward_hooks, extra_dict=_global_forward_hooks_always_called\n    )\n    _global_forward_hooks[handle.id] = hook\n    if with_kwargs:\n        _global_forward_hooks_with_kwargs[handle.id] = True\n    if always_call:\n        _global_forward_hooks_always_called[handle.id] = True\n    return handle",
+              "truncated": true
+            },
+            {
+              "source_id": 1,
+              "id": "14d46ba3a75b78490ac48e4b",
+              "qualified": "export._trace._non_strict_export._tuplify_outputs._aot_export_non_strict.Wrapper.forward",
+              "path": "export/_trace.py",
+              "source_line_numbers": [
+                2296,
+                2297,
+                2298,
+                2299,
+                2300,
+                2301,
+                2307,
+                2308,
+                2309,
+                2310,
+                2311,
+                2312,
+                2313,
+                2314,
+                2315,
+                2316,
+                2317,
+                2318
+              ],
+              "source": "                def forward(self, *args, **kwargs):\n                    nonlocal out_spec\n                    nonlocal in_spec\n                    mod = self._export_root\n                    _, in_spec = pytree.tree_flatten((args, kwargs))\n                    if isinstance(mod, torch.fx.GraphModule):\n                        if (\n                            _check_input_constraints_pre_hook\n                            in mod._forward_pre_hooks.values()\n                        ):\n                            _check_input_constraints_pre_hook(mod, args, kwargs)\n                        with torch.fx.traceback.preserve_node_meta():\n                            args = (*args, *kwargs.values())\n                            tree_out = torch.fx.Interpreter(mod).run(*args)\n                    else:\n                        tree_out = mod(*args, **kwargs)\n                    flat_outs, out_spec = pytree.tree_flatten(tree_out)\n                    return tuple(flat_outs)",
+              "truncated": true
+            },
+            {
+              "source_id": 2,
+              "id": "7c44e6cd93e17c060875f9b8",
+              "qualified": "nn.modules.module.Module._call_impl",
+              "path": "nn/modules/module.py",
+              "source_line_numbers": [
+                1791,
+                1792,
+                1795,
+                1796,
+                1797,
+                1798,
+                1799,
+                1800,
+                1801,
+                1812,
+                1813,
+                1814,
+                1815,
+                1816,
+                1817,
+                1818,
+                1819,
+                1898,
+                1899,
+                1900,
+                1901,
+                1902
+              ],
+              "source": "    def _call_impl(self, *args, **kwargs):\n        forward_call = (self._slow_forward if torch._C._is_tracing() else self.forward)\n        if not (self._backward_hooks or self._backward_pre_hooks or self._forward_hooks or self._forward_pre_hooks\n                or _global_backward_pre_hooks or _global_backward_hooks\n                or _global_forward_hooks or _global_forward_pre_hooks):\n            return forward_call(*args, **kwargs)\n\n        result = None\n        called_always_called_hooks = set()\n                full_backward_hooks, non_full_backward_hooks = self._get_backward_hooks()\n\n            if _global_forward_pre_hooks or self._forward_pre_hooks:\n                for hook_id, hook in (\n                    *_global_forward_pre_hooks.items(),\n                    *self._forward_pre_hooks.items(),\n                ):\n                    if hook_id in self._forward_pre_hooks_with_kwargs:\n            for hook_id, hook in _global_forward_hooks.items():\n                if hook_id in _global_forward_hooks_always_called and hook_id not in called_always_called_hooks:  # type: ignore[possibly-undefined]\n                    try:\n                        hook_result = hook(self, args, result)  # type: ignore[possibly-undefined]\n                        if hook_result is not None:",
+              "truncated": true
+            },
+            {
+              "source_id": 3,
+              "id": "7a49135887f44a624ba845fb",
+              "qualified": "fx.passes.split_module._make_lite_graph_module",
+              "path": "fx/passes/split_module.py",
+              "source_line_numbers": [
+                749,
+                750,
+                751,
+                752,
+                767,
+                768,
+                769,
+                770,
+                771,
+                772,
+                773,
+                774,
+                775,
+                776,
+                777,
+                778,
+                779,
+                780,
+                781,
+                782,
+                783,
+                784,
+                785,
+                786,
+                787,
+                788,
+                789,
+                790,
+                791
+              ],
+              "source": "def _make_lite_graph_module(\n    graph: torch.fx.graph.Graph,\n    modules: dict[str, GraphModule] | None = None,\n) -> GraphModule:\n    cls = type(\"GraphModuleImpl\", (_LazyGraphModule,), {})\n    inst = object.__new__(cls)\n    d = inst.__dict__\n    d[\"training\"] = False\n    d[\"_parameters\"] = dict[str, Any]()\n    d[\"_buffers\"] = dict[str, Any]()\n    d[\"_modules\"] = modules if modules is not None else dict[str, Any]()\n    d[\"_non_persistent_buffers_set\"] = set[str]()\n    d[\"_backward_pre_hooks\"] = OrderedDict()\n    d[\"_backward_hooks\"] = OrderedDict()\n    d[\"_is_full_backward_hook\"] = None\n    d[\"_forward_hooks\"] = OrderedDict()\n    d[\"_forward_hooks_with_kwargs\"] = OrderedDict()\n    d[\"_forward_hooks_always_called\"] = OrderedDict()\n    d[\"_forward_pre_hooks\"] = OrderedDict()\n    d[\"_forward_pre_hooks_with_kwargs\"] = OrderedDict()\n    d[\"_state_dict_hooks\"] = OrderedDict()\n    d[\"_state_dict_pre_hooks\"] = OrderedDict()\n    d[\"_load_state_dict_pre_hooks\"] = OrderedDict()\n    d[\"_load_state_dict_post_hooks\"] = OrderedDict()\n    d[\"_graph\"] = graph\n    d[\"meta\"] = dict[str, Any]()\n    graph.owning_module = inst\n    cls.forward = _LazyGraphModule._lazy_forward  # type: ignore[attr-defined]\n    return inst",
+              "truncated": true
+            },
+            {
+              "source_id": 4,
+              "id": "3e412d1853bb3bf01ae70d6a",
+              "qualified": "_dynamo.aot_compile._warn_dropped_module_dispatch",
+              "path": "_dynamo/aot_compile.py",
+              "source_line_numbers": [
+                1641,
+                1662,
+                1663,
+                1664,
+                1665,
+                1666,
+                1667,
+                1668,
+                1686,
+                1687,
+                1688,
+                1689,
+                1690,
+                1691,
+                1692,
+                1693,
+                1694,
+                1695,
+                1696,
+                1697,
+                1776,
+                1777,
+                1778,
+                1779,
+                1780,
+                1781,
+                1782
+              ],
+              "source": "def _warn_dropped_module_dispatch(model: torch.nn.Module) -> None:\n        label\n        for label, attr in (\n            (\"forward pre-hooks\", \"_forward_pre_hooks\"),\n            (\"forward hooks\", \"_forward_hooks\"),\n        )\n        if getattr(model, attr, None)\n    ]\n            lazy = (\n                \" -- but not for this module yet: it carries a lazy initializer, \"\n                \"and while it does torch.compile pins the wrapper's forward to \"\n                \"_call_lazy_check, which has no aot_compile, so call the module \"\n                \"once to materialize it and then wrap it again\"\n            )\n        log.warning(\n            \"%s has %s registered; the AOT compiled forward calls %s.forward \"\n            \"directly, so those hooks do NOT run and its result may differ from \"\n            \"eager -- to keep them, AOT compile torch.compile(model).forward \"\n            \"instead, which traces __call__ and runs them%s; %s\",\n            type(model).__name__,\n            \"%s.forward compiled to, so that override does NOT run and its \"\n            \"result may differ from eager -- to keep it, AOT compile \"\n            \"torch.compile(model).forward instead, which traces __call__; %s\",\n            type(model).__name__,\n            type(model).__name__,\n            _REDIRECT_CALL,\n        )",
+              "truncated": true
+            },
+            {
+              "source_id": 5,
+              "id": "8f5b8f7b2b8521db480bdda8",
+              "qualified": "nn.modules.module.Module.register_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "source_line_numbers": [
+                1633,
+                1634,
+                1635,
+                1636,
+                1637,
+                1638,
+                1639,
+                1640,
+                1641,
+                1642,
+                1685,
+                1686,
+                1687,
+                1688,
+                1689,
+                1690,
+                1691,
+                1692,
+                1693,
+                1694
+              ],
+              "source": "    def register_forward_pre_hook(\n        self,\n        hook: Callable[[T, tuple[Any, ...]], Any | None]\n        | Callable[\n            [T, tuple[Any, ...], dict[str, Any]], tuple[Any, dict[str, Any]] | None\n        ],\n        *,\n        prepend: bool = False,\n        with_kwargs: bool = False,\n    ) -> RemovableHandle:\n        handle = RemovableHandle(\n            self._forward_pre_hooks, extra_dict=self._forward_pre_hooks_with_kwargs\n        )\n        self._forward_pre_hooks[handle.id] = hook\n        if with_kwargs:\n            self._forward_pre_hooks_with_kwargs[handle.id] = True\n\n        if prepend:\n            self._forward_pre_hooks.move_to_end(handle.id, last=False)  # type: ignore[attr-defined]\n        return handle",
+              "truncated": true
+            },
+            {
+              "source_id": 6,
+              "id": "c7e3f17a3c12707db74407c7",
+              "qualified": "nn.modules.module.Module.register_full_backward_pre_hook",
+              "path": "nn/modules/module.py",
+              "source_line_numbers": [
+                1394,
+                1395,
+                1396,
+                1397,
+                1398,
+                1437,
+                1438,
+                1439,
+                1440,
+                1441
+              ],
+              "source": "    def register_full_backward_pre_hook(\n        self,\n        hook: Callable[[\"Module\", _grad_t], _grad_t | None],\n        prepend: bool = False,\n    ) -> RemovableHandle:\n        handle = RemovableHandle(self._backward_pre_hooks)\n        self._backward_pre_hooks[handle.id] = hook\n        if prepend:\n            self._backward_pre_hooks.move_to_end(handle.id, last=False)  # type: ignore[attr-defined]\n        return handle",
+              "truncated": true
+            }
+          ],
+          "generation_diagnostics": {
+            "attempt_count": 2,
+            "total_request_ms": 57238,
+            "attempts": [
+              {
+                "load_duration_ms": 154,
+                "prompt_eval_duration_ms": 13646,
+                "eval_duration_ms": 15313,
+                "prompt_tokens": 3622,
+                "completion_tokens": 378,
+                "request_ms": 29172,
+                "estimated_prompt_tokens": 3922,
+                "context_window": 8192,
+                "entailment_checked": false,
+                "provider_calls": 1,
+                "usage": {
+                  "prompt_tokens": 3622,
+                  "completion_tokens": 378,
+                  "total_tokens": 4000
+                },
+                "draft_claims": [
+                  {
+                    "text": "When a torch.nn.Module instance is called, it runs forward pre-hooks by iterating through `_forward_pre_hooks` and calling each hook with the module instance and input arguments.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 5,
+                        "start_line": 1638,
+                        "end_line": 1640
+                      },
+                      {
+                        "source_id": 2,
+                        "start_line": 1814,
+                        "end_line": 1819
+                      }
+                    ]
+                  },
+                  {
+                    "text": "It then calls the forward method of the module instance using `_call_impl` which determines whether to use `self._slow_forward` or `self.forward` based on tracing status.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 2,
+                        "start_line": 1792,
+                        "end_line": 1792
+                      },
+                      {
+                        "source_id": 2,
+                        "start_line": 1803,
+                        "end_line": 1803
+                      }
+                    ]
+                  },
+                  {
+                    "text": "After calling the forward method, it runs forward hooks by iterating through `_forward_hooks` and calling each hook with the module instance and output.",
+                    "aspect_id": 3,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 2,
+                        "start_line": 1814,
+                        "end_line": 1819
+                      },
+                      {
+                        "source_id": 2,
+                        "start_line": 1879,
+                        "end_line": 1879
+                      }
+                    ]
+                  }
+                ],
+                "outcome": "invalid_model_output",
+                "reason": "Named symbol torch.nn.Module is not established by its cited source identity."
+              },
+              {
+                "load_duration_ms": 111,
+                "prompt_eval_duration_ms": 15022,
+                "eval_duration_ms": 12897,
+                "prompt_tokens": 4134,
+                "completion_tokens": 326,
+                "request_ms": 28066,
+                "estimated_prompt_tokens": 4486,
+                "context_window": 8192,
+                "entailment_checked": false,
+                "provider_calls": 1,
+                "usage": {
+                  "prompt_tokens": 4134,
+                  "completion_tokens": 326,
+                  "total_tokens": 4460
+                },
+                "draft_claims": [
+                  {
+                    "text": "When a torch.nn.Module instance is called, it runs forward pre-hooks before calling the forward method.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 5,
+                        "start_line": 1633,
+                        "end_line": 1642
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 2297,
+                        "end_line": 2300
+                      }
+                    ]
+                  },
+                  {
+                    "text": "The forward method is called after running all registered forward pre-hooks.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 2297,
+                        "end_line": 2300
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 2301,
+                        "end_line": 2301
+                      }
+                    ]
+                  },
+                  {
+                    "text": "After calling the forward method, torch.nn.Module runs forward hooks.",
+                    "aspect_id": 3,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 5,
+                        "start_line": 1633,
+                        "end_line": 1642
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 2297,
+                        "end_line": 2300
+                      }
+                    ]
+                  }
+                ],
+                "outcome": "invalid_model_output",
+                "reason": "Named symbol torch.nn.Module is not established by its cited source identity."
+              }
+            ],
+            "provider_calls": 2
+          },
+          "evidence_count": 11,
+          "answer_correct": null,
+          "all_claims_supported": null,
+          "all_aspects_complete": null,
+          "usage": {
+            "prompt_tokens": 7756,
+            "completion_tokens": 704,
+            "total_tokens": 8460
+          }
+        },
+        "deep": {
+          "elapsed_ms": 53818,
+          "retrieved_expected": [
+            "nn.modules.module.Module._call_impl",
+            "nn.modules.module.Module.register_forward_pre_hook"
+          ],
+          "expected_count": 4,
+          "recall_at_8": 0.5,
+          "evidence": [
+            {
+              "qualified": "export._trace._non_strict_export._tuplify_outputs._aot_export_non_strict.Wrapper.forward",
+              "path": "export/_trace.py",
+              "start_line": 2296,
+              "end_line": 2318
+            },
+            {
+              "qualified": "nn.modules.module.Module._call_impl",
+              "path": "nn/modules/module.py",
+              "start_line": 1791,
+              "end_line": 1923
+            },
+            {
+              "qualified": "fx.passes.split_module._make_lite_graph_module",
+              "path": "fx/passes/split_module.py",
+              "start_line": 749,
+              "end_line": 791
+            },
+            {
+              "qualified": "_dynamo.aot_compile._warn_dropped_module_dispatch",
+              "path": "_dynamo/aot_compile.py",
+              "start_line": 1641,
+              "end_line": 1782
+            },
+            {
+              "qualified": "nn.modules.module.Module.register_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 1633,
+              "end_line": 1694
+            },
+            {
+              "qualified": "nn.modules.module.Module.register_full_backward_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 1394,
+              "end_line": 1441
+            },
+            {
+              "qualified": "nn.modules.module.Module.register_load_state_dict_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 2313,
+              "end_line": 2323
+            },
+            {
+              "qualified": "nn.modules.module.Module._register_load_state_dict_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 2293,
+              "end_line": 2311
+            },
+            {
+              "qualified": "fx._symbolic_trace.Tracer.trace.module_call_wrapper.forward",
+              "path": "fx/_symbolic_trace.py",
+              "start_line": 909,
+              "end_line": 910
+            },
+            {
+              "qualified": "nn.modules.module.Module.register_forward_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 1696,
+              "end_line": 1761
+            },
+            {
+              "qualified": "nn.modules.module.register_module_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 217,
+              "end_line": 246
+            },
+            {
+              "qualified": "distributed.fsdp._runtime_utils._pre_backward_hook",
+              "path": "distributed/fsdp/_runtime_utils.py",
+              "start_line": 629,
+              "end_line": 696
+            },
+            {
+              "qualified": "nn.modules.module.register_module_forward_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 249,
+              "end_line": 293
+            }
+          ],
+          "answer": "No validated explanation is available. These retrieved source locations may help you investigate; their relevance does not establish an answer.\n\n[1] export._trace._non_strict_export._tuplify_outputs._aot_export_non_strict.Wrapper.forward — export/_trace.py:2296–2318\nRetrieved through symbol / text match.\n\n[2] nn.modules.module.Module._call_impl — nn/modules/module.py:1791–1923\nRetrieved through symbol / text match.\n\n[3] fx.passes.split_module._make_lite_graph_module — fx/passes/split_module.py:749–791\nRetrieved through symbol / text match.\n\n[4] _dynamo.aot_compile._warn_dropped_module_dispatch — _dynamo/aot_compile.py:1641–1782\nRetrieved through symbol / text match.\n\n[5] nn.modules.module.Module.register_forward_pre_hook — nn/modules/module.py:1633–1694\nRetrieved through contains relationship with Module.\n\n[6] nn.modules.module.Module.register_full_backward_pre_hook — nn/modules/module.py:1394–1441\nRetrieved through contains relationship with Module.\n\n[7] nn.modules.module.Module.register_load_state_dict_pre_hook — nn/modules/module.py:2313–2323\nRetrieved through contains relationship with Module.\n\n[8] nn.modules.module.Module._register_load_state_dict_pre_hook — nn/modules/module.py:2293–2311\nRetrieved through contains relationship with Module.\n\n[9] fx._symbolic_trace.Tracer.trace.module_call_wrapper.forward — fx/_symbolic_trace.py:909–910\nRetrieved through symbol / text match.\n\n[10] nn.modules.module.Module.register_forward_hook — nn/modules/module.py:1696–1761\nRetrieved through symbol / text match.\n\n[11] nn.modules.module.register_module_forward_pre_hook — nn/modules/module.py:217–246\nRetrieved through symbol / text match.\n\n[12] distributed.fsdp._runtime_utils._pre_backward_hook — distributed/fsdp/_runtime_utils.py:629–696\nRetrieved through symbol / text match.\n\n[13] nn.modules.module.register_module_forward_hook — nn/modules/module.py:249–293\nRetrieved through contains relationship with module.py.",
+          "generated": false,
+          "semantic_used": false,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [
+              "No validated explanation is available. These retrieved source locations may help you investigate; their relevance does not establish an answer."
+            ],
+            "uncited_sentences": [
+              "No validated explanation is available.",
+              "These retrieved source locations may help you investigate; their relevance does not establish an answer."
+            ],
+            "reference_section": true,
+            "entailment_checked": false,
+            "source_identity_checked": false
+          },
+          "warning": "Named symbol torch.nn.Module is not established by its cited source identity.",
+          "model": "qwen2.5-coder:7b",
+          "workflow": {
+            "engine": "langgraph",
+            "steps": [
+              "snapshot check",
+              "primary retrieval",
+              "aspect candidate coverage",
+              "targeted aspect and outgoing-relationship retrieval",
+              "aspect candidate coverage",
+              "answer provenance and citation checks"
+            ],
+            "retrieval_passes": 4,
+            "investigation_rounds": 1,
+            "candidate_coverage": [
+              {
+                "aspect_id": 1,
+                "question": "how does it run forward pre-hooks",
+                "status": "candidate_evidence",
+                "candidate_ids": [
+                  "8f5b8f7b2b8521db480bdda8",
+                  "67cb1d7290621f3428fad985"
+                ],
+                "factual_support_verified": false
+              },
+              {
+                "aspect_id": 2,
+                "question": "call forward(),",
+                "status": "candidate_evidence",
+                "candidate_ids": [
+                  "6efb9c1f16a4bae89a0714ca",
+                  "7c44e6cd93e17c060875f9b8"
+                ],
+                "factual_support_verified": false
+              },
+              {
+                "aspect_id": 3,
+                "question": "run forward hooks",
+                "status": "candidate_evidence",
+                "candidate_ids": [
+                  "67cb1d7290621f3428fad985",
+                  "8f5b8f7b2b8521db480bdda8"
+                ],
+                "factual_support_verified": false
+              }
+            ]
+          },
+          "abstained": false,
+          "partial": false,
+          "aspect_statuses": [],
+          "generation_context": [
+            {
+              "source_id": 11,
+              "id": "c96de13020c890dd7ad1f24d",
+              "qualified": "nn.modules.module.register_module_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "source_line_numbers": [
+                217,
+                244,
+                245,
+                246
+              ],
+              "source": "def register_module_forward_pre_hook(hook: Callable[..., None]) -> RemovableHandle:\n    handle = RemovableHandle(_global_forward_pre_hooks)\n    _global_forward_pre_hooks[handle.id] = hook\n    return handle",
+              "truncated": true
+            },
+            {
+              "source_id": 9,
+              "id": "6efb9c1f16a4bae89a0714ca",
+              "qualified": "fx._symbolic_trace.Tracer.trace.module_call_wrapper.forward",
+              "path": "fx/_symbolic_trace.py",
+              "source_line_numbers": [
+                909,
+                910
+              ],
+              "source": "                def forward(*args: Any, **kwargs: Any) -> Any:\n                    return _orig_module_call(mod, *args, **kwargs)",
+              "truncated": false
+            },
+            {
+              "source_id": 1,
+              "id": "14d46ba3a75b78490ac48e4b",
+              "qualified": "export._trace._non_strict_export._tuplify_outputs._aot_export_non_strict.Wrapper.forward",
+              "path": "export/_trace.py",
+              "source_line_numbers": [
+                2296,
+                2297,
+                2298,
+                2299,
+                2300,
+                2301,
+                2307,
+                2308,
+                2309,
+                2310,
+                2311,
+                2312,
+                2313,
+                2314,
+                2315,
+                2316,
+                2317,
+                2318
+              ],
+              "source": "                def forward(self, *args, **kwargs):\n                    nonlocal out_spec\n                    nonlocal in_spec\n                    mod = self._export_root\n                    _, in_spec = pytree.tree_flatten((args, kwargs))\n                    if isinstance(mod, torch.fx.GraphModule):\n                        if (\n                            _check_input_constraints_pre_hook\n                            in mod._forward_pre_hooks.values()\n                        ):\n                            _check_input_constraints_pre_hook(mod, args, kwargs)\n                        with torch.fx.traceback.preserve_node_meta():\n                            args = (*args, *kwargs.values())\n                            tree_out = torch.fx.Interpreter(mod).run(*args)\n                    else:\n                        tree_out = mod(*args, **kwargs)\n                    flat_outs, out_spec = pytree.tree_flatten(tree_out)\n                    return tuple(flat_outs)",
+              "truncated": true
+            },
+            {
+              "source_id": 2,
+              "id": "7c44e6cd93e17c060875f9b8",
+              "qualified": "nn.modules.module.Module._call_impl",
+              "path": "nn/modules/module.py",
+              "source_line_numbers": [
+                1791,
+                1792,
+                1795,
+                1796,
+                1797,
+                1798,
+                1799,
+                1800,
+                1801,
+                1802,
+                1803,
+                1804,
+                1805,
+                1812,
+                1813,
+                1814,
+                1815,
+                1816,
+                1817,
+                1818,
+                1819,
+                1898,
+                1899,
+                1900,
+                1901,
+                1902
+              ],
+              "source": "    def _call_impl(self, *args, **kwargs):\n        forward_call = (self._slow_forward if torch._C._is_tracing() else self.forward)\n        if not (self._backward_hooks or self._backward_pre_hooks or self._forward_hooks or self._forward_pre_hooks\n                or _global_backward_pre_hooks or _global_backward_hooks\n                or _global_forward_hooks or _global_forward_pre_hooks):\n            return forward_call(*args, **kwargs)\n\n        result = None\n        called_always_called_hooks = set()\n\n        def inner():\n            nonlocal result, args, kwargs\n\n                full_backward_hooks, non_full_backward_hooks = self._get_backward_hooks()\n\n            if _global_forward_pre_hooks or self._forward_pre_hooks:\n                for hook_id, hook in (\n                    *_global_forward_pre_hooks.items(),\n                    *self._forward_pre_hooks.items(),\n                ):\n                    if hook_id in self._forward_pre_hooks_with_kwargs:\n            for hook_id, hook in _global_forward_hooks.items():\n                if hook_id in _global_forward_hooks_always_called and hook_id not in called_always_called_hooks:  # type: ignore[possibly-undefined]\n                    try:\n                        hook_result = hook(self, args, result)  # type: ignore[possibly-undefined]\n                        if hook_result is not None:",
+              "truncated": true
+            },
+            {
+              "source_id": 3,
+              "id": "7a49135887f44a624ba845fb",
+              "qualified": "fx.passes.split_module._make_lite_graph_module",
+              "path": "fx/passes/split_module.py",
+              "source_line_numbers": [
+                749,
+                750,
+                751,
+                752,
+                767,
+                768,
+                769,
+                770,
+                771,
+                772,
+                773,
+                774,
+                775,
+                776,
+                777,
+                778,
+                779,
+                780,
+                781,
+                782,
+                783,
+                784,
+                785,
+                786,
+                787,
+                788,
+                789,
+                790,
+                791
+              ],
+              "source": "def _make_lite_graph_module(\n    graph: torch.fx.graph.Graph,\n    modules: dict[str, GraphModule] | None = None,\n) -> GraphModule:\n    cls = type(\"GraphModuleImpl\", (_LazyGraphModule,), {})\n    inst = object.__new__(cls)\n    d = inst.__dict__\n    d[\"training\"] = False\n    d[\"_parameters\"] = dict[str, Any]()\n    d[\"_buffers\"] = dict[str, Any]()\n    d[\"_modules\"] = modules if modules is not None else dict[str, Any]()\n    d[\"_non_persistent_buffers_set\"] = set[str]()\n    d[\"_backward_pre_hooks\"] = OrderedDict()\n    d[\"_backward_hooks\"] = OrderedDict()\n    d[\"_is_full_backward_hook\"] = None\n    d[\"_forward_hooks\"] = OrderedDict()\n    d[\"_forward_hooks_with_kwargs\"] = OrderedDict()\n    d[\"_forward_hooks_always_called\"] = OrderedDict()\n    d[\"_forward_pre_hooks\"] = OrderedDict()\n    d[\"_forward_pre_hooks_with_kwargs\"] = OrderedDict()\n    d[\"_state_dict_hooks\"] = OrderedDict()\n    d[\"_state_dict_pre_hooks\"] = OrderedDict()\n    d[\"_load_state_dict_pre_hooks\"] = OrderedDict()\n    d[\"_load_state_dict_post_hooks\"] = OrderedDict()\n    d[\"_graph\"] = graph\n    d[\"meta\"] = dict[str, Any]()\n    graph.owning_module = inst\n    cls.forward = _LazyGraphModule._lazy_forward  # type: ignore[attr-defined]\n    return inst",
+              "truncated": true
+            },
+            {
+              "source_id": 4,
+              "id": "3e412d1853bb3bf01ae70d6a",
+              "qualified": "_dynamo.aot_compile._warn_dropped_module_dispatch",
+              "path": "_dynamo/aot_compile.py",
+              "source_line_numbers": [
+                1641,
+                1662,
+                1663,
+                1664,
+                1665,
+                1666,
+                1667,
+                1668,
+                1686,
+                1687,
+                1688,
+                1689,
+                1690,
+                1691,
+                1692,
+                1693,
+                1694,
+                1695,
+                1696,
+                1697,
+                1774,
+                1775,
+                1776,
+                1777,
+                1778,
+                1779,
+                1780,
+                1781,
+                1782
+              ],
+              "source": "def _warn_dropped_module_dispatch(model: torch.nn.Module) -> None:\n        label\n        for label, attr in (\n            (\"forward pre-hooks\", \"_forward_pre_hooks\"),\n            (\"forward hooks\", \"_forward_hooks\"),\n        )\n        if getattr(model, attr, None)\n    ]\n            lazy = (\n                \" -- but not for this module yet: it carries a lazy initializer, \"\n                \"and while it does torch.compile pins the wrapper's forward to \"\n                \"_call_lazy_check, which has no aot_compile, so call the module \"\n                \"once to materialize it and then wrap it again\"\n            )\n        log.warning(\n            \"%s has %s registered; the AOT compiled forward calls %s.forward \"\n            \"directly, so those hooks do NOT run and its result may differ from \"\n            \"eager -- to keep them, AOT compile torch.compile(model).forward \"\n            \"instead, which traces __call__ and runs them%s; %s\",\n            type(model).__name__,\n        log.warning(\n            \"%s overrides __call__; the AOT compiled forward runs what \"\n            \"%s.forward compiled to, so that override does NOT run and its \"\n            \"result may differ from eager -- to keep it, AOT compile \"\n            \"torch.compile(model).forward instead, which traces __call__; %s\",\n            type(model).__name__,\n            type(model).__name__,\n            _REDIRECT_CALL,\n        )",
+              "truncated": true
+            },
+            {
+              "source_id": 5,
+              "id": "8f5b8f7b2b8521db480bdda8",
+              "qualified": "nn.modules.module.Module.register_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "source_line_numbers": [
+                1633,
+                1634,
+                1635,
+                1636,
+                1637,
+                1638,
+                1639,
+                1640,
+                1641,
+                1642,
+                1685,
+                1686,
+                1687,
+                1688,
+                1689,
+                1690,
+                1691,
+                1692,
+                1693,
+                1694
+              ],
+              "source": "    def register_forward_pre_hook(\n        self,\n        hook: Callable[[T, tuple[Any, ...]], Any | None]\n        | Callable[\n            [T, tuple[Any, ...], dict[str, Any]], tuple[Any, dict[str, Any]] | None\n        ],\n        *,\n        prepend: bool = False,\n        with_kwargs: bool = False,\n    ) -> RemovableHandle:\n        handle = RemovableHandle(\n            self._forward_pre_hooks, extra_dict=self._forward_pre_hooks_with_kwargs\n        )\n        self._forward_pre_hooks[handle.id] = hook\n        if with_kwargs:\n            self._forward_pre_hooks_with_kwargs[handle.id] = True\n\n        if prepend:\n            self._forward_pre_hooks.move_to_end(handle.id, last=False)  # type: ignore[attr-defined]\n        return handle",
+              "truncated": true
+            },
+            {
+              "source_id": 6,
+              "id": "c7e3f17a3c12707db74407c7",
+              "qualified": "nn.modules.module.Module.register_full_backward_pre_hook",
+              "path": "nn/modules/module.py",
+              "source_line_numbers": [
+                1394,
+                1395,
+                1396,
+                1397,
+                1398,
+                1437,
+                1438,
+                1439,
+                1440,
+                1441
+              ],
+              "source": "    def register_full_backward_pre_hook(\n        self,\n        hook: Callable[[\"Module\", _grad_t], _grad_t | None],\n        prepend: bool = False,\n    ) -> RemovableHandle:\n        handle = RemovableHandle(self._backward_pre_hooks)\n        self._backward_pre_hooks[handle.id] = hook\n        if prepend:\n            self._backward_pre_hooks.move_to_end(handle.id, last=False)  # type: ignore[attr-defined]\n        return handle",
+              "truncated": true
+            }
+          ],
+          "generation_diagnostics": {
+            "attempt_count": 2,
+            "total_request_ms": 50370,
+            "attempts": [
+              {
+                "load_duration_ms": 113,
+                "prompt_eval_duration_ms": 13347,
+                "eval_duration_ms": 13336,
+                "prompt_tokens": 3808,
+                "completion_tokens": 338,
+                "request_ms": 26831,
+                "estimated_prompt_tokens": 4114,
+                "context_window": 8192,
+                "entailment_checked": false,
+                "provider_calls": 1,
+                "usage": {
+                  "prompt_tokens": 3808,
+                  "completion_tokens": 338,
+                  "total_tokens": 4146
+                },
+                "draft_claims": [
+                  {
+                    "text": "When a torch.nn.Module instance is called, it runs forward pre-hooks by iterating through _forward_pre_hooks and _global_forward_pre_hooks.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 2,
+                        "start_line": 1803,
+                        "end_line": 1803
+                      },
+                      {
+                        "source_id": 2,
+                        "start_line": 1814,
+                        "end_line": 1817
+                      }
+                    ]
+                  },
+                  {
+                    "text": "It then calls forward() directly on the module instance.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 2,
+                        "start_line": 1795,
+                        "end_line": 1796
+                      },
+                      {
+                        "source_id": 2,
+                        "start_line": 1803,
+                        "end_line": 1803
+                      }
+                    ]
+                  },
+                  {
+                    "text": "Afterward, it runs forward hooks by iterating through _forward_hooks and _global_forward_hooks.",
+                    "aspect_id": 3,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 2,
+                        "start_line": 1803,
+                        "end_line": 1803
+                      },
+                      {
+                        "source_id": 2,
+                        "start_line": 1898,
+                        "end_line": 1899
+                      }
+                    ]
+                  }
+                ],
+                "outcome": "invalid_model_output",
+                "reason": "Named symbol torch.nn.Module is not established by its cited source identity."
+              },
+              {
+                "load_duration_ms": 113,
+                "prompt_eval_duration_ms": 14218,
+                "eval_duration_ms": 9175,
+                "prompt_tokens": 4006,
+                "completion_tokens": 220,
+                "request_ms": 23539,
+                "estimated_prompt_tokens": 4364,
+                "context_window": 8192,
+                "entailment_checked": false,
+                "provider_calls": 1,
+                "usage": {
+                  "prompt_tokens": 4006,
+                  "completion_tokens": 220,
+                  "total_tokens": 4226
+                },
+                "draft_claims": [
+                  {
+                    "text": "torch.nn.Module does not directly run forward pre-hooks; they are registered and called through internal mechanisms.",
+                    "aspect_id": 1,
+                    "status": "insufficient_evidence",
+                    "citations": []
+                  },
+                  {
+                    "text": "torch.nn.Module calls its forward method directly when invoked, bypassing any hooks.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 2307,
+                        "end_line": 2309
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 2314,
+                        "end_line": 2315
+                      }
+                    ]
+                  },
+                  {
+                    "text": "torch.nn.Module does not run forward hooks; they are registered and called through internal mechanisms.",
+                    "aspect_id": 3,
+                    "status": "insufficient_evidence",
+                    "citations": []
+                  }
+                ],
+                "outcome": "invalid_model_output",
+                "reason": "Named symbol torch.nn.Module is not established by its cited source identity."
+              }
+            ],
+            "provider_calls": 2
+          },
+          "evidence_count": 13,
+          "answer_correct": null,
+          "all_claims_supported": null,
+          "all_aspects_complete": null,
+          "usage": {
+            "prompt_tokens": 7814,
+            "completion_tokens": 558,
+            "total_tokens": 8372
+          }
+        }
+      }
+    }
+  ]
+}

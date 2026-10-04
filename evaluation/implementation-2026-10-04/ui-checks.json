@@ -1,0 +1,16 @@
+{
+  "verification": "Manual CUA interaction in Safari against the actual local API, not automated DOM tests.",
+  "checks": [
+    "Static analysis shows two fixture candidates with locations and confidence",
+    "Clicking candidate source opens the indicated file and highlighted line",
+    "One/two-hop traversal returns actual imports/calls; final directed relationship cards display names and confidence",
+    "Clicking quoteRequest re-centers graph and exposes its cross-file shippingCost call",
+    "Retrieval diagnostics show candidate component scores and trace",
+    "Test-only generation saves readable unittest source with no implementation patch",
+    "Actual Python guard answer has clickable numbered citations that open original lines",
+    "Research comparison completes; final table shows 14 variants and full metrics in disclosure",
+    "New pages remain readable in the existing dark theme after reload"
+  ],
+  "fixture": "0888c31b0c0946ca8bab2f05ad91958d",
+  "outcome": "Passed the checked workflows; not exhaustive browser/platform testing."
+}

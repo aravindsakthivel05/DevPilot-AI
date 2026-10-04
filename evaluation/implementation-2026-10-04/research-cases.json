@@ -1,0 +1,14 @@
+{
+  "provenance": "Source-authored development labels, not independent human review or a held-out benchmark",
+  "retrieval": [
+    {"question":"In the Python pricing module, how does a shipping quote handle a nonpositive weight?","expected_symbols":["python.pricing.shipping_cost"]},
+    {"question":"How does the TypeScript API delegate quote computation to pricing?","expected_symbols":["typescript.api.quoteRequest","typescript.pricing.shippingCost"]},
+    {"question":"Which source contains the C++ class that multiplies weight by five?","expected_symbols":["cpp.pricing.Pricing.shipping_cost"]},
+    {"question":"Where is the Go shipping price calculation defined?","expected_symbols":["go.pricing.shippingCost"]}
+  ],
+  "errors":[
+    {"type":"signature_mismatch","file":"python/static_candidates.py","line":6},
+    {"type":"unreachable_statement","file":"python/static_candidates.py","line":11}
+  ],
+  "abstention":"What is the current production deployment state?"
+}

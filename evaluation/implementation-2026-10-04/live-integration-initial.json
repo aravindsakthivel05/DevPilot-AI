@@ -1,0 +1,5106 @@
+{
+  "created_at": "2026-10-04T07:53:56.968445+00:00",
+  "fixture": "examples/research-repository",
+  "provenance": "Source-authored development labels, not independent human review or a held-out benchmark",
+  "repository": {
+    "id": "research-prototype-1791100435646046000",
+    "name": "Nine-language research fixture",
+    "source": "/Users/aravinds/Documents/ChatGPT/Final year project/examples/research-repository",
+    "commit_id": "c43a135d67f91b6226073b5cdc257643cc47bd31",
+    "fingerprint": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+    "status": "ready",
+    "progress": "Ready for investigation",
+    "created_at": "2026-10-04T07:53:55.646128+00:00",
+    "stats": {
+      "files": 14,
+      "python_files": 3,
+      "java_files": 1,
+      "languages": {
+        "text": 2,
+        "c": 1,
+        "cpp": 1,
+        "csharp": 1,
+        "go": 1,
+        "java": 1,
+        "javascript": 1,
+        "python": 3,
+        "rust": 1,
+        "typescript": 2
+      },
+      "symbols": 49,
+      "edges": 40,
+      "parse_errors": [],
+      "unresolved_count": 2,
+      "unresolved": [
+        {
+          "source": "0cfcc9aa8dfa069f4c953a40",
+          "label": "ValueError",
+          "kind": "calls",
+          "line": 6
+        },
+        {
+          "source": "12e20516282571cd6654648d",
+          "label": "print",
+          "kind": "calls",
+          "line": 11
+        }
+      ],
+      "skipped_files": 0,
+      "coverage": {
+        "indexed_files": 14,
+        "skipped_files": 0,
+        "ignored_directories": 0,
+        "reason_counts": {},
+        "indexed_extensions": {
+          ".c": 1,
+          ".cpp": 1,
+          ".cs": 1,
+          ".go": 1,
+          ".java": 1,
+          ".js": 1,
+          ".json": 1,
+          ".md": 1,
+          ".py": 3,
+          ".rs": 1,
+          ".ts": 2
+        },
+        "recorded_entries": 14,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v1",
+      "timings_ms": {
+        "read_and_snapshot": 17.513,
+        "analysis_and_graph": 16.91,
+        "chunks_and_storage": 2.114,
+        "embeddings": 1274.375,
+        "total_index": 1310.916
+      }
+    },
+    "error": null
+  },
+  "capabilities": [
+    {
+      "language": "python",
+      "extensions": [
+        ".py"
+      ],
+      "parser": "Tree-sitter + Python AST scope/import resolver",
+      "relationships": "existing tested static relationships",
+      "limitations": [
+        "No runtime dispatch, reflection or complete compiler typing"
+      ]
+    },
+    {
+      "language": "java",
+      "extensions": [
+        ".java"
+      ],
+      "parser": "Tree-sitter + Java declared receiver/import resolver",
+      "relationships": "existing tested static relationships",
+      "limitations": [
+        "No runtime dispatch, reflection or complete compiler typing"
+      ]
+    },
+    {
+      "language": "javascript",
+      "extensions": [
+        ".js",
+        ".jsx",
+        ".mjs",
+        ".cjs"
+      ],
+      "parser": "Tree-sitter",
+      "symbols": [
+        "class",
+        "function",
+        "method",
+        "variable"
+      ],
+      "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+      "limitations": [
+        "No compiler type checking or runtime dispatch",
+        "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+      ]
+    },
+    {
+      "language": "typescript",
+      "extensions": [
+        ".ts",
+        ".tsx"
+      ],
+      "parser": "Tree-sitter",
+      "symbols": [
+        "class",
+        "enum",
+        "function",
+        "interface",
+        "method",
+        "type",
+        "variable"
+      ],
+      "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+      "limitations": [
+        "No compiler type checking or runtime dispatch",
+        "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+      ]
+    },
+    {
+      "language": "c",
+      "extensions": [
+        ".c",
+        ".h"
+      ],
+      "parser": "Tree-sitter",
+      "symbols": [
+        "enum",
+        "function",
+        "struct"
+      ],
+      "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+      "limitations": [
+        "No compiler type checking or runtime dispatch",
+        "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+      ]
+    },
+    {
+      "language": "cpp",
+      "extensions": [
+        ".cpp",
+        ".cc",
+        ".cxx",
+        ".hpp",
+        ".hh",
+        ".hxx"
+      ],
+      "parser": "Tree-sitter",
+      "symbols": [
+        "class",
+        "enum",
+        "function",
+        "namespace",
+        "struct"
+      ],
+      "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+      "limitations": [
+        "No compiler type checking or runtime dispatch",
+        "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+      ]
+    },
+    {
+      "language": "go",
+      "extensions": [
+        ".go"
+      ],
+      "parser": "Tree-sitter",
+      "symbols": [
+        "constant",
+        "function",
+        "method",
+        "type",
+        "variable"
+      ],
+      "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+      "limitations": [
+        "No compiler type checking or runtime dispatch",
+        "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+      ]
+    },
+    {
+      "language": "rust",
+      "extensions": [
+        ".rs"
+      ],
+      "parser": "Tree-sitter",
+      "symbols": [
+        "constant",
+        "enum",
+        "function",
+        "interface",
+        "module",
+        "struct",
+        "variable"
+      ],
+      "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+      "limitations": [
+        "No compiler type checking or runtime dispatch",
+        "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+      ]
+    },
+    {
+      "language": "csharp",
+      "extensions": [
+        ".cs"
+      ],
+      "parser": "Tree-sitter",
+      "symbols": [
+        "class",
+        "constructor",
+        "enum",
+        "interface",
+        "method",
+        "namespace",
+        "property",
+        "struct"
+      ],
+      "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+      "limitations": [
+        "No compiler type checking or runtime dispatch",
+        "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+      ]
+    }
+  ],
+  "retrieval": {
+    "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+    "results": [
+      {
+        "variant": {
+          "name": "lexical",
+          "mode": "lexical",
+          "hops": 0
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 7.891,
+            "retrieved": [
+              "7ca99a0fd4d4e92654dfe80a",
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "9573c95dcda31e196f72cba3",
+              "30b635f812c60938ec387446",
+              "572cb1af6d30aa5571f192e3",
+              "955712b4036e2c0d6da3e7e2",
+              "fa9eea5db1682c284a24ac3a",
+              "f799a0c9ea28550a24f161d1",
+              "d6286f7f1e17a6dcb91b41b3"
+            ],
+            "semantic_used": false,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "elapsed_ms": 3.439,
+            "retrieved": [
+              "806cfdaba69675dd2b0c90fe",
+              "7ca99a0fd4d4e92654dfe80a",
+              "eed91bf5e7e422527ce0a139",
+              "39b9adb014087c90a0a2f533",
+              "9573c95dcda31e196f72cba3",
+              "28d850124a03a1f4d2b54593",
+              "331d77060805678772e1adac",
+              "30b635f812c60938ec387446",
+              "6645c01c0fd9ca638d0a960a",
+              "572cb1af6d30aa5571f192e3"
+            ],
+            "semantic_used": false,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "elapsed_ms": 3.254,
+            "retrieved": [
+              "b0d95f5512a7a4e079029425",
+              "0cfcc9aa8dfa069f4c953a40",
+              "f2be40931bf170582315b97c",
+              "331d77060805678772e1adac",
+              "340cd2257fe964893a3927b3",
+              "9573c95dcda31e196f72cba3",
+              "bb02c1d77c3f081825e63c1d",
+              "fabaef49f489240406b499dc",
+              "78b3ed180b86f1108b8480ca",
+              "5481902c4e2c8c154c9830b1"
+            ],
+            "semantic_used": false,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 2.868,
+            "retrieved": [
+              "5cd3e685414da3650c8ee751",
+              "fa9eea5db1682c284a24ac3a",
+              "806cfdaba69675dd2b0c90fe",
+              "eb695c4f402ddbf01183deaf",
+              "30b635f812c60938ec387446",
+              "572cb1af6d30aa5571f192e3",
+              "28d850124a03a1f4d2b54593",
+              "955712b4036e2c0d6da3e7e2",
+              "f799a0c9ea28550a24f161d1",
+              "9573c95dcda31e196f72cba3"
+            ],
+            "semantic_used": false,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "semantic",
+          "mode": "semantic",
+          "hops": 0
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 30.783,
+            "retrieved": [
+              "0cfcc9aa8dfa069f4c953a40",
+              "112cf8f0f519e8b91953c848",
+              "e39eb0a445f6df80754b633e",
+              "fb223c271bbf3dafae05cd8a",
+              "eb695c4f402ddbf01183deaf",
+              "806cfdaba69675dd2b0c90fe",
+              "5481902c4e2c8c154c9830b1",
+              "28d850124a03a1f4d2b54593",
+              "955712b4036e2c0d6da3e7e2",
+              "340cd2257fe964893a3927b3"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.25,
+              "ndcg": 0.2640681225725909,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.25,
+              "ndcg": 0.448643819352159,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 29.617,
+            "retrieved": [
+              "39b9adb014087c90a0a2f533",
+              "806cfdaba69675dd2b0c90fe",
+              "f8f5adac9f70c75e0dfeae78",
+              "eed91bf5e7e422527ce0a139",
+              "91c82e4634eb1365d05f91d9",
+              "eb695c4f402ddbf01183deaf",
+              "ecc8ee0cedeac40dbb1f8fcd",
+              "6645c01c0fd9ca638d0a960a",
+              "d6286f7f1e17a6dcb91b41b3",
+              "5e5c4503eaf1f8d11b6f7258"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.1,
+              "ndcg": 0.2890648263178879,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 30.134,
+            "retrieved": [
+              "a692f88d0322bef6aaa8e99a",
+              "7ca99a0fd4d4e92654dfe80a",
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "04920a8c3d4ed45c0b34ddad",
+              "b0d95f5512a7a4e079029425",
+              "5481902c4e2c8c154c9830b1",
+              "9573c95dcda31e196f72cba3",
+              "93a67877f811fb4232d6902d",
+              "28d850124a03a1f4d2b54593"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.5,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.5,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 30.613,
+            "retrieved": [
+              "112cf8f0f519e8b91953c848",
+              "0cfcc9aa8dfa069f4c953a40",
+              "fa9eea5db1682c284a24ac3a",
+              "30b635f812c60938ec387446",
+              "5cd3e685414da3650c8ee751",
+              "fabaef49f489240406b499dc",
+              "28d850124a03a1f4d2b54593",
+              "5481902c4e2c8c154c9830b1",
+              "b0d95f5512a7a4e079029425",
+              "f799a0c9ea28550a24f161d1"
+            ],
+            "semantic_used": true,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "graph",
+          "mode": "graph",
+          "hops": 2
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 3.212,
+            "retrieved": [
+              "7ca99a0fd4d4e92654dfe80a",
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "9573c95dcda31e196f72cba3",
+              "30b635f812c60938ec387446",
+              "572cb1af6d30aa5571f192e3",
+              "955712b4036e2c0d6da3e7e2",
+              "fa9eea5db1682c284a24ac3a",
+              "f799a0c9ea28550a24f161d1",
+              "d6286f7f1e17a6dcb91b41b3"
+            ],
+            "semantic_used": false,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "elapsed_ms": 3.136,
+            "retrieved": [
+              "806cfdaba69675dd2b0c90fe",
+              "7ca99a0fd4d4e92654dfe80a",
+              "eed91bf5e7e422527ce0a139",
+              "39b9adb014087c90a0a2f533",
+              "9573c95dcda31e196f72cba3",
+              "28d850124a03a1f4d2b54593",
+              "331d77060805678772e1adac",
+              "30b635f812c60938ec387446",
+              "6645c01c0fd9ca638d0a960a",
+              "572cb1af6d30aa5571f192e3"
+            ],
+            "semantic_used": false,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "elapsed_ms": 3.165,
+            "retrieved": [
+              "b0d95f5512a7a4e079029425",
+              "112cf8f0f519e8b91953c848",
+              "9573c95dcda31e196f72cba3",
+              "0cfcc9aa8dfa069f4c953a40",
+              "f2be40931bf170582315b97c",
+              "331d77060805678772e1adac",
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "fabaef49f489240406b499dc",
+              "78b3ed180b86f1108b8480ca"
+            ],
+            "semantic_used": false,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.5,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.5,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 2.641,
+            "retrieved": [
+              "5cd3e685414da3650c8ee751",
+              "93100c8371b427150b347bc7",
+              "fa9eea5db1682c284a24ac3a",
+              "fabaef49f489240406b499dc",
+              "806cfdaba69675dd2b0c90fe",
+              "eb695c4f402ddbf01183deaf",
+              "30b635f812c60938ec387446",
+              "572cb1af6d30aa5571f192e3",
+              "28d850124a03a1f4d2b54593",
+              "955712b4036e2c0d6da3e7e2"
+            ],
+            "semantic_used": false,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "hybrid",
+          "mode": "hybrid",
+          "hops": 2
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 39.739,
+            "retrieved": [
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "7ca99a0fd4d4e92654dfe80a",
+              "e39eb0a445f6df80754b633e",
+              "eb695c4f402ddbf01183deaf",
+              "955712b4036e2c0d6da3e7e2",
+              "9573c95dcda31e196f72cba3",
+              "30b635f812c60938ec387446",
+              "d6286f7f1e17a6dcb91b41b3",
+              "fa9eea5db1682c284a24ac3a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.4911492931622974,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 41.031,
+            "retrieved": [
+              "806cfdaba69675dd2b0c90fe",
+              "39b9adb014087c90a0a2f533",
+              "eed91bf5e7e422527ce0a139",
+              "f8f5adac9f70c75e0dfeae78",
+              "7ca99a0fd4d4e92654dfe80a",
+              "6645c01c0fd9ca638d0a960a",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "d6286f7f1e17a6dcb91b41b3",
+              "5e5c4503eaf1f8d11b6f7258"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 41.611,
+            "retrieved": [
+              "b0d95f5512a7a4e079029425",
+              "28d850124a03a1f4d2b54593",
+              "30b635f812c60938ec387446",
+              "112cf8f0f519e8b91953c848",
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "5481902c4e2c8c154c9830b1",
+              "7ca99a0fd4d4e92654dfe80a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.2,
+              "ndcg": 0.38685280723454163,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.2,
+              "ndcg": 0.38685280723454163,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 38.48,
+            "retrieved": [
+              "5cd3e685414da3650c8ee751",
+              "fabaef49f489240406b499dc",
+              "112cf8f0f519e8b91953c848",
+              "5481902c4e2c8c154c9830b1",
+              "fa9eea5db1682c284a24ac3a",
+              "15ad57ee10a013807480157a",
+              "30b635f812c60938ec387446",
+              "78b3ed180b86f1108b8480ca",
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593"
+            ],
+            "semantic_used": true,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "hybrid_no_reranking",
+          "mode": "hybrid",
+          "hops": 2,
+          "settings": {
+            "rerank": false
+          }
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 40.211,
+            "retrieved": [
+              "0cfcc9aa8dfa069f4c953a40",
+              "806cfdaba69675dd2b0c90fe",
+              "28d850124a03a1f4d2b54593",
+              "7ca99a0fd4d4e92654dfe80a",
+              "e39eb0a445f6df80754b633e",
+              "eb695c4f402ddbf01183deaf",
+              "955712b4036e2c0d6da3e7e2",
+              "9573c95dcda31e196f72cba3",
+              "fb223c271bbf3dafae05cd8a",
+              "112cf8f0f519e8b91953c848"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.48381288316677695,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 41.706,
+            "retrieved": [
+              "806cfdaba69675dd2b0c90fe",
+              "39b9adb014087c90a0a2f533",
+              "eed91bf5e7e422527ce0a139",
+              "eb695c4f402ddbf01183deaf",
+              "ecc8ee0cedeac40dbb1f8fcd",
+              "7521ad6fd061c48a63dbef8d",
+              "91c82e4634eb1365d05f91d9",
+              "f8f5adac9f70c75e0dfeae78",
+              "6645c01c0fd9ca638d0a960a",
+              "d6286f7f1e17a6dcb91b41b3"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "elapsed_ms": 36.135,
+            "retrieved": [
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "5481902c4e2c8c154c9830b1",
+              "7ca99a0fd4d4e92654dfe80a",
+              "a692f88d0322bef6aaa8e99a",
+              "fabaef49f489240406b499dc",
+              "0cfcc9aa8dfa069f4c953a40",
+              "04920a8c3d4ed45c0b34ddad"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 33.185,
+            "retrieved": [
+              "fa9eea5db1682c284a24ac3a",
+              "5cd3e685414da3650c8ee751",
+              "30b635f812c60938ec387446",
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "eb695c4f402ddbf01183deaf",
+              "f799a0c9ea28550a24f161d1",
+              "572cb1af6d30aa5571f192e3",
+              "955712b4036e2c0d6da3e7e2",
+              "93100c8371b427150b347bc7"
+            ],
+            "semantic_used": true,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "hybrid_no_graph",
+          "mode": "hybrid",
+          "hops": 0
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 33.636,
+            "retrieved": [
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "7ca99a0fd4d4e92654dfe80a",
+              "e39eb0a445f6df80754b633e",
+              "eb695c4f402ddbf01183deaf",
+              "955712b4036e2c0d6da3e7e2",
+              "9573c95dcda31e196f72cba3",
+              "30b635f812c60938ec387446",
+              "d6286f7f1e17a6dcb91b41b3",
+              "fa9eea5db1682c284a24ac3a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.4911492931622974,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 34.306,
+            "retrieved": [
+              "806cfdaba69675dd2b0c90fe",
+              "39b9adb014087c90a0a2f533",
+              "eed91bf5e7e422527ce0a139",
+              "f8f5adac9f70c75e0dfeae78",
+              "7ca99a0fd4d4e92654dfe80a",
+              "6645c01c0fd9ca638d0a960a",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "d6286f7f1e17a6dcb91b41b3",
+              "5e5c4503eaf1f8d11b6f7258"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "elapsed_ms": 32.233,
+            "retrieved": [
+              "b0d95f5512a7a4e079029425",
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "5481902c4e2c8c154c9830b1",
+              "7ca99a0fd4d4e92654dfe80a",
+              "a692f88d0322bef6aaa8e99a",
+              "fabaef49f489240406b499dc",
+              "0cfcc9aa8dfa069f4c953a40"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 30.251,
+            "retrieved": [
+              "5cd3e685414da3650c8ee751",
+              "fa9eea5db1682c284a24ac3a",
+              "30b635f812c60938ec387446",
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "eb695c4f402ddbf01183deaf",
+              "f799a0c9ea28550a24f161d1",
+              "572cb1af6d30aa5571f192e3",
+              "955712b4036e2c0d6da3e7e2",
+              "93100c8371b427150b347bc7"
+            ],
+            "semantic_used": true,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "hybrid_1hop",
+          "mode": "hybrid",
+          "hops": 1
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 33.902,
+            "retrieved": [
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "7ca99a0fd4d4e92654dfe80a",
+              "e39eb0a445f6df80754b633e",
+              "eb695c4f402ddbf01183deaf",
+              "955712b4036e2c0d6da3e7e2",
+              "9573c95dcda31e196f72cba3",
+              "30b635f812c60938ec387446",
+              "d6286f7f1e17a6dcb91b41b3",
+              "fa9eea5db1682c284a24ac3a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.4911492931622974,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 30.847,
+            "retrieved": [
+              "806cfdaba69675dd2b0c90fe",
+              "39b9adb014087c90a0a2f533",
+              "eed91bf5e7e422527ce0a139",
+              "f8f5adac9f70c75e0dfeae78",
+              "7ca99a0fd4d4e92654dfe80a",
+              "6645c01c0fd9ca638d0a960a",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "d6286f7f1e17a6dcb91b41b3",
+              "5e5c4503eaf1f8d11b6f7258"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 30.945,
+            "retrieved": [
+              "b0d95f5512a7a4e079029425",
+              "28d850124a03a1f4d2b54593",
+              "30b635f812c60938ec387446",
+              "112cf8f0f519e8b91953c848",
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "5481902c4e2c8c154c9830b1",
+              "7ca99a0fd4d4e92654dfe80a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.2,
+              "ndcg": 0.38685280723454163,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.2,
+              "ndcg": 0.38685280723454163,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 31.189,
+            "retrieved": [
+              "5cd3e685414da3650c8ee751",
+              "fabaef49f489240406b499dc",
+              "112cf8f0f519e8b91953c848",
+              "5481902c4e2c8c154c9830b1",
+              "fa9eea5db1682c284a24ac3a",
+              "15ad57ee10a013807480157a",
+              "30b635f812c60938ec387446",
+              "78b3ed180b86f1108b8480ca",
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593"
+            ],
+            "semantic_used": true,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "hybrid_3hop",
+          "mode": "hybrid",
+          "hops": 3
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 31.489,
+            "retrieved": [
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "7ca99a0fd4d4e92654dfe80a",
+              "e39eb0a445f6df80754b633e",
+              "eb695c4f402ddbf01183deaf",
+              "955712b4036e2c0d6da3e7e2",
+              "9573c95dcda31e196f72cba3",
+              "30b635f812c60938ec387446",
+              "d6286f7f1e17a6dcb91b41b3",
+              "fa9eea5db1682c284a24ac3a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.4911492931622974,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 32.528,
+            "retrieved": [
+              "806cfdaba69675dd2b0c90fe",
+              "39b9adb014087c90a0a2f533",
+              "eed91bf5e7e422527ce0a139",
+              "f8f5adac9f70c75e0dfeae78",
+              "7ca99a0fd4d4e92654dfe80a",
+              "6645c01c0fd9ca638d0a960a",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "d6286f7f1e17a6dcb91b41b3",
+              "5e5c4503eaf1f8d11b6f7258"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 37.459,
+            "retrieved": [
+              "b0d95f5512a7a4e079029425",
+              "28d850124a03a1f4d2b54593",
+              "30b635f812c60938ec387446",
+              "112cf8f0f519e8b91953c848",
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "5481902c4e2c8c154c9830b1",
+              "7ca99a0fd4d4e92654dfe80a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.2,
+              "ndcg": 0.38685280723454163,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.2,
+              "ndcg": 0.38685280723454163,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 39.632,
+            "retrieved": [
+              "5cd3e685414da3650c8ee751",
+              "fabaef49f489240406b499dc",
+              "112cf8f0f519e8b91953c848",
+              "5481902c4e2c8c154c9830b1",
+              "fa9eea5db1682c284a24ac3a",
+              "15ad57ee10a013807480157a",
+              "30b635f812c60938ec387446",
+              "78b3ed180b86f1108b8480ca",
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593"
+            ],
+            "semantic_used": true,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "hybrid_no_semantic",
+          "mode": "hybrid",
+          "hops": 2,
+          "settings": {
+            "semantic_weight": 0
+          }
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 3.791,
+            "retrieved": [
+              "7ca99a0fd4d4e92654dfe80a",
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "9573c95dcda31e196f72cba3",
+              "30b635f812c60938ec387446",
+              "572cb1af6d30aa5571f192e3",
+              "955712b4036e2c0d6da3e7e2",
+              "fa9eea5db1682c284a24ac3a",
+              "f799a0c9ea28550a24f161d1",
+              "d6286f7f1e17a6dcb91b41b3"
+            ],
+            "semantic_used": false,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "elapsed_ms": 3.334,
+            "retrieved": [
+              "806cfdaba69675dd2b0c90fe",
+              "7ca99a0fd4d4e92654dfe80a",
+              "eed91bf5e7e422527ce0a139",
+              "39b9adb014087c90a0a2f533",
+              "9573c95dcda31e196f72cba3",
+              "28d850124a03a1f4d2b54593",
+              "331d77060805678772e1adac",
+              "30b635f812c60938ec387446",
+              "6645c01c0fd9ca638d0a960a",
+              "572cb1af6d30aa5571f192e3"
+            ],
+            "semantic_used": false,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.125,
+              "ndcg": 0.31546487678572877,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 3.271,
+            "retrieved": [
+              "b0d95f5512a7a4e079029425",
+              "112cf8f0f519e8b91953c848",
+              "0cfcc9aa8dfa069f4c953a40",
+              "f2be40931bf170582315b97c",
+              "30b635f812c60938ec387446",
+              "331d77060805678772e1adac",
+              "572cb1af6d30aa5571f192e3",
+              "28d850124a03a1f4d2b54593",
+              "340cd2257fe964893a3927b3",
+              "9573c95dcda31e196f72cba3"
+            ],
+            "semantic_used": false,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.5,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.5,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 2.809,
+            "retrieved": [
+              "5cd3e685414da3650c8ee751",
+              "93100c8371b427150b347bc7",
+              "fa9eea5db1682c284a24ac3a",
+              "fabaef49f489240406b499dc",
+              "78b3ed180b86f1108b8480ca",
+              "806cfdaba69675dd2b0c90fe",
+              "5481902c4e2c8c154c9830b1",
+              "eb695c4f402ddbf01183deaf",
+              "15ad57ee10a013807480157a",
+              "30b635f812c60938ec387446"
+            ],
+            "semantic_used": false,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "hybrid_no_lexical",
+          "mode": "hybrid",
+          "hops": 2,
+          "settings": {
+            "lexical_weight": 0
+          }
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 36.845,
+            "retrieved": [
+              "0cfcc9aa8dfa069f4c953a40",
+              "e39eb0a445f6df80754b633e",
+              "eb695c4f402ddbf01183deaf",
+              "28d850124a03a1f4d2b54593",
+              "955712b4036e2c0d6da3e7e2",
+              "d6286f7f1e17a6dcb91b41b3",
+              "9573c95dcda31e196f72cba3",
+              "7ca99a0fd4d4e92654dfe80a",
+              "30b635f812c60938ec387446",
+              "fa9eea5db1682c284a24ac3a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.25,
+              "ndcg": 0.2640681225725909,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.25,
+              "ndcg": 0.48247555939075504,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 40.869,
+            "retrieved": [
+              "39b9adb014087c90a0a2f533",
+              "806cfdaba69675dd2b0c90fe",
+              "f8f5adac9f70c75e0dfeae78",
+              "eed91bf5e7e422527ce0a139",
+              "6645c01c0fd9ca638d0a960a",
+              "d6286f7f1e17a6dcb91b41b3",
+              "5e5c4503eaf1f8d11b6f7258",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "572cb1af6d30aa5571f192e3"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.1,
+              "ndcg": 0.2890648263178879,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 39.449,
+            "retrieved": [
+              "b0d95f5512a7a4e079029425",
+              "a692f88d0322bef6aaa8e99a",
+              "7ca99a0fd4d4e92654dfe80a",
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "04920a8c3d4ed45c0b34ddad",
+              "5481902c4e2c8c154c9830b1",
+              "9573c95dcda31e196f72cba3",
+              "93a67877f811fb4232d6902d",
+              "28d850124a03a1f4d2b54593"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.16666666666666666,
+              "ndcg": 0.3562071871080222,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 35.63,
+            "retrieved": [
+              "5cd3e685414da3650c8ee751",
+              "93100c8371b427150b347bc7",
+              "112cf8f0f519e8b91953c848",
+              "15ad57ee10a013807480157a",
+              "0cfcc9aa8dfa069f4c953a40",
+              "fa9eea5db1682c284a24ac3a",
+              "30b635f812c60938ec387446",
+              "fabaef49f489240406b499dc",
+              "28d850124a03a1f4d2b54593",
+              "5481902c4e2c8c154c9830b1"
+            ],
+            "semantic_used": true,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "hybrid_graph_half",
+          "mode": "hybrid",
+          "hops": 2,
+          "settings": {
+            "graph_weight": 0.5
+          }
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 32.923,
+            "retrieved": [
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "7ca99a0fd4d4e92654dfe80a",
+              "e39eb0a445f6df80754b633e",
+              "eb695c4f402ddbf01183deaf",
+              "955712b4036e2c0d6da3e7e2",
+              "9573c95dcda31e196f72cba3",
+              "30b635f812c60938ec387446",
+              "d6286f7f1e17a6dcb91b41b3",
+              "fa9eea5db1682c284a24ac3a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.3065735963827292,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.4911492931622974,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 32.198,
+            "retrieved": [
+              "806cfdaba69675dd2b0c90fe",
+              "39b9adb014087c90a0a2f533",
+              "eed91bf5e7e422527ce0a139",
+              "f8f5adac9f70c75e0dfeae78",
+              "7ca99a0fd4d4e92654dfe80a",
+              "6645c01c0fd9ca638d0a960a",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "d6286f7f1e17a6dcb91b41b3",
+              "5e5c4503eaf1f8d11b6f7258"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "elapsed_ms": 34.667,
+            "retrieved": [
+              "b0d95f5512a7a4e079029425",
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "5481902c4e2c8c154c9830b1",
+              "7ca99a0fd4d4e92654dfe80a",
+              "a692f88d0322bef6aaa8e99a",
+              "fabaef49f489240406b499dc",
+              "0cfcc9aa8dfa069f4c953a40"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.5,
+              "ndcg": 0.6309297535714575,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 32.102,
+            "retrieved": [
+              "5cd3e685414da3650c8ee751",
+              "fa9eea5db1682c284a24ac3a",
+              "30b635f812c60938ec387446",
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593",
+              "eb695c4f402ddbf01183deaf",
+              "f799a0c9ea28550a24f161d1",
+              "572cb1af6d30aa5571f192e3",
+              "955712b4036e2c0d6da3e7e2",
+              "93100c8371b427150b347bc7"
+            ],
+            "semantic_used": true,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "hybrid_graph_double",
+          "mode": "hybrid",
+          "hops": 2,
+          "settings": {
+            "graph_weight": 2
+          }
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.16666666666666666,
+              "ndcg": 0.3562071871080222,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 32.697,
+            "retrieved": [
+              "112cf8f0f519e8b91953c848",
+              "5481902c4e2c8c154c9830b1",
+              "340cd2257fe964893a3927b3",
+              "fabaef49f489240406b499dc",
+              "15ef5ef771a56c6ccb72b647",
+              "0cfcc9aa8dfa069f4c953a40",
+              "93100c8371b427150b347bc7",
+              "28d850124a03a1f4d2b54593",
+              "7ca99a0fd4d4e92654dfe80a",
+              "e39eb0a445f6df80754b633e"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.2,
+              "ndcg": 0.23719771276929622,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.2,
+              "ndcg": 0.430624116386567,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 35.121,
+            "retrieved": [
+              "7521ad6fd061c48a63dbef8d",
+              "91c82e4634eb1365d05f91d9",
+              "0cfcc9aa8dfa069f4c953a40",
+              "5e5c4503eaf1f8d11b6f7258",
+              "d6286f7f1e17a6dcb91b41b3",
+              "806cfdaba69675dd2b0c90fe",
+              "39b9adb014087c90a0a2f533",
+              "eed91bf5e7e422527ce0a139",
+              "6645c01c0fd9ca638d0a960a",
+              "f8f5adac9f70c75e0dfeae78"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 42.091,
+            "retrieved": [
+              "28d850124a03a1f4d2b54593",
+              "30b635f812c60938ec387446",
+              "112cf8f0f519e8b91953c848",
+              "b0d95f5512a7a4e079029425",
+              "fb223c271bbf3dafae05cd8a",
+              "eb695c4f402ddbf01183deaf",
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 0.0,
+              "mrr": 0,
+              "ndcg": 0.0,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.1111111111111111,
+              "ndcg": 0.3010299956639812,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 35.305,
+            "retrieved": [
+              "fabaef49f489240406b499dc",
+              "112cf8f0f519e8b91953c848",
+              "5481902c4e2c8c154c9830b1",
+              "15ad57ee10a013807480157a",
+              "78b3ed180b86f1108b8480ca",
+              "5cd3e685414da3650c8ee751",
+              "fb223c271bbf3dafae05cd8a",
+              "871a0e3b63b243b5afc4e827",
+              "fa9eea5db1682c284a24ac3a",
+              "30b635f812c60938ec387446"
+            ],
+            "semantic_used": true,
+            "warning": null
+          }
+        ]
+      },
+      {
+        "variant": {
+          "name": "hybrid_no_structure",
+          "mode": "hybrid",
+          "hops": 2,
+          "settings": {
+            "structural_weight": 0
+          }
+        },
+        "cases": [
+          {
+            "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.5,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.3333333333333333,
+              "ndcg": 0.5,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 37.657,
+            "retrieved": [
+              "7521ad6fd061c48a63dbef8d",
+              "5481902c4e2c8c154c9830b1",
+              "0cfcc9aa8dfa069f4c953a40",
+              "340cd2257fe964893a3927b3",
+              "806cfdaba69675dd2b0c90fe",
+              "28d850124a03a1f4d2b54593",
+              "7ca99a0fd4d4e92654dfe80a",
+              "e39eb0a445f6df80754b633e",
+              "eb695c4f402ddbf01183deaf",
+              "955712b4036e2c0d6da3e7e2"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "How does the TypeScript API delegate quote computation to pricing?",
+            "available": true,
+            "at_5": {
+              "recall": 0.5,
+              "mrr": 0.2,
+              "ndcg": 0.23719771276929622,
+              "all_required_evidence": false
+            },
+            "at_10": {
+              "recall": 0.5,
+              "mrr": 0.2,
+              "ndcg": 0.23719771276929622,
+              "all_required_evidence": false
+            },
+            "elapsed_ms": 36.579,
+            "retrieved": [
+              "7521ad6fd061c48a63dbef8d",
+              "91c82e4634eb1365d05f91d9",
+              "806cfdaba69675dd2b0c90fe",
+              "39b9adb014087c90a0a2f533",
+              "eed91bf5e7e422527ce0a139",
+              "eb695c4f402ddbf01183deaf",
+              "ecc8ee0cedeac40dbb1f8fcd",
+              "04920a8c3d4ed45c0b34ddad",
+              "f8f5adac9f70c75e0dfeae78",
+              "7ca99a0fd4d4e92654dfe80a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Which source contains the C++ class that multiplies weight by five?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 1.0,
+              "ndcg": 1.0,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 36.543,
+            "retrieved": [
+              "28d850124a03a1f4d2b54593",
+              "30b635f812c60938ec387446",
+              "112cf8f0f519e8b91953c848",
+              "340cd2257fe964893a3927b3",
+              "bb02c1d77c3f081825e63c1d",
+              "9573c95dcda31e196f72cba3",
+              "331d77060805678772e1adac",
+              "5481902c4e2c8c154c9830b1",
+              "7ca99a0fd4d4e92654dfe80a",
+              "a692f88d0322bef6aaa8e99a"
+            ],
+            "semantic_used": true,
+            "warning": null
+          },
+          {
+            "question": "Where is the Go shipping price calculation defined?",
+            "available": true,
+            "at_5": {
+              "recall": 1.0,
+              "mrr": 0.25,
+              "ndcg": 0.43067655807339306,
+              "all_required_evidence": true
+            },
+            "at_10": {
+              "recall": 1.0,
+              "mrr": 0.25,
+              "ndcg": 0.43067655807339306,
+              "all_required_evidence": true
+            },
+            "elapsed_ms": 34.58,
+            "retrieved": [
+              "fabaef49f489240406b499dc",
+              "112cf8f0f519e8b91953c848",
+              "5481902c4e2c8c154c9830b1",
+              "fa9eea5db1682c284a24ac3a",
+              "15ad57ee10a013807480157a",
+              "5cd3e685414da3650c8ee751",
+              "30b635f812c60938ec387446",
+              "78b3ed180b86f1108b8480ca",
+              "0cfcc9aa8dfa069f4c953a40",
+              "28d850124a03a1f4d2b54593"
+            ],
+            "semantic_used": true,
+            "warning": null
+          }
+        ]
+      }
+    ],
+    "answer_scores": null,
+    "notice": "Retrieval metrics only. Graph retrieval uses lexical/semantic seeds. Answer, error and suggestion correctness require separate reviewed labels."
+  },
+  "errors": {
+    "issues": [
+      {
+        "id": "db7c5f4ffbc8b0342bda548aaa1e5639",
+        "repository_id": "research-prototype-1791100435646046000",
+        "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+        "type": "unreachable_statement",
+        "severity": "warning",
+        "confidence": "high",
+        "file": "python/static_candidates.py",
+        "line": 11,
+        "end_line": 11,
+        "symbol": "python.static_candidates.unreachable_example",
+        "message": "Statement follows an unconditional terminating statement in the same block.",
+        "evidence": [
+          {
+            "file": "python/static_candidates.py",
+            "start_line": 11,
+            "end_line": 11
+          }
+        ],
+        "related_symbols": [
+          {
+            "id": "db405375a4f1b58e261f6b22",
+            "symbol": "python.static_candidates",
+            "file": "python/static_candidates.py",
+            "line": 1,
+            "relationship": "contains",
+            "confidence": "exact"
+          }
+        ],
+        "root_cause": "The preceding return, raise, break or continue exits this block before this statement.",
+        "suggested_fix": "Remove the unreachable statement or move it before the terminator if it must execute.",
+        "suggested_test": null,
+        "status": "static_candidate",
+        "verified": false
+      },
+      {
+        "id": "284d987da1a01aade1d2b105a40319c0",
+        "repository_id": "research-prototype-1791100435646046000",
+        "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+        "type": "signature_mismatch",
+        "severity": "error",
+        "confidence": "high",
+        "file": "python/static_candidates.py",
+        "line": 6,
+        "end_line": 6,
+        "symbol": "python.static_candidates",
+        "message": "Call to combine supplies 3 positional arguments; its direct definition accepts at most 2.",
+        "evidence": [
+          {
+            "file": "python/static_candidates.py",
+            "start_line": 6,
+            "end_line": 6
+          }
+        ],
+        "related_symbols": [
+          {
+            "id": "942bd6d51c7b7a449a7624ce",
+            "symbol": "python.static_candidates.combine",
+            "file": "python/static_candidates.py",
+            "line": 3,
+            "relationship": "contains",
+            "confidence": "exact"
+          },
+          {
+            "id": "12e20516282571cd6654648d",
+            "symbol": "python.static_candidates.unreachable_example",
+            "file": "python/static_candidates.py",
+            "line": 9,
+            "relationship": "contains",
+            "confidence": "exact"
+          },
+          {
+            "id": "942bd6d51c7b7a449a7624ce",
+            "symbol": "python.static_candidates.combine",
+            "file": "python/static_candidates.py",
+            "line": 3,
+            "relationship": "calls",
+            "confidence": "static"
+          }
+        ],
+        "root_cause": "A direct, undecorated top-level function is called with too many positional arguments.",
+        "suggested_fix": "Adjust the arguments to match combine's declared signature, or update that signature if intentional.",
+        "suggested_test": null,
+        "status": "static_candidate",
+        "verified": false
+      }
+    ],
+    "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+    "detector_version": "2026-10-04-conservative-static-v1",
+    "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+  },
+  "error_metrics": {
+    "true_positives": 2,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "matching": "exact type/file/line",
+    "notice": "Scores depend on complete reviewed labels; static candidates are not execution-confirmed bugs."
+  },
+  "abstention": {
+    "answer": "The indexed source snapshot cannot establish that live, private, or future value. Check the running system, its configuration, or its logs for the actual result.",
+    "evidence": [],
+    "mode": "hybrid",
+    "semantic_used": false,
+    "generated": false,
+    "abstained": true,
+    "verification": "not_executed",
+    "citation_check": {
+      "invalid": [],
+      "has_citations": false,
+      "uncited_paragraphs": [],
+      "uncited_sentences": [],
+      "reference_section": false,
+      "entailment_checked": false
+    },
+    "warning": null,
+    "usage": {},
+    "elapsed_ms": 0,
+    "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+    "model": "qwen2.5-coder:14b",
+    "answer_prompt_version": "2026-10-03-aspects-cited-lines-audit-v2",
+    "retrieval_version": "2026-10-04-custom-modular-rag-v1"
+  },
+  "live_provider": true,
+  "answers": [
+    {
+      "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+      "result": {
+        "answer": "In the Python pricing module, a shipping quote raises a ValueError if the weight is nonpositive [1].\n\nThe Python pricing module does not handle nonpositive weights in any other way besides raising an exception [1].\n\nThe Python pricing module's shipping quote handling for nonpositive weights is consistent across different parts of the code [4] [5].",
+        "claims": [
+          {
+            "text": "In the Python pricing module, a shipping quote raises a ValueError if the weight is nonpositive.",
+            "aspect_id": 1,
+            "status": "supported",
+            "citations": [
+              {
+                "source_id": 1,
+                "start_line": 5,
+                "end_line": 6
+              }
+            ]
+          },
+          {
+            "text": "The Python pricing module does not handle nonpositive weights in any other way besides raising an exception.",
+            "aspect_id": 1,
+            "status": "supported",
+            "citations": [
+              {
+                "source_id": 1,
+                "start_line": 5,
+                "end_line": 6
+              }
+            ]
+          },
+          {
+            "text": "The Python pricing module's shipping quote handling for nonpositive weights is consistent across different parts of the code.",
+            "aspect_id": 1,
+            "status": "supported",
+            "citations": [
+              {
+                "source_id": 4,
+                "start_line": 5,
+                "end_line": 6
+              },
+              {
+                "source_id": 5,
+                "start_line": 6,
+                "end_line": 6
+              }
+            ]
+          }
+        ],
+        "missing_information": [],
+        "confidence": "model_supported",
+        "related_symbols": [
+          "python.pricing.shipping_cost",
+          "cpp.pricing.Pricing.shipping_cost",
+          "cpp.pricing.Pricing",
+          "python.pricing",
+          "python.api",
+          "demo.Pricing.shippingCost",
+          "csharp.Pricing.Demo.Pricing.ShippingCost",
+          "c.pricing.shipping_cost"
+        ],
+        "retrieval_trace": {
+          "question": "In the Python pricing module, how does a shipping quote handle a nonpositive weight?",
+          "query_analysis": {
+            "type": "implementation",
+            "entities": [],
+            "aspects": [
+              "how does a shipping quote handle a nonpositive weight"
+            ]
+          },
+          "mode": "hybrid",
+          "hops": 2,
+          "settings": {
+            "lexical_weight": 1.0,
+            "semantic_weight": 1.0,
+            "graph_weight": 1.0,
+            "structural_weight": 0.02,
+            "exact_boost": 50.0,
+            "candidate_limit": 50,
+            "rerank": true
+          },
+          "lexical_candidates": [
+            {
+              "id": "7ca99a0fd4d4e92654dfe80a",
+              "score": 8.586293748848725
+            },
+            {
+              "id": "0cfcc9aa8dfa069f4c953a40",
+              "score": 8.493831527352716
+            },
+            {
+              "id": "bb02c1d77c3f081825e63c1d",
+              "score": 6.314696671829844
+            },
+            {
+              "id": "04920a8c3d4ed45c0b34ddad",
+              "score": 6.3101790541236245
+            },
+            {
+              "id": "806cfdaba69675dd2b0c90fe",
+              "score": 5.9643390145102915
+            },
+            {
+              "id": "28d850124a03a1f4d2b54593",
+              "score": 5.2649360237136795
+            },
+            {
+              "id": "9573c95dcda31e196f72cba3",
+              "score": 5.229705689421541
+            },
+            {
+              "id": "30b635f812c60938ec387446",
+              "score": 5.211689774021991
+            },
+            {
+              "id": "572cb1af6d30aa5571f192e3",
+              "score": 5.190151224050522
+            },
+            {
+              "id": "955712b4036e2c0d6da3e7e2",
+              "score": 5.169595562439792
+            },
+            {
+              "id": "fa9eea5db1682c284a24ac3a",
+              "score": 5.169595562439792
+            },
+            {
+              "id": "f799a0c9ea28550a24f161d1",
+              "score": 5.169595562439792
+            },
+            {
+              "id": "d6286f7f1e17a6dcb91b41b3",
+              "score": 5.088253895410611
+            },
+            {
+              "id": "eb695c4f402ddbf01183deaf",
+              "score": 4.833022808230677
+            },
+            {
+              "id": "e39eb0a445f6df80754b633e",
+              "score": 4.726244680469463
+            },
+            {
+              "id": "eed91bf5e7e422527ce0a139",
+              "score": 4.231003127537296
+            },
+            {
+              "id": "f8f5adac9f70c75e0dfeae78",
+              "score": 3.944748201797
+            },
+            {
+              "id": "331d77060805678772e1adac",
+              "score": 3.8459248449010284
+            },
+            {
+              "id": "6645c01c0fd9ca638d0a960a",
+              "score": 3.8109731185595193
+            },
+            {
+              "id": "ecc8ee0cedeac40dbb1f8fcd",
+              "score": 2.80590954709471
+            },
+            {
+              "id": "db405375a4f1b58e261f6b22",
+              "score": 2.5673861187471076
+            },
+            {
+              "id": "fb223c271bbf3dafae05cd8a",
+              "score": 2.4773539405822387
+            },
+            {
+              "id": "7521ad6fd061c48a63dbef8d",
+              "score": 2.4268376289712865
+            },
+            {
+              "id": "b0d95f5512a7a4e079029425",
+              "score": 2.222037029273191
+            },
+            {
+              "id": "91c82e4634eb1365d05f91d9",
+              "score": 2.073038618379212
+            },
+            {
+              "id": "112cf8f0f519e8b91953c848",
+              "score": 2.016376699808226
+            },
+            {
+              "id": "e63b25de56d42053c8637ee9",
+              "score": 1.852582784562134
+            },
+            {
+              "id": "5481902c4e2c8c154c9830b1",
+              "score": 1.705262324117239
+            },
+            {
+              "id": "340cd2257fe964893a3927b3",
+              "score": 1.6995076165866232
+            },
+            {
+              "id": "fabaef49f489240406b499dc",
+              "score": 1.693763095780966
+            },
+            {
+              "id": "78b3ed180b86f1108b8480ca",
+              "score": 1.689803755075441
+            },
+            {
+              "id": "871a0e3b63b243b5afc4e827",
+              "score": 1.6860146192785024
+            },
+            {
+              "id": "93100c8371b427150b347bc7",
+              "score": 1.6860146192785024
+            },
+            {
+              "id": "15ad57ee10a013807480157a",
+              "score": 1.6860146192785024
+            },
+            {
+              "id": "15ef5ef771a56c6ccb72b647",
+              "score": 1.6839191124879584
+            },
+            {
+              "id": "39b9adb014087c90a0a2f533",
+              "score": 1.665175491458089
+            },
+            {
+              "id": "942bd6d51c7b7a449a7624ce",
+              "score": 1.5043293465897636
+            },
+            {
+              "id": "12e20516282571cd6654648d",
+              "score": 1.5043293465897636
+            },
+            {
+              "id": "a692f88d0322bef6aaa8e99a",
+              "score": 1.410237115585865
+            },
+            {
+              "id": "0be1dfc169a7460a2ba8564d",
+              "score": 1.392900306811566
+            },
+            {
+              "id": "93a67877f811fb4232d6902d",
+              "score": 1.3852575915501668
+            },
+            {
+              "id": "ddee0aae83b591370139f564",
+              "score": 1.377193068826177
+            },
+            {
+              "id": "95a2e4297b26c33e60ba4f19",
+              "score": 1.3735623199386182
+            },
+            {
+              "id": "5cd3e685414da3650c8ee751",
+              "score": 1.3482658157578382
+            },
+            {
+              "id": "5e5c4503eaf1f8d11b6f7258",
+              "score": 1.3118407073089486
+            },
+            {
+              "id": "568d0cc1a1ab76d4af723c50",
+              "score": 0.319519299427501
+            },
+            {
+              "id": "e1ac96fb1d4419ff1ed6c478",
+              "score": 0.319519299427501
+            }
+          ],
+          "semantic_candidates": [
+            {
+              "id": "0cfcc9aa8dfa069f4c953a40",
+              "similarity": 0.8551290035247803
+            },
+            {
+              "id": "112cf8f0f519e8b91953c848",
+              "similarity": 0.8357324600219727
+            },
+            {
+              "id": "e39eb0a445f6df80754b633e",
+              "similarity": 0.8353010416030884
+            },
+            {
+              "id": "fb223c271bbf3dafae05cd8a",
+              "similarity": 0.8279863595962524
+            },
+            {
+              "id": "eb695c4f402ddbf01183deaf",
+              "similarity": 0.8081692457199097
+            },
+            {
+              "id": "806cfdaba69675dd2b0c90fe",
+              "similarity": 0.8068161010742188
+            },
+            {
+              "id": "5481902c4e2c8c154c9830b1",
+              "similarity": 0.7396736145019531
+            },
+            {
+              "id": "28d850124a03a1f4d2b54593",
+              "similarity": 0.733284592628479
+            },
+            {
+              "id": "955712b4036e2c0d6da3e7e2",
+              "similarity": 0.7318848371505737
+            },
+            {
+              "id": "340cd2257fe964893a3927b3",
+              "similarity": 0.7295398116111755
+            },
+            {
+              "id": "7521ad6fd061c48a63dbef8d",
+              "similarity": 0.7273955941200256
+            },
+            {
+              "id": "871a0e3b63b243b5afc4e827",
+              "similarity": 0.7219479084014893
+            },
+            {
+              "id": "d6286f7f1e17a6dcb91b41b3",
+              "similarity": 0.7206935286521912
+            },
+            {
+              "id": "9573c95dcda31e196f72cba3",
+              "similarity": 0.7129052877426147
+            },
+            {
+              "id": "7ca99a0fd4d4e92654dfe80a",
+              "similarity": 0.7117105722427368
+            },
+            {
+              "id": "fabaef49f489240406b499dc",
+              "similarity": 0.711543083190918
+            },
+            {
+              "id": "30b635f812c60938ec387446",
+              "similarity": 0.7115089893341064
+            },
+            {
+              "id": "5e5c4503eaf1f8d11b6f7258",
+              "similarity": 0.7109932899475098
+            },
+            {
+              "id": "b0d95f5512a7a4e079029425",
+              "similarity": 0.7096195816993713
+            },
+            {
+              "id": "93100c8371b427150b347bc7",
+              "similarity": 0.7085179686546326
+            },
+            {
+              "id": "a692f88d0322bef6aaa8e99a",
+              "similarity": 0.7076282501220703
+            },
+            {
+              "id": "fa9eea5db1682c284a24ac3a",
+              "similarity": 0.7057063579559326
+            },
+            {
+              "id": "04920a8c3d4ed45c0b34ddad",
+              "similarity": 0.7052159309387207
+            },
+            {
+              "id": "15ad57ee10a013807480157a",
+              "similarity": 0.7042792439460754
+            },
+            {
+              "id": "15ef5ef771a56c6ccb72b647",
+              "similarity": 0.7034701108932495
+            },
+            {
+              "id": "bb02c1d77c3f081825e63c1d",
+              "similarity": 0.7015142440795898
+            },
+            {
+              "id": "39b9adb014087c90a0a2f533",
+              "similarity": 0.6986379623413086
+            },
+            {
+              "id": "5cd3e685414da3650c8ee751",
+              "similarity": 0.6964125633239746
+            },
+            {
+              "id": "e63b25de56d42053c8637ee9",
+              "similarity": 0.6917375326156616
+            },
+            {
+              "id": "f799a0c9ea28550a24f161d1",
+              "similarity": 0.6900691390037537
+            },
+            {
+              "id": "93a67877f811fb4232d6902d",
+              "similarity": 0.6882357001304626
+            },
+            {
+              "id": "6645c01c0fd9ca638d0a960a",
+              "similarity": 0.6860341429710388
+            },
+            {
+              "id": "78b3ed180b86f1108b8480ca",
+              "similarity": 0.6834408044815063
+            },
+            {
+              "id": "572cb1af6d30aa5571f192e3",
+              "similarity": 0.6825973391532898
+            },
+            {
+              "id": "0be1dfc169a7460a2ba8564d",
+              "similarity": 0.68210768699646
+            },
+            {
+              "id": "331d77060805678772e1adac",
+              "similarity": 0.6794586777687073
+            },
+            {
+              "id": "95a2e4297b26c33e60ba4f19",
+              "similarity": 0.6787455081939697
+            },
+            {
+              "id": "ddee0aae83b591370139f564",
+              "similarity": 0.6778828501701355
+            },
+            {
+              "id": "eed91bf5e7e422527ce0a139",
+              "similarity": 0.674396276473999
+            },
+            {
+              "id": "91c82e4634eb1365d05f91d9",
+              "similarity": 0.6565924882888794
+            },
+            {
+              "id": "f8f5adac9f70c75e0dfeae78",
+              "similarity": 0.6532122492790222
+            },
+            {
+              "id": "ecc8ee0cedeac40dbb1f8fcd",
+              "similarity": 0.6292766332626343
+            },
+            {
+              "id": "db405375a4f1b58e261f6b22",
+              "similarity": 0.5652042627334595
+            },
+            {
+              "id": "12e20516282571cd6654648d",
+              "similarity": 0.5567586421966553
+            },
+            {
+              "id": "568d0cc1a1ab76d4af723c50",
+              "similarity": 0.5513416528701782
+            },
+            {
+              "id": "942bd6d51c7b7a449a7624ce",
+              "similarity": 0.547835111618042
+            },
+            {
+              "id": "e1ac96fb1d4419ff1ed6c478",
+              "similarity": 0.544681966304779
+            },
+            {
+              "id": "b34a9c0ac6d2c08dc5757308",
+              "similarity": 0.48177969455718994
+            },
+            {
+              "id": "f2be40931bf170582315b97c",
+              "similarity": 0.4625668525695801
+            }
+          ],
+          "graph_seeds": [
+            "0cfcc9aa8dfa069f4c953a40",
+            "28d850124a03a1f4d2b54593",
+            "7ca99a0fd4d4e92654dfe80a",
+            "e39eb0a445f6df80754b633e",
+            "eb695c4f402ddbf01183deaf",
+            "955712b4036e2c0d6da3e7e2",
+            "9573c95dcda31e196f72cba3",
+            "30b635f812c60938ec387446"
+          ],
+          "graph_expanded": [
+            {
+              "id": "fb223c271bbf3dafae05cd8a",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "0cfcc9aa8dfa069f4c953a40",
+                  "target": "fb223c271bbf3dafae05cd8a",
+                  "kind": "raises",
+                  "line": 6,
+                  "confidence": "declared",
+                  "label": "raise ValueError(\"weight must be positive\")"
+                }
+              ]
+            },
+            {
+              "id": "93a67877f811fb4232d6902d",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "bb02c1d77c3f081825e63c1d",
+                  "target": "955712b4036e2c0d6da3e7e2",
+                  "kind": "contains",
+                  "line": 3,
+                  "confidence": "exact",
+                  "label": "shippingCost"
+                },
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "93a67877f811fb4232d6902d",
+                  "target": "bb02c1d77c3f081825e63c1d",
+                  "kind": "contains",
+                  "line": 2,
+                  "confidence": "exact",
+                  "label": "Pricing"
+                }
+              ]
+            },
+            {
+              "id": "bb02c1d77c3f081825e63c1d",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "bb02c1d77c3f081825e63c1d",
+                  "target": "955712b4036e2c0d6da3e7e2",
+                  "kind": "contains",
+                  "line": 3,
+                  "confidence": "exact",
+                  "label": "shippingCost"
+                }
+              ]
+            },
+            {
+              "id": "112cf8f0f519e8b91953c848",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "0cfcc9aa8dfa069f4c953a40",
+                  "target": "112cf8f0f519e8b91953c848",
+                  "kind": "accepts",
+                  "line": 3,
+                  "confidence": "exact",
+                  "label": "weight"
+                }
+              ]
+            },
+            {
+              "id": "fabaef49f489240406b499dc",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "30b635f812c60938ec387446",
+                  "target": "fabaef49f489240406b499dc",
+                  "kind": "accepts",
+                  "line": 1,
+                  "confidence": "exact",
+                  "label": "weight"
+                }
+              ]
+            },
+            {
+              "id": "7521ad6fd061c48a63dbef8d",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "806cfdaba69675dd2b0c90fe",
+                  "target": "0cfcc9aa8dfa069f4c953a40",
+                  "kind": "calls",
+                  "line": 6,
+                  "confidence": "static",
+                  "label": "shipping_cost"
+                },
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "806cfdaba69675dd2b0c90fe",
+                  "target": "7521ad6fd061c48a63dbef8d",
+                  "kind": "accepts",
+                  "line": 4,
+                  "confidence": "exact",
+                  "label": "weight"
+                }
+              ]
+            },
+            {
+              "id": "871a0e3b63b243b5afc4e827",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "955712b4036e2c0d6da3e7e2",
+                  "target": "871a0e3b63b243b5afc4e827",
+                  "kind": "accepts",
+                  "line": 3,
+                  "confidence": "declared",
+                  "label": "weight"
+                }
+              ]
+            },
+            {
+              "id": "806cfdaba69675dd2b0c90fe",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "806cfdaba69675dd2b0c90fe",
+                  "target": "0cfcc9aa8dfa069f4c953a40",
+                  "kind": "calls",
+                  "line": 6,
+                  "confidence": "static",
+                  "label": "shipping_cost"
+                }
+              ]
+            },
+            {
+              "id": "5481902c4e2c8c154c9830b1",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "28d850124a03a1f4d2b54593",
+                  "target": "5481902c4e2c8c154c9830b1",
+                  "kind": "accepts",
+                  "line": 3,
+                  "confidence": "exact",
+                  "label": "weight"
+                }
+              ]
+            },
+            {
+              "id": "340cd2257fe964893a3927b3",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "9573c95dcda31e196f72cba3",
+                  "target": "340cd2257fe964893a3927b3",
+                  "kind": "accepts",
+                  "line": 2,
+                  "confidence": "exact",
+                  "label": "weight"
+                }
+              ]
+            }
+          ],
+          "fused_candidates": [
+            {
+              "id": "0cfcc9aa8dfa069f4c953a40",
+              "score": 0.03252247488101534
+            },
+            {
+              "id": "28d850124a03a1f4d2b54593",
+              "score": 0.029857397504456328
+            },
+            {
+              "id": "7ca99a0fd4d4e92654dfe80a",
+              "score": 0.029726775956284153
+            },
+            {
+              "id": "e39eb0a445f6df80754b633e",
+              "score": 0.029206349206349208
+            },
+            {
+              "id": "eb695c4f402ddbf01183deaf",
+              "score": 0.0288981288981289
+            },
+            {
+              "id": "955712b4036e2c0d6da3e7e2",
+              "score": 0.02877846790890269
+            },
+            {
+              "id": "9573c95dcda31e196f72cba3",
+              "score": 0.028438886647841874
+            },
+            {
+              "id": "30b635f812c60938ec387446",
+              "score": 0.027692895339954164
+            },
+            {
+              "id": "112cf8f0f519e8b91953c848",
+              "score": 0.03597118541930565
+            },
+            {
+              "id": "5481902c4e2c8c154c9830b1",
+              "score": 0.03326549072817729
+            },
+            {
+              "id": "340cd2257fe964893a3927b3",
+              "score": 0.03182955445323381
+            },
+            {
+              "id": "fabaef49f489240406b499dc",
+              "score": 0.030819662793347004
+            },
+            {
+              "id": "806cfdaba69675dd2b0c90fe",
+              "score": 0.030536130536130537
+            },
+            {
+              "id": "fb223c271bbf3dafae05cd8a",
+              "score": 0.027820121951219513
+            },
+            {
+              "id": "bb02c1d77c3f081825e63c1d",
+              "score": 0.027500922849760058
+            },
+            {
+              "id": "7521ad6fd061c48a63dbef8d",
+              "score": 0.026132699813337858
+            },
+            {
+              "id": "871a0e3b63b243b5afc4e827",
+              "score": 0.024758454106280192
+            },
+            {
+              "id": "93a67877f811fb4232d6902d",
+              "score": 0.02089000108802089
+            },
+            {
+              "id": "d6286f7f1e17a6dcb91b41b3",
+              "score": 0.0273972602739726
+            },
+            {
+              "id": "fa9eea5db1682c284a24ac3a",
+              "score": 0.026279628993473032
+            },
+            {
+              "id": "572cb1af6d30aa5571f192e3",
+              "score": 0.02513105149552883
+            },
+            {
+              "id": "f799a0c9ea28550a24f161d1",
+              "score": 0.025
+            },
+            {
+              "id": "6645c01c0fd9ca638d0a960a",
+              "score": 0.023527793065492568
+            },
+            {
+              "id": "331d77060805678772e1adac",
+              "score": 0.023237179487179488
+            },
+            {
+              "id": "f8f5adac9f70c75e0dfeae78",
+              "score": 0.022888003086022887
+            },
+            {
+              "id": "db405375a4f1b58e261f6b22",
+              "score": 0.022054416876423347
+            },
+            {
+              "id": "04920a8c3d4ed45c0b34ddad",
+              "score": 0.027673192771084338
+            },
+            {
+              "id": "b0d95f5512a7a4e079029425",
+              "score": 0.024562989752863168
+            },
+            {
+              "id": "eed91bf5e7e422527ce0a139",
+              "score": 0.023258904837852208
+            },
+            {
+              "id": "93100c8371b427150b347bc7",
+              "score": 0.023252688172043012
+            },
+            {
+              "id": "e63b25de56d42053c8637ee9",
+              "score": 0.022730207929742993
+            },
+            {
+              "id": "15ad57ee10a013807480157a",
+              "score": 0.02254305977710233
+            },
+            {
+              "id": "a692f88d0322bef6aaa8e99a",
+              "score": 0.022446689113355782
+            },
+            {
+              "id": "5e5c4503eaf1f8d11b6f7258",
+              "score": 0.022344322344322345
+            },
+            {
+              "id": "ecc8ee0cedeac40dbb1f8fcd",
+              "score": 0.02230392156862745
+            },
+            {
+              "id": "15ef5ef771a56c6ccb72b647",
+              "score": 0.022291021671826623
+            },
+            {
+              "id": "39b9adb014087c90a0a2f533",
+              "score": 0.021910919540229883
+            },
+            {
+              "id": "91c82e4634eb1365d05f91d9",
+              "score": 0.021764705882352943
+            },
+            {
+              "id": "78b3ed180b86f1108b8480ca",
+              "score": 0.021741699161054
+            },
+            {
+              "id": "5cd3e685414da3650c8ee751",
+              "score": 0.02097902097902098
+            },
+            {
+              "id": "0be1dfc169a7460a2ba8564d",
+              "score": 0.020526315789473684
+            },
+            {
+              "id": "95a2e4297b26c33e60ba4f19",
+              "score": 0.020018016214593135
+            },
+            {
+              "id": "ddee0aae83b591370139f564",
+              "score": 0.02000800320128051
+            },
+            {
+              "id": "12e20516282571cd6654648d",
+              "score": 0.019819466248037675
+            },
+            {
+              "id": "942bd6d51c7b7a449a7624ce",
+              "score": 0.019743240614666407
+            },
+            {
+              "id": "568d0cc1a1ab76d4af723c50",
+              "score": 0.018957771787960466
+            },
+            {
+              "id": "e1ac96fb1d4419ff1ed6c478",
+              "score": 0.018691588785046728
+            },
+            {
+              "id": "b34a9c0ac6d2c08dc5757308",
+              "score": 0.009259259259259259
+            },
+            {
+              "id": "f2be40931bf170582315b97c",
+              "score": 0.009174311926605505
+            }
+          ],
+          "reranked_candidates": [
+            "0cfcc9aa8dfa069f4c953a40",
+            "28d850124a03a1f4d2b54593",
+            "7ca99a0fd4d4e92654dfe80a",
+            "e39eb0a445f6df80754b633e",
+            "eb695c4f402ddbf01183deaf",
+            "955712b4036e2c0d6da3e7e2",
+            "9573c95dcda31e196f72cba3",
+            "30b635f812c60938ec387446"
+          ],
+          "timings_ms": {
+            "lexical": 12.506,
+            "semantic": 74.453,
+            "fusion_and_seed_reranking": 0.233,
+            "graph": 0.052,
+            "reranking": 0.089,
+            "context_records": 0.976,
+            "retrieval": 88.31
+          }
+        },
+        "evidence": [
+          {
+            "id": "0cfcc9aa8dfa069f4c953a40",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "python/pricing.py",
+            "name": "shipping_cost",
+            "qualified": "python.pricing.shipping_cost",
+            "kind": "function",
+            "start_line": 3,
+            "end_line": 7,
+            "source": "def shipping_cost(weight):\n    \"\"\"Return five currency units per unit weight; reject nonpositive weights.\"\"\"\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+            "docstring": "Return five currency units per unit weight; reject nonpositive weights.",
+            "parent_id": "e39eb0a445f6df80754b633e",
+            "file_id": "307999267cf694fcf104e5ca8b18f6c6",
+            "language": "python",
+            "signature": "def shipping_cost(weight):",
+            "role": "source",
+            "public_aliases": [
+              "python.pricing.shipping_cost"
+            ],
+            "score": 0.03252,
+            "component_scores": {
+              "lexical": 8.493831527352716,
+              "semantic": 0.8551290035247803,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.052522474881015344
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "28d850124a03a1f4d2b54593",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "cpp/pricing.cpp",
+            "name": "shipping_cost",
+            "qualified": "cpp.pricing.Pricing.shipping_cost",
+            "kind": "method",
+            "start_line": 3,
+            "end_line": 3,
+            "source": "    int shipping_cost(int weight) { return weight * 5; }",
+            "docstring": "",
+            "parent_id": "7ca99a0fd4d4e92654dfe80a",
+            "file_id": "b0c3114e51ada4ae4c4f3e51c9421f34",
+            "language": "cpp",
+            "signature": "int shipping_cost(int weight) ",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.02986,
+            "component_scores": {
+              "lexical": 5.2649360237136795,
+              "semantic": 0.733284592628479,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.04985739750445633
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "7ca99a0fd4d4e92654dfe80a",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "cpp/pricing.cpp",
+            "name": "Pricing",
+            "qualified": "cpp.pricing.Pricing",
+            "kind": "class",
+            "start_line": 1,
+            "end_line": 4,
+            "source": "class Pricing {\npublic:\n    int shipping_cost(int weight) { return weight * 5; }\n};",
+            "docstring": "",
+            "parent_id": "a692f88d0322bef6aaa8e99a",
+            "file_id": "b0c3114e51ada4ae4c4f3e51c9421f34",
+            "language": "cpp",
+            "signature": "class Pricing ",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.02973,
+            "component_scores": {
+              "lexical": 8.586293748848725,
+              "semantic": 0.7117105722427368,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.04972677595628415
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "e39eb0a445f6df80754b633e",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "python/pricing.py",
+            "name": "pricing.py",
+            "qualified": "python.pricing",
+            "kind": "module",
+            "start_line": 1,
+            "end_line": 7,
+            "source": "\"\"\"Small research fixture. Positive weight is part of the public contract.\"\"\"\n\ndef shipping_cost(weight):\n    \"\"\"Return five currency units per unit weight; reject nonpositive weights.\"\"\"\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+            "docstring": "Small research fixture. Positive weight is part of the public contract.",
+            "parent_id": null,
+            "file_id": "307999267cf694fcf104e5ca8b18f6c6",
+            "language": "python",
+            "signature": "def shipping_cost(weight):",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.02921,
+            "component_scores": {
+              "lexical": 4.726244680469463,
+              "semantic": 0.8353010416030884,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.04920634920634921
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "eb695c4f402ddbf01183deaf",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "python/api.py",
+            "name": "api.py",
+            "qualified": "python.api",
+            "kind": "module",
+            "start_line": 1,
+            "end_line": 6,
+            "source": "from .pricing import shipping_cost\n\n\ndef quote_request(weight):\n    \"\"\"Delegate quote calculation to the pricing function.\"\"\"\n    return shipping_cost(weight)",
+            "docstring": "",
+            "parent_id": null,
+            "file_id": "2bc5db153ed3df25a83112527bd1cd9d",
+            "language": "python",
+            "signature": "def quote_request(weight):",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.0289,
+            "component_scores": {
+              "lexical": 4.833022808230677,
+              "semantic": 0.8081692457199097,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.048898128898128904
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "955712b4036e2c0d6da3e7e2",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "java/Pricing.java",
+            "name": "shippingCost",
+            "qualified": "demo.Pricing.shippingCost",
+            "kind": "method",
+            "start_line": 3,
+            "end_line": 3,
+            "source": "static int shippingCost(int weight) { return weight * 5; }",
+            "docstring": "",
+            "parent_id": "bb02c1d77c3f081825e63c1d",
+            "file_id": "5f6490f80eea64a19680b5f2ef91c4ff",
+            "language": "java",
+            "signature": "static int shippingCost(int weight) { return weight * 5; }",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.02878,
+            "component_scores": {
+              "lexical": 5.169595562439792,
+              "semantic": 0.7318848371505737,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.048778467908902695
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "9573c95dcda31e196f72cba3",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "csharp/Pricing.cs",
+            "name": "ShippingCost",
+            "qualified": "csharp.Pricing.Demo.Pricing.ShippingCost",
+            "kind": "method",
+            "start_line": 2,
+            "end_line": 2,
+            "source": "    class Pricing { public static int ShippingCost(int weight) { return weight * 5; } }",
+            "docstring": "",
+            "parent_id": "04920a8c3d4ed45c0b34ddad",
+            "file_id": "811ab14d9bebc41ad398b219691e0ba8",
+            "language": "csharp",
+            "signature": "public static int ShippingCost(int weight) ",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.02844,
+            "component_scores": {
+              "lexical": 5.229705689421541,
+              "semantic": 0.7129052877426147,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.04843888664784188
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "30b635f812c60938ec387446",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "c/pricing.c",
+            "name": "shipping_cost",
+            "qualified": "c.pricing.shipping_cost",
+            "kind": "function",
+            "start_line": 1,
+            "end_line": 1,
+            "source": "int shipping_cost(int weight) { return weight * 5; }",
+            "docstring": "",
+            "parent_id": "b0d95f5512a7a4e079029425",
+            "file_id": "689b1ee7c0b2f0e0be017fae50078eb2",
+            "language": "c",
+            "signature": "int shipping_cost(int weight) ",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.02769,
+            "component_scores": {
+              "lexical": 5.211689774021991,
+              "semantic": 0.7115089893341064,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.04769289533995416
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          }
+        ],
+        "mode": "hybrid",
+        "semantic_used": true,
+        "generated": true,
+        "abstained": false,
+        "partial": false,
+        "aspect_statuses": [
+          {
+            "aspect_id": 1,
+            "question": "how does a shipping quote handle a nonpositive weight",
+            "status": "supported"
+          }
+        ],
+        "generation_context": [
+          {
+            "source_id": 2,
+            "id": "28d850124a03a1f4d2b54593",
+            "qualified": "cpp.pricing.Pricing.shipping_cost",
+            "path": "cpp/pricing.cpp",
+            "source_line_numbers": [
+              3
+            ],
+            "source": "    int shipping_cost(int weight) { return weight * 5; }",
+            "truncated": false
+          },
+          {
+            "source_id": 1,
+            "id": "0cfcc9aa8dfa069f4c953a40",
+            "qualified": "python.pricing.shipping_cost",
+            "path": "python/pricing.py",
+            "source_line_numbers": [
+              3,
+              5,
+              6,
+              7
+            ],
+            "source": "def shipping_cost(weight):\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+            "truncated": true
+          },
+          {
+            "source_id": 3,
+            "id": "7ca99a0fd4d4e92654dfe80a",
+            "qualified": "cpp.pricing.Pricing",
+            "path": "cpp/pricing.cpp",
+            "source_line_numbers": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "source": "class Pricing {\npublic:\n    int shipping_cost(int weight) { return weight * 5; }\n};",
+            "truncated": false
+          },
+          {
+            "source_id": 4,
+            "id": "e39eb0a445f6df80754b633e",
+            "qualified": "python.pricing",
+            "path": "python/pricing.py",
+            "source_line_numbers": [
+              2,
+              3,
+              5,
+              6,
+              7
+            ],
+            "source": "\ndef shipping_cost(weight):\n    if weight <= 0:\n        raise ValueError(\"weight must be positive\")\n    return weight * 5",
+            "truncated": true
+          },
+          {
+            "source_id": 5,
+            "id": "eb695c4f402ddbf01183deaf",
+            "qualified": "python.api",
+            "path": "python/api.py",
+            "source_line_numbers": [
+              1,
+              2,
+              3,
+              4,
+              6
+            ],
+            "source": "from .pricing import shipping_cost\n\n\ndef quote_request(weight):\n    return shipping_cost(weight)",
+            "truncated": true
+          },
+          {
+            "source_id": 6,
+            "id": "955712b4036e2c0d6da3e7e2",
+            "qualified": "demo.Pricing.shippingCost",
+            "path": "java/Pricing.java",
+            "source_line_numbers": [
+              3
+            ],
+            "source": "static int shippingCost(int weight) { return weight * 5; }",
+            "truncated": false
+          },
+          {
+            "source_id": 7,
+            "id": "9573c95dcda31e196f72cba3",
+            "qualified": "csharp.Pricing.Demo.Pricing.ShippingCost",
+            "path": "csharp/Pricing.cs",
+            "source_line_numbers": [
+              2
+            ],
+            "source": "    class Pricing { public static int ShippingCost(int weight) { return weight * 5; } }",
+            "truncated": false
+          },
+          {
+            "source_id": 8,
+            "id": "30b635f812c60938ec387446",
+            "qualified": "c.pricing.shipping_cost",
+            "path": "c/pricing.c",
+            "source_line_numbers": [
+              1
+            ],
+            "source": "int shipping_cost(int weight) { return weight * 5; }",
+            "truncated": false
+          }
+        ],
+        "verification": "not_executed",
+        "citation_check": {
+          "invalid": [],
+          "has_citations": true,
+          "uncited_paragraphs": [],
+          "uncited_sentences": [],
+          "reference_section": false,
+          "entailment_checked": false,
+          "source_identity_checked": true
+        },
+        "warning": null,
+        "usage": {
+          "prompt_tokens": 2039,
+          "completion_tokens": 439,
+          "total_tokens": 2478
+        },
+        "generation_diagnostics": {
+          "attempt_count": 1,
+          "total_request_ms": 47348,
+          "attempts": [
+            {
+              "load_duration_ms": 129,
+              "prompt_eval_duration_ms": 8759,
+              "eval_duration_ms": 20359,
+              "prompt_tokens": 1200,
+              "completion_tokens": 277,
+              "request_ms": 47348,
+              "estimated_prompt_tokens": 1520,
+              "context_window": 8192,
+              "entailment_checked": false,
+              "provider_calls": 2,
+              "usage": {
+                "prompt_tokens": 2039,
+                "completion_tokens": 439,
+                "total_tokens": 2478
+              },
+              "draft_claims": [
+                {
+                  "text": "In the Python pricing module, a shipping quote raises a ValueError if the weight is nonpositive.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 5,
+                      "end_line": 6
+                    }
+                  ]
+                },
+                {
+                  "text": "The Python pricing module does not handle nonpositive weights in any other way besides raising an exception.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 5,
+                      "end_line": 6
+                    }
+                  ]
+                },
+                {
+                  "text": "The Python pricing module's shipping quote handling for nonpositive weights is consistent across different parts of the code.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 4,
+                      "start_line": 5,
+                      "end_line": 6
+                    },
+                    {
+                      "source_id": 5,
+                      "start_line": 6,
+                      "end_line": 6
+                    }
+                  ]
+                }
+              ],
+              "claim_audit": {
+                "status": "completed",
+                "decisions": [
+                  {
+                    "claim_index": 0,
+                    "verdict": "supported",
+                    "reason": "The cited source lines show that if the weight is nonpositive, a ValueError is raised."
+                  },
+                  {
+                    "claim_index": 1,
+                    "verdict": "supported",
+                    "reason": "The cited source lines confirm that the only action taken for nonpositive weights is raising an exception."
+                  },
+                  {
+                    "claim_index": 2,
+                    "verdict": "supported",
+                    "reason": "The cited source lines from different parts of the code (python/pricing.py and python/api.py) consistently show that a ValueError is raised for nonpositive weights, indicating consistency across the codebase."
+                  }
+                ],
+                "provider_calls": 1,
+                "elapsed_ms": 18088,
+                "model": "qwen2.5-coder:14b",
+                "factual_support_proven": false
+              },
+              "supporting_lines": [
+                {
+                  "source_id": 1,
+                  "path": "python/pricing.py",
+                  "qualified": "python.pricing.shipping_cost",
+                  "start_line": 5,
+                  "end_line": 6,
+                  "text": "    if weight <= 0:\n        raise ValueError(\"weight must be positive\")"
+                },
+                {
+                  "source_id": 1,
+                  "path": "python/pricing.py",
+                  "qualified": "python.pricing.shipping_cost",
+                  "start_line": 5,
+                  "end_line": 6,
+                  "text": "    if weight <= 0:\n        raise ValueError(\"weight must be positive\")"
+                },
+                {
+                  "source_id": 4,
+                  "path": "python/pricing.py",
+                  "qualified": "python.pricing",
+                  "start_line": 5,
+                  "end_line": 6,
+                  "text": "    if weight <= 0:\n        raise ValueError(\"weight must be positive\")"
+                },
+                {
+                  "source_id": 5,
+                  "path": "python/api.py",
+                  "qualified": "python.api",
+                  "start_line": 6,
+                  "end_line": 6,
+                  "text": "    return shipping_cost(weight)"
+                }
+              ],
+              "aspect_statuses": [
+                {
+                  "aspect_id": 1,
+                  "question": "how does a shipping quote handle a nonpositive weight",
+                  "status": "supported"
+                }
+              ],
+              "claims": [
+                {
+                  "text": "In the Python pricing module, a shipping quote raises a ValueError if the weight is nonpositive.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 5,
+                      "end_line": 6
+                    }
+                  ]
+                },
+                {
+                  "text": "The Python pricing module does not handle nonpositive weights in any other way besides raising an exception.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 5,
+                      "end_line": 6
+                    }
+                  ]
+                },
+                {
+                  "text": "The Python pricing module's shipping quote handling for nonpositive weights is consistent across different parts of the code.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 4,
+                      "start_line": 5,
+                      "end_line": 6
+                    },
+                    {
+                      "source_id": 5,
+                      "start_line": 6,
+                      "end_line": 6
+                    }
+                  ]
+                }
+              ],
+              "source_identity_checked": true,
+              "outcome": "accepted"
+            }
+          ],
+          "provider_calls": 2
+        },
+        "elapsed_ms": 47441,
+        "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+        "model": "qwen2.5-coder:14b",
+        "answer_prompt_version": "2026-10-03-aspects-cited-lines-audit-v2",
+        "retrieval_version": "2026-10-04-custom-modular-rag-v1"
+      }
+    },
+    {
+      "question": "How does the TypeScript API delegate quote computation to pricing?",
+      "result": {
+        "answer": "The TypeScript API delegates quote computation to pricing by calling the `shippingCost` function with the weight parameter [2] [6].",
+        "claims": [
+          {
+            "text": "The TypeScript API delegates quote computation to pricing by calling the `shippingCost` function with the weight parameter.",
+            "aspect_id": 1,
+            "status": "supported",
+            "citations": [
+              {
+                "source_id": 2,
+                "start_line": 3,
+                "end_line": 4
+              },
+              {
+                "source_id": 6,
+                "start_line": 1,
+                "end_line": 1
+              }
+            ]
+          }
+        ],
+        "missing_information": [],
+        "confidence": "model_supported",
+        "related_symbols": [
+          "python.api.quote_request",
+          "typescript.api",
+          "typescript.api.quoteRequest",
+          "typescript.pricing.throw new Error(\"weight must be positive\");",
+          "cpp.pricing.Pricing",
+          "typescript.pricing.number",
+          "csharp.Pricing.Demo.Pricing.ShippingCost",
+          "csharp.Pricing.Demo"
+        ],
+        "retrieval_trace": {
+          "question": "How does the TypeScript API delegate quote computation to pricing?",
+          "query_analysis": {
+            "type": "implementation",
+            "entities": [],
+            "aspects": [
+              "How does the TypeScript API delegate quote computation to pricing"
+            ]
+          },
+          "mode": "hybrid",
+          "hops": 2,
+          "settings": {
+            "lexical_weight": 1.0,
+            "semantic_weight": 1.0,
+            "graph_weight": 1.0,
+            "structural_weight": 0.02,
+            "exact_boost": 50.0,
+            "candidate_limit": 50,
+            "rerank": true
+          },
+          "lexical_candidates": [
+            {
+              "id": "806cfdaba69675dd2b0c90fe",
+              "score": 9.251757258696697
+            },
+            {
+              "id": "7ca99a0fd4d4e92654dfe80a",
+              "score": 8.196300961462114
+            },
+            {
+              "id": "04920a8c3d4ed45c0b34ddad",
+              "score": 5.937621938798584
+            },
+            {
+              "id": "bb02c1d77c3f081825e63c1d",
+              "score": 5.915334671435111
+            },
+            {
+              "id": "eed91bf5e7e422527ce0a139",
+              "score": 5.557258580115615
+            },
+            {
+              "id": "eb695c4f402ddbf01183deaf",
+              "score": 5.224995539255489
+            },
+            {
+              "id": "39b9adb014087c90a0a2f533",
+              "score": 5.180761526711097
+            },
+            {
+              "id": "ecc8ee0cedeac40dbb1f8fcd",
+              "score": 4.602592503171057
+            },
+            {
+              "id": "9573c95dcda31e196f72cba3",
+              "score": 3.405865948814193
+            },
+            {
+              "id": "28d850124a03a1f4d2b54593",
+              "score": 3.3871128952468146
+            },
+            {
+              "id": "331d77060805678772e1adac",
+              "score": 3.3600182181363367
+            },
+            {
+              "id": "30b635f812c60938ec387446",
+              "score": 3.309318168394699
+            },
+            {
+              "id": "6645c01c0fd9ca638d0a960a",
+              "score": 3.309318168394699
+            },
+            {
+              "id": "572cb1af6d30aa5571f192e3",
+              "score": 3.300289222653233
+            },
+            {
+              "id": "955712b4036e2c0d6da3e7e2",
+              "score": 3.2917724339729273
+            },
+            {
+              "id": "fa9eea5db1682c284a24ac3a",
+              "score": 3.2917724339729273
+            },
+            {
+              "id": "f799a0c9ea28550a24f161d1",
+              "score": 3.2917724339729273
+            },
+            {
+              "id": "f8f5adac9f70c75e0dfeae78",
+              "score": 3.2688934077670133
+            },
+            {
+              "id": "d6286f7f1e17a6dcb91b41b3",
+              "score": 3.237813575291977
+            },
+            {
+              "id": "0cfcc9aa8dfa069f4c953a40",
+              "score": 3.1707221184558234
+            },
+            {
+              "id": "5e5c4503eaf1f8d11b6f7258",
+              "score": 2.924572010129117
+            },
+            {
+              "id": "e63b25de56d42053c8637ee9",
+              "score": 2.1531417089101983
+            },
+            {
+              "id": "b0d95f5512a7a4e079029425",
+              "score": 1.8389209448167776
+            },
+            {
+              "id": "a692f88d0322bef6aaa8e99a",
+              "score": 1.0641233819104297
+            },
+            {
+              "id": "93a67877f811fb4232d6902d",
+              "score": 1.0549982709838641
+            },
+            {
+              "id": "95a2e4297b26c33e60ba4f19",
+              "score": 1.0506794866569162
+            },
+            {
+              "id": "0be1dfc169a7460a2ba8564d",
+              "score": 1.0197894857513905
+            },
+            {
+              "id": "ddee0aae83b591370139f564",
+              "score": 1.0135568094565544
+            },
+            {
+              "id": "5cd3e685414da3650c8ee751",
+              "score": 1.0021520820824028
+            },
+            {
+              "id": "7521ad6fd061c48a63dbef8d",
+              "score": 0.9887106479285841
+            },
+            {
+              "id": "91c82e4634eb1365d05f91d9",
+              "score": 0.9205185006342115
+            },
+            {
+              "id": "e39eb0a445f6df80754b633e",
+              "score": 0.9165616918730779
+            },
+            {
+              "id": "fb223c271bbf3dafae05cd8a",
+              "score": 0.2620441041902066
+            },
+            {
+              "id": "340cd2257fe964893a3927b3",
+              "score": 0.08011955100830104
+            },
+            {
+              "id": "5481902c4e2c8c154c9830b1",
+              "score": 0.07599279021515992
+            },
+            {
+              "id": "112cf8f0f519e8b91953c848",
+              "score": 0.06378138023119705
+            },
+            {
+              "id": "fabaef49f489240406b499dc",
+              "score": 0.06005784453064664
+            },
+            {
+              "id": "78b3ed180b86f1108b8480ca",
+              "score": 0.058354486794585464
+            },
+            {
+              "id": "15ef5ef771a56c6ccb72b647",
+              "score": 0.058354486794585464
+            },
+            {
+              "id": "871a0e3b63b243b5afc4e827",
+              "score": 0.05674508537642336
+            },
+            {
+              "id": "93100c8371b427150b347bc7",
+              "score": 0.05674508537642336
+            },
+            {
+              "id": "15ad57ee10a013807480157a",
+              "score": 0.05674508537642336
+            }
+          ],
+          "semantic_candidates": [
+            {
+              "id": "39b9adb014087c90a0a2f533",
+              "similarity": 0.7277681231498718
+            },
+            {
+              "id": "806cfdaba69675dd2b0c90fe",
+              "similarity": 0.718848705291748
+            },
+            {
+              "id": "f8f5adac9f70c75e0dfeae78",
+              "similarity": 0.7161775827407837
+            },
+            {
+              "id": "eed91bf5e7e422527ce0a139",
+              "similarity": 0.7048275470733643
+            },
+            {
+              "id": "91c82e4634eb1365d05f91d9",
+              "similarity": 0.7030535936355591
+            },
+            {
+              "id": "eb695c4f402ddbf01183deaf",
+              "similarity": 0.700951099395752
+            },
+            {
+              "id": "ecc8ee0cedeac40dbb1f8fcd",
+              "similarity": 0.6931989789009094
+            },
+            {
+              "id": "6645c01c0fd9ca638d0a960a",
+              "similarity": 0.6620355248451233
+            },
+            {
+              "id": "d6286f7f1e17a6dcb91b41b3",
+              "similarity": 0.6583957672119141
+            },
+            {
+              "id": "5e5c4503eaf1f8d11b6f7258",
+              "similarity": 0.6574864983558655
+            },
+            {
+              "id": "15ef5ef771a56c6ccb72b647",
+              "similarity": 0.6456072330474854
+            },
+            {
+              "id": "7521ad6fd061c48a63dbef8d",
+              "similarity": 0.6373355984687805
+            },
+            {
+              "id": "9573c95dcda31e196f72cba3",
+              "similarity": 0.6237350106239319
+            },
+            {
+              "id": "04920a8c3d4ed45c0b34ddad",
+              "similarity": 0.6207200288772583
+            },
+            {
+              "id": "331d77060805678772e1adac",
+              "similarity": 0.6184569597244263
+            },
+            {
+              "id": "95a2e4297b26c33e60ba4f19",
+              "similarity": 0.6176661252975464
+            },
+            {
+              "id": "340cd2257fe964893a3927b3",
+              "similarity": 0.610026478767395
+            },
+            {
+              "id": "572cb1af6d30aa5571f192e3",
+              "similarity": 0.6067501306533813
+            },
+            {
+              "id": "0be1dfc169a7460a2ba8564d",
+              "similarity": 0.599287211894989
+            },
+            {
+              "id": "bb02c1d77c3f081825e63c1d",
+              "similarity": 0.5894218683242798
+            },
+            {
+              "id": "7ca99a0fd4d4e92654dfe80a",
+              "similarity": 0.588120698928833
+            },
+            {
+              "id": "fb223c271bbf3dafae05cd8a",
+              "similarity": 0.5819740295410156
+            },
+            {
+              "id": "78b3ed180b86f1108b8480ca",
+              "similarity": 0.5803869962692261
+            },
+            {
+              "id": "93a67877f811fb4232d6902d",
+              "similarity": 0.5763629674911499
+            },
+            {
+              "id": "a692f88d0322bef6aaa8e99a",
+              "similarity": 0.5723789930343628
+            },
+            {
+              "id": "955712b4036e2c0d6da3e7e2",
+              "similarity": 0.5692406892776489
+            },
+            {
+              "id": "e39eb0a445f6df80754b633e",
+              "similarity": 0.5692214965820312
+            },
+            {
+              "id": "e63b25de56d42053c8637ee9",
+              "similarity": 0.5657546520233154
+            },
+            {
+              "id": "fa9eea5db1682c284a24ac3a",
+              "similarity": 0.5627449154853821
+            },
+            {
+              "id": "28d850124a03a1f4d2b54593",
+              "similarity": 0.5522759556770325
+            },
+            {
+              "id": "5cd3e685414da3650c8ee751",
+              "similarity": 0.5521721243858337
+            },
+            {
+              "id": "0cfcc9aa8dfa069f4c953a40",
+              "similarity": 0.5519124865531921
+            },
+            {
+              "id": "871a0e3b63b243b5afc4e827",
+              "similarity": 0.5498106479644775
+            },
+            {
+              "id": "112cf8f0f519e8b91953c848",
+              "similarity": 0.5470075607299805
+            },
+            {
+              "id": "93100c8371b427150b347bc7",
+              "similarity": 0.5398757457733154
+            },
+            {
+              "id": "5481902c4e2c8c154c9830b1",
+              "similarity": 0.5351989269256592
+            },
+            {
+              "id": "30b635f812c60938ec387446",
+              "similarity": 0.5316354036331177
+            },
+            {
+              "id": "fabaef49f489240406b499dc",
+              "similarity": 0.5195685625076294
+            },
+            {
+              "id": "b0d95f5512a7a4e079029425",
+              "similarity": 0.5191845893859863
+            },
+            {
+              "id": "f799a0c9ea28550a24f161d1",
+              "similarity": 0.5036671757698059
+            },
+            {
+              "id": "15ad57ee10a013807480157a",
+              "similarity": 0.5029289722442627
+            },
+            {
+              "id": "ddee0aae83b591370139f564",
+              "similarity": 0.49293673038482666
+            },
+            {
+              "id": "b34a9c0ac6d2c08dc5757308",
+              "similarity": 0.48098087310791016
+            },
+            {
+              "id": "f2be40931bf170582315b97c",
+              "similarity": 0.4726310968399048
+            },
+            {
+              "id": "e1ac96fb1d4419ff1ed6c478",
+              "similarity": 0.44251638650894165
+            },
+            {
+              "id": "568d0cc1a1ab76d4af723c50",
+              "similarity": 0.4388296604156494
+            },
+            {
+              "id": "942bd6d51c7b7a449a7624ce",
+              "similarity": 0.4190577268600464
+            },
+            {
+              "id": "db405375a4f1b58e261f6b22",
+              "similarity": 0.4139086902141571
+            },
+            {
+              "id": "12e20516282571cd6654648d",
+              "similarity": 0.4001619219779968
+            }
+          ],
+          "graph_seeds": [
+            "806cfdaba69675dd2b0c90fe",
+            "39b9adb014087c90a0a2f533",
+            "eed91bf5e7e422527ce0a139",
+            "f8f5adac9f70c75e0dfeae78"
+          ],
+          "graph_expanded": [
+            {
+              "id": "5e5c4503eaf1f8d11b6f7258",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "39b9adb014087c90a0a2f533",
+                  "target": "5e5c4503eaf1f8d11b6f7258",
+                  "kind": "imports",
+                  "line": 1,
+                  "confidence": "static",
+                  "label": "./pricing"
+                }
+              ]
+            },
+            {
+              "id": "6645c01c0fd9ca638d0a960a",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "39b9adb014087c90a0a2f533",
+                  "target": "5e5c4503eaf1f8d11b6f7258",
+                  "kind": "imports",
+                  "line": 1,
+                  "confidence": "static",
+                  "label": "./pricing"
+                },
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "5e5c4503eaf1f8d11b6f7258",
+                  "target": "6645c01c0fd9ca638d0a960a",
+                  "kind": "returns",
+                  "line": 1,
+                  "confidence": "declared",
+                  "label": "number"
+                }
+              ]
+            },
+            {
+              "id": "fb223c271bbf3dafae05cd8a",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "806cfdaba69675dd2b0c90fe",
+                  "target": "0cfcc9aa8dfa069f4c953a40",
+                  "kind": "calls",
+                  "line": 6,
+                  "confidence": "static",
+                  "label": "shipping_cost"
+                },
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "0cfcc9aa8dfa069f4c953a40",
+                  "target": "fb223c271bbf3dafae05cd8a",
+                  "kind": "raises",
+                  "line": 6,
+                  "confidence": "declared",
+                  "label": "raise ValueError(\"weight must be positive\")"
+                }
+              ]
+            },
+            {
+              "id": "e39eb0a445f6df80754b633e",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "806cfdaba69675dd2b0c90fe",
+                  "target": "0cfcc9aa8dfa069f4c953a40",
+                  "kind": "calls",
+                  "line": 6,
+                  "confidence": "static",
+                  "label": "shipping_cost"
+                },
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "e39eb0a445f6df80754b633e",
+                  "target": "0cfcc9aa8dfa069f4c953a40",
+                  "kind": "contains",
+                  "line": 3,
+                  "confidence": "exact",
+                  "label": "shipping_cost"
+                }
+              ]
+            },
+            {
+              "id": "112cf8f0f519e8b91953c848",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "806cfdaba69675dd2b0c90fe",
+                  "target": "0cfcc9aa8dfa069f4c953a40",
+                  "kind": "calls",
+                  "line": 6,
+                  "confidence": "static",
+                  "label": "shipping_cost"
+                },
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "0cfcc9aa8dfa069f4c953a40",
+                  "target": "112cf8f0f519e8b91953c848",
+                  "kind": "accepts",
+                  "line": 3,
+                  "confidence": "exact",
+                  "label": "weight"
+                }
+              ]
+            },
+            {
+              "id": "15ef5ef771a56c6ccb72b647",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "eed91bf5e7e422527ce0a139",
+                  "target": "d6286f7f1e17a6dcb91b41b3",
+                  "kind": "calls",
+                  "line": 3,
+                  "confidence": "static",
+                  "label": "shippingCost"
+                },
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "d6286f7f1e17a6dcb91b41b3",
+                  "target": "15ef5ef771a56c6ccb72b647",
+                  "kind": "accepts",
+                  "line": 1,
+                  "confidence": "exact",
+                  "label": "weight"
+                }
+              ]
+            },
+            {
+              "id": "7521ad6fd061c48a63dbef8d",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "806cfdaba69675dd2b0c90fe",
+                  "target": "7521ad6fd061c48a63dbef8d",
+                  "kind": "accepts",
+                  "line": 4,
+                  "confidence": "exact",
+                  "label": "weight"
+                }
+              ]
+            },
+            {
+              "id": "d6286f7f1e17a6dcb91b41b3",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "eed91bf5e7e422527ce0a139",
+                  "target": "d6286f7f1e17a6dcb91b41b3",
+                  "kind": "calls",
+                  "line": 3,
+                  "confidence": "static",
+                  "label": "shippingCost"
+                }
+              ]
+            },
+            {
+              "id": "eb695c4f402ddbf01183deaf",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "eb695c4f402ddbf01183deaf",
+                  "target": "806cfdaba69675dd2b0c90fe",
+                  "kind": "contains",
+                  "line": 4,
+                  "confidence": "exact",
+                  "label": "quote_request"
+                }
+              ]
+            },
+            {
+              "id": "ecc8ee0cedeac40dbb1f8fcd",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "eed91bf5e7e422527ce0a139",
+                  "target": "ecc8ee0cedeac40dbb1f8fcd",
+                  "kind": "returns",
+                  "line": 2,
+                  "confidence": "declared",
+                  "label": "number"
+                }
+              ]
+            },
+            {
+              "id": "91c82e4634eb1365d05f91d9",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "eed91bf5e7e422527ce0a139",
+                  "target": "91c82e4634eb1365d05f91d9",
+                  "kind": "accepts",
+                  "line": 2,
+                  "confidence": "exact",
+                  "label": "weight"
+                }
+              ]
+            },
+            {
+              "id": "0cfcc9aa8dfa069f4c953a40",
+              "path": [
+                {
+                  "repo_id": "research-prototype-1791100435646046000",
+                  "source": "806cfdaba69675dd2b0c90fe",
+                  "target": "0cfcc9aa8dfa069f4c953a40",
+                  "kind": "calls",
+                  "line": 6,
+                  "confidence": "static",
+                  "label": "shipping_cost"
+                }
+              ]
+            }
+          ],
+          "fused_candidates": [
+            {
+              "id": "806cfdaba69675dd2b0c90fe",
+              "score": 0.03252247488101534
+            },
+            {
+              "id": "39b9adb014087c90a0a2f533",
+              "score": 0.03131881575727918
+            },
+            {
+              "id": "eed91bf5e7e422527ce0a139",
+              "score": 0.031009615384615385
+            },
+            {
+              "id": "f8f5adac9f70c75e0dfeae78",
+              "score": 0.028693528693528692
+            },
+            {
+              "id": "7521ad6fd061c48a63dbef8d",
+              "score": 0.03514410364886304
+            },
+            {
+              "id": "91c82e4634eb1365d05f91d9",
+              "score": 0.03427026098901099
+            },
+            {
+              "id": "eb695c4f402ddbf01183deaf",
+              "score": 0.030303030303030304
+            },
+            {
+              "id": "ecc8ee0cedeac40dbb1f8fcd",
+              "score": 0.029631255487269532
+            },
+            {
+              "id": "6645c01c0fd9ca638d0a960a",
+              "score": 0.028404512489927477
+            },
+            {
+              "id": "d6286f7f1e17a6dcb91b41b3",
+              "score": 0.02715098147128967
+            },
+            {
+              "id": "5e5c4503eaf1f8d11b6f7258",
+              "score": 0.026631393298059962
+            },
+            {
+              "id": "15ef5ef771a56c6ccb72b647",
+              "score": 0.024185517143263623
+            },
+            {
+              "id": "0cfcc9aa8dfa069f4c953a40",
+              "score": 0.023597331754535218
+            },
+            {
+              "id": "fb223c271bbf3dafae05cd8a",
+              "score": 0.022947810123262524
+            },
+            {
+              "id": "e39eb0a445f6df80754b633e",
+              "score": 0.022363818090954522
+            },
+            {
+              "id": "112cf8f0f519e8b91953c848",
+              "score": 0.02105496453900709
+            },
+            {
+              "id": "7ca99a0fd4d4e92654dfe80a",
+              "score": 0.028474711270410194
+            },
+            {
+              "id": "9573c95dcda31e196f72cba3",
+              "score": 0.02819138376017471
+            },
+            {
+              "id": "331d77060805678772e1adac",
+              "score": 0.027417840375586856
+            },
+            {
+              "id": "572cb1af6d30aa5571f192e3",
+              "score": 0.026334026334026334
+            },
+            {
+              "id": "28d850124a03a1f4d2b54593",
+              "score": 0.025396825396825397
+            },
+            {
+              "id": "955712b4036e2c0d6da3e7e2",
+              "score": 0.024961240310077522
+            },
+            {
+              "id": "fa9eea5db1682c284a24ac3a",
+              "score": 0.02439384979302188
+            },
+            {
+              "id": "30b635f812c60938ec387446",
+              "score": 0.02419816723940435
+            },
+            {
+              "id": "f799a0c9ea28550a24f161d1",
+              "score": 0.022987012987012986
+            },
+            {
+              "id": "04920a8c3d4ed45c0b34ddad",
+              "score": 0.029386529386529386
+            },
+            {
+              "id": "bb02c1d77c3f081825e63c1d",
+              "score": 0.028125
+            },
+            {
+              "id": "95a2e4297b26c33e60ba4f19",
+              "score": 0.02478580171358629
+            },
+            {
+              "id": "0be1dfc169a7460a2ba8564d",
+              "score": 0.024152480721664482
+            },
+            {
+              "id": "a692f88d0322bef6aaa8e99a",
+              "score": 0.023669467787114845
+            },
+            {
+              "id": "93a67877f811fb4232d6902d",
+              "score": 0.023669467787114845
+            },
+            {
+              "id": "340cd2257fe964893a3927b3",
+              "score": 0.02362531085935341
+            },
+            {
+              "id": "e63b25de56d42053c8637ee9",
+              "score": 0.023558758314855877
+            },
+            {
+              "id": "78b3ed180b86f1108b8480ca",
+              "score": 0.0222522744037374
+            },
+            {
+              "id": "5cd3e685414da3650c8ee751",
+              "score": 0.022224966045190767
+            },
+            {
+              "id": "b0d95f5512a7a4e079029425",
+              "score": 0.022149202872094438
+            },
+            {
+              "id": "ddee0aae83b591370139f564",
+              "score": 0.021167557932263815
+            },
+            {
+              "id": "5481902c4e2c8c154c9830b1",
+              "score": 0.02094298245614035
+            },
+            {
+              "id": "871a0e3b63b243b5afc4e827",
+              "score": 0.02075268817204301
+            },
+            {
+              "id": "fabaef49f489240406b499dc",
+              "score": 0.020513359983168524
+            },
+            {
+              "id": "93100c8371b427150b347bc7",
+              "score": 0.020427305888483585
+            },
+            {
+              "id": "15ad57ee10a013807480157a",
+              "score": 0.019704911667637354
+            },
+            {
+              "id": "b34a9c0ac6d2c08dc5757308",
+              "score": 0.009708737864077669
+            },
+            {
+              "id": "f2be40931bf170582315b97c",
+              "score": 0.009615384615384616
+            },
+            {
+              "id": "e1ac96fb1d4419ff1ed6c478",
+              "score": 0.009523809523809525
+            },
+            {
+              "id": "568d0cc1a1ab76d4af723c50",
+              "score": 0.009433962264150943
+            },
+            {
+              "id": "942bd6d51c7b7a449a7624ce",
+              "score": 0.009345794392523364
+            },
+            {
+              "id": "db405375a4f1b58e261f6b22",
+              "score": 0.009259259259259259
+            },
+            {
+              "id": "12e20516282571cd6654648d",
+              "score": 0.009174311926605505
+            }
+          ],
+          "reranked_candidates": [
+            "806cfdaba69675dd2b0c90fe",
+            "39b9adb014087c90a0a2f533",
+            "eed91bf5e7e422527ce0a139",
+            "f8f5adac9f70c75e0dfeae78",
+            "7ca99a0fd4d4e92654dfe80a",
+            "6645c01c0fd9ca638d0a960a",
+            "9573c95dcda31e196f72cba3",
+            "331d77060805678772e1adac"
+          ],
+          "timings_ms": {
+            "lexical": 9.021,
+            "semantic": 48.226,
+            "fusion_and_seed_reranking": 0.392,
+            "graph": 0.105,
+            "reranking": 0.174,
+            "context_records": 1.69,
+            "retrieval": 59.607
+          }
+        },
+        "evidence": [
+          {
+            "id": "806cfdaba69675dd2b0c90fe",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "python/api.py",
+            "name": "quote_request",
+            "qualified": "python.api.quote_request",
+            "kind": "function",
+            "start_line": 4,
+            "end_line": 6,
+            "source": "def quote_request(weight):\n    \"\"\"Delegate quote calculation to the pricing function.\"\"\"\n    return shipping_cost(weight)",
+            "docstring": "Delegate quote calculation to the pricing function.",
+            "parent_id": "eb695c4f402ddbf01183deaf",
+            "file_id": "2bc5db153ed3df25a83112527bd1cd9d",
+            "language": "python",
+            "signature": "def quote_request(weight):",
+            "role": "source",
+            "public_aliases": [
+              "python.api.quote_request"
+            ],
+            "score": 0.03252,
+            "component_scores": {
+              "lexical": 9.251757258696697,
+              "semantic": 0.718848705291748,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.052522474881015344
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "39b9adb014087c90a0a2f533",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "typescript/api.ts",
+            "name": "api.ts",
+            "qualified": "typescript.api",
+            "kind": "module",
+            "start_line": 1,
+            "end_line": 4,
+            "source": "import {shippingCost} from './pricing';\nexport function quoteRequest(weight: number): number {\n  return shippingCost(weight);\n}\n",
+            "docstring": "",
+            "parent_id": null,
+            "file_id": "853bf48bb3a301d20dba45c48bc71b11",
+            "language": "typescript",
+            "signature": "import {shippingCost} from './pricing';",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.03132,
+            "component_scores": {
+              "lexical": 5.180761526711097,
+              "semantic": 0.7277681231498718,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.051318815757279174
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "eed91bf5e7e422527ce0a139",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "typescript/api.ts",
+            "name": "quoteRequest",
+            "qualified": "typescript.api.quoteRequest",
+            "kind": "function",
+            "start_line": 2,
+            "end_line": 4,
+            "source": "export function quoteRequest(weight: number): number {\n  return shippingCost(weight);\n}",
+            "docstring": "",
+            "parent_id": "39b9adb014087c90a0a2f533",
+            "file_id": "853bf48bb3a301d20dba45c48bc71b11",
+            "language": "typescript",
+            "signature": "function quoteRequest(weight: number): number ",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.03101,
+            "component_scores": {
+              "lexical": 5.557258580115615,
+              "semantic": 0.7048275470733643,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.05100961538461539
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "f8f5adac9f70c75e0dfeae78",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "typescript/pricing.ts",
+            "name": "throw new Error(\"weight must be positive\");",
+            "qualified": "typescript.pricing.throw new Error(\"weight must be positive\");",
+            "kind": "exception_reference",
+            "start_line": 2,
+            "end_line": 2,
+            "source": "  if (weight <= 0) { throw new Error(\"weight must be positive\"); }",
+            "docstring": "",
+            "parent_id": "5e5c4503eaf1f8d11b6f7258",
+            "file_id": "60b78a413eb7bec806b0bb3e6a9d2172",
+            "language": "typescript",
+            "signature": "  if (weight <= 0) { throw new Error(\"weight must be positive\"); }",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.02869,
+            "component_scores": {
+              "lexical": 3.2688934077670133,
+              "semantic": 0.7161775827407837,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.04869352869352869
+            },
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "7ca99a0fd4d4e92654dfe80a",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "cpp/pricing.cpp",
+            "name": "Pricing",
+            "qualified": "cpp.pricing.Pricing",
+            "kind": "class",
+            "start_line": 1,
+            "end_line": 4,
+            "source": "class Pricing {\npublic:\n    int shipping_cost(int weight) { return weight * 5; }\n};",
+            "docstring": "",
+            "parent_id": "a692f88d0322bef6aaa8e99a",
+            "file_id": "b0c3114e51ada4ae4c4f3e51c9421f34",
+            "language": "cpp",
+            "signature": "class Pricing ",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.02847,
+            "component_scores": {
+              "lexical": 8.196300961462114,
+              "semantic": 0.588120698928833,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.0484747112704102
+            },
+            "reason": "fused lexical / semantic candidate",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "6645c01c0fd9ca638d0a960a",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "typescript/pricing.ts",
+            "name": "number",
+            "qualified": "typescript.pricing.number",
+            "kind": "type_reference",
+            "start_line": 1,
+            "end_line": 1,
+            "source": "export function shippingCost(weight: number): number {",
+            "docstring": "",
+            "parent_id": "5e5c4503eaf1f8d11b6f7258",
+            "file_id": "60b78a413eb7bec806b0bb3e6a9d2172",
+            "language": "typescript",
+            "signature": "export function shippingCost(weight: number): number {",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.0284,
+            "component_scores": {
+              "lexical": 3.309318168394699,
+              "semantic": 0.6620355248451233,
+              "graph": 0.015312359037983532,
+              "structural": 1,
+              "final": 0.04840451248992748
+            },
+            "reason": "returns relationship with pricing.ts",
+            "traversal": [
+              {
+                "repo_id": "research-prototype-1791100435646046000",
+                "source": "39b9adb014087c90a0a2f533",
+                "target": "5e5c4503eaf1f8d11b6f7258",
+                "kind": "imports",
+                "line": 1,
+                "confidence": "static",
+                "label": "./pricing"
+              },
+              {
+                "repo_id": "research-prototype-1791100435646046000",
+                "source": "5e5c4503eaf1f8d11b6f7258",
+                "target": "6645c01c0fd9ca638d0a960a",
+                "kind": "returns",
+                "line": 1,
+                "confidence": "declared",
+                "label": "number"
+              }
+            ],
+            "truncated": false
+          },
+          {
+            "id": "9573c95dcda31e196f72cba3",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "csharp/Pricing.cs",
+            "name": "ShippingCost",
+            "qualified": "csharp.Pricing.Demo.Pricing.ShippingCost",
+            "kind": "method",
+            "start_line": 2,
+            "end_line": 2,
+            "source": "    class Pricing { public static int ShippingCost(int weight) { return weight * 5; } }",
+            "docstring": "",
+            "parent_id": "04920a8c3d4ed45c0b34ddad",
+            "file_id": "811ab14d9bebc41ad398b219691e0ba8",
+            "language": "csharp",
+            "signature": "public static int ShippingCost(int weight) ",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.02819,
+            "component_scores": {
+              "lexical": 3.405865948814193,
+              "semantic": 0.6237350106239319,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.048191383760174705
+            },
+            "reason": "fused lexical / semantic candidate",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "331d77060805678772e1adac",
+            "repo_id": "research-prototype-1791100435646046000",
+            "path": "csharp/Pricing.cs",
+            "name": "Demo",
+            "qualified": "csharp.Pricing.Demo",
+            "kind": "namespace",
+            "start_line": 1,
+            "end_line": 3,
+            "source": "namespace Demo {\n    class Pricing { public static int ShippingCost(int weight) { return weight * 5; } }\n}",
+            "docstring": "",
+            "parent_id": "95a2e4297b26c33e60ba4f19",
+            "file_id": "811ab14d9bebc41ad398b219691e0ba8",
+            "language": "csharp",
+            "signature": "namespace Demo ",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.02742,
+            "component_scores": {
+              "lexical": 3.3600182181363367,
+              "semantic": 0.6184569597244263,
+              "graph": 0,
+              "structural": 1,
+              "final": 0.047417840375586856
+            },
+            "reason": "fused lexical / semantic candidate",
+            "traversal": [],
+            "truncated": false
+          }
+        ],
+        "mode": "hybrid",
+        "semantic_used": true,
+        "generated": true,
+        "abstained": false,
+        "partial": false,
+        "aspect_statuses": [
+          {
+            "aspect_id": 1,
+            "question": "How does the TypeScript API delegate quote computation to pricing",
+            "status": "supported"
+          }
+        ],
+        "generation_context": [
+          {
+            "source_id": 1,
+            "id": "806cfdaba69675dd2b0c90fe",
+            "qualified": "python.api.quote_request",
+            "path": "python/api.py",
+            "source_line_numbers": [
+              4,
+              6
+            ],
+            "source": "def quote_request(weight):\n    return shipping_cost(weight)",
+            "truncated": true
+          },
+          {
+            "source_id": 2,
+            "id": "39b9adb014087c90a0a2f533",
+            "qualified": "typescript.api",
+            "path": "typescript/api.ts",
+            "source_line_numbers": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "source": "import {shippingCost} from './pricing';\nexport function quoteRequest(weight: number): number {\n  return shippingCost(weight);\n}",
+            "truncated": false
+          },
+          {
+            "source_id": 3,
+            "id": "eed91bf5e7e422527ce0a139",
+            "qualified": "typescript.api.quoteRequest",
+            "path": "typescript/api.ts",
+            "source_line_numbers": [
+              2,
+              3,
+              4
+            ],
+            "source": "export function quoteRequest(weight: number): number {\n  return shippingCost(weight);\n}",
+            "truncated": false
+          },
+          {
+            "source_id": 4,
+            "id": "f8f5adac9f70c75e0dfeae78",
+            "qualified": "typescript.pricing.throw new Error(\"weight must be positive\");",
+            "path": "typescript/pricing.ts",
+            "source_line_numbers": [
+              2
+            ],
+            "source": "  if (weight <= 0) { throw new Error(\"weight must be positive\"); }",
+            "truncated": false
+          },
+          {
+            "source_id": 5,
+            "id": "7ca99a0fd4d4e92654dfe80a",
+            "qualified": "cpp.pricing.Pricing",
+            "path": "cpp/pricing.cpp",
+            "source_line_numbers": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "source": "class Pricing {\npublic:\n    int shipping_cost(int weight) { return weight * 5; }\n};",
+            "truncated": false
+          },
+          {
+            "source_id": 6,
+            "id": "6645c01c0fd9ca638d0a960a",
+            "qualified": "typescript.pricing.number",
+            "path": "typescript/pricing.ts",
+            "source_line_numbers": [
+              1
+            ],
+            "source": "export function shippingCost(weight: number): number {",
+            "truncated": false
+          },
+          {
+            "source_id": 7,
+            "id": "9573c95dcda31e196f72cba3",
+            "qualified": "csharp.Pricing.Demo.Pricing.ShippingCost",
+            "path": "csharp/Pricing.cs",
+            "source_line_numbers": [
+              2
+            ],
+            "source": "    class Pricing { public static int ShippingCost(int weight) { return weight * 5; } }",
+            "truncated": false
+          },
+          {
+            "source_id": 8,
+            "id": "331d77060805678772e1adac",
+            "qualified": "csharp.Pricing.Demo",
+            "path": "csharp/Pricing.cs",
+            "source_line_numbers": [
+              1,
+              2,
+              3
+            ],
+            "source": "namespace Demo {\n    class Pricing { public static int ShippingCost(int weight) { return weight * 5; } }\n}",
+            "truncated": false
+          }
+        ],
+        "verification": "not_executed",
+        "citation_check": {
+          "invalid": [],
+          "has_citations": true,
+          "uncited_paragraphs": [],
+          "uncited_sentences": [],
+          "reference_section": false,
+          "entailment_checked": false,
+          "source_identity_checked": true
+        },
+        "warning": null,
+        "usage": {
+          "prompt_tokens": 2052,
+          "completion_tokens": 206,
+          "total_tokens": 2258
+        },
+        "generation_diagnostics": {
+          "attempt_count": 1,
+          "total_request_ms": 30094,
+          "attempts": [
+            {
+              "load_duration_ms": 126,
+              "prompt_eval_duration_ms": 9950,
+              "eval_duration_ms": 7744,
+              "prompt_tokens": 1370,
+              "completion_tokens": 107,
+              "request_ms": 30094,
+              "estimated_prompt_tokens": 1656,
+              "context_window": 8192,
+              "entailment_checked": false,
+              "provider_calls": 2,
+              "usage": {
+                "prompt_tokens": 2052,
+                "completion_tokens": 206,
+                "total_tokens": 2258
+              },
+              "draft_claims": [
+                {
+                  "text": "The TypeScript API delegates quote computation to pricing by calling the `shippingCost` function with the weight parameter.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 2,
+                      "start_line": 3,
+                      "end_line": 4
+                    },
+                    {
+                      "source_id": 6,
+                      "start_line": 1,
+                      "end_line": 1
+                    }
+                  ]
+                }
+              ],
+              "claim_audit": {
+                "status": "completed",
+                "decisions": [
+                  {
+                    "claim_index": 0,
+                    "verdict": "supported",
+                    "reason": "The claim is supported by the cited evidence. The `shippingCost` function is called with the `weight` parameter in the `api.ts` file, and the `shippingCost` function is defined to take a `number` as an argument and return a `number` in the `pricing.ts` file."
+                  }
+                ],
+                "provider_calls": 1,
+                "elapsed_ms": 12221,
+                "model": "qwen2.5-coder:14b",
+                "factual_support_proven": false
+              },
+              "supporting_lines": [
+                {
+                  "source_id": 2,
+                  "path": "typescript/api.ts",
+                  "qualified": "typescript.api",
+                  "start_line": 3,
+                  "end_line": 4,
+                  "text": "  return shippingCost(weight);\n}"
+                },
+                {
+                  "source_id": 6,
+                  "path": "typescript/pricing.ts",
+                  "qualified": "typescript.pricing.number",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "text": "export function shippingCost(weight: number): number {"
+                }
+              ],
+              "aspect_statuses": [
+                {
+                  "aspect_id": 1,
+                  "question": "How does the TypeScript API delegate quote computation to pricing",
+                  "status": "supported"
+                }
+              ],
+              "claims": [
+                {
+                  "text": "The TypeScript API delegates quote computation to pricing by calling the `shippingCost` function with the weight parameter.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 2,
+                      "start_line": 3,
+                      "end_line": 4
+                    },
+                    {
+                      "source_id": 6,
+                      "start_line": 1,
+                      "end_line": 1
+                    }
+                  ]
+                }
+              ],
+              "source_identity_checked": true,
+              "outcome": "accepted"
+            }
+          ],
+          "provider_calls": 2
+        },
+        "elapsed_ms": 30156,
+        "snapshot": "9f62cc863d77f9ff6cbfa3464df87aca9441c679ffc93d38f21001ac036e8b0b",
+        "model": "qwen2.5-coder:14b",
+        "answer_prompt_version": "2026-10-03-aspects-cited-lines-audit-v2",
+        "retrieval_version": "2026-10-04-custom-modular-rag-v1"
+      }
+    }
+  ],
+  "suggestions": [
+    {
+      "test_only": false,
+      "elapsed_ms": 16142.598,
+      "result": {
+        "summary": "Added a regression test to verify that zero weight raises ValueError in shipping_cost function.",
+        "patch": "",
+        "extra_tests": {
+          "tests/test_devpilot_regression.py": "\"\"\"\nTest suite for devpilot regression issues.\n\"\"\"\n\nimport unittest\nfrom python.pricing import shipping_cost\n\nclass TestDevPilotRegression(unittest.TestCase):\n    def test_zero_weight_raises_value_error(self):\n        with self.assertRaises(ValueError) as context:\n            shipping_cost(0)\n        self.assertEqual(str(context.exception), 'weight must be positive')\n"
+        },
+        "ignored_model_patch": false,
+        "evidence": [
+          {
+            "id": "5481902c4e2c8c154c9830b1",
+            "path": "cpp/pricing.cpp",
+            "qualified": "cpp.pricing.Pricing.shipping_cost.weight",
+            "start_line": 3,
+            "end_line": 3
+          },
+          {
+            "id": "15ad57ee10a013807480157a",
+            "path": "rust/pricing.rs",
+            "qualified": "rust.pricing.shipping_cost.weight",
+            "start_line": 1,
+            "end_line": 1
+          },
+          {
+            "id": "0cfcc9aa8dfa069f4c953a40",
+            "path": "python/pricing.py",
+            "qualified": "python.pricing.shipping_cost",
+            "start_line": 3,
+            "end_line": 7
+          },
+          {
+            "id": "fb223c271bbf3dafae05cd8a",
+            "path": "python/pricing.py",
+            "qualified": "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")",
+            "start_line": 6,
+            "end_line": 6
+          },
+          {
+            "id": "e39eb0a445f6df80754b633e",
+            "path": "python/pricing.py",
+            "qualified": "python.pricing",
+            "start_line": 1,
+            "end_line": 7
+          },
+          {
+            "id": "28d850124a03a1f4d2b54593",
+            "path": "cpp/pricing.cpp",
+            "qualified": "cpp.pricing.Pricing.shipping_cost",
+            "start_line": 3,
+            "end_line": 3
+          },
+          {
+            "id": "f799a0c9ea28550a24f161d1",
+            "path": "rust/pricing.rs",
+            "qualified": "rust.pricing.shipping_cost",
+            "start_line": 1,
+            "end_line": 1
+          },
+          {
+            "id": "eb695c4f402ddbf01183deaf",
+            "path": "python/api.py",
+            "qualified": "python.api",
+            "start_line": 1,
+            "end_line": 6
+          }
+        ],
+        "warning": null,
+        "status": "draft_unverified",
+        "verified": false,
+        "kind": "fix_and_test",
+        "missing_information": [
+          "Behavioral correctness, imports, framework compatibility and regression effectiveness have not been verified."
+        ],
+        "language": "python",
+        "usage": {
+          "prompt_tokens": 780,
+          "completion_tokens": 143,
+          "total_tokens": 923
+        }
+      }
+    },
+    {
+      "test_only": true,
+      "elapsed_ms": 14467.849,
+      "result": {
+        "summary": "Add a regression test to verify that zero weight raises ValueError in shipping_cost.",
+        "patch": "",
+        "extra_tests": {
+          "tests/test_devpilot_regression.py": "\"\"\"\nTest cases for the pricing module.\n\"\"\"\n\nfrom python.pricing import shipping_cost\ndef test_zero_weight_raises_value_error():\n    \"\"\"Test that zero weight raises ValueError.\"\"\"\n    with pytest.raises(ValueError):\n        shipping_cost(0)"
+        },
+        "ignored_model_patch": false,
+        "evidence": [
+          {
+            "id": "5481902c4e2c8c154c9830b1",
+            "path": "cpp/pricing.cpp",
+            "qualified": "cpp.pricing.Pricing.shipping_cost.weight",
+            "start_line": 3,
+            "end_line": 3
+          },
+          {
+            "id": "15ad57ee10a013807480157a",
+            "path": "rust/pricing.rs",
+            "qualified": "rust.pricing.shipping_cost.weight",
+            "start_line": 1,
+            "end_line": 1
+          },
+          {
+            "id": "0cfcc9aa8dfa069f4c953a40",
+            "path": "python/pricing.py",
+            "qualified": "python.pricing.shipping_cost",
+            "start_line": 3,
+            "end_line": 7
+          },
+          {
+            "id": "fb223c271bbf3dafae05cd8a",
+            "path": "python/pricing.py",
+            "qualified": "python.pricing.shipping_cost.raise ValueError(\"weight must be positive\")",
+            "start_line": 6,
+            "end_line": 6
+          },
+          {
+            "id": "e39eb0a445f6df80754b633e",
+            "path": "python/pricing.py",
+            "qualified": "python.pricing",
+            "start_line": 1,
+            "end_line": 7
+          },
+          {
+            "id": "28d850124a03a1f4d2b54593",
+            "path": "cpp/pricing.cpp",
+            "qualified": "cpp.pricing.Pricing.shipping_cost",
+            "start_line": 3,
+            "end_line": 3
+          },
+          {
+            "id": "f799a0c9ea28550a24f161d1",
+            "path": "rust/pricing.rs",
+            "qualified": "rust.pricing.shipping_cost",
+            "start_line": 1,
+            "end_line": 1
+          },
+          {
+            "id": "eb695c4f402ddbf01183deaf",
+            "path": "python/api.py",
+            "qualified": "python.api",
+            "start_line": 1,
+            "end_line": 6
+          }
+        ],
+        "warning": null,
+        "status": "draft_unverified",
+        "verified": false,
+        "kind": "test",
+        "missing_information": [
+          "Behavioral correctness, imports, framework compatibility and regression effectiveness have not been verified."
+        ],
+        "language": "python",
+        "usage": {
+          "prompt_tokens": 793,
+          "completion_tokens": 118,
+          "total_tokens": 911
+        }
+      }
+    }
+  ],
+  "provider": {
+    "model": "qwen2.5-coder:14b",
+    "configured": true,
+    "context_window": 8192,
+    "reachable": true,
+    "generation_probe": "passed",
+    "embedding_probe": "passed",
+    "model_installed": true,
+    "model_digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+    "model_details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "14.8B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 32768,
+      "embedding_length": 5120
+    },
+    "embedding_dimensions": 768,
+    "embedding_signature": "1beb6dbc00912f71d27f2219bd54f0ff792d83e616143e93cb9e60dad35b7110",
+    "loaded_models": [
+      {
+        "name": "qwen2.5-coder:14b",
+        "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+        "context_length": 8192,
+        "size_vram": 9524708637
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "context_length": 2048,
+        "size_vram": 370031984
+      }
+    ]
+  }
+}

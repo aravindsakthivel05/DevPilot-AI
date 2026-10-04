@@ -1681,3 +1681,173 @@ td:first-child {
   accent-color: var(--green);
   margin: 1px 0 0;
 }
+
+.aspect-coverage {
+  margin: 18px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  font-size: 13px;
+}
+.aspect-coverage ul {
+  padding-left: 18px;
+  line-height: 1.7;
+}
+.aspect-coverage li span {
+  color: var(--green);
+}
+.aspect-coverage small {
+  color: var(--muted);
+}
+
+.research-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.research-page > p {
+  color: #a0aaa4;
+  line-height: 1.6;
+}
+.research-page textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  resize: vertical;
+  margin-bottom: 16px;
+}
+.research-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  margin: 16px 0;
+  overflow-wrap: anywhere;
+}
+.research-card h3 {
+  margin: 0 0 12px;
+}
+.research-card small {
+  color: #a0aaa4;
+  font-weight: 400;
+}
+.research-json {
+  background: #111615;
+  padding: 14px;
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 600px;
+  font-size: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.research-actions,
+.research-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 12px 0;
+}
+.research-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+}
+.research-controls input,
+.research-controls select {
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.research-table {
+  overflow: auto;
+}
+.research-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.research-table th,
+.research-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.research-saved {
+  display: block;
+  text-align: left;
+  padding: 10px;
+  width: 100%;
+  border: 0;
+  background: #111615;
+  margin: 6px 0;
+  cursor: pointer;
+}
+.source-lines .focused-line {
+  background: #304026;
+}
+.inline-citation {
+  color: var(--green);
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0 2px;
+  font: inherit;
+}
+
+.source-link {
+  color: var(--green);
+  text-decoration: underline;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+.research-card {
+  color: #e9ece9;
+}
+.research-json {
+  color: #c9d5cd;
+}
+
+.relationship-map {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+}
+.relationship-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(100px, auto) minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+.relationship-node {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  text-align: left;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.relationship-node:hover {
+  border-color: var(--green);
+}
+.relationship-node small,
+.relationship-arrow small {
+  display: block;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.relationship-arrow {
+  text-align: center;
+  color: var(--green);
+  font-size: 12px;
+}
+@media (max-width: 650px) {
+  .relationship-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

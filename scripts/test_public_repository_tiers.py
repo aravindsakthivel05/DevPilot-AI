@@ -7,7 +7,8 @@ from pathlib import Path
 from backend import db
 from backend.agent_investigation import investigate
 from backend.config import provider_settings
-from backend.retrieval import answer
+from backend.providers import ANSWER_PROMPT_VERSION
+from backend.retrieval import RETRIEVAL_VERSION, answer
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "evaluation/training-repository-snapshots.json"
@@ -55,7 +56,7 @@ def run(output, use_model=True):
             ("deep", investigate),
         ):
             result = runner(pinned["id"], case["question"], use_model=use_model)
-            retrieved = [item["qualified"] for item in result["evidence"]]
+            retrieved = [item["qualified"] for item in result["evidence"][:8]]
             found = sorted(set(retrieved) & set(case["expected_symbols"]))
             run_result["runs"][name] = {
                 "elapsed_ms": result["elapsed_ms"],
@@ -78,6 +79,15 @@ def run(output, use_model=True):
                 "warning": result["warning"],
                 "model": result["model"],
                 "workflow": result.get("workflow"),
+                "abstained": result.get("abstained", False),
+                "partial": result.get("partial", False),
+                "aspect_statuses": result.get("aspect_statuses", []),
+                "generation_context": result.get("generation_context", []),
+                "generation_diagnostics": result.get("generation_diagnostics", {}),
+                "evidence_count": len(result["evidence"]),
+                "answer_correct": None,
+                "all_claims_supported": None,
+                "all_aspects_complete": None,
                 "usage": result["usage"],
             }
         results.append(run_result)
@@ -90,6 +100,9 @@ def run(output, use_model=True):
         "model": provider_settings()["model"] or None,
         "embedding_model": provider_settings()["embedding_model"] or None,
         "use_model": use_model,
+        "answer_prompt_version": ANSWER_PROMPT_VERSION,
+        "retrieval_version": RETRIEVAL_VERSION,
+        "context_window": int(__import__("os").environ.get("DEVPILOT_OLLAMA_NUM_CTX", "8192")),
         "cases": len(results),
         "mean_recall_at_8": sum(scores) / len(scores),
         "results": results,

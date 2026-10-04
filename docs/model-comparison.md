@@ -33,3 +33,23 @@ the coding model produced one regression test and an exact source edit. DevPilot
 unified diff, checked it against the indexed snapshot, and ran the draft in Docker. The generated
 test failed before the patch (exit 1) and passed after it (exit 0). This is one verified demo
 change, not a real-repository repair benchmark.
+
+## October 3 accuracy comparison
+
+Qwen2.5-Coder 14B is now installed locally and was compared with 7B using identical frozen source
+excerpts on new Jinja/Gson snapshots. On six answerable cases, source review found one correct and
+complete 7B answer versus three for 14B; strict exact-citation support reduced those counts to one
+and two. Median single-attempt latency was 23.1 seconds and 81.3 seconds. Both models still made
+errors that their own model audits accepted. Both declined two explicit live/private questions
+without a provider call. This single-repeat sample is too small for a general model-quality claim.
+
+The setup script retains 7B for lower latency. 14B is an available slower accuracy option:
+
+```sh
+DEVPILOT_LLM_MODEL=qwen2.5-coder:14b ./setup_and_run.sh
+```
+
+It ran entirely on the GPU at an 8192-token context on the 18 GiB Mac during this check. Increasing
+context further can consume more memory; inspect the actual loaded model in Environment & providers.
+These are generation evaluations, not fine-tuning. The [full checkpoint](accuracy-2026-10-03.md)
+links raw answers, exact source judgments, timing and remaining limitations.

@@ -1,0 +1,481 @@
+{
+  "source_manifest": "evaluation/training-repository-snapshots.json",
+  "questions": "evaluation/public-repository-tier-questions.jsonl",
+  "llm_configured": true,
+  "model": "qwen2.5-coder:7b",
+  "use_model": true,
+  "cases": 3,
+  "mean_recall_at_8": 0.6666666666666666,
+  "results": [
+    {
+      "id": "fastapi-medium-001",
+      "tier": "medium",
+      "repository": "fastapi",
+      "url": "https://github.com/fastapi/fastapi",
+      "commit": "33d411dbc3236275dd64d200bfe18d5d60a49b2e",
+      "fingerprint": "7c7220afbbfa6df722ede89138b33ac6bcfc65f0be5b58a78184bdc7808e6bfe",
+      "index_scope": "repository root",
+      "indexed_files": 2879,
+      "indexed_symbols": 8871,
+      "question": "How does FastAPI.openapi() obtain the OpenAPI schema for the app, and where are route schemas assembled?",
+      "expected_symbols": [
+        "fastapi.applications.FastAPI.openapi",
+        "fastapi.openapi.utils.get_openapi"
+      ],
+      "runs": {
+        "quick": {
+          "elapsed_ms": 12702,
+          "retrieved_expected": [
+            "fastapi.applications.FastAPI.openapi"
+          ],
+          "expected_count": 2,
+          "recall_at_8": 0.5,
+          "evidence": [
+            {
+              "qualified": "fastapi.applications.FastAPI.openapi",
+              "path": "fastapi/applications.py",
+              "start_line": 1106,
+              "end_line": 1139
+            }
+          ],
+          "answer": "FastAPI.openapi() obtains the OpenAPI schema for the app by calling get_openapi() with various parameters including title, version, openapi_version, summary, description, contact, license_info, routes, webhooks, tags, servers, separate_input_output_schemas, and external_docs [1]. Route schemas are assembled within the FastAPI application by being included in the 'routes' parameter passed to get_openapi() [1].",
+          "generated": true,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [],
+            "uncited_sentences": [],
+            "reference_section": false,
+            "entailment_checked": false
+          },
+          "warning": null,
+          "model": "qwen2.5-coder:7b",
+          "workflow": null,
+          "usage": {
+            "prompt_tokens": 490,
+            "completion_tokens": 143,
+            "total_tokens": 633
+          },
+          "semantic_used": false
+        },
+        "deep": {
+          "elapsed_ms": 6633,
+          "retrieved_expected": [
+            "fastapi.applications.FastAPI.openapi"
+          ],
+          "expected_count": 2,
+          "recall_at_8": 0.5,
+          "evidence": [
+            {
+              "qualified": "fastapi.applications.FastAPI.openapi",
+              "path": "fastapi/applications.py",
+              "start_line": 1106,
+              "end_line": 1139
+            }
+          ],
+          "answer": "FastAPI.openapi() obtains the OpenAPI schema for the app by calling get_openapi() with various parameters including title, version, openapi_version, summary, description, contact, license_info, routes, webhooks, tags, servers, separate_input_output_schemas, and external_docs [1]. Route schemas are assembled within the FastAPI application by being included in the 'routes' parameter passed to get_openapi() [1].",
+          "generated": true,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [],
+            "uncited_sentences": [],
+            "reference_section": false,
+            "entailment_checked": false
+          },
+          "warning": null,
+          "model": "qwen2.5-coder:7b",
+          "workflow": {
+            "engine": "langgraph",
+            "steps": [
+              "snapshot check",
+              "primary retrieval",
+              "query planning",
+              "answer and citation check"
+            ],
+            "retrieval_passes": 1
+          },
+          "usage": {
+            "prompt_tokens": 490,
+            "completion_tokens": 143,
+            "total_tokens": 633
+          },
+          "semantic_used": false
+        }
+      }
+    },
+    {
+      "id": "django-complex-001",
+      "tier": "complex",
+      "repository": "django",
+      "url": "https://github.com/django/django",
+      "commit": "5a4511adb247a44a1cada11fe4763abba0a42663",
+      "fingerprint": "4e388f9fcf623c391f7e31136b277fc42971cac3e7f9e27a4cbcafdd9573d43e",
+      "index_scope": "django/",
+      "indexed_files": 1114,
+      "indexed_symbols": 12728,
+      "question": "When a Django QuerySet is iterated, how does it fetch and cache results and hand off SQL execution?",
+      "expected_symbols": [
+        "db.models.query.QuerySet.__iter__",
+        "db.models.query.QuerySet._fetch_all",
+        "db.models.sql.compiler.SQLCompiler.execute_sql"
+      ],
+      "runs": {
+        "quick": {
+          "elapsed_ms": 8696,
+          "retrieved_expected": [
+            "db.models.query.QuerySet.__iter__",
+            "db.models.query.QuerySet._fetch_all",
+            "db.models.sql.compiler.SQLCompiler.execute_sql"
+          ],
+          "expected_count": 3,
+          "recall_at_8": 1.0,
+          "evidence": [
+            {
+              "qualified": "db.models.query.QuerySet.__iter__",
+              "path": "db/models/query.py",
+              "start_line": 468,
+              "end_line": 484
+            },
+            {
+              "qualified": "db.models.sql.compiler.SQLCompiler.results_iter",
+              "path": "db/models/sql/compiler.py",
+              "start_line": 1589,
+              "end_line": 1610
+            },
+            {
+              "qualified": "db.models.query.QuerySet._iterator",
+              "path": "db/models/query.py",
+              "start_line": 594,
+              "end_line": 607
+            },
+            {
+              "qualified": "db.models.query.RawQuerySet._fetch_all",
+              "path": "db/models/query.py",
+              "start_line": 2527,
+              "end_line": 2531
+            },
+            {
+              "qualified": "db.models.sql.compiler.SQLCompiler.execute_sql",
+              "path": "db/models/sql/compiler.py",
+              "start_line": 1619,
+              "end_line": 1691
+            },
+            {
+              "qualified": "db.models.query.QuerySet.iterator",
+              "path": "db/models/query.py",
+              "start_line": 609,
+              "end_line": 626
+            },
+            {
+              "qualified": "db.models.query.QuerySet.aiterator",
+              "path": "db/models/query.py",
+              "start_line": 628,
+              "end_line": 681
+            },
+            {
+              "qualified": "db.models.query.QuerySet._fetch_all",
+              "path": "db/models/query.py",
+              "start_line": 2327,
+              "end_line": 2331
+            }
+          ],
+          "answer": "When a Django QuerySet is iterated, it fetches and caches results by calling `_fetch_all()` which executes the SQL query using `SQLCompiler.execute_sql()` [4]. This method handles the actual database interaction, fetching rows from the cursor [4].",
+          "generated": true,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [],
+            "uncited_sentences": [],
+            "reference_section": false,
+            "entailment_checked": false
+          },
+          "warning": null,
+          "model": "qwen2.5-coder:7b",
+          "workflow": null,
+          "usage": {
+            "prompt_tokens": 1367,
+            "completion_tokens": 83,
+            "total_tokens": 1450
+          },
+          "semantic_used": false
+        },
+        "deep": {
+          "elapsed_ms": 4419,
+          "retrieved_expected": [
+            "db.models.query.QuerySet.__iter__",
+            "db.models.query.QuerySet._fetch_all",
+            "db.models.sql.compiler.SQLCompiler.execute_sql"
+          ],
+          "expected_count": 3,
+          "recall_at_8": 1.0,
+          "evidence": [
+            {
+              "qualified": "db.models.query.QuerySet.__iter__",
+              "path": "db/models/query.py",
+              "start_line": 468,
+              "end_line": 484
+            },
+            {
+              "qualified": "db.models.sql.compiler.SQLCompiler.results_iter",
+              "path": "db/models/sql/compiler.py",
+              "start_line": 1589,
+              "end_line": 1610
+            },
+            {
+              "qualified": "db.models.query.QuerySet._iterator",
+              "path": "db/models/query.py",
+              "start_line": 594,
+              "end_line": 607
+            },
+            {
+              "qualified": "db.models.query.RawQuerySet._fetch_all",
+              "path": "db/models/query.py",
+              "start_line": 2527,
+              "end_line": 2531
+            },
+            {
+              "qualified": "db.models.sql.compiler.SQLCompiler.execute_sql",
+              "path": "db/models/sql/compiler.py",
+              "start_line": 1619,
+              "end_line": 1691
+            },
+            {
+              "qualified": "db.models.query.QuerySet.iterator",
+              "path": "db/models/query.py",
+              "start_line": 609,
+              "end_line": 626
+            },
+            {
+              "qualified": "db.models.query.QuerySet.aiterator",
+              "path": "db/models/query.py",
+              "start_line": 628,
+              "end_line": 681
+            },
+            {
+              "qualified": "db.models.query.QuerySet._fetch_all",
+              "path": "db/models/query.py",
+              "start_line": 2327,
+              "end_line": 2331
+            }
+          ],
+          "answer": "When a Django QuerySet is iterated, it fetches and caches results by calling `_fetch_all()` which executes the SQL query using `SQLCompiler.execute_sql()` [4]. This method handles the actual database interaction, fetching rows from the cursor [4].",
+          "generated": true,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [],
+            "uncited_sentences": [],
+            "reference_section": false,
+            "entailment_checked": false
+          },
+          "warning": null,
+          "model": "qwen2.5-coder:7b",
+          "workflow": {
+            "engine": "langgraph",
+            "steps": [
+              "snapshot check",
+              "primary retrieval",
+              "query planning",
+              "answer and citation check"
+            ],
+            "retrieval_passes": 1
+          },
+          "usage": {
+            "prompt_tokens": 1367,
+            "completion_tokens": 83,
+            "total_tokens": 1450
+          },
+          "semantic_used": false
+        }
+      }
+    },
+    {
+      "id": "pytorch-very-complex-001",
+      "tier": "very complex",
+      "repository": "pytorch",
+      "url": "https://github.com/pytorch/pytorch",
+      "commit": "6dcdae14be8163d69c5d4e06375968e3eeb652ea",
+      "fingerprint": "f291f7735492aa3c5b95bdc9f65acd131f735913725e05f0c87cb11fd80fbf96",
+      "index_scope": "torch/",
+      "indexed_files": 2597,
+      "indexed_symbols": 60945,
+      "question": "When a torch.nn.Module instance is called, how does it run forward pre-hooks, call forward(), and run forward hooks?",
+      "expected_symbols": [
+        "nn.modules.module.Module._wrapped_call_impl",
+        "nn.modules.module.Module._call_impl",
+        "nn.modules.module.Module.register_forward_pre_hook",
+        "nn.modules.module.Module.register_forward_hook"
+      ],
+      "runs": {
+        "quick": {
+          "elapsed_ms": 14599,
+          "retrieved_expected": [
+            "nn.modules.module.Module._call_impl",
+            "nn.modules.module.Module.register_forward_pre_hook"
+          ],
+          "expected_count": 4,
+          "recall_at_8": 0.5,
+          "evidence": [
+            {
+              "qualified": "export._trace._non_strict_export._tuplify_outputs._aot_export_non_strict.Wrapper.forward",
+              "path": "export/_trace.py",
+              "start_line": 2296,
+              "end_line": 2318
+            },
+            {
+              "qualified": "nn.modules.module.Module._call_impl",
+              "path": "nn/modules/module.py",
+              "start_line": 1791,
+              "end_line": 1923
+            },
+            {
+              "qualified": "nn.modules.module.register_module_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 217,
+              "end_line": 246
+            },
+            {
+              "qualified": "nn.modules.module.Module.register_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 1633,
+              "end_line": 1694
+            },
+            {
+              "qualified": "fx.passes.split_module._make_lite_graph_module",
+              "path": "fx/passes/split_module.py",
+              "start_line": 749,
+              "end_line": 791
+            },
+            {
+              "qualified": "distributed.fsdp._fully_shard._fsdp_state._register_group_forward_hooks",
+              "path": "distributed/fsdp/_fully_shard/_fsdp_state.py",
+              "start_line": 704,
+              "end_line": 763
+            },
+            {
+              "qualified": "_dynamo.aot_compile._warn_dropped_module_dispatch",
+              "path": "_dynamo/aot_compile.py",
+              "start_line": 1641,
+              "end_line": 1782
+            },
+            {
+              "qualified": "distributed.fsdp._runtime_utils._pre_backward_hook",
+              "path": "distributed/fsdp/_runtime_utils.py",
+              "start_line": 629,
+              "end_line": 696
+            }
+          ],
+          "answer": "When a torch.nn.Module instance is called, it first runs forward pre-hooks by iterating through global and local forward pre-hooks and applying them to the input arguments [2].",
+          "generated": true,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [],
+            "uncited_sentences": [],
+            "reference_section": false,
+            "entailment_checked": false
+          },
+          "warning": null,
+          "model": "qwen2.5-coder:7b",
+          "workflow": null,
+          "usage": {
+            "prompt_tokens": 1687,
+            "completion_tokens": 67,
+            "total_tokens": 1754
+          },
+          "semantic_used": false
+        },
+        "deep": {
+          "elapsed_ms": 9264,
+          "retrieved_expected": [
+            "nn.modules.module.Module._call_impl",
+            "nn.modules.module.Module.register_forward_pre_hook"
+          ],
+          "expected_count": 4,
+          "recall_at_8": 0.5,
+          "evidence": [
+            {
+              "qualified": "export._trace._non_strict_export._tuplify_outputs._aot_export_non_strict.Wrapper.forward",
+              "path": "export/_trace.py",
+              "start_line": 2296,
+              "end_line": 2318
+            },
+            {
+              "qualified": "nn.modules.module.Module._call_impl",
+              "path": "nn/modules/module.py",
+              "start_line": 1791,
+              "end_line": 1923
+            },
+            {
+              "qualified": "nn.modules.module.register_module_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 217,
+              "end_line": 246
+            },
+            {
+              "qualified": "nn.modules.module.Module.register_forward_pre_hook",
+              "path": "nn/modules/module.py",
+              "start_line": 1633,
+              "end_line": 1694
+            },
+            {
+              "qualified": "fx.passes.split_module._make_lite_graph_module",
+              "path": "fx/passes/split_module.py",
+              "start_line": 749,
+              "end_line": 791
+            },
+            {
+              "qualified": "distributed.fsdp._fully_shard._fsdp_state._register_group_forward_hooks",
+              "path": "distributed/fsdp/_fully_shard/_fsdp_state.py",
+              "start_line": 704,
+              "end_line": 763
+            },
+            {
+              "qualified": "_dynamo.aot_compile._warn_dropped_module_dispatch",
+              "path": "_dynamo/aot_compile.py",
+              "start_line": 1641,
+              "end_line": 1782
+            },
+            {
+              "qualified": "distributed.fsdp._runtime_utils._pre_backward_hook",
+              "path": "distributed/fsdp/_runtime_utils.py",
+              "start_line": 629,
+              "end_line": 696
+            }
+          ],
+          "answer": "When a torch.nn.Module instance is called, it first runs forward pre-hooks by iterating through global and local forward pre-hooks and applying them to the input arguments [2].",
+          "generated": true,
+          "citation_check": {
+            "invalid": [],
+            "has_citations": true,
+            "uncited_paragraphs": [],
+            "uncited_sentences": [],
+            "reference_section": false,
+            "entailment_checked": false
+          },
+          "warning": null,
+          "model": "qwen2.5-coder:7b",
+          "workflow": {
+            "engine": "langgraph",
+            "steps": [
+              "snapshot check",
+              "primary retrieval",
+              "query planning",
+              "answer and citation check"
+            ],
+            "retrieval_passes": 1
+          },
+          "usage": {
+            "prompt_tokens": 1687,
+            "completion_tokens": 67,
+            "total_tokens": 1754
+          },
+          "semantic_used": false
+        }
+      }
+    }
+  ],
+  "embedding_model": null,
+  "semantic_search_available": false
+}

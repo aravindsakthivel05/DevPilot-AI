@@ -1,0 +1,23 @@
+axios four retrieval modes complete
+gin four retrieval modes complete
+fluentvalidation four retrieval modes complete
+axios-easy generated=True partial=False recall=0.0 seconds=103.121
+axios-medium generated=True partial=False recall=0.0 seconds=85.925
+axios-hard generated=False partial=False recall=0.5 seconds=95.932
+gin-easy generated=False partial=False recall=0.3333333333333333 seconds=119.559
+gin-medium generated=True partial=False recall=0.0 seconds=89.788
+gin-hard generated=True partial=False recall=1.0 seconds=119.477
+clap-easy blocked_by_indexing UNIQUE constraint failed: symbols.id
+clap-medium blocked_by_indexing UNIQUE constraint failed: symbols.id
+clap-hard blocked_by_indexing UNIQUE constraint failed: symbols.id
+fmt-easy blocked_by_indexing UNIQUE constraint failed: symbols.id
+fmt-medium blocked_by_indexing UNIQUE constraint failed: symbols.id
+fmt-hard blocked_by_indexing UNIQUE constraint failed: symbols.id
+fluentvalidation-easy generated=False partial=False recall=1.0 seconds=105.605
+fluentvalidation-medium generated=True partial=False recall=0.0 seconds=80.982
+fluentvalidation-hard generated=True partial=False recall=1.0 seconds=88.345
+axios-unanswerable generated=False partial=None recall=None seconds=0.001
+gin-unanswerable generated=False partial=None recall=None seconds=0.001
+clap-unanswerable blocked_by_indexing UNIQUE constraint failed: symbols.id
+fmt-unanswerable blocked_by_indexing UNIQUE constraint failed: symbols.id
+fluentvalidation-unanswerable generated=False partial=None recall=None seconds=0.001

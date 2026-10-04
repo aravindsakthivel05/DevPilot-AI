@@ -72,3 +72,31 @@ diverse prompt styles and programming languages, and compare multiple checkpoint
 fixed human rubric for evidence accuracy, unsupported claims, omissions, and answer clarity.
 Only a later adapter that beats the unchanged base on that unseen set should be considered for
 optional local use. Repository-specific facts still need per-repository indexing and retrieval.
+
+## Grounded answer training gate (October 3)
+
+The new `scripts.prepare_grounded_training` workflow addresses source-backed answering separately
+from the earlier tree-only experiment. Prepare only source-reviewed development/holdout cases:
+
+```sh
+.venv/bin/python -m scripts.prepare_grounded_training prepare --dataset evaluation/workflow-cases.jsonl --output /tmp/devpilot-grounded-review.jsonl
+.venv/bin/python -m scripts.prepare_grounded_training export /tmp/devpilot-grounded-review.jsonl --output .devpilot/grounded-training-export
+```
+
+Each review-pack row contains pinned source evidence, question aspects, a prose expected answer,
+and a null structured `target`. A reviewer must supply `target.claims`, verify their exact source
+IDs and original lines, set `target_reviewed=true`, and identify themselves in `reviewer`. Supported
+claims need citations; missing or outside-scope aspects have none. Do not mark model answers reviewed
+because they passed an automated audit.
+
+Export checks the target structure and pinned source again. It requires at least 100 reviewed
+development examples from five repositories and evaluation examples from two holdout repositories.
+An entire development repository is reserved for validation; holdout cases do not enter training.
+This operational gate does not guarantee that training will help. Source-citation validity also
+does not establish that the reviewed prose is correct.
+
+At the current checkpoint there are four pending targets and zero ready examples, so export
+returns `training_ready=false` without writing training files. No new training run is claimed.
+The new Jinja/Gson comparison repositories remain evaluation-only. Any later local adapter must
+be evaluated against the base using factual support, completeness, abstention, latency and memory;
+a lower training loss is insufficient.

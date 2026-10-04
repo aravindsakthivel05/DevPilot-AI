@@ -7,6 +7,7 @@ from pathlib import Path
 
 from backend import db
 from backend.execution import execute
+from backend.test_results import regression_transition
 
 
 def load_tasks(dataset, manifest_path):
@@ -60,9 +61,8 @@ def run(dataset, manifest_path, output, limit=None):
                 "snapshot": info["fingerprint"],
                 "baseline": baseline,
                 "patched": patched,
-                "regression_demonstrated": baseline["status"] == "failed"
-                and task["expected_failure"] in baseline["output"]
-                and patched["exit_code"] == 0,
+                "regression_demonstrated": regression_transition(baseline, patched)
+                and task["expected_failure"] in baseline["output"],
             }
         )
     report = {

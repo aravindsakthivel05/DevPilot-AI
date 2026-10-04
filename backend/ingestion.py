@@ -8,7 +8,6 @@ from collections import Counter
 from pathlib import Path
 
 from . import db
-from .analysis import analyse
 from .config import (
     IGNORE,
     MAX_COVERAGE_ENTRIES,
@@ -20,7 +19,9 @@ from .config import (
     TEXT_FILENAMES,
 )
 from .config_links import configuration_edges
-from .java_analysis import analyse_java
+from .languages.registry import analyze_repository, detect_language
+from .models import file_id, file_role
+from .structure import enrich
 
 
 def supported_text_path(path):
@@ -78,7 +79,7 @@ def collect_files(root, with_coverage=False):
                 else "symlink_directory"
                 if path.is_symlink()
                 else "hidden_directory"
-                if name.startswith(".")
+                if name.startswith(".") and name != ".github"
                 else None
             )
             if reason:
@@ -134,7 +135,7 @@ def collect_files(root, with_coverage=False):
             result[path] = text
             record(path, "file", "indexed", size=size)
     if not result:
-        raise ValueError("No supported text or Python files found.")
+        raise ValueError("No supported source or text files found.")
     summary = {
         "indexed_files": len(result),
         "skipped_files": skipped_files,
@@ -192,6 +193,9 @@ def ingest(repo_id, source):
             root = Path(source).expanduser().resolve()
             if not root.is_dir():
                 raise ValueError("Local repository directory does not exist.")
+        from time import perf_counter
+
+        started = perf_counter()
         files, coverage, coverage_summary = collect_files(root, with_coverage=True)
         commit = git_commit(root)
         fingerprint = hashlib.sha256(
@@ -211,15 +215,22 @@ def ingest(repo_id, source):
             commit_id=commit,
             fingerprint=fingerprint,
         )
-        symbols, edges, errors, unresolved = analyse(
-            repo_id, {path: text for path, text in files.items() if not path.endswith(".java")}
+        files_done = perf_counter()
+        analysis = analyze_repository(repo_id, files)
+        symbols, edges, errors, unresolved = (
+            analysis.symbols,
+            analysis.relationships,
+            analysis.errors,
+            analysis.unresolved,
         )
-        java_symbols, java_edges, java_errors, java_unresolved = analyse_java(repo_id, files)
-        symbols.extend(java_symbols)
-        edges.extend(java_edges)
         edges.extend(configuration_edges(repo_id, files, symbols))
-        errors.extend(java_errors)
-        unresolved.extend(java_unresolved)
+        extra_symbols, extra_edges = enrich(repo_id, files, symbols, edges)
+        symbols.extend(extra_symbols)
+        edges.extend(extra_edges)
+        graph_done = perf_counter()
+        from .rag.chunking import repository_chunks
+
+        chunks = repository_chunks(symbols, edges)
         with db.connection() as c:
             c.executemany(
                 "INSERT INTO coverage VALUES (?,?,?,?,?,?,?)",
@@ -237,33 +248,51 @@ def ingest(repo_id, source):
                 ],
             )
             c.executemany(
-                "INSERT INTO files VALUES (?,?,?,?)",
+                "INSERT INTO files(repo_id,path,content,language,file_id,role) VALUES (?,?,?,?,?,?)",
                 [
                     (
                         repo_id,
                         p,
                         t,
-                        "python"
-                        if p.endswith(".py")
-                        else "java"
-                        if p.endswith(".java")
-                        else "text",
+                        detect_language(p),
+                        file_id(repo_id, p),
+                        file_role(p),
                     )
                     for p, t in files.items()
                 ],
             )
             c.executemany(
-                "INSERT INTO symbols VALUES (:id,:repo_id,:path,:name,:qualified,:kind,:start_line,:end_line,:source,:docstring,:parent_id)",
+                "INSERT INTO symbols(id,repo_id,path,name,qualified,kind,start_line,end_line,source,docstring,parent_id,file_id,language,signature,role) VALUES (:id,:repo_id,:path,:name,:qualified,:kind,:start_line,:end_line,:source,:docstring,:parent_id,:file_id,:language,:signature,:role)",
                 symbols,
+            )
+            c.executemany(
+                "INSERT INTO chunks VALUES (?,?,?,?,?,?)",
+                [
+                    (
+                        s["id"],
+                        repo_id,
+                        s["file_id"],
+                        s["language"],
+                        s["kind"],
+                        json.dumps(chunks[s["id"]]),
+                    )
+                    for s in symbols
+                ],
             )
             c.executemany(
                 "INSERT OR IGNORE INTO edges VALUES (:repo_id,:source,:target,:kind,:line,:confidence,:label)",
                 edges,
             )
+            c.executemany(
+                "INSERT INTO unresolved_references VALUES (?,?)",
+                [(repo_id, json.dumps(item)) for item in unresolved],
+            )
+        stored_done = perf_counter()
         stats = dict(
             files=len(files),
             python_files=sum(p.endswith(".py") for p in files),
             java_files=sum(p.endswith(".java") for p in files),
+            languages=dict(Counter(detect_language(p) for p in files)),
             symbols=len(symbols),
             edges=len(edges),
             parse_errors=errors,
@@ -272,6 +301,12 @@ def ingest(repo_id, source):
             skipped_files=coverage_summary["skipped_files"],
             coverage=coverage_summary,
             embedding_status="not_configured",
+            index_version="2026-10-04-language-adapters-v1",
+            timings_ms={
+                "read_and_snapshot": round((files_done - started) * 1000, 3),
+                "analysis_and_graph": round((graph_done - files_done) * 1000, 3),
+                "chunks_and_storage": round((stored_done - graph_done) * 1000, 3),
+            },
         )
         from .providers import index_embeddings
 
@@ -281,6 +316,10 @@ def ingest(repo_id, source):
         except Exception as e:
             stats["embedding_status"] = "failed"
             stats["embedding_error"] = str(e)[:300]
+        stats["timings_ms"].update(
+            embeddings=round((perf_counter() - stored_done) * 1000, 3),
+            total_index=round((perf_counter() - started) * 1000, 3),
+        )
         db.update_repository(
             repo_id, status="ready", progress="Ready for investigation", stats=json.dumps(stats)
         )

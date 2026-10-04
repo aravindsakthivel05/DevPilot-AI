@@ -1,0 +1,82 @@
+{
+  "scope": "live provider plumbing and disposable demo; not evidence of a semantic retrieval accuracy gain",
+  "provider": {
+    "model": "qwen2.5-coder:7b",
+    "configured": true,
+    "context_window": 8192,
+    "reachable": true,
+    "generation_probe": "passed",
+    "embedding_probe": "passed",
+    "model_installed": true,
+    "model_digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+    "model_details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "7.6B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 32768,
+      "embedding_length": 3584
+    },
+    "embedding_dimensions": 768,
+    "embedding_signature": "1beb6dbc00912f71d27f2219bd54f0ff792d83e616143e93cb9e60dad35b7110",
+    "loaded_models": [
+      {
+        "name": "qwen2.5-coder:7b",
+        "digest": "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+        "context_length": 8192,
+        "size_vram": 4913826364
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "context_length": 2048,
+        "size_vram": 370031984
+      }
+    ]
+  },
+  "index": {
+    "snapshot": "835d068446387ef99dd437a09af904cfa5ca895ec25d8b9497d50ba5708a9e27",
+    "index_version": "2026-10-03-complete-documents-super-decorators",
+    "symbols": 15,
+    "embedded_symbols": 15,
+    "embedding_coverage": 1.0,
+    "semantic_ready": true,
+    "lexical_ready": true,
+    "unresolved_references_stored": 12,
+    "analysis_scope": {
+      "python": "AST symbols and conservative static relationships",
+      "java": "Tree-sitter symbols and conservative static relationships",
+      "other_text": "Searchable documents; no semantic call graph"
+    },
+    "coverage": {
+      "indexed_files": 6,
+      "skipped_files": 0,
+      "ignored_directories": 0,
+      "reason_counts": {},
+      "indexed_extensions": {
+        ".md": 1,
+        ".py": 5
+      },
+      "recorded_entries": 6,
+      "entries_capped": false,
+      "ignored_directory_contents_scanned": false
+    }
+  },
+  "semantic_used": true,
+  "evidence_symbols": [
+    "parcel.pricing.calculate_quote",
+    "parcel.pricing",
+    "tests.test_pricing.PricingTests.test_international_quote",
+    "parcel.api",
+    "parcel.api.shipping_quote",
+    "parcel.pricing.base_rate",
+    "tests.test_pricing",
+    "tests.test_pricing.PricingTests"
+  ],
+  "source_snapshot_unchanged": true,
+  "passed": true
+}

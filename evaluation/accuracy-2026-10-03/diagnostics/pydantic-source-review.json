@@ -1,0 +1,35 @@
+{
+  "review_author": "Codex manual pinned-source review; not independent human grading",
+  "raw_report_sha256": "078811d9994e7ba40d93edec3747d477de7c8d0e4fa5725383bcb7382b345e2b",
+  "scope": "Same three prior questions, Quick mode only; Deep not replayed at this checkpoint",
+  "source_reviewed_correct_and_complete": 0,
+  "results": [
+    {
+      "id": "pydantic-easy-001",
+      "mode": "quick",
+      "generated": true,
+      "answer_correct": false,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "Does not identify the internal __pydantic_serializer__.to_python call or forwarding exclude_none to that serializer. Cites the declaration and deprecated dict wrapper instead."
+    },
+    {
+      "id": "pydantic-medium-001",
+      "mode": "quick",
+      "generated": false,
+      "answer_correct": null,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": null,
+      "notes": "Generation rejected; source locations returned without a validated explanation."
+    },
+    {
+      "id": "pydantic-hard-001",
+      "mode": "quick",
+      "generated": true,
+      "answer_correct": false,
+      "all_aspects_complete": false,
+      "all_claims_supported_by_exact_citations": false,
+      "notes": "Mixes TypeAdapter rebuild behavior into the BaseModel workflow and incorrectly calls MockValSer the real validator. Actual completion installs create_schema_validator output, not MockValSer; raising depends on the path and raise_errors."
+    }
+  ]
+}

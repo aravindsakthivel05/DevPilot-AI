@@ -1,0 +1,4350 @@
+{
+  "evaluated_at": "2026-10-02T19:42:21.096469+00:00",
+  "dataset": "evaluation/expanded-cases-v3.jsonl",
+  "manifest": "docs/indexed-reference-repositories.json",
+  "case_count": 72,
+  "summary": [
+    {
+      "split": "development",
+      "mode": "graph",
+      "cases": 48,
+      "recall_at_8": 0.8333333333333334,
+      "mrr": 0.6128472222222222
+    },
+    {
+      "split": "development",
+      "mode": "hybrid",
+      "cases": 48,
+      "recall_at_8": 0.75,
+      "mrr": 0.6006944444444444
+    },
+    {
+      "split": "development",
+      "mode": "lexical",
+      "cases": 48,
+      "recall_at_8": 0.75,
+      "mrr": 0.6006944444444444
+    },
+    {
+      "split": "holdout",
+      "mode": "graph",
+      "cases": 16,
+      "recall_at_8": 0.875,
+      "mrr": 0.45
+    },
+    {
+      "split": "holdout",
+      "mode": "hybrid",
+      "cases": 16,
+      "recall_at_8": 0.875,
+      "mrr": 0.44702380952380955
+    },
+    {
+      "split": "holdout",
+      "mode": "lexical",
+      "cases": 16,
+      "recall_at_8": 0.875,
+      "mrr": 0.44702380952380955
+    }
+  ],
+  "cases": [
+    {
+      "id": "flask-001",
+      "repository": "flask",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.app.Flask.wsgi_app",
+        "flask.app.Flask.request_context",
+        "flask.app.Flask",
+        "flask.ctx.AppContext.request",
+        "flask.app.Flask.app_context",
+        "flask.sansio.app.App",
+        "flask.wrappers.Request",
+        "flask.logging"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-001",
+      "repository": "flask",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.app.Flask.wsgi_app",
+        "flask.app.Flask.request_context",
+        "flask.app.Flask",
+        "flask.ctx.AppContext.request",
+        "flask.app.Flask.full_dispatch_request",
+        "flask.app.Flask.handle_exception",
+        "flask.app.Flask.__call__",
+        "flask.app.Flask.preprocess_request"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-001",
+      "repository": "flask",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.app.Flask.wsgi_app",
+        "flask.app.Flask.request_context",
+        "flask.app.Flask",
+        "flask.ctx.AppContext.request",
+        "flask.app.Flask.app_context",
+        "flask.sansio.app.App",
+        "flask.wrappers.Request",
+        "flask.logging"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-002",
+      "repository": "flask",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.app.Flask.dispatch_request",
+        "flask.views.View.dispatch_request",
+        "flask.views.View",
+        "flask.views.View.as_view",
+        "flask.views.View.as_view.view",
+        "flask.views.View.as_view.view",
+        "flask.wrappers.Request",
+        "flask.app.Flask"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-002",
+      "repository": "flask",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.app.Flask.dispatch_request",
+        "flask.views.View.dispatch_request",
+        "flask.views.View",
+        "flask.views.View.as_view",
+        "flask.app.Flask",
+        "flask.app.Flask.preprocess_request",
+        "flask.app.Flask.full_dispatch_request",
+        "flask.app.Flask.finalize_request"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-002",
+      "repository": "flask",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.app.Flask.dispatch_request",
+        "flask.views.View.dispatch_request",
+        "flask.views.View",
+        "flask.views.View.as_view",
+        "flask.views.View.as_view.view",
+        "flask.views.View.as_view.view",
+        "flask.wrappers.Request",
+        "flask.app.Flask"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-003",
+      "repository": "flask",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "flask.app.Flask.full_dispatch_request",
+        "flask.app.Flask.preprocess_request",
+        "flask.wrappers.Request",
+        "flask.ctx.AppContext.request",
+        "flask.views.MethodView.dispatch_request",
+        "flask.app.Flask.__init_subclass__",
+        "flask.app.Flask.dispatch_request",
+        "flask.wrappers.Request.endpoint"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-003",
+      "repository": "flask",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "flask.app.Flask.full_dispatch_request",
+        "flask.app.Flask.preprocess_request",
+        "flask.wrappers.Request",
+        "flask.ctx.AppContext.request",
+        "flask.app.Flask.dispatch_request",
+        "flask.wrappers.Request.endpoint",
+        "flask.wrappers.Request.blueprint",
+        "flask.ctx.after_this_request"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-003",
+      "repository": "flask",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "flask.app.Flask.full_dispatch_request",
+        "flask.app.Flask.preprocess_request",
+        "flask.wrappers.Request",
+        "flask.ctx.AppContext.request",
+        "flask.views.MethodView.dispatch_request",
+        "flask.app.Flask.__init_subclass__",
+        "flask.app.Flask.dispatch_request",
+        "flask.wrappers.Request.endpoint"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-001",
+      "repository": "requests",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.api.request",
+        "requests.models.Request",
+        "requests.sessions.Session.request",
+        "requests.hooks",
+        "requests.hooks.dispatch_hook",
+        "docs/user/advanced.rst#L401",
+        "requests.models.PreparedRequest.prepare_cookies",
+        "requests.auth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-001",
+      "repository": "requests",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.api.request",
+        "requests.models.Request",
+        "requests.sessions.Session.request",
+        "requests.hooks",
+        "requests.hooks.dispatch_hook",
+        "requests.auth",
+        "requests.__version__",
+        "requests"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-001",
+      "repository": "requests",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.api.request",
+        "requests.models.Request",
+        "requests.sessions.Session.request",
+        "requests.hooks",
+        "requests.hooks.dispatch_hook",
+        "docs/user/advanced.rst#L401",
+        "requests.models.PreparedRequest.prepare_cookies",
+        "requests.auth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-002",
+      "repository": "requests",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "requests.sessions.Session.request",
+        "requests.models.Request.prepare",
+        "requests.sessions.Session",
+        "requests.models.Request",
+        "requests.sessions.Session.send",
+        "requests.api.request",
+        "requests.models.PreparedRequest.prepare",
+        "requests.sessions.SessionRedirectMixin.send"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-002",
+      "repository": "requests",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "requests.sessions.Session.request",
+        "requests.models.Request.prepare",
+        "requests.sessions.Session",
+        "requests.models.Request",
+        "requests.sessions.Session.send",
+        "requests.api.request",
+        "requests.models.PreparedRequest.prepare",
+        "requests.sessions.SessionRedirectMixin.send"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-002",
+      "repository": "requests",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "requests.sessions.Session.request",
+        "requests.models.Request.prepare",
+        "requests.sessions.Session",
+        "requests.models.Request",
+        "requests.sessions.Session.send",
+        "requests.api.request",
+        "requests.models.PreparedRequest.prepare",
+        "requests.sessions.SessionRedirectMixin.send"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-003",
+      "repository": "requests",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "requests.sessions.Session",
+        "requests.sessions.session",
+        "requests.sessions.Session.get_adapter",
+        "requests.sessions.Session.mount",
+        "requests.sessions.Session.send",
+        "requests.sessions.Session.prepare_request",
+        "docs/user/advanced.rst#L901",
+        "requests.sessions.Session.close"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-003",
+      "repository": "requests",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "requests.sessions.Session",
+        "requests.sessions.session",
+        "requests.sessions.Session.get_adapter",
+        "requests.sessions.Session.mount",
+        "requests.sessions.Session.send",
+        "requests.sessions.Session.prepare_request",
+        "requests.sessions.Session.close",
+        "requests.sessions.Session.__enter__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-003",
+      "repository": "requests",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "requests.sessions.Session",
+        "requests.sessions.session",
+        "requests.sessions.Session.get_adapter",
+        "requests.sessions.Session.mount",
+        "requests.sessions.Session.send",
+        "requests.sessions.Session.prepare_request",
+        "docs/user/advanced.rst#L901",
+        "requests.sessions.Session.close"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-001",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._client.Client.send",
+        "httpx._client.Client.request",
+        "httpx._client.AsyncClient.send",
+        "httpx._client.AsyncClient.request",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.Client",
+        "httpx._api.request",
+        "httpx._transports.asgi.ASGITransport.handle_async_request.send"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-001",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._client.Client.send",
+        "httpx._client.Client.request",
+        "httpx._client.AsyncClient.send",
+        "httpx._client.AsyncClient.request",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.Client",
+        "httpx._api.request",
+        "httpx._client.Client._send_handling_auth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-001",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._client.Client.send",
+        "httpx._client.Client.request",
+        "httpx._client.AsyncClient.send",
+        "httpx._client.AsyncClient.request",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.Client",
+        "httpx._api.request",
+        "httpx._transports.asgi.ASGITransport.handle_async_request.send"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-002",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "httpx._client.Client.send",
+        "httpx._client.AsyncClient.send",
+        "httpx._client.Client",
+        "httpx._client.Client._send_handling_auth",
+        "httpx._transports.asgi.ASGITransport.handle_async_request.send",
+        "httpx._client.Client._send_handling_redirects",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.AsyncClient._send_handling_auth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-002",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "httpx._client.Client.send",
+        "httpx._client.AsyncClient.send",
+        "httpx._client.Client",
+        "httpx._client.Client._send_handling_auth",
+        "httpx._client.Client._send_handling_redirects",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.AsyncClient._send_handling_auth",
+        "httpx._client.AsyncClient._send_handling_redirects"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-002",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "httpx._client.Client.send",
+        "httpx._client.AsyncClient.send",
+        "httpx._client.Client",
+        "httpx._client.Client._send_handling_auth",
+        "httpx._transports.asgi.ASGITransport.handle_async_request.send",
+        "httpx._client.Client._send_handling_redirects",
+        "httpx._client.Client._send_single_request",
+        "httpx._client.AsyncClient._send_handling_auth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-003",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "httpx._transports.base.AsyncBaseTransport.handle_async_request",
+        "httpx._models.Request",
+        "httpx._transports.base.BaseTransport.handle_request",
+        "httpx._transports.default.HTTPTransport.handle_request",
+        "httpx._transports.base.AsyncBaseTransport",
+        "httpx._transports.base.BaseTransport",
+        "httpx._transports.default.AsyncHTTPTransport.handle_async_request",
+        "tests.client.test_client.test_context_managed_transport.Transport"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-003",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "httpx._transports.base.AsyncBaseTransport.handle_async_request",
+        "httpx._models.Request",
+        "httpx._transports.base.BaseTransport.handle_request",
+        "httpx._transports.default.HTTPTransport.handle_request",
+        "httpx._transports.base.AsyncBaseTransport",
+        "httpx._transports.base.BaseTransport",
+        "httpx._transports.base",
+        "httpx._transports.mock.MockTransport"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-003",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "httpx._transports.base.AsyncBaseTransport.handle_async_request",
+        "httpx._models.Request",
+        "httpx._transports.base.BaseTransport.handle_request",
+        "httpx._transports.default.HTTPTransport.handle_request",
+        "httpx._transports.base.AsyncBaseTransport",
+        "httpx._transports.base.BaseTransport",
+        "httpx._transports.default.AsyncHTTPTransport.handle_async_request",
+        "tests.client.test_client.test_context_managed_transport.Transport"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-001",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.unraisableexception.cleanup",
+        "_pytest.threadexception.cleanup",
+        "_pytest.fixtures.FixtureRequest.session",
+        "_pytest.tmpdir.pytest_sessionfinish",
+        "_pytest.pathlib.make_numbered_dir_with_cleanup",
+        "testing.test_unraisableexception.test_unraisable_decouples_from_cleanup_stack_order",
+        "_pytest.main.Session.pytest_collectstart",
+        "_pytest.warnings"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-001",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.unraisableexception.cleanup",
+        "_pytest.threadexception.cleanup",
+        "_pytest.fixtures.FixtureRequest.session",
+        "_pytest.tmpdir.pytest_sessionfinish",
+        "_pytest.pathlib.make_numbered_dir_with_cleanup",
+        "_pytest.tmpdir.pytest_configure",
+        "_pytest.pathlib.cleanup_dead_symlinks",
+        "_pytest.pathlib.cleanup_numbered_dir"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-001",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.unraisableexception.cleanup",
+        "_pytest.threadexception.cleanup",
+        "_pytest.fixtures.FixtureRequest.session",
+        "_pytest.tmpdir.pytest_sessionfinish",
+        "_pytest.pathlib.make_numbered_dir_with_cleanup",
+        "testing.test_unraisableexception.test_unraisable_decouples_from_cleanup_stack_order",
+        "_pytest.main.Session.pytest_collectstart",
+        "_pytest.warnings"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-002",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.hookspec.pytest_sessionstart",
+        "_pytest.pytester.Pytester.run",
+        "doc.en.example.customdirectory.conftest.ManifestDirectory.collect",
+        "_pytest.hookspec.pytest_runtestloop",
+        "testing.test_doctest.TestDoctestSkips.test_skipping_wrapped_test",
+        "_pytest.nodes.Collector",
+        "_pytest.pytester.Pytester.inline_genitems",
+        "testing.test_cacheprovider.TestLastFailed.test_lastfailed_skip_collection"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-002",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.hookspec.pytest_sessionstart",
+        "_pytest.pytester.Pytester.run",
+        "doc.en.example.customdirectory.conftest.ManifestDirectory.collect",
+        "_pytest.hookspec.pytest_runtestloop",
+        "_pytest.nodes.Collector",
+        "_pytest.pytester.Pytester.inline_genitems",
+        "doc.en.example.customdirectory.conftest.ManifestDirectory",
+        "_pytest.pytester.Pytester"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-002",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.hookspec.pytest_sessionstart",
+        "_pytest.pytester.Pytester.run",
+        "doc.en.example.customdirectory.conftest.ManifestDirectory.collect",
+        "_pytest.hookspec.pytest_runtestloop",
+        "testing.test_doctest.TestDoctestSkips.test_skipping_wrapped_test",
+        "_pytest.nodes.Collector",
+        "_pytest.pytester.Pytester.inline_genitems",
+        "testing.test_cacheprovider.TestLastFailed.test_lastfailed_skip_collection"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-003",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "_pytest.runner.call_and_report",
+        "_pytest.pytester.HookRecorder",
+        "testing.test_junitxml.test_unicode_issue368.Report",
+        "testing.test_junitxml.test_url_property.Report",
+        "_pytest.runner.pytest_runtest_makereport",
+        "_pytest.runner.collect_one_node",
+        "_pytest.runner.check_interactive_exception",
+        "_pytest.runner.pytest_make_collect_report"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-003",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "_pytest.runner.call_and_report",
+        "_pytest.pytester.HookRecorder",
+        "testing.test_junitxml.test_unicode_issue368.Report",
+        "testing.test_junitxml.test_url_property.Report",
+        "_pytest.runner.pytest_runtest_makereport",
+        "_pytest.runner.collect_one_node",
+        "_pytest.runner.check_interactive_exception",
+        "_pytest.runner.pytest_make_collect_report"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-003",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "_pytest.runner.call_and_report",
+        "_pytest.pytester.HookRecorder",
+        "testing.test_junitxml.test_unicode_issue368.Report",
+        "testing.test_junitxml.test_url_property.Report",
+        "_pytest.runner.pytest_runtest_makereport",
+        "_pytest.runner.collect_one_node",
+        "_pytest.runner.check_interactive_exception",
+        "_pytest.runner.pytest_make_collect_report"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-001",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "rich.console.Console.print",
+        "rich.console.Console.render",
+        "rich.console.Console",
+        "tests.render.render",
+        "tests.test_markdown.render",
+        "rich.print",
+        "rich.layout.Layout.render",
+        "rich.logging.RichHandler.render"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-001",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "rich.console.Console.print",
+        "rich.console.Console.render",
+        "rich.console.Console",
+        "tests.render.render",
+        "rich.console.Console._collect_renderables",
+        "rich.segment.Segment.split_and_crop_lines",
+        "rich.segment.Segment.line",
+        "rich.console.NewLine"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-001",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "rich.console.Console.print",
+        "rich.console.Console.render",
+        "rich.console.Console",
+        "tests.render.render",
+        "tests.test_markdown.render",
+        "rich.print",
+        "rich.layout.Layout.render",
+        "rich.logging.RichHandler.render"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-002",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.14285714285714285,
+      "retrieved": [
+        "rich.console.Console",
+        "rich.console.Console.width",
+        "rich.console.Console.width",
+        "rich.measure.measure_renderables",
+        "rich.measure.Measurement.get",
+        "rich.live.Live.renderable",
+        "rich.console.Console.measure",
+        "rich.panel.Panel.__rich_measure__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-002",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "rich.console.Console",
+        "rich.console.Console.width",
+        "rich.console.Console.width",
+        "rich.measure.measure_renderables",
+        "rich.measure.Measurement.get",
+        "rich.panel.Panel.__rich_measure__",
+        "rich.measure",
+        "rich.console.ConsoleOptions"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-002",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.14285714285714285,
+      "retrieved": [
+        "rich.console.Console",
+        "rich.console.Console.width",
+        "rich.console.Console.width",
+        "rich.measure.measure_renderables",
+        "rich.measure.Measurement.get",
+        "rich.live.Live.renderable",
+        "rich.console.Console.measure",
+        "rich.panel.Panel.__rich_measure__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-003",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "rich.console.Console",
+        "rich.console.Console._render_buffer",
+        "rich.segment.Segments",
+        "rich.console.Console.render",
+        "rich.console.Console.print",
+        "rich.console.Console.export_svg",
+        "rich.segment.Segments.__rich_console__",
+        "rich.console.Console.log"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-003",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "rich.console.Console",
+        "rich.console.Console._render_buffer",
+        "rich.segment.Segments",
+        "rich.console.Console.render",
+        "rich.console.ConsoleDimensions",
+        "rich.console.ConsoleOptions",
+        "rich.console",
+        "tests.test_padding.test_rich_console"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-003",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "rich.console.Console",
+        "rich.console.Console._render_buffer",
+        "rich.segment.Segments",
+        "rich.console.Console.render",
+        "rich.console.Console.print",
+        "rich.console.Console.export_svg",
+        "rich.segment.Segments.__rich_console__",
+        "rich.console.Console.log"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-001",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController.processFindForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.initFindForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.processCreationForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.processUpdateOwnerForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.findOwner"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-001",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController.processFindForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.initFindForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.processCreationForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.processUpdateOwnerForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.findOwner"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-001",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController.processFindForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.initFindForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.processCreationForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.processUpdateOwnerForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.findOwner"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-002",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController.initCreationForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.processCreationForm",
+        "org.springframework.samples.petclinic.owner.PetController.initCreationForm",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.PetController"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-002",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController.initCreationForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.processCreationForm",
+        "org.springframework.samples.petclinic.owner.PetController.initCreationForm",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.PetController"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-002",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController.initCreationForm",
+        "org.springframework.samples.petclinic.owner.OwnerController.processCreationForm",
+        "org.springframework.samples.petclinic.owner.PetController.initCreationForm",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.PetController"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-003",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.VisitController",
+        "org.springframework.samples.petclinic.owner.VisitController.VisitController",
+        "org.springframework.samples.petclinic.owner.PetController.PetController",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.VisitController"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-003",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.VisitController",
+        "org.springframework.samples.petclinic.owner.VisitController.VisitController",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.VisitController",
+        "org.springframework.samples.petclinic.owner.OwnerRepository"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-003",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.VisitController",
+        "org.springframework.samples.petclinic.owner.VisitController.VisitController",
+        "org.springframework.samples.petclinic.owner.PetController.PetController",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.VisitController"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-001",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.StringUtils.isEmpty",
+        "org.apache.commons.lang3.StringUtils",
+        "org.apache.commons.lang3.StringUtils.firstNonEmpty",
+        "org.apache.commons.lang3.ObjectUtils.isEmpty",
+        "org.apache.commons.lang3.StringUtils.toCodePoints",
+        "org.apache.commons.lang3.StringUtils.isAnyEmpty",
+        "org.apache.commons.lang3.Strings",
+        "org.apache.commons.lang3.StringUtils.isAllEmpty"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-001",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.StringUtils.isEmpty",
+        "org.apache.commons.lang3.StringUtils",
+        "org.apache.commons.lang3.StringUtils.firstNonEmpty",
+        "org.apache.commons.lang3.ObjectUtils.isEmpty",
+        "org.apache.commons.lang3.StringUtils.toCodePoints",
+        "org.apache.commons.lang3.StringUtils.isAnyEmpty",
+        "org.apache.commons.lang3.StringUtils.isNotEmpty",
+        "org.apache.commons.lang3.StringUtils.defaultIfEmpty"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-001",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.StringUtils.isEmpty",
+        "org.apache.commons.lang3.StringUtils",
+        "org.apache.commons.lang3.StringUtils.firstNonEmpty",
+        "org.apache.commons.lang3.ObjectUtils.isEmpty",
+        "org.apache.commons.lang3.StringUtils.toCodePoints",
+        "org.apache.commons.lang3.StringUtils.isAnyEmpty",
+        "org.apache.commons.lang3.Strings",
+        "org.apache.commons.lang3.StringUtils.isAllEmpty"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-002",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.apache.commons.lang3.text.WordUtils",
+        "org.apache.commons.lang3.text.WordUtils",
+        "org.apache.commons.lang3.StringUtils",
+        "org.apache.commons.lang3.text.WordUtils.swapCase",
+        "org.apache.commons.lang3.StringUtils.isWhitespace",
+        "org.apache.commons.lang3.StringUtils.containsWhitespace",
+        "org.apache.commons.lang3.StringUtils.deleteWhitespace",
+        "org.apache.commons.lang3.StringUtils.normalizeSpace"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-002",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.apache.commons.lang3.text.WordUtils",
+        "org.apache.commons.lang3.text.WordUtils",
+        "org.apache.commons.lang3.StringUtils",
+        "org.apache.commons.lang3.text.WordUtils.swapCase",
+        "org.apache.commons.lang3.StringUtils.isWhitespace",
+        "org.apache.commons.lang3.text.StrTokenizer",
+        "org.apache.commons.lang3.text.ExtendedMessageFormat"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-002",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.apache.commons.lang3.text.WordUtils",
+        "org.apache.commons.lang3.text.WordUtils",
+        "org.apache.commons.lang3.StringUtils",
+        "org.apache.commons.lang3.text.WordUtils.swapCase",
+        "org.apache.commons.lang3.StringUtils.isWhitespace",
+        "org.apache.commons.lang3.StringUtils.containsWhitespace",
+        "org.apache.commons.lang3.StringUtils.deleteWhitespace",
+        "org.apache.commons.lang3.StringUtils.normalizeSpace"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-003",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "org.apache.commons.lang3.Validate.notBlank",
+        "org.apache.commons.lang3.Validate.notBlank",
+        "org.apache.commons.lang3.StringUtils.isNotBlank",
+        "org.apache.commons.lang3.StringUtils.isAllBlank",
+        "org.apache.commons.lang3.StringUtils.isBlank",
+        "org.apache.commons.lang3.StringUtils.isAnyBlank",
+        "org.apache.commons.lang3.StringUtils.firstNonBlank",
+        "org.apache.commons.lang3.StringUtils.isNoneBlank"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-003",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "org.apache.commons.lang3.Validate.notBlank",
+        "org.apache.commons.lang3.Validate.notBlank",
+        "org.apache.commons.lang3.StringUtils.isNotBlank",
+        "org.apache.commons.lang3.StringUtils.isAllBlank",
+        "org.apache.commons.lang3.StringUtils.isBlank",
+        "org.apache.commons.lang3.StringUtils.isAnyBlank",
+        "org.apache.commons.lang3.StringUtils.firstNonBlank",
+        "org.apache.commons.lang3.StringUtils.isNoneBlank"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-003",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "org.apache.commons.lang3.Validate.notBlank",
+        "org.apache.commons.lang3.Validate.notBlank",
+        "org.apache.commons.lang3.StringUtils.isNotBlank",
+        "org.apache.commons.lang3.StringUtils.isAllBlank",
+        "org.apache.commons.lang3.StringUtils.isBlank",
+        "org.apache.commons.lang3.StringUtils.isAnyBlank",
+        "org.apache.commons.lang3.StringUtils.firstNonBlank",
+        "org.apache.commons.lang3.StringUtils.isNoneBlank"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-001",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.internal.MockitoCore.mock",
+        "org.mockito.mock.MockCreationSettings.isUsingConstructor",
+        "org.mockito.internal.MockitoCore",
+        "org.mockito.internal.MockitoCore.mockStatic",
+        "org.mockito.Mockito.mock",
+        "org.mockito.internal.framework.DisabledMockHandler.DisabledMockCreationSettings.isUsingConstructor",
+        "org.mockito.internal.MockitoCore.mockSingleton",
+        "org.mockito.mock.MockCreationSettings"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-001",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.internal.MockitoCore.mock",
+        "org.mockito.mock.MockCreationSettings.isUsingConstructor",
+        "org.mockito.internal.MockitoCore",
+        "org.mockito.internal.MockitoCore.mockStatic",
+        "org.mockito.internal.MockitoCore.mockSingleton",
+        "org.mockito.mock.MockCreationSettings",
+        "org.mockito.internal.MockitoCore.mockConstruction",
+        "org.mockito.mock.MockCreationSettings"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-001",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.internal.MockitoCore.mock",
+        "org.mockito.mock.MockCreationSettings.isUsingConstructor",
+        "org.mockito.internal.MockitoCore",
+        "org.mockito.internal.MockitoCore.mockStatic",
+        "org.mockito.Mockito.mock",
+        "org.mockito.internal.framework.DisabledMockHandler.DisabledMockCreationSettings.isUsingConstructor",
+        "org.mockito.internal.MockitoCore.mockSingleton",
+        "org.mockito.mock.MockCreationSettings"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-002",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.internal.MockitoCore.verify",
+        "org.mockito.internal.InOrderImpl.verify",
+        "org.mockito.Mockito.verify",
+        "org.mockito.verification.VerificationMode.verify",
+        "org.mockito.internal.verification.MockAwareVerificationMode.verify",
+        "org.mockito.internal.InOrderImpl.verify",
+        "org.mockito.MockedStatic.verify",
+        "org.mockito.InOrder.verify"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-002",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.internal.MockitoCore.verify",
+        "org.mockito.internal.InOrderImpl.verify",
+        "org.mockito.Mockito.verify",
+        "org.mockito.verification.VerificationMode.verify",
+        "org.mockito.internal.InOrderImpl.verify",
+        "org.mockito.internal.InOrderImpl.verify",
+        "org.mockito.internal.MockitoCore",
+        "org.mockito.verification.VerificationMode"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-002",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.internal.MockitoCore.verify",
+        "org.mockito.internal.InOrderImpl.verify",
+        "org.mockito.Mockito.verify",
+        "org.mockito.verification.VerificationMode.verify",
+        "org.mockito.internal.verification.MockAwareVerificationMode.verify",
+        "org.mockito.internal.InOrderImpl.verify",
+        "org.mockito.MockedStatic.verify",
+        "org.mockito.InOrder.verify"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-003",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.mockito.internal.creation.proxy.ProxyMockMaker.MockInvocationHandler.MockInvocationHandler",
+        "org.mockito.invocation.Invocation",
+        "org.mockito.internal.handler.InvocationNotifierHandler",
+        "org.mockito.internal.handler.InvocationNotifierHandler",
+        "org.mockito.internal.handler.InvocationNotifierHandler.InvocationNotifierHandler",
+        "org.mockito.internal.invocation.InvocationBuilder.mock",
+        "org.mockito.invocation.MockHandler.handle",
+        "org.mockito.invocation.MockHandler"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-003",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.mockito.internal.creation.proxy.ProxyMockMaker.MockInvocationHandler.MockInvocationHandler",
+        "org.mockito.invocation.Invocation",
+        "org.mockito.internal.handler.InvocationNotifierHandler",
+        "org.mockito.internal.handler.InvocationNotifierHandler",
+        "org.mockito.invocation.MockHandler.handle",
+        "org.mockito.invocation.MockHandler",
+        "org.mockito.invocation.MockHandler",
+        "org.mockito.internal.handler.MockHandlerImpl"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-003",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.mockito.internal.creation.proxy.ProxyMockMaker.MockInvocationHandler.MockInvocationHandler",
+        "org.mockito.invocation.Invocation",
+        "org.mockito.internal.handler.InvocationNotifierHandler",
+        "org.mockito.internal.handler.InvocationNotifierHandler",
+        "org.mockito.internal.handler.InvocationNotifierHandler.InvocationNotifierHandler",
+        "org.mockito.internal.invocation.InvocationBuilder.mock",
+        "org.mockito.invocation.MockHandler.handle",
+        "org.mockito.invocation.MockHandler"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-runtime-001",
+      "repository": "flask",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "flask.app.Flask",
+        "flask.sessions.SecureCookieSessionInterface.get_signing_serializer",
+        "flask.sessions",
+        "docs/config.rst#L501",
+        "flask.app.Flask.test_cli_runner",
+        "flask.app.Flask.app_context",
+        "flask.config",
+        "flask.app.Flask.get_send_file_max_age"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-runtime-001",
+      "repository": "flask",
+      "split": "development",
+      "mode": "graph",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "flask.app.Flask",
+        "flask.sessions.SecureCookieSessionInterface.get_signing_serializer",
+        "flask.sessions",
+        "docs/config.rst#L501",
+        "flask.app.Flask.test_cli_runner",
+        "flask.app.Flask.app_context",
+        "flask.wrappers",
+        "flask.json"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-runtime-001",
+      "repository": "flask",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "flask.app.Flask",
+        "flask.sessions.SecureCookieSessionInterface.get_signing_serializer",
+        "flask.sessions",
+        "docs/config.rst#L501",
+        "flask.app.Flask.test_cli_runner",
+        "flask.app.Flask.app_context",
+        "flask.config",
+        "flask.app.Flask.get_send_file_max_age"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-runtime-001",
+      "repository": "requests",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "requests.status_codes",
+        "docs/user/authentication.rst#L101",
+        "requests.models",
+        "requests.auth",
+        "requests.adapters",
+        "requests"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-runtime-001",
+      "repository": "requests",
+      "split": "development",
+      "mode": "graph",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "requests.status_codes",
+        "docs/user/authentication.rst#L101",
+        "requests.models",
+        "requests.auth",
+        "requests.adapters",
+        "requests"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-runtime-001",
+      "repository": "requests",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "requests.status_codes",
+        "docs/user/authentication.rst#L101",
+        "requests.models",
+        "requests.auth",
+        "requests.adapters",
+        "requests"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-runtime-001",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "httpx._exceptions.NetworkError",
+        "httpx._exceptions",
+        "httpx._status_codes",
+        "docs/advanced/clients.md",
+        "httpx",
+        "httpx._exceptions.ReadError",
+        "httpx._types",
+        "httpx._exceptions.WriteError"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-runtime-001",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "graph",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "httpx._exceptions.NetworkError",
+        "httpx._exceptions",
+        "httpx._status_codes",
+        "docs/advanced/clients.md",
+        "httpx",
+        "httpx._exceptions.ReadError",
+        "httpx._types",
+        "httpx._exceptions.WriteError"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-runtime-001",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "httpx._exceptions.NetworkError",
+        "httpx._exceptions",
+        "httpx._status_codes",
+        "docs/advanced/clients.md",
+        "httpx",
+        "httpx._exceptions.ReadError",
+        "httpx._types",
+        "httpx._exceptions.WriteError"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-runtime-001",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "testing.plugins_integration.pytest_rerunfailures_integration.MyTestCase.test_fail_the_first_time",
+        "testing.plugins_integration.pytest_rerunfailures_integration.MyTestCase",
+        "testing.test_unittest.test_do_cleanups_on_success",
+        "testing.test_unittest.test_do_cleanups_on_setup_failure",
+        "_pytest.stepwise.StepwisePlugin.pytest_runtest_logreport",
+        "doc/en/how-to/cache.rst#L301",
+        "testing.test_unittest.test_do_cleanups_on_teardown_failure",
+        "testing.test_stepwise.test_reset"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-runtime-001",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "graph",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "testing.plugins_integration.pytest_rerunfailures_integration.MyTestCase.test_fail_the_first_time",
+        "testing.plugins_integration.pytest_rerunfailures_integration.MyTestCase",
+        "testing.test_unittest.test_do_cleanups_on_success",
+        "testing.test_unittest.test_do_cleanups_on_setup_failure",
+        "testing.test_unittest.test_do_cleanups_on_teardown_failure",
+        "testing.test_unittest.TestTrialUnittest",
+        "testing.test_unittest",
+        "testing.test_unittest.test_teardown"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-runtime-001",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "testing.plugins_integration.pytest_rerunfailures_integration.MyTestCase.test_fail_the_first_time",
+        "testing.plugins_integration.pytest_rerunfailures_integration.MyTestCase",
+        "testing.test_unittest.test_do_cleanups_on_success",
+        "testing.test_unittest.test_do_cleanups_on_setup_failure",
+        "_pytest.stepwise.StepwisePlugin.pytest_runtest_logreport",
+        "doc/en/how-to/cache.rst#L301",
+        "testing.test_unittest.test_do_cleanups_on_teardown_failure",
+        "testing.test_stepwise.test_reset"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-runtime-001",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "rich.color.Color",
+        "rich.color.ColorSystem",
+        "rich.color.Color.get_truecolor",
+        "rich.console.Console.is_terminal",
+        "rich.terminal_theme.TerminalTheme",
+        "rich.console.Console.set_window_title",
+        "docs/source/console.rst",
+        "rich.console._is_jupyter"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-runtime-001",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "rich.color.Color",
+        "rich.color.ColorSystem",
+        "rich.color.Color.get_truecolor",
+        "rich.console.Console.is_terminal",
+        "rich.terminal_theme.TerminalTheme",
+        "rich.console._is_jupyter",
+        "rich.terminal_theme",
+        "rich.ansi.AnsiDecoder"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-runtime-001",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "rich.color.Color",
+        "rich.color.ColorSystem",
+        "rich.color.Color.get_truecolor",
+        "rich.console.Console.is_terminal",
+        "rich.terminal_theme.TerminalTheme",
+        "rich.console.Console.set_window_title",
+        "docs/source/console.rst",
+        "rich.console._is_jupyter"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-runtime-001",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController.findOwner",
+        "org.springframework.samples.petclinic.service.ClinicServiceTests.shouldInsertPetIntoDatabaseAndGenerateId",
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.MySqlIntegrationTests.ownerDetails",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.MySqlIntegrationTests",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.PetClinicApplication"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-runtime-001",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController.findOwner",
+        "org.springframework.samples.petclinic.service.ClinicServiceTests.shouldInsertPetIntoDatabaseAndGenerateId",
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.MySqlIntegrationTests.ownerDetails",
+        "org.springframework.samples.petclinic.MySqlIntegrationTests",
+        "org.springframework.samples.petclinic.owner.OwnerController.initUpdateOwnerForm",
+        "org.springframework.samples.petclinic.service.ClinicServiceTests.shouldUpdateOwner",
+        "org.springframework.samples.petclinic.owner.OwnerController.showOwner"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-runtime-001",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController.findOwner",
+        "org.springframework.samples.petclinic.service.ClinicServiceTests.shouldInsertPetIntoDatabaseAndGenerateId",
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.MySqlIntegrationTests.ownerDetails",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.MySqlIntegrationTests",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.PetClinicApplication"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-runtime-001",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.apache.commons.lang3.StringUtils.isBlank",
+        "org.apache.commons.lang3.StringUtils",
+        "org.apache.commons.lang3.util.IterableStringTokenizer.iterator.next",
+        "org.apache.commons.lang3.RandomStringUtils.next",
+        "org.apache.commons.lang3.RandomStringUtils.next",
+        "org.apache.commons.lang3.RandomStringUtils.next",
+        "org.apache.commons.lang3.RandomStringUtils.next",
+        "org.apache.commons.lang3.RandomStringUtils.next"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-runtime-001",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "graph",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.apache.commons.lang3.StringUtils.isBlank",
+        "org.apache.commons.lang3.StringUtils",
+        "org.apache.commons.lang3.util.IterableStringTokenizer.iterator.next",
+        "org.apache.commons.lang3.RandomStringUtils.next",
+        "org.apache.commons.lang3.StringUtils.length",
+        "org.apache.commons.lang3.StringUtils.isNotBlank",
+        "org.apache.commons.lang3.StringUtils.defaultIfBlank",
+        "org.apache.commons.lang3.StringUtils.getIfBlank"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-runtime-001",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.apache.commons.lang3.StringUtils.isBlank",
+        "org.apache.commons.lang3.StringUtils",
+        "org.apache.commons.lang3.util.IterableStringTokenizer.iterator.next",
+        "org.apache.commons.lang3.RandomStringUtils.next",
+        "org.apache.commons.lang3.RandomStringUtils.next",
+        "org.apache.commons.lang3.RandomStringUtils.next",
+        "org.apache.commons.lang3.RandomStringUtils.next",
+        "org.apache.commons.lang3.RandomStringUtils.next"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-runtime-001",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor.doIntercept",
+        "org.mockitousage.junitrunner.StrictRunnerTest.StubbingInTestUsed.test",
+        "org.mockitousage.junitrunner.StrictRunnerTest.StubbingInTestUnused.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.FailingWithSomeStubMismatches.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.MismatchButStubAlreadyUsed.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.PassingArgMismatch.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.FailingWithArgMismatch.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.FailingWithMatchingArgs.test"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-runtime-001",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "graph",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor.doIntercept",
+        "org.mockitousage.junitrunner.StrictRunnerTest.StubbingInTestUsed.test",
+        "org.mockitousage.junitrunner.StrictRunnerTest.StubbingInTestUnused.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.FailingWithSomeStubMismatches.test",
+        "org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor",
+        "org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor",
+        "org.mockitousage.junitrunner.StrictRunnerTest",
+        "org.mockitousage.junitrunner.StrictRunnerTest.StubbingInTestUsed"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-runtime-001",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": false,
+      "recall_at_8": null,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor.doIntercept",
+        "org.mockitousage.junitrunner.StrictRunnerTest.StubbingInTestUsed.test",
+        "org.mockitousage.junitrunner.StrictRunnerTest.StubbingInTestUnused.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.FailingWithSomeStubMismatches.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.MismatchButStubAlreadyUsed.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.PassingArgMismatch.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.FailingWithArgMismatch.test",
+        "org.mockitousage.junitrunner.StubbingWarningsJUnitRunnerTest.FailingWithMatchingArgs.test"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-006",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.BitField.clear",
+        "org.apache.commons.lang3.BitField.clear",
+        "org.apache.commons.lang3.BitField",
+        "org.apache.commons.lang3.BitField.BitField",
+        "org.apache.commons.lang3.BitField.BitField",
+        "org.apache.commons.lang3.util.FluentBitSet.clear",
+        "org.apache.commons.lang3.util.FluentBitSet.clear",
+        "org.apache.commons.lang3.util.FluentBitSet.clear"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-006",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.BitField.clear",
+        "org.apache.commons.lang3.BitField.clear",
+        "org.apache.commons.lang3.BitField",
+        "org.apache.commons.lang3.BitField.BitField",
+        "org.apache.commons.lang3.BitField.intMask",
+        "org.apache.commons.lang3.BitField.BitField",
+        "org.apache.commons.lang3.BitField",
+        "org.apache.commons.lang3.BitField.isSet"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-006",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.BitField.clear",
+        "org.apache.commons.lang3.BitField.clear",
+        "org.apache.commons.lang3.BitField",
+        "org.apache.commons.lang3.BitField.BitField",
+        "org.apache.commons.lang3.BitField.BitField",
+        "org.apache.commons.lang3.util.FluentBitSet.clear",
+        "org.apache.commons.lang3.util.FluentBitSet.clear",
+        "org.apache.commons.lang3.util.FluentBitSet.clear"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-013",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.apache.commons.lang3.CharSetUtils",
+        "org.apache.commons.lang3.CharUtils",
+        "org.apache.commons.lang3.CharUtils",
+        "org.apache.commons.lang3.CharSetUtils",
+        "org.apache.commons.lang3.CharSet"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-013",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "org.apache.commons.lang3.CharSetUtils",
+        "org.apache.commons.lang3.CharUtils",
+        "org.apache.commons.lang3.CharUtils",
+        "org.apache.commons.lang3.CharSetUtils",
+        "org.apache.commons.lang3.CharSetUtils.squeeze",
+        "org.apache.commons.lang3.CharSetUtils.containsAny",
+        "org.apache.commons.lang3.CharUtils.toString",
+        "org.apache.commons.lang3.CharUtils.toCharacterObject"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-013",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.apache.commons.lang3.CharSetUtils",
+        "org.apache.commons.lang3.CharUtils",
+        "org.apache.commons.lang3.CharUtils",
+        "org.apache.commons.lang3.CharSetUtils",
+        "org.apache.commons.lang3.CharSet"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-003",
+      "repository": "flask",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.cli.find_best_app",
+        "flask.sansio.app.App",
+        "flask.app.Flask",
+        "flask.cli",
+        "flask.cli.run_command.app",
+        "flask.cli.find_app_by_string",
+        "tests.test_cli.test_find_best_app.Module",
+        "flask.app.Flask.__init__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-003",
+      "repository": "flask",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.cli.find_best_app",
+        "flask.sansio.app.App",
+        "flask.app.Flask",
+        "flask.cli",
+        "flask.cli.find_app_by_string",
+        "flask.app"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-003",
+      "repository": "flask",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.cli.find_best_app",
+        "flask.sansio.app.App",
+        "flask.app.Flask",
+        "flask.cli",
+        "flask.cli.find_app_by_string",
+        "flask.app"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-009",
+      "repository": "flask",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.json.dumps",
+        "flask.json.jsonify",
+        "flask.json.provider.JSONProvider.dumps",
+        "flask.json.provider.DefaultJSONProvider.dumps",
+        "flask.app.Flask",
+        "flask.json.tag.TaggedJSONSerializer.dumps",
+        "flask.json.dump",
+        "flask.json"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-009",
+      "repository": "flask",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.json.dumps",
+        "flask.json.jsonify",
+        "flask.json.provider.JSONProvider.dumps",
+        "flask.json.provider.DefaultJSONProvider.dumps",
+        "flask.json.tag",
+        "flask.json",
+        "flask.json.tag.TaggedJSONSerializer.dumps",
+        "tests.test_json.test_json_attr"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-009",
+      "repository": "flask",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.json.dumps",
+        "flask.json.jsonify",
+        "flask.json.provider.JSONProvider.dumps",
+        "flask.json.provider.DefaultJSONProvider.dumps",
+        "flask.app.Flask",
+        "flask.json.tag.TaggedJSONSerializer.dumps",
+        "flask.json.dump",
+        "flask.json"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-003",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._auth.Auth.auth_flow",
+        "httpx._auth.Auth",
+        "httpx._models.Response.request",
+        "httpx._models.Response.request",
+        "httpx._auth.Auth.sync_auth_flow",
+        "httpx._transports.asgi.ASGITransport.handle_async_request.receive",
+        "httpx._auth.Auth.async_auth_flow",
+        "httpx._client.BaseClient.auth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-003",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._auth.Auth.auth_flow",
+        "httpx._auth.Auth",
+        "httpx._models.Response.request",
+        "httpx._models.Response.request",
+        "httpx._auth.Auth.sync_auth_flow",
+        "httpx._auth.Auth.async_auth_flow",
+        "httpx._models.Response",
+        "httpx._auth.DigestAuth.auth_flow"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-003",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._auth.Auth.auth_flow",
+        "httpx._auth.Auth",
+        "httpx._models.Response.request",
+        "httpx._models.Response.request",
+        "httpx._auth.Auth.sync_auth_flow",
+        "httpx._transports.asgi.ASGITransport.handle_async_request.receive",
+        "httpx._auth.Auth.async_auth_flow",
+        "httpx._client.BaseClient.auth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-005",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._config.create_ssl_context",
+        "docs/advanced/ssl.md",
+        "docs/environment_variables.md",
+        "docs/contributing.md#L201",
+        "httpx._config",
+        "httpx._main.format_certificate",
+        "tests.test_config.test_load_ssl_config_no_verify",
+        "httpx._transports.default.HTTPTransport.__init__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-005",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._config.create_ssl_context",
+        "docs/advanced/ssl.md",
+        "docs/environment_variables.md",
+        "docs/contributing.md#L201",
+        "httpx._config",
+        "httpx._transports.default.HTTPTransport.__init__",
+        "httpx._transports.default.AsyncHTTPTransport.__init__",
+        "httpx._transports.default.HTTPTransport"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-005",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._config.create_ssl_context",
+        "docs/advanced/ssl.md",
+        "docs/environment_variables.md",
+        "docs/contributing.md#L201",
+        "httpx._config",
+        "httpx._main.format_certificate",
+        "tests.test_config.test_load_ssl_config_no_verify",
+        "httpx._transports.default.HTTPTransport.__init__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-004",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.ArgumentCaptor.capture",
+        "org.mockito.ArgumentCaptor.ArgumentCaptor",
+        "org.mockito.ArgumentCaptor",
+        "org.mockito.ArgumentCaptor",
+        "org.mockito.ArgumentCaptor.captor",
+        "org.mockito.ArgumentCaptor.getValue",
+        "org.mockito.ArgumentCaptor.getAllValues",
+        "org.mockitousage.matchers.VarargsTest.shouldNotCaptureVarArgs_3argsCaptorMatcherMix"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-004",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.ArgumentCaptor.capture",
+        "org.mockito.ArgumentCaptor.ArgumentCaptor",
+        "org.mockito.ArgumentCaptor",
+        "org.mockito.ArgumentCaptor",
+        "org.mockito.ArgumentCaptor.captor",
+        "org.mockito.ArgumentCaptor.getValue",
+        "org.mockito.ArgumentCaptor.getAllValues",
+        "org.mockitousage.verification.VerificationWithAfterAndCaptorTest"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-004",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.ArgumentCaptor.capture",
+        "org.mockito.ArgumentCaptor.ArgumentCaptor",
+        "org.mockito.ArgumentCaptor",
+        "org.mockito.ArgumentCaptor",
+        "org.mockito.ArgumentCaptor.captor",
+        "org.mockito.ArgumentCaptor.getValue",
+        "org.mockito.ArgumentCaptor.getAllValues",
+        "org.mockitousage.matchers.VarargsTest.shouldNotCaptureVarArgs_3argsCaptorMatcherMix"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-010",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.mockito.MockitoAnnotations",
+        "org.mockito.internal.creation.bytebuddy.MockMethodAdvice.handle",
+        "org.mockito.session.MockitoSessionBuilder",
+        "org.mockito.internal.creation.bytebuddy.inject.MockMethodDispatcher.handle",
+        "org.mockito.AnnotationsAreCopiedFromMockedTypeTest.OnMethod.method",
+        "org.mockito.AnnotationsAreCopiedFromMockedTypeTest.method",
+        "org.mockito.internal.handler.InvocationNotifierHandler.handle",
+        "org.mockito.session.MockitoSessionBuilder"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-010",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.mockito.MockitoAnnotations",
+        "org.mockito.internal.creation.bytebuddy.MockMethodAdvice.handle",
+        "org.mockito.session.MockitoSessionBuilder",
+        "org.mockito.internal.creation.bytebuddy.inject.MockMethodDispatcher.handle",
+        "org.mockito.session.MockitoSessionBuilder",
+        "org.mockito.MockitoAnnotations",
+        "org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest",
+        "org.mockitousage.annotation.MockInjectionUsingSetterOrPropertyTest"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-010",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.mockito.MockitoAnnotations",
+        "org.mockito.internal.creation.bytebuddy.MockMethodAdvice.handle",
+        "org.mockito.session.MockitoSessionBuilder",
+        "org.mockito.internal.creation.bytebuddy.inject.MockMethodDispatcher.handle",
+        "org.mockito.AnnotationsAreCopiedFromMockedTypeTest.OnMethod.method",
+        "org.mockito.AnnotationsAreCopiedFromMockedTypeTest.method",
+        "org.mockito.internal.handler.InvocationNotifierHandler.handle",
+        "org.mockito.session.MockitoSessionBuilder"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-010",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.PetValidator.validate",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.owner.PetValidator",
+        "org.springframework.samples.petclinic.owner.PetValidator",
+        "org.springframework.samples.petclinic.owner.PetController.processCreationForm",
+        "org.springframework.samples.petclinic.owner.PetController",
+        "org.springframework.samples.petclinic.PetClinicApplication",
+        "org.springframework.samples.petclinic.PetClinicApplication"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-010",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.PetValidator.validate",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.owner.PetValidator",
+        "org.springframework.samples.petclinic.owner.PetValidator",
+        "org.springframework.samples.petclinic.owner.Pet.setBirthDate",
+        "org.springframework.samples.petclinic.owner.Pet.getBirthDate",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.owner.PetType"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-010",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.PetValidator.validate",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.owner.PetValidator",
+        "org.springframework.samples.petclinic.owner.PetValidator",
+        "org.springframework.samples.petclinic.owner.PetController.processCreationForm",
+        "org.springframework.samples.petclinic.owner.PetController",
+        "org.springframework.samples.petclinic.PetClinicApplication",
+        "org.springframework.samples.petclinic.PetClinicApplication"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-017",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "org.springframework.samples.petclinic.vet.Vets",
+        "org.springframework.samples.petclinic.vet.VetController.showVetList",
+        "org.springframework.samples.petclinic.vet.VetController",
+        "org.springframework.samples.petclinic.vet.VetController",
+        "org.springframework.samples.petclinic.vet.VetControllerTests.showVetListHtml",
+        "org.springframework.samples.petclinic.vet.Vets.getVetList",
+        "org.springframework.samples.petclinic.vet.VetController.showResourcesVetList",
+        "org.springframework.samples.petclinic.vet.VetController.addPaginationModel"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-017",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "org.springframework.samples.petclinic.vet.Vets",
+        "org.springframework.samples.petclinic.vet.VetController.showVetList",
+        "org.springframework.samples.petclinic.vet.VetController",
+        "org.springframework.samples.petclinic.vet.VetController",
+        "org.springframework.samples.petclinic.vet.Vets.getVetList",
+        "org.springframework.samples.petclinic.vet.VetController.showResourcesVetList",
+        "org.springframework.samples.petclinic.vet.VetController.addPaginationModel",
+        "org.springframework.samples.petclinic.vet.VetController.findPaginated"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-017",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "org.springframework.samples.petclinic.vet.Vets",
+        "org.springframework.samples.petclinic.vet.VetController.showVetList",
+        "org.springframework.samples.petclinic.vet.VetController",
+        "org.springframework.samples.petclinic.vet.VetController",
+        "org.springframework.samples.petclinic.vet.VetControllerTests.showVetListHtml",
+        "org.springframework.samples.petclinic.vet.Vets.getVetList",
+        "org.springframework.samples.petclinic.vet.VetController.showResourcesVetList",
+        "org.springframework.samples.petclinic.vet.VetController.addPaginationModel"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-022",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "_pytest.assertion.util.format_explanation",
+        "_pytest.assertion.rewrite.AssertionRewriter.helper",
+        "_pytest.assertion.pytest_runtest_protocol",
+        "_pytest.assertion.pytest_runtest_protocol.callbinrepr",
+        "_pytest.assertion.util",
+        "_pytest.assertion.rewrite._format_boolop",
+        "_pytest.assertion.rewrite._saferepr",
+        "_pytest.assertion.rewrite._format_assertmsg"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-022",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "_pytest.assertion.util.format_explanation",
+        "_pytest.assertion.rewrite.AssertionRewriter.helper",
+        "_pytest.assertion.pytest_runtest_protocol",
+        "_pytest.assertion.pytest_runtest_protocol.callbinrepr",
+        "_pytest.assertion.util",
+        "_pytest.assertion.rewrite._format_boolop",
+        "_pytest.assertion.rewrite._saferepr",
+        "_pytest.assertion.rewrite._format_assertmsg"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-022",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "_pytest.assertion.util.format_explanation",
+        "_pytest.assertion.rewrite.AssertionRewriter.helper",
+        "_pytest.assertion.pytest_runtest_protocol",
+        "_pytest.assertion.pytest_runtest_protocol.callbinrepr",
+        "_pytest.assertion.util",
+        "_pytest.assertion.rewrite._format_boolop",
+        "_pytest.assertion.rewrite._saferepr",
+        "_pytest.assertion.rewrite._format_assertmsg"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-023",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "_pytest.nodes.Directory",
+        "_pytest.cacheprovider.Cache",
+        "_pytest.cacheprovider._make_cachedir",
+        "_pytest.cacheprovider.Cache._ensure_cache_dir_and_supporting_files",
+        "_pytest._py.path.LocalPath.rename",
+        "_pytest.cacheprovider.Cache.mkdir",
+        "_pytest.assertion.rewrite.AssertionRewritingHook.exec_module",
+        "_pytest.cacheprovider.Cache.clear_cache"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-023",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "_pytest.nodes.Directory",
+        "_pytest.cacheprovider.Cache",
+        "_pytest.cacheprovider._make_cachedir",
+        "_pytest.cacheprovider.Cache._ensure_cache_dir_and_supporting_files",
+        "_pytest.cacheprovider.Cache.mkdir",
+        "_pytest.cacheprovider.Cache.clear_cache",
+        "_pytest.cacheprovider",
+        "_pytest.cacheprovider.Cache._mkdir"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-023",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "_pytest.nodes.Directory",
+        "_pytest.cacheprovider.Cache",
+        "_pytest.cacheprovider._make_cachedir",
+        "_pytest.cacheprovider.Cache._ensure_cache_dir_and_supporting_files",
+        "_pytest._py.path.LocalPath.rename",
+        "_pytest.cacheprovider.Cache.mkdir",
+        "_pytest.assertion.rewrite.AssertionRewritingHook.exec_module",
+        "_pytest.cacheprovider.Cache.clear_cache"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-012",
+      "repository": "requests",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.models.RequestEncodingMixin.path_url",
+        "requests.api.request",
+        "requests.sessions.Session.request",
+        "requests.models.Request",
+        "requests.adapters.HTTPAdapter.request_url",
+        "requests.models.PreparedRequest.prepare_url",
+        "requests.models.PreparedRequest",
+        "requests.utils.prepend_scheme_if_needed"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-012",
+      "repository": "requests",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.models.RequestEncodingMixin.path_url",
+        "requests.api.request",
+        "requests.sessions.Session.request",
+        "requests.models.Request",
+        "requests.adapters.HTTPAdapter.request_url",
+        "requests.models.PreparedRequest",
+        "requests.utils.prepend_scheme_if_needed",
+        "requests.models.Request.__init__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-012",
+      "repository": "requests",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.models.RequestEncodingMixin.path_url",
+        "requests.api.request",
+        "requests.sessions.Session.request",
+        "requests.models.Request",
+        "requests.adapters.HTTPAdapter.request_url",
+        "requests.models.PreparedRequest.prepare_url",
+        "requests.models.PreparedRequest",
+        "requests.utils.prepend_scheme_if_needed"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-013",
+      "repository": "requests",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "requests.sessions.Session.request",
+        "requests.sessions.Session.prepare_request",
+        "requests.sessions.Session",
+        "requests.sessions.merge_setting",
+        "requests.sessions.session",
+        "requests.sessions.Session.merge_environment_settings",
+        "requests.api.request",
+        "requests.sessions.merge_hooks"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-013",
+      "repository": "requests",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "requests.sessions.Session.request",
+        "requests.sessions.Session.prepare_request",
+        "requests.sessions.Session",
+        "requests.sessions.merge_setting",
+        "requests.sessions.session",
+        "requests.sessions.Session.merge_environment_settings",
+        "requests.api.request",
+        "requests.sessions.merge_hooks"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-013",
+      "repository": "requests",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "requests.sessions.Session.request",
+        "requests.sessions.Session.prepare_request",
+        "requests.sessions.Session",
+        "requests.sessions.merge_setting",
+        "requests.sessions.session",
+        "requests.sessions.Session.merge_environment_settings",
+        "requests.api.request",
+        "requests.sessions.merge_hooks"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-011",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "rich.layout.Layout",
+        "rich._ratio",
+        "rich.layout.RowSplitter.divide",
+        "rich.layout.ColumnSplitter.divide",
+        "rich.layout.Splitter.divide",
+        "rich.logging.divide",
+        "rich.segment.Segment.divide",
+        "rich.text.Text.divide"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-011",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "rich.layout.Layout",
+        "rich._ratio",
+        "rich.layout.RowSplitter.divide",
+        "rich.layout.ColumnSplitter.divide",
+        "rich.layout.Layout.__rich_repr__",
+        "rich._ratio.ratio_resolve",
+        "rich._ratio.Edge",
+        "rich.layout"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-011",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "rich.layout.Layout",
+        "rich._ratio",
+        "rich.layout.RowSplitter.divide",
+        "rich.layout.ColumnSplitter.divide",
+        "rich.layout.Splitter.divide",
+        "rich.logging.divide",
+        "rich.segment.Segment.divide",
+        "rich.text.Text.divide"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-023",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "rich.cells._cell_len",
+        "rich.cells",
+        "rich.cells.split_graphemes",
+        "rich.cells.get_character_cell_size",
+        "rich.table.Column.cells",
+        "rich.cells.split_text",
+        "rich.cells.cell_len",
+        "rich.cells.chop_cells"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-023",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "rich.cells._cell_len",
+        "rich.cells",
+        "rich.cells.split_graphemes",
+        "rich.cells.get_character_cell_size",
+        "rich.cells.split_text",
+        "rich.cells.cell_len",
+        "rich.cells.chop_cells",
+        "rich.cells.set_cell_size"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-023",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.25,
+      "retrieved": [
+        "rich.cells._cell_len",
+        "rich.cells",
+        "rich.cells.split_graphemes",
+        "rich.cells.get_character_cell_size",
+        "rich.table.Column.cells",
+        "rich.cells.split_text",
+        "rich.cells.cell_len",
+        "rich.cells.chop_cells"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-012",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.CharSet.getInstance",
+        "org.apache.commons.lang3.CharSet",
+        "org.apache.commons.lang3.CharSet",
+        "org.apache.commons.lang3.time.AbstractFormatCache.getInstance",
+        "org.apache.commons.lang3.time.FastDateFormat.getInstance",
+        "org.apache.commons.lang3.time.FastDateFormat.getInstance",
+        "org.apache.commons.lang3.time.FastDateFormat.getInstance",
+        "org.apache.commons.lang3.CharSetUtils"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-012",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.CharSet.getInstance",
+        "org.apache.commons.lang3.CharSet",
+        "org.apache.commons.lang3.CharSet",
+        "org.apache.commons.lang3.time.AbstractFormatCache.getInstance",
+        "org.apache.commons.lang3.CharSetUtils.squeeze",
+        "org.apache.commons.lang3.CharSetTest.testGetInstance",
+        "org.apache.commons.lang3.CharSetTest.testGetInstance_Stringarray",
+        "org.apache.commons.lang3.CharSetUtils.count"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-012",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.CharSet.getInstance",
+        "org.apache.commons.lang3.CharSet",
+        "org.apache.commons.lang3.CharSet",
+        "org.apache.commons.lang3.time.AbstractFormatCache.getInstance",
+        "org.apache.commons.lang3.time.FastDateFormat.getInstance",
+        "org.apache.commons.lang3.time.FastDateFormat.getInstance",
+        "org.apache.commons.lang3.time.FastDateFormat.getInstance",
+        "org.apache.commons.lang3.CharSetUtils"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-018",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.ClassUtils.comparator",
+        "org.apache.commons.lang3.ClassUtils",
+        "org.apache.commons.lang3.reflect.MethodUtils",
+        "org.apache.commons.lang3.math.NumberUtils",
+        "org.apache.commons.lang3.reflect.TypeUtilsTest.test_LANG_1698",
+        "org.apache.commons.lang3.ClassUtils.getPublicMethod",
+        "org.apache.commons.lang3.ClassUtils",
+        "org.apache.commons.lang3.reflect.MethodUtils"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-018",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.ClassUtils.comparator",
+        "org.apache.commons.lang3.ClassUtils",
+        "org.apache.commons.lang3.reflect.MethodUtils",
+        "org.apache.commons.lang3.math.NumberUtils",
+        "org.apache.commons.lang3.ClassUtils.getPublicMethod",
+        "org.apache.commons.lang3.ClassUtils",
+        "org.apache.commons.lang3.reflect.MethodUtils"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-018",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.apache.commons.lang3.ClassUtils.comparator",
+        "org.apache.commons.lang3.ClassUtils",
+        "org.apache.commons.lang3.reflect.MethodUtils",
+        "org.apache.commons.lang3.math.NumberUtils",
+        "org.apache.commons.lang3.reflect.TypeUtilsTest.test_LANG_1698",
+        "org.apache.commons.lang3.ClassUtils.getPublicMethod",
+        "org.apache.commons.lang3.ClassUtils",
+        "org.apache.commons.lang3.reflect.MethodUtils"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-024",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.apache.commons.lang3.JavaVersion",
+        "org.apache.commons.lang3.JavaVersion.JavaVersion",
+        "org.apache.commons.lang3.SystemUtils",
+        "org.apache.commons.lang3.JavaVersion.toString",
+        "org.apache.commons.lang3.JavaVersion",
+        "org.apache.commons.lang3.JavaVersion.getJavaVersion",
+        "org.apache.commons.lang3.JavaVersion.toFloatVersion",
+        "org.apache.commons.lang3.JavaVersion.split"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-024",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.125,
+      "retrieved": [
+        "org.apache.commons.lang3.JavaVersion",
+        "org.apache.commons.lang3.JavaVersion.JavaVersion",
+        "org.apache.commons.lang3.SystemUtils",
+        "org.apache.commons.lang3.JavaVersion.toString",
+        "org.apache.commons.lang3.JavaVersion.getJavaVersion",
+        "org.apache.commons.lang3.JavaVersion.toFloatVersion",
+        "org.apache.commons.lang3.JavaVersion.maxVersion",
+        "org.apache.commons.lang3.JavaVersion.get"
+      ],
+      "warning": null
+    },
+    {
+      "id": "commons-lang-candidate-024",
+      "repository": "commons-lang",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "org.apache.commons.lang3.JavaVersion",
+        "org.apache.commons.lang3.JavaVersion.JavaVersion",
+        "org.apache.commons.lang3.SystemUtils",
+        "org.apache.commons.lang3.JavaVersion.toString",
+        "org.apache.commons.lang3.JavaVersion",
+        "org.apache.commons.lang3.JavaVersion.getJavaVersion",
+        "org.apache.commons.lang3.JavaVersion.toFloatVersion",
+        "org.apache.commons.lang3.JavaVersion.split"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-008",
+      "repository": "flask",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "flask.sansio.app.App.debug",
+        "flask.app.Flask.run",
+        "flask.helpers.get_debug_flag",
+        "flask.templating.Environment",
+        "flask.app.Flask",
+        "flask.sansio.app.App.debug",
+        "flask.app.Flask.create_jinja_environment",
+        "flask.app.Flask.raise_routing_exception"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-008",
+      "repository": "flask",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "flask.sansio.app.App.debug",
+        "flask.app.Flask.run",
+        "flask.helpers.get_debug_flag",
+        "flask.templating.Environment",
+        "flask.app.Flask",
+        "flask.app.Flask.create_jinja_environment",
+        "flask.app.Flask.raise_routing_exception",
+        "flask.app.Flask.handle_user_exception"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-008",
+      "repository": "flask",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "flask.sansio.app.App.debug",
+        "flask.app.Flask.run",
+        "flask.helpers.get_debug_flag",
+        "flask.templating.Environment",
+        "flask.app.Flask",
+        "flask.sansio.app.App.debug",
+        "flask.app.Flask.create_jinja_environment",
+        "flask.app.Flask.raise_routing_exception"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-022",
+      "repository": "flask",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.blueprints.Blueprint.get_send_file_max_age",
+        "flask.blueprints.Blueprint",
+        "flask.helpers.send_file",
+        "flask.sansio.blueprints.Blueprint",
+        "flask.blueprints.Blueprint.send_static_file",
+        "flask.blueprints",
+        "tests.test_blueprints.test_default_static_max_age.MyBlueprint.get_send_file_max_age",
+        "flask.app.Flask.get_send_file_max_age"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-022",
+      "repository": "flask",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.blueprints.Blueprint.get_send_file_max_age",
+        "flask.blueprints.Blueprint",
+        "flask.helpers.send_file",
+        "flask.sansio.blueprints.Blueprint",
+        "flask.blueprints.Blueprint.send_static_file",
+        "flask.blueprints",
+        "flask.sansio.blueprints.Blueprint.register_blueprint",
+        "flask.helpers._prepare_send_file_kwargs"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-022",
+      "repository": "flask",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "flask.blueprints.Blueprint.get_send_file_max_age",
+        "flask.blueprints.Blueprint",
+        "flask.helpers.send_file",
+        "flask.sansio.blueprints.Blueprint",
+        "flask.blueprints.Blueprint.send_static_file",
+        "flask.blueprints",
+        "tests.test_blueprints.test_default_static_max_age.MyBlueprint.get_send_file_max_age",
+        "flask.app.Flask.get_send_file_max_age"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-024",
+      "repository": "flask",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "flask.config.ConfigAttribute",
+        "flask.config",
+        "flask.sansio.app.App",
+        "flask.config.Config",
+        "docs/config.rst",
+        "flask.config.ConfigAttribute.__set__",
+        "docs/config.rst#L401",
+        "docs/config.rst#L801"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-024",
+      "repository": "flask",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "flask.config.ConfigAttribute",
+        "flask.config",
+        "flask.sansio.app.App",
+        "flask.config.Config",
+        "flask.config.ConfigAttribute.__set__",
+        "flask.config.ConfigAttribute.__get__",
+        "flask.config.ConfigAttribute.__get__",
+        "flask.sansio.app"
+      ],
+      "warning": null
+    },
+    {
+      "id": "flask-candidate-024",
+      "repository": "flask",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "flask.config.ConfigAttribute",
+        "flask.config",
+        "flask.sansio.app.App",
+        "flask.config.Config",
+        "docs/config.rst",
+        "flask.config.ConfigAttribute.__set__",
+        "docs/config.rst#L401",
+        "docs/config.rst#L801"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-004",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._client._is_https_redirect",
+        "httpx._urls.URL",
+        "httpx._client.BaseClient._redirect_url",
+        "tests.client.test_redirects.redirects",
+        "tests.conftest.TestServer.url",
+        "httpx._api",
+        "httpx._client",
+        "httpx._models.Response.is_redirect"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-004",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._client._is_https_redirect",
+        "httpx._urls.URL",
+        "httpx._client.BaseClient._redirect_url",
+        "tests.client.test_redirects.redirects",
+        "httpx._api",
+        "httpx._client",
+        "httpx._urls"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-004",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "httpx._client._is_https_redirect",
+        "httpx._urls.URL",
+        "httpx._client.BaseClient._redirect_url",
+        "tests.client.test_redirects.redirects",
+        "tests.conftest.TestServer.url",
+        "httpx._api",
+        "httpx._client",
+        "httpx._models.Response.is_redirect"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-022",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "httpx._models.Response",
+        "httpx._models.Response.close",
+        "httpx._models.Response.aclose",
+        "httpx._models.Response.iter_raw",
+        "httpx._models.Response.aiter_raw",
+        "httpx._exceptions",
+        "CHANGELOG.md#L801",
+        "httpx._client.Client.send"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-022",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.125,
+      "retrieved": [
+        "httpx._models.Response",
+        "httpx._models.Response.close",
+        "httpx._models.Response.aclose",
+        "httpx._models.Response.iter_raw",
+        "httpx._models.Response.aiter_raw",
+        "httpx._exceptions",
+        "httpx",
+        "httpx._api.stream"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-022",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "httpx._models.Response",
+        "httpx._models.Response.close",
+        "httpx._models.Response.aclose",
+        "httpx._models.Response.iter_raw",
+        "httpx._models.Response.aiter_raw",
+        "httpx._exceptions",
+        "CHANGELOG.md#L801",
+        "httpx._client.Client.send"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-025",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "httpx._config.Timeout",
+        "httpx._config.Timeout.__init__",
+        "httpx._config",
+        "httpx._client.BaseClient.timeout",
+        "httpx._client.BaseClient.timeout",
+        "httpx._transports.default._load_httpcore_exceptions",
+        "httpx._models.Response.read",
+        "httpx._models.Request.read"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-025",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "httpx._config.Timeout",
+        "httpx._config.Timeout.__init__",
+        "httpx._config",
+        "httpx._client.BaseClient.timeout",
+        "httpx._config.Timeout.__repr__",
+        "httpx._config.Timeout.as_dict",
+        "httpx._exceptions",
+        "httpx"
+      ],
+      "warning": null
+    },
+    {
+      "id": "httpx-candidate-025",
+      "repository": "httpx",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "httpx._config.Timeout",
+        "httpx._config.Timeout.__init__",
+        "httpx._config",
+        "httpx._client.BaseClient.timeout",
+        "httpx._client.BaseClient.timeout",
+        "httpx._transports.default._load_httpcore_exceptions",
+        "httpx._models.Response.read",
+        "httpx._models.Request.read"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-005",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.ArgumentMatchers.isA",
+        "org.mockito.ArgumentMatchers",
+        "org.mockito.internal.matchers.Equals.type",
+        "org.mockito.internal.matchers.Same.type",
+        "org.mockito.internal.matchers.And.type",
+        "org.mockito.internal.matchers.Or.type",
+        "org.mockito.ArgumentMatchers.matches",
+        "org.mockito.ArgumentMatchers.matches"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-005",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.ArgumentMatchers.isA",
+        "org.mockito.ArgumentMatchers",
+        "org.mockito.internal.matchers.Equals.type",
+        "org.mockito.internal.matchers.Same.type",
+        "org.mockito.ArgumentMatchers.reportMatcher",
+        "org.mockitousage.matchers.VarargsTest",
+        "org.mockitousage.verification.VerificationUsingMatchersTest",
+        "org.mockito.ArgumentMatchers.nullable"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-005",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.ArgumentMatchers.isA",
+        "org.mockito.ArgumentMatchers",
+        "org.mockito.internal.matchers.Equals.type",
+        "org.mockito.internal.matchers.Same.type",
+        "org.mockito.internal.matchers.And.type",
+        "org.mockito.internal.matchers.Or.type",
+        "org.mockito.ArgumentMatchers.matches",
+        "org.mockito.ArgumentMatchers.matches"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-007",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.MockSettings.defaultAnswer",
+        "org.mockito.internal.creation.MockSettingsImpl.defaultAnswer",
+        "org.mockito.MockSettings",
+        "org.mockito.mock.MockCreationSettings.getDefaultAnswer",
+        "org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNulls.answer",
+        "org.mockito.internal.creation.MockSettingsImpl.getDefaultAnswer",
+        "org.mockito.internal.framework.DisabledMockHandler.DisabledMockCreationSettings.getDefaultAnswer",
+        "org.mockito.internal.stubbing.defaultanswers.ReturnsMocks.answer"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-007",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.MockSettings.defaultAnswer",
+        "org.mockito.internal.creation.MockSettingsImpl.defaultAnswer",
+        "org.mockito.MockSettings",
+        "org.mockito.mock.MockCreationSettings.getDefaultAnswer",
+        "org.mockito.internal.creation.MockSettingsImpl.getDefaultAnswer",
+        "org.mockito.Mockito.withSettings",
+        "org.mockito.internal.stubbing.defaultanswers.ReturnsMocks",
+        "org.mockito.internal.creation.MockSettingsImpl"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-007",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.MockSettings.defaultAnswer",
+        "org.mockito.internal.creation.MockSettingsImpl.defaultAnswer",
+        "org.mockito.MockSettings",
+        "org.mockito.mock.MockCreationSettings.getDefaultAnswer",
+        "org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNulls.answer",
+        "org.mockito.internal.creation.MockSettingsImpl.getDefaultAnswer",
+        "org.mockito.internal.framework.DisabledMockHandler.DisabledMockCreationSettings.getDefaultAnswer",
+        "org.mockito.internal.stubbing.defaultanswers.ReturnsMocks.answer"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-009",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.Mockito.mockingDetails",
+        "org.mockito.Mockito",
+        "org.mockito.internal.util.DefaultMockingDetails.DefaultMockingDetails",
+        "org.mockito.MockingDetails",
+        "org.mockito.internal.MockitoCore.mockingDetails",
+        "org.mockito.MockingDetails",
+        "org.mockito.internal.util.DefaultMockingDetails",
+        "org.mockito.internal.util.DefaultMockingDetails"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-009",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.Mockito.mockingDetails",
+        "org.mockito.Mockito",
+        "org.mockito.internal.util.DefaultMockingDetails.DefaultMockingDetails",
+        "org.mockito.MockingDetails",
+        "org.mockito.MockingDetails",
+        "org.mockito.internal.util.DefaultMockingDetails",
+        "org.mockito.internal.util.DefaultMockingDetails",
+        "org.mockito.internal.util.DefaultMockingDetails.getMock"
+      ],
+      "warning": null
+    },
+    {
+      "id": "mockito-candidate-009",
+      "repository": "mockito",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.mockito.Mockito.mockingDetails",
+        "org.mockito.Mockito",
+        "org.mockito.internal.util.DefaultMockingDetails.DefaultMockingDetails",
+        "org.mockito.MockingDetails",
+        "org.mockito.internal.MockitoCore.mockingDetails",
+        "org.mockito.MockingDetails",
+        "org.mockito.internal.util.DefaultMockingDetails",
+        "org.mockito.internal.util.DefaultMockingDetails"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-004",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.Owner.addPet",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.owner.Owner.addVisit",
+        "org.springframework.samples.petclinic.owner.PetController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.Owner.getPet",
+        "org.springframework.samples.petclinic.owner.Owner.getPet"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-004",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.Owner.addPet",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.owner.Owner.addVisit",
+        "org.springframework.samples.petclinic.owner.Owner.getPets",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.Owner.getPet",
+        "org.springframework.samples.petclinic.owner.Owner.getPet"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-004",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.Owner.addPet",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.owner.Owner.addVisit",
+        "org.springframework.samples.petclinic.owner.PetController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.Owner.getPet",
+        "org.springframework.samples.petclinic.owner.Owner.getPet"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-008",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.PetType",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter.PetTypeFormatter",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter.print",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatterTests.testPrint",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatterTests"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-008",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.PetType",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter.PetTypeFormatter",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter.print",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter.parse",
+        "org.springframework.samples.petclinic.owner.PetTypeRepository"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-008",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.PetType",
+        "org.springframework.samples.petclinic.owner.Pet",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter.PetTypeFormatter",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatter.print",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatterTests.testPrint",
+        "org.springframework.samples.petclinic.owner.PetTypeFormatterTests"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-020",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.14285714285714285,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.VisitController",
+        "org.springframework.samples.petclinic.owner.OwnerController.showOwner",
+        "org.springframework.samples.petclinic.owner.OwnerController.findOwner",
+        "org.springframework.samples.petclinic.owner.PetController"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-020",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.OwnerController.showOwner",
+        "org.springframework.samples.petclinic.owner.OwnerController.findOwner",
+        "org.springframework.samples.petclinic.owner.OwnerController.processUpdateOwnerForm",
+        "org.springframework.samples.petclinic.owner.Owner"
+      ],
+      "warning": null
+    },
+    {
+      "id": "petclinic-candidate-020",
+      "repository": "petclinic",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.14285714285714285,
+      "retrieved": [
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.OwnerController.OwnerController",
+        "org.springframework.samples.petclinic.owner.Owner",
+        "org.springframework.samples.petclinic.owner.OwnerController",
+        "org.springframework.samples.petclinic.owner.VisitController",
+        "org.springframework.samples.petclinic.owner.OwnerController.showOwner",
+        "org.springframework.samples.petclinic.owner.OwnerController.findOwner",
+        "org.springframework.samples.petclinic.owner.PetController"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-006",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "_pytest._io.terminalwriter.TerminalWriter.fullwidth",
+        "_pytest.terminal.TerminalReporter._width_of_current_line",
+        "_pytest._io.terminalwriter.get_terminal_width",
+        "_pytest.terminal._format_trimmed",
+        "_pytest._io.terminalwriter.TerminalWriter.width_of_current_line",
+        "_pytest.terminal._get_line_with_reprcrash_message",
+        "_pytest.terminal.pytest_configure",
+        "_pytest._io.terminalwriter.TerminalWriter.fullwidth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-006",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "_pytest._io.terminalwriter.TerminalWriter.fullwidth",
+        "_pytest.terminal.TerminalReporter._width_of_current_line",
+        "_pytest._io.terminalwriter.get_terminal_width",
+        "_pytest.terminal._format_trimmed",
+        "_pytest._io.terminalwriter.TerminalWriter.width_of_current_line",
+        "_pytest.terminal._get_line_with_reprcrash_message",
+        "_pytest.terminal.pytest_configure",
+        "_pytest._io.terminalwriter.TerminalWriter.fullwidth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-006",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "retrieved": [
+        "_pytest._io.terminalwriter.TerminalWriter.fullwidth",
+        "_pytest.terminal.TerminalReporter._width_of_current_line",
+        "_pytest._io.terminalwriter.get_terminal_width",
+        "_pytest.terminal._format_trimmed",
+        "_pytest._io.terminalwriter.TerminalWriter.width_of_current_line",
+        "_pytest.terminal._get_line_with_reprcrash_message",
+        "_pytest.terminal.pytest_configure",
+        "_pytest._io.terminalwriter.TerminalWriter.fullwidth"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-012",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "_pytest.assertion._compare_any._compare_eq_any",
+        "_pytest.assertion.util.assertrepr_compare",
+        "_pytest.assertion.rewrite.AssertionRewriter.helper",
+        "_pytest.assertion.pytest_addoption",
+        "_pytest.assertion.util",
+        "_pytest.assertion._compare_sequence._compare_eq_sequence",
+        "_pytest.assertion.pytest_runtest_protocol.callbinrepr",
+        "_pytest.assertion._compare_any"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-012",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "_pytest.assertion._compare_any._compare_eq_any",
+        "_pytest.assertion.util.assertrepr_compare",
+        "_pytest.assertion.rewrite.AssertionRewriter.helper",
+        "_pytest.assertion.pytest_addoption",
+        "_pytest.assertion.util",
+        "_pytest.assertion._compare_sequence._compare_eq_sequence",
+        "_pytest.assertion._compare_any",
+        "_pytest.assertion._compare_sequence"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-012",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "_pytest.assertion._compare_any._compare_eq_any",
+        "_pytest.assertion.util.assertrepr_compare",
+        "_pytest.assertion.rewrite.AssertionRewriter.helper",
+        "_pytest.assertion.pytest_addoption",
+        "_pytest.assertion.util",
+        "_pytest.assertion._compare_sequence._compare_eq_sequence",
+        "_pytest.assertion.pytest_runtest_protocol.callbinrepr",
+        "_pytest.assertion._compare_any"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-020",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.assertion.rewrite._rewrite_test",
+        "_pytest.assertion.rewrite._fix_code_filename",
+        "_pytest.assertion.rewrite.AssertionRewritingHook",
+        "_pytest.terminal.TerminalReporter.rewrite",
+        "_pytest.assertion.rewrite",
+        "_pytest.assertion.AssertionState",
+        "_pytest.assertion.rewrite._read_pyc",
+        "_pytest.assertion.rewrite._replace_code_filenames"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-020",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.assertion.rewrite._rewrite_test",
+        "_pytest.assertion.rewrite._fix_code_filename",
+        "_pytest.assertion.rewrite.AssertionRewritingHook",
+        "_pytest.terminal.TerminalReporter.rewrite",
+        "_pytest.assertion.rewrite",
+        "_pytest.assertion.AssertionState",
+        "_pytest.assertion.rewrite._read_pyc",
+        "_pytest.assertion.rewrite._replace_code_filenames"
+      ],
+      "warning": null
+    },
+    {
+      "id": "pytest-candidate-020",
+      "repository": "pytest",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 0.0,
+      "reciprocal_rank": 0,
+      "retrieved": [
+        "_pytest.assertion.rewrite._rewrite_test",
+        "_pytest.assertion.rewrite._fix_code_filename",
+        "_pytest.assertion.rewrite.AssertionRewritingHook",
+        "_pytest.terminal.TerminalReporter.rewrite",
+        "_pytest.assertion.rewrite",
+        "_pytest.assertion.AssertionState",
+        "_pytest.assertion.rewrite._read_pyc",
+        "_pytest.assertion.rewrite._replace_code_filenames"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-006",
+      "repository": "requests",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "requests.auth.HTTPBasicAuth",
+        "requests.sessions.SessionRedirectMixin.rebuild_proxies",
+        "requests.auth",
+        "requests.auth.HTTPProxyAuth",
+        "requests.sessions",
+        "requests.auth._basic_auth_str",
+        "requests.auth.HTTPBasicAuth.__call__",
+        "requests.adapters"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-006",
+      "repository": "requests",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "requests.auth.HTTPBasicAuth",
+        "requests.sessions.SessionRedirectMixin.rebuild_proxies",
+        "requests.auth",
+        "requests.auth.HTTPProxyAuth",
+        "requests.sessions",
+        "requests.auth._basic_auth_str",
+        "requests.auth.HTTPBasicAuth.__call__",
+        "requests.adapters"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-006",
+      "repository": "requests",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.16666666666666666,
+      "retrieved": [
+        "requests.auth.HTTPBasicAuth",
+        "requests.sessions.SessionRedirectMixin.rebuild_proxies",
+        "requests.auth",
+        "requests.auth.HTTPProxyAuth",
+        "requests.sessions",
+        "requests.auth._basic_auth_str",
+        "requests.auth.HTTPBasicAuth.__call__",
+        "requests.adapters"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-015",
+      "repository": "requests",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "requests.structures.CaseInsensitiveDict",
+        "requests.structures.CaseInsensitiveDict.__init__",
+        "requests.structures.CaseInsensitiveDict.copy",
+        "requests.structures.CaseInsensitiveDict.__eq__",
+        "requests.structures.CaseInsensitiveDict.__repr__",
+        "requests.structures.CaseInsensitiveDict.__len__",
+        "requests.structures.CaseInsensitiveDict.__getitem__",
+        "requests.structures.CaseInsensitiveDict.__delitem__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-015",
+      "repository": "requests",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "requests.structures.CaseInsensitiveDict",
+        "requests.structures.CaseInsensitiveDict.__init__",
+        "requests.structures.CaseInsensitiveDict.copy",
+        "requests.structures.CaseInsensitiveDict.__eq__",
+        "requests.structures.CaseInsensitiveDict.__repr__",
+        "requests.structures.CaseInsensitiveDict.__len__",
+        "requests.structures.CaseInsensitiveDict.lower_items",
+        "requests.utils.dict_from_cookiejar"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-015",
+      "repository": "requests",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "requests.structures.CaseInsensitiveDict",
+        "requests.structures.CaseInsensitiveDict.__init__",
+        "requests.structures.CaseInsensitiveDict.copy",
+        "requests.structures.CaseInsensitiveDict.__eq__",
+        "requests.structures.CaseInsensitiveDict.__repr__",
+        "requests.structures.CaseInsensitiveDict.__len__",
+        "requests.structures.CaseInsensitiveDict.__getitem__",
+        "requests.structures.CaseInsensitiveDict.__delitem__"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-021",
+      "repository": "requests",
+      "split": "development",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.api.get",
+        "requests.sessions.Session.get",
+        "requests.models.Request",
+        "requests.api.request",
+        "requests.sessions.Session.request",
+        "requests.models.RequestEncodingMixin.path_url",
+        "requests.cookies.MockRequest.get_full_url",
+        "requests.models"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-021",
+      "repository": "requests",
+      "split": "development",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.api.get",
+        "requests.sessions.Session.get",
+        "requests.models.Request",
+        "requests.api.request",
+        "requests.sessions.Session.request",
+        "requests.models",
+        "requests.api",
+        "requests.models.RequestEncodingMixin"
+      ],
+      "warning": null
+    },
+    {
+      "id": "requests-candidate-021",
+      "repository": "requests",
+      "split": "development",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "requests.api.get",
+        "requests.sessions.Session.get",
+        "requests.models.Request",
+        "requests.api.request",
+        "requests.sessions.Session.request",
+        "requests.models.RequestEncodingMixin.path_url",
+        "requests.cookies.MockRequest.get_full_url",
+        "requests.models"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-003",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.2,
+      "retrieved": [
+        "rich.emoji.Emoji",
+        "rich.emoji.Emoji.replace",
+        "rich.text.Text",
+        "rich._emoji_replace",
+        "rich._emoji_replace._emoji_replace",
+        "rich.emoji",
+        "rich.emoji.Emoji.__rich_console__",
+        "rich.emoji.NoEmoji"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-003",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.2,
+      "retrieved": [
+        "rich.emoji.Emoji",
+        "rich.emoji.Emoji.replace",
+        "rich.text.Text",
+        "rich._emoji_replace",
+        "rich._emoji_replace._emoji_replace",
+        "rich.emoji",
+        "rich.text.Text.from_markup",
+        "rich.markup"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-003",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.2,
+      "retrieved": [
+        "rich.emoji.Emoji",
+        "rich.emoji.Emoji.replace",
+        "rich.text.Text",
+        "rich._emoji_replace",
+        "rich._emoji_replace._emoji_replace",
+        "rich.emoji",
+        "rich.emoji.Emoji.__rich_console__",
+        "rich.emoji.NoEmoji"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-017",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "rich._wrap.words",
+        "rich._wrap",
+        "rich.syntax",
+        "rich.containers",
+        "rich.pretty._Line.expand",
+        "rich.text",
+        "rich.syntax.Syntax._get_syntax"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-017",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "rich._wrap.words",
+        "rich._wrap",
+        "rich.syntax",
+        "rich.containers",
+        "rich.text",
+        "rich.traceback",
+        "rich.pretty"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-017",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 1.0,
+      "retrieved": [
+        "rich._wrap.words",
+        "rich._wrap",
+        "rich.syntax",
+        "rich.containers",
+        "rich.pretty._Line.expand",
+        "rich.text",
+        "rich.syntax.Syntax._get_syntax"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-024",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "lexical",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "rich.style.Style.render",
+        "rich.color.Color.__rich__",
+        "rich.style.Style.color",
+        "rich.progress.RenderableColumn.render",
+        "rich.progress.SpinnerColumn.render",
+        "rich.progress.ProgressColumn.render",
+        "rich.progress.FileSizeColumn.render",
+        "rich.progress.TotalFileSizeColumn.render"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-024",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "graph",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "rich.style.Style.render",
+        "rich.color.Color.__rich__",
+        "rich.style.Style.color",
+        "rich.progress.RenderableColumn.render",
+        "rich.progress.FileSizeColumn.render",
+        "rich.progress.TotalFileSizeColumn.render",
+        "rich.progress.TimeElapsedColumn.render",
+        "rich.progress.MofNCompleteColumn.render"
+      ],
+      "warning": null
+    },
+    {
+      "id": "rich-candidate-024",
+      "repository": "rich",
+      "split": "holdout",
+      "mode": "hybrid",
+      "answerable": true,
+      "recall_at_8": 1.0,
+      "reciprocal_rank": 0.5,
+      "retrieved": [
+        "rich.style.Style.render",
+        "rich.color.Color.__rich__",
+        "rich.style.Style.color",
+        "rich.progress.RenderableColumn.render",
+        "rich.progress.SpinnerColumn.render",
+        "rich.progress.ProgressColumn.render",
+        "rich.progress.FileSizeColumn.render",
+        "rich.progress.TotalFileSizeColumn.render"
+      ],
+      "warning": null
+    }
+  ]
+}

@@ -1,0 +1,3519 @@
+{
+  "axios": {
+    "id": "1b4f84ff002648649be6a3fdb8b471b3",
+    "url": "https://github.com/axios/axios",
+    "commit": "c4303eeb601d3d5914a0f425cc7539616fdc7ea7",
+    "fingerprint": "9a03adcd75af4e97c1c831ab9b606899e87bb12056e4b451cb36d64951315470",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 189.821,
+    "stats": {
+      "files": 449,
+      "python_files": 0,
+      "java_files": 0,
+      "languages": {
+        "text": 189,
+        "javascript": 232,
+        "typescript": 28
+      },
+      "symbols": 12142,
+      "edges": 15883,
+      "parse_errors": [],
+      "unresolved_count": 13937,
+      "unresolved": [
+        {
+          "source": "49c891438ed5755361057e42",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "axios.post",
+          "line": 142,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e25f807864bb127ffb98261e",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "axios.post",
+          "line": 156,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "9430764d35fe58d13d7fc297",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "searchParams.set",
+          "line": 180,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "9430764d35fe58d13d7fc297",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "searchParams.set",
+          "line": 181,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "9430764d35fe58d13d7fc297",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "searchParams.set",
+          "line": 182,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "9430764d35fe58d13d7fc297",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "urlObject.toString",
+          "line": 184,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e6e0695fa411bfdb6803db41",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsor.tier?.name.toLowerCase",
+          "line": 202,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e6e0695fa411bfdb6803db41",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsor.tier?.name.toLowerCase",
+          "line": 206,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c0112c555f83bbbf47937717",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsorsData\n    .map((sponsor) => ({\n      name: sponsor.fromAccount.name ?? 'Backer',\n      imageUrl: sponsor.fromAccount.imageUrl ?? null,\n      description: sponsor.fromAccount.description ?? null,\n      tier: getSponsorTier(sponsor),\n      slug: sponsor.fromAccount.slug,\n      website: sponsor.fromAccount.website\n        ? buildLinks(sponsor.fromAccount.website)\n        : (buildLinks(\n            sponsor.fromAccount.socialLinks.find((link) => link.type === 'WEBSITE')?.url\n          ) ?? null),\n      twitter:\n        buildLinks(sponsor.fromAccount.socialLinks.find((link) => link.type === 'TWITTER')?.url) ??\n        null,\n    }))\n    .filter",
+          "line": 209,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c0112c555f83bbbf47937717",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsorsData\n    .map",
+          "line": 209,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c0112c555f83bbbf47937717",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "getSponsorTier",
+          "line": 214,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c0112c555f83bbbf47937717",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsor.fromAccount.socialLinks.find",
+          "line": 219,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c0112c555f83bbbf47937717",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsor.fromAccount.socialLinks.find",
+          "line": 222,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c0112c555f83bbbf47937717",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "config.sponsorsToIgnore.includes",
+          "line": 225,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "20284e7dbe889b7880a45ba4",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsor.tier?.name.toLowerCase",
+          "line": 242,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "20284e7dbe889b7880a45ba4",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsor.tier?.name.toLowerCase",
+          "line": 246,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e774d8a945fb002f0cff282c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "[...latestSponsorsBySlug.values()]\n    .map((sponsor) => ({\n      name: sponsor.account.name ?? 'Backer',\n      imageUrl: sponsor.account.imageUrl ?? null,\n      description: sponsor.account.description ?? null,\n      tier: getSponsorTier(sponsor),\n      slug: sponsor.account.slug,\n      website: sponsor.account.website\n        ? buildLinks(sponsor.account.website)\n        : (buildLinks(sponsor.account.socialLinks.find((link) => link.type === 'WEBSITE')?.url) ??\n          null),\n      twitter:\n        buildLinks(sponsor.account.socialLinks.find((link) => link.type === 'TWITTER')?.url) ??\n        null,\n    }))\n    .filter",
+          "line": 251,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e774d8a945fb002f0cff282c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "[...latestSponsorsBySlug.values()]\n    .map",
+          "line": 251,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e774d8a945fb002f0cff282c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "latestSponsorsBySlug.values",
+          "line": 251,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e774d8a945fb002f0cff282c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "getSponsorTier",
+          "line": 256,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e774d8a945fb002f0cff282c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsor.account.socialLinks.find",
+          "line": 260,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e774d8a945fb002f0cff282c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsor.account.socialLinks.find",
+          "line": 263,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e774d8a945fb002f0cff282c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "config.sponsorsToIgnore.includes",
+          "line": 266,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f1c2b9a5f4a21f73576aee5e",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "config.additionalSponsors.map",
+          "line": 279,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "605099aed6306300997fcdad",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "formatAllSponsorData(\n      allSponsors.account.members.nodes\n    ).filter",
+          "line": 281,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "605099aed6306300997fcdad",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "additionalSponsorSlugs.has",
+          "line": 283,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1c71353dbe3eed3331e73e67",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "formatActiveSponsorData(\n      activeSponsors.account.orders.nodes\n    ).filter",
+          "line": 284,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1c71353dbe3eed3331e73e67",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "additionalSponsorSlugs.has",
+          "line": 286,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dc4e22b203cba419cc8b12b2",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "activeSponsorsProcessedData.find",
+          "line": 293,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "69fbe86eddd67f5118229b9c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsorsByTier[sponsor.tier].push",
+          "line": 298,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "69fbe86eddd67f5118229b9c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsorsByTier[sponsor.tier].push",
+          "line": 303,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "eff2d0946424268e927844a0",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "allSponsorsProcessedData.find",
+          "line": 311,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "69fbe86eddd67f5118229b9c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsorsByTier[sponsor.tier].push",
+          "line": 320,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "69fbe86eddd67f5118229b9c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "sponsorsByTier[additionalSponsor.tier].push",
+          "line": 332,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "69fbe86eddd67f5118229b9c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "fs.writeFileSync",
+          "line": 338,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "69fbe86eddd67f5118229b9c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "JSON.stringify",
+          "line": 338,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "69fbe86eddd67f5118229b9c",
+          "path": "docs/scripts/process-sponsors.js",
+          "label": "console.error",
+          "line": 343,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b663241d32f12af50fc9c0af",
+          "path": "docs/scripts/selectLatestSponsorsBySlug.js",
+          "label": "sponsorsData.reduce",
+          "line": 10,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "5dcc44c246c28072621343cd",
+          "path": "docs/scripts/selectLatestSponsorsBySlug.js",
+          "label": "sponsorsBySlug.get",
+          "line": 12,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b663241d32f12af50fc9c0af",
+          "path": "docs/scripts/selectLatestSponsorsBySlug.js",
+          "label": "sponsorsBySlug.set",
+          "line": 15,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b097b1165e505e59f2a61c08",
+          "path": "docs/scripts/selectLatestSponsorsBySlug.js",
+          "label": "Date.parse",
+          "line": 19,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "3a46ccbf582ae916c111e5e1",
+          "path": "docs/scripts/selectLatestSponsorsBySlug.js",
+          "label": "Date.parse",
+          "line": 20,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "77c20f80f9f5e0ca89ce421b",
+          "path": "docs/scripts/selectLatestSponsorsBySlug.js",
+          "label": "Number.isNaN",
+          "line": 21,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1bad7eaa1f8819d866421412",
+          "path": "docs/scripts/selectLatestSponsorsBySlug.js",
+          "label": "Number.isNaN",
+          "line": 22,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b663241d32f12af50fc9c0af",
+          "path": "docs/scripts/selectLatestSponsorsBySlug.js",
+          "label": "sponsorsBySlug.set",
+          "line": 28,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4dde2f2a8c3463486acfbc7b",
+          "path": "docs/scripts/utils.js",
+          "label": "console.log",
+          "line": 4,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4dde2f2a8c3463486acfbc7b",
+          "path": "docs/scripts/utils.js",
+          "label": "chalk.green",
+          "line": 4,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "95e0c97ca6e4efd85ff43912",
+          "path": "docs/scripts/utils.js",
+          "label": "console.log",
+          "line": 8,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "95e0c97ca6e4efd85ff43912",
+          "path": "docs/scripts/utils.js",
+          "label": "chalk.blue",
+          "line": 8,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c424253376e0db818b8b86df",
+          "path": "docs/scripts/utils.js",
+          "label": "console.log",
+          "line": 12,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c424253376e0db818b8b86df",
+          "path": "docs/scripts/utils.js",
+          "label": "chalk.red",
+          "line": 12,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7d03fd81990aca8fbad65d49",
+          "path": "examples/abort-controller/server.js",
+          "label": "res.writeHead",
+          "line": 6,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7d03fd81990aca8fbad65d49",
+          "path": "examples/abort-controller/server.js",
+          "label": "res.end",
+          "line": 7,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "2e6bb6ac4e8cf9a1e8fb0278",
+          "path": "examples/abort-controller/server.js",
+          "label": "parsedUrl.searchParams.get",
+          "line": 10,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7d03fd81990aca8fbad65d49",
+          "path": "examples/abort-controller/server.js",
+          "label": "setTimeout",
+          "line": 12,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7d03fd81990aca8fbad65d49",
+          "path": "examples/abort-controller/server.js",
+          "label": "res.writeHead",
+          "line": 13,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7d03fd81990aca8fbad65d49",
+          "path": "examples/abort-controller/server.js",
+          "label": "res.write",
+          "line": 16,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7d03fd81990aca8fbad65d49",
+          "path": "examples/abort-controller/server.js",
+          "label": "JSON.stringify",
+          "line": 17,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7d03fd81990aca8fbad65d49",
+          "path": "examples/abort-controller/server.js",
+          "label": "res.end",
+          "line": 21,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c7ff3034b91f26b12bce235",
+          "path": "examples/get/server.js",
+          "label": "res.writeHead",
+          "line": 29,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c7ff3034b91f26b12bce235",
+          "path": "examples/get/server.js",
+          "label": "res.write",
+          "line": 32,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c7ff3034b91f26b12bce235",
+          "path": "examples/get/server.js",
+          "label": "JSON.stringify",
+          "line": 32,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c7ff3034b91f26b12bce235",
+          "path": "examples/get/server.js",
+          "label": "res.end",
+          "line": 33,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "04834f4a22fbca962de0158e",
+          "path": "examples/network_enhanced.js",
+          "label": "/dns/i.test",
+          "line": 12,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "04834f4a22fbca962de0158e",
+          "path": "examples/network_enhanced.js",
+          "label": "/refused/i.test",
+          "line": 19,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "04834f4a22fbca962de0158e",
+          "path": "examples/network_enhanced.js",
+          "label": "/timeout/i.test",
+          "line": 26,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "04834f4a22fbca962de0158e",
+          "path": "examples/network_enhanced.js",
+          "label": "/CORS/i.test",
+          "line": 32,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6355c664414ef036b0caafd5",
+          "path": "examples/network_enhanced.js",
+          "label": "axios.create",
+          "line": 60,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "bbd78dbd4f632f5e17eae3d6",
+          "path": "examples/network_enhanced.js",
+          "label": "client.interceptors.response.use",
+          "line": 62,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "12a0932d1b182a177d04ee5d",
+          "path": "examples/post/server.js",
+          "label": "req.on",
+          "line": 4,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "12a0932d1b182a177d04ee5d",
+          "path": "examples/post/server.js",
+          "label": "req.on",
+          "line": 8,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "12a0932d1b182a177d04ee5d",
+          "path": "examples/post/server.js",
+          "label": "console.log",
+          "line": 9,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "12a0932d1b182a177d04ee5d",
+          "path": "examples/post/server.js",
+          "label": "res.writeHead",
+          "line": 10,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "12a0932d1b182a177d04ee5d",
+          "path": "examples/post/server.js",
+          "label": "res.write",
+          "line": 13,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "12a0932d1b182a177d04ee5d",
+          "path": "examples/post/server.js",
+          "label": "JSON.stringify",
+          "line": 13,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "12a0932d1b182a177d04ee5d",
+          "path": "examples/post/server.js",
+          "label": "res.end",
+          "line": 14,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c62ade11c431a831bc82599",
+          "path": "examples/postMultipartFormData/server.js",
+          "label": "req.on",
+          "line": 2,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c62ade11c431a831bc82599",
+          "path": "examples/postMultipartFormData/server.js",
+          "label": "req.on",
+          "line": 4,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c62ade11c431a831bc82599",
+          "path": "examples/postMultipartFormData/server.js",
+          "label": "console.log",
+          "line": 5,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c62ade11c431a831bc82599",
+          "path": "examples/postMultipartFormData/server.js",
+          "label": "res.writeHead",
+          "line": 6,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c62ade11c431a831bc82599",
+          "path": "examples/postMultipartFormData/server.js",
+          "label": "res.end",
+          "line": 9,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "cdab23eed74d10cb0cac81e4",
+          "path": "examples/server.js",
+          "label": "minimist",
+          "line": 7,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "cdab23eed74d10cb0cac81e4",
+          "path": "examples/server.js",
+          "label": "process.argv.slice",
+          "line": 7,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "124dc5ffd3bfce7a80b1392c",
+          "path": "examples/server.js",
+          "label": "url.fileURLToPath",
+          "line": 11,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "abdf792e502bb5ef6139cc97",
+          "path": "examples/server.js",
+          "label": "path.dirname",
+          "line": 12,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "2bbf7f83605bf7be0cf562a7",
+          "path": "examples/server.js",
+          "label": "fs.readdirSync",
+          "line": 15,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "9e31c524cb7c784c72f245fc",
+          "path": "examples/server.js",
+          "label": "fs.statSync",
+          "line": 21,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "9e31c524cb7c784c72f245fc",
+          "path": "examples/server.js",
+          "label": "path.join",
+          "line": 21,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "ea52d008e03e955bdb623e45",
+          "path": "examples/server.js",
+          "label": "stat.isDirectory",
+          "line": 22,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "ea52d008e03e955bdb623e45",
+          "path": "examples/server.js",
+          "label": "dirs.push",
+          "line": 23,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "a21a15bde15a4a4aecedd219",
+          "path": "examples/server.js",
+          "label": "dirs.map",
+          "line": 32,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c3fc1a7c9d1e51b338380cba",
+          "path": "examples/server.js",
+          "label": "links.join",
+          "line": 53,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "46bc904b0339e795c5d7ca59",
+          "path": "examples/server.js",
+          "label": "res.writeHead",
+          "line": 59,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "46bc904b0339e795c5d7ca59",
+          "path": "examples/server.js",
+          "label": "res.write",
+          "line": 60,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "46bc904b0339e795c5d7ca59",
+          "path": "examples/server.js",
+          "label": "res.end",
+          "line": 61,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dcf205aef22f88e1728640e7",
+          "path": "examples/server.js",
+          "label": "path.join",
+          "line": 75,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dd7195d0d86935ed44c09493",
+          "path": "examples/server.js",
+          "label": "path.resolve",
+          "line": 76,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dd7195d0d86935ed44c09493",
+          "path": "examples/server.js",
+          "label": "path.join",
+          "line": 76,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c5593f03d46f3191b19ef534",
+          "path": "examples/server.js",
+          "label": "resolvedPath.startsWith",
+          "line": 79,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c5593f03d46f3191b19ef534",
+          "path": "examples/server.js",
+          "label": "res.writeHead",
+          "line": 80,
+          "repo_id": "1b4f84ff002648649be6a3fdb8b471b3",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        }
+      ],
+      "skipped_files": 34,
+      "coverage": {
+        "indexed_files": 449,
+        "skipped_files": 34,
+        "ignored_directories": 4,
+        "reason_counts": {
+          "hidden_directory": 3,
+          "ignored_directory": 1,
+          "lockfile": 6,
+          "unsupported_extension": 28
+        },
+        "indexed_extensions": {
+          ".cjs": 22,
+          ".html": 9,
+          ".js": 210,
+          ".json": 11,
+          ".md": 159,
+          ".ts": 28,
+          ".yml": 10
+        },
+        "recorded_entries": 487,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v1",
+      "timings_ms": {
+        "read_and_snapshot": 88.695,
+        "analysis_and_graph": 3227.82,
+        "chunks_and_storage": 1232.398,
+        "embeddings": 185263.029,
+        "total_index": 189811.946
+      }
+    },
+    "split": "evaluation_only_no_tuning",
+    "lexical_warmup_seconds": 0.548,
+    "index_status": {
+      "snapshot": "9a03adcd75af4e97c1c831ab9b606899e87bb12056e4b451cb36d64951315470",
+      "index_version": "2026-10-04-language-adapters-v1",
+      "symbols": 12142,
+      "embedded_symbols": 12142,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 13937,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 449,
+        "skipped_files": 34,
+        "ignored_directories": 4,
+        "reason_counts": {
+          "hidden_directory": 3,
+          "ignored_directory": 1,
+          "lockfile": 6,
+          "unsupported_extension": 28
+        },
+        "indexed_extensions": {
+          ".cjs": 22,
+          ".html": 9,
+          ".js": 210,
+          ".json": 11,
+          ".md": 159,
+          ".ts": 28,
+          ".yml": 10
+        },
+        "recorded_entries": 487,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 0.172,
+    "static_candidate_count": 0,
+    "static_candidate_types": {}
+  },
+  "gin": {
+    "id": "e90ae73df3994246ba94dc9a6bcccea2",
+    "url": "https://github.com/gin-gonic/gin",
+    "commit": "43fe48e8a0f44af783116cdb010725e6bb50255f",
+    "fingerprint": "047d904874916c7746ae5239cb801a2dbff155bf9841db448ccfa5626ec54f7f",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 66.688,
+    "stats": {
+      "files": 123,
+      "python_files": 0,
+      "java_files": 0,
+      "languages": {
+        "text": 24,
+        "go": 99
+      },
+      "symbols": 4180,
+      "edges": 5361,
+      "parse_errors": [],
+      "unresolved_count": 8695,
+      "unresolved": [
+        {
+          "source": "a282a1d9acce0f6fea258ee7",
+          "path": "auth.go",
+          "label": "subtle.ConstantTimeCompare",
+          "line": 37,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "a282a1d9acce0f6fea258ee7",
+          "path": "auth.go",
+          "label": "bytesconv.StringToBytes",
+          "line": 37,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "a282a1d9acce0f6fea258ee7",
+          "path": "auth.go",
+          "label": "bytesconv.StringToBytes",
+          "line": 37,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "fa89014cfc2c0dadbe4c635b",
+          "path": "auth.go",
+          "label": "strconv.Quote",
+          "line": 52,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "fa89014cfc2c0dadbe4c635b",
+          "path": "auth.go",
+          "label": "pairs.searchCredential",
+          "line": 56,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "fa89014cfc2c0dadbe4c635b",
+          "path": "auth.go",
+          "label": "c.requestHeader",
+          "line": 56,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "fa89014cfc2c0dadbe4c635b",
+          "path": "auth.go",
+          "label": "c.Header",
+          "line": 59,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "fa89014cfc2c0dadbe4c635b",
+          "path": "auth.go",
+          "label": "c.AbortWithStatus",
+          "line": 60,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "fa89014cfc2c0dadbe4c635b",
+          "path": "auth.go",
+          "label": "c.Set",
+          "line": 66,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f023cf978557c492c2e8bd47",
+          "path": "auth.go",
+          "label": "len",
+          "line": 77,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f023cf978557c492c2e8bd47",
+          "path": "auth.go",
+          "label": "assert1",
+          "line": 78,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f023cf978557c492c2e8bd47",
+          "path": "auth.go",
+          "label": "make",
+          "line": 79,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f023cf978557c492c2e8bd47",
+          "path": "auth.go",
+          "label": "assert1",
+          "line": 81,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f023cf978557c492c2e8bd47",
+          "path": "auth.go",
+          "label": "append",
+          "line": 83,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f6a9d3b4edf98dd867c77c8a",
+          "path": "auth.go",
+          "label": "base64.StdEncoding.EncodeToString",
+          "line": 93,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f6a9d3b4edf98dd867c77c8a",
+          "path": "auth.go",
+          "label": "bytesconv.StringToBytes",
+          "line": 93,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f11ee70ad4d8389d9e134423",
+          "path": "auth.go",
+          "label": "strconv.Quote",
+          "line": 102,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f11ee70ad4d8389d9e134423",
+          "path": "auth.go",
+          "label": "pairs.searchCredential",
+          "line": 105,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f11ee70ad4d8389d9e134423",
+          "path": "auth.go",
+          "label": "c.requestHeader",
+          "line": 105,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f11ee70ad4d8389d9e134423",
+          "path": "auth.go",
+          "label": "c.Header",
+          "line": 108,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f11ee70ad4d8389d9e134423",
+          "path": "auth.go",
+          "label": "c.AbortWithStatus",
+          "line": 109,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f11ee70ad4d8389d9e134423",
+          "path": "auth.go",
+          "label": "c.Set",
+          "line": 114,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6742c1213f273bf9df629174",
+          "path": "auth_test.go",
+          "label": "processAccounts",
+          "line": 17,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6742c1213f273bf9df629174",
+          "path": "auth_test.go",
+          "label": "assert.Len",
+          "line": 23,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6742c1213f273bf9df629174",
+          "path": "auth_test.go",
+          "label": "assert.Contains",
+          "line": 24,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6742c1213f273bf9df629174",
+          "path": "auth_test.go",
+          "label": "assert.Contains",
+          "line": 28,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6742c1213f273bf9df629174",
+          "path": "auth_test.go",
+          "label": "assert.Contains",
+          "line": 32,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "34139693c77e2f9f68005c3b",
+          "path": "auth_test.go",
+          "label": "assert.Panics",
+          "line": 39,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "34139693c77e2f9f68005c3b",
+          "path": "auth_test.go",
+          "label": "processAccounts",
+          "line": 39,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "34139693c77e2f9f68005c3b",
+          "path": "auth_test.go",
+          "label": "assert.Panics",
+          "line": 40,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "34139693c77e2f9f68005c3b",
+          "path": "auth_test.go",
+          "label": "processAccounts",
+          "line": 41,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "processAccounts",
+          "line": 49,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "pairs.searchCredential",
+          "line": 55,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "authorizationHeader",
+          "line": 55,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.Equal",
+          "line": 56,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.True",
+          "line": 57,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "pairs.searchCredential",
+          "line": 59,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "authorizationHeader",
+          "line": 59,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.Equal",
+          "line": 60,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.True",
+          "line": 61,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "pairs.searchCredential",
+          "line": 63,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "authorizationHeader",
+          "line": 63,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.Equal",
+          "line": 64,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.True",
+          "line": 65,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "pairs.searchCredential",
+          "line": 67,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "authorizationHeader",
+          "line": 67,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.Empty",
+          "line": 68,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.False",
+          "line": 69,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "pairs.searchCredential",
+          "line": 71,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "authorizationHeader",
+          "line": 71,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.Empty",
+          "line": 72,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.False",
+          "line": 73,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "pairs.searchCredential",
+          "line": 75,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.Empty",
+          "line": 76,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "8ad5c4932758de3cb175a69f",
+          "path": "auth_test.go",
+          "label": "assert.False",
+          "line": 77,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0c037817d08214475403845",
+          "path": "auth_test.go",
+          "label": "assert.Equal",
+          "line": 81,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0c037817d08214475403845",
+          "path": "auth_test.go",
+          "label": "authorizationHeader",
+          "line": 81,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "New",
+          "line": 86,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "router.Use",
+          "line": 87,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "BasicAuth",
+          "line": 87,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "router.GET",
+          "line": 88,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "c.String",
+          "line": 89,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "c.MustGet",
+          "line": 89,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "httptest.NewRecorder",
+          "line": 92,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "http.NewRequest",
+          "line": 93,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "req.Header.Set",
+          "line": 94,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "authorizationHeader",
+          "line": 94,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "router.ServeHTTP",
+          "line": 95,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "assert.Equal",
+          "line": 97,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "assert.Equal",
+          "line": 98,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1513ffb9368dc14219459a37",
+          "path": "auth_test.go",
+          "label": "w.Body.String",
+          "line": 98,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "New",
+          "line": 104,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "router.Use",
+          "line": 105,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "BasicAuth",
+          "line": 105,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "router.GET",
+          "line": 106,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "c.String",
+          "line": 108,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "c.MustGet",
+          "line": 108,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "httptest.NewRecorder",
+          "line": 111,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "http.NewRequest",
+          "line": 112,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "req.Header.Set",
+          "line": 113,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "base64.StdEncoding.EncodeToString",
+          "line": 113,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "router.ServeHTTP",
+          "line": 114,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "assert.False",
+          "line": 116,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "assert.Equal",
+          "line": 117,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "assert.Equal",
+          "line": 118,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "w.Header().Get",
+          "line": 118,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b0f6b0319c46a090fb3424e9",
+          "path": "auth_test.go",
+          "label": "w.Header",
+          "line": 118,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "New",
+          "line": 124,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "router.Use",
+          "line": 125,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "BasicAuthForRealm",
+          "line": 125,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "router.GET",
+          "line": 126,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "c.String",
+          "line": 128,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "c.MustGet",
+          "line": 128,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "httptest.NewRecorder",
+          "line": 131,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "http.NewRequest",
+          "line": 132,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "req.Header.Set",
+          "line": 133,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "base64.StdEncoding.EncodeToString",
+          "line": 133,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "router.ServeHTTP",
+          "line": 134,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "assert.False",
+          "line": 136,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "328d95e49fcb5cfa88723a79",
+          "path": "auth_test.go",
+          "label": "assert.Equal",
+          "line": 137,
+          "repo_id": "e90ae73df3994246ba94dc9a6bcccea2",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        }
+      ],
+      "skipped_files": 7,
+      "coverage": {
+        "indexed_files": 123,
+        "skipped_files": 7,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 7
+        },
+        "indexed_extensions": {
+          ".go": 99,
+          ".md": 9,
+          ".mod": 1,
+          ".sum": 1,
+          ".txt": 1,
+          ".yaml": 3,
+          ".yml": 8,
+          "[none]": 1
+        },
+        "recorded_entries": 131,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v1",
+      "timings_ms": {
+        "read_and_snapshot": 34.828,
+        "analysis_and_graph": 1540.154,
+        "chunks_and_storage": 380.325,
+        "embeddings": 64727.272,
+        "total_index": 66682.584
+      }
+    },
+    "split": "evaluation_only_no_tuning",
+    "lexical_warmup_seconds": 0.231,
+    "index_status": {
+      "snapshot": "047d904874916c7746ae5239cb801a2dbff155bf9841db448ccfa5626ec54f7f",
+      "index_version": "2026-10-04-language-adapters-v1",
+      "symbols": 4180,
+      "embedded_symbols": 4180,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 8695,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 123,
+        "skipped_files": 7,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 7
+        },
+        "indexed_extensions": {
+          ".go": 99,
+          ".md": 9,
+          ".mod": 1,
+          ".sum": 1,
+          ".txt": 1,
+          ".yaml": 3,
+          ".yml": 8,
+          "[none]": 1
+        },
+        "recorded_entries": 131,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 0.059,
+    "static_candidate_count": 0,
+    "static_candidate_types": {}
+  },
+  "clap": {
+    "id": "273a5970a3cd45eabee2c5216799c003",
+    "url": "https://github.com/clap-rs/clap",
+    "commit": "4be56132cf7a5ef6e237409a13225a5829cb24e4",
+    "fingerprint": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+    "status": "failed",
+    "error": "UNIQUE constraint failed: symbols.id",
+    "index_wall_seconds": 4.342,
+    "stats": {},
+    "split": "evaluation_only_no_tuning"
+  },
+  "fmt": {
+    "id": "14564f0ed3ad4566aed79681477232d8",
+    "url": "https://github.com/fmtlib/fmt",
+    "commit": "9197f51593dab5f637454a8889fb9638e737711a",
+    "fingerprint": "ca1f478bdcb5fcad1ea158db0665e48c101da17db733412d9de11aff165fa2a2",
+    "status": "failed",
+    "error": "UNIQUE constraint failed: symbols.id",
+    "index_wall_seconds": 17.943,
+    "stats": {},
+    "split": "evaluation_only_no_tuning"
+  },
+  "fluentvalidation": {
+    "id": "e7b501aeb00d44c781a812d31e3e7286",
+    "url": "https://github.com/FluentValidation/FluentValidation",
+    "commit": "fa3c160b17796ff67d6aa5ae6c4b05b471f1a791",
+    "fingerprint": "1b959c9fe9bed77e0254aa17fc8c3113ca43b1b20a5648c24adb6af4e99b286f",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 132.356,
+    "stats": {
+      "files": 275,
+      "python_files": 1,
+      "java_files": 0,
+      "languages": {
+        "text": 55,
+        "python": 1,
+        "csharp": 219
+      },
+      "symbols": 6274,
+      "edges": 6112,
+      "parse_errors": [],
+      "unresolved_count": 6681,
+      "unresolved": [
+        {
+          "source": "ed28e5b31b6fa900c4bed72c",
+          "label": "recommonmark.parser.CommonMarkParser",
+          "kind": "imports",
+          "line": 24
+        },
+        {
+          "source": "ed28e5b31b6fa900c4bed72c",
+          "label": "recommonmark.transform.AutoStructify",
+          "kind": "imports",
+          "line": 25
+        },
+        {
+          "source": "36d8440b77c58434b18921bc",
+          "label": "app.add_config_value",
+          "kind": "calls",
+          "line": 181
+        },
+        {
+          "source": "36d8440b77c58434b18921bc",
+          "label": "app.add_transform",
+          "kind": "calls",
+          "line": 186
+        },
+        {
+          "source": "329044f8e6721e1d2b6a1636",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.AddValidatorsFromAssembly",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f4ccc9c533ed581e85ed8883",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "AssemblyScanner\r\n\t\t\t.FindValidatorsInAssembly(assembly, includeInternalTypes)\r\n\t\t\t.ForEach",
+          "line": 54,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f4ccc9c533ed581e85ed8883",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "AssemblyScanner\r\n\t\t\t.FindValidatorsInAssembly",
+          "line": 54,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f4ccc9c533ed581e85ed8883",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.AddScanResult",
+          "line": 56,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4c33f6f7fdd1d260e9e497ce",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.AddValidatorsFromAssembly",
+          "line": 71,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "d829a2480c9afa15d4327704",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.AddValidatorsFromAssembly",
+          "line": 82,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b2e1f57805a3be36ac8005ec",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "filter?.Invoke",
+          "line": 93,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b2e1f57805a3be36ac8005ec",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.TryAddEnumerable",
+          "line": 96,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b2e1f57805a3be36ac8005ec",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.TryAdd",
+          "line": 103,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dea8e13498781964abc03330",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceProviderValidatorFactory.cs",
+          "label": "_serviceProvider.GetService",
+          "line": 33,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "62d60e133855efe9b8b0e13e",
+          "path": "src/FluentValidation.Tests.Benchmarks/AccessorCacheBenchmark.cs",
+          "label": "GetExpression<TestModel, int>",
+          "line": 36,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "62d60e133855efe9b8b0e13e",
+          "path": "src/FluentValidation.Tests.Benchmarks/AccessorCacheBenchmark.cs",
+          "label": "Expression.GetMember",
+          "line": 37,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "5547fd77be95b711bea2e847",
+          "path": "src/FluentValidation.Tests.Benchmarks/AccessorCacheBenchmark.cs",
+          "label": "AccessorCache<TestModel>.GetCachedAccessor",
+          "line": 42,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f046b3c2fd1bb0eda2865551",
+          "path": "src/FluentValidation.Tests.Benchmarks/AccessorCacheBenchmark.cs",
+          "label": "AccessorCache<TestModel>.GetCachedAccessor",
+          "line": 47,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Number(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 32,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 33,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 34,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 34,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 35,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 35,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number(0, 20).OrNull",
+          "line": 36,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number",
+          "line": 36,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number(0, 20).OrNull",
+          "line": 37,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number",
+          "line": 37,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.30f))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelManyErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel2, m => nestedModelManyErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.ModelCollection, m => nestedModelManyErrorsFaker.GenerateBetween(0, 20).ToList().OrNull(m, 0.7f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.30f))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelManyErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel2, m => nestedModelManyErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.30f))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelManyErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.30f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 40,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 40,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 41,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 41,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 42,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 42,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 43,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 43,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 44,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 44,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 45,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 46,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 47,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 48,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 49,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal(0, 20).OrNull",
+          "line": 50,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal",
+          "line": 50,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal(0, 20).OrNull",
+          "line": 51,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal",
+          "line": 51,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal(0, 20).OrNull",
+          "line": 52,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal",
+          "line": 52,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "nestedModelManyErrorsFaker.Generate",
+          "line": 53,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "nestedModelManyErrorsFaker.Generate",
+          "line": 54,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "nestedModelManyErrorsFaker.GenerateBetween(0, 20).ToList().OrNull",
+          "line": 55,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "nestedModelManyErrorsFaker.GenerateBetween(0, 20).ToList",
+          "line": 55,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "nestedModelManyErrorsFaker.GenerateBetween",
+          "line": 55,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "Enumerable.Range(1, m.Random.Int(1, 20)).Select(_ => m.Random.Number(0, 20)).ToList().OrNull",
+          "line": 56,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "Enumerable.Range(1, m.Random.Int(1, 20)).Select(_ => m.Random.Number(0, 20)).ToList",
+          "line": 56,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "Enumerable.Range(1, m.Random.Int(1, 20)).Select",
+          "line": 56,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "Enumerable.Range",
+          "line": 56,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 56,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number",
+          "line": 56,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Number(0, 9))\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 61,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 62,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 63,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 64,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number",
+          "line": 65,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number",
+          "line": 66,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word() + \"c\")\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word() + \"d\")\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word() + \"e\")\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber3, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelNoErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel2, m => nestedModelNoErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.ModelCollection, m => nestedModelNoErrorsFaker.GenerateBetween(0, 9).ToList())\r\n\t\t\t\t\t.RuleFor",
+          "line": 68,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word() + \"c\")\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word() + \"d\")\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word() + \"e\")\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber3, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelNoErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel2, m => nestedModelNoErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor",
+          "line": 68,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word() + \"c\")\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word() + \"d\")\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word() + \"e\")\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber3, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelNoErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor",
+          "line": 68,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word() + \"c\")\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word() + \"d\")\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word() + \"e\")\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber3, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor",
+          "line": 68,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "65edc6e300fcc98495a1478c",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word() + \"c\")\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word() + \"d\")\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word() + \"e\")\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor",
+          "line": 68,
+          "repo_id": "e7b501aeb00d44c781a812d31e3e7286",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        }
+      ],
+      "skipped_files": 21,
+      "coverage": {
+        "indexed_files": 275,
+        "skipped_files": 21,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 21
+        },
+        "indexed_extensions": {
+          ".cs": 219,
+          ".csproj": 4,
+          ".json": 2,
+          ".md": 36,
+          ".py": 1,
+          ".rst": 1,
+          ".sln": 1,
+          ".txt": 4,
+          ".xml": 1,
+          ".yaml": 1,
+          ".yml": 4,
+          "[none]": 1
+        },
+        "recorded_entries": 297,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v1",
+      "timings_ms": {
+        "read_and_snapshot": 60.326,
+        "analysis_and_graph": 1687.285,
+        "chunks_and_storage": 544.263,
+        "embeddings": 130059.964,
+        "total_index": 132351.843
+      }
+    },
+    "split": "evaluation_only_no_tuning",
+    "lexical_warmup_seconds": 0.437,
+    "index_status": {
+      "snapshot": "1b959c9fe9bed77e0254aa17fc8c3113ca43b1b20a5648c24adb6af4e99b286f",
+      "index_version": "2026-10-04-language-adapters-v1",
+      "symbols": 6274,
+      "embedded_symbols": 6274,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 6681,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macros and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 275,
+        "skipped_files": 21,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 21
+        },
+        "indexed_extensions": {
+          ".cs": 219,
+          ".csproj": 4,
+          ".json": 2,
+          ".md": 36,
+          ".py": 1,
+          ".rst": 1,
+          ".sln": 1,
+          ".txt": 4,
+          ".xml": 1,
+          ".yaml": 1,
+          ".yml": 4,
+          "[none]": 1
+        },
+        "recorded_entries": 297,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 0.09,
+    "static_candidate_count": 0,
+    "static_candidate_types": {}
+  }
+}

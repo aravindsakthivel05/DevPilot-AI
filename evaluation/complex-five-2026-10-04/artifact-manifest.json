@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-10-04T06:53:12.858965+00:00",
+  "questions_unchanged": true,
+  "files": {
+    "README.md": "44ae0f52543c34782bfe5c54df3c1fec3b37ec4725f75afd880f8246551f7531",
+    "expected-source-evidence.json": "a8333db015afa08d2fff6f17fa44d030b4df2426f804de915dc5564a328627d6",
+    "questions.jsonl": "bddaf48f8d962d74e64d0b1d6e4389bb032316382ae22c65988ab8cfb7ebd4da",
+    "report.md": "3eac216a99fb9bf924746c5bc81542ab0e261a30321d0dea0030b496c7878f3c",
+    "results.json": "dfd82b8f42705e1c32c2cf14f5fcd716be1de82dec8e1f91f7814e4913edf90a",
+    "reviewed-results.json": "4dc2174eec76b9005d29fa9ecff1408052e22cf564eef1df304a50cd02e52c14",
+    "snapshots.json": "01e1497fc5d1a1baf489f3ff5f4d319b8149cd71a43d84d88cfdc2cb729cab2d",
+    "source-review.json": "0e84953f9c5d3036e326395a5932055fbfcdf9d48c7488a1a8115f7da35c555c",
+    "summary.json": "2f91cb91800e181bd227607fd1862d75f1c519fc6ef234c702620bfcc445021e"
+  }
+}

@@ -54,9 +54,20 @@ def test_guided_repair_pauses_before_execution(client, repo, monkeypatch):
 
     def fake_execute(*args, **kwargs):
         calls.append((args, kwargs))
-        if kwargs.get("patch"):
-            return {"status": "passed", "exit_code": 0, "output": "1 passed"}
-        return {"status": "failed", "exit_code": 1, "output": "AssertionError"}
+        failed = bool(kwargs.get("extra_tests") and not kwargs.get("patch"))
+        return {
+            "status": "failed" if failed else "passed",
+            "exit_code": 1 if failed else 0,
+            "output": "fixture-only",
+            "test_report": {
+                "available": True,
+                "total": 1,
+                "passed": 0 if failed else 1,
+                "failures": 1 if failed else 0,
+                "errors": 0,
+                "cases": [{"id": "test_regression", "status": "failed" if failed else "passed"}],
+            },
+        }
 
     monkeypatch.setattr(agent_repair, "execute", fake_execute)
     path = f"/api/repositories/{repo['id']}/guided-repairs"
@@ -79,8 +90,15 @@ def test_guided_repair_pauses_before_execution(client, repo, monkeypatch):
         time.sleep(0.02)
     assert completed["status"] == "complete", completed
     assert completed["result"]["regression_demonstrated"] is True
-    assert len(calls) == 2
-    assert all(args[2] == "tests/test_generated.py" for args, _ in calls)
+    assert len(calls) == 4
+    assert [args[2] for args, _ in calls] == [
+        "tests",
+        "tests/test_generated.py",
+        "tests/test_generated.py",
+        "tests",
+    ]
+    assert completed["result"]["existing_baseline"]["test_report"]["passed"] == 1
+    assert completed["result"]["existing_patched"]["test_report"]["passed"] == 1
 
 
 def test_declined_guided_repair_never_executes(client, repo, monkeypatch):

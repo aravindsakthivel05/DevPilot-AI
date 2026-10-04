@@ -42,6 +42,7 @@ fail() {
 }
 
 check_prerequisites() {
+  command -v git >/dev/null 2>&1 || fail "Git is required to ingest GitHub repositories and check draft diffs. Install Git and retry."
   command -v python3 >/dev/null 2>&1 || fail "Python 3.11 or newer is required. Install it, then run this script again. On macOS with Homebrew: brew install python@3.12."
   command -v node >/dev/null 2>&1 || fail "Node.js 18 or newer is required. Install Node.js from https://nodejs.org/ or with Homebrew: brew install node."
   command -v npm >/dev/null 2>&1 || fail "npm is required (it is normally installed with Node.js). Reinstall Node.js from https://nodejs.org/."
@@ -101,7 +102,10 @@ configure_optional_services() {
     fi
   fi
 
-  export DEVPILOT_LANGGRAPH_ENABLED="${DEVPILOT_LANGGRAPH_ENABLED:-1}"
+  export DEVPILOT_LANGGRAPH_ENABLED="${DEVPILOT_LANGGRAPH_ENABLED:-0}"
+  export DEVPILOT_OLLAMA_NUM_CTX="${DEVPILOT_OLLAMA_NUM_CTX:-8192}"
+  export DEVPILOT_SOURCE_TOKEN_BUDGET="${DEVPILOT_SOURCE_TOKEN_BUDGET:-4096}"
+  export DEVPILOT_VERIFY_CLAIMS="${DEVPILOT_VERIFY_CLAIMS:-1}"
 
   if [[ -n "${DEVPILOT_LLM_BASE_URL:-}" && -n "${DEVPILOT_LLM_MODEL:-}" ]]; then
     printf 'Chat model: configured (%s)\n' "$DEVPILOT_LLM_MODEL"
@@ -111,20 +115,19 @@ configure_optional_services() {
     printf 'Then start this script with DEVPILOT_LLM_BASE_URL=http://127.0.0.1:11434/v1 and DEVPILOT_LLM_MODEL=qwen2.5-coder:7b.\n'
   fi
 
-  if command -v docker >/dev/null 2>&1; then
-    if docker info >/dev/null 2>&1; then
-      if docker image inspect devpilot-runner:local >/dev/null 2>&1; then
-        printf 'Docker: ready (Python test runner image found).\n'
-      else
-        printf 'Docker: ready, but the Python test runner image is not built.\n'
-        printf 'To enable repository test execution, run: docker build -f infra/Dockerfile.runner -t devpilot-runner:local .\n'
-      fi
-    else
-      printf 'Docker: installed but not running; repository test execution is unavailable until its engine starts.\n'
-    fi
-  else
-    printf 'Docker: not installed; repository questions work, but container test execution is unavailable.\n'
+  export DEVPILOT_LEGACY_EXECUTION="${DEVPILOT_LEGACY_EXECUTION:-0}"
+  if [[ "$DEVPILOT_LANGGRAPH_ENABLED" == "1" ]]; then
+    "${VENV}/bin/python" -m pip install 'langgraph>=1.2,<2' 'langgraph-checkpoint-sqlite>=3.1,<4'
   fi
+  if [[ -z "${DEVPILOT_EMBEDDING_MODEL:-}" ]] && command -v ollama >/dev/null 2>&1; then
+    if ollama list 2>/dev/null | awk 'NR > 1 {print $1}' | grep -Fxq 'nomic-embed-text:latest'; then
+      export DEVPILOT_EMBEDDING_MODEL=nomic-embed-text:latest
+      export DEVPILOT_EMBEDDING_BASE_URL=http://127.0.0.1:11434/v1
+    fi
+  fi
+  printf 'Core: source analysis, answers and unverified suggestions; Docker is not required.\n'
+  printf 'Embeddings: %s\n' "${DEVPILOT_EMBEDDING_MODEL:-not configured; use ollama pull nomic-embed-text to enable semantic search}"
+
 }
 
 stop_server() {
