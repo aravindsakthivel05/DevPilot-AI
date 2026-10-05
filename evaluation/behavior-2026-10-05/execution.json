@@ -1,0 +1,200 @@
+{
+  "image_id": "sha256:9cca9f0a59ce14380a4b6f0fab88278449c4d534453776dc1d3b4c5afc4dc4dc",
+  "verification_scope": "Only supplied behavior scenarios, not all answers or repository tests",
+  "results": [
+    {
+      "repository": "tenacity",
+      "commit": "8be01b1daf2010566fd936a5c2214efefa43edff",
+      "test_sha256": "8043f2ab22e23ac71e2e26226fa7eb38eedd458a9cdb0afed985b4c1185b2a53",
+      "exit_code": 0,
+      "status": "passed",
+      "test_report": {
+        "available": true,
+        "total": 10,
+        "passed": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "cases": [
+          {
+            "id": "tests.test_devpilot_behavior_check::test_unset[retry_if_result]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_unset[retry_if_not_result]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_failure_does_not_call_result_predicate[retry_if_result]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_failure_does_not_call_result_predicate[retry_if_not_result]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_success_negation_and_input[True]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_success_negation_and_input[False]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_top_exception_is_not_a_cause_match",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_deeper_cause_matches",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_cause_cycle_terminates_without_match",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_cause_success_false_and_unset_raises",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          }
+        ],
+        "parse_errors": []
+      },
+      "output": "..........                                                               [100%]\n---------- generated xml file: /workspace/.devpilot-test-results.xml -----------\n10 passed in 0.03s\n",
+      "elapsed_ms": 396,
+      "image": "devpilot-runner:local",
+      "target": "tests/test_devpilot_behavior_check.py",
+      "output_truncated": false,
+      "snapshot": "fb8b55a8cf8a9db86425517cab5736e131e24f2623b320875024250c6fb28e97",
+      "network": "disabled",
+      "patch_applied": false,
+      "runner": "python"
+    },
+    {
+      "repository": "boltons",
+      "commit": "4e5faa3d7e4008d89e0d8bf1ea87b6d9a061a16d",
+      "test_sha256": "b4d9de8cd145e4a08878e0fb1ff5389e83490bf132fbf19d647f18c03945c650",
+      "exit_code": 0,
+      "status": "passed",
+      "test_report": {
+        "available": true,
+        "total": 10,
+        "passed": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "cases": [
+          {
+            "id": "tests.test_devpilot_behavior_check::test_numeric_string_list_index_and_success",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_numeric_mapping_keyerror_is_not_converted",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_errors_wrapped_and_explicit_none_default[root0-absent]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_errors_wrapped_and_explicit_none_default[root1-path1]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_errors_wrapped_and_explicit_none_default[3-path2]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_errors_wrapped_and_explicit_none_default[root3-path3]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_hit_changes_eviction_recency_and_counter",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_miss_without_callback_raises_and_counts",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_callback_result_inserted_without_hit_increment",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_callback_exception_not_inserted_and_miss_still_counted",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          }
+        ],
+        "parse_errors": []
+      },
+      "output": "..........                                                               [100%]\n---------- generated xml file: /workspace/.devpilot-test-results.xml -----------\n10 passed in 0.04s\n",
+      "elapsed_ms": 289,
+      "image": "devpilot-runner:local",
+      "target": "tests/test_devpilot_behavior_check.py",
+      "output_truncated": false,
+      "snapshot": "9cf35d7c61e69b03029f60722bc99a83a6e3c59d0cbf11007a5a6f0b216bd027",
+      "network": "disabled",
+      "patch_applied": false,
+      "runner": "python"
+    }
+  ]
+}

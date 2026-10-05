@@ -1,0 +1,64 @@
+{
+  "reviewer": "Codex source review, not independent human evaluation",
+  "rule": "All explicitly frozen required details must be conveyed, every factual claim supported by supplied source, no contradictory or unsupported claims; errors remain in denominator. No score inferred from model self-review. Implicit detail coverage requires the answer to convey that behavior unambiguously.",
+  "cases": {
+    "tenacity-result": {
+      "details": [
+        "RuntimeError for unset outcome",
+        "Failed outcomes return False in both strategies",
+        "Failed outcomes do not invoke predicate",
+        "Success invokes predicate with outcome.result()",
+        "Only not-result negates predicate"
+      ],
+      "answerable": true
+    },
+    "tenacity-cause": {
+      "details": [
+        "Raised exception itself is not the tested object",
+        "Tests explicit __cause__ at each step",
+        "Follows deeper causes",
+        "seen id set terminates cycles",
+        "Missing outcome RuntimeError",
+        "Successful outcome False",
+        "No matching cause False"
+      ],
+      "answerable": true
+    },
+    "boltons-path": {
+      "details": [
+        "Split string on dots",
+        "Integer fallback only after TypeError",
+        "KeyError and IndexError wrapped without integer fallback",
+        "Conversion or fallback failure wrapped",
+        "Omitted sentinel re-raises",
+        "Explicit None returned on failure",
+        "Successful traversal returns cur"
+      ],
+      "answerable": true
+    },
+    "boltons-cache": {
+      "details": [
+        "Lock guards lookup",
+        "Hit moves entry to recent position",
+        "Hit increments hit_count and returns stored value",
+        "Miss increments miss_count before callback",
+        "No callback re-raises KeyError",
+        "Callback result inserted and returned without hit increment",
+        "Callback exception propagates without inserting value"
+      ],
+      "answerable": true
+    },
+    "tenacity-guard": {
+      "details": [
+        "No invented live runtime value"
+      ],
+      "answerable": false
+    },
+    "boltons-guard": {
+      "details": [
+        "No invented live runtime value"
+      ],
+      "answerable": false
+    }
+  }
+}

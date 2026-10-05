@@ -1,0 +1,1811 @@
+{
+  "issues": [
+    {
+      "id": "309b055bff8708a576ae6a4083ef14b8",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/classic/schemas.ts",
+      "line": 35,
+      "end_line": 35,
+      "symbol": "packages.zod.src.v4.classic.schemas.ZodType",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "start_line": 35,
+          "end_line": 35
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5cd378a6fa1005517941d329",
+          "symbol": "packages.zod.src.v4.classic.schemas",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "894de7a20d3eed6cf79ff5d8",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.toJSONSchema",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 51,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d6a9e808c36153fb48936726",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.check",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 54,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4d4da85f8cab5b729e637560",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.with",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 55,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "646d23874cd1324737154b8e",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.clone",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 56,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6c7b38accffafd1a39cfd18a",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.register",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 57,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "058887a6e8fc430053c4e2b5",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.brand",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 66,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "243bd34eb63da4f41f63d400",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.parse",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 71,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4d36d0f6e0df580027b0e5fe",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeParse",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 72,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "02a9fbf708d8d2d86d50c658",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.parseAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 73,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7256dc0c7fc55d6974cd0d0c",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeParseAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 74,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4f2f14736ac3738ce3b4c8d4",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.validate",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 82,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "de33f78f90962f50ddf03989",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.validateAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 83,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "da72883762cfd7465ea245d8",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.encode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 86,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ff6f576762247864ce03fe7e",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.decode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 87,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ed823e8cc224dceedd8b1022",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.encodeAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 88,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6557f0a3cedbada7d0d3f052",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.decodeAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 89,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "9a2e1873112a7e98262473cd",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeEncode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 90,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "0f645cd083ace46006a7ce55",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeDecode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 94,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "c94647dda3df79493820f158",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeEncodeAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 98,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "fb89571b7668ed72abe87044b7b821a5",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/classic/schemas.ts",
+      "line": 36,
+      "end_line": 36,
+      "symbol": "packages.zod.src.v4.classic.schemas.ZodType",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "start_line": 36,
+          "end_line": 36
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5cd378a6fa1005517941d329",
+          "symbol": "packages.zod.src.v4.classic.schemas",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "894de7a20d3eed6cf79ff5d8",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.toJSONSchema",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 51,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d6a9e808c36153fb48936726",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.check",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 54,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4d4da85f8cab5b729e637560",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.with",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 55,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "646d23874cd1324737154b8e",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.clone",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 56,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6c7b38accffafd1a39cfd18a",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.register",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 57,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "058887a6e8fc430053c4e2b5",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.brand",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 66,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "243bd34eb63da4f41f63d400",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.parse",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 71,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4d36d0f6e0df580027b0e5fe",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeParse",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 72,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "02a9fbf708d8d2d86d50c658",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.parseAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 73,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7256dc0c7fc55d6974cd0d0c",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeParseAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 74,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4f2f14736ac3738ce3b4c8d4",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.validate",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 82,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "de33f78f90962f50ddf03989",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.validateAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 83,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "da72883762cfd7465ea245d8",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.encode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 86,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ff6f576762247864ce03fe7e",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.decode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 87,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ed823e8cc224dceedd8b1022",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.encodeAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 88,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6557f0a3cedbada7d0d3f052",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.decodeAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 89,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "9a2e1873112a7e98262473cd",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeEncode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 90,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "0f645cd083ace46006a7ce55",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeDecode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 94,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "c94647dda3df79493820f158",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeEncodeAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 98,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "3784bd9791cd75486da73263390761d4",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/classic/schemas.ts",
+      "line": 37,
+      "end_line": 37,
+      "symbol": "packages.zod.src.v4.classic.schemas.ZodType",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "start_line": 37,
+          "end_line": 37
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5cd378a6fa1005517941d329",
+          "symbol": "packages.zod.src.v4.classic.schemas",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "894de7a20d3eed6cf79ff5d8",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.toJSONSchema",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 51,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d6a9e808c36153fb48936726",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.check",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 54,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4d4da85f8cab5b729e637560",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.with",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 55,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "646d23874cd1324737154b8e",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.clone",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 56,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6c7b38accffafd1a39cfd18a",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.register",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 57,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "058887a6e8fc430053c4e2b5",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.brand",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 66,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "243bd34eb63da4f41f63d400",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.parse",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 71,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4d36d0f6e0df580027b0e5fe",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeParse",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 72,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "02a9fbf708d8d2d86d50c658",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.parseAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 73,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7256dc0c7fc55d6974cd0d0c",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeParseAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 74,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4f2f14736ac3738ce3b4c8d4",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.validate",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 82,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "de33f78f90962f50ddf03989",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.validateAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 83,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "da72883762cfd7465ea245d8",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.encode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 86,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ff6f576762247864ce03fe7e",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.decode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 87,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ed823e8cc224dceedd8b1022",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.encodeAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 88,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6557f0a3cedbada7d0d3f052",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.decodeAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 89,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "9a2e1873112a7e98262473cd",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeEncode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 90,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "0f645cd083ace46006a7ce55",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeDecode",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 94,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "c94647dda3df79493820f158",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodType.safeEncodeAsync",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 98,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "8b0c548396b0fccb87517ac481ae6256",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/classic/schemas.ts",
+      "line": 170,
+      "end_line": 170,
+      "symbol": "packages.zod.src.v4.classic.schemas._ZodType",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "start_line": 170,
+          "end_line": 170
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5cd378a6fa1005517941d329",
+          "symbol": "packages.zod.src.v4.classic.schemas",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "3332347c7f80ad4ba584f926",
+          "symbol": "packages.zod.src.v4.classic.schemas._ZodType.extends ZodType<any, any, Internals>",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 171,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "b9ce0e80363f5733a151bcc2b495cdcb",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/classic/schemas.ts",
+      "line": 1580,
+      "end_line": 1580,
+      "symbol": "packages.zod.src.v4.classic.schemas.ZodObject",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "start_line": 1580,
+          "end_line": 1580
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5cd378a6fa1005517941d329",
+          "symbol": "packages.zod.src.v4.classic.schemas",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "c1160e918d2cefb5839480c9",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.keyof",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1587,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "e89decaa250de1acd385f204",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.catchall",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1589,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a5589199463c76f9274ed7dc",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.passthrough",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1592,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4516b01933821dd34ba6d322",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.loose",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1594,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "615fae3ca617a2bd0f35af45",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.strict",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1597,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "0577f1467eb87a40af5cdba6",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.strip",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1600,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fc5cfb71669bef6bd9e96434",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.extend",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1602,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ba76d2d580c6fcc1ce99d6df",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.safeExtend",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1604,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6d981318fb42f7b003307ccc",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.merge",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1611,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "3eb7906b0035730931fdc96b",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.pick",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1613,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b0a82e95ce0bc321d23bd6ed",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.omit",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1617,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "8ce249b04d09edf0373454e6",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.partial",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1621,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1b6445fbb0175663e6c50579",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.partial",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1627,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1d3c0a1cd01a9ff7eb1f99e9",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.exactPartial",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1642,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a3a3b377084f8f6c77375183",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.exactPartial",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1648,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "e37a8c9f636b12e151e6366a",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.required",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1658,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "5d05d6bf59386ecd9aca6808",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.required",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1664,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "885c3a83383b1e37ddd7cb68",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.extends _ZodType<core.$ZodObjectInternals<Shape, Config>>,\n    core.$ZodObject<Shape, Config>",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1582,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "3e730cef6fbcd802329eefc2de41a230",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/classic/schemas.ts",
+      "line": 1581,
+      "end_line": 1581,
+      "symbol": "packages.zod.src.v4.classic.schemas.ZodObject",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "start_line": 1581,
+          "end_line": 1581
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5cd378a6fa1005517941d329",
+          "symbol": "packages.zod.src.v4.classic.schemas",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "c1160e918d2cefb5839480c9",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.keyof",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1587,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "e89decaa250de1acd385f204",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.catchall",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1589,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a5589199463c76f9274ed7dc",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.passthrough",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1592,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4516b01933821dd34ba6d322",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.loose",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1594,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "615fae3ca617a2bd0f35af45",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.strict",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1597,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "0577f1467eb87a40af5cdba6",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.strip",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1600,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fc5cfb71669bef6bd9e96434",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.extend",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1602,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ba76d2d580c6fcc1ce99d6df",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.safeExtend",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1604,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6d981318fb42f7b003307ccc",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.merge",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1611,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "3eb7906b0035730931fdc96b",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.pick",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1613,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b0a82e95ce0bc321d23bd6ed",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.omit",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1617,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "8ce249b04d09edf0373454e6",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.partial",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1621,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1b6445fbb0175663e6c50579",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.partial",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1627,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1d3c0a1cd01a9ff7eb1f99e9",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.exactPartial",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1642,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a3a3b377084f8f6c77375183",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.exactPartial",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1648,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "e37a8c9f636b12e151e6366a",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.required",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1658,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "5d05d6bf59386ecd9aca6808",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.required",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1664,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "885c3a83383b1e37ddd7cb68",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodObject.extends _ZodType<core.$ZodObjectInternals<Shape, Config>>,\n    core.$ZodObject<Shape, Config>",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1582,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "16fb5e56062be71936dde3a15bd7f567",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/classic/schemas.ts",
+      "line": 2093,
+      "end_line": 2093,
+      "symbol": "packages.zod.src.v4.classic.schemas.ZodEnum",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "start_line": 2093,
+          "end_line": 2093
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5cd378a6fa1005517941d329",
+          "symbol": "packages.zod.src.v4.classic.schemas",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ea345444fd8f118c35b10b6a",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodEnum.extract",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 2100,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "457f5d0cdbf022e5edf9e2fa",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodEnum.exclude",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 2104,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ec0a3f653c6855feef4b8339",
+          "symbol": "packages.zod.src.v4.classic.schemas.ZodEnum.extends _ZodType<core.$ZodEnumInternals<T>>,\n    core.$ZodEnum<T>",
+          "file": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 2094,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ebaf9980be55a83d6a1612dfd0ae2736",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/core/checks.ts",
+      "line": 28,
+      "end_line": 28,
+      "symbol": "packages.zod.src.v4.core.checks.$ZodCheck",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/core/checks.ts",
+          "start_line": 28,
+          "end_line": 28
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "ad82b1302f946da43d8e6adf",
+          "symbol": "packages.zod.src.v4.core.checks",
+          "file": "packages/zod/src/v4/core/checks.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "d3347a75a083c09addda113c572afa80",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/core/schemas.ts",
+      "line": 181,
+      "end_line": 181,
+      "symbol": "packages.zod.src.v4.core.schemas.$ZodTypeInternals.extends _$ZodTypeInternals",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "start_line": 181,
+          "end_line": 181
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "bfaabdad0c8c320053c6d45b",
+          "symbol": "packages.zod.src.v4.core.schemas.$ZodTypeInternals",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 181,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "bf7f9008f4fea1a079298106c65410e6",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/core/schemas.ts",
+      "line": 2046,
+      "end_line": 2046,
+      "symbol": "packages.zod.src.v4.core.schemas.$ZodObjectInternals",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "start_line": 2046,
+          "end_line": 2046
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "370a694340143fa6ce1b1a77",
+          "symbol": "packages.zod.src.v4.core.schemas",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6c2df834eca0c9ee0b72d792",
+          "symbol": "packages.zod.src.v4.core.schemas.$ZodObjectInternals.extends _$ZodTypeInternals",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2048,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "39a80ccec15c065733cb757405f131f8",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/core/schemas.ts",
+      "line": 2047,
+      "end_line": 2047,
+      "symbol": "packages.zod.src.v4.core.schemas.$ZodObjectInternals",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "start_line": 2047,
+          "end_line": 2047
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "370a694340143fa6ce1b1a77",
+          "symbol": "packages.zod.src.v4.core.schemas",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6c2df834eca0c9ee0b72d792",
+          "symbol": "packages.zod.src.v4.core.schemas.$ZodObjectInternals.extends _$ZodTypeInternals",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2048,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e3e7394fc0d7542ef00ab52004099ebf",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/core/schemas.ts",
+      "line": 2062,
+      "end_line": 2062,
+      "symbol": "packages.zod.src.v4.core.schemas.$ZodObject",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "start_line": 2062,
+          "end_line": 2062
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "370a694340143fa6ce1b1a77",
+          "symbol": "packages.zod.src.v4.core.schemas",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b0c78a2a1abc46cd3fc640f2",
+          "symbol": "packages.zod.src.v4.core.schemas.$ZodObject.extends $ZodType<any, any, $ZodObjectInternals<Shape, Params>>",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2064,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "a89f520d330645da83a24c795bbbd737",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/core/schemas.ts",
+      "line": 2063,
+      "end_line": 2063,
+      "symbol": "packages.zod.src.v4.core.schemas.$ZodObject",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "start_line": 2063,
+          "end_line": 2063
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "370a694340143fa6ce1b1a77",
+          "symbol": "packages.zod.src.v4.core.schemas",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b0c78a2a1abc46cd3fc640f2",
+          "symbol": "packages.zod.src.v4.core.schemas.$ZodObject.extends $ZodType<any, any, $ZodObjectInternals<Shape, Params>>",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2064,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "4d4a1629023b66cc1ea25a3092e914f4",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/core/schemas.ts",
+      "line": 3614,
+      "end_line": 3614,
+      "symbol": "packages.zod.src.v4.core.schemas.$ZodEnumInternals",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "start_line": 3614,
+          "end_line": 3614
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "370a694340143fa6ce1b1a77",
+          "symbol": "packages.zod.src.v4.core.schemas",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "410c494b2bfcc7552f4c75bd",
+          "symbol": "packages.zod.src.v4.core.schemas.$ZodEnumInternals.extends $ZodTypeInternals<$InferEnumOutput<T>, $InferEnumInput<T>>",
+          "file": "packages/zod/src/v4/core/schemas.ts",
+          "line": 3615,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "36b7e24db1a00b549aca057fbf9ccf00",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/mini/schemas.ts",
+      "line": 10,
+      "end_line": 10,
+      "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "start_line": 10,
+          "end_line": 10
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3ac750988864c068fbe3c63c",
+          "symbol": "packages.zod.src.v4.mini.schemas",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "917f00863295627989573f61",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.check",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 15,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7ce0439a98dd621149e901b9",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.with",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 16,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a075998638a1251a6064a72f",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.clone",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 17,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d2195d13eb1e91001cc27c1b",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.register",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 18,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "30a3d1b32e06a3a2794c4f79",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.brand",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 26,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b5e50790591aaa1014765bd5",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.parse",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 32,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7e0ca997f56e6c7e4b5fec98",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.safeParse",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 33,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "478fe77b025cd917421b9076",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.parseAsync",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 34,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "52aa42be25c364fd0fc3ce77",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.safeParseAsync",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 35,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "bf420eb611dc3156f9afe2f4",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.apply",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 39,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "3cfea49c22a4257d831b64fa",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.extends core.$ZodType<Output, Input, Internals>",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 13,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "90e93a8184b9798f311db6b0d7fa0b05",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/mini/schemas.ts",
+      "line": 11,
+      "end_line": 11,
+      "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "start_line": 11,
+          "end_line": 11
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3ac750988864c068fbe3c63c",
+          "symbol": "packages.zod.src.v4.mini.schemas",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "917f00863295627989573f61",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.check",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 15,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7ce0439a98dd621149e901b9",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.with",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 16,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a075998638a1251a6064a72f",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.clone",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 17,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d2195d13eb1e91001cc27c1b",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.register",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 18,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "30a3d1b32e06a3a2794c4f79",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.brand",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 26,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b5e50790591aaa1014765bd5",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.parse",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 32,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7e0ca997f56e6c7e4b5fec98",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.safeParse",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 33,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "478fe77b025cd917421b9076",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.parseAsync",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 34,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "52aa42be25c364fd0fc3ce77",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.safeParseAsync",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 35,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "bf420eb611dc3156f9afe2f4",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.apply",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 39,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "3cfea49c22a4257d831b64fa",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.extends core.$ZodType<Output, Input, Internals>",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 13,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "c5279498d542c3733133adc04f5f92c4",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/mini/schemas.ts",
+      "line": 12,
+      "end_line": 12,
+      "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "start_line": 12,
+          "end_line": 12
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3ac750988864c068fbe3c63c",
+          "symbol": "packages.zod.src.v4.mini.schemas",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "917f00863295627989573f61",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.check",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 15,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7ce0439a98dd621149e901b9",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.with",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 16,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a075998638a1251a6064a72f",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.clone",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 17,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d2195d13eb1e91001cc27c1b",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.register",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 18,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "30a3d1b32e06a3a2794c4f79",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.brand",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 26,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b5e50790591aaa1014765bd5",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.parse",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 32,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7e0ca997f56e6c7e4b5fec98",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.safeParse",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 33,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "478fe77b025cd917421b9076",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.parseAsync",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 34,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "52aa42be25c364fd0fc3ce77",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.safeParseAsync",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 35,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "bf420eb611dc3156f9afe2f4",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.apply",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 39,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "3cfea49c22a4257d831b64fa",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniType.extends core.$ZodType<Output, Input, Internals>",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 13,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "9489c6d599beb675cf19ab8e0ca5b7fd",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/mini/schemas.ts",
+      "line": 42,
+      "end_line": 42,
+      "symbol": "packages.zod.src.v4.mini.schemas._ZodMiniType",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "start_line": 42,
+          "end_line": 42
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3ac750988864c068fbe3c63c",
+          "symbol": "packages.zod.src.v4.mini.schemas",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "0524443a803fc9554fb41eb6",
+          "symbol": "packages.zod.src.v4.mini.schemas._ZodMiniType.extends ZodMiniType<any, any, Internals>",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 43,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "37f325ee3d004ddd322065728c9b79e7",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/mini/schemas.ts",
+      "line": 907,
+      "end_line": 907,
+      "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniObject",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "start_line": 907,
+          "end_line": 907
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3ac750988864c068fbe3c63c",
+          "symbol": "packages.zod.src.v4.mini.schemas",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1d2fd404ed5e0023acafe0fe",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniObject.extends ZodMiniType<any, any, core.$ZodObjectInternals<Shape, Config>>,\n    core.$ZodObject<Shape, Config>",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 909,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "7d415b0927fba39a081186584f388557",
+      "repository_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "packages/zod/src/v4/mini/schemas.ts",
+      "line": 908,
+      "end_line": 908,
+      "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniObject",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "start_line": 908,
+          "end_line": 908
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3ac750988864c068fbe3c63c",
+          "symbol": "packages.zod.src.v4.mini.schemas",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1d2fd404ed5e0023acafe0fe",
+          "symbol": "packages.zod.src.v4.mini.schemas.ZodMiniObject.extends ZodMiniType<any, any, core.$ZodObjectInternals<Shape, Config>>,\n    core.$ZodObject<Shape, Config>",
+          "file": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 909,
+          "relationship": "inherits",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    }
+  ],
+  "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+  "detector_version": "2026-10-04-conservative-static-v1",
+  "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+}

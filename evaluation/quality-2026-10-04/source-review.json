@@ -1,0 +1,329 @@
+{
+  "reviewer": "Codex source review; not independent human review",
+  "criterion": "Strict correctness, completeness against frozen source-backed reference, and supporting citations. Accepted JSON or self-review is not correctness. Categories separate incomplete from identified false/overbroad claims.",
+  "cases": [
+    {
+      "case_id": "axios-easy",
+      "category": "partial_with_unsupported_claims",
+      "notes": "Omitted falsy-status resolution branch; extra content-limit claim omits the disabled-limit guard.",
+      "commit": "c4303eeb601d3d5914a0f425cc7539616fdc7ea7",
+      "expected_sources": [
+        {
+          "path": "lib/core/settle.js",
+          "name": "settle",
+          "anchor_line": 16,
+          "anchor_text": "if (!response.status || !validateStatus || validateStatus(response.status))"
+        }
+      ]
+    },
+    {
+      "case_id": "axios-medium",
+      "category": "partial_with_unsupported_claims",
+      "notes": "Core transform/finally order is correct, but omits transform callback arguments and cancellation/header steps; error cleanup omits reason.response guard.",
+      "commit": "c4303eeb601d3d5914a0f425cc7539616fdc7ea7",
+      "expected_sources": [
+        {
+          "path": "lib/core/dispatchRequest.js",
+          "name": "dispatchRequest",
+          "anchor_line": 46,
+          "anchor_text": "config.data = transformData.call(config, config.transformRequest)"
+        },
+        {
+          "path": "lib/core/transformData.js",
+          "name": "transformData",
+          "anchor_line": 22,
+          "anchor_text": "data = fn.call(config, data, headers.normalize(), response ? response.status : undefined)"
+        }
+      ]
+    },
+    {
+      "case_id": "axios-hard",
+      "category": "partial_with_unsupported_claims",
+      "notes": "Incorrectly says synchronous request interceptors run before asynchronous ones; code selects exclusive execution branches.",
+      "commit": "c4303eeb601d3d5914a0f425cc7539616fdc7ea7",
+      "expected_sources": [
+        {
+          "path": "lib/core/Axios.js",
+          "name": "_request",
+          "anchor_line": 176,
+          "anchor_text": "synchronousRequestInterceptors = synchronousRequestInterceptors && interceptor.synchronous"
+        },
+        {
+          "path": "lib/core/InterceptorManager.js",
+          "name": "use",
+          "anchor_line": 71,
+          "anchor_text": "synchronous: options ? options.synchronous : false"
+        }
+      ]
+    },
+    {
+      "case_id": "gin-easy",
+      "category": "incomplete",
+      "notes": "Correct caller/binder/decode flow; frozen reference additionally requires exact nil-request/body check and its invalid-request error, summarized vaguely as valid.",
+      "commit": "43fe48e8a0f44af783116cdb010725e6bb50255f",
+      "expected_sources": [
+        {
+          "path": "context.go",
+          "name": "ShouldBindJSON",
+          "anchor_line": 889,
+          "anchor_text": "func (c *Context) ShouldBindJSON(obj any) error"
+        },
+        {
+          "path": "context.go",
+          "name": "ShouldBindWith",
+          "anchor_line": 942,
+          "anchor_text": "return b.Bind(c.Request, obj)"
+        },
+        {
+          "path": "binding/json.go",
+          "name": "Bind",
+          "anchor_line": 37,
+          "anchor_text": "return decodeJSON(req.Body, obj)"
+        }
+      ]
+    },
+    {
+      "case_id": "gin-medium",
+      "category": "incomplete",
+      "notes": "Correct MaxBytesError distinction; requested response status and original error return are withheld.",
+      "commit": "43fe48e8a0f44af783116cdb010725e6bb50255f",
+      "expected_sources": [
+        {
+          "path": "context.go",
+          "name": "MustBindWith",
+          "anchor_line": 841,
+          "anchor_text": "case errors.As(err, &maxBytesErr):"
+        },
+        {
+          "path": "context.go",
+          "name": "ShouldBindWith",
+          "anchor_line": 942,
+          "anchor_text": "return b.Bind(c.Request, obj)"
+        }
+      ]
+    },
+    {
+      "case_id": "gin-hard",
+      "category": "incomplete",
+      "notes": "Correct decode/validate flow and optional Validator; global decoder defaults and precise number behavior withheld.",
+      "commit": "43fe48e8a0f44af783116cdb010725e6bb50255f",
+      "expected_sources": [
+        {
+          "path": "binding/json.go",
+          "name": "decodeJSON",
+          "anchor_line": 52,
+          "anchor_text": "if err := decoder.Decode(obj); err != nil"
+        },
+        {
+          "path": "binding/binding.go",
+          "name": "validate",
+          "anchor_line": 126,
+          "anchor_text": "return Validator.ValidateStruct(obj)"
+        }
+      ]
+    },
+    {
+      "case_id": "clap-easy",
+      "category": "partial_with_unsupported_claims",
+      "notes": "Supplied-argument APIs are described, but adds unrelated environment/derive APIs and an incorrect get_matches call target.",
+      "commit": "4be56132cf7a5ef6e237409a13225a5829cb24e4",
+      "expected_sources": [
+        {
+          "path": "clap_builder/src/builder/command.rs",
+          "name": "get_matches_from",
+          "anchor_line": 763,
+          "anchor_text": "self.try_get_matches_from_mut(itr).unwrap_or_else"
+        },
+        {
+          "path": "clap_builder/src/builder/command.rs",
+          "name": "try_get_matches_from",
+          "anchor_line": 813,
+          "anchor_text": "pub fn try_get_matches_from<I, T>(mut self, itr: I) -> ClapResult<ArgMatches>"
+        }
+      ]
+    },
+    {
+      "case_id": "clap-medium",
+      "category": "incomplete",
+      "notes": "Missing-value Ok(None) is correct; requested type-mismatch behavior withheld; adds unrelated removal API.",
+      "commit": "4be56132cf7a5ef6e237409a13225a5829cb24e4",
+      "expected_sources": [
+        {
+          "path": "clap_builder/src/parser/matches/arg_matches.rs",
+          "name": "try_get_one",
+          "anchor_line": 1085,
+          "anchor_text": "let arg = ok!(self.try_get_arg_t::<T>(id))"
+        },
+        {
+          "path": "clap_builder/src/parser/matches/arg_matches.rs",
+          "name": "verify_arg_t",
+          "anchor_line": 1295,
+          "anchor_text": "Err(MatchesError::Downcast { actual, expected })"
+        }
+      ]
+    },
+    {
+      "case_id": "clap-hard",
+      "category": "incomplete",
+      "notes": "Build/parser/global propagation and IgnoreErrors stderr guard correct; validation and mutable entry stages absent.",
+      "commit": "4be56132cf7a5ef6e237409a13225a5829cb24e4",
+      "expected_sources": [
+        {
+          "path": "clap_builder/src/builder/command.rs",
+          "name": "try_get_matches_from_mut",
+          "anchor_line": 866,
+          "anchor_text": "let mut raw_args = clap_lex::RawArgs::new(itr)"
+        },
+        {
+          "path": "clap_builder/src/builder/command.rs",
+          "name": "_do_parse",
+          "anchor_line": 4366,
+          "anchor_text": "if self.is_set(AppSettings::IgnoreErrors) && error.use_stderr()"
+        },
+        {
+          "path": "clap_builder/src/parser/parser.rs",
+          "name": "get_matches_with",
+          "anchor_line": 72,
+          "anchor_text": "Validator::new(self.cmd).validate(matcher)"
+        }
+      ]
+    },
+    {
+      "case_id": "fmt-easy",
+      "category": "incomplete",
+      "notes": "Correct nan/inf case, sign and zero-fill summary; omits numeric-alignment, signed width and single-zero fill conditions.",
+      "commit": "9197f51593dab5f637454a8889fb9638e737711a",
+      "expected_sources": [
+        {
+          "path": "include/fmt/format.h",
+          "name": "write_nonfinite",
+          "anchor_line": 2594,
+          "anchor_text": "isnan ? (specs.upper() ? \"NAN\" : \"nan\")"
+        }
+      ]
+    },
+    {
+      "case_id": "fmt-medium",
+      "category": "fully_correct_complete",
+      "notes": "Capacity branches and allocate/copy/publish/deallocate order match pinned source, including inline-store exclusion.",
+      "commit": "9197f51593dab5f637454a8889fb9638e737711a",
+      "expected_sources": [
+        {
+          "path": "include/fmt/format.h",
+          "name": "grow",
+          "anchor_line": 970,
+          "anchor_text": "size_t new_capacity = old_capacity + old_capacity / 2"
+        }
+      ]
+    },
+    {
+      "case_id": "fmt-hard",
+      "category": "partial_with_unsupported_claims",
+      "notes": "Confuses #if macro value with definedness; no-exception assertion print/abort behavior missing.",
+      "commit": "9197f51593dab5f637454a8889fb9638e737711a",
+      "expected_sources": [
+        {
+          "path": "include/fmt/format-inl.h",
+          "name": "report_error",
+          "anchor_line": 164,
+          "anchor_text": "FMT_THROW(format_error(message))"
+        },
+        {
+          "path": "include/fmt/format.h",
+          "name": "format.h",
+          "anchor_line": 167,
+          "anchor_text": "#  define FMT_THROW(x) ::fmt::assert_fail(__FILE__, __LINE__, (x).what())"
+        },
+        {
+          "path": "include/fmt/format-inl.h",
+          "name": "assert_fail",
+          "anchor_line": 52,
+          "anchor_text": "std::fprintf(stderr, \"%s:%d: assertion failed: %s\", file, line, message)"
+        }
+      ]
+    },
+    {
+      "case_id": "fluentvalidation-easy",
+      "category": "partial_with_unsupported_claims",
+      "notes": "Null/pre-validation ordering correct, but no-further-checks claim omits ThrowOnFailures exception branch.",
+      "commit": "fa3c160b17796ff67d6aa5ae6c4b05b471f1a791",
+      "expected_sources": [
+        {
+          "path": "src/FluentValidation/AbstractValidator.cs",
+          "name": "ValidateInternalAsync",
+          "anchor_line": 143,
+          "anchor_text": "bool shouldContinue = PreValidate(context, result)"
+        }
+      ]
+    },
+    {
+      "case_id": "fluentvalidation-medium",
+      "category": "partial_with_unsupported_claims",
+      "notes": "Failure increase and Stop distinction mostly correct; wrongly assigns ClassLevelCascadeMode via rule Cascade extension.",
+      "commit": "fa3c160b17796ff67d6aa5ae6c4b05b471f1a791",
+      "expected_sources": [
+        {
+          "path": "src/FluentValidation/AbstractValidator.cs",
+          "name": "ValidateInternalAsync",
+          "anchor_line": 166,
+          "anchor_text": "if (ClassLevelCascadeMode == CascadeMode.Stop && result.Errors.Count > totalFailures)"
+        },
+        {
+          "path": "src/FluentValidation/Internal/PropertyRule.cs",
+          "name": "ValidateAsync",
+          "anchor_line": 132,
+          "anchor_text": "if (context.Failures.Count > totalFailures && cascade == CascadeMode.Stop)"
+        }
+      ]
+    },
+    {
+      "case_id": "fluentvalidation-hard",
+      "category": "incomplete",
+      "notes": "Condition/cancellation/baseline outline present; lazy first property access, caching, accessor exception wrapper and exact order missing.",
+      "commit": "fa3c160b17796ff67d6aa5ae6c4b05b471f1a791",
+      "expected_sources": [
+        {
+          "path": "src/FluentValidation/Internal/PropertyRule.cs",
+          "name": "ValidateAsync",
+          "anchor_line": 115,
+          "anchor_text": "propValue = PropertyFunc(context.InstanceToValidate)"
+        }
+      ]
+    },
+    {
+      "case_id": "axios-unanswerable",
+      "category": "appropriate_abstention",
+      "notes": "Correctly refuses live deployment/traffic facts from a source snapshot.",
+      "commit": "c4303eeb601d3d5914a0f425cc7539616fdc7ea7",
+      "expected_sources": []
+    },
+    {
+      "case_id": "gin-unanswerable",
+      "category": "appropriate_abstention",
+      "notes": "Correctly refuses live deployment/traffic facts from a source snapshot.",
+      "commit": "43fe48e8a0f44af783116cdb010725e6bb50255f",
+      "expected_sources": []
+    },
+    {
+      "case_id": "clap-unanswerable",
+      "category": "appropriate_abstention",
+      "notes": "Correctly refuses live deployment/traffic facts from a source snapshot.",
+      "commit": "4be56132cf7a5ef6e237409a13225a5829cb24e4",
+      "expected_sources": []
+    },
+    {
+      "case_id": "fmt-unanswerable",
+      "category": "appropriate_abstention",
+      "notes": "Correctly refuses live deployment/traffic facts from a source snapshot.",
+      "commit": "9197f51593dab5f637454a8889fb9638e737711a",
+      "expected_sources": []
+    },
+    {
+      "case_id": "fluentvalidation-unanswerable",
+      "category": "appropriate_abstention",
+      "notes": "Correctly refuses live deployment/traffic facts from a source snapshot.",
+      "commit": "fa3c160b17796ff67d6aa5ae6c4b05b471f1a791",
+      "expected_sources": []
+    }
+  ]
+}

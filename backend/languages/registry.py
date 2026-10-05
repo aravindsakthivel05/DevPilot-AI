@@ -1,6 +1,7 @@
 """Extensible language registry, automatic detection and repository analysis."""
 
 import importlib
+import re
 from collections import defaultdict
 from pathlib import PurePosixPath
 
@@ -17,8 +18,17 @@ def adapters():
     ]
 
 
-def detect_language(path):
+def detect_language(path, content=None):
     suffix = PurePosixPath(path).suffix.lower()
+    if suffix == ".h" and content:
+        # A .h suffix is shared by C and C++. Ignore comments and ordinary string
+        # literals so examples in prose cannot change the selected grammar.
+        code = re.sub(r"/\*.*?\*/|//[^\n]*", "", content, flags=re.S)
+        code = re.sub(r'"(?:\\.|[^"\\])*"', '""', code)
+        if re.search(
+            r"\b(?:namespace|template|typename|constexpr|consteval)\b|\bstd::|\bclass\s+\w+", code
+        ):
+            return "cpp"
     for adapter in adapters():
         if suffix in adapter.extensions:
             return adapter.language
@@ -32,7 +42,7 @@ def capabilities():
 def analyze_repository(repo_id, files):
     groups = defaultdict(dict)
     for path, content in files.items():
-        groups[detect_language(path)][path] = content
+        groups[detect_language(path, content)][path] = content
     result = AnalysisResult()
     for adapter in adapters():
         if groups[adapter.language]:

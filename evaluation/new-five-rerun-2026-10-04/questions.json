@@ -1,0 +1,368 @@
+{
+  "provenance": "Codex-authored source-backed questions; not independent human labels. Frozen before model generation. Expected answers and source labels are not supplied to DevPilot.",
+  "cases": [
+    {
+      "id": "axios-easy",
+      "repository": "axios",
+      "difficulty": "easy",
+      "question": "Under what conditions does Axios resolve rather than reject an HTTP response, and how is the rejection error classified?",
+      "answerable": true,
+      "expected_answer": "Resolves when response.status is falsy, validateStatus is absent/falsy or validateStatus(status) is true. Otherwise rejects AxiosError with ERR_BAD_REQUEST for 400<=status<500 and ERR_BAD_RESPONSE for every other rejected status.",
+      "expected_sources": [
+        {
+          "path": "lib/core/settle.js",
+          "name": "settle",
+          "anchor_line": 16,
+          "anchor_text": "if (!response.status || !validateStatus || validateStatus(response.status))"
+        }
+      ]
+    },
+    {
+      "id": "axios-medium",
+      "repository": "axios",
+      "difficulty": "medium",
+      "question": "How does Axios transform request and successful response data around adapter execution, and how is its temporary response reference cleaned up?",
+      "answerable": true,
+      "expected_answer": "Dispatch flattens config, checks cancellation, constructs headers and transforms request data before calling adapter. On success rechecks cancellation, assigns config.response, transforms response.data within try, deletes config.response in finally, normalizes response headers and returns response. transformData iterates functions with config as this, data, normalized headers and optional response.status.",
+      "expected_sources": [
+        {
+          "path": "lib/core/dispatchRequest.js",
+          "name": "dispatchRequest",
+          "anchor_line": 46,
+          "anchor_text": "config.data = transformData.call(config, config.transformRequest)"
+        },
+        {
+          "path": "lib/core/transformData.js",
+          "name": "transformData",
+          "anchor_line": 22,
+          "anchor_text": "data = fn.call(config, data, headers.normalize(), response ? response.status : undefined)"
+        }
+      ]
+    },
+    {
+      "id": "axios-hard",
+      "repository": "axios",
+      "difficulty": "hard",
+      "question": "How do skipped interceptors, the legacy ordering option and synchronous versus asynchronous request interceptors change the request/response processing chain?",
+      "answerable": true,
+      "expected_answer": "Functional runWhen returning false skips a request interceptor. ANDs synchronous flags of included interceptors. legacyInterceptorReqResOrdering true unshifts request pairs, otherwise pushes them; response pairs push. Any included nonsynchronous interceptor selects Promise.resolve(config) chained through request/dispatch/response pairs. Otherwise request callbacks run directly then dispatch, and response pairs use then. InterceptorManager.use defaults synchronous to false when options absent.",
+      "expected_sources": [
+        {
+          "path": "lib/core/Axios.js",
+          "name": "_request",
+          "anchor_line": 176,
+          "anchor_text": "synchronousRequestInterceptors = synchronousRequestInterceptors && interceptor.synchronous"
+        },
+        {
+          "path": "lib/core/InterceptorManager.js",
+          "name": "use",
+          "anchor_line": 71,
+          "anchor_text": "synchronous: options ? options.synchronous : false"
+        }
+      ]
+    },
+    {
+      "id": "gin-easy",
+      "repository": "gin",
+      "difficulty": "easy",
+      "question": "How does ShouldBindJSON pass an HTTP request to the JSON binding implementation?",
+      "answerable": true,
+      "expected_answer": "ShouldBindJSON delegates obj and binding.JSON to ShouldBindWith, which returns b.Bind(c.Request,obj). jsonBinding.Bind rejects nil request/body with invalid request, otherwise calls decodeJSON(req.Body,obj).",
+      "expected_sources": [
+        {
+          "path": "context.go",
+          "name": "ShouldBindJSON",
+          "anchor_line": 889,
+          "anchor_text": "func (c *Context) ShouldBindJSON(obj any) error"
+        },
+        {
+          "path": "context.go",
+          "name": "ShouldBindWith",
+          "anchor_line": 942,
+          "anchor_text": "return b.Bind(c.Request, obj)"
+        },
+        {
+          "path": "binding/json.go",
+          "name": "Bind",
+          "anchor_line": 37,
+          "anchor_text": "return decodeJSON(req.Body, obj)"
+        }
+      ]
+    },
+    {
+      "id": "gin-medium",
+      "repository": "gin",
+      "difficulty": "medium",
+      "question": "When automatic binding fails, how does Gin distinguish oversized request bodies from other binding errors, and what does it return?",
+      "answerable": true,
+      "expected_answer": "MustBindWith obtains err from ShouldBindWith. Non-nil error matching *http.MaxBytesError via errors.As causes AbortWithError(413).SetType(ErrorTypeBind); other errors cause 400 with same bind-error type. Returns original error; success returns nil. ShouldBindWith returns binder.Bind.",
+      "expected_sources": [
+        {
+          "path": "context.go",
+          "name": "MustBindWith",
+          "anchor_line": 841,
+          "anchor_text": "case errors.As(err, &maxBytesErr):"
+        },
+        {
+          "path": "context.go",
+          "name": "ShouldBindWith",
+          "anchor_line": 942,
+          "anchor_text": "return b.Bind(c.Request, obj)"
+        }
+      ]
+    },
+    {
+      "id": "gin-hard",
+      "repository": "gin",
+      "difficulty": "hard",
+      "question": "How does JSON binding handle decoder errors and struct validation, and which global switches alter the decoder behavior?",
+      "answerable": true,
+      "expected_answer": "decodeJSON constructs json.API decoder, calls UseNumber and DisallowUnknownFields conditionally according to EnableDecoderUseNumber and EnableDecoderDisallowUnknownFields (both false defaults). Decode error returns before validate. After successful decode, validate returns nil if Validator nil, else Validator.ValidateStruct(obj).",
+      "expected_sources": [
+        {
+          "path": "binding/json.go",
+          "name": "decodeJSON",
+          "anchor_line": 52,
+          "anchor_text": "if err := decoder.Decode(obj); err != nil"
+        },
+        {
+          "path": "binding/binding.go",
+          "name": "validate",
+          "anchor_line": 126,
+          "anchor_text": "return Validator.ValidateStruct(obj)"
+        }
+      ]
+    },
+    {
+      "id": "clap-easy",
+      "repository": "clap",
+      "difficulty": "easy",
+      "question": "For explicitly supplied CLI arguments, how do the ordinary and fallible match-parsing entry points handle a parse failure?",
+      "answerable": true,
+      "expected_answer": "Command.get_matches_from consumes self, calls try_get_matches_from_mut, then on error drops self and e.exit(). Command.try_get_matches_from consumes self and returns try_get_matches_from_mut result without exiting on returned error.",
+      "expected_sources": [
+        {
+          "path": "clap_builder/src/builder/command.rs",
+          "name": "get_matches_from",
+          "anchor_line": 763,
+          "anchor_text": "self.try_get_matches_from_mut(itr).unwrap_or_else"
+        },
+        {
+          "path": "clap_builder/src/builder/command.rs",
+          "name": "try_get_matches_from",
+          "anchor_line": 813,
+          "anchor_text": "pub fn try_get_matches_from<I, T>(mut self, itr: I) -> ClapResult<ArgMatches>"
+        }
+      ]
+    },
+    {
+      "id": "clap-medium",
+      "repository": "clap",
+      "difficulty": "medium",
+      "question": "How does fallible single-value argument lookup distinguish a missing value from a requested type mismatch?",
+      "answerable": true,
+      "expected_answer": "try_get_one calls try_get_arg_t; missing argument or missing first value returns Ok(None). verify_arg_t compares inferred type ID to expected AnyValueId and returns MatchesError::Downcast for mismatch. Correct present value downcasts to &T and returns Ok(Some).",
+      "expected_sources": [
+        {
+          "path": "clap_builder/src/parser/matches/arg_matches.rs",
+          "name": "try_get_one",
+          "anchor_line": 1085,
+          "anchor_text": "let arg = ok!(self.try_get_arg_t::<T>(id))"
+        },
+        {
+          "path": "clap_builder/src/parser/matches/arg_matches.rs",
+          "name": "verify_arg_t",
+          "anchor_line": 1295,
+          "anchor_text": "Err(MatchesError::Downcast { actual, expected })"
+        }
+      ]
+    },
+    {
+      "id": "clap-hard",
+      "repository": "clap",
+      "difficulty": "hard",
+      "question": "How does CLI parsing reach validation and global-argument propagation, and when can a parser error be ignored?",
+      "answerable": true,
+      "expected_answer": "try_get_matches_from_mut creates RawArgs/cursor and handles binary name/multicall then _do_parse. _do_parse builds command, matcher, Parser; get_matches_with runs parse, resolves pending, conditionally adds env, adds defaults and Validator.validate. A parser error is ignored only if IgnoreErrors and error.use_stderr; otherwise returned. _do_parse gathers/propagates globals then returns matcher.into_inner.",
+      "expected_sources": [
+        {
+          "path": "clap_builder/src/builder/command.rs",
+          "name": "try_get_matches_from_mut",
+          "anchor_line": 866,
+          "anchor_text": "let mut raw_args = clap_lex::RawArgs::new(itr)"
+        },
+        {
+          "path": "clap_builder/src/builder/command.rs",
+          "name": "_do_parse",
+          "anchor_line": 4366,
+          "anchor_text": "if self.is_set(AppSettings::IgnoreErrors) && error.use_stderr()"
+        },
+        {
+          "path": "clap_builder/src/parser/parser.rs",
+          "name": "get_matches_with",
+          "anchor_line": 72,
+          "anchor_text": "Validator::new(self.cmd).validate(matcher)"
+        }
+      ]
+    },
+    {
+      "id": "fmt-easy",
+      "repository": "fmt",
+      "difficulty": "easy",
+      "question": "How are NaN and infinity spelled, signed and padded by the nonfinite floating-point writer?",
+      "answerable": true,
+      "expected_answer": "write_nonfinite selects NAN/nan or INF/inf based on isnan and upper flag. Size is three plus optional sign. Single zero fill is replaced by space. write_padded default align::right emits optional sign and spelling.",
+      "expected_sources": [
+        {
+          "path": "include/fmt/format.h",
+          "name": "write_nonfinite",
+          "anchor_line": 2594,
+          "anchor_text": "isnan ? (specs.upper() ? \"NAN\" : \"nan\")"
+        }
+      ]
+    },
+    {
+      "id": "fmt-medium",
+      "repository": "fmt",
+      "difficulty": "medium",
+      "question": "How does the memory buffer choose a new capacity and handle its old storage when it grows?",
+      "answerable": true,
+      "expected_answer": "grow starts with old_capacity+old_capacity/2; uses requested size if larger; otherwise if exceeds allocator max uses max_of(size,max_size). Allocates, memcpy existing elements, sets storage/capacity; deallocates old data only if not inline store_.",
+      "expected_sources": [
+        {
+          "path": "include/fmt/format.h",
+          "name": "grow",
+          "anchor_line": 970,
+          "anchor_text": "size_t new_capacity = old_capacity + old_capacity / 2"
+        }
+      ]
+    },
+    {
+      "id": "fmt-hard",
+      "repository": "fmt",
+      "difficulty": "hard",
+      "question": "How are formatting errors reported with exceptions enabled or disabled, and how does a caller-provided throw macro affect that behavior?",
+      "answerable": true,
+      "expected_answer": "report_error invokes FMT_THROW(format_error(message)). If FMT_THROW predefined retain it; otherwise exception mode throws x, disabled mode calls fmt::assert_fail(file,line,x.what()). assert_fail prints file,line,message to stderr then aborts. Source alone does not establish the active build mode.",
+      "expected_sources": [
+        {
+          "path": "include/fmt/format-inl.h",
+          "name": "report_error",
+          "anchor_line": 164,
+          "anchor_text": "FMT_THROW(format_error(message))"
+        },
+        {
+          "path": "include/fmt/format.h",
+          "name": "format.h",
+          "anchor_line": 167,
+          "anchor_text": "#  define FMT_THROW(x) ::fmt::assert_fail(__FILE__, __LINE__, (x).what())"
+        },
+        {
+          "path": "include/fmt/format-inl.h",
+          "name": "assert_fail",
+          "anchor_line": 52,
+          "anchor_text": "std::fprintf(stderr, \"%s:%d: assertion failed: %s\", file, line, message)"
+        }
+      ]
+    },
+    {
+      "id": "fluentvalidation-easy",
+      "repository": "fluentvalidation",
+      "difficulty": "easy",
+      "question": "Why can asynchronous validation reject a null root model, and can pre-validation stop processing before that check?",
+      "answerable": true,
+      "expected_answer": "ValidateInternalAsync creates result from context.Failures and calls PreValidate first. If false, optionally raises for invalid+ThrowOnFailures and returns before null root check. If continuing and InstanceToValidate is null, throws InvalidOperationException with root-model non-null message.",
+      "expected_sources": [
+        {
+          "path": "src/FluentValidation/AbstractValidator.cs",
+          "name": "ValidateInternalAsync",
+          "anchor_line": 143,
+          "anchor_text": "bool shouldContinue = PreValidate(context, result)"
+        }
+      ]
+    },
+    {
+      "id": "fluentvalidation-medium",
+      "repository": "fluentvalidation",
+      "difficulty": "medium",
+      "question": "What is the difference between stopping at class level and stopping within a property rule during validation?",
+      "answerable": true,
+      "expected_answer": "ClassLevelCascadeMode Stop breaks AbstractValidator rules loop when a rule adds failures. PropertyRule CascadeMode Stop breaks components loop when failures increase relative to snapshot before components. Different scopes. Dependent rules run only when that property rule did not add failures.",
+      "expected_sources": [
+        {
+          "path": "src/FluentValidation/AbstractValidator.cs",
+          "name": "ValidateInternalAsync",
+          "anchor_line": 166,
+          "anchor_text": "if (ClassLevelCascadeMode == CascadeMode.Stop && result.Errors.Count > totalFailures)"
+        },
+        {
+          "path": "src/FluentValidation/Internal/PropertyRule.cs",
+          "name": "ValidateAsync",
+          "anchor_line": 132,
+          "anchor_text": "if (context.Failures.Count > totalFailures && cascade == CascadeMode.Stop)"
+        }
+      ]
+    },
+    {
+      "id": "fluentvalidation-hard",
+      "repository": "fluentvalidation",
+      "difficulty": "hard",
+      "question": "In asynchronous property validation, how do rule conditions and component conditions control property access, cancellation and dependent rules?",
+      "answerable": true,
+      "expected_answer": "Return when selector or rule Condition/AsyncCondition vetoes. Per component check cancellation, reset message formatter, skip false sync/async conditions. Evaluate PropertyFunc lazily only at first eligible component; wrap NullReferenceException with When guidance. Failure adds error; Stop can break. Nonnull dependent rules run only with no new failures and each checks cancellation.",
+      "expected_sources": [
+        {
+          "path": "src/FluentValidation/Internal/PropertyRule.cs",
+          "name": "ValidateAsync",
+          "anchor_line": 115,
+          "anchor_text": "propValue = PropertyFunc(context.InstanceToValidate)"
+        }
+      ]
+    },
+    {
+      "id": "axios-unanswerable",
+      "repository": "axios",
+      "difficulty": "unanswerable",
+      "question": "What is the current production deployment status and live traffic of axios at this moment?",
+      "answerable": false,
+      "expected_answer": "Abstain: indexed source cannot establish current deployment or live traffic.",
+      "expected_sources": []
+    },
+    {
+      "id": "gin-unanswerable",
+      "repository": "gin",
+      "difficulty": "unanswerable",
+      "question": "What is the current production deployment status and live traffic of gin at this moment?",
+      "answerable": false,
+      "expected_answer": "Abstain: indexed source cannot establish current deployment or live traffic.",
+      "expected_sources": []
+    },
+    {
+      "id": "clap-unanswerable",
+      "repository": "clap",
+      "difficulty": "unanswerable",
+      "question": "What is the current production deployment status and live traffic of clap at this moment?",
+      "answerable": false,
+      "expected_answer": "Abstain: indexed source cannot establish current deployment or live traffic.",
+      "expected_sources": []
+    },
+    {
+      "id": "fmt-unanswerable",
+      "repository": "fmt",
+      "difficulty": "unanswerable",
+      "question": "What is the current production deployment status and live traffic of fmt at this moment?",
+      "answerable": false,
+      "expected_answer": "Abstain: indexed source cannot establish current deployment or live traffic.",
+      "expected_sources": []
+    },
+    {
+      "id": "fluentvalidation-unanswerable",
+      "repository": "fluentvalidation",
+      "difficulty": "unanswerable",
+      "question": "What is the current production deployment status and live traffic of fluentvalidation at this moment?",
+      "answerable": false,
+      "expected_answer": "Abstain: indexed source cannot establish current deployment or live traffic.",
+      "expected_sources": []
+    }
+  ]
+}

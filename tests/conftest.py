@@ -57,3 +57,4 @@ def isolated_model_audit(monkeypatch):
     # Most protocol fixtures exercise generation alone; audit tests explicitly
     # enable the separate reviewer. Never call a live provider in unit tests.
     monkeypatch.setenv("DEVPILOT_VERIFY_CLAIMS", "0")
+    monkeypatch.setenv("DEVPILOT_MODEL_SOURCE_SELECTION", "0")

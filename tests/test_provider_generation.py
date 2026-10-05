@@ -12,7 +12,7 @@ def test_answer_schema_bounds_claims_to_aspects_and_source_ids():
     assert schema["required"] == ["claims"]
     claims = schema["properties"]["claims"]
     assert claims["minItems"] == 2
-    assert claims["maxItems"] == 6
+    assert claims["maxItems"] == 8
     assert claims["items"]["properties"]["aspect_id"]["enum"] == [1, 2]
     assert set(claims["items"]["required"]) == {"text", "citations", "aspect_id", "status"}
 

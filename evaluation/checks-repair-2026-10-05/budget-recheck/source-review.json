@@ -1,0 +1,15 @@
+{
+  "reviewer": "Codex source review, not independent human evaluation",
+  "cases": [
+    {
+      "case_id": "werkzeug-hard",
+      "category": "incorrect_or_unsupported",
+      "assessment": "The correction now fits the 8192-token prompt budget and completes generation/review. It retains the original three accepted claims but does not improve reviewed coverage, so the first answer is selected. The source-based routing-precedence error remains; the model reviewer still incorrectly approves it. This validates feedback-budget handling and fallback, not answer correctness."
+    },
+    {
+      "case_id": "werkzeug-unanswerable",
+      "category": "appropriate_abstention",
+      "assessment": "Still appropriately abstains from inventing live deployment and traffic."
+    }
+  ]
+}

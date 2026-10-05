@@ -1,0 +1,43 @@
+{
+  "provenance": "Targeted development validation after generic named-identifier and captured-getter cache guards. Zod failure was observed and used to design a guard, so this is explicitly NOT an untouched holdout. Expected answers are never supplied to retrieval/generation.",
+  "cases": [
+    {
+      "id": "fluentvalidation-medium",
+      "repository": "fluentvalidation",
+      "difficulty": "medium",
+      "question": "What is the difference between stopping at class level and stopping within a property rule during validation?",
+      "answerable": true,
+      "expected_answer": "ClassLevelCascadeMode Stop breaks AbstractValidator rules loop when a rule adds failures. PropertyRule CascadeMode Stop breaks components loop when failures increase relative to snapshot before components. Different scopes. Dependent rules run only when that property rule did not add failures.",
+      "expected_sources": [
+        {
+          "path": "src/FluentValidation/AbstractValidator.cs",
+          "name": "ValidateInternalAsync",
+          "anchor_line": 166,
+          "anchor_text": "if (ClassLevelCascadeMode == CascadeMode.Stop && result.Errors.Count > totalFailures)"
+        },
+        {
+          "path": "src/FluentValidation/Internal/PropertyRule.cs",
+          "name": "ValidateAsync",
+          "anchor_line": 132,
+          "anchor_text": "if (context.Failures.Count > totalFailures && cascade == CascadeMode.Stop)"
+        }
+      ]
+    },
+    {
+      "id": "zod-hard",
+      "repository": "zod",
+      "difficulty": "hard",
+      "question": "In the core safe-parse failure helper, when is the error constructed, is it reused, and how are captured issues and context released when an error is read or replaced?",
+      "answerable": true,
+      "expected_answer": "failure returns success:false and getter/setter error. Getter creates Err from finalized issues only if cached error falsy, clears issues/context then returns cached error. Setter stores supplied error and clears captures. Later read reuses truthy cached error.",
+      "expected_sources": [
+        {
+          "path": "packages/zod/src/v4/core/parse.ts",
+          "name": "failure",
+          "anchor_line": 88,
+          "anchor_text": "if (!error)"
+        }
+      ]
+    }
+  ]
+}

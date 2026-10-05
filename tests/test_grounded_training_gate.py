@@ -70,3 +70,23 @@ def test_structured_training_target_requires_owner_and_real_lines():
     row["target"]["claims"][0]["citations"][0]["end_line"] = 25
     with pytest.raises(ValueError, match="missing lines"):
         validate_target(row)
+
+
+def test_reviewed_targets_follow_current_four_claim_contract():
+    claim = {
+        "text": "Details are not available.",
+        "aspect_id": 1,
+        "status": "insufficient_evidence",
+        "citations": [],
+    }
+    row = {
+        "target_reviewed": True,
+        "reviewer": "fixture-reviewer",
+        "aspects": ["Explain the workflow"],
+        "source_evidence": [],
+        "target": {"claims": [dict(claim) for _ in range(4)]},
+    }
+    validate_target(row)
+    row["target"]["claims"].append(dict(claim))
+    with pytest.raises(ValueError, match="Too many target claims"):
+        validate_target(row)

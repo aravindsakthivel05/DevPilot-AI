@@ -1,0 +1,919 @@
+{
+  "issues": [
+    {
+      "id": "c85866a4acd76655042ee2fcc89ac145",
+      "repository_id": "8550a12a13af4f98ac5d2c11fe37c1e2",
+      "snapshot": "d2e0fadb71a7b529cc2d82914a20599ba0d417481da494cb1996974516c8d87d",
+      "type": "missing_relative_import",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "aiohttp/_websocket/helpers.py",
+      "line": 60,
+      "end_line": 60,
+      "symbol": "aiohttp._websocket.helpers",
+      "message": "Relative import target aiohttp/_websocket/mask is not present in the indexed snapshot.",
+      "evidence": [
+        {
+          "file": "aiohttp/_websocket/helpers.py",
+          "start_line": 60,
+          "end_line": 60
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "8ab891f6e274c8a93c0fddb4",
+          "symbol": "aiohttp._websocket.helpers._xor_table",
+          "file": "aiohttp/_websocket/helpers.py",
+          "line": 26,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "99529b78265669af316c6153",
+          "symbol": "aiohttp._websocket.helpers._websocket_mask_python",
+          "file": "aiohttp/_websocket/helpers.py",
+          "line": 31,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "f16495d0e953d41ea2b2cf11",
+          "symbol": "aiohttp._websocket.helpers.ws_ext_parse",
+          "file": "aiohttp/_websocket/helpers.py",
+          "line": 78,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "48000d5534774e13d3fab079",
+          "symbol": "aiohttp._websocket.helpers.ws_ext_gen",
+          "file": "aiohttp/_websocket/helpers.py",
+          "line": 129,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "21e96341712695adff6dcbc9",
+          "symbol": "aiohttp.helpers",
+          "file": "aiohttp/helpers.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "9ee8ab4bc0abaa53f410e2d5",
+          "symbol": "aiohttp._websocket.models.WSHandshakeError",
+          "file": "aiohttp/_websocket/models.py",
+          "line": 166,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "9ca6fd3049b16acf843d6767",
+          "symbol": "aiohttp._websocket.reader_py",
+          "file": "aiohttp/_websocket/reader_py.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "2e0ec7c63ee71e481a910707",
+          "symbol": "aiohttp._websocket.writer",
+          "file": "aiohttp/_websocket/writer.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "3a6144aa6ea556bbb0f0c183",
+          "symbol": "aiohttp.http_websocket",
+          "file": "aiohttp/http_websocket.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "60d663f23ededf1524eea938",
+          "symbol": "tests.test_benchmarks_client_ws",
+          "file": "tests/test_benchmarks_client_ws.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "e23dd8bbad372589c7b9d26e",
+          "symbol": "tests.test_benchmarks_http_websocket",
+          "file": "tests/test_benchmarks_http_websocket.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "31e2fc5c0a521f0329bef61b",
+          "symbol": "tests.test_websocket_parser",
+          "file": "tests/test_websocket_parser.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "31e2fc5c0a521f0329bef61b",
+          "symbol": "tests.test_websocket_parser",
+          "file": "tests/test_websocket_parser.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "60d663f23ededf1524eea938",
+          "symbol": "tests.test_benchmarks_client_ws",
+          "file": "tests/test_benchmarks_client_ws.py",
+          "line": 1,
+          "relationship": "tests",
+          "confidence": "static"
+        },
+        {
+          "id": "e23dd8bbad372589c7b9d26e",
+          "symbol": "tests.test_benchmarks_http_websocket",
+          "file": "tests/test_benchmarks_http_websocket.py",
+          "line": 1,
+          "relationship": "tests",
+          "confidence": "static"
+        },
+        {
+          "id": "31e2fc5c0a521f0329bef61b",
+          "symbol": "tests.test_websocket_parser",
+          "file": "tests/test_websocket_parser.py",
+          "line": 1,
+          "relationship": "tests",
+          "confidence": "static"
+        },
+        {
+          "id": "31e2fc5c0a521f0329bef61b",
+          "symbol": "tests.test_websocket_parser",
+          "file": "tests/test_websocket_parser.py",
+          "line": 1,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The explicitly relative module has no matching indexed .py file or package. It may be generated or excluded from indexing.",
+      "suggested_fix": "Check the relative import spelling and package location for aiohttp/_websocket/mask; also inspect indexing coverage and generated-file rules.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "4685d4ff2624d72eec78e17fa2ad5a6e",
+      "repository_id": "8550a12a13af4f98ac5d2c11fe37c1e2",
+      "snapshot": "d2e0fadb71a7b529cc2d82914a20599ba0d417481da494cb1996974516c8d87d",
+      "type": "missing_relative_import",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "aiohttp/_websocket/reader.py",
+      "line": 17,
+      "end_line": 17,
+      "symbol": "aiohttp._websocket.reader",
+      "message": "Relative import target aiohttp/_websocket/reader_c is not present in the indexed snapshot.",
+      "evidence": [
+        {
+          "file": "aiohttp/_websocket/reader.py",
+          "start_line": 17,
+          "end_line": 17
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "21e96341712695adff6dcbc9",
+          "symbol": "aiohttp.helpers",
+          "file": "aiohttp/helpers.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "bd9a796f8891c47dad42f51a",
+          "symbol": "aiohttp._websocket.reader_py.WebSocketDataQueue",
+          "file": "aiohttp/_websocket/reader_py.py",
+          "line": 81,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "24df2641061a1a9f4d176e3b",
+          "symbol": "aiohttp._websocket.reader_py.WebSocketReader",
+          "file": "aiohttp/_websocket/reader_py.py",
+          "line": 190,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "bd9a796f8891c47dad42f51a",
+          "symbol": "aiohttp._websocket.reader_py.WebSocketDataQueue",
+          "file": "aiohttp/_websocket/reader_py.py",
+          "line": 81,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "24df2641061a1a9f4d176e3b",
+          "symbol": "aiohttp._websocket.reader_py.WebSocketReader",
+          "file": "aiohttp/_websocket/reader_py.py",
+          "line": 190,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "ab341fe1f9f84308c1a6a115",
+          "symbol": "aiohttp.client",
+          "file": "aiohttp/client.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "0e3e993fc28235a3784835b3",
+          "symbol": "aiohttp.client_proto",
+          "file": "aiohttp/client_proto.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "409eaa22409d5afd9b9caccd",
+          "symbol": "aiohttp.client_ws",
+          "file": "aiohttp/client_ws.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "3a6144aa6ea556bbb0f0c183",
+          "symbol": "aiohttp.http_websocket",
+          "file": "aiohttp/http_websocket.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "462708fc03fa0ab45256708b",
+          "symbol": "aiohttp.web_ws",
+          "file": "aiohttp/web_ws.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "e23dd8bbad372589c7b9d26e",
+          "symbol": "tests.test_benchmarks_http_websocket",
+          "file": "tests/test_benchmarks_http_websocket.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "d46014fb21de548056f53973",
+          "symbol": "tests.test_client_ws_functional",
+          "file": "tests/test_client_ws_functional.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "9348e0dc400df3b44d94f0f3",
+          "symbol": "tests.test_websocket_data_queue",
+          "file": "tests/test_websocket_data_queue.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "31e2fc5c0a521f0329bef61b",
+          "symbol": "tests.test_websocket_parser",
+          "file": "tests/test_websocket_parser.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "d3cf3870f21178d9343f8b00",
+          "symbol": "tests.test_websocket_writer",
+          "file": "tests/test_websocket_writer.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "e23dd8bbad372589c7b9d26e",
+          "symbol": "tests.test_benchmarks_http_websocket",
+          "file": "tests/test_benchmarks_http_websocket.py",
+          "line": 1,
+          "relationship": "tests",
+          "confidence": "static"
+        },
+        {
+          "id": "d46014fb21de548056f53973",
+          "symbol": "tests.test_client_ws_functional",
+          "file": "tests/test_client_ws_functional.py",
+          "line": 1,
+          "relationship": "tests",
+          "confidence": "static"
+        },
+        {
+          "id": "9348e0dc400df3b44d94f0f3",
+          "symbol": "tests.test_websocket_data_queue",
+          "file": "tests/test_websocket_data_queue.py",
+          "line": 1,
+          "relationship": "tests",
+          "confidence": "static"
+        },
+        {
+          "id": "31e2fc5c0a521f0329bef61b",
+          "symbol": "tests.test_websocket_parser",
+          "file": "tests/test_websocket_parser.py",
+          "line": 1,
+          "relationship": "tests",
+          "confidence": "static"
+        },
+        {
+          "id": "d3cf3870f21178d9343f8b00",
+          "symbol": "tests.test_websocket_writer",
+          "file": "tests/test_websocket_writer.py",
+          "line": 1,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The explicitly relative module has no matching indexed .py file or package. It may be generated or excluded from indexing.",
+      "suggested_fix": "Check the relative import spelling and package location for aiohttp/_websocket/reader_c; also inspect indexing coverage and generated-file rules.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ed623ec8bcb1eae99335c7e8dc6cfc9a",
+      "repository_id": "8550a12a13af4f98ac5d2c11fe37c1e2",
+      "snapshot": "d2e0fadb71a7b529cc2d82914a20599ba0d417481da494cb1996974516c8d87d",
+      "type": "missing_relative_import",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "aiohttp/http_parser.py",
+      "line": 1282,
+      "end_line": 1282,
+      "symbol": "aiohttp.http_parser",
+      "message": "Relative import target aiohttp/_http_parser is not present in the indexed snapshot.",
+      "evidence": [
+        {
+          "file": "aiohttp/http_parser.py",
+          "start_line": 1282,
+          "end_line": 1282
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "cdac1e8dce59eb90accc3f78",
+          "symbol": "aiohttp.http_parser._has_authority",
+          "file": "aiohttp/http_parser.py",
+          "line": 95,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "67f4560f9beeffe0ae243343",
+          "symbol": "aiohttp.http_parser.RawRequestMessage",
+          "file": "aiohttp/http_parser.py",
+          "line": 127,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d837bfd9726829bdeb6f97bb",
+          "symbol": "aiohttp.http_parser.RawResponseMessage",
+          "file": "aiohttp/http_parser.py",
+          "line": 140,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ed62c0e906df66cbfb419a6a",
+          "symbol": "aiohttp.http_parser.PayloadState",
+          "file": "aiohttp/http_parser.py",
+          "line": 155,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "2e996adcba0e69c9303c38cb",
+          "symbol": "aiohttp.http_parser.ParseState",
+          "file": "aiohttp/http_parser.py",
+          "line": 161,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "503fc19b2015c21fda9a6d24",
+          "symbol": "aiohttp.http_parser.ChunkState",
+          "file": "aiohttp/http_parser.py",
+          "line": 168,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "36936ebf578af1ac518f262f",
+          "symbol": "aiohttp.http_parser.HeadersParser",
+          "file": "aiohttp/http_parser.py",
+          "line": 175,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "279679141efd74e04b3eb1f0",
+          "symbol": "aiohttp.http_parser._is_supported_upgrade",
+          "file": "aiohttp/http_parser.py",
+          "line": 257,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "8ace579aa8392e54805309f7",
+          "symbol": "aiohttp.http_parser.HttpParser",
+          "file": "aiohttp/http_parser.py",
+          "line": 264,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ee5d2e7e7c560d6d5c8f7ba2",
+          "symbol": "aiohttp.http_parser.HttpRequestParser",
+          "file": "aiohttp/http_parser.py",
+          "line": 666,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "43f408afe0d53834b1536abf",
+          "symbol": "aiohttp.http_parser.HttpResponseParser",
+          "file": "aiohttp/http_parser.py",
+          "line": 802,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "38b5151de096ab9a8c224809",
+          "symbol": "aiohttp.http_parser.HttpPayloadParser",
+          "file": "aiohttp/http_parser.py",
+          "line": 888,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "dfe48a5e349f8525e6306e50",
+          "symbol": "aiohttp.http_parser.DeflateBuffer",
+          "file": "aiohttp/http_parser.py",
+          "line": 1177,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d0ef4464e2cf14ffd3a13d54",
+          "symbol": "aiohttp.hdrs",
+          "file": "aiohttp/hdrs.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "a9e778ca0ce4866cb5bde9d9",
+          "symbol": "aiohttp.base_protocol.BaseProtocol",
+          "file": "aiohttp/base_protocol.py",
+          "line": 19,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "1af7e3fcba4b60e4860892c0",
+          "symbol": "aiohttp.compression_utils",
+          "file": "aiohttp/compression_utils.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "036b2777c4a731e2feafff86",
+          "symbol": "aiohttp.compression_utils.BrotliDecompressor",
+          "file": "aiohttp/compression_utils.py",
+          "line": 428,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "f832495b378e7b21a58ff51c",
+          "symbol": "aiohttp.compression_utils.ZLibDecompressor",
+          "file": "aiohttp/compression_utils.py",
+          "line": 363,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "39ca1c45d92dd45f2eb509ca",
+          "symbol": "aiohttp.compression_utils.ZSTDDecompressor",
+          "file": "aiohttp/compression_utils.py",
+          "line": 476,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "21e96341712695adff6dcbc9",
+          "symbol": "aiohttp.helpers",
+          "file": "aiohttp/helpers.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The explicitly relative module has no matching indexed .py file or package. It may be generated or excluded from indexing.",
+      "suggested_fix": "Check the relative import spelling and package location for aiohttp/_http_parser; also inspect indexing coverage and generated-file rules.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "b02fd17a0f6f09484f41783dfba92481",
+      "repository_id": "8550a12a13af4f98ac5d2c11fe37c1e2",
+      "snapshot": "d2e0fadb71a7b529cc2d82914a20599ba0d417481da494cb1996974516c8d87d",
+      "type": "unreachable_statement",
+      "severity": "warning",
+      "confidence": "high",
+      "file": "tests/test_client_request.py",
+      "line": 1981,
+      "end_line": 1981,
+      "symbol": "tests.test_client_request.test_write_bytes_empty_iterable_with_content_length.gen",
+      "message": "Statement follows an unconditional terminating statement in the same block.",
+      "evidence": [
+        {
+          "file": "tests/test_client_request.py",
+          "start_line": 1981,
+          "end_line": 1981
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e922a54d65b809a14b060b9c",
+          "symbol": "tests.test_client_request.test_write_bytes_empty_iterable_with_content_length",
+          "file": "tests/test_client_request.py",
+          "line": 1971,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The preceding return, raise, break or continue exits this block before this statement.",
+      "suggested_fix": "Remove the unreachable statement or move it before the terminator if it must execute.",
+      "suggested_test": "Exercise the enclosing function’s exit path and assert the intended return value or exception.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "f41bbbce9af1b62531e2337f92e4831d",
+      "repository_id": "8550a12a13af4f98ac5d2c11fe37c1e2",
+      "snapshot": "d2e0fadb71a7b529cc2d82914a20599ba0d417481da494cb1996974516c8d87d",
+      "type": "unreachable_statement",
+      "severity": "warning",
+      "confidence": "high",
+      "file": "tests/test_run_app.py",
+      "line": 177,
+      "end_line": 177,
+      "symbol": "tests.test_run_app.test_run_app_preserves_startup_traceback.failing_ctx",
+      "message": "Statement follows an unconditional terminating statement in the same block.",
+      "evidence": [
+        {
+          "file": "tests/test_run_app.py",
+          "start_line": 177,
+          "end_line": 177
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b5eef8444320c4d357a777d5",
+          "symbol": "tests.test_run_app.test_run_app_preserves_startup_traceback",
+          "file": "tests/test_run_app.py",
+          "line": 167,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "f60b5c2b0162aadcbd8430d5",
+          "symbol": "tests.test_run_app.test_run_app_preserves_startup_traceback.failing_ctx._app",
+          "file": "tests/test_run_app.py",
+          "line": 175,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "538c1374ea2a66a28d4f4408",
+          "symbol": "tests.test_run_app.test_run_app_preserves_startup_traceback.failing_ctx.raise RuntimeError(\"boom from failing_ctx\")",
+          "file": "tests/test_run_app.py",
+          "line": 176,
+          "relationship": "raises",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The preceding return, raise, break or continue exits this block before this statement.",
+      "suggested_fix": "Remove the unreachable statement or move it before the terminator if it must execute.",
+      "suggested_test": "Exercise the enclosing function’s exit path and assert the intended return value or exception.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e01ba109d82aaf80057860a4adc6a123",
+      "repository_id": "8550a12a13af4f98ac5d2c11fe37c1e2",
+      "snapshot": "d2e0fadb71a7b529cc2d82914a20599ba0d417481da494cb1996974516c8d87d",
+      "type": "unreachable_statement",
+      "severity": "warning",
+      "confidence": "high",
+      "file": "tests/test_run_app.py",
+      "line": 1132,
+      "end_line": 1132,
+      "symbol": "tests.test_run_app.test_run_app_raises_exception.context",
+      "message": "Statement follows an unconditional terminating statement in the same block.",
+      "evidence": [
+        {
+          "file": "tests/test_run_app.py",
+          "start_line": 1132,
+          "end_line": 1132
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "0cfa460fef6c4206762c4dc7",
+          "symbol": "tests.test_run_app.test_run_app_raises_exception",
+          "file": "tests/test_run_app.py",
+          "line": 1129,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4adf8ed419d4b8a9aa49f70f",
+          "symbol": "tests.test_run_app.test_run_app_raises_exception.context.app",
+          "file": "tests/test_run_app.py",
+          "line": 1130,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "a5bdcd0e5d73d8a7a53d085d",
+          "symbol": "tests.test_run_app.test_run_app_raises_exception.context.raise RuntimeError(\"foo\")",
+          "file": "tests/test_run_app.py",
+          "line": 1131,
+          "relationship": "raises",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The preceding return, raise, break or continue exits this block before this statement.",
+      "suggested_fix": "Remove the unreachable statement or move it before the terminator if it must execute.",
+      "suggested_test": "Exercise the enclosing function’s exit path and assert the intended return value or exception.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "0bc0658fb192ddf35ba4c24ee2bf9bea",
+      "repository_id": "8550a12a13af4f98ac5d2c11fe37c1e2",
+      "snapshot": "d2e0fadb71a7b529cc2d82914a20599ba0d417481da494cb1996974516c8d87d",
+      "type": "unreachable_statement",
+      "severity": "warning",
+      "confidence": "high",
+      "file": "tests/test_web_app.py",
+      "line": 342,
+      "end_line": 342,
+      "symbol": "tests.test_web_app.test_cleanup_ctx_cleanup_after_exception.fail_ctx",
+      "message": "Statement follows an unconditional terminating statement in the same block.",
+      "evidence": [
+        {
+          "file": "tests/test_web_app.py",
+          "start_line": 342,
+          "end_line": 342
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2c9b88ca8c0f4de67c8b256d",
+          "symbol": "tests.test_web_app.test_cleanup_ctx_cleanup_after_exception",
+          "file": "tests/test_web_app.py",
+          "line": 330,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7068e9972b355d11a101e86e",
+          "symbol": "tests.test_web_app.test_cleanup_ctx_cleanup_after_exception.fail_ctx.app",
+          "file": "tests/test_web_app.py",
+          "line": 340,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "abe6a5a016d2ed848e864908",
+          "symbol": "tests.test_web_app.test_cleanup_ctx_cleanup_after_exception.fail_ctx.raise Exception()",
+          "file": "tests/test_web_app.py",
+          "line": 341,
+          "relationship": "raises",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "The preceding return, raise, break or continue exits this block before this statement.",
+      "suggested_fix": "Remove the unreachable statement or move it before the terminator if it must execute.",
+      "suggested_test": "Exercise the enclosing function’s exit path and assert the intended return value or exception.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "53e14754e95534af095873e7b98ba852",
+      "repository_id": "8550a12a13af4f98ac5d2c11fe37c1e2",
+      "snapshot": "d2e0fadb71a7b529cc2d82914a20599ba0d417481da494cb1996974516c8d87d",
+      "type": "circular_dependency",
+      "severity": "info",
+      "confidence": "medium",
+      "file": "aiohttp/__init__.py",
+      "line": 5,
+      "end_line": 5,
+      "symbol": "aiohttp",
+      "message": "Indexed imports form a cycle: aiohttp/__init__.py → aiohttp/_websocket/helpers.py → aiohttp/_websocket/reader.py → aiohttp/_websocket/reader_py.py → aiohttp/_websocket/writer.py → aiohttp/abc.py → aiohttp/base_protocol.py → aiohttp/client.py → aiohttp/client_exceptions.py → aiohttp/client_middleware_digest_auth.py → aiohttp/client_middlewares.py → aiohttp/client_proto.py → aiohttp/client_reqrep.py → aiohttp/client_ws.py → aiohttp/connector.py → aiohttp/cookiejar.py → aiohttp/formdata.py → aiohttp/helpers.py → aiohttp/http.py → aiohttp/http_parser.py → aiohttp/http_websocket.py → aiohttp/http_writer.py → aiohttp/multipart.py → aiohttp/payload.py → aiohttp/resolver.py → aiohttp/streams.py → aiohttp/tracing.py → aiohttp/typedefs.py → aiohttp/web.py → aiohttp/web_app.py → aiohttp/web_exceptions.py → aiohttp/web_fileresponse.py → aiohttp/web_log.py → aiohttp/web_middlewares.py → aiohttp/web_protocol.py → aiohttp/web_request.py → aiohttp/web_response.py → aiohttp/web_routedef.py → aiohttp/web_runner.py → aiohttp/web_server.py → aiohttp/web_urldispatcher.py → aiohttp/web_ws.py → aiohttp/worker.py",
+      "evidence": [
+        {
+          "file": "aiohttp/__init__.py",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d8260d4ab6dd6a96b75c5785",
+          "symbol": "aiohttp.__dir__",
+          "file": "aiohttp/__init__.py",
+          "line": 244,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "be4a188323674daa9b4a4299",
+          "symbol": "aiohttp.__getattr__",
+          "file": "aiohttp/__init__.py",
+          "line": 248,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d0ef4464e2cf14ffd3a13d54",
+          "symbol": "aiohttp.hdrs",
+          "file": "aiohttp/hdrs.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "ab341fe1f9f84308c1a6a115",
+          "symbol": "aiohttp.client",
+          "file": "aiohttp/client.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "72d51e69cea0b4c042f37977",
+          "symbol": "aiohttp.client.ClientSession",
+          "file": "aiohttp/client.py",
+          "line": 280,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "302b50ec14bc1f1f2d5dbe76",
+          "symbol": "aiohttp.client_middleware_digest_auth.DigestAuthMiddleware",
+          "file": "aiohttp/client_middleware_digest_auth.py",
+          "line": 156,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "12cfe6b4b3729672589adc9b",
+          "symbol": "aiohttp.client_middlewares",
+          "file": "aiohttp/client_middlewares.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "1c135e9ef39fee026d30ea63",
+          "symbol": "aiohttp.compression_utils.set_zlib_backend",
+          "file": "aiohttp/compression_utils.py",
+          "line": 159,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "97b7e9d91fb5575b0fa59834",
+          "symbol": "aiohttp.connector",
+          "file": "aiohttp/connector.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "7d1d632df76a4bc67ac09c9e",
+          "symbol": "aiohttp.cookiejar.CookieJar",
+          "file": "aiohttp/cookiejar.py",
+          "line": 66,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "e73fde6a9c1ddc908726aeb1",
+          "symbol": "aiohttp.cookiejar.DummyCookieJar",
+          "file": "aiohttp/cookiejar.py",
+          "line": 877,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "1ed8c2af97ab85fc9da6cf90",
+          "symbol": "aiohttp.formdata.FormData",
+          "file": "aiohttp/formdata.py",
+          "line": 17,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "f7e87cf983e6a74bd5b349ee",
+          "symbol": "aiohttp.helpers.ChainMapProxy",
+          "file": "aiohttp/helpers.py",
+          "line": 978,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "d4eb66febb852305da2f4c69",
+          "symbol": "aiohttp.helpers.ETag",
+          "file": "aiohttp/helpers.py",
+          "line": 1157,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "eafc236e588e605376fa460d",
+          "symbol": "aiohttp.helpers.encode_basic_auth",
+          "file": "aiohttp/helpers.py",
+          "line": 179,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "7ff7264f457f100b02555173",
+          "symbol": "aiohttp.http",
+          "file": "aiohttp/http.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "5601ad494960e405ba88f5f2",
+          "symbol": "aiohttp.multipart.BadContentDispositionHeader",
+          "file": "aiohttp/multipart.py",
+          "line": 77,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "e3d443d9af3fcc8166365630",
+          "symbol": "aiohttp.multipart.BadContentDispositionParam",
+          "file": "aiohttp/multipart.py",
+          "line": 81,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "1756ea87813c6c1aa19f13b7",
+          "symbol": "aiohttp.multipart.BodyPartReader",
+          "file": "aiohttp/multipart.py",
+          "line": 296,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "6a275afdc9e3bf6906593c51",
+          "symbol": "aiohttp.multipart.MultipartReader",
+          "file": "aiohttp/multipart.py",
+          "line": 714,
+          "relationship": "imports",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "Established file-import edges form a strongly connected component. Such cycles can be intentional and are not proof of runtime failure.",
+      "suggested_fix": "Review initialization order and consider moving shared contracts into an independent module if the cycle causes a problem.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    }
+  ],
+  "snapshot": "d2e0fadb71a7b529cc2d82914a20599ba0d417481da494cb1996974516c8d87d",
+  "detector_version": "2026-10-04-conservative-static-v1",
+  "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+}

@@ -20,7 +20,7 @@ Usage: ./setup_and_run.sh [--setup-only] [--no-browser]
 
 Configuration can be supplied with environment variables. For example:
   DEVPILOT_LLM_BASE_URL=http://127.0.0.1:11434/v1 \
-  DEVPILOT_LLM_MODEL=qwen2.5-coder:7b ./setup_and_run.sh
+  DEVPILOT_LLM_MODEL=qwen2.5-coder:14b ./setup_and_run.sh
 
 Set DEVPILOT_PORT to use a port other than 8000.
 USAGE
@@ -93,31 +93,43 @@ PY
 }
 
 configure_optional_services() {
+  local available_models candidate
   if [[ -z "${DEVPILOT_LLM_BASE_URL:-}" || -z "${DEVPILOT_LLM_MODEL:-}" ]]; then
     if command -v ollama >/dev/null 2>&1; then
-      if ollama list 2>/dev/null | awk 'NR > 1 { print $1 }' | grep -Fxq 'qwen2.5-coder:7b'; then
-        export DEVPILOT_LLM_BASE_URL="${DEVPILOT_LLM_BASE_URL:-http://127.0.0.1:11434/v1}"
-        export DEVPILOT_LLM_MODEL="${DEVPILOT_LLM_MODEL:-qwen2.5-coder:7b}"
-      fi
+      available_models="$(ollama list 2>/dev/null | awk 'NR > 1 { print $1 }' || true)"
+      for candidate in qwen2.5-coder:14b qwen2.5-coder:7b; do
+        if printf '%s\n' "$available_models" | grep -Fxq "$candidate"; then
+          export DEVPILOT_LLM_BASE_URL="${DEVPILOT_LLM_BASE_URL:-http://127.0.0.1:11434/v1}"
+          export DEVPILOT_LLM_MODEL="${DEVPILOT_LLM_MODEL:-$candidate}"
+          break
+        fi
+      done
     fi
   fi
 
   export DEVPILOT_LANGGRAPH_ENABLED="${DEVPILOT_LANGGRAPH_ENABLED:-0}"
   export DEVPILOT_OLLAMA_NUM_CTX="${DEVPILOT_OLLAMA_NUM_CTX:-8192}"
   export DEVPILOT_SOURCE_TOKEN_BUDGET="${DEVPILOT_SOURCE_TOKEN_BUDGET:-4096}"
+  export DEVPILOT_MODEL_SOURCE_SELECTION="${DEVPILOT_MODEL_SOURCE_SELECTION:-1}"
   export DEVPILOT_VERIFY_CLAIMS="${DEVPILOT_VERIFY_CLAIMS:-1}"
+  export DEVPILOT_REPAIR_REJECTED_CLAIMS="${DEVPILOT_REPAIR_REJECTED_CLAIMS:-1}"
+  export DEVPILOT_PROVIDER_TIMEOUT_SECONDS="${DEVPILOT_PROVIDER_TIMEOUT_SECONDS:-180}"
 
   if [[ -n "${DEVPILOT_LLM_BASE_URL:-}" && -n "${DEVPILOT_LLM_MODEL:-}" ]]; then
     printf 'Chat model: configured (%s)\n' "$DEVPILOT_LLM_MODEL"
   else
     printf 'Chat model: not configured; repository indexing and Evidence only answers still work.\n'
-    printf 'To enable local AI answers, install Ollama, run: ollama pull qwen2.5-coder:7b\n'
-    printf 'Then start this script with DEVPILOT_LLM_BASE_URL=http://127.0.0.1:11434/v1 and DEVPILOT_LLM_MODEL=qwen2.5-coder:7b.\n'
+    printf 'To enable local AI answers, install Ollama and a model appropriate for available memory. For the tested configuration: ollama pull qwen2.5-coder:14b\n'
+    printf 'Then start this script with DEVPILOT_LLM_BASE_URL=http://127.0.0.1:11434/v1 and DEVPILOT_LLM_MODEL=qwen2.5-coder:14b.\n'
   fi
 
   export DEVPILOT_LEGACY_EXECUTION="${DEVPILOT_LEGACY_EXECUTION:-0}"
   if [[ "$DEVPILOT_LANGGRAPH_ENABLED" == "1" ]]; then
     "${VENV}/bin/python" -m pip install 'langgraph>=1.2,<2' 'langgraph-checkpoint-sqlite>=3.1,<4'
+  fi
+  if [[ -n "${DEVPILOT_NEURAL_RERANKER:-}" ]]; then
+    "${VENV}/bin/python" -m pip install 'sentence-transformers>=5,<6'
+    printf 'Local reranker: %s (weights downloaded on first use)\n' "$DEVPILOT_NEURAL_RERANKER"
   fi
   if [[ -z "${DEVPILOT_EMBEDDING_MODEL:-}" ]] && command -v ollama >/dev/null 2>&1; then
     if ollama list 2>/dev/null | awk 'NR > 1 {print $1}' | grep -Fxq 'nomic-embed-text:latest'; then

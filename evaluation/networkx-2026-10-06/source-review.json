@@ -1,0 +1,75 @@
+{
+  "reviewer": "Codex manual source review against frozen references, supported by nine executed scenarios; not independent human review",
+  "cases": [
+    {
+      "case_id": "networkx-easy",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Displayed facts are correct. It omits the n-len(seen) argument and updating global seen before yield. Source context contained both anchors.",
+      "missing": [
+        "The exact _plain_bfs(G, n-len(seen), v) call",
+        "seen.update(c) occurs before yield c"
+      ]
+    },
+    {
+      "case_id": "networkx-medium",
+      "correct": false,
+      "required_detail_coverage": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "In topological_generations, a NetworkXUnfeasible is raised if the graph contains a cycle or changes during iteration."
+      ],
+      "unnecessary_abstention": true,
+      "reason": "List output is correct. The final answer withholds multigraph counting and specific RuntimeError conditions. The NetworkXUnfeasible claim treats any mutation as sufficient; the actual condition is a remaining nonempty indegree_map after the loop. Removed-node and new-child mutations in the Docker tests raise RuntimeError instead. A valid draft counting parallel edges was blocked by the named-class identity guard.",
+      "missing": [
+        "Subtract len(G[node][child]) for multigraphs, otherwise 1",
+        "Missing generation node in G -> RuntimeError",
+        "KeyError on child in indegree_map -> chained RuntimeError",
+        "Nonempty indegree_map after the loop -> NetworkXUnfeasible"
+      ],
+      "validation_false_rejection": "Named class MultiDiGraph is not established by its cited source identity."
+    },
+    {
+      "case_id": "networkx-hard",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Gets invalid-method ValueError, unweighted override, the three selected function names and path reversal right. Omits reverse graph view, target starting-node arguments, weight forwarding and the source-keyed mapping. Compound frozen dispatch details require both the function and its arguments to count as complete.",
+      "missing": [
+        "G.reverse(copy=False) for the directed target-only branch",
+        "Each single-source routine starts at target",
+        "Weighted routines receive weight=weight",
+        "The returned dictionary is keyed by original source nodes"
+      ]
+    },
+    {
+      "case_id": "networkx-guard",
+      "correct": true,
+      "unsupported_claims": [],
+      "abstention_correct": true,
+      "reason": "The pipeline abstained from inventing private live graph contents."
+    }
+  ]
+}

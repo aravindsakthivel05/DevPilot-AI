@@ -4,7 +4,9 @@
 
 DevPilot indexes a public GitHub repository or local folder, extracts source structure, and combines lexical, semantic and graph retrieval to answer repository questions with source evidence. It can detect conservative static issue candidates, localise them, investigate their causes, and draft fixes and regression tests for manual review.
 
-**The system generates candidate fixes and tests but does not execute or verify them.** It does not automatically modify indexed repositories. The core needs neither Docker nor LangGraph. Answers and suggestions can still be wrong; citations establish provenance, not proof of meaning.
+**The core generates candidate fixes and tests for manual review.** The optional behavior-check CLI runs explicitly supplied scenarios in Docker; passing those scenarios does not automatically verify generated answers or drafts. Indexed repositories are immutable snapshots. The core needs neither Docker nor LangGraph. Answers and suggestions can still be wrong; citations establish provenance, not proof of meaning.
+
+See [source reasoning and quality evaluation](docs/behavior-quality.md) for behavior tables, focused reading, generator/reviewer comparisons, isolated checks and the gated local training workflow.
 
 ## Start on this Mac
 
@@ -12,7 +14,7 @@ DevPilot indexes a public GitHub repository or local folder, extracts source str
 ./setup_and_run.sh
 ```
 
-Prerequisites: Python 3.11+, Git, Node.js 18+ and npm. The script installs Python/frontend dependencies, builds the UI, and serves it at **http://127.0.0.1:8000**. It recognizes an installed, running Ollama with `qwen2.5-coder:7b` and `nomic-embed-text:latest`. It does not download large models or install system tools automatically.
+Prerequisites: Python 3.11+, Git, Node.js 18+ and npm. The script installs Python/frontend dependencies, builds the UI, and serves it at **http://127.0.0.1:8000**. It recognizes an installed, running Ollama, preferring installed `qwen2.5-coder:14b` over `qwen2.5-coder:7b`, plus `nomic-embed-text:latest`. Explicit provider/model settings take precedence. It does not download large models or install system tools automatically.
 
 For the more capable model already tested on this Mac:
 
@@ -44,7 +46,7 @@ For a small nine-language integration example, index `examples/research-reposito
 
 Tree-sitter adapters support **Python, Java, JavaScript, TypeScript, C, C++, Go, Rust and C#**. Python reuses AST scope resolution; Java reuses declared receiver/import resolution. The other adapters establish selected literal imports, same-file/static calls and limited cross-file relationships. All use normalized symbol metadata.
 
-Support is unequal. Dynamic dispatch, overload/type resolution, macros, generated code, framework wiring, JavaScript CommonJS/default/namespace import resolution, Go module imports, and Rust traits are incomplete. `.h` defaults to C. Kotlin and Python `.pyi` are searchable text rather than fully analyzed adapters. Grammar recovery can flag valid dialects; see [language capabilities and limitations](docs/language-support.md).
+Support is unequal. Dynamic dispatch, overload/type resolution, macro expansion, generated code, framework wiring, JavaScript CommonJS/default/namespace import resolution, Go module imports, and Rust traits are incomplete. Conditional C/C++ macro definitions are indexed with nearby guards. `.h` uses C++ when its content contains clear C++ constructs and otherwise uses C. Kotlin and Python `.pyi` are searchable text rather than fully analyzed adapters. Grammar recovery can flag valid dialects; see [language capabilities and limitations](docs/language-support.md).
 
 ## Architecture and files
 
@@ -60,7 +62,7 @@ Support is unequal. Dynamic dispatch, overload/type resolution, macros, generate
 | `backend/legacy/`, `infra/` | Optional historical execution/repair experiments, disabled by default |
 | `tests/`, `scripts/`, `evaluation/` | Regression checks, reproducible evaluation and actual result artifacts |
 
-Read [architecture](docs/architecture.md), [file guide](docs/file-guide.md), [custom RAG](docs/custom-rag.md), [error analysis](docs/error-analysis.md), [evaluation](docs/research-evaluation.md), and the [implementation report](docs/implementation-2026-10-04.md).
+Read [architecture](docs/architecture.md), [file guide](docs/file-guide.md), [custom RAG](docs/custom-rag.md), [error analysis](docs/error-analysis.md), [evaluation](docs/research-evaluation.md), the [implementation report](docs/implementation-2026-10-04.md), and [answer-quality changes and measured limits](docs/quality-2026-10-04.md).
 
 ## Existing data and rebuilding
 
@@ -72,7 +74,7 @@ You can also rebuild from the CLI, preferably while the server is stopped:
 .venv/bin/python -m scripts.rebuild_indexes REPOSITORY_ID --embeddings
 ```
 
-Rebuilding invalidates derived vectors and symbol-based labels that changed. Historical investigations keep their original source references; refresh reviewed labels before comparing a rebuilt index.
+Rebuilding retains vectors only for unchanged identity, signature, source and documentation under the same embedding policy/model revision. Dense embeddings use compact source entities; parameters and type references remain available through full-text and graph retrieval. Historical investigations keep their original source references; refresh reviewed labels before comparing a rebuilt index.
 
 ## Development checks
 

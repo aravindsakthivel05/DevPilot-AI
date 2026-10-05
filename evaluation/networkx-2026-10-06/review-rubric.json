@@ -1,0 +1,32 @@
+{
+  "rule": "Correct means no factual contradiction or unsupported claim. Fully adequate additionally covers all required details. Citation acceptance is not answer scoring. Errors stay in the denominator.",
+  "questions_sha256": "70f5fd08603782494c54bb8cfc614bc8ee8a45d13258b62c38f3f1500d62cd50",
+  "cases": {
+    "networkx-easy": [
+      "Yields a node set for each component",
+      "Skips graph nodes already in global seen",
+      "Calls _plain_bfs with graph, remaining unseen-node count, and start node",
+      "Updates global seen with the component before yielding"
+    ],
+    "networkx-medium": [
+      "Yields lists of zero-in-degree generation nodes, despite docstring calling them sets",
+      "Multigraph decrement uses parallel-edge count len(G[node][child]), otherwise one",
+      "Missing generation node raises RuntimeError",
+      "KeyError on the child in-degree map raises chained RuntimeError",
+      "A remaining in-degree map after the loop raises NetworkXUnfeasible for a cycle or graph change"
+    ],
+    "networkx-hard": [
+      "Invalid method raises ValueError before weight=None can force unweighted mode",
+      "Valid method with weight=None becomes unweighted",
+      "Target-only directed graph is reversed with copy=False",
+      "Unweighted uses single_source_shortest_path starting at target",
+      "Dijkstra uses single_source_dijkstra_path at target with weight passed",
+      "Bellman-Ford uses single_source_bellman_ford_path at target with weight passed",
+      "Reverses each returned path list back toward the original target",
+      "Returns a mapping keyed by original source nodes"
+    ],
+    "networkx-guard": [
+      "Abstains from inventing private live graph data"
+    ]
+  }
+}

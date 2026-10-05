@@ -1,0 +1,2211 @@
+{
+  "itsdangerous": {
+    "id": "73301d93ccb0425099783d9227759b40",
+    "url": "https://github.com/pallets/itsdangerous",
+    "commit": "672971d66a2ef9f85151e53283113f33d642dabd",
+    "fingerprint": "b93f1eaf873a2c0291f6c77e9064a1cdd8e4ca23b6d5ad93f53cd950ad4a7ec8",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 78.401,
+    "stats": {
+      "files": 40,
+      "python_files": 15,
+      "java_files": 0,
+      "languages": {
+        "text": 25,
+        "python": 15
+      },
+      "symbols": 521,
+      "edges": 679,
+      "parse_errors": [],
+      "unresolved_count": 350,
+      "unresolved": [
+        {
+          "source": "42e1a5725c53afa91d5394c3",
+          "label": "pallets_sphinx_themes.get_version",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "42e1a5725c53afa91d5394c3",
+          "label": "pallets_sphinx_themes.ProjectLink",
+          "kind": "imports",
+          "line": 2
+        },
+        {
+          "source": "42e1a5725c53afa91d5394c3",
+          "label": "get_version",
+          "kind": "calls",
+          "line": 9
+        },
+        {
+          "source": "42e1a5725c53afa91d5394c3",
+          "label": "ProjectLink",
+          "kind": "calls",
+          "line": 39
+        },
+        {
+          "source": "42e1a5725c53afa91d5394c3",
+          "label": "ProjectLink",
+          "kind": "calls",
+          "line": 40
+        },
+        {
+          "source": "42e1a5725c53afa91d5394c3",
+          "label": "ProjectLink",
+          "kind": "calls",
+          "line": 41
+        },
+        {
+          "source": "42e1a5725c53afa91d5394c3",
+          "label": "ProjectLink",
+          "kind": "calls",
+          "line": 42
+        },
+        {
+          "source": "42e1a5725c53afa91d5394c3",
+          "label": "ProjectLink",
+          "kind": "calls",
+          "line": 43
+        },
+        {
+          "source": "1387085d1e2d4c6e3949a6ce",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "1387085d1e2d4c6e3949a6ce",
+          "label": "json",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "1387085d1e2d4c6e3949a6ce",
+          "label": "typing",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "48429aa2a06385fe5aee4f48",
+          "label": "staticmethod",
+          "kind": "decorated_by",
+          "line": 10
+        },
+        {
+          "source": "48429aa2a06385fe5aee4f48",
+          "label": "_json.loads",
+          "kind": "calls",
+          "line": 12
+        },
+        {
+          "source": "90fc3374d701fa1fb5bf0bec",
+          "label": "staticmethod",
+          "kind": "decorated_by",
+          "line": 14
+        },
+        {
+          "source": "90fc3374d701fa1fb5bf0bec",
+          "label": "kwargs.setdefault",
+          "kind": "calls",
+          "line": 16
+        },
+        {
+          "source": "90fc3374d701fa1fb5bf0bec",
+          "label": "kwargs.setdefault",
+          "kind": "calls",
+          "line": 17
+        },
+        {
+          "source": "90fc3374d701fa1fb5bf0bec",
+          "label": "_json.dumps",
+          "kind": "calls",
+          "line": 18
+        },
+        {
+          "source": "668ac7b942e7f0d5eeac942a",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "668ac7b942e7f0d5eeac942a",
+          "label": "base64",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "668ac7b942e7f0d5eeac942a",
+          "label": "string",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "668ac7b942e7f0d5eeac942a",
+          "label": "struct",
+          "kind": "imports",
+          "line": 5
+        },
+        {
+          "source": "668ac7b942e7f0d5eeac942a",
+          "label": "typing",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "62efb64f0517ee34b515c705",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 14
+        },
+        {
+          "source": "62efb64f0517ee34b515c705",
+          "label": "s.encode",
+          "kind": "calls",
+          "line": 15
+        },
+        {
+          "source": "736299c7bb5d9d29406e485b",
+          "label": "base64.urlsafe_b64encode",
+          "kind": "calls",
+          "line": 25
+        },
+        {
+          "source": "2289d00ffa209b237aba806e",
+          "label": "len",
+          "kind": "calls",
+          "line": 33
+        },
+        {
+          "source": "2289d00ffa209b237aba806e",
+          "label": "base64.urlsafe_b64decode",
+          "kind": "calls",
+          "line": 36
+        },
+        {
+          "source": "668ac7b942e7f0d5eeac942a",
+          "label": "struct.Struct",
+          "kind": "calls",
+          "line": 44
+        },
+        {
+          "source": "668ac7b942e7f0d5eeac942a",
+          "label": "t.cast",
+          "kind": "calls",
+          "line": 46
+        },
+        {
+          "source": "e668d007852cd6d126ff84f9",
+          "label": "_int_to_bytes",
+          "kind": "calls",
+          "line": 50
+        },
+        {
+          "source": "ddac58ce503299025e67b9f0",
+          "label": "_bytes_to_int",
+          "kind": "calls",
+          "line": 54
+        },
+        {
+          "source": "ddac58ce503299025e67b9f0",
+          "label": "bytestr.rjust",
+          "kind": "calls",
+          "line": 54
+        },
+        {
+          "source": "41bda71e56679ca12bb35b7b",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "41bda71e56679ca12bb35b7b",
+          "label": "typing",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "41bda71e56679ca12bb35b7b",
+          "label": "datetime.datetime",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "d1176deb9c79aa1059d47542",
+          "label": "Exception",
+          "kind": "inherits",
+          "line": 7
+        },
+        {
+          "source": "4c42427767a4c2ffac13dd3a",
+          "label": "super",
+          "kind": "calls",
+          "line": 15
+        },
+        {
+          "source": "c81606cf68377fd1ec6fe38f",
+          "label": "super",
+          "kind": "calls",
+          "line": 26
+        },
+        {
+          "source": "45fcdd140eaeb7999be8d017",
+          "label": "super",
+          "kind": "calls",
+          "line": 47
+        },
+        {
+          "source": "21aedccec4bf66311bf0ab9c",
+          "label": "super",
+          "kind": "calls",
+          "line": 81
+        },
+        {
+          "source": "5f5845429d9eca030a18d9ee",
+          "label": "super",
+          "kind": "calls",
+          "line": 102
+        },
+        {
+          "source": "ba46b4dc4486220bef6f38b3",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "ba46b4dc4486220bef6f38b3",
+          "label": "collections.abc",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "ba46b4dc4486220bef6f38b3",
+          "label": "json",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "ba46b4dc4486220bef6f38b3",
+          "label": "typing",
+          "kind": "imports",
+          "line": 5
+        },
+        {
+          "source": "ba46b4dc4486220bef6f38b3",
+          "label": "typing_extensions",
+          "kind": "imports",
+          "line": 14
+        },
+        {
+          "source": "ba46b4dc4486220bef6f38b3",
+          "label": "te.TypeVar",
+          "kind": "calls",
+          "line": 18
+        },
+        {
+          "source": "ba46b4dc4486220bef6f38b3",
+          "label": "t.TypeVar",
+          "kind": "calls",
+          "line": 21
+        },
+        {
+          "source": "9e6459d6c8139020a98c0650",
+          "label": "",
+          "kind": "inherits",
+          "line": 24
+        },
+        {
+          "source": "c661009ddf6e38da0700a160",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "c661009ddf6e38da0700a160",
+          "label": "serializer.dumps",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "d7e4a6aaff4471e18fd39475",
+          "label": "",
+          "kind": "inherits",
+          "line": 40
+        },
+        {
+          "source": "6bb0d90b454bc6adadba7e8b",
+          "label": "t.overload",
+          "kind": "decorated_by",
+          "line": 107
+        },
+        {
+          "source": "c4ceb241e4de925d4a9987a1",
+          "label": "t.overload",
+          "kind": "decorated_by",
+          "line": 123
+        },
+        {
+          "source": "9c5b277e79b01da178738276",
+          "label": "t.overload",
+          "kind": "decorated_by",
+          "line": 139
+        },
+        {
+          "source": "de7ebeebeac2154e7a3d77ee",
+          "label": "t.overload",
+          "kind": "decorated_by",
+          "line": 158
+        },
+        {
+          "source": "dfd2dff933883b0351556e01",
+          "label": "t.overload",
+          "kind": "decorated_by",
+          "line": 174
+        },
+        {
+          "source": "6708f760fc66da4f61b23326",
+          "label": "list",
+          "kind": "calls",
+          "line": 229
+        },
+        {
+          "source": "92589fdd7e2a35a40502f9fc",
+          "label": "property",
+          "kind": "decorated_by",
+          "line": 236
+        },
+        {
+          "source": "00f6674e86706b01052dfc32",
+          "label": "use_serializer.loads",
+          "kind": "calls",
+          "line": 261
+        },
+        {
+          "source": "00f6674e86706b01052dfc32",
+          "label": "payload.decode",
+          "kind": "calls",
+          "line": 261
+        },
+        {
+          "source": "00f6674e86706b01052dfc32",
+          "label": "use_serializer.loads",
+          "kind": "calls",
+          "line": 263
+        },
+        {
+          "source": "4def64930b1becbb49df501e",
+          "label": "self.serializer.dumps",
+          "kind": "calls",
+          "line": 276
+        },
+        {
+          "source": "634a4845e4cb5d7ef9310c5b",
+          "label": "self.signer",
+          "kind": "calls",
+          "line": 285
+        },
+        {
+          "source": "8de4d13f2b3333ed4de5689e",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 298
+        },
+        {
+          "source": "8de4d13f2b3333ed4de5689e",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 301
+        },
+        {
+          "source": "8de4d13f2b3333ed4de5689e",
+          "label": "fallback",
+          "kind": "calls",
+          "line": 307
+        },
+        {
+          "source": "8087fef9bdb6acec66e05f4c",
+          "label": "rv.decode",
+          "kind": "calls",
+          "line": 318
+        },
+        {
+          "source": "dc79a3c50c51eac15ea59e57",
+          "label": "f.write",
+          "kind": "calls",
+          "line": 326
+        },
+        {
+          "source": "779b49615553f1274b434271",
+          "label": "signer.unsign",
+          "kind": "calls",
+          "line": 339
+        },
+        {
+          "source": "779b49615553f1274b434271",
+          "label": "t.cast",
+          "kind": "calls",
+          "line": 343
+        },
+        {
+          "source": "ff1eb9cbe1281822375e4aa8",
+          "label": "f.read",
+          "kind": "calls",
+          "line": 347
+        },
+        {
+          "source": "7bbe6fd72c3bd88a0c0289c6",
+          "label": "f.read",
+          "kind": "calls",
+          "line": 404
+        },
+        {
+          "source": "8406c491731c43737e6c94fe",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "8406c491731c43737e6c94fe",
+          "label": "collections.abc",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "8406c491731c43737e6c94fe",
+          "label": "hashlib",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "8406c491731c43737e6c94fe",
+          "label": "hmac",
+          "kind": "imports",
+          "line": 5
+        },
+        {
+          "source": "8406c491731c43737e6c94fe",
+          "label": "typing",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "bf0eaf3545cadbddde308687",
+          "label": "NotImplementedError",
+          "kind": "calls",
+          "line": 22
+        },
+        {
+          "source": "61e8ae4908495436b1a42a16",
+          "label": "hmac.compare_digest",
+          "kind": "calls",
+          "line": 28
+        },
+        {
+          "source": "2ebde3b62a25e96245b6cf9c",
+          "label": "hashlib.sha1",
+          "kind": "calls",
+          "line": 45
+        },
+        {
+          "source": "1138a21001394c1e594a0cf7",
+          "label": "staticmethod",
+          "kind": "calls",
+          "line": 54
+        },
+        {
+          "source": "53a5054ee74eff143d869966",
+          "label": "hmac.new",
+          "kind": "calls",
+          "line": 63
+        },
+        {
+          "source": "53a5054ee74eff143d869966",
+          "label": "mac.digest",
+          "kind": "calls",
+          "line": 64
+        },
+        {
+          "source": "45e06e47e611c175b45cb046",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 70
+        },
+        {
+          "source": "1f4b7213cef52d1d732d35b3",
+          "label": "staticmethod",
+          "kind": "calls",
+          "line": 120
+        },
+        {
+          "source": "4975b0254f38426caae4a2e6",
+          "label": "ValueError",
+          "kind": "calls",
+          "line": 147
+        },
+        {
+          "source": "6f27a58cf8ff730e303b8226",
+          "label": "property",
+          "kind": "decorated_by",
+          "line": 175
+        },
+        {
+          "source": "9a90b6fd3d6d7196a37d582b",
+          "label": "t.cast",
+          "kind": "calls",
+          "line": 201
+        },
+        {
+          "source": "9a90b6fd3d6d7196a37d582b",
+          "label": "self.digest_method",
+          "kind": "calls",
+          "line": 201
+        },
+        {
+          "source": "9a90b6fd3d6d7196a37d582b",
+          "label": "t.cast",
+          "kind": "calls",
+          "line": 203
+        },
+        {
+          "source": "9a90b6fd3d6d7196a37d582b",
+          "label": "self.digest_method",
+          "kind": "calls",
+          "line": 204
+        },
+        {
+          "source": "9a90b6fd3d6d7196a37d582b",
+          "label": "hmac.new",
+          "kind": "calls",
+          "line": 207
+        },
+        {
+          "source": "9a90b6fd3d6d7196a37d582b",
+          "label": "mac.update",
+          "kind": "calls",
+          "line": 208
+        },
+        {
+          "source": "9a90b6fd3d6d7196a37d582b",
+          "label": "mac.digest",
+          "kind": "calls",
+          "line": 209
+        },
+        {
+          "source": "9a90b6fd3d6d7196a37d582b",
+          "label": "TypeError",
+          "kind": "calls",
+          "line": 213
+        },
+        {
+          "source": "757513b0d1be13748effa403",
+          "label": "self.algorithm.get_signature",
+          "kind": "calls",
+          "line": 219
+        },
+        {
+          "source": "f85a82c934acf2d3aec48024",
+          "label": "reversed",
+          "kind": "calls",
+          "line": 236
+        },
+        {
+          "source": "f85a82c934acf2d3aec48024",
+          "label": "self.algorithm.verify_signature",
+          "kind": "calls",
+          "line": 239
+        },
+        {
+          "source": "53fbb27787a5e47d9b0df299",
+          "label": "signed_value.rsplit",
+          "kind": "calls",
+          "line": 251
+        }
+      ],
+      "skipped_files": 8,
+      "coverage": {
+        "indexed_files": 40,
+        "skipped_files": 8,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "hidden_directory": 1,
+          "ignored_directory": 1,
+          "lockfile": 1,
+          "unsupported_extension": 7
+        },
+        "indexed_extensions": {
+          ".md": 4,
+          ".py": 15,
+          ".rst": 11,
+          ".toml": 1,
+          ".txt": 1,
+          ".yaml": 6,
+          ".yml": 1,
+          "[none]": 1
+        },
+        "recorded_entries": 50,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "timings_ms": {
+        "read_and_snapshot": 19.369,
+        "analysis_and_graph": 77.091,
+        "chunks_and_storage": 153.4,
+        "embeddings": 78147.647,
+        "total_index": 78397.518
+      },
+      "repo_id": "73301d93ccb0425099783d9227759b40",
+      "name": "itsdangerous"
+    },
+    "split": "holdout",
+    "lexical_warmup_seconds": 0.188,
+    "index_status": {
+      "snapshot": "b93f1eaf873a2c0291f6c77e9064a1cdd8e4ca23b6d5ad93f53cd950ad4a7ec8",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "symbols": 521,
+      "embedded_symbols": 190,
+      "embedding_eligible_symbols": 190,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 350,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "macro",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "macro",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 40,
+        "skipped_files": 8,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "hidden_directory": 1,
+          "ignored_directory": 1,
+          "lockfile": 1,
+          "unsupported_extension": 7
+        },
+        "indexed_extensions": {
+          ".md": 4,
+          ".py": 15,
+          ".rst": 11,
+          ".toml": 1,
+          ".txt": 1,
+          ".yaml": 6,
+          ".yml": 1,
+          "[none]": 1
+        },
+        "recorded_entries": 50,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 0.038,
+    "static_candidate_count": 2,
+    "static_candidate_types": {
+      "duplicate_definition": 2
+    }
+  },
+  "zod": {
+    "id": "17cdd40552564bf3b9fcd9b5430b9520",
+    "url": "https://github.com/colinhacks/zod",
+    "commit": "0b216ef674e297ebe41d8bf902262e56f8755822",
+    "fingerprint": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 56.963,
+    "stats": {
+      "files": 592,
+      "python_files": 0,
+      "java_files": 0,
+      "languages": {
+        "text": 76,
+        "javascript": 5,
+        "typescript": 511
+      },
+      "symbols": 29290,
+      "edges": 32565,
+      "parse_errors": [
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 35,
+          "end_line": 35,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 36,
+          "end_line": 36,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 37,
+          "end_line": 37,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 170,
+          "end_line": 170,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1580,
+          "end_line": 1580,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1581,
+          "end_line": 1581,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 2093,
+          "end_line": 2093,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/checks.ts",
+          "line": 28,
+          "end_line": 28,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 181,
+          "end_line": 181,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 181,
+          "end_line": 181,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2046,
+          "end_line": 2046,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2047,
+          "end_line": 2047,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2062,
+          "end_line": 2062,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2063,
+          "end_line": 2063,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 3614,
+          "end_line": 3614,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 10,
+          "end_line": 10,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 11,
+          "end_line": 11,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 12,
+          "end_line": 12,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 42,
+          "end_line": 42,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 907,
+          "end_line": 907,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 908,
+          "end_line": 908,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        }
+      ],
+      "unresolved_count": 50036,
+      "unresolved": [
+        {
+          "source": "e601abeaa11fda2420125a4b",
+          "path": "mm.mjs",
+          "label": "build",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e601abeaa11fda2420125a4b",
+          "path": "mm.mjs",
+          "label": "path.join",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "ac50c5ddc36dcf3649559273",
+          "path": "mm.mjs",
+          "label": "gzipSync",
+          "line": 6,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "ac50c5ddc36dcf3649559273",
+          "path": "mm.mjs",
+          "label": "Buffer.from",
+          "line": 6,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "a1aa591f606bbd1a729824cf",
+          "path": "mm.mjs",
+          "label": "console.log",
+          "line": 7,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "a1aa591f606bbd1a729824cf",
+          "path": "mm.mjs",
+          "label": "f.padEnd",
+          "line": 7,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b610f7f358aaf95bbdda073c",
+          "path": "packages/docs/next.config.mjs",
+          "label": "createMDX",
+          "line": 3,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c53b2aa9cbb246967fc723dc",
+          "path": "packages/docs/next.config.mjs",
+          "label": "Object.entries",
+          "line": 15,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c53b2aa9cbb246967fc723dc",
+          "path": "packages/docs/next.config.mjs",
+          "label": "redirects.push",
+          "line": 21,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "cc6d07f4c9e106990aeb5431",
+          "path": "packages/docs/next.config.mjs",
+          "label": "withMDX",
+          "line": 271,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4ed6a32813801a09fa6196ea",
+          "path": "packages/treeshake/rollup.config.js",
+          "label": "resolve",
+          "line": 17,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4ed6a32813801a09fa6196ea",
+          "path": "packages/treeshake/rollup.config.js",
+          "label": "commonjs",
+          "line": 18,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4ed6a32813801a09fa6196ea",
+          "path": "packages/treeshake/rollup.config.js",
+          "label": "typescript",
+          "line": 19,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4ed6a32813801a09fa6196ea",
+          "path": "packages/treeshake/rollup.config.js",
+          "label": "filesize",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "195d0ac11eb351dc169208a6",
+          "path": "vitest.root.mjs",
+          "label": "dirname",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "195d0ac11eb351dc169208a6",
+          "path": "vitest.root.mjs",
+          "label": "fileURLToPath",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b72d66a1c29b03d240b3d36f",
+          "path": "vitest.root.mjs",
+          "label": "defineConfig",
+          "line": 7,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b72d66a1c29b03d240b3d36f",
+          "path": "vitest.root.mjs",
+          "label": "resolve",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0779fd2d53ae9981fb58e752",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "a18b4fda607b4ed4d240b5df",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type",
+          "line": 10,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4e42e217efa716ae3601ae95",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type",
+          "line": 16,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4e42e217efa716ae3601ae95",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type(\"string\").pipe",
+          "line": 17,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4e42e217efa716ae3601ae95",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type",
+          "line": 17,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4e42e217efa716ae3601ae95",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "s.toUpperCase",
+          "line": 17,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 24,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b254de8b58d7b47ba79e6dfc",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "noMorph",
+          "line": 27,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 28,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 29,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 30,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 31,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0850ad27e579eeafc1daaef5",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "withMorph",
+          "line": 34,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 35,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 36,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 37,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 38,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 40,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "JSON.stringify",
+          "line": 40,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 42,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6ec956f3c2c7bb9795df0083",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "withPipeMorph",
+          "line": 45,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 46,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 47,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 48,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 49,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 51,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "JSON.stringify",
+          "line": 51,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 53,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0e3025d000f2c2c4af55629a",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type",
+          "line": 56,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "11ddac455820cd8e9dafed1e",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "nestedWithMorph",
+          "line": 64,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 65,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 66,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 67,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 68,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 70,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 71,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e0782dc9aa9fb3e15158afde",
+          "path": "packages/bench/array.ts",
+          "label": "makeSchema",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e0782dc9aa9fb3e15158afde",
+          "path": "packages/bench/array.ts",
+          "label": "z.array",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e0782dc9aa9fb3e15158afde",
+          "path": "packages/bench/array.ts",
+          "label": "z.string",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4a45de41eb4a6c96495bbe96",
+          "path": "packages/bench/array.ts",
+          "label": "makeData",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4a45de41eb4a6c96495bbe96",
+          "path": "packages/bench/array.ts",
+          "label": "Array.from",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4a45de41eb4a6c96495bbe96",
+          "path": "packages/bench/array.ts",
+          "label": "randomString",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7c4953696574dc4f9d598336",
+          "path": "packages/bench/array.ts",
+          "label": "console.log",
+          "line": 8,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7c4953696574dc4f9d598336",
+          "path": "packages/bench/array.ts",
+          "label": "zod3.parse",
+          "line": 8,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7c4953696574dc4f9d598336",
+          "path": "packages/bench/array.ts",
+          "label": "console.log",
+          "line": 9,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7c4953696574dc4f9d598336",
+          "path": "packages/bench/array.ts",
+          "label": "zod4.parse",
+          "line": 9,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f2f67e68a039bd9a7a0df725",
+          "path": "packages/bench/array.ts",
+          "label": "metabench",
+          "line": 11,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6b04a64aa3594c5f96f5c4d3",
+          "path": "packages/bench/array.ts",
+          "label": "zod3.parse",
+          "line": 13,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "aadb6417b39c4bf9f3971859",
+          "path": "packages/bench/array.ts",
+          "label": "zod4.parse",
+          "line": 16,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7c4953696574dc4f9d598336",
+          "path": "packages/bench/array.ts",
+          "label": "bench.run",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "098ac6af8fc70743d3aa3d78",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Array.from",
+          "line": 10,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "098ac6af8fc70743d3aa3d78",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Object.freeze",
+          "line": 11,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "098ac6af8fc70743d3aa3d78",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Object.freeze",
+          "line": 18,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "fd83f0aa33d705c19f9732e3",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "type",
+          "line": 59,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "2cc74853691f45bb2e13087c",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "metabench(\"valid: check method comparison\", {\n  \"=== INVALID\"() {\n    for (const item of DATA) {\n      const r = _run(item);\n      if (r === INVALID) sink = null;\n      else sink = r;\n    }\n  },\n  \"instanceof $ZodError\"() {\n    for (const item of DATA) {\n      const r = _run(item);\n      if (r instanceof $ZodError) sink = null;\n      else sink = r;\n    }\n  },\n  safeParse() {\n    for (const item of DATA) {\n      const r = safeParse(item);\n      if (!r.success) sink = null;\n      else sink = r.data;\n    }\n  },\n  \"arktype (instanceof)\"() {\n    for (const item of DATA) {\n      const r = arkSchema(item);\n      if (r instanceof type.errors) sink = null;\n      else sink = r;\n    }\n  },\n}).run",
+          "line": 75,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "2cc74853691f45bb2e13087c",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "metabench",
+          "line": 75,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "602d72f14b77778bab81fa0b",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "arkSchema",
+          "line": 99,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "705138ce48be06a4a809cb30",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Array.from",
+          "line": 107,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "705138ce48be06a4a809cb30",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Object.freeze",
+          "line": 108,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "705138ce48be06a4a809cb30",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Object.freeze",
+          "line": 115,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "2cc74853691f45bb2e13087c",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "metabench(\"invalid: check method comparison\", {\n  \"=== INVALID\"() {\n    for (const item of INVALID_DATA) {\n      const r = _run(item);\n      if (r === INVALID) sink = null;\n      else sink = r;\n    }\n  },\n  \"instanceof $ZodError\"() {\n    for (const item of INVALID_DATA) {\n      const r = _run(item);\n      if (r instanceof $ZodError) sink = null;\n      else sink = r;\n    }\n  },\n  safeParse() {\n    for (const item of INVALID_DATA) {\n      const r = safeParse(item);\n      if (!r.success) sink = null;\n      else sink = r.data;\n    }\n  },\n  \"arktype (instanceof)\"() {\n    for (const item of INVALID_DATA) {\n      const r = arkSchema(item);\n      if (r instanceof type.errors) sink = null;\n      else sink = r;\n    }\n  },\n}).run",
+          "line": 119,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "2cc74853691f45bb2e13087c",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "metabench",
+          "line": 119,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1d7b4ecfc2f4f1be4495b552",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "arkSchema",
+          "line": 143,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dd69322e48ce6ec4d91fc984",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "import",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dd69322e48ce6ec4d91fc984",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "import",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dd69322e48ce6ec4d91fc984",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "import.meta.resolve",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c17d166a4a00e3acda22e2d0",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "factory",
+          "line": 10,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c17d166a4a00e3acda22e2d0",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "factory",
+          "line": 11,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "31e846b6485d2d9d94e5d55e",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "characters.charAt",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "31e846b6485d2d9d94e5d55e",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "Math.floor",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "31e846b6485d2d9d94e5d55e",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "Math.random",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "5becfd2a0e6abfb32a43848b",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "Math.floor",
+          "line": 26,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "5becfd2a0e6abfb32a43848b",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "Math.random",
+          "line": 26,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c7a04fd5df4dfe2cf7fa17a",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "Array.from",
+          "line": 30,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c7a04fd5df4dfe2cf7fa17a",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "factory",
+          "line": 33,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1e92d43767fa6e846ca10990",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "val.toString",
+          "line": 52,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1e92d43767fa6e846ca10990",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "val.toString",
+          "line": 66,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "57b985456d29a8624c9dbe1b",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "val.toPrecision",
+          "line": 70,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0d99539eb41f5129d14bf11b",
+          "path": "packages/bench/boolean.ts",
+          "label": "makeSchema",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0d99539eb41f5129d14bf11b",
+          "path": "packages/bench/boolean.ts",
+          "label": "z.boolean",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "bae2b75ede5843484f6151e2",
+          "path": "packages/bench/boolean.ts",
+          "label": "makeData",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "bae2b75ede5843484f6151e2",
+          "path": "packages/bench/boolean.ts",
+          "label": "Math.random",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        }
+      ],
+      "skipped_files": 136,
+      "coverage": {
+        "indexed_files": 592,
+        "skipped_files": 136,
+        "ignored_directories": 9,
+        "reason_counts": {
+          "hidden_directory": 7,
+          "ignored_directory": 2,
+          "symlink_file": 3,
+          "unsupported_extension": 133
+        },
+        "indexed_extensions": {
+          ".css": 2,
+          ".html": 2,
+          ".js": 1,
+          ".json": 36,
+          ".md": 22,
+          ".mjs": 4,
+          ".ts": 477,
+          ".tsx": 34,
+          ".txt": 2,
+          ".xml": 1,
+          ".yaml": 2,
+          ".yml": 9
+        },
+        "recorded_entries": 737,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "timings_ms": {
+        "read_and_snapshot": 181.502,
+        "analysis_and_graph": 48438.422,
+        "chunks_and_storage": 8267.903,
+        "embeddings": 13.493,
+        "total_index": 56901.325
+      },
+      "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "name": "zod"
+    },
+    "split": "holdout",
+    "lexical_warmup_seconds": 4.389,
+    "index_status": {
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "symbols": 29290,
+      "embedded_symbols": 4291,
+      "embedding_eligible_symbols": 4291,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 50036,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "macro",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "macro",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 592,
+        "skipped_files": 136,
+        "ignored_directories": 9,
+        "reason_counts": {
+          "hidden_directory": 7,
+          "ignored_directory": 2,
+          "symlink_file": 3,
+          "unsupported_extension": 133
+        },
+        "indexed_extensions": {
+          ".css": 2,
+          ".html": 2,
+          ".js": 1,
+          ".json": 36,
+          ".md": 22,
+          ".mjs": 4,
+          ".ts": 477,
+          ".tsx": 34,
+          ".txt": 2,
+          ".xml": 1,
+          ".yaml": 2,
+          ".yml": 9
+        },
+        "recorded_entries": 737,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 1.3,
+    "static_candidate_count": 20,
+    "static_candidate_types": {
+      "syntax_error": 20
+    }
+  }
+}

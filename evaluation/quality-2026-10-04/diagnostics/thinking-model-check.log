@@ -1,0 +1,8 @@
+axios-hard 87.603 Interceptors with runWhen functions can be skipped by returning false, preventing them from being added to the processing chain [1].
+
+Skipped interceptors are filtered during request interceptor registration before building the execution chain at line 169-187 [1].
+
+Legacy ordering option (legacyInterceptorReqResOrdering) controls whether interceptors are added via unshift() at chain start or push() at end [1].
+
+When legacyInterceptorReqResOrdering is true, interceptors are prepended to chain using unshift() at lines 182-183 [1].
+gin-hard 59.826 Model answer must cover every aspect, with at most four claims each.

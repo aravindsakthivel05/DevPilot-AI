@@ -1,0 +1,22 @@
+{
+  "pytest": {
+    "passed": 208,
+    "skipped": 1,
+    "skip": "Optional Docker-dependent legacy execution check",
+    "seconds": 6.68
+  },
+  "ruff": {
+    "lint": "passed",
+    "format": "159 files formatted"
+  },
+  "frontend": {
+    "prettier": "passed",
+    "vite_build": "passed",
+    "modules": 1595,
+    "seconds": 0.989
+  },
+  "bootstrap": {
+    "shell_syntax": "passed"
+  },
+  "notice": "Project regression checks establish tested behavior, not real-repository semantic correctness."
+}

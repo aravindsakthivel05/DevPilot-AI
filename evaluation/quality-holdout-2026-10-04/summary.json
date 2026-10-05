@@ -1,0 +1,12 @@
+{
+  "repositories_indexed": 2,
+  "answerable_cases": 4,
+  "fully_correct_complete": 0,
+  "incomplete": 3,
+  "partial_with_unsupported_claims": 1,
+  "live_state_guards_passed": 2,
+  "mean_required_anchor_context_recall": 1.0,
+  "median_answer_seconds": 78.0985,
+  "backend_unchanged": true,
+  "notice": "Questions and sources frozen before outputs. Final backend later receives development-driven fixes and separate post-validation checks; this run was not silently overwritten."
+}

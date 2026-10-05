@@ -1,0 +1,15 @@
+axios-easy [True] 0.496
+axios-medium [True, True] 0.48
+axios-hard [True, False] 0.27
+gin-easy [True, True, True] 0.2
+gin-medium [True, False] 0.241
+gin-hard [True, True] 0.225
+clap-easy [True, True] 0.35
+clap-medium [True, True] 0.318
+clap-hard [False, True, True] 0.238
+fmt-easy [True] 1.763
+fmt-medium [True] 0.264
+fmt-hard [True, True, False] 0.328
+fluentvalidation-easy [True] 0.349
+fluentvalidation-medium [True, True] 0.217
+fluentvalidation-hard [True] 0.227

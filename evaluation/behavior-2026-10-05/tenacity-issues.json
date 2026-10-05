@@ -1,0 +1,475 @@
+{
+  "issues": [
+    {
+      "id": "6476d4936aef4727c4afb4e371f5b9b5",
+      "repository_id": "2296ae3a90614ec499469460dd114b89",
+      "snapshot": "fb8b55a8cf8a9db86425517cab5736e131e24f2623b320875024250c6fb28e97",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "tenacity/__init__.py",
+      "line": 736,
+      "end_line": 750,
+      "symbol": "tenacity.retry",
+      "message": "Top-level definition retry replaces an earlier definition at line 732.",
+      "evidence": [
+        {
+          "file": "tenacity/__init__.py",
+          "start_line": 736,
+          "end_line": 750
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "266a6e92f8eff0d306b7c928",
+          "symbol": "tenacity",
+          "file": "tenacity/__init__.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a592529b7f08355faf85aa66",
+          "symbol": "tenacity.retry.sleep",
+          "file": "tenacity/__init__.py",
+          "line": 738,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "4e731ae36c68adffa0e32461",
+          "symbol": "tenacity.retry.stop",
+          "file": "tenacity/__init__.py",
+          "line": 739,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "a20eb8012e04af581e72f2af",
+          "symbol": "tenacity.retry.wait",
+          "file": "tenacity/__init__.py",
+          "line": 740,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "bcfcd6dcc256b9bcec796fbb",
+          "symbol": "tenacity.retry.retry",
+          "file": "tenacity/__init__.py",
+          "line": 741,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "3dcd5ebdec2d6f9c48f9bcd2",
+          "symbol": "tenacity.retry.before",
+          "file": "tenacity/__init__.py",
+          "line": 742,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "0bf037e844f34aee282a6941",
+          "symbol": "tenacity.retry.after",
+          "file": "tenacity/__init__.py",
+          "line": 743,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "9b6b90111831d9b889debeff",
+          "symbol": "tenacity.retry.before_sleep",
+          "file": "tenacity/__init__.py",
+          "line": 744,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "3a6c2cc82e4a9d53b6cdde12",
+          "symbol": "tenacity.retry.reraise",
+          "file": "tenacity/__init__.py",
+          "line": 745,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "80cc16a68bf5e1c29c5330b3",
+          "symbol": "tenacity.retry.retry_error_cls",
+          "file": "tenacity/__init__.py",
+          "line": 746,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "82ebce2e80c28ee5ef6a3840",
+          "symbol": "tenacity.retry.retry_error_callback",
+          "file": "tenacity/__init__.py",
+          "line": 747,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "e89234c8e3781dd451b81783",
+          "symbol": "tenacity.retry.enabled",
+          "file": "tenacity/__init__.py",
+          "line": 749,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "20bfa0c9b989a280a66728ee65482327",
+      "repository_id": "2296ae3a90614ec499469460dd114b89",
+      "snapshot": "fb8b55a8cf8a9db86425517cab5736e131e24f2623b320875024250c6fb28e97",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "tenacity/__init__.py",
+      "line": 754,
+      "end_line": 768,
+      "symbol": "tenacity.retry",
+      "message": "Top-level definition retry replaces an earlier definition at line 736.",
+      "evidence": [
+        {
+          "file": "tenacity/__init__.py",
+          "start_line": 754,
+          "end_line": 768
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "266a6e92f8eff0d306b7c928",
+          "symbol": "tenacity",
+          "file": "tenacity/__init__.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "18431034818f79d6012ceb83",
+          "symbol": "tenacity.retry.sleep",
+          "file": "tenacity/__init__.py",
+          "line": 755,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "e9a8108ac6a824640c69d42f",
+          "symbol": "tenacity.retry.stop",
+          "file": "tenacity/__init__.py",
+          "line": 756,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "2628c3d00ae6fc5c52dccf9a",
+          "symbol": "tenacity.retry.wait",
+          "file": "tenacity/__init__.py",
+          "line": 757,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "123a5b22f9591783ed260a0b",
+          "symbol": "tenacity.retry.retry",
+          "file": "tenacity/__init__.py",
+          "line": 758,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "30a16c5c9539f08ecf2d9b95",
+          "symbol": "tenacity.retry.before",
+          "file": "tenacity/__init__.py",
+          "line": 759,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "dafa20d4dda4b5feaa4ffbcd",
+          "symbol": "tenacity.retry.after",
+          "file": "tenacity/__init__.py",
+          "line": 760,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "68d3a4ba3f83a747cd0cda58",
+          "symbol": "tenacity.retry.before_sleep",
+          "file": "tenacity/__init__.py",
+          "line": 761,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "e8c31893096139f555e90b5b",
+          "symbol": "tenacity.retry.reraise",
+          "file": "tenacity/__init__.py",
+          "line": 763,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "8627ee5311c164dafc3657c0",
+          "symbol": "tenacity.retry.retry_error_cls",
+          "file": "tenacity/__init__.py",
+          "line": 764,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "f1a9052a411856a24dc2246f",
+          "symbol": "tenacity.retry.retry_error_callback",
+          "file": "tenacity/__init__.py",
+          "line": 765,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "37c52255985b6ecd023bef12",
+          "symbol": "tenacity.retry.enabled",
+          "file": "tenacity/__init__.py",
+          "line": 767,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "d3a9a30794967fa022dfef1ddaa37a8a",
+      "repository_id": "2296ae3a90614ec499469460dd114b89",
+      "snapshot": "fb8b55a8cf8a9db86425517cab5736e131e24f2623b320875024250c6fb28e97",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "tenacity/__init__.py",
+      "line": 771,
+      "end_line": 805,
+      "symbol": "tenacity.retry.dargs",
+      "message": "Top-level definition retry replaces an earlier definition at line 754.",
+      "evidence": [
+        {
+          "file": "tenacity/__init__.py",
+          "start_line": 771,
+          "end_line": 805
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "a915eb67808b1c469e8feed4",
+          "symbol": "tenacity.retry",
+          "file": "tenacity/__init__.py",
+          "line": 771,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "9235f594be28a2c6bfc5315ae6797e03",
+      "repository_id": "2296ae3a90614ec499469460dd114b89",
+      "snapshot": "fb8b55a8cf8a9db86425517cab5736e131e24f2623b320875024250c6fb28e97",
+      "type": "circular_dependency",
+      "severity": "info",
+      "confidence": "medium",
+      "file": "tenacity/__init__.py",
+      "line": 28,
+      "end_line": 28,
+      "symbol": "tenacity",
+      "message": "Indexed imports form a cycle: tenacity/__init__.py → tenacity/after.py → tenacity/asyncio/__init__.py → tenacity/asyncio/retry.py → tenacity/before.py → tenacity/before_sleep.py → tenacity/retry.py → tenacity/stop.py → tenacity/tornadoweb.py → tenacity/wait.py",
+      "evidence": [
+        {
+          "file": "tenacity/__init__.py",
+          "start_line": 28,
+          "end_line": 28
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b850863c5a93905a0083b062",
+          "symbol": "tenacity._has_tornado",
+          "file": "tenacity/__init__.py",
+          "line": 93,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "20c2cac53413ca3cea515227",
+          "symbol": "tenacity.IterState",
+          "file": "tenacity/__init__.py",
+          "line": 120,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "62693d7a6dcdbe9ddc6475dd",
+          "symbol": "tenacity.TryAgain",
+          "file": "tenacity/__init__.py",
+          "line": 136,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "8792960c0d43875685e5bb1e",
+          "symbol": "tenacity.DoAttempt",
+          "file": "tenacity/__init__.py",
+          "line": 143,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "c63f30ec1531ca4b14f4bea2",
+          "symbol": "tenacity.DoSleep",
+          "file": "tenacity/__init__.py",
+          "line": 147,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "cea1a09d8203ac1fcd1fdab4",
+          "symbol": "tenacity.BaseAction",
+          "file": "tenacity/__init__.py",
+          "line": 151,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "db1d6e6ababf9563f7a29479",
+          "symbol": "tenacity.RetryAction",
+          "file": "tenacity/__init__.py",
+          "line": 175,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "91faccc23154a0e061e69926",
+          "symbol": "tenacity._first_set",
+          "file": "tenacity/__init__.py",
+          "line": 186,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6788ac7df44503829d7bc6da",
+          "symbol": "tenacity.RetryError",
+          "file": "tenacity/__init__.py",
+          "line": 190,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d07e96002a4fb8fc17aa1cba",
+          "symbol": "tenacity.AttemptManager",
+          "file": "tenacity/__init__.py",
+          "line": 215,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b583053ba9563222acbf9c3e",
+          "symbol": "tenacity.BaseRetrying",
+          "file": "tenacity/__init__.py",
+          "line": 249,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "472877f98e9c93aaadc88592",
+          "symbol": "tenacity.Retrying",
+          "file": "tenacity/__init__.py",
+          "line": 531,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "e36c547e2253a270a5388044",
+          "symbol": "tenacity.Future",
+          "file": "tenacity/__init__.py",
+          "line": 563,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fbd5abc6e8adbac420e18d56",
+          "symbol": "tenacity.RetryCallState",
+          "file": "tenacity/__init__.py",
+          "line": 588,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "e0153fc75d7b9ed52dd79337",
+          "symbol": "tenacity._RetryDecorated",
+          "file": "tenacity/__init__.py",
+          "line": 677,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "f1800329536c3bf102f072d4",
+          "symbol": "tenacity._AsyncRetryDecorator",
+          "file": "tenacity/__init__.py",
+          "line": 712,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "14dcc0fa057ea8faa51b73b1",
+          "symbol": "tenacity.retry",
+          "file": "tenacity/__init__.py",
+          "line": 731,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a3555b23a7471f12059e826d",
+          "symbol": "tenacity.retry",
+          "file": "tenacity/__init__.py",
+          "line": 735,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a31e5947ac22d141c073c8a8",
+          "symbol": "tenacity.retry",
+          "file": "tenacity/__init__.py",
+          "line": 753,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a915eb67808b1c469e8feed4",
+          "symbol": "tenacity.retry",
+          "file": "tenacity/__init__.py",
+          "line": 771,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Established file-import edges form a strongly connected component. Such cycles can be intentional and are not proof of runtime failure.",
+      "suggested_fix": "Review initialization order and consider moving shared contracts into an independent module if the cycle causes a problem.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    }
+  ],
+  "snapshot": "fb8b55a8cf8a9db86425517cab5736e131e24f2623b320875024250c6fb28e97",
+  "detector_version": "2026-10-04-conservative-static-v1",
+  "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+}

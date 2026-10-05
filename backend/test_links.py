@@ -9,7 +9,11 @@ def is_test_path(path):
     parts = PurePosixPath(path).parts
     name = parts[-1]
     return (
-        any(part in ("test", "tests", "testing") for part in parts[:-1])
+        any(
+            part.lower() in ("test", "tests", "testing", "spec", "specs", "benchmarks")
+            or any(segment in ("tests", "test") for segment in part.lower().split("."))
+            for part in parts[:-1]
+        )
         or name.startswith("test_")
         or name.endswith(("_test.py", "Test.java", "Tests.java"))
         or name.endswith(

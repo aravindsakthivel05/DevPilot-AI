@@ -1,0 +1,185 @@
+{
+  "provenance": "Source-authored by Codex from pinned commits and frozen before model outputs. Expected answers and labels are withheld from answer generation. This is not independent human evaluation. Three answerable questions plus one live-state guard per repository.",
+  "cases": [
+    {
+      "id": "aiohttp-easy",
+      "repository": "aiohttp",
+      "difficulty": "easy",
+      "question": "How does ClientSession.close handle an owned versus a shared connector, and what happens if the session is already closed?",
+      "answerable": true,
+      "expected_answer": "An already-closed session skips the guarded close body. Otherwise, it awaits closing a non-null connector only if connector_owner is true, then clears the session connector reference even for a shared connector. The closed property is true when the connector is None or itself closed; if already closed the guarded body does not clear a retained reference.",
+      "expected_sources": [
+        {
+          "path": "aiohttp/client.py",
+          "name": "close",
+          "anchor_line": 1415,
+          "anchor_text": "if self._connector is not None and self._connector_owner:"
+        },
+        {
+          "path": "aiohttp/client.py",
+          "name": "closed",
+          "anchor_line": 1425,
+          "anchor_text": "return self._connector is None or self._connector.closed"
+        }
+      ]
+    },
+    {
+      "id": "aiohttp-medium",
+      "repository": "aiohttp",
+      "difficulty": "medium",
+      "question": "In BaseConnector.connect and _wait_for_available_connection, how are connection placeholders and queued waiters cleaned up when an awaited operation fails or is cancelled?",
+      "answerable": true,
+      "expected_answer": "connect adds an acquired placeholder before traced connection creation; BaseException catches failures including cancellation, calls _release_acquired(key, placeholder), then re-raises. _release_acquired discards it globally, removes it from per-host acquisition if configured, deletes an empty per-host bucket, and releases a waiting slot; it returns early if the connector already closed. The waiter method has a finally block that removes its future and deletes an empty per-key waiter queue, including cancellation or trace exceptions inside the try.",
+      "expected_sources": [
+        {
+          "path": "aiohttp/connector.py",
+          "name": "connect",
+          "anchor_line": 702,
+          "anchor_text": "self._release_acquired(key, placeholder)"
+        },
+        {
+          "path": "aiohttp/connector.py",
+          "name": "_wait_for_available_connection",
+          "anchor_line": 756,
+          "anchor_text": "keyed_waiters.pop(fut, None)"
+        },
+        {
+          "path": "aiohttp/connector.py",
+          "name": "_release_acquired",
+          "anchor_line": 840,
+          "anchor_text": "self._acquired.discard(proto)"
+        }
+      ]
+    },
+    {
+      "id": "aiohttp-hard",
+      "repository": "aiohttp",
+      "difficulty": "hard",
+      "question": "When ClientSession._request follows redirects, which status/method combinations switch to GET and discard the body, when must a body be replayed, and which cookie/authentication state is cleared on an origin change?",
+      "answerable": true,
+      "expected_answer": "When redirect following is enabled, among 301/302/303/307/308, 303 except HEAD and 301/302 POST rewrite to GET, set data=None and remove a present Content-Length header. Other combinations preserve the method and reuse req._body (307/308, non-POST 301/302, and HEAD 303); a consumed payload causes response.close and ClientPayloadError instead of empty replay. On origin change cookies=None and all Authorization, Cookie and Proxy-Authorization header entries are removed. This code does not assign auth=None.",
+      "expected_sources": [
+        {
+          "path": "aiohttp/client.py",
+          "name": "_request",
+          "anchor_line": 818,
+          "anchor_text": "if (resp.status == 303 and resp.method != hdrs.METH_HEAD)"
+        },
+        {
+          "path": "aiohttp/client.py",
+          "name": "_request",
+          "anchor_line": 834,
+          "anchor_text": "if req._body.consumed:"
+        },
+        {
+          "path": "aiohttp/client.py",
+          "name": "_request",
+          "anchor_line": 895,
+          "anchor_text": "headers.popall(hdrs.PROXY_AUTHORIZATION, None)"
+        }
+      ]
+    },
+    {
+      "id": "werkzeug-easy",
+      "repository": "werkzeug",
+      "difficulty": "easy",
+      "question": "What order does Response.close use for closing the wrapped iterable and running registered callbacks, and does it guarantee callbacks run if the iterable close raises?",
+      "answerable": true,
+      "expected_answer": "Response.close first calls self.response.close if that attribute exists, then invokes each registered _on_close callback in order. There is no try/finally in this method; if the iterable close raises, callbacks are not reached, and a callback exception also interrupts later callbacks.",
+      "expected_sources": [
+        {
+          "path": "src/werkzeug/wrappers/response.py",
+          "name": "close",
+          "anchor_line": 403,
+          "anchor_text": "self.response.close()"
+        },
+        {
+          "path": "src/werkzeug/wrappers/response.py",
+          "name": "close",
+          "anchor_line": 404,
+          "anchor_text": "for func in self._on_close:"
+        }
+      ]
+    },
+    {
+      "id": "werkzeug-medium",
+      "repository": "werkzeug",
+      "difficulty": "medium",
+      "question": "How do force, silent and cache affect Request.get_json MIME-type checks, parse failures, and reuse of cached results?",
+      "answerable": true,
+      "expected_answer": "With cache=True a cached result for the current silent slot returns before MIME checking. force=True bypasses the non-JSON MIME check, not parsing. Without force, a MIME mismatch calls the default failure hook and raises UnsupportedMediaType (415), or returns None when silent=True. Parse ValueError becomes None for silent=True, otherwise the default hook raises BadRequest (400). Successful parsing with cache=True fills both normal and silent slots. A silent parse failure caches None only in the silent slot, preserving the normal slot. If an overridden non-silent failure hook returns, its value is cached only in the normal slot, preserving silent. MIME-mismatch early returns do not fill the parsed cache. cache=False skips parsed-cache reuse and writes, and is forwarded to get_data.",
+      "expected_sources": [
+        {
+          "path": "src/werkzeug/wrappers/request.py",
+          "name": "get_json",
+          "anchor_line": 837,
+          "anchor_text": "if cache and self._cached_json[silent] is not Ellipsis:"
+        },
+        {
+          "path": "src/werkzeug/wrappers/request.py",
+          "name": "get_json",
+          "anchor_line": 856,
+          "anchor_text": "self._cached_json = (normal_rv, rv)"
+        },
+        {
+          "path": "src/werkzeug/wrappers/request.py",
+          "name": "on_json_loading_failed",
+          "anchor_line": 885,
+          "anchor_text": "raise UnsupportedMediaType("
+        }
+      ]
+    },
+    {
+      "id": "werkzeug-hard",
+      "repository": "werkzeug",
+      "difficulty": "hard",
+      "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception, and which mismatch takes precedence?",
+      "answerable": true,
+      "expected_answer": "For an otherwise eligible rule behind a trailing slash, the state matcher requires the method and websocket mode to match; strict_slashes raises SlashRequired, converted to RequestPath(path + slash), whereas a non-strict rule can match directly. MapAdapter catches RequestPath, URL-quotes its path, constructs the redirect URL with query arguments, and raises RequestRedirect. The matcher accumulates allowed methods when a rule rejects the method, and marks websocket_mismatch only in the elif when method matches. NoMatch carries both flags. MapAdapter checks nonempty have_match_for first and raises MethodNotAllowed with valid methods; only otherwise websocket_mismatch raises WebsocketMismatch, otherwise NotFound. Thus the method mismatch takes precedence when both are present.",
+      "expected_sources": [
+        {
+          "path": "src/werkzeug/routing/matcher.py",
+          "name": "match",
+          "anchor_line": 114,
+          "anchor_text": "raise SlashRequired()"
+        },
+        {
+          "path": "src/werkzeug/routing/matcher.py",
+          "name": "match",
+          "anchor_line": 178,
+          "anchor_text": "raise RequestPath(f\"{path}/\")"
+        },
+        {
+          "path": "src/werkzeug/routing/map.py",
+          "name": "match",
+          "anchor_line": 662,
+          "anchor_text": "new_path = quote(e.path_info"
+        },
+        {
+          "path": "src/werkzeug/routing/map.py",
+          "name": "match",
+          "anchor_line": 678,
+          "anchor_text": "raise MethodNotAllowed(valid_methods=list(e.have_match_for))"
+        }
+      ]
+    },
+    {
+      "id": "aiohttp-unanswerable",
+      "repository": "aiohttp",
+      "difficulty": "live-state guard",
+      "question": "What is the current production deployment status and live traffic of aiohttp at this moment?",
+      "answerable": false,
+      "expected_answer": "Abstain: an indexed source snapshot cannot establish current production deployment status or live traffic.",
+      "expected_sources": []
+    },
+    {
+      "id": "werkzeug-unanswerable",
+      "repository": "werkzeug",
+      "difficulty": "live-state guard",
+      "question": "What is the current production deployment status and live traffic of werkzeug at this moment?",
+      "answerable": false,
+      "expected_answer": "Abstain: an indexed source snapshot cannot establish current production deployment status or live traffic.",
+      "expected_sources": []
+    }
+  ]
+}

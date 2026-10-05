@@ -1,0 +1,1745 @@
+{
+  "tenacity": {
+    "id": "2296ae3a90614ec499469460dd114b89",
+    "url": "https://github.com/jd/tenacity",
+    "commit": "8be01b1daf2010566fd936a5c2214efefa43edff",
+    "fingerprint": "fb8b55a8cf8a9db86425517cab5736e131e24f2623b320875024250c6fb28e97",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 14.065,
+    "stats": {
+      "files": 87,
+      "python_files": 20,
+      "java_files": 0,
+      "languages": {
+        "text": 67,
+        "python": 20
+      },
+      "symbols": 1620,
+      "edges": 2825,
+      "parse_errors": [],
+      "unresolved_count": 1632,
+      "unresolved": [
+        {
+          "source": "f569896bbac35d68d74b38da",
+          "label": "importlib.metadata.version",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "f569896bbac35d68d74b38da",
+          "label": "pkg_version",
+          "kind": "calls",
+          "line": 22
+        },
+        {
+          "source": "f569896bbac35d68d74b38da",
+          "label": "release.split",
+          "kind": "calls",
+          "line": 23
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "dataclasses",
+          "kind": "imports",
+          "line": 18
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "functools",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "sys",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "threading",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "time",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "typing",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "warnings",
+          "kind": "imports",
+          "line": 24
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "abc.ABC",
+          "kind": "imports",
+          "line": 25
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "abc.abstractmethod",
+          "kind": "imports",
+          "line": 25
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "concurrent.futures",
+          "kind": "imports",
+          "line": 26
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "tenacity.retry.retry_always",
+          "kind": "imports",
+          "line": 44
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "tenacity.retry.retry_never",
+          "kind": "imports",
+          "line": 44
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "tornado",
+          "kind": "imports",
+          "line": 88
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "typing.Self",
+          "kind": "imports",
+          "line": 102
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "typing_extensions.Self",
+          "kind": "imports",
+          "line": 104
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "types",
+          "kind": "imports",
+          "line": 106
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "tenacity.retry.RetryBaseT",
+          "kind": "imports",
+          "line": 109
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "t.TypeVar",
+          "kind": "calls",
+          "line": 114
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "t.TypeVar",
+          "kind": "calls",
+          "line": 115
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "t.ParamSpec",
+          "kind": "calls",
+          "line": 116
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "t.TypeVar",
+          "kind": "calls",
+          "line": 117
+        },
+        {
+          "source": "20c2cac53413ca3cea515227",
+          "label": "dataclasses.dataclass",
+          "kind": "decorated_by",
+          "line": 120
+        },
+        {
+          "source": "20c2cac53413ca3cea515227",
+          "label": "dataclasses.field",
+          "kind": "calls",
+          "line": 122
+        },
+        {
+          "source": "62693d7a6dcdbe9ddc6475dd",
+          "label": "Exception",
+          "kind": "inherits",
+          "line": 136
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "object",
+          "kind": "calls",
+          "line": 140
+        },
+        {
+          "source": "c63f30ec1531ca4b14f4bea2",
+          "label": "float",
+          "kind": "inherits",
+          "line": 147
+        },
+        {
+          "source": "addb5466b0ef11c6517da679",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 166
+        },
+        {
+          "source": "fb714e87f5350bd3fd279a76",
+          "label": "repr",
+          "kind": "calls",
+          "line": 172
+        },
+        {
+          "source": "1d9422fe8b0f0e7b7e52d753",
+          "label": "float",
+          "kind": "calls",
+          "line": 180
+        },
+        {
+          "source": "266a6e92f8eff0d306b7c928",
+          "label": "object",
+          "kind": "calls",
+          "line": 183
+        },
+        {
+          "source": "6788ac7df44503829d7bc6da",
+          "label": "Exception",
+          "kind": "inherits",
+          "line": 190
+        },
+        {
+          "source": "cbebd4f458aff22d6097aa50",
+          "label": "super",
+          "kind": "calls",
+          "line": 195
+        },
+        {
+          "source": "b49360bc2c29df4910c9b298",
+          "label": "self.last_attempt.exception",
+          "kind": "calls",
+          "line": 199
+        },
+        {
+          "source": "b49360bc2c29df4910c9b298",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 203
+        },
+        {
+          "source": "b49360bc2c29df4910c9b298",
+          "label": "cause.with_traceback",
+          "kind": "calls",
+          "line": 206
+        },
+        {
+          "source": "b49360bc2c29df4910c9b298",
+          "label": "self.last_attempt.result",
+          "kind": "calls",
+          "line": 207
+        },
+        {
+          "source": "2e6fac48fe5f1ae41e5510a7",
+          "label": "self.retry_state.set_exception",
+          "kind": "calls",
+          "line": 231
+        },
+        {
+          "source": "2e6fac48fe5f1ae41e5510a7",
+          "label": "self.retry_state.set_result",
+          "kind": "calls",
+          "line": 234
+        },
+        {
+          "source": "b583053ba9563222acbf9c3e",
+          "label": "ABC",
+          "kind": "inherits",
+          "line": 249
+        },
+        {
+          "source": "c78d20e760d286a971ff18c9",
+          "label": "threading.local",
+          "kind": "calls",
+          "line": 273
+        },
+        {
+          "source": "9f3a3892fd3e4242f5ab26d6",
+          "label": "self.__class__",
+          "kind": "calls",
+          "line": 297
+        },
+        {
+          "source": "0b98d1cb6c54efd4526b2ab0",
+          "label": "self.__dict__.items",
+          "kind": "calls",
+          "line": 317
+        },
+        {
+          "source": "ee85c754913c8c5b4ca79e8e",
+          "label": "self.__dict__.update",
+          "kind": "calls",
+          "line": 320
+        },
+        {
+          "source": "ee85c754913c8c5b4ca79e8e",
+          "label": "threading.local",
+          "kind": "calls",
+          "line": 321
+        },
+        {
+          "source": "ffdec4762636b658656978ea",
+          "label": "id",
+          "kind": "calls",
+          "line": 330
+        },
+        {
+          "source": "8188d3ccd3eaca41acd984a1",
+          "label": "property",
+          "kind": "decorated_by",
+          "line": 340
+        },
+        {
+          "source": "8188d3ccd3eaca41acd984a1",
+          "label": "hasattr",
+          "kind": "calls",
+          "line": 362
+        },
+        {
+          "source": "8188d3ccd3eaca41acd984a1",
+          "label": "t.cast",
+          "kind": "calls",
+          "line": 363
+        },
+        {
+          "source": "32556c9022e06f7ddb1f64af",
+          "label": "property",
+          "kind": "decorated_by",
+          "line": 366
+        },
+        {
+          "source": "32556c9022e06f7ddb1f64af",
+          "label": "hasattr",
+          "kind": "calls",
+          "line": 368
+        },
+        {
+          "source": "d989bde03e441b3e65bd4542",
+          "label": "functools.wraps",
+          "kind": "decorated_by",
+          "line": 378
+        },
+        {
+          "source": "d989bde03e441b3e65bd4542",
+          "label": "f",
+          "kind": "calls",
+          "line": 383
+        },
+        {
+          "source": "d989bde03e441b3e65bd4542",
+          "label": "stats.clear",
+          "kind": "calls",
+          "line": 392
+        },
+        {
+          "source": "d989bde03e441b3e65bd4542",
+          "label": "copy",
+          "kind": "calls",
+          "line": 395
+        },
+        {
+          "source": "859a1f1ceea8119e2860907b",
+          "label": "t.cast",
+          "kind": "calls",
+          "line": 405
+        },
+        {
+          "source": "0834c90757987b2470268e30",
+          "label": "self.statistics.clear",
+          "kind": "calls",
+          "line": 408
+        },
+        {
+          "source": "0834c90757987b2470268e30",
+          "label": "time.monotonic",
+          "kind": "calls",
+          "line": 409
+        },
+        {
+          "source": "6474453f3c2a1a9e981cfc11",
+          "label": "self.iter_state.actions.append",
+          "kind": "calls",
+          "line": 415
+        },
+        {
+          "source": "b23124da43333f60547928a7",
+          "label": "self.retry",
+          "kind": "calls",
+          "line": 418
+        },
+        {
+          "source": "59d10628b18981fec5589583",
+          "label": "self.wait",
+          "kind": "calls",
+          "line": 428
+        },
+        {
+          "source": "97e047aed50f3e4aede68b9d",
+          "label": "self.stop",
+          "kind": "calls",
+          "line": 432
+        },
+        {
+          "source": "77850143ec508959b33ab0ab",
+          "label": "action",
+          "kind": "calls",
+          "line": 438
+        },
+        {
+          "source": "e7acc0a46faa0f66c914e27b",
+          "label": "self.iter_state.reset",
+          "kind": "calls",
+          "line": 442
+        },
+        {
+          "source": "e7acc0a46faa0f66c914e27b",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 451
+        },
+        {
+          "source": "e7acc0a46faa0f66c914e27b",
+          "label": "fut.exception",
+          "kind": "calls",
+          "line": 452
+        },
+        {
+          "source": "bc9a0aedac82fb4b56cdde79",
+          "label": "rs.outcome.result",
+          "kind": "calls",
+          "line": 460
+        },
+        {
+          "source": "52bb90e296cdabb794c33be6",
+          "label": "t.cast",
+          "kind": "calls",
+          "line": 477
+        },
+        {
+          "source": "52bb90e296cdabb794c33be6",
+          "label": "self.retry_error_cls",
+          "kind": "calls",
+          "line": 478
+        },
+        {
+          "source": "52bb90e296cdabb794c33be6",
+          "label": "retry_exc.reraise",
+          "kind": "calls",
+          "line": 480
+        },
+        {
+          "source": "52bb90e296cdabb794c33be6",
+          "label": "fut.exception",
+          "kind": "calls",
+          "line": 481
+        },
+        {
+          "source": "0524d1514d10c1262797f72a",
+          "label": "retry_state.outcome.exception",
+          "kind": "calls",
+          "line": 505
+        },
+        {
+          "source": "0524d1514d10c1262797f72a",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 513
+        },
+        {
+          "source": "0524d1514d10c1262797f72a",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 515
+        },
+        {
+          "source": "0524d1514d10c1262797f72a",
+          "label": "retry_state.prepare_for_next_attempt",
+          "kind": "calls",
+          "line": 516
+        },
+        {
+          "source": "0524d1514d10c1262797f72a",
+          "label": "self.sleep",
+          "kind": "calls",
+          "line": 517
+        },
+        {
+          "source": "9b76101a0c7ccc863c5494ab",
+          "label": "abstractmethod",
+          "kind": "decorated_by",
+          "line": 521
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "fn",
+          "kind": "calls",
+          "line": 542
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "self.begin",
+          "kind": "calls",
+          "line": 544
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "self.iter",
+          "kind": "calls",
+          "line": 548
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 549
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "fn",
+          "kind": "calls",
+          "line": 551
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "retry_state.set_exception",
+          "kind": "calls",
+          "line": 553
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "sys.exc_info",
+          "kind": "calls",
+          "line": 553
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "retry_state.set_result",
+          "kind": "calls",
+          "line": 555
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 556
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "retry_state.prepare_for_next_attempt",
+          "kind": "calls",
+          "line": 557
+        },
+        {
+          "source": "5820ae42b278e45e1a0a04ef",
+          "label": "self.sleep",
+          "kind": "calls",
+          "line": 558
+        },
+        {
+          "source": "e36c547e2253a270a5388044",
+          "label": "",
+          "kind": "inherits",
+          "line": 563
+        },
+        {
+          "source": "7ec06fbd202e7229a2a23862",
+          "label": "super",
+          "kind": "calls",
+          "line": 567
+        },
+        {
+          "source": "8050eb157e6fb4ae08d69b7c",
+          "label": "property",
+          "kind": "decorated_by",
+          "line": 570
+        },
+        {
+          "source": "8050eb157e6fb4ae08d69b7c",
+          "label": "self.exception",
+          "kind": "calls",
+          "line": 573
+        },
+        {
+          "source": "9aa912d21b4501fabed25754",
+          "label": "classmethod",
+          "kind": "decorated_by",
+          "line": 575
+        },
+        {
+          "source": "9aa912d21b4501fabed25754",
+          "label": "fut.set_exception",
+          "kind": "calls",
+          "line": 582
+        },
+        {
+          "source": "9aa912d21b4501fabed25754",
+          "label": "fut.set_result",
+          "kind": "calls",
+          "line": 584
+        },
+        {
+          "source": "e8806e0f97d650015488cf68",
+          "label": "time.monotonic",
+          "kind": "calls",
+          "line": 599
+        },
+        {
+          "source": "e90684b4aede145c03b05a46",
+          "label": "str",
+          "kind": "calls",
+          "line": 631
+        },
+        {
+          "source": "0cb148bb51a7532279d7064d",
+          "label": "property",
+          "kind": "decorated_by",
+          "line": 633
+        }
+      ],
+      "skipped_files": 5,
+      "coverage": {
+        "indexed_files": 87,
+        "skipped_files": 5,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "symlink_file": 1,
+          "unsupported_extension": 4
+        },
+        "indexed_extensions": {
+          ".py": 20,
+          ".rst": 3,
+          ".toml": 1,
+          ".yaml": 59,
+          ".yml": 4
+        },
+        "recorded_entries": 93,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "timings_ms": {
+        "read_and_snapshot": 23.837,
+        "analysis_and_graph": 287.976,
+        "chunks_and_storage": 102.328,
+        "embeddings": 13647.733,
+        "total_index": 14061.88
+      }
+    },
+    "split": "holdout",
+    "lexical_warmup_seconds": 0.093,
+    "index_status": {
+      "snapshot": "fb8b55a8cf8a9db86425517cab5736e131e24f2623b320875024250c6fb28e97",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "symbols": 1620,
+      "embedded_symbols": 762,
+      "embedding_eligible_symbols": 762,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 1632,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "macro",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "macro",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 87,
+        "skipped_files": 5,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "symlink_file": 1,
+          "unsupported_extension": 4
+        },
+        "indexed_extensions": {
+          ".py": 20,
+          ".rst": 3,
+          ".toml": 1,
+          ".yaml": 59,
+          ".yml": 4
+        },
+        "recorded_entries": 93,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 0.098,
+    "static_candidate_count": 4,
+    "static_candidate_types": {
+      "duplicate_definition": 3,
+      "circular_dependency": 1
+    }
+  },
+  "boltons": {
+    "id": "883e5efd48214ca8aa8e83084b60566e",
+    "url": "https://github.com/mahmoud/boltons",
+    "commit": "4e5faa3d7e4008d89e0d8bf1ea87b6d9a061a16d",
+    "fingerprint": "9cf35d7c61e69b03029f60722bc99a83a6e3c59d0cbf11007a5a6f0b216bd027",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 33.715,
+    "stats": {
+      "files": 108,
+      "python_files": 65,
+      "java_files": 0,
+      "languages": {
+        "text": 43,
+        "python": 65
+      },
+      "symbols": 4293,
+      "edges": 6552,
+      "parse_errors": [],
+      "unresolved_count": 5055,
+      "unresolved": [
+        {
+          "source": "ea168a47844b051bd3e48735",
+          "label": "heapq",
+          "kind": "imports",
+          "line": 66
+        },
+        {
+          "source": "ea168a47844b051bd3e48735",
+          "label": "weakref",
+          "kind": "imports",
+          "line": 67
+        },
+        {
+          "source": "ea168a47844b051bd3e48735",
+          "label": "itertools",
+          "kind": "imports",
+          "line": 68
+        },
+        {
+          "source": "ea168a47844b051bd3e48735",
+          "label": "operator.attrgetter",
+          "kind": "imports",
+          "line": 69
+        },
+        {
+          "source": "ea168a47844b051bd3e48735",
+          "label": "threading.RLock",
+          "kind": "imports",
+          "line": 72
+        },
+        {
+          "source": "ea168a47844b051bd3e48735",
+          "label": "object",
+          "kind": "calls",
+          "line": 87
+        },
+        {
+          "source": "ea168a47844b051bd3e48735",
+          "label": "object",
+          "kind": "calls",
+          "line": 88
+        },
+        {
+          "source": "ea168a47844b051bd3e48735",
+          "label": "range",
+          "kind": "calls",
+          "line": 90
+        },
+        {
+          "source": "0d288a12f410384a32dbf30b",
+          "label": "dict",
+          "kind": "inherits",
+          "line": 94
+        },
+        {
+          "source": "ee7bd4cdddf0d50d53efe72b",
+          "label": "ValueError",
+          "kind": "calls",
+          "line": 119
+        },
+        {
+          "source": "ee7bd4cdddf0d50d53efe72b",
+          "label": "RLock",
+          "kind": "calls",
+          "line": 122
+        },
+        {
+          "source": "ee7bd4cdddf0d50d53efe72b",
+          "label": "callable",
+          "kind": "calls",
+          "line": 125
+        },
+        {
+          "source": "ee7bd4cdddf0d50d53efe72b",
+          "label": "TypeError",
+          "kind": "calls",
+          "line": 126
+        },
+        {
+          "source": "6f90706f15a00bb36e46c375",
+          "label": "print",
+          "kind": "calls",
+          "line": 151
+        },
+        {
+          "source": "6f90706f15a00bb36e46c375",
+          "label": "print",
+          "kind": "calls",
+          "line": 153
+        },
+        {
+          "source": "6f90706f15a00bb36e46c375",
+          "label": "print",
+          "kind": "calls",
+          "line": 154
+        },
+        {
+          "source": "44e948c8c36d93270a875afc",
+          "label": "flattened_list.append",
+          "kind": "calls",
+          "line": 161
+        },
+        {
+          "source": "0d5305dc43cbad18c3412ced",
+          "label": "self._link_lookup.pop",
+          "kind": "calls",
+          "line": 215
+        },
+        {
+          "source": "911a8fe2ac653b7583df4da1",
+          "label": "len",
+          "kind": "calls",
+          "line": 224
+        },
+        {
+          "source": "911a8fe2ac653b7583df4da1",
+          "label": "super",
+          "kind": "calls",
+          "line": 228
+        },
+        {
+          "source": "911a8fe2ac653b7583df4da1",
+          "label": "super",
+          "kind": "calls",
+          "line": 231
+        },
+        {
+          "source": "c9a709f2ba8d5f87c54287bb",
+          "label": "self.on_miss",
+          "kind": "calls",
+          "line": 242
+        },
+        {
+          "source": "626501ff8b9e8d0847bcad47",
+          "label": "super",
+          "kind": "calls",
+          "line": 257
+        },
+        {
+          "source": "c8b7fce40db45b8d44d5835c",
+          "label": "super",
+          "kind": "calls",
+          "line": 264
+        },
+        {
+          "source": "2186edcc3d06f5cafcccca91",
+          "label": "super",
+          "kind": "calls",
+          "line": 275
+        },
+        {
+          "source": "618170b59ce47bf0b5ea3f7f",
+          "label": "super",
+          "kind": "calls",
+          "line": 281
+        },
+        {
+          "source": "57a84ec2ec5a72d8aac6c869",
+          "label": "self.__class__",
+          "kind": "calls",
+          "line": 285
+        },
+        {
+          "source": "9f79581ff464d2af09bf4cd3",
+          "label": "callable",
+          "kind": "calls",
+          "line": 301
+        },
+        {
+          "source": "9f79581ff464d2af09bf4cd3",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 301
+        },
+        {
+          "source": "9f79581ff464d2af09bf4cd3",
+          "label": "E.keys",
+          "kind": "calls",
+          "line": 302
+        },
+        {
+          "source": "9f79581ff464d2af09bf4cd3",
+          "label": "setitem",
+          "kind": "calls",
+          "line": 303
+        },
+        {
+          "source": "9f79581ff464d2af09bf4cd3",
+          "label": "setitem",
+          "kind": "calls",
+          "line": 306
+        },
+        {
+          "source": "9f79581ff464d2af09bf4cd3",
+          "label": "setitem",
+          "kind": "calls",
+          "line": 308
+        },
+        {
+          "source": "4a0369c522a3ce17c45691ac",
+          "label": "len",
+          "kind": "calls",
+          "line": 315
+        },
+        {
+          "source": "4a0369c522a3ce17c45691ac",
+          "label": "len",
+          "kind": "calls",
+          "line": 315
+        },
+        {
+          "source": "4a0369c522a3ce17c45691ac",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 317
+        },
+        {
+          "source": "4a0369c522a3ce17c45691ac",
+          "label": "super",
+          "kind": "calls",
+          "line": 319
+        },
+        {
+          "source": "0c9716c8ed3c2c43832c9e20",
+          "label": "super",
+          "kind": "calls",
+          "line": 326
+        },
+        {
+          "source": "702de5eb7091f4d675389ae1",
+          "label": "self._get_link_and_move_to_front_of_ll",
+          "kind": "calls",
+          "line": 368
+        },
+        {
+          "source": "702de5eb7091f4d675389ae1",
+          "label": "self.on_miss",
+          "kind": "calls",
+          "line": 373
+        },
+        {
+          "source": "380be68b7d65dcc27651f242",
+          "label": "list",
+          "kind": "inherits",
+          "line": 383
+        },
+        {
+          "source": "05796f92e1da499879354d03",
+          "label": "hash",
+          "kind": "calls",
+          "line": 391
+        },
+        {
+          "source": "05796f92e1da499879354d03",
+          "label": "tuple",
+          "kind": "calls",
+          "line": 391
+        },
+        {
+          "source": "69af2e5dcebb05f2245f088b",
+          "label": "list.__repr__",
+          "kind": "calls",
+          "line": 397
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "list",
+          "kind": "calls",
+          "line": 423
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "sorted",
+          "kind": "calls",
+          "line": 425
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "kwargs.items",
+          "kind": "calls",
+          "line": 425
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "key.append",
+          "kind": "calls",
+          "line": 426
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "key.extend",
+          "kind": "calls",
+          "line": 427
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "key.extend",
+          "kind": "calls",
+          "line": 429
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "type",
+          "kind": "calls",
+          "line": 429
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "key.extend",
+          "kind": "calls",
+          "line": 431
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "type",
+          "kind": "calls",
+          "line": 431
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "len",
+          "kind": "calls",
+          "line": 432
+        },
+        {
+          "source": "ed96d52cf3d15de67ce7aba0",
+          "label": "type",
+          "kind": "calls",
+          "line": 432
+        },
+        {
+          "source": "1f005c2de64858aea1f0e5b7",
+          "label": "callable",
+          "kind": "calls",
+          "line": 446
+        },
+        {
+          "source": "1f005c2de64858aea1f0e5b7",
+          "label": "callable",
+          "kind": "calls",
+          "line": 448
+        },
+        {
+          "source": "1f005c2de64858aea1f0e5b7",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 448
+        },
+        {
+          "source": "1f005c2de64858aea1f0e5b7",
+          "label": "callable",
+          "kind": "calls",
+          "line": 449
+        },
+        {
+          "source": "1f005c2de64858aea1f0e5b7",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 449
+        },
+        {
+          "source": "1f005c2de64858aea1f0e5b7",
+          "label": "TypeError",
+          "kind": "calls",
+          "line": 450
+        },
+        {
+          "source": "c73188877f9c2ec4fb819712",
+          "label": "self.get_cache",
+          "kind": "calls",
+          "line": 462
+        },
+        {
+          "source": "c73188877f9c2ec4fb819712",
+          "label": "self.key_func",
+          "kind": "calls",
+          "line": 463
+        },
+        {
+          "source": "c73188877f9c2ec4fb819712",
+          "label": "self.func",
+          "kind": "calls",
+          "line": 467
+        },
+        {
+          "source": "eb127e3a955d310cab880351",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 484
+        },
+        {
+          "source": "eb127e3a955d310cab880351",
+          "label": "isinstance",
+          "kind": "calls",
+          "line": 485
+        },
+        {
+          "source": "eb127e3a955d310cab880351",
+          "label": "attrgetter",
+          "kind": "calls",
+          "line": 486
+        },
+        {
+          "source": "eb127e3a955d310cab880351",
+          "label": "callable",
+          "kind": "calls",
+          "line": 487
+        },
+        {
+          "source": "eb127e3a955d310cab880351",
+          "label": "callable",
+          "kind": "calls",
+          "line": 489
+        },
+        {
+          "source": "eb127e3a955d310cab880351",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 489
+        },
+        {
+          "source": "eb127e3a955d310cab880351",
+          "label": "callable",
+          "kind": "calls",
+          "line": 490
+        },
+        {
+          "source": "eb127e3a955d310cab880351",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 490
+        },
+        {
+          "source": "eb127e3a955d310cab880351",
+          "label": "TypeError",
+          "kind": "calls",
+          "line": 491
+        },
+        {
+          "source": "1d00c6568c6cb196b57d0889",
+          "label": "self.get_cache",
+          "kind": "calls",
+          "line": 514
+        },
+        {
+          "source": "1d00c6568c6cb196b57d0889",
+          "label": "self.key_func",
+          "kind": "calls",
+          "line": 516
+        },
+        {
+          "source": "1d00c6568c6cb196b57d0889",
+          "label": "self.func",
+          "kind": "calls",
+          "line": 522
+        },
+        {
+          "source": "1e114fcd7549feaa5f436ddf",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 625
+        },
+        {
+          "source": "1e114fcd7549feaa5f436ddf",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 626
+        },
+        {
+          "source": "018e1f8c3af5df400006580c",
+          "label": "self.func",
+          "kind": "calls",
+          "line": 632
+        },
+        {
+          "source": "66f16010a3d1d0012e79b2c1",
+          "label": "ValueError",
+          "kind": "calls",
+          "line": 686
+        },
+        {
+          "source": "66f16010a3d1d0012e79b2c1",
+          "label": "int",
+          "kind": "calls",
+          "line": 692
+        },
+        {
+          "source": "c0b114f4b7b9c011741da73c",
+          "label": "property",
+          "kind": "decorated_by",
+          "line": 695
+        },
+        {
+          "source": "104addf81c85eea0dfd30ee9",
+          "label": "self._count_map.items",
+          "kind": "calls",
+          "line": 712
+        },
+        {
+          "source": "104addf81c85eea0dfd30ee9",
+          "label": "sum",
+          "kind": "calls",
+          "line": 713
+        },
+        {
+          "source": "9681a715506d5826ef08b81b",
+          "label": "itertools.starmap",
+          "kind": "calls",
+          "line": 721
+        },
+        {
+          "source": "9681a715506d5826ef08b81b",
+          "label": "itertools.chain.from_iterable",
+          "kind": "calls",
+          "line": 722
+        },
+        {
+          "source": "57ee4177f4d19a90532281cc",
+          "label": "sorted",
+          "kind": "calls",
+          "line": 730
+        },
+        {
+          "source": "57ee4177f4d19a90532281cc",
+          "label": "len",
+          "kind": "calls",
+          "line": 731
+        },
+        {
+          "source": "63a20044b024012984aeabea",
+          "label": "sum",
+          "kind": "calls",
+          "line": 739
+        },
+        {
+          "source": "63a20044b024012984aeabea",
+          "label": "self._count_map.values",
+          "kind": "calls",
+          "line": 739
+        },
+        {
+          "source": "fabd06985a69b2eea4fd9155",
+          "label": "float",
+          "kind": "calls",
+          "line": 756
+        },
+        {
+          "source": "939f9570d831165a490abdb4",
+          "label": "len",
+          "kind": "calls",
+          "line": 762
+        },
+        {
+          "source": "5d0d670683582d3012d45a4d",
+          "label": "iter",
+          "kind": "calls",
+          "line": 768
+        },
+        {
+          "source": "4da3832a178852393dfe02c7",
+          "label": "list",
+          "kind": "calls",
+          "line": 771
+        },
+        {
+          "source": "ef3357e5151fd3e04f625c3a",
+          "label": "list",
+          "kind": "calls",
+          "line": 779
+        },
+        {
+          "source": "b69a9fab647f51691950f4f7",
+          "label": "list",
+          "kind": "calls",
+          "line": 787
+        },
+        {
+          "source": "c0c293de8b3fdb8c743ec0c8",
+          "label": "callable",
+          "kind": "calls",
+          "line": 804
+        },
+        {
+          "source": "c0c293de8b3fdb8c743ec0c8",
+          "label": "getattr",
+          "kind": "calls",
+          "line": 804
+        },
+        {
+          "source": "c0c293de8b3fdb8c743ec0c8",
+          "label": "iterable.items",
+          "kind": "calls",
+          "line": 805
+        },
+        {
+          "source": "c0c293de8b3fdb8c743ec0c8",
+          "label": "range",
+          "kind": "calls",
+          "line": 806
+        }
+      ],
+      "skipped_files": 4,
+      "coverage": {
+        "indexed_files": 108,
+        "skipped_files": 4,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "hidden_directory": 1,
+          "ignored_directory": 1,
+          "unsupported_extension": 4
+        },
+        "indexed_extensions": {
+          ".cfg": 1,
+          ".html": 1,
+          ".ini": 1,
+          ".md": 3,
+          ".py": 65,
+          ".rst": 29,
+          ".toml": 1,
+          ".txt": 3,
+          ".yaml": 2,
+          ".yml": 1,
+          "[none]": 1
+        },
+        "recorded_entries": 114,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "timings_ms": {
+        "read_and_snapshot": 27.11,
+        "analysis_and_graph": 950.015,
+        "chunks_and_storage": 423.522,
+        "embeddings": 32309.778,
+        "total_index": 33710.43
+      }
+    },
+    "split": "holdout",
+    "lexical_warmup_seconds": 0.314,
+    "index_status": {
+      "snapshot": "9cf35d7c61e69b03029f60722bc99a83a6e3c59d0cbf11007a5a6f0b216bd027",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "symbols": 4293,
+      "embedded_symbols": 1748,
+      "embedding_eligible_symbols": 1748,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 5055,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "macro",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "macro",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 108,
+        "skipped_files": 4,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "hidden_directory": 1,
+          "ignored_directory": 1,
+          "unsupported_extension": 4
+        },
+        "indexed_extensions": {
+          ".cfg": 1,
+          ".html": 1,
+          ".ini": 1,
+          ".md": 3,
+          ".py": 65,
+          ".rst": 29,
+          ".toml": 1,
+          ".txt": 3,
+          ".yaml": 2,
+          ".yml": 1,
+          "[none]": 1
+        },
+        "recorded_entries": 114,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 0.475,
+    "static_candidate_count": 0,
+    "static_candidate_types": {}
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "health": {
+    "status": "ok",
+    "model_configured": true,
+    "embedding_configured": true,
+    "model": "qwen2.5-coder:14b",
+    "docker": {
+      "available": false,
+      "reason": "Optional legacy execution is disabled"
+    },
+    "legacy_execution_enabled": false,
+    "core_workflow": "evidence_grounded_suggestions",
+    "langgraph_enabled": false
+  },
+  "providers": {
+    "model": "qwen2.5-coder:14b",
+    "configured": true,
+    "context_window": 8192,
+    "reachable": null,
+    "generation_probe": "not_requested",
+    "embedding_probe": "not_requested"
+  },
+  "repositories": {
+    "count": 41,
+    "names": [
+      "research-repository",
+      "elasticsearch-java",
+      "gson-accuracy-holdout",
+      "jinja-accuracy-holdout",
+      "elasticsearch-java",
+      "pytorch",
+      "django",
+      "scikit-learn",
+      "numpy",
+      "spring-data-elasticsearch",
+      "fastapi",
+      "pydantic-test",
+      "commons-collections",
+      "urllib3",
+      "junit4",
+      "mockito",
+      "petclinic",
+      "rich",
+      "pytest",
+      "httpx",
+      "requests",
+      "flask",
+      "junit4",
+      "click",
+      "pytest",
+      "httpx",
+      "requests",
+      "flask",
+      "mockito",
+      "mockito",
+      "commons-lang",
+      "petclinic",
+      "mockito",
+      "commons-lang",
+      "petclinic",
+      "rich",
+      "pytest",
+      "httpx",
+      "requests",
+      "flask",
+      "parcel-service"
+    ]
+  }
+}

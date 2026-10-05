@@ -1,0 +1,2500 @@
+{
+  "fluentvalidation": {
+    "id": "121131b84c16420785b2526640c30cb1",
+    "url": "https://github.com/FluentValidation/FluentValidation",
+    "commit": "fa3c160b17796ff67d6aa5ae6c4b05b471f1a791",
+    "fingerprint": "1b959c9fe9bed77e0254aa17fc8c3113ca43b1b20a5648c24adb6af4e99b286f",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 134.36,
+    "stats": {
+      "files": 275,
+      "python_files": 1,
+      "java_files": 0,
+      "languages": {
+        "text": 55,
+        "python": 1,
+        "csharp": 219
+      },
+      "symbols": 6274,
+      "edges": 6132,
+      "parse_errors": [],
+      "unresolved_count": 6681,
+      "unresolved": [
+        {
+          "source": "3f724d94d2b7416002db5e63",
+          "label": "recommonmark.parser.CommonMarkParser",
+          "kind": "imports",
+          "line": 24
+        },
+        {
+          "source": "3f724d94d2b7416002db5e63",
+          "label": "recommonmark.transform.AutoStructify",
+          "kind": "imports",
+          "line": 25
+        },
+        {
+          "source": "5bb99634734d6f48325f75fc",
+          "label": "app.add_config_value",
+          "kind": "calls",
+          "line": 181
+        },
+        {
+          "source": "5bb99634734d6f48325f75fc",
+          "label": "app.add_transform",
+          "kind": "calls",
+          "line": 186
+        },
+        {
+          "source": "87e8dfe5c29ea12003ffc9d2",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.AddValidatorsFromAssembly",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "575112308e97f3053a89530a",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "AssemblyScanner\r\n\t\t\t.FindValidatorsInAssembly(assembly, includeInternalTypes)\r\n\t\t\t.ForEach",
+          "line": 54,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "575112308e97f3053a89530a",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "AssemblyScanner\r\n\t\t\t.FindValidatorsInAssembly",
+          "line": 54,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "575112308e97f3053a89530a",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.AddScanResult",
+          "line": 56,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "d3d6dcd77ed43bbcb5b86b65",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.AddValidatorsFromAssembly",
+          "line": 71,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1c6a10722c23fd1e635e8860",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.AddValidatorsFromAssembly",
+          "line": 82,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "bdd890faa24129d22309d27d",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "filter?.Invoke",
+          "line": 93,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "bdd890faa24129d22309d27d",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.TryAddEnumerable",
+          "line": 96,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "bdd890faa24129d22309d27d",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceCollectionExtensions.cs",
+          "label": "services.TryAdd",
+          "line": 103,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "9df6a54b7e418830b2b14258",
+          "path": "src/FluentValidation.DependencyInjectionExtensions/ServiceProviderValidatorFactory.cs",
+          "label": "_serviceProvider.GetService",
+          "line": 33,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "94049e9af7055c5eb245b5e3",
+          "path": "src/FluentValidation.Tests.Benchmarks/AccessorCacheBenchmark.cs",
+          "label": "GetExpression<TestModel, int>",
+          "line": 36,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "94049e9af7055c5eb245b5e3",
+          "path": "src/FluentValidation.Tests.Benchmarks/AccessorCacheBenchmark.cs",
+          "label": "Expression.GetMember",
+          "line": 37,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "ba738d776ca7345aa42b3914",
+          "path": "src/FluentValidation.Tests.Benchmarks/AccessorCacheBenchmark.cs",
+          "label": "AccessorCache<TestModel>.GetCachedAccessor",
+          "line": 42,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0b6a7bec379f06c93769d07c",
+          "path": "src/FluentValidation.Tests.Benchmarks/AccessorCacheBenchmark.cs",
+          "label": "AccessorCache<TestModel>.GetCachedAccessor",
+          "line": 47,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Number(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor",
+          "line": 31,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 32,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 33,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 34,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 34,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 35,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 35,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number(0, 20).OrNull",
+          "line": 36,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number",
+          "line": 36,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number(0, 20).OrNull",
+          "line": 37,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number",
+          "line": 37,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.30f))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelManyErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel2, m => nestedModelManyErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.ModelCollection, m => nestedModelManyErrorsFaker.GenerateBetween(0, 20).ToList().OrNull(m, 0.7f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.30f))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelManyErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel2, m => nestedModelManyErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.30f))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelManyErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.30f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 20).OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 20).OrNull(m, 0.20f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 25))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 20))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 15))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 10))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 5))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word().OrNull(m, 0.3f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word().OrNull(m, 0.25f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word().OrNull(m, 0.2f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word().OrNull(m, 0.15f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word().OrNull(m, 0.1f))\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor",
+          "line": 39,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 40,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 40,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 41,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 41,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 42,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 42,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 43,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 43,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word().OrNull",
+          "line": 44,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 44,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 45,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 46,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 47,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 48,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 49,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal(0, 20).OrNull",
+          "line": 50,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal",
+          "line": 50,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal(0, 20).OrNull",
+          "line": 51,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal",
+          "line": 51,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal(0, 20).OrNull",
+          "line": 52,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Decimal",
+          "line": 52,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "nestedModelManyErrorsFaker.Generate",
+          "line": 53,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "nestedModelManyErrorsFaker.Generate",
+          "line": 54,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "nestedModelManyErrorsFaker.GenerateBetween(0, 20).ToList().OrNull",
+          "line": 55,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "nestedModelManyErrorsFaker.GenerateBetween(0, 20).ToList",
+          "line": 55,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "nestedModelManyErrorsFaker.GenerateBetween",
+          "line": 55,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "Enumerable.Range(1, m.Random.Int(1, 20)).Select(_ => m.Random.Number(0, 20)).ToList().OrNull",
+          "line": 56,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "Enumerable.Range(1, m.Random.Int(1, 20)).Select(_ => m.Random.Number(0, 20)).ToList",
+          "line": 56,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "Enumerable.Range(1, m.Random.Int(1, 20)).Select",
+          "line": 56,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "Enumerable.Range",
+          "line": 56,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 56,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number",
+          "line": 56,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Number(0, 9))\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<NestedModel>()\r\n\t\t\t\t\t.RuleFor",
+          "line": 60,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 61,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Int",
+          "line": 62,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 63,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Lorem.Word",
+          "line": 64,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number",
+          "line": 65,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "m.Random.Number",
+          "line": 66,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word() + \"c\")\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word() + \"d\")\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word() + \"e\")\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber3, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelNoErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel2, m => nestedModelNoErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.ModelCollection, m => nestedModelNoErrorsFaker.GenerateBetween(0, 9).ToList())\r\n\t\t\t\t\t.RuleFor",
+          "line": 68,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word() + \"c\")\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word() + \"d\")\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word() + \"e\")\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber3, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelNoErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel2, m => nestedModelNoErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor",
+          "line": 68,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word() + \"c\")\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word() + \"d\")\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word() + \"e\")\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber3, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.NestedModel1, m => nestedModelNoErrorsFaker.Generate())\r\n\t\t\t\t\t.RuleFor",
+          "line": 68,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word() + \"c\")\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word() + \"d\")\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word() + \"e\")\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber3, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor",
+          "line": 68,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6238b4e19ce97b362a93b3a0",
+          "path": "src/FluentValidation.Tests.Benchmarks/DataSet.cs",
+          "label": "new Faker<FullModel>()\r\n\t\t\t\t\t.RuleFor(m => m.Text1, m => m.Lorem.Word() + \"a\")\r\n\t\t\t\t\t.RuleFor(m => m.Text2, m => m.Lorem.Word() + \"b\")\r\n\t\t\t\t\t.RuleFor(m => m.Text3, m => m.Lorem.Word() + \"c\")\r\n\t\t\t\t\t.RuleFor(m => m.Text4, m => m.Lorem.Word() + \"d\")\r\n\t\t\t\t\t.RuleFor(m => m.Text5, m => m.Lorem.Word() + \"e\")\r\n\t\t\t\t\t.RuleFor(m => m.Number1, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number2, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number3, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number4, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.Number5, m => m.Random.Int(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber1, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor(m => m.SuperNumber2, m => m.Random.Decimal(0, 9))\r\n\t\t\t\t\t.RuleFor",
+          "line": 68,
+          "repo_id": "121131b84c16420785b2526640c30cb1",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        }
+      ],
+      "skipped_files": 21,
+      "coverage": {
+        "indexed_files": 275,
+        "skipped_files": 21,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 21
+        },
+        "indexed_extensions": {
+          ".cs": 219,
+          ".csproj": 4,
+          ".json": 2,
+          ".md": 36,
+          ".py": 1,
+          ".rst": 1,
+          ".sln": 1,
+          ".txt": 4,
+          ".xml": 1,
+          ".yaml": 1,
+          ".yml": 4,
+          "[none]": 1
+        },
+        "recorded_entries": 297,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "timings_ms": {
+        "read_and_snapshot": 75.597,
+        "analysis_and_graph": 1914.39,
+        "chunks_and_storage": 575.835,
+        "embeddings": 131788.842,
+        "total_index": 134354.669
+      }
+    },
+    "split": "development",
+    "lexical_warmup_seconds": 0.427,
+    "index_status": {
+      "snapshot": "1b959c9fe9bed77e0254aa17fc8c3113ca43b1b20a5648c24adb6af4e99b286f",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "symbols": 6274,
+      "embedded_symbols": 2565,
+      "embedding_eligible_symbols": 2565,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 6681,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "macro",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "macro",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 275,
+        "skipped_files": 21,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 21
+        },
+        "indexed_extensions": {
+          ".cs": 219,
+          ".csproj": 4,
+          ".json": 2,
+          ".md": 36,
+          ".py": 1,
+          ".rst": 1,
+          ".sln": 1,
+          ".txt": 4,
+          ".xml": 1,
+          ".yaml": 1,
+          ".yml": 4,
+          "[none]": 1
+        },
+        "recorded_entries": 297,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 0.092,
+    "static_candidate_count": 0,
+    "static_candidate_types": {}
+  },
+  "zod": {
+    "id": "17cdd40552564bf3b9fcd9b5430b9520",
+    "url": "https://github.com/colinhacks/zod",
+    "commit": "0b216ef674e297ebe41d8bf902262e56f8755822",
+    "fingerprint": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 56.963,
+    "stats": {
+      "files": 592,
+      "python_files": 0,
+      "java_files": 0,
+      "languages": {
+        "text": 76,
+        "javascript": 5,
+        "typescript": 511
+      },
+      "symbols": 29290,
+      "edges": 32565,
+      "parse_errors": [
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 35,
+          "end_line": 35,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 36,
+          "end_line": 36,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 37,
+          "end_line": 37,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 170,
+          "end_line": 170,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1580,
+          "end_line": 1580,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 1581,
+          "end_line": 1581,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/classic/schemas.ts",
+          "line": 2093,
+          "end_line": 2093,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/checks.ts",
+          "line": 28,
+          "end_line": 28,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 181,
+          "end_line": 181,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 181,
+          "end_line": 181,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2046,
+          "end_line": 2046,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2047,
+          "end_line": 2047,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2062,
+          "end_line": 2062,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 2063,
+          "end_line": 2063,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/core/schemas.ts",
+          "line": 3614,
+          "end_line": 3614,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 10,
+          "end_line": 10,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 11,
+          "end_line": 11,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 12,
+          "end_line": 12,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 42,
+          "end_line": 42,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 907,
+          "end_line": 907,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        },
+        {
+          "path": "packages/zod/src/v4/mini/schemas.ts",
+          "line": 908,
+          "end_line": 908,
+          "error": "Tree-sitter syntax error or missing token",
+          "language": "typescript"
+        }
+      ],
+      "unresolved_count": 50036,
+      "unresolved": [
+        {
+          "source": "e601abeaa11fda2420125a4b",
+          "path": "mm.mjs",
+          "label": "build",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e601abeaa11fda2420125a4b",
+          "path": "mm.mjs",
+          "label": "path.join",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "ac50c5ddc36dcf3649559273",
+          "path": "mm.mjs",
+          "label": "gzipSync",
+          "line": 6,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "ac50c5ddc36dcf3649559273",
+          "path": "mm.mjs",
+          "label": "Buffer.from",
+          "line": 6,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "a1aa591f606bbd1a729824cf",
+          "path": "mm.mjs",
+          "label": "console.log",
+          "line": 7,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "a1aa591f606bbd1a729824cf",
+          "path": "mm.mjs",
+          "label": "f.padEnd",
+          "line": 7,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b610f7f358aaf95bbdda073c",
+          "path": "packages/docs/next.config.mjs",
+          "label": "createMDX",
+          "line": 3,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c53b2aa9cbb246967fc723dc",
+          "path": "packages/docs/next.config.mjs",
+          "label": "Object.entries",
+          "line": 15,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c53b2aa9cbb246967fc723dc",
+          "path": "packages/docs/next.config.mjs",
+          "label": "redirects.push",
+          "line": 21,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "cc6d07f4c9e106990aeb5431",
+          "path": "packages/docs/next.config.mjs",
+          "label": "withMDX",
+          "line": 271,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4ed6a32813801a09fa6196ea",
+          "path": "packages/treeshake/rollup.config.js",
+          "label": "resolve",
+          "line": 17,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4ed6a32813801a09fa6196ea",
+          "path": "packages/treeshake/rollup.config.js",
+          "label": "commonjs",
+          "line": 18,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4ed6a32813801a09fa6196ea",
+          "path": "packages/treeshake/rollup.config.js",
+          "label": "typescript",
+          "line": 19,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4ed6a32813801a09fa6196ea",
+          "path": "packages/treeshake/rollup.config.js",
+          "label": "filesize",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "195d0ac11eb351dc169208a6",
+          "path": "vitest.root.mjs",
+          "label": "dirname",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "195d0ac11eb351dc169208a6",
+          "path": "vitest.root.mjs",
+          "label": "fileURLToPath",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b72d66a1c29b03d240b3d36f",
+          "path": "vitest.root.mjs",
+          "label": "defineConfig",
+          "line": 7,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b72d66a1c29b03d240b3d36f",
+          "path": "vitest.root.mjs",
+          "label": "resolve",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0779fd2d53ae9981fb58e752",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "a18b4fda607b4ed4d240b5df",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type",
+          "line": 10,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4e42e217efa716ae3601ae95",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type",
+          "line": 16,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4e42e217efa716ae3601ae95",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type(\"string\").pipe",
+          "line": 17,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4e42e217efa716ae3601ae95",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type",
+          "line": 17,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4e42e217efa716ae3601ae95",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "s.toUpperCase",
+          "line": 17,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 24,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "b254de8b58d7b47ba79e6dfc",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "noMorph",
+          "line": 27,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 28,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 29,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 30,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 31,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0850ad27e579eeafc1daaef5",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "withMorph",
+          "line": 34,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 35,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 36,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 37,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 38,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 40,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "JSON.stringify",
+          "line": 40,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 42,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6ec956f3c2c7bb9795df0083",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "withPipeMorph",
+          "line": 45,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 46,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 47,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 48,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 49,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 51,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "JSON.stringify",
+          "line": 51,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 53,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0e3025d000f2c2c4af55629a",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "type",
+          "line": 56,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "11ddac455820cd8e9dafed1e",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "nestedWithMorph",
+          "line": 64,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 65,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 66,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 67,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 68,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 70,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f7ed477f14a2a51341e37e6d",
+          "path": "packages/bench/arktype-morph-test.ts",
+          "label": "console.log",
+          "line": 71,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e0782dc9aa9fb3e15158afde",
+          "path": "packages/bench/array.ts",
+          "label": "makeSchema",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e0782dc9aa9fb3e15158afde",
+          "path": "packages/bench/array.ts",
+          "label": "z.array",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "e0782dc9aa9fb3e15158afde",
+          "path": "packages/bench/array.ts",
+          "label": "z.string",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4a45de41eb4a6c96495bbe96",
+          "path": "packages/bench/array.ts",
+          "label": "makeData",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4a45de41eb4a6c96495bbe96",
+          "path": "packages/bench/array.ts",
+          "label": "Array.from",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "4a45de41eb4a6c96495bbe96",
+          "path": "packages/bench/array.ts",
+          "label": "randomString",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7c4953696574dc4f9d598336",
+          "path": "packages/bench/array.ts",
+          "label": "console.log",
+          "line": 8,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7c4953696574dc4f9d598336",
+          "path": "packages/bench/array.ts",
+          "label": "zod3.parse",
+          "line": 8,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7c4953696574dc4f9d598336",
+          "path": "packages/bench/array.ts",
+          "label": "console.log",
+          "line": 9,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7c4953696574dc4f9d598336",
+          "path": "packages/bench/array.ts",
+          "label": "zod4.parse",
+          "line": 9,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "f2f67e68a039bd9a7a0df725",
+          "path": "packages/bench/array.ts",
+          "label": "metabench",
+          "line": 11,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "6b04a64aa3594c5f96f5c4d3",
+          "path": "packages/bench/array.ts",
+          "label": "zod3.parse",
+          "line": 13,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "aadb6417b39c4bf9f3971859",
+          "path": "packages/bench/array.ts",
+          "label": "zod4.parse",
+          "line": 16,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "7c4953696574dc4f9d598336",
+          "path": "packages/bench/array.ts",
+          "label": "bench.run",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "098ac6af8fc70743d3aa3d78",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Array.from",
+          "line": 10,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "098ac6af8fc70743d3aa3d78",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Object.freeze",
+          "line": 11,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "098ac6af8fc70743d3aa3d78",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Object.freeze",
+          "line": 18,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "fd83f0aa33d705c19f9732e3",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "type",
+          "line": 59,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "2cc74853691f45bb2e13087c",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "metabench(\"valid: check method comparison\", {\n  \"=== INVALID\"() {\n    for (const item of DATA) {\n      const r = _run(item);\n      if (r === INVALID) sink = null;\n      else sink = r;\n    }\n  },\n  \"instanceof $ZodError\"() {\n    for (const item of DATA) {\n      const r = _run(item);\n      if (r instanceof $ZodError) sink = null;\n      else sink = r;\n    }\n  },\n  safeParse() {\n    for (const item of DATA) {\n      const r = safeParse(item);\n      if (!r.success) sink = null;\n      else sink = r.data;\n    }\n  },\n  \"arktype (instanceof)\"() {\n    for (const item of DATA) {\n      const r = arkSchema(item);\n      if (r instanceof type.errors) sink = null;\n      else sink = r;\n    }\n  },\n}).run",
+          "line": 75,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "2cc74853691f45bb2e13087c",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "metabench",
+          "line": 75,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "602d72f14b77778bab81fa0b",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "arkSchema",
+          "line": 99,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "705138ce48be06a4a809cb30",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Array.from",
+          "line": 107,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "705138ce48be06a4a809cb30",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Object.freeze",
+          "line": 108,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "705138ce48be06a4a809cb30",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "Object.freeze",
+          "line": 115,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "2cc74853691f45bb2e13087c",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "metabench(\"invalid: check method comparison\", {\n  \"=== INVALID\"() {\n    for (const item of INVALID_DATA) {\n      const r = _run(item);\n      if (r === INVALID) sink = null;\n      else sink = r;\n    }\n  },\n  \"instanceof $ZodError\"() {\n    for (const item of INVALID_DATA) {\n      const r = _run(item);\n      if (r instanceof $ZodError) sink = null;\n      else sink = r;\n    }\n  },\n  safeParse() {\n    for (const item of INVALID_DATA) {\n      const r = safeParse(item);\n      if (!r.success) sink = null;\n      else sink = r.data;\n    }\n  },\n  \"arktype (instanceof)\"() {\n    for (const item of INVALID_DATA) {\n      const r = arkSchema(item);\n      if (r instanceof type.errors) sink = null;\n      else sink = r;\n    }\n  },\n}).run",
+          "line": 119,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "2cc74853691f45bb2e13087c",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "metabench",
+          "line": 119,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1d7b4ecfc2f4f1be4495b552",
+          "path": "packages/bench/bench-invalid.ts",
+          "label": "arkSchema",
+          "line": 143,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dd69322e48ce6ec4d91fc984",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "import",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dd69322e48ce6ec4d91fc984",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "import",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "dd69322e48ce6ec4d91fc984",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "import.meta.resolve",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c17d166a4a00e3acda22e2d0",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "factory",
+          "line": 10,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "c17d166a4a00e3acda22e2d0",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "factory",
+          "line": 11,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "31e846b6485d2d9d94e5d55e",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "characters.charAt",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "31e846b6485d2d9d94e5d55e",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "Math.floor",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "31e846b6485d2d9d94e5d55e",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "Math.random",
+          "line": 20,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "5becfd2a0e6abfb32a43848b",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "Math.floor",
+          "line": 26,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "5becfd2a0e6abfb32a43848b",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "Math.random",
+          "line": 26,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c7a04fd5df4dfe2cf7fa17a",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "Array.from",
+          "line": 30,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0c7a04fd5df4dfe2cf7fa17a",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "factory",
+          "line": 33,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1e92d43767fa6e846ca10990",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "val.toString",
+          "line": 52,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "1e92d43767fa6e846ca10990",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "val.toString",
+          "line": 66,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "57b985456d29a8624c9dbe1b",
+          "path": "packages/bench/benchUtil.ts",
+          "label": "val.toPrecision",
+          "line": 70,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0d99539eb41f5129d14bf11b",
+          "path": "packages/bench/boolean.ts",
+          "label": "makeSchema",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "0d99539eb41f5129d14bf11b",
+          "path": "packages/bench/boolean.ts",
+          "label": "z.boolean",
+          "line": 4,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "bae2b75ede5843484f6151e2",
+          "path": "packages/bench/boolean.ts",
+          "label": "makeData",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        },
+        {
+          "source": "bae2b75ede5843484f6151e2",
+          "path": "packages/bench/boolean.ts",
+          "label": "Math.random",
+          "line": 5,
+          "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+          "kind": "calls",
+          "reason": "ambiguous_or_external_or_dynamic"
+        }
+      ],
+      "skipped_files": 136,
+      "coverage": {
+        "indexed_files": 592,
+        "skipped_files": 136,
+        "ignored_directories": 9,
+        "reason_counts": {
+          "hidden_directory": 7,
+          "ignored_directory": 2,
+          "symlink_file": 3,
+          "unsupported_extension": 133
+        },
+        "indexed_extensions": {
+          ".css": 2,
+          ".html": 2,
+          ".js": 1,
+          ".json": 36,
+          ".md": 22,
+          ".mjs": 4,
+          ".ts": 477,
+          ".tsx": 34,
+          ".txt": 2,
+          ".xml": 1,
+          ".yaml": 2,
+          ".yml": 9
+        },
+        "recorded_entries": 737,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "timings_ms": {
+        "read_and_snapshot": 181.502,
+        "analysis_and_graph": 48438.422,
+        "chunks_and_storage": 8267.903,
+        "embeddings": 13.493,
+        "total_index": 56901.325
+      },
+      "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "name": "zod"
+    },
+    "split": "holdout",
+    "lexical_warmup_seconds": 4.389,
+    "index_status": {
+      "snapshot": "037e49df338a43f569c0cd62eaee2507d574aaad2d3c6d3a7dd3266970429f6b",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "symbols": 29290,
+      "embedded_symbols": 4291,
+      "embedding_eligible_symbols": 4291,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 50036,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "macro",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "macro",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 592,
+        "skipped_files": 136,
+        "ignored_directories": 9,
+        "reason_counts": {
+          "hidden_directory": 7,
+          "ignored_directory": 2,
+          "symlink_file": 3,
+          "unsupported_extension": 133
+        },
+        "indexed_extensions": {
+          ".css": 2,
+          ".html": 2,
+          ".js": 1,
+          ".json": 36,
+          ".md": 22,
+          ".mjs": 4,
+          ".ts": 477,
+          ".tsx": 34,
+          ".txt": 2,
+          ".xml": 1,
+          ".yaml": 2,
+          ".yml": 9
+        },
+        "recorded_entries": 737,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 1.3,
+    "static_candidate_count": 20,
+    "static_candidate_types": {
+      "syntax_error": 20
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "itsdangerous": {
+    "seconds": 5.083,
+    "stats": {
+      "repo_id": "73301d93ccb0425099783d9227759b40",
+      "name": "itsdangerous",
+      "symbols": 521,
+      "edges": 679,
+      "index_version": "2026-10-04-language-adapters-v4",
+      "embedding_status": "ready"
+    }
+  },
+  "zod": {
+    "seconds": 93.541,
+    "stats": {
+      "repo_id": "17cdd40552564bf3b9fcd9b5430b9520",
+      "name": "zod",
+      "symbols": 29290,
+      "edges": 32565,
+      "index_version": "2026-10-04-language-adapters-v4",
+      "embedding_status": "ready"
+    }
+  }
+}

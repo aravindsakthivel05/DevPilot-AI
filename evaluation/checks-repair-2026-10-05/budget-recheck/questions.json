@@ -1,0 +1,48 @@
+{
+  "provenance": "Source-authored by Codex from pinned commits and frozen before model outputs. Expected answers and labels are withheld from answer generation. This is not independent human evaluation. Three answerable questions plus one live-state guard per repository. Targeted post-run context-reservation regression; original question text and labels unchanged.",
+  "cases": [
+    {
+      "id": "werkzeug-hard",
+      "repository": "werkzeug",
+      "difficulty": "hard",
+      "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception, and which mismatch takes precedence?",
+      "answerable": true,
+      "expected_answer": "For an otherwise eligible rule behind a trailing slash, the state matcher requires the method and websocket mode to match; strict_slashes raises SlashRequired, converted to RequestPath(path + slash), whereas a non-strict rule can match directly. MapAdapter catches RequestPath, URL-quotes its path, constructs the redirect URL with query arguments, and raises RequestRedirect. The matcher accumulates allowed methods when a rule rejects the method, and marks websocket_mismatch only in the elif when method matches. NoMatch carries both flags. MapAdapter checks nonempty have_match_for first and raises MethodNotAllowed with valid methods; only otherwise websocket_mismatch raises WebsocketMismatch, otherwise NotFound. Thus the method mismatch takes precedence when both are present.",
+      "expected_sources": [
+        {
+          "path": "src/werkzeug/routing/matcher.py",
+          "name": "match",
+          "anchor_line": 114,
+          "anchor_text": "raise SlashRequired()"
+        },
+        {
+          "path": "src/werkzeug/routing/matcher.py",
+          "name": "match",
+          "anchor_line": 178,
+          "anchor_text": "raise RequestPath(f\"{path}/\")"
+        },
+        {
+          "path": "src/werkzeug/routing/map.py",
+          "name": "match",
+          "anchor_line": 662,
+          "anchor_text": "new_path = quote(e.path_info"
+        },
+        {
+          "path": "src/werkzeug/routing/map.py",
+          "name": "match",
+          "anchor_line": 678,
+          "anchor_text": "raise MethodNotAllowed(valid_methods=list(e.have_match_for))"
+        }
+      ]
+    },
+    {
+      "id": "werkzeug-unanswerable",
+      "repository": "werkzeug",
+      "difficulty": "live-state guard",
+      "question": "What is the current production deployment status and live traffic of werkzeug at this moment?",
+      "answerable": false,
+      "expected_answer": "Abstain: an indexed source snapshot cannot establish current production deployment status or live traffic.",
+      "expected_sources": []
+    }
+  ]
+}

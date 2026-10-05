@@ -1,0 +1,26 @@
+{
+  "reviewer": "Codex source review, not independent human labels",
+  "cases": [
+    {
+      "case_id": "gin-hard",
+      "category": "incomplete",
+      "notes": "Correction did not improve supported-aspect coverage; earlier partial answer selected. Decoder switches/defaults remain missing.",
+      "selected_attempt": 1,
+      "generation_attempts": 2
+    },
+    {
+      "case_id": "fmt-hard",
+      "category": "correct_behavior_incomplete_citations",
+      "notes": "Correction removes definedness confusion and adds stderr/abort behavior plus override. Opening throw claim cites only report_error helper call, rather than macro definition establishing its condition.",
+      "selected_attempt": 2,
+      "generation_attempts": 2
+    },
+    {
+      "case_id": "fluentvalidation-hard",
+      "category": "incomplete",
+      "notes": "Separate access/cancellation/dependent-rule obligations now get answers; lazy property evaluation/cache/accessor-error wrapper and precise baseline remain missing.",
+      "selected_attempt": 1,
+      "generation_attempts": 1
+    }
+  ]
+}

@@ -3,5 +3,5 @@
 from ..model_providers import ConfiguredEmbeddingProvider
 
 
-def embed(texts):
-    return ConfiguredEmbeddingProvider().embed_batch(texts)
+def embed(texts, purpose=None):
+    return ConfiguredEmbeddingProvider().embed_batch(texts, purpose=purpose)

@@ -1,0 +1,82 @@
+{
+  "reviewer": "Codex source review, not independent human labels",
+  "criterion": "Strict reference completeness plus exact supported claims, consistent with development report. Incomplete does not imply every retained statement is false.",
+  "cases": [
+    {
+      "case_id": "itsdangerous-medium",
+      "category": "incomplete",
+      "notes": "Compression threshold and dot/base64 marker are correct. Strict frozen reference also includes super serialization first; output does not explicitly describe that step and calls encoded bytes a string.",
+      "commit": "672971d66a2ef9f85151e53283113f33d642dabd",
+      "expected_sources": [
+        {
+          "path": "src/itsdangerous/url_safe.py",
+          "name": "dump_payload",
+          "anchor_line": 60,
+          "anchor_text": "len(compressed) < (len(json) - 1)"
+        }
+      ]
+    },
+    {
+      "case_id": "itsdangerous-hard",
+      "category": "incomplete",
+      "notes": "Correct age>max_age expiration and timestamp tuple; misses negative-age expiration and non-timestamp value return.",
+      "commit": "672971d66a2ef9f85151e53283113f33d642dabd",
+      "expected_sources": [
+        {
+          "path": "src/itsdangerous/timed.py",
+          "name": "unsign",
+          "anchor_line": 141,
+          "anchor_text": "age > max_age"
+        }
+      ]
+    },
+    {
+      "case_id": "zod-medium",
+      "category": "incomplete",
+      "notes": "Async Promise awaiting and sync issues test retained; sync Promise ZodAsyncError and exact result shape withheld.",
+      "commit": "0b216ef674e297ebe41d8bf902262e56f8755822",
+      "expected_sources": [
+        {
+          "path": "packages/zod/src/v4/core/parse.ts",
+          "name": "_safeParse",
+          "anchor_line": 75,
+          "anchor_text": "throw new core.$ZodAsyncError()"
+        },
+        {
+          "path": "packages/zod/src/v4/core/parse.ts",
+          "name": "_safeParseAsync",
+          "anchor_line": 114,
+          "anchor_text": "if (result instanceof Promise) result = await result"
+        }
+      ]
+    },
+    {
+      "case_id": "zod-hard",
+      "category": "partial_with_unsupported_claims",
+      "notes": "Getter construction/release and setter release are described, but explicitly says error is not reused; source returns cached error outside a falsy-cache guard.",
+      "commit": "0b216ef674e297ebe41d8bf902262e56f8755822",
+      "expected_sources": [
+        {
+          "path": "packages/zod/src/v4/core/parse.ts",
+          "name": "failure",
+          "anchor_line": 88,
+          "anchor_text": "if (!error)"
+        }
+      ]
+    },
+    {
+      "case_id": "itsdangerous-unanswerable",
+      "category": "appropriate_abstention",
+      "notes": "Refuses live state not established by source.",
+      "commit": "672971d66a2ef9f85151e53283113f33d642dabd",
+      "expected_sources": []
+    },
+    {
+      "case_id": "zod-unanswerable",
+      "category": "appropriate_abstention",
+      "notes": "Refuses live state not established by source.",
+      "commit": "0b216ef674e297ebe41d8bf902262e56f8755822",
+      "expected_sources": []
+    }
+  ]
+}

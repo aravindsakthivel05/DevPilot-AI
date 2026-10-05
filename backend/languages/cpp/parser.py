@@ -12,6 +12,8 @@ adapter = TreeAdapter(
         "struct_specifier": "struct",
         "enum_specifier": "enum",
         "namespace_definition": "namespace",
+        "preproc_def": "macro",
+        "preproc_function_def": "macro",
     },
     resolve_relationships,
 )

@@ -1,0 +1,165 @@
+{
+  "cases": [
+    {
+      "case_id": "axios-easy",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 103.121,
+      "rerun_wall_seconds": 103.905
+    },
+    {
+      "case_id": "axios-medium",
+      "same_answer_text": false,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 85.925,
+      "rerun_wall_seconds": 88.241
+    },
+    {
+      "case_id": "axios-hard",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 95.932,
+      "rerun_wall_seconds": 95.011
+    },
+    {
+      "case_id": "gin-easy",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 119.559,
+      "rerun_wall_seconds": 119.222
+    },
+    {
+      "case_id": "gin-medium",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 89.788,
+      "rerun_wall_seconds": 87.277
+    },
+    {
+      "case_id": "gin-hard",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 119.477,
+      "rerun_wall_seconds": 117.77
+    },
+    {
+      "case_id": "clap-easy",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0,
+      "rerun_wall_seconds": 0
+    },
+    {
+      "case_id": "clap-medium",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0,
+      "rerun_wall_seconds": 0
+    },
+    {
+      "case_id": "clap-hard",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0,
+      "rerun_wall_seconds": 0
+    },
+    {
+      "case_id": "fmt-easy",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0,
+      "rerun_wall_seconds": 0
+    },
+    {
+      "case_id": "fmt-medium",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0,
+      "rerun_wall_seconds": 0
+    },
+    {
+      "case_id": "fmt-hard",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0,
+      "rerun_wall_seconds": 0
+    },
+    {
+      "case_id": "fluentvalidation-easy",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 105.605,
+      "rerun_wall_seconds": 103.654
+    },
+    {
+      "case_id": "fluentvalidation-medium",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 80.982,
+      "rerun_wall_seconds": 81.304
+    },
+    {
+      "case_id": "fluentvalidation-hard",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 88.345,
+      "rerun_wall_seconds": 87.127
+    },
+    {
+      "case_id": "axios-unanswerable",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0.001,
+      "rerun_wall_seconds": 0.001
+    },
+    {
+      "case_id": "gin-unanswerable",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0.001,
+      "rerun_wall_seconds": 0.001
+    },
+    {
+      "case_id": "clap-unanswerable",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0,
+      "rerun_wall_seconds": 0
+    },
+    {
+      "case_id": "fmt-unanswerable",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0,
+      "rerun_wall_seconds": 0
+    },
+    {
+      "case_id": "fluentvalidation-unanswerable",
+      "same_answer_text": true,
+      "same_generation_acceptance": true,
+      "same_review_outcome": true,
+      "previous_wall_seconds": 0.001,
+      "rerun_wall_seconds": 0.001
+    }
+  ],
+  "notice": "Same text is not independent evidence of correctness. No cache of prior generated answers was reused."
+}

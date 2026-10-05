@@ -1,0 +1,745 @@
+{
+  "started_at": "2026-10-05T18:24:45.456120+00:00",
+  "model": "qwen2.5-coder:14b",
+  "embedding_model": "nomic-embed-text:latest",
+  "answer_prompt_version": "2026-10-05-branch-diverse-claims-v6",
+  "retrieval_version": "2026-10-05-branch-diverse-context-v5",
+  "backend_hashes": {
+    "backend/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend/agent_investigation.py": "0a40abcdda8cb0b0ece21671b7714b1b1918c3ad9732b5861930a1bcba734776",
+    "backend/agent_repair.py": "632c3146501caa4e7b6adf08758bd0a833530e58fecdcc9df673a5b967afcd18",
+    "backend/analysis.py": "27182c8db480f02c22a9fb7e66dc04224d48669b28ee2bd73b82d3a6fbc20573",
+    "backend/api/__init__.py": "5bdfd37eb33fca32f78d83009c6f3514d7f4862e59e5bd0131c025deb8227918",
+    "backend/api/research.py": "504991c4036f410a491416c50ef85ad39471bef652b27f74ab18d1b14839c36b",
+    "backend/claim_audit.py": "9cf3a3e7749fe8fe54a35ee72c742ce838dfc7855c36b1785fc334aaab1ce706",
+    "backend/config.py": "f107297484420d1cf0445d09b784ef4abef399d591188df318798b6f1204a37c",
+    "backend/config_links.py": "ee0b19ab0e7ea7d9f3c2241a11d295f65eb3f90e6618ab3cb2e27daa50474063",
+    "backend/db.py": "b933af389b1fb21453291cbd2da27b698cd606ab0cb83c277933d633f7788965",
+    "backend/embedding_policy.py": "a39e9d6ce96fcb6519be4cbf28bc71a0fe5be5930912ea7fee15713340719681",
+    "backend/errors/__init__.py": "1d0e68b396925219c50921cf808e6ba02e2bd19436ad9a425f706f0a41d86651",
+    "backend/errors/dependencies.py": "6d4b47bac6187b059774b32c68d276e33579eca8b64d3a655bf199e34b8dd17c",
+    "backend/errors/detector.py": "13a91e59a38e2af5611e52a2e10b08fefa153aa658cc16754bcbb21b4960dd0e",
+    "backend/errors/explanation.py": "28c23ba3b091cdac387c5ff60cc97decb4ec2e323d1d85274a04b2bac624f578",
+    "backend/errors/localisation.py": "b8761c4cae9fdc18dbc11a9eea34b692c49b610f0723c0b7756873d54c620cff",
+    "backend/errors/models.py": "409255b02f8a55e78395f36bb10f41a16f45e198c30f0fa3cd3ef3828e391a6d",
+    "backend/errors/rules.py": "9e1094fff7da75e421c43f01473b80657c68101976451e7bc583f662719d98ee",
+    "backend/errors/suggestions.py": "76470cb65232ea7477ff2cf9437ed70ba2f300b7f5e07560e6f8907b572d1976",
+    "backend/evaluation.py": "6a95d1d95b403906f43624ebb89832bf0cb01d440e8848a6ea480a361b8fd06c",
+    "backend/evidence.py": "89d9140b69b5c75399da969588a14cf4dd470ecfb885e4c18e54fe9c980ebded",
+    "backend/execution.py": "0e7e814054dcf29745b0849c4438d3c8f7ed9c7e76b503700b212341f827e20d",
+    "backend/graph.py": "30a82a107c36e7b600e40966b24ca6738d47eec1f17a7ae84db80d7408eb8a77",
+    "backend/indexing.py": "1d1367f4ed3ae9313e6e0955380e3126661579f457f5e133d0bbec34f0b0e56a",
+    "backend/ingestion.py": "e84fc329fa27f6ba29e241e40f969baa92bbedbb47fb32b61c98b90a4b44db54",
+    "backend/java_analysis.py": "38099a9b7faf2910285229e059aeccf02ecada37d537ff3a3c57bfb6cebd0812",
+    "backend/languages/__init__.py": "f3b817f570edc6583f57fec0ec5cac757ef5aa0b22cb76f96a72474f976820bd",
+    "backend/languages/base.py": "e1c100dd3a6a9d5593c437cd4d9d4d6291a6308c6c134744357f32c3d6832e07",
+    "backend/languages/c/__init__.py": "49e0d3db6876367aae36498d97c8c0640b3fef0593308dcbad0ca7023a03f797",
+    "backend/languages/c/parser.py": "d4be9f676d5303effadc3c6d553cbddcfe2ba2c4589d7426fbca3ae786f16cf2",
+    "backend/languages/c/resolver.py": "18e4ec316a29dcce5756826a8aadef93c571c6e86fd705277eb78d398bcc1cc6",
+    "backend/languages/cpp/__init__.py": "87de18f83c5d787e3b7fd364f5e63687d531495260cad79bec471ae3a4172fc8",
+    "backend/languages/cpp/parser.py": "8b2ce3ab93389b3acad1b6c77474adb5c1c9b296289e901a2860749d3310178c",
+    "backend/languages/cpp/resolver.py": "46752f368eb094f3bddb65d29c9a1fe06bbf7ddc7f8e7d5a8eb3572b570a1ac4",
+    "backend/languages/csharp/__init__.py": "e49a7b1f2a87ac61f232e5762f2abf9d56f03f846b2c9eef70ab18e3e23664db",
+    "backend/languages/csharp/parser.py": "ffb9b67fb60002011c256259211ec7c537a019bfb4fea87b84610d9a7c5d4698",
+    "backend/languages/csharp/resolver.py": "c99b0b988ce64e2c3524d1e69429c4188a35728860d1b77366d8faf86d6df923",
+    "backend/languages/go/__init__.py": "12a634a00dd20a4acce2c5fc2c34b4fb27bee3ee7a9bea60cc0da11f38ce3b08",
+    "backend/languages/go/parser.py": "52c5522ff924cbff43b682c9bebfb96842a147cc047ca7bc7dd2757372831f52",
+    "backend/languages/go/resolver.py": "8eed1c27cf579779c476a51844e07ce6d54b333c952a4f76b8c6ff4e6639abbf",
+    "backend/languages/java/__init__.py": "6a62d88aa2cb51aad9880d9a6eb36960fe18d9bf053033d81029263a0de9ac40",
+    "backend/languages/java/parser.py": "575a5369d79319cc39d521010344acb89b8f10fa030aa89403571ca6c44a5ae0",
+    "backend/languages/java/resolver.py": "4a51197eab879c36889dcbb8a0ee4862df94b68c77b7d3b77d0abcf631df21ea",
+    "backend/languages/javascript/__init__.py": "147f9155c2a3f091ebe4875942443684d346a8b04551c9715f49859065f35717",
+    "backend/languages/javascript/parser.py": "d4e7306bacee6ad456e8d8eb6984bb346e6d2209a7ea8dd13eb22fa7d3345f15",
+    "backend/languages/javascript/resolver.py": "d1dbc05a387e34ef4a3fcd59a3920e90c01d40eed248c86128b108a7854787f1",
+    "backend/languages/python/__init__.py": "7ae6ecd260808702847a9e9aa2e4385fff1938439a01172ece7b6cc5daecca8d",
+    "backend/languages/python/parser.py": "595584cf6e85659c0ba47b840389382bef0e6a9e47054ea7962fa5a250b01869",
+    "backend/languages/python/resolver.py": "509cd1d7fd06da4a98a1f57d349e0295e39aaa695ec6bfbb28b1be04a2d07d0f",
+    "backend/languages/registry.py": "647e71f7e9bb621ce1a8145860da5585370a7a1ea9fd5241f81679d58ba8fcbc",
+    "backend/languages/resolution.py": "342999ef6fc5ce0907629a7b7ee05af848c573a8d0be616fb8cb0b9ca4a56575",
+    "backend/languages/rust/__init__.py": "954a0c80d659ee278186734ed619ba78551c4bfc16f8539575e3a4e7b9a022c3",
+    "backend/languages/rust/parser.py": "79dd67eaf7537f5f6f7393c70944a3ee553c18f4d60cec734d731d03c05390e7",
+    "backend/languages/rust/resolver.py": "19ff497a3632dce6883c01e807e181e14e993b95ea9281e0f5948c90633ebd04",
+    "backend/languages/tree_parser.py": "27adf624aac322905b2a8db4f51cdacc4af8b3f15381ac3a2470a28ab32bb54f",
+    "backend/languages/typescript/__init__.py": "be14ccb7d9e56122f4cd765b73e79f93a89701d28392bf715d9a0ff654657c73",
+    "backend/languages/typescript/parser.py": "885fd4c7e6180424707fe3c240900aaa664ff11ed7b5d11f29e81472fde15c92",
+    "backend/languages/typescript/resolver.py": "31ec35b805742453926f78b84d8d1251cfa3fcdbb20cc88ec80cdd04979d6c20",
+    "backend/learning.py": "1282cbb283263a7850f88a6cc889eec4957a9ba613409461c2fbd4a03166d6fb",
+    "backend/legacy/__init__.py": "5c86d21d8002fa9a888b76b88c7d56ce6305464c181d67615b17c540b633a001",
+    "backend/legacy/agent_repair.py": "2ef36e6e974c4ba59b38bc2eacc7f3d1a6258bb14f2553148e6863437644bf43",
+    "backend/legacy/execution.py": "825f13bf828ccd45c1d45daa5836f5555bc11d2c8268e409f163c3ad186bf2a8",
+    "backend/legacy/routes.py": "47275fbfdca47d53233954ce123a4dc04d3c7104b7f7703d41e5424f6c49a570",
+    "backend/main.py": "9ac3dd054740eed7cbde544113cb71f44589a8afb5a993621e79cb4dc13349a0",
+    "backend/migrations.py": "d86047c0f7b417acc382b2ada127b6852115e11611a71dc06abeb54035326897",
+    "backend/model_providers.py": "79c4502dadec06d5a149d4122334c2d2a75a1bb758936777e755404ef4574f74",
+    "backend/models.py": "f6a6e0011a6e1962c0087328373dc1cc77db60eae1beaa3e7b34eb767a7f11dc",
+    "backend/namespaces.py": "e42ebc55dea6f490acc51ea06ac15567be6b9f01e03fefda8e52bd5656c5b273",
+    "backend/proposals.py": "0b26243c5392edd2043f611016f05b1c0da098a89124c1b8b9a210e9ba10be41",
+    "backend/providers.py": "441dac311008ab65b148bfc039fd87a7a72a5a66343d2cded5c7eadea782bc23",
+    "backend/question_analysis.py": "d95abd1bac22767454be8a290ffe98617f4fff46aa43f4be2aa08383c4e4d34d",
+    "backend/rag/__init__.py": "48b2a24c6ee1b59c59ad4f316d7fef3761c27a35ef0d56661f0a6aadd77ae4cc",
+    "backend/rag/abstention.py": "3aa0d1296b4ac557c6597c9bbdbbfdfbc4a2b3526fba133da04d689f307be694",
+    "backend/rag/answer.py": "f0ba43bbafe345e7b5374ea01d0373f7b5efd875be8787aca5b16a3683b3396a",
+    "backend/rag/behavior.py": "f5dcceabc03eaf4d58e33fa405a44f211f4aa19c39e007d9edb97e97797437dc",
+    "backend/rag/chunking.py": "6233260bf686e61c0bb16d45e8930672fbf4522ffe3841c7bcfb7470e386623c",
+    "backend/rag/citation_repair.py": "af040a6b7304e3d24c7165dcf8058a7d9551fc04c77c1f32f407d7f8aa3e1047",
+    "backend/rag/citations.py": "7871578c964abdb873d8cb0e253c92be3661e01ad15a45e57bc3cc5b0f5665c1",
+    "backend/rag/claim_repair.py": "5d3989c85f2e2486c56929be67ff5f8d15720b764fe08d5388877fc2ce0339a8",
+    "backend/rag/context.py": "b26fbd23414ce10907fc31fe6df5aef20966c6cee043a2562d66b022c2f27164",
+    "backend/rag/embeddings.py": "47e063f6e9903f60f0cd78132733e44a46960eade2319ad73de9e46091481ef4",
+    "backend/rag/fusion.py": "727c72d4493db958c96e3504093fb90a0377bbcbdc5fb1089b8a661cfa4ab448",
+    "backend/rag/graph_retrieval.py": "2ef72e15ed895d35d7b6523ec98de208394483d7db287135eb559a6609f0090d",
+    "backend/rag/investigation.py": "abd3edd028f7cd5e7eeef8fe17934aedd58d4257f831eaec81b94f4a1a1278e9",
+    "backend/rag/lexical.py": "a9898a4ef167b8d34fbc87c80c6127475c95b45f327642ecfdcd6499566f4e0e",
+    "backend/rag/neural_reranker.py": "59926a4935690aa632f146df4ce56f9fee4066eba65fdf9372b1bc6d8320d7a5",
+    "backend/rag/obligations.py": "2a3e8dd9bded04a9c1db2dc1001a3b36817208c5596026591ed4b651d24bbe03",
+    "backend/rag/pipeline.py": "a898d668c3a6308e1735af97db6237d0b527e58088d7dbf83ed3de0132767e89",
+    "backend/rag/reranker.py": "ce850ec38e73d06dfc2a881264eb462015a2f3441962eb8f761f721b0ce5dd21",
+    "backend/rag/settings.py": "5c9b53f1b91eb3659836e2f9dcf4cc27b66c8fd2c423cd196fd0aa3f1424b13e",
+    "backend/rag/source_selection.py": "e350dd248a7c76cc86bd2de22e423ef93bcf040717b0be89f619f88af1423ce5",
+    "backend/rag/support_checks.py": "8146ecd6424e86e21ae8d6e2f469fb7357431200a549857318dc517ed92100ea",
+    "backend/rag/tokenization.py": "8321fedad58886b4772e4b054b4d935912645d75cb3c48717c4f8e220a713f37",
+    "backend/rag/vector_store.py": "7a6366ce5acb64a1ca2cea3afb66ab3bd9b6e8fb836b7043607a2b151d01af50",
+    "backend/readiness.py": "ed7b5e14a08b3e96dd2bc4286d0798d6b0dc283c6daa0bb78746be5a2f941e2c",
+    "backend/retrieval.py": "3f3e8a2f9b97e057b4f92171adab51c55acf3f54e11ac754fc0b5a5df306a605",
+    "backend/search.py": "17213ff93ffee4cd56bf34bf43031799248e2cd681a158951e58e57cb35b8dbd",
+    "backend/structural_metadata.py": "ff6067cb1e08cdc82ade1877fc95e8dacbdbbd1f852b5611c8440bbfbdc6b221",
+    "backend/structure.py": "db4daa86fa933ba85d9ce045976cd10184ad0d40d602957736b6bd0dcf4c0c29",
+    "backend/test_links.py": "ac5fded20fc0915e840d02d94855c9882a99d590b88d70a37339ae5f3cd3520f",
+    "backend/test_results.py": "ff754e0e4fb9cacd9dde380f21155da933cfc1cdb2438591ee9977065f507956"
+  },
+  "questions_sha256": "81a258c49654d5fdba6241dff33656bab4745a673f0b2e6272521e1b5659a683",
+  "repeats": 1,
+  "results": [],
+  "retrieval_experiments": {
+    "tenacity": {
+      "snapshot": "fb8b55a8cf8a9db86425517cab5736e131e24f2623b320875024250c6fb28e97",
+      "results": [
+        {
+          "variant": {
+            "name": "lexical",
+            "mode": "lexical",
+            "hops": 0,
+            "settings": {
+              "rerank": false
+            }
+          },
+          "cases": [
+            {
+              "question": "Compare retry_if_result.__call__ and retry_if_not_result.__call__: what happens when outcome is missing, when the outcome failed, and when it succeeded?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.4,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 87.421,
+              "retrieved": [
+                "ddc595f298cd1d88786cdc98",
+                "eb5fdeefaa83c2aa5c5d7ad7",
+                "ae5e6164f4d7fc3ca3e2d659",
+                "e53a417a45fbab41aa34c118",
+                "450e234ebff42bf386639e5f",
+                "39a44c1574dc8903deff3101",
+                "bf009d2e73c5fb09dfc44e02",
+                "4ede61f418cab712bbf74903",
+                "ea74e9e5eea9ddc7ebe5878a",
+                "762191a3659b42c00d264900"
+              ],
+              "semantic_used": false,
+              "warning": null
+            },
+            {
+              "question": "In retry_if_exception_cause_type.__call__, does matching the raised exception itself trigger retry, how are deeper causes and cycles handled, and what happens for a missing or successful outcome?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.1,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 46.761,
+              "retrieved": [
+                "bf009d2e73c5fb09dfc44e02",
+                "22fd7d354a1a947f4d3e3384",
+                "450e234ebff42bf386639e5f",
+                "4ede61f418cab712bbf74903",
+                "39a44c1574dc8903deff3101",
+                "762191a3659b42c00d264900",
+                "e53a417a45fbab41aa34c118",
+                "ae5e6164f4d7fc3ca3e2d659",
+                "eb5fdeefaa83c2aa5c5d7ad7",
+                "ddc595f298cd1d88786cdc98"
+              ],
+              "semantic_used": false,
+              "warning": null
+            }
+          ]
+        },
+        {
+          "variant": {
+            "name": "semantic",
+            "mode": "semantic",
+            "hops": 0
+          },
+          "cases": [
+            {
+              "question": "Compare retry_if_result.__call__ and retry_if_not_result.__call__: what happens when outcome is missing, when the outcome failed, and when it succeeded?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.4,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 533.077,
+              "retrieved": [
+                "ddc595f298cd1d88786cdc98",
+                "eb5fdeefaa83c2aa5c5d7ad7",
+                "ea74e9e5eea9ddc7ebe5878a",
+                "6056ba49ca5bba98861cbd05",
+                "39a44c1574dc8903deff3101",
+                "ae5e6164f4d7fc3ca3e2d659",
+                "7245093ff4cc8f6ba2d87771",
+                "e53a417a45fbab41aa34c118",
+                "3176b1eed85faf3f39e45f49",
+                "450e234ebff42bf386639e5f"
+              ],
+              "semantic_used": true,
+              "warning": null
+            },
+            {
+              "question": "In retry_if_exception_cause_type.__call__, does matching the raised exception itself trigger retry, how are deeper causes and cycles handled, and what happens for a missing or successful outcome?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.1,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 188.994,
+              "retrieved": [
+                "bf009d2e73c5fb09dfc44e02",
+                "22fd7d354a1a947f4d3e3384",
+                "450e234ebff42bf386639e5f",
+                "39a44c1574dc8903deff3101",
+                "e53a417a45fbab41aa34c118",
+                "13bba0f39e15cb83394b7a81",
+                "4ede61f418cab712bbf74903",
+                "88e9928e43f836ecfc461706",
+                "0af8bcc32aa10f82f41777e2",
+                "0062654568a06bd9e1b66669"
+              ],
+              "semantic_used": true,
+              "warning": null
+            }
+          ]
+        },
+        {
+          "variant": {
+            "name": "graph",
+            "mode": "graph",
+            "hops": 2
+          },
+          "cases": [
+            {
+              "question": "Compare retry_if_result.__call__ and retry_if_not_result.__call__: what happens when outcome is missing, when the outcome failed, and when it succeeded?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.4,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 41.605,
+              "retrieved": [
+                "ddc595f298cd1d88786cdc98",
+                "eb5fdeefaa83c2aa5c5d7ad7",
+                "ae5e6164f4d7fc3ca3e2d659",
+                "e53a417a45fbab41aa34c118",
+                "450e234ebff42bf386639e5f",
+                "39a44c1574dc8903deff3101",
+                "bf009d2e73c5fb09dfc44e02",
+                "4ede61f418cab712bbf74903",
+                "ea74e9e5eea9ddc7ebe5878a",
+                "762191a3659b42c00d264900"
+              ],
+              "semantic_used": false,
+              "warning": null
+            },
+            {
+              "question": "In retry_if_exception_cause_type.__call__, does matching the raised exception itself trigger retry, how are deeper causes and cycles handled, and what happens for a missing or successful outcome?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.1,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 48.511,
+              "retrieved": [
+                "bf009d2e73c5fb09dfc44e02",
+                "22fd7d354a1a947f4d3e3384",
+                "450e234ebff42bf386639e5f",
+                "4ede61f418cab712bbf74903",
+                "39a44c1574dc8903deff3101",
+                "762191a3659b42c00d264900",
+                "e53a417a45fbab41aa34c118",
+                "ae5e6164f4d7fc3ca3e2d659",
+                "eb5fdeefaa83c2aa5c5d7ad7",
+                "ddc595f298cd1d88786cdc98"
+              ],
+              "semantic_used": false,
+              "warning": null
+            }
+          ]
+        },
+        {
+          "variant": {
+            "name": "hybrid",
+            "mode": "hybrid",
+            "hops": 2
+          },
+          "cases": [
+            {
+              "question": "Compare retry_if_result.__call__ and retry_if_not_result.__call__: what happens when outcome is missing, when the outcome failed, and when it succeeded?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.4,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 180.654,
+              "retrieved": [
+                "ddc595f298cd1d88786cdc98",
+                "eb5fdeefaa83c2aa5c5d7ad7",
+                "ae5e6164f4d7fc3ca3e2d659",
+                "e53a417a45fbab41aa34c118",
+                "450e234ebff42bf386639e5f",
+                "39a44c1574dc8903deff3101",
+                "bf009d2e73c5fb09dfc44e02",
+                "4ede61f418cab712bbf74903",
+                "ea74e9e5eea9ddc7ebe5878a",
+                "762191a3659b42c00d264900"
+              ],
+              "semantic_used": true,
+              "warning": null
+            },
+            {
+              "question": "In retry_if_exception_cause_type.__call__, does matching the raised exception itself trigger retry, how are deeper causes and cycles handled, and what happens for a missing or successful outcome?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.1,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 192.849,
+              "retrieved": [
+                "bf009d2e73c5fb09dfc44e02",
+                "22fd7d354a1a947f4d3e3384",
+                "450e234ebff42bf386639e5f",
+                "4ede61f418cab712bbf74903",
+                "39a44c1574dc8903deff3101",
+                "762191a3659b42c00d264900",
+                "e53a417a45fbab41aa34c118",
+                "ae5e6164f4d7fc3ca3e2d659",
+                "eb5fdeefaa83c2aa5c5d7ad7",
+                "ddc595f298cd1d88786cdc98"
+              ],
+              "semantic_used": true,
+              "warning": null
+            }
+          ]
+        }
+      ],
+      "answer_scores": null,
+      "notice": "Retrieval metrics only. Graph mode uses lexical seeds; hybrid can use lexical/semantic seeds. Answer, error and suggestion correctness require separate reviewed labels.",
+      "labelled_questions": 2,
+      "expected_source_count": 3,
+      "missing_source_labels": [],
+      "labelled_symbols": 3
+    },
+    "boltons": {
+      "snapshot": "9cf35d7c61e69b03029f60722bc99a83a6e3c59d0cbf11007a5a6f0b216bd027",
+      "results": [
+        {
+          "variant": {
+            "name": "lexical",
+            "mode": "lexical",
+            "hops": 0,
+            "settings": {
+              "rerank": false
+            }
+          },
+          "cases": [
+            {
+              "question": "In get_path, how does a dotted string path access a numeric list index, which lookup errors are wrapped, and how do an omitted default and an explicit None default differ?",
+              "available": true,
+              "at_5": {
+                "recall": 0.5,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.6131471927654584,
+                "all_required_evidence": false
+              },
+              "at_10": {
+                "recall": 0.5,
+                "precision": 0.1,
+                "mrr": 1.0,
+                "ndcg": 0.6131471927654584,
+                "all_required_evidence": false
+              },
+              "elapsed_ms": 162.747,
+              "retrieved": [
+                "d52599fff04f47c99eae1d29",
+                "629379acf29cd6fd8b03fc46",
+                "7eb167e4ee3a308c8948a42c",
+                "8f4968b0371ce3647eb2ac59",
+                "fc4601b70a041187d2fa7ac9",
+                "c6f2605afea91dd3cc2455be",
+                "fae58465fd2b32fe80236b7f",
+                "01fa4df51e04ad9883e1294a",
+                "21966ebff31bd79db9d92dd9",
+                "fe786b11b119d6fadf60e8d0"
+              ],
+              "semantic_used": false,
+              "warning": null
+            },
+            {
+              "question": "In LRU.__getitem__, what changes on a hit, on a miss without on_miss, when on_miss returns, and when on_miss raises?",
+              "available": true,
+              "at_5": {
+                "recall": 0.3333333333333333,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.46927872602275644,
+                "all_required_evidence": false
+              },
+              "at_10": {
+                "recall": 0.3333333333333333,
+                "precision": 0.1,
+                "mrr": 1.0,
+                "ndcg": 0.46927872602275644,
+                "all_required_evidence": false
+              },
+              "elapsed_ms": 66.997,
+              "retrieved": [
+                "702de5eb7091f4d675389ae1",
+                "c9a709f2ba8d5f87c54287bb",
+                "b04d270dbc25b288214b1c3e",
+                "a2a8f7d3d4d48fe475617680",
+                "7413eb9d5d348795d225f68f",
+                "758378af8461d606031d7e6d",
+                "d45c718f80e362efeb2532db",
+                "e2f2511a4ad754cb9cb63f2c",
+                "5d45fe00eda9ba411710eba5",
+                "c4a8c522e4b896931ff0d309"
+              ],
+              "semantic_used": false,
+              "warning": null
+            }
+          ]
+        },
+        {
+          "variant": {
+            "name": "semantic",
+            "mode": "semantic",
+            "hops": 0
+          },
+          "cases": [
+            {
+              "question": "In get_path, how does a dotted string path access a numeric list index, which lookup errors are wrapped, and how do an omitted default and an explicit None default differ?",
+              "available": true,
+              "at_5": {
+                "recall": 0.5,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.6131471927654584,
+                "all_required_evidence": false
+              },
+              "at_10": {
+                "recall": 0.5,
+                "precision": 0.1,
+                "mrr": 1.0,
+                "ndcg": 0.6131471927654584,
+                "all_required_evidence": false
+              },
+              "elapsed_ms": 367.671,
+              "retrieved": [
+                "d52599fff04f47c99eae1d29",
+                "937a955dc19c77db8db40612",
+                "be228f7bee7e87d58de039be",
+                "7d4a78f73583b61f66480b87",
+                "4c3ed7a3713c03be8768bf10",
+                "cced978b2e23ee4113b4d8ce",
+                "88cc4ad6435c331bcbbeb352",
+                "8f9c1ae87415b8a51ee85f52",
+                "3dc7e1fa85e370e46cdec581",
+                "61c02f87df7a08999a6baa7e"
+              ],
+              "semantic_used": true,
+              "warning": null
+            },
+            {
+              "question": "In LRU.__getitem__, what changes on a hit, on a miss without on_miss, when on_miss returns, and when on_miss raises?",
+              "available": true,
+              "at_5": {
+                "recall": 0.3333333333333333,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.46927872602275644,
+                "all_required_evidence": false
+              },
+              "at_10": {
+                "recall": 0.6666666666666666,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.6049306994552042,
+                "all_required_evidence": false
+              },
+              "elapsed_ms": 318.338,
+              "retrieved": [
+                "702de5eb7091f4d675389ae1",
+                "c9a709f2ba8d5f87c54287bb",
+                "ee7bd4cdddf0d50d53efe72b",
+                "5500b569de85be361dacf527",
+                "e326d456ea9883b365e74bf6",
+                "c8b7fce40db45b8d44d5835c",
+                "b04d270dbc25b288214b1c3e",
+                "2186edcc3d06f5cafcccca91",
+                "9f79581ff464d2af09bf4cd3",
+                "911a8fe2ac653b7583df4da1"
+              ],
+              "semantic_used": true,
+              "warning": null
+            }
+          ]
+        },
+        {
+          "variant": {
+            "name": "graph",
+            "mode": "graph",
+            "hops": 2
+          },
+          "cases": [
+            {
+              "question": "In get_path, how does a dotted string path access a numeric list index, which lookup errors are wrapped, and how do an omitted default and an explicit None default differ?",
+              "available": true,
+              "at_5": {
+                "recall": 0.5,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.6131471927654584,
+                "all_required_evidence": false
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.8175295903539445,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 84.058,
+              "retrieved": [
+                "d52599fff04f47c99eae1d29",
+                "21966ebff31bd79db9d92dd9",
+                "c4112ce00a7631a8ff7ded7b",
+                "3e74c63014d42f862f635408",
+                "c750797f04d67efc222d2c50",
+                "c6f2605afea91dd3cc2455be",
+                "132a94738448dc587bea383c",
+                "fae58465fd2b32fe80236b7f",
+                "629379acf29cd6fd8b03fc46",
+                "7eb167e4ee3a308c8948a42c"
+              ],
+              "semantic_used": false,
+              "warning": null
+            },
+            {
+              "question": "In LRU.__getitem__, what changes on a hit, on a miss without on_miss, when on_miss returns, and when on_miss raises?",
+              "available": true,
+              "at_5": {
+                "recall": 0.3333333333333333,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.46927872602275644,
+                "all_required_evidence": false
+              },
+              "at_10": {
+                "recall": 0.3333333333333333,
+                "precision": 0.1,
+                "mrr": 1.0,
+                "ndcg": 0.46927872602275644,
+                "all_required_evidence": false
+              },
+              "elapsed_ms": 63.954,
+              "retrieved": [
+                "702de5eb7091f4d675389ae1",
+                "c9a709f2ba8d5f87c54287bb",
+                "b04d270dbc25b288214b1c3e",
+                "a2a8f7d3d4d48fe475617680",
+                "7413eb9d5d348795d225f68f",
+                "758378af8461d606031d7e6d",
+                "d45c718f80e362efeb2532db",
+                "e2f2511a4ad754cb9cb63f2c",
+                "5d45fe00eda9ba411710eba5",
+                "c4a8c522e4b896931ff0d309"
+              ],
+              "semantic_used": false,
+              "warning": null
+            }
+          ]
+        },
+        {
+          "variant": {
+            "name": "hybrid",
+            "mode": "hybrid",
+            "hops": 2
+          },
+          "cases": [
+            {
+              "question": "In get_path, how does a dotted string path access a numeric list index, which lookup errors are wrapped, and how do an omitted default and an explicit None default differ?",
+              "available": true,
+              "at_5": {
+                "recall": 0.5,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.6131471927654584,
+                "all_required_evidence": false
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.7977228895450266,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 331.721,
+              "retrieved": [
+                "d52599fff04f47c99eae1d29",
+                "629379acf29cd6fd8b03fc46",
+                "7eb167e4ee3a308c8948a42c",
+                "8f4968b0371ce3647eb2ac59",
+                "fc4601b70a041187d2fa7ac9",
+                "c4112ce00a7631a8ff7ded7b",
+                "3e74c63014d42f862f635408",
+                "c750797f04d67efc222d2c50",
+                "132a94738448dc587bea383c",
+                "21966ebff31bd79db9d92dd9"
+              ],
+              "semantic_used": true,
+              "warning": null
+            },
+            {
+              "question": "In LRU.__getitem__, what changes on a hit, on a miss without on_miss, when on_miss returns, and when on_miss raises?",
+              "available": true,
+              "at_5": {
+                "recall": 0.3333333333333333,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 0.46927872602275644,
+                "all_required_evidence": false
+              },
+              "at_10": {
+                "recall": 0.3333333333333333,
+                "precision": 0.1,
+                "mrr": 1.0,
+                "ndcg": 0.46927872602275644,
+                "all_required_evidence": false
+              },
+              "elapsed_ms": 328.695,
+              "retrieved": [
+                "702de5eb7091f4d675389ae1",
+                "c9a709f2ba8d5f87c54287bb",
+                "b04d270dbc25b288214b1c3e",
+                "a2a8f7d3d4d48fe475617680",
+                "7413eb9d5d348795d225f68f",
+                "758378af8461d606031d7e6d",
+                "d45c718f80e362efeb2532db",
+                "e2f2511a4ad754cb9cb63f2c",
+                "5d45fe00eda9ba411710eba5",
+                "c4a8c522e4b896931ff0d309"
+              ],
+              "semantic_used": true,
+              "warning": null
+            }
+          ]
+        }
+      ],
+      "answer_scores": null,
+      "notice": "Retrieval metrics only. Graph mode uses lexical seeds; hybrid can use lexical/semantic seeds. Answer, error and suggestion correctness require separate reviewed labels.",
+      "labelled_questions": 2,
+      "expected_source_count": 5,
+      "missing_source_labels": [],
+      "labelled_symbols": 5
+    }
+  },
+  "split": "development",
+  "notice": "Frozen source-authored questions; Codex review is not independent human evaluation. No model weight updates, patch application or target code execution. Development cases may guide implementation changes; holdout cases must not guide tuning before their recorded run."
+}

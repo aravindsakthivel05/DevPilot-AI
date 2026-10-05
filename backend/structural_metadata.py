@@ -40,7 +40,7 @@ def declared_metadata(repo_id, files, symbols):
                     docstring="",
                     parent_id=owner["id"],
                 ),
-                detect_language(path),
+                detect_language(path, files[path]),
             )
         )
         edges.append(
@@ -57,7 +57,7 @@ def declared_metadata(repo_id, files, symbols):
 
     for path, source in files.items():
         entries = by_path.get(path, [])
-        language = detect_language(path)
+        language = detect_language(path, source)
         if not entries:
             continue
         if language != "text":

@@ -1,0 +1,4 @@
+fluentvalidation four retrieval modes complete
+zod four retrieval modes complete
+fluentvalidation-medium generated=True partial=False recall=1.0 seconds=209.227
+zod-hard generated=True partial=True recall=1.0 seconds=109.366

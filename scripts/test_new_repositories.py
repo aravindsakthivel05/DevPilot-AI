@@ -43,7 +43,20 @@ def hashes():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("stage", choices=["index", "run"])
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--checkouts", type=Path)
+    parser.add_argument(
+        "--repository", action="append", help="name=owner/repository; repeat for each repository"
+    )
+    parser.add_argument("--split", choices=["development", "holdout"], default="development")
     args = parser.parse_args()
+    global OUTPUT, CHECKOUTS, REPOSITORIES
+    if args.output:
+        OUTPUT = args.output.resolve()
+    if args.checkouts:
+        CHECKOUTS = args.checkouts.resolve()
+    if args.repository:
+        REPOSITORIES = dict(item.split("=", 1) for item in args.repository)
     os.environ.setdefault("DEVPILOT_DATA", str(ROOT / ".devpilot/new-five-2026-10-04"))
     os.environ.setdefault("DEVPILOT_LLM_BASE_URL", "http://127.0.0.1:11434/v1")
     os.environ.setdefault("DEVPILOT_LLM_MODEL", "qwen2.5-coder:14b")
@@ -108,7 +121,7 @@ def main():
                 "error": repo.get("error"),
                 "index_wall_seconds": round(elapsed, 3),
                 "stats": repo.get("stats", {}),
-                "split": "evaluation_only_no_tuning",
+                "split": args.split,
             }
             if repo["status"] == "ready":
                 started = time.perf_counter()
@@ -161,7 +174,8 @@ def main():
             "repeats": 1,
             "results": [],
             "retrieval_experiments": {},
-            "notice": "Fresh repositories and source-authored questions; Codex review is not independent human evaluation. No tuning, training, patch application or target code execution.",
+            "split": args.split,
+            "notice": "Frozen source-authored questions; Codex review is not independent human evaluation. No model weight updates, patch application or target code execution. Development cases may guide implementation changes; holdout cases must not guide tuning before their recorded run.",
         }
         save(result_path, report)
     for name, snapshot in snapshots.items():

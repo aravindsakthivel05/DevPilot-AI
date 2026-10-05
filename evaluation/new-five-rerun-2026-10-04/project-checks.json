@@ -1,0 +1,18 @@
+{
+  "pytest": {
+    "passed": 186,
+    "skipped": 1,
+    "seconds": 5.13,
+    "skip": "Docker-dependent test"
+  },
+  "ruff": {
+    "lint": "passed",
+    "format": "151 files already formatted"
+  },
+  "frontend": {
+    "prettier": "passed",
+    "vite_build": "passed",
+    "modules": 1595,
+    "seconds": 0.798
+  }
+}

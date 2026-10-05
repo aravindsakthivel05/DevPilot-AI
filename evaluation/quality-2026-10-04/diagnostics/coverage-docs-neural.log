@@ -1,0 +1,18 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+The Transformer `cache_dir` argument is deprecated. Please pass `cache_dir` via `model_kwargs`, `processor_kwargs`, and/or `config_kwargs` instead.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 10044.06it/s]
+axios-easy [True] 38.869
+axios-medium [True, True] 20.48
+axios-hard [True, False] 22.743
+gin-easy [True, True, False] 10.442
+gin-medium [True, True] 12.671
+gin-hard [True, False] 16.635
+clap-easy [True, False] 18.419
+clap-medium [True, False] 15.112
+clap-hard [False, True, True] 13.551
+fmt-easy [True] 16.789
+fmt-medium [True] 13.563
+fmt-hard [True, True, True] 13.52
+fluentvalidation-easy [True] 10.059
+fluentvalidation-medium [True, True] 9.052
+fluentvalidation-hard [False] 9.624

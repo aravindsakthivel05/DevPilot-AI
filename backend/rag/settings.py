@@ -13,10 +13,10 @@ def number(name, default):
 
 def settings():
     return {
-        "lexical_weight": number("LEXICAL_WEIGHT", 1),
-        "semantic_weight": number("SEMANTIC_WEIGHT", 1),
-        "graph_weight": number("GRAPH_WEIGHT", 1),
-        "structural_weight": number("STRUCTURAL_WEIGHT", 0.02),
+        "lexical_weight": number("LEXICAL_WEIGHT", 2),
+        "semantic_weight": number("SEMANTIC_WEIGHT", 0.5),
+        "graph_weight": number("GRAPH_WEIGHT", 0.5),
+        "structural_weight": number("STRUCTURAL_WEIGHT", 0.002),
         "exact_boost": number("EXACT_BOOST", 50),
         "candidate_limit": 50,
         "rerank": os.environ.get("DEVPILOT_RERANK", "1").lower() in ("1", "true", "yes"),

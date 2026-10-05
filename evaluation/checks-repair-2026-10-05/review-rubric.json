@@ -1,0 +1,35 @@
+{
+  "provenance": "Criteria frozen before reading generated answers. Codex source-based review is not independent human grading.",
+  "grading": "Fully correct and adequate requires all essential behaviors requested, no material false/unsupported claim, and citations supporting those behaviors. Incomplete means essential behavior missing or withheld while retained claims are sound. Unsupported/incorrect means at least one material false claim or citation does not establish the claimed behavior. Extra incidental detail in the reference is not mandatory unless requested.",
+  "essential_behaviors": {
+    "aiohttp-easy": [
+      "Owned connector is closed; shared connector is not closed",
+      "For an open session the reference is cleared afterward",
+      "Already closed session skips the guarded close body"
+    ],
+    "aiohttp-medium": [
+      "Creation failure/cancellation releases placeholder and reraises through BaseException",
+      "Global and applicable per-host acquired entries are removed by helper",
+      "Queued future removed in finally and empty waiter bucket deleted"
+    ],
+    "aiohttp-hard": [
+      "303 except HEAD and 301/302 POST become GET, discard data and remove Content-Length",
+      "Other redirect combinations replay existing body; consumed body raises instead",
+      "Origin change clears supplied cookies and Authorization, Cookie, Proxy-Authorization headers"
+    ],
+    "werkzeug-easy": [
+      "Iterable close if present is called before registered callbacks",
+      "Iterable close exception prevents reaching callbacks; there is no finally guarantee"
+    ],
+    "werkzeug-medium": [
+      "force bypasses MIME check, silent suppresses MIME/parse failure with None",
+      "Default MIME failure is 415; parse failure is 400",
+      "cache controls reuse/write and data caching; successful parse fills both slots, silent parse failure does not poison normal slot"
+    ],
+    "werkzeug-hard": [
+      "Eligible strict slash rule produces SlashRequired then RequestPath then RequestRedirect, non-strict can match directly",
+      "MethodNotAllowed uses accumulated valid methods; WebsocketMismatch only if no allowed-method set, otherwise NotFound",
+      "Method mismatch takes precedence over websocket mismatch when both flags are present"
+    ]
+  }
+}

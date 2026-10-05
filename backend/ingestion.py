@@ -254,7 +254,7 @@ def ingest(repo_id, source):
                         repo_id,
                         p,
                         t,
-                        detect_language(p),
+                        detect_language(p, t),
                         file_id(repo_id, p),
                         file_role(p),
                     )
@@ -288,11 +288,13 @@ def ingest(repo_id, source):
                 [(repo_id, json.dumps(item)) for item in unresolved],
             )
         stored_done = perf_counter()
+        from .indexing import INDEX_VERSION
+
         stats = dict(
             files=len(files),
             python_files=sum(p.endswith(".py") for p in files),
             java_files=sum(p.endswith(".java") for p in files),
-            languages=dict(Counter(detect_language(p) for p in files)),
+            languages=dict(Counter(detect_language(p, files[p]) for p in files)),
             symbols=len(symbols),
             edges=len(edges),
             parse_errors=errors,
@@ -301,7 +303,7 @@ def ingest(repo_id, source):
             skipped_files=coverage_summary["skipped_files"],
             coverage=coverage_summary,
             embedding_status="not_configured",
-            index_version="2026-10-04-language-adapters-v1",
+            index_version=INDEX_VERSION,
             timings_ms={
                 "read_and_snapshot": round((files_done - started) * 1000, 3),
                 "analysis_and_graph": round((graph_done - files_done) * 1000, 3),

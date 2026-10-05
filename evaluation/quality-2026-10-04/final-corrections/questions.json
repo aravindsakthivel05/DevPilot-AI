@@ -1,0 +1,71 @@
+{
+  "provenance": "Codex-authored source-backed questions; not independent human labels. Frozen before model generation. Expected answers and source labels are not supplied to DevPilot. Final correction validation after generic #elif and coordinated-object fixes; bounded rejected-claim repair enabled. Development questions; no new holdout claim.",
+  "cases": [
+    {
+      "id": "gin-hard",
+      "repository": "gin",
+      "difficulty": "hard",
+      "question": "How does JSON binding handle decoder errors and struct validation, and which global switches alter the decoder behavior?",
+      "answerable": true,
+      "expected_answer": "decodeJSON constructs json.API decoder, calls UseNumber and DisallowUnknownFields conditionally according to EnableDecoderUseNumber and EnableDecoderDisallowUnknownFields (both false defaults). Decode error returns before validate. After successful decode, validate returns nil if Validator nil, else Validator.ValidateStruct(obj).",
+      "expected_sources": [
+        {
+          "path": "binding/json.go",
+          "name": "decodeJSON",
+          "anchor_line": 52,
+          "anchor_text": "if err := decoder.Decode(obj); err != nil"
+        },
+        {
+          "path": "binding/binding.go",
+          "name": "validate",
+          "anchor_line": 126,
+          "anchor_text": "return Validator.ValidateStruct(obj)"
+        }
+      ]
+    },
+    {
+      "id": "fmt-hard",
+      "repository": "fmt",
+      "difficulty": "hard",
+      "question": "How are formatting errors reported with exceptions enabled or disabled, and how does a caller-provided throw macro affect that behavior?",
+      "answerable": true,
+      "expected_answer": "report_error invokes FMT_THROW(format_error(message)). If FMT_THROW predefined retain it; otherwise exception mode throws x, disabled mode calls fmt::assert_fail(file,line,x.what()). assert_fail prints file,line,message to stderr then aborts. Source alone does not establish the active build mode.",
+      "expected_sources": [
+        {
+          "path": "include/fmt/format-inl.h",
+          "name": "report_error",
+          "anchor_line": 164,
+          "anchor_text": "FMT_THROW(format_error(message))"
+        },
+        {
+          "path": "include/fmt/format.h",
+          "name": "format.h",
+          "anchor_line": 167,
+          "anchor_text": "#  define FMT_THROW(x) ::fmt::assert_fail(__FILE__, __LINE__, (x).what())"
+        },
+        {
+          "path": "include/fmt/format-inl.h",
+          "name": "assert_fail",
+          "anchor_line": 52,
+          "anchor_text": "std::fprintf(stderr, \"%s:%d: assertion failed: %s\", file, line, message)"
+        }
+      ]
+    },
+    {
+      "id": "fluentvalidation-hard",
+      "repository": "fluentvalidation",
+      "difficulty": "hard",
+      "question": "In asynchronous property validation, how do rule conditions and component conditions control property access, cancellation and dependent rules?",
+      "answerable": true,
+      "expected_answer": "Return when selector or rule Condition/AsyncCondition vetoes. Per component check cancellation, reset message formatter, skip false sync/async conditions. Evaluate PropertyFunc lazily only at first eligible component; wrap NullReferenceException with When guidance. Failure adds error; Stop can break. Nonnull dependent rules run only with no new failures and each checks cancellation.",
+      "expected_sources": [
+        {
+          "path": "src/FluentValidation/Internal/PropertyRule.cs",
+          "name": "ValidateAsync",
+          "anchor_line": 115,
+          "anchor_text": "propValue = PropertyFunc(context.InstanceToValidate)"
+        }
+      ]
+    }
+  ]
+}

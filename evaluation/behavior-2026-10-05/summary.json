@@ -1,0 +1,49 @@
+{
+  "reviewer": "Codex manual comparison to pinned source and frozen rubric; not independent human review",
+  "answerable_questions": 4,
+  "correct_answers": 3,
+  "fully_adequate": 0,
+  "covered_details": 16,
+  "required_details": 26,
+  "detail_coverage_fraction": 0.6153846153846154,
+  "unsupported_claim_count": 1,
+  "abstention_correct": 2,
+  "guard_questions": 2,
+  "source_reviewed_unnecessary_abstentions": 0,
+  "median_answerable_seconds": 110.154,
+  "per_case": [
+    {
+      "case_id": "tenacity-result",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 4,
+      "required_details": 5,
+      "unsupported_claims": 0
+    },
+    {
+      "case_id": "tenacity-cause",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 6,
+      "required_details": 7,
+      "unsupported_claims": 0
+    },
+    {
+      "case_id": "boltons-path",
+      "correct": false,
+      "fully_adequate": false,
+      "covered_details": 3,
+      "required_details": 7,
+      "unsupported_claims": 1
+    },
+    {
+      "case_id": "boltons-cache",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 3,
+      "required_details": 7,
+      "unsupported_claims": 0
+    }
+  ],
+  "notice": "Small source-reviewed sample; correctness is distinct from completeness. Not independent human review."
+}

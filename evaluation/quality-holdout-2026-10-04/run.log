@@ -1,0 +1,8 @@
+itsdangerous four retrieval modes complete
+zod four retrieval modes complete
+itsdangerous-medium generated=True partial=False recall=1.0 seconds=64.264
+itsdangerous-hard generated=True partial=False recall=1.0 seconds=67.155
+zod-medium generated=True partial=True recall=1.0 seconds=95.475
+zod-hard generated=True partial=False recall=1.0 seconds=89.042
+itsdangerous-unanswerable generated=False partial=None recall=None seconds=0.001
+zod-unanswerable generated=False partial=None recall=None seconds=0.001

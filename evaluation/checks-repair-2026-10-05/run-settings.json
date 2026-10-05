@@ -1,0 +1,19 @@
+{
+  "model": "qwen2.5-coder:14b",
+  "embedding_model": "nomic-embed-text:latest",
+  "context_window": 8192,
+  "source_selection": true,
+  "claim_review": true,
+  "bounded_repair": true,
+  "max_generation_attempts": 2,
+  "langgraph": false,
+  "baseline": "../new-two-complex-2026-10-05/results.json",
+  "evaluation_scope": "Same frozen questions and pinned snapshots; development regressions, not unseen evaluation.",
+  "project_checks": {
+    "pytest_passed": 231,
+    "pytest_skipped": 1,
+    "ruff": "passed",
+    "frontend_build": "passed",
+    "frontend_prettier": "passed"
+  }
+}

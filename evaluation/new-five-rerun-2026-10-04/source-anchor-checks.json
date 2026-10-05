@@ -1,0 +1,173 @@
+{
+  "all_match": true,
+  "checks": [
+    {
+      "case_id": "axios-easy",
+      "path": "lib/core/settle.js",
+      "anchor_line": 16,
+      "matches": true
+    },
+    {
+      "case_id": "axios-medium",
+      "path": "lib/core/dispatchRequest.js",
+      "anchor_line": 46,
+      "matches": true
+    },
+    {
+      "case_id": "axios-medium",
+      "path": "lib/core/transformData.js",
+      "anchor_line": 22,
+      "matches": true
+    },
+    {
+      "case_id": "axios-hard",
+      "path": "lib/core/Axios.js",
+      "anchor_line": 176,
+      "matches": true
+    },
+    {
+      "case_id": "axios-hard",
+      "path": "lib/core/InterceptorManager.js",
+      "anchor_line": 71,
+      "matches": true
+    },
+    {
+      "case_id": "gin-easy",
+      "path": "context.go",
+      "anchor_line": 889,
+      "matches": true
+    },
+    {
+      "case_id": "gin-easy",
+      "path": "context.go",
+      "anchor_line": 942,
+      "matches": true
+    },
+    {
+      "case_id": "gin-easy",
+      "path": "binding/json.go",
+      "anchor_line": 37,
+      "matches": true
+    },
+    {
+      "case_id": "gin-medium",
+      "path": "context.go",
+      "anchor_line": 841,
+      "matches": true
+    },
+    {
+      "case_id": "gin-medium",
+      "path": "context.go",
+      "anchor_line": 942,
+      "matches": true
+    },
+    {
+      "case_id": "gin-hard",
+      "path": "binding/json.go",
+      "anchor_line": 52,
+      "matches": true
+    },
+    {
+      "case_id": "gin-hard",
+      "path": "binding/binding.go",
+      "anchor_line": 126,
+      "matches": true
+    },
+    {
+      "case_id": "clap-easy",
+      "path": "clap_builder/src/builder/command.rs",
+      "anchor_line": 763,
+      "matches": true
+    },
+    {
+      "case_id": "clap-easy",
+      "path": "clap_builder/src/builder/command.rs",
+      "anchor_line": 813,
+      "matches": true
+    },
+    {
+      "case_id": "clap-medium",
+      "path": "clap_builder/src/parser/matches/arg_matches.rs",
+      "anchor_line": 1085,
+      "matches": true
+    },
+    {
+      "case_id": "clap-medium",
+      "path": "clap_builder/src/parser/matches/arg_matches.rs",
+      "anchor_line": 1295,
+      "matches": true
+    },
+    {
+      "case_id": "clap-hard",
+      "path": "clap_builder/src/builder/command.rs",
+      "anchor_line": 866,
+      "matches": true
+    },
+    {
+      "case_id": "clap-hard",
+      "path": "clap_builder/src/builder/command.rs",
+      "anchor_line": 4366,
+      "matches": true
+    },
+    {
+      "case_id": "clap-hard",
+      "path": "clap_builder/src/parser/parser.rs",
+      "anchor_line": 72,
+      "matches": true
+    },
+    {
+      "case_id": "fmt-easy",
+      "path": "include/fmt/format.h",
+      "anchor_line": 2594,
+      "matches": true
+    },
+    {
+      "case_id": "fmt-medium",
+      "path": "include/fmt/format.h",
+      "anchor_line": 970,
+      "matches": true
+    },
+    {
+      "case_id": "fmt-hard",
+      "path": "include/fmt/format-inl.h",
+      "anchor_line": 164,
+      "matches": true
+    },
+    {
+      "case_id": "fmt-hard",
+      "path": "include/fmt/format.h",
+      "anchor_line": 167,
+      "matches": true
+    },
+    {
+      "case_id": "fmt-hard",
+      "path": "include/fmt/format-inl.h",
+      "anchor_line": 52,
+      "matches": true
+    },
+    {
+      "case_id": "fluentvalidation-easy",
+      "path": "src/FluentValidation/AbstractValidator.cs",
+      "anchor_line": 143,
+      "matches": true
+    },
+    {
+      "case_id": "fluentvalidation-medium",
+      "path": "src/FluentValidation/AbstractValidator.cs",
+      "anchor_line": 166,
+      "matches": true
+    },
+    {
+      "case_id": "fluentvalidation-medium",
+      "path": "src/FluentValidation/Internal/PropertyRule.cs",
+      "anchor_line": 132,
+      "matches": true
+    },
+    {
+      "case_id": "fluentvalidation-hard",
+      "path": "src/FluentValidation/Internal/PropertyRule.cs",
+      "anchor_line": 115,
+      "matches": true
+    }
+  ]
+}

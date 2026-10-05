@@ -1,0 +1,84 @@
+{
+  "reviewer": "Codex source-based review, not independent human evaluation",
+  "rubric": "../new-two-complex-2026-10-05/review-rubric.json",
+  "scope": "Same frozen cases; development regressions after implementation changes",
+  "cases": [
+    {
+      "case_id": "aiohttp-easy",
+      "category": "incomplete",
+      "assessment": "The valid already-closed no-op/implicit return explanation now survives. Shared-connector behavior still is not explicitly contrasted; retained explanations are correct. The same-model coverage reviewer incorrectly labels the aspect complete.",
+      "improvement": "Previously rejected implicit-return claim retained with expanded original-source citations.",
+      "essential_coverage": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "case_id": "aiohttp-medium",
+      "category": "incomplete",
+      "assessment": "Main cleanup behaviors remain correct. Citation expansion now includes finally at 753 and BaseException at 701. Explicit connection-creation cancellation and re-raising explanations remain absent; semantic completeness does not improve.",
+      "improvement": "Citation provenance now includes surrounding control-flow conditions.",
+      "essential_coverage": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "aiohttp-hard",
+      "category": "incorrect_or_unsupported",
+      "assessment": "Still incorrectly says 307/308 POST switches to GET. Body replay and consumed-payload errors remain unexplained; the three cleared header names are absent. Authentication clearing now cites the actual clearing code. A formerly displayed unverified negative assertion is replaced by neutral uncertainty.",
+      "improvement": "All three source anchors reach context; cross-origin clearing citation is corrected; unverified declarative text is removed. A duplicate-heavy correction fails formatting and preserves the initial accepted answer.",
+      "essential_coverage": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "werkzeug-easy",
+      "category": "fully_correct_and_adequate",
+      "assessment": "Covers iterable-first order, callback registration order and lack of a callback guarantee if iterable close raises. This answers the essential question correctly. A neutral, unnecessary missing-details note remains from the model draft.",
+      "improvement": "Executable completeness allows the correct exception-behavior claim to survive.",
+      "essential_coverage": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "werkzeug-medium",
+      "category": "incomplete",
+      "assessment": "Correctly covers force bypassing MIME checks, silent returning None on parse failure, and cache reuse. Missing default MIME/parse error types, cache=False and separate cache-slot behavior leave the answer incomplete. The same-model coverage reviewer still incorrectly labels every aspect complete.",
+      "improvement": "The formerly rejected assigned-return-value explanation survives with expanded citations.",
+      "essential_coverage": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "werkzeug-hard",
+      "category": "incorrect_or_unsupported",
+      "assessment": "Caller-to-adapter HTTP exception conversion now survives source-identity checks with both source identities cited. However, the answer wrongly asserts missing-slash precedence and omits method-before-websocket precedence. Unsupported claims that the matcher itself raises MethodNotAllowed/WebsocketMismatch are appropriately withheld. A correction exceeds the context budget, retaining the original answer.",
+      "improvement": "The correctly attributed MapAdapter workflow survives; terminology casing no longer removes the precedence claim, but the retained claim is itself incorrect.",
+      "essential_coverage": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "aiohttp-unanswerable",
+      "category": "appropriate_abstention",
+      "assessment": "Appropriately abstains from inventing live deployment or traffic information.",
+      "essential_coverage": []
+    },
+    {
+      "case_id": "werkzeug-unanswerable",
+      "category": "appropriate_abstention",
+      "assessment": "Appropriately abstains from inventing live deployment or traffic information.",
+      "essential_coverage": []
+    }
+  ]
+}

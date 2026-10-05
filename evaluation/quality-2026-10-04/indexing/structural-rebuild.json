@@ -1,0 +1,57 @@
+{
+  "axios": {
+    "seconds": 49.014,
+    "stats": {
+      "repo_id": "23c136416c334b02afbd6d44948b618b",
+      "name": "axios",
+      "symbols": 12142,
+      "edges": 15883,
+      "index_version": "2026-10-04-language-adapters-v4",
+      "embedding_status": "ready"
+    }
+  },
+  "gin": {
+    "seconds": 37.553,
+    "stats": {
+      "repo_id": "dd60a450e9d646629e8a633f2268e759",
+      "name": "gin",
+      "symbols": 4180,
+      "edges": 5566,
+      "index_version": "2026-10-04-language-adapters-v4",
+      "embedding_status": "ready"
+    }
+  },
+  "clap": {
+    "seconds": 101.734,
+    "stats": {
+      "repo_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "name": "clap",
+      "symbols": 7173,
+      "edges": 8284,
+      "index_version": "2026-10-04-language-adapters-v4",
+      "embedding_status": "ready"
+    }
+  },
+  "fmt": {
+    "seconds": 153.134,
+    "stats": {
+      "repo_id": "001e3e01b30344a087fdf6c2dfc8bd97",
+      "name": "fmt",
+      "symbols": 14549,
+      "edges": 15703,
+      "index_version": "2026-10-04-language-adapters-v4",
+      "embedding_status": "ready"
+    }
+  },
+  "fluentvalidation": {
+    "seconds": 57.232,
+    "stats": {
+      "repo_id": "121131b84c16420785b2526640c30cb1",
+      "name": "fluentvalidation",
+      "symbols": 6274,
+      "edges": 6132,
+      "index_version": "2026-10-04-language-adapters-v4",
+      "embedding_status": "ready"
+    }
+  }
+}

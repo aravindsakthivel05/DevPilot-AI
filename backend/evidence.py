@@ -20,17 +20,27 @@ def estimated_tokens(text):
 
 def _terms(text):
     text = re.sub(r"([a-z])([A-Z])", r"\1 \2", text)
-    return {
+    terms = {
         t[:-1] if len(t) > 4 and t.endswith("s") and not t.endswith("ss") else t
         for t in re.findall(r"[a-z0-9]+", text.lower())
         if len(t) > 1
     }
+    for word, aliases in {
+        "authentication": {"authorization", "auth"},
+        "replayed": {"consumed", "body"},
+        "replay": {"consumed", "body"},
+        "cleanup": {"finally", "except"},
+    }.items():
+        if word in terms:
+            terms.update(aliases)
+    return terms
 
 
 def excerpt(record, question, token_budget):
     lines = record["source"].splitlines()
     excluded = set()
     returned_calls = []
+    branches = []
     if record.get("path", "").endswith(".py"):
         try:
             tree = ast.parse(textwrap.dedent(record["source"]))
@@ -47,6 +57,8 @@ def excerpt(record, question, token_budget):
                         pending.append(child)
                 returned_calls.sort(key=lambda call: call.lineno)
             for node in ast.walk(tree):
+                if isinstance(node, ast.If) and node.end_lineno - node.lineno < 35:
+                    branches.append((node.lineno - 1, node.end_lineno))
                 if (
                     isinstance(
                         node, (ast.Module, ast.ClassDef, ast.FunctionDef, ast.AsyncFunctionDef)
@@ -74,6 +86,50 @@ def excerpt(record, question, token_budget):
     # Preserve the declaration and neighborhoods of relevant calls/conditions,
     # rather than always retaining only the beginning of a large function.
     windows = [range(min(3, len(lines)))]
+    # Reserve bounded complete branches per obligation before unrelated matches
+    # consume the budget. Conditions and effects must travel together.
+    for aspect in answer_aspects(question):
+        focused = (
+            aspect.split(",", 1)[-1] if re.match(r"^(?:When|In|For|Within)\b", aspect) else aspect
+        )
+        focus = _terms(focused) - {
+            "the",
+            "and",
+            "or",
+            "to",
+            "of",
+            "in",
+            "on",
+            "an",
+            "is",
+            "are",
+            "be",
+            "when",
+            "how",
+            "what",
+            "which",
+            "does",
+            "do",
+            "must",
+            "it",
+            "if",
+            "with",
+            "from",
+        }
+        scored = sorted(
+            branches,
+            key=lambda span: (
+                len(focus & _terms("\n".join(lines[span[0] : span[1]])))
+                / max(1, (span[1] - span[0]) ** 0.25),
+                -span[0],
+            ),
+            reverse=True,
+        )
+        windows.extend(
+            range(first, last)
+            for first, last in scored[:2]
+            if focus & _terms("\n".join(lines[first:last]))
+        )
     # Argument-only fragments cannot establish which function is invoked.
     # Reserve the callee and requested keyword values before declaration windows.
     for call in returned_calls[:2]:
@@ -112,11 +168,13 @@ def excerpt(record, question, token_budget):
     while indices and not lines[indices[-1]].strip():
         indices.pop()
     start = record.get("start_line", 1)
+    executable = {i for i, line in enumerate(lines) if i not in excluded and line.strip()}
     return {
         **record,
         "source": "\n".join(lines[i] for i in indices),
         "source_line_numbers": [start + i for i in indices],
         "truncated": len(indices) < len(lines),
+        "executable_complete": executable <= set(indices),
         "estimated_source_tokens": used,
     }
 
@@ -135,9 +193,27 @@ def identity_supported(reference, items):
     """Require named owners to match a source identity or an explicit code reference."""
     reference = reference.lower()
     for item in items:
-        if reference.endswith((".py", ".java", ".md", ".toml", ".json", ".yaml", ".yml")) and (
-            item["path"].lower() == reference or item["path"].lower().endswith("/" + reference)
-        ):
+        if reference.endswith(
+            (
+                ".py",
+                ".java",
+                ".md",
+                ".toml",
+                ".json",
+                ".yaml",
+                ".yml",
+                ".cs",
+                ".go",
+                ".rs",
+                ".c",
+                ".h",
+                ".cpp",
+                ".hpp",
+                ".js",
+                ".ts",
+                ".tsx",
+            )
+        ) and (item["path"].lower() == reference or item["path"].lower().endswith("/" + reference)):
             return True
         for alias in item.get("public_aliases", []):
             if alias.lower() == reference or alias.lower().startswith(reference + "."):

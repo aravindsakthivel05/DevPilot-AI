@@ -45,7 +45,7 @@ class TreeAdapter:
             "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
             "limitations": [
                 "No compiler type checking or runtime dispatch",
-                "Overloads, computed imports, macros and ambiguous receivers remain unresolved",
+                "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved",
             ],
         }
 
@@ -142,15 +142,34 @@ class TreeAdapter:
                             else []
                         )
                         if types:
-                            qualified = prefix + "." + text(types[-1]) + "." + name
+                            qualified = prefix + "." + text(types[0]) + "." + name
                     if kind == "function" and parent_kind in ("class", "struct", "interface"):
                         kind = "method"
                     start, end = node.start_point.row + 1, node.end_point.row + 1
+                    if kind == "macro":
+                        # Preserve nearby conditional definitions, without
+                        # expanding a file-wide include guard or evaluating it.
+                        ancestor = node.parent
+                        while ancestor and ancestor.type.startswith("preproc_"):
+                            if ancestor.end_point.row - ancestor.start_point.row > 80:
+                                break
+                            start = ancestor.start_point.row + 1
+                            end = ancestor.end_point.row + 1
+                            ancestor = ancestor.parent
                     sid = symbol_id(repo_id, path, qualified + f"#byte{node.start_byte}", start)
                     # Store full original lines rather than byte fragments; the
                     # excerpt coordinates must always map to the original file.
                     body = "\n".join(source.splitlines()[start - 1 : end])
                     signature = text(node).split("{", 1)[0].split("\n", 1)[0][:500]
+                    comments = []
+                    sibling = node.prev_named_sibling
+                    next_row = node.start_point.row
+                    while sibling and "comment" in sibling.type:
+                        if next_row - sibling.end_point.row > 1:
+                            break
+                        comments.append(text(sibling))
+                        next_row = sibling.start_point.row
+                        sibling = sibling.prev_named_sibling
                     item = dict(
                         id=sid,
                         repo_id=repo_id,
@@ -162,10 +181,24 @@ class TreeAdapter:
                         end_line=end,
                         source=body,
                         signature=signature,
-                        docstring="",
+                        docstring="\n".join(reversed(comments))[:12000],
                         parent_id=parent,
                     )
                     result.symbols.append(normalize_symbol(item, self.language))
+                    if self.language == "go" and node.type == "method_declaration":
+                        receiver = node.child_by_field_name("receiver")
+                        if receiver and receiver.named_children:
+                            declaration = receiver.named_children[0]
+                            receiver_name = declaration.child_by_field_name("name")
+                            receiver_type = declaration.child_by_field_name("type")
+                            types = (
+                                [n for n in walk(receiver_type) if n.type == "type_identifier"]
+                                if receiver_type
+                                else []
+                            )
+                            if receiver_name and types:
+                                result.symbols[-1]["receiver_name"] = text(receiver_name)
+                                result.symbols[-1]["receiver_type"] = text(types[0])
                     edge(parent, sid, "contains", start, name)
                     params = node.child_by_field_name("parameters")
                     if not params:
@@ -190,7 +223,7 @@ class TreeAdapter:
                                 pid = symbol_id(
                                     repo_id,
                                     path,
-                                    qualified + "." + param_name + "#parameter",
+                                    qualified + "." + param_name + f"#parameter{param.start_byte}",
                                     param.start_point.row + 1,
                                 )
                                 result.symbols.append(

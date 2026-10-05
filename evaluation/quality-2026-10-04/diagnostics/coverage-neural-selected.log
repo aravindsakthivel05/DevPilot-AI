@@ -1,0 +1,17 @@
+The Transformer `cache_dir` argument is deprecated. Please pass `cache_dir` via `model_kwargs`, `processor_kwargs`, and/or `config_kwargs` instead.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 1297.35it/s]
+axios-easy [True] 23.207
+axios-medium [True, True] 12.167
+axios-hard [False, True] 11.187
+gin-easy [True, True, True] 5.278
+gin-medium [False, False] 8.408
+gin-hard [True, True] 8.852
+clap-easy [True, True] 11.569
+clap-medium [False, False] 16.849
+clap-hard [False, True, False] 13.561
+fmt-easy [True] 10.493
+fmt-medium [True] 9.247
+fmt-hard [True, False, False] 9.829
+fluentvalidation-easy [False] 10.01
+fluentvalidation-medium [False, False] 10.371
+fluentvalidation-hard [False] 8.792

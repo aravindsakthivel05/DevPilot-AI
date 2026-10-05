@@ -6,7 +6,7 @@ from threading import RLock
 from . import db
 from .namespaces import declared_aliases, scoped_package_prefix
 
-VERSION = "2026-10-03-normalized-fts5-v2"
+VERSION = "2026-10-04-normalized-fts5-v5"
 _LOCK = RLock()
 _CACHE = OrderedDict()
 

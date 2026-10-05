@@ -1,0 +1,12 @@
+{
+  "pytest": {
+    "passed": 233,
+    "skipped": 1
+  },
+  "ruff_lint": "passed",
+  "ruff_format": "162 files formatted",
+  "frontend_prettier": "passed",
+  "frontend_build": "passed (1595 modules)",
+  "bootstrap_shell_syntax": "passed",
+  "notice": "Final automated checks also cover C/C++ preprocessor coverage after the Python-only live runs. That final change excludes only Python comments already excluded by the excerpt selector; it does not alter Python evaluation excerpts. Main live run precedes the feedback-budget change, followed by its targeted recheck."
+}

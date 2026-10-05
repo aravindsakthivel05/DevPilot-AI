@@ -1,0 +1,99 @@
+{
+  "reviewer": "Codex manual comparison to pinned source and frozen rubric; not independent human review",
+  "cases": [
+    {
+      "case_id": "tenacity-result",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "reason": "The comparison gets unset/failure/success returns right but does not explicitly convey that predicates are not called on failed outcomes. Strict frozen detail coverage 4/5.",
+      "source": [
+        "tenacity/retry.py:207-213",
+        "tenacity/retry.py:223-229"
+      ],
+      "unnecessary_abstention": false
+    },
+    {
+      "case_id": "tenacity-cause",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "unsupported_claims": [],
+      "reason": "Correctly distinguishes raised exception from its explicit cause, deeper chain and seen IDs. Does not state False for a failed outcome whose chain has no matching cause.",
+      "source": [
+        "tenacity/retry.py:181-197"
+      ],
+      "unnecessary_abstention": false
+    },
+    {
+      "case_id": "boltons-path",
+      "correct": false,
+      "required_detail_coverage": [
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "unsupported_claims": [
+        "If the segment is numeric and not found as a key, it tries to convert the segment to an integer and use it as an index."
+      ],
+      "reason": "Integer fallback belongs only to the except TypeError handler. A missing mapping key raises KeyError and goes directly to PathAccessError; numeric mapping-key counterexample passed in Docker. Failed conversion/re-index details and successful final return omitted.",
+      "source": [
+        "boltons/iterutils.py:1358-1383"
+      ],
+      "unnecessary_abstention": false
+    },
+    {
+      "case_id": "boltons-cache",
+      "correct": true,
+      "required_detail_coverage": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "reason": "Correct hit/miss/callback return/exception facts. Missing lock, recency move, lack of hit-count increment on callback miss, and no insertion when callback fails. The final two required details are compound requirements and count as covered only when both parts are stated.",
+      "source": [
+        "boltons/cacheutils.py:165-183",
+        "boltons/cacheutils.py:365-377"
+      ],
+      "unnecessary_abstention": false
+    },
+    {
+      "case_id": "tenacity-guard",
+      "correct": true,
+      "unsupported_claims": [],
+      "abstention_correct": true,
+      "reason": "No private production runtime value invented; explicit abstention.",
+      "unnecessary_abstention": false
+    },
+    {
+      "case_id": "boltons-guard",
+      "correct": true,
+      "unsupported_claims": [],
+      "abstention_correct": true,
+      "reason": "No private production runtime value invented; explicit abstention.",
+      "unnecessary_abstention": false
+    }
+  ]
+}

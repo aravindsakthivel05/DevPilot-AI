@@ -1,0 +1,10 @@
+axios four retrieval modes complete
+gin four retrieval modes complete
+clap four retrieval modes complete
+fmt four retrieval modes complete
+fluentvalidation four retrieval modes complete
+axios-hard generated=True partial=False recall=1.0 seconds=141.687
+gin-hard generated=True partial=True recall=1.0 seconds=96.308
+clap-easy generated=True partial=False recall=1.0 seconds=103.264
+fmt-hard generated=True partial=False recall=1.0 seconds=100.942
+fluentvalidation-hard generated=True partial=True recall=1.0 seconds=131.603

@@ -1,0 +1,10 @@
+aiohttp four retrieval modes complete
+werkzeug four retrieval modes complete
+aiohttp-easy generated=True partial=True recall=1.0 seconds=94.016
+aiohttp-medium generated=True partial=False recall=1.0 seconds=114.547
+aiohttp-hard generated=True partial=True recall=1.0 seconds=149.299
+werkzeug-easy generated=True partial=True recall=1.0 seconds=50.307
+werkzeug-medium generated=True partial=True recall=1.0 seconds=82.591
+werkzeug-hard generated=True partial=True recall=1.0 seconds=144.549
+aiohttp-unanswerable generated=False partial=None recall=None seconds=0.001
+werkzeug-unanswerable generated=False partial=None recall=None seconds=0.001

@@ -1,0 +1,712 @@
+{
+  "issues": [
+    {
+      "id": "d44dc09990bce2accac642761549924c",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/werkzeug/_internal.py",
+      "line": 102,
+      "end_line": 102,
+      "symbol": "werkzeug._internal._dt_as_utc.value",
+      "message": "Top-level definition _dt_as_utc replaces an earlier definition at line 100.",
+      "evidence": [
+        {
+          "file": "src/werkzeug/_internal.py",
+          "start_line": 102,
+          "end_line": 102
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "020f295c512bd68fae16d828",
+          "symbol": "werkzeug._internal._dt_as_utc",
+          "file": "src/werkzeug/_internal.py",
+          "line": 101,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ad70b9ef95ac41348669fc86e22ff573",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/werkzeug/_internal.py",
+      "line": 103,
+      "end_line": 112,
+      "symbol": "werkzeug._internal._dt_as_utc.value",
+      "message": "Top-level definition _dt_as_utc replaces an earlier definition at line 102.",
+      "evidence": [
+        {
+          "file": "src/werkzeug/_internal.py",
+          "start_line": 103,
+          "end_line": 112
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3210fc1a80cb5b0d275b0157",
+          "symbol": "werkzeug._internal._dt_as_utc",
+          "file": "src/werkzeug/_internal.py",
+          "line": 103,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "054765ad63ac5f9ad7be0cbae3aa7910",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/werkzeug/http.py",
+      "line": 729,
+      "end_line": 729,
+      "symbol": "werkzeug.http._parse_accept_header.value",
+      "message": "Top-level definition _parse_accept_header replaces an earlier definition at line 725.",
+      "evidence": [
+        {
+          "file": "src/werkzeug/http.py",
+          "start_line": 729,
+          "end_line": 729
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "364761dfaaf75419a706de30",
+          "symbol": "werkzeug.http._parse_accept_header",
+          "file": "src/werkzeug/http.py",
+          "line": 728,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "fd28f82851424c19022d2c69e95cf6e3",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/werkzeug/http.py",
+      "line": 732,
+      "end_line": 756,
+      "symbol": "werkzeug.http._parse_accept_header",
+      "message": "Top-level definition _parse_accept_header replaces an earlier definition at line 729.",
+      "evidence": [
+        {
+          "file": "src/werkzeug/http.py",
+          "start_line": 732,
+          "end_line": 756
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "c3610dd5d6b300cb731055be",
+          "symbol": "werkzeug.http",
+          "file": "src/werkzeug/http.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1591f53eefadf063fbdb2451",
+          "symbol": "werkzeug.http._parse_accept_header.value",
+          "file": "src/werkzeug/http.py",
+          "line": 733,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "a622da5c2f571a078db99b39",
+          "symbol": "werkzeug.http._parse_accept_header.cls",
+          "file": "src/werkzeug/http.py",
+          "line": 733,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "9ae7d9ca9b5b79b9ba2d262b6c7e645d",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/werkzeug/http.py",
+      "line": 770,
+      "end_line": 774,
+      "symbol": "werkzeug.http._parse_cache_control_header",
+      "message": "Top-level definition _parse_cache_control_header replaces an earlier definition at line 763.",
+      "evidence": [
+        {
+          "file": "src/werkzeug/http.py",
+          "start_line": 770,
+          "end_line": 774
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "c3610dd5d6b300cb731055be",
+          "symbol": "werkzeug.http",
+          "file": "src/werkzeug/http.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "39d70ca090a8227095fe657f",
+          "symbol": "werkzeug.http._parse_cache_control_header.value",
+          "file": "src/werkzeug/http.py",
+          "line": 771,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "7720c7632c5acd8d30bf1036",
+          "symbol": "werkzeug.http._parse_cache_control_header.on_update",
+          "file": "src/werkzeug/http.py",
+          "line": 772,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "d94b309e62484a172b751536",
+          "symbol": "werkzeug.http._parse_cache_control_header.cls",
+          "file": "src/werkzeug/http.py",
+          "line": 773,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "c2f8fb93ca4461690af81d422a1b048c",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/werkzeug/http.py",
+      "line": 777,
+      "end_line": 810,
+      "symbol": "werkzeug.http._parse_cache_control_header",
+      "message": "Top-level definition _parse_cache_control_header replaces an earlier definition at line 770.",
+      "evidence": [
+        {
+          "file": "src/werkzeug/http.py",
+          "start_line": 777,
+          "end_line": 810
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "c3610dd5d6b300cb731055be",
+          "symbol": "werkzeug.http",
+          "file": "src/werkzeug/http.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7d41a0c09fa91251897a7771",
+          "symbol": "werkzeug.http._parse_cache_control_header.value",
+          "file": "src/werkzeug/http.py",
+          "line": 778,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "97325d56965f97d48c0dfe6d",
+          "symbol": "werkzeug.http._parse_cache_control_header.on_update",
+          "file": "src/werkzeug/http.py",
+          "line": 779,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "ba48c0aa6615eb938dc3a537",
+          "symbol": "werkzeug.http._parse_cache_control_header.cls",
+          "file": "src/werkzeug/http.py",
+          "line": 780,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "fe101b95880a6d600fae65e671b1f5aa",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/werkzeug/http.py",
+      "line": 824,
+      "end_line": 828,
+      "symbol": "werkzeug.http._parse_csp_header",
+      "message": "Top-level definition _parse_csp_header replaces an earlier definition at line 817.",
+      "evidence": [
+        {
+          "file": "src/werkzeug/http.py",
+          "start_line": 824,
+          "end_line": 828
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "c3610dd5d6b300cb731055be",
+          "symbol": "werkzeug.http",
+          "file": "src/werkzeug/http.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "5182459f8b191bd4af06b241",
+          "symbol": "werkzeug.http._parse_csp_header.value",
+          "file": "src/werkzeug/http.py",
+          "line": 825,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "cc2dcce0fc059bd3540a735c",
+          "symbol": "werkzeug.http._parse_csp_header.on_update",
+          "file": "src/werkzeug/http.py",
+          "line": 826,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "356deb33db75af0cb4e2887c",
+          "symbol": "werkzeug.http._parse_csp_header.cls",
+          "file": "src/werkzeug/http.py",
+          "line": 827,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "5f211ed43adb7eecea5136c55b290493",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/werkzeug/http.py",
+      "line": 831,
+      "end_line": 857,
+      "symbol": "werkzeug.http._parse_csp_header",
+      "message": "Top-level definition _parse_csp_header replaces an earlier definition at line 824.",
+      "evidence": [
+        {
+          "file": "src/werkzeug/http.py",
+          "start_line": 831,
+          "end_line": 857
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "c3610dd5d6b300cb731055be",
+          "symbol": "werkzeug.http",
+          "file": "src/werkzeug/http.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "5bb236cbe8f273e64c025cf8",
+          "symbol": "werkzeug.http._parse_csp_header.value",
+          "file": "src/werkzeug/http.py",
+          "line": 832,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "c67118798d28c6c80d414b08",
+          "symbol": "werkzeug.http._parse_csp_header.on_update",
+          "file": "src/werkzeug/http.py",
+          "line": 833,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "c3c623014435e5ecb7d74054",
+          "symbol": "werkzeug.http._parse_csp_header.cls",
+          "file": "src/werkzeug/http.py",
+          "line": 834,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "597cd31c1ab756cafaf73da092cd52d7",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "circular_dependency",
+      "severity": "info",
+      "confidence": "medium",
+      "file": "src/werkzeug/debug/console.py",
+      "line": 11,
+      "end_line": 11,
+      "symbol": "werkzeug.debug.console",
+      "message": "Indexed imports form a cycle: src/werkzeug/debug/console.py → src/werkzeug/debug/tbtools.py",
+      "evidence": [
+        {
+          "file": "src/werkzeug/debug/console.py",
+          "start_line": 11,
+          "end_line": 11
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "ce523f538beeaecb7f636276",
+          "symbol": "werkzeug.debug.console.HTMLStringO",
+          "file": "src/werkzeug/debug/console.py",
+          "line": 19,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "995faea8cd6e51565fd5bd8f",
+          "symbol": "werkzeug.debug.console.ThreadedStream",
+          "file": "src/werkzeug/debug/console.py",
+          "line": 59,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6fc8513134338acb86c594aa",
+          "symbol": "werkzeug.debug.console._ConsoleLoader",
+          "file": "src/werkzeug/debug/console.py",
+          "line": 115,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "216c5c19609236d8743114f6",
+          "symbol": "werkzeug.debug.console._InteractiveConsole",
+          "file": "src/werkzeug/debug/console.py",
+          "line": 133,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b6d9c9845c839b8fe3aba70e",
+          "symbol": "werkzeug.debug.console.Console",
+          "file": "src/werkzeug/debug/console.py",
+          "line": 200,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b4c927b44ecc84048195b6ae",
+          "symbol": "werkzeug.debug.repr.debug_repr",
+          "file": "src/werkzeug/debug/repr.py",
+          "line": 38,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "026e760464ce1a3dc11c3648",
+          "symbol": "werkzeug.debug.repr.dump",
+          "file": "src/werkzeug/debug/repr.py",
+          "line": 43,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "1ba722080c2d6ae0d8d2dd4b",
+          "symbol": "werkzeug.debug.repr",
+          "file": "src/werkzeug/debug/repr.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "019192f99a868e0857ee4cfb",
+          "symbol": "tests.test_debug",
+          "file": "tests/test_debug.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "019192f99a868e0857ee4cfb",
+          "symbol": "tests.test_debug",
+          "file": "tests/test_debug.py",
+          "line": 1,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "Established file-import edges form a strongly connected component. Such cycles can be intentional and are not proof of runtime failure.",
+      "suggested_fix": "Review initialization order and consider moving shared contracts into an independent module if the cycle causes a problem.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e76ad5c472b4b8b86b6765d8ca73f43e",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "circular_dependency",
+      "severity": "info",
+      "confidence": "medium",
+      "file": "src/werkzeug/routing/converters.py",
+      "line": 10,
+      "end_line": 10,
+      "symbol": "werkzeug.routing.converters",
+      "message": "Indexed imports form a cycle: src/werkzeug/routing/converters.py → src/werkzeug/routing/exceptions.py → src/werkzeug/routing/map.py → src/werkzeug/routing/matcher.py → src/werkzeug/routing/rules.py",
+      "evidence": [
+        {
+          "file": "src/werkzeug/routing/converters.py",
+          "start_line": 10,
+          "end_line": 10
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "ca8348187222ce72691dd501",
+          "symbol": "werkzeug.routing.converters.ValidationError",
+          "file": "src/werkzeug/routing/converters.py",
+          "line": 13,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b3c5710657056a75490723fc",
+          "symbol": "werkzeug.routing.converters.BaseConverter",
+          "file": "src/werkzeug/routing/converters.py",
+          "line": 19,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "f56fa5eb9c820ca635a5962e",
+          "symbol": "werkzeug.routing.converters.UnicodeConverter",
+          "file": "src/werkzeug/routing/converters.py",
+          "line": 49,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "9d9534a6f7bafb1baa93aae1",
+          "symbol": "werkzeug.routing.converters.AnyConverter",
+          "file": "src/werkzeug/routing/converters.py",
+          "line": 86,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6558af205d75a824762943fa",
+          "symbol": "werkzeug.routing.converters.PathConverter",
+          "file": "src/werkzeug/routing/converters.py",
+          "line": 113,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4af71f33a912fc4f8b4e1cc3",
+          "symbol": "werkzeug.routing.converters.IntegerConverter",
+          "file": "src/werkzeug/routing/converters.py",
+          "line": 128,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "0c40b6a1558c251f329ca046",
+          "symbol": "werkzeug.routing.converters.FloatConverter",
+          "file": "src/werkzeug/routing/converters.py",
+          "line": 214,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4b0d283c0493144f2b7d6a93",
+          "symbol": "werkzeug.routing.converters.UUIDConverter",
+          "file": "src/werkzeug/routing/converters.py",
+          "line": 311,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1beac74dd4df26b139472baf",
+          "symbol": "werkzeug.routing.map.Map",
+          "file": "src/werkzeug/routing/map.py",
+          "line": 40,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "84e26758363d09579be994ce",
+          "symbol": "werkzeug.routing.map",
+          "file": "src/werkzeug/routing/map.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "Established file-import edges form a strongly connected component. Such cycles can be intentional and are not proof of runtime failure.",
+      "suggested_fix": "Review initialization order and consider moving shared contracts into an independent module if the cycle causes a problem.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "2a3c44773d44acbfc2831eee0e8426e3",
+      "repository_id": "beaef6532645468a9d92243bab8bd823",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "type": "circular_dependency",
+      "severity": "info",
+      "confidence": "medium",
+      "file": "src/werkzeug/_header_property.py",
+      "line": 5,
+      "end_line": 5,
+      "symbol": "werkzeug._header_property",
+      "message": "Indexed imports form a cycle: src/werkzeug/_header_property.py → src/werkzeug/_internal.py → src/werkzeug/datastructures/__init__.py → src/werkzeug/datastructures/accept.py → src/werkzeug/datastructures/auth.py → src/werkzeug/datastructures/cache_control.py → src/werkzeug/datastructures/csp.py → src/werkzeug/datastructures/etag.py → src/werkzeug/datastructures/file_storage.py → src/werkzeug/datastructures/headers.py → src/werkzeug/datastructures/mixins.py → src/werkzeug/datastructures/range.py → src/werkzeug/datastructures/set.py → src/werkzeug/datastructures/structures.py → src/werkzeug/exceptions.py → src/werkzeug/formparser.py → src/werkzeug/http.py → src/werkzeug/sansio/http.py → src/werkzeug/sansio/multipart.py → src/werkzeug/sansio/request.py → src/werkzeug/sansio/response.py → src/werkzeug/sansio/utils.py → src/werkzeug/test.py → src/werkzeug/urls.py → src/werkzeug/utils.py → src/werkzeug/wrappers/__init__.py → src/werkzeug/wrappers/request.py → src/werkzeug/wrappers/response.py → src/werkzeug/wsgi.py",
+      "evidence": [
+        {
+          "file": "src/werkzeug/_header_property.py",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "51f513b72dd1bf27909ec343",
+          "symbol": "werkzeug._header_property.environ_property",
+          "file": "src/werkzeug/_header_property.py",
+          "line": 16,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7c53e73cf845222695f95ff8",
+          "symbol": "werkzeug._header_property.header_property",
+          "file": "src/werkzeug/_header_property.py",
+          "line": 80,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "9a09a0078e5501dc6241ded2",
+          "symbol": "werkzeug._header_property._DSProto",
+          "file": "src/werkzeug/_header_property.py",
+          "line": 159,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "461f6b1ab9133c74544ecdd2",
+          "symbol": "werkzeug._header_property.structure_property",
+          "file": "src/werkzeug/_header_property.py",
+          "line": 171,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b2c11868ca0e30d934a28aa0",
+          "symbol": "werkzeug._header_property.make_set_header_set",
+          "file": "src/werkzeug/_header_property.py",
+          "line": 256,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "63fc36623d094f27cde76021",
+          "symbol": "werkzeug._header_property.make_structure_on_update",
+          "file": "src/werkzeug/_header_property.py",
+          "line": 275,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "3f8bf5dabf331b2d433e8887",
+          "symbol": "werkzeug.datastructures.set.HeaderSet",
+          "file": "src/werkzeug/datastructures/set.py",
+          "line": 13,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "9aec933f051422f040960e49",
+          "symbol": "werkzeug.http.dump_header",
+          "file": "src/werkzeug/http.py",
+          "line": 324,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "eb7babf4daf2b65acb64ae28",
+          "symbol": "werkzeug.sansio.response.Response",
+          "file": "src/werkzeug/sansio/response.py",
+          "line": 34,
+          "relationship": "imports",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "Established file-import edges form a strongly connected component. Such cycles can be intentional and are not proof of runtime failure.",
+      "suggested_fix": "Review initialization order and consider moving shared contracts into an independent module if the cycle causes a problem.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    }
+  ],
+  "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+  "detector_version": "2026-10-04-conservative-static-v1",
+  "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+}

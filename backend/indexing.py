@@ -4,15 +4,17 @@ import json
 from collections import Counter
 
 from . import db
+from .config import provider_settings
 from .config_links import configuration_edges
+from .embedding_policy import eligible
 from .languages.registry import analyze_repository, detect_language
 from .models import file_id, file_role
-from .providers import index_embeddings
+from .providers import embedding_signature, index_embeddings
 from .rag.chunking import repository_chunks
 from .retrieval import retrieve
 from .structure import enrich
 
-INDEX_VERSION = "2026-10-04-language-adapters-v1"
+INDEX_VERSION = "2026-10-04-language-adapters-v4"
 
 
 def rebuild(repo_id, embeddings=False):
@@ -24,6 +26,20 @@ def rebuild(repo_id, embeddings=False):
             r["path"]: r["content"]
             for r in c.execute("SELECT path,content FROM files WHERE repo_id=?", (repo_id,))
         }
+        previous = {
+            r["id"]: (r["qualified"], r["source"], r["docstring"], r["signature"])
+            for r in c.execute(
+                "SELECT id,qualified,source,docstring,signature FROM symbols WHERE repo_id=?",
+                (repo_id,),
+            )
+        }
+        old_vectors = [
+            dict(r)
+            for r in c.execute(
+                "SELECT e.* FROM embeddings e JOIN symbols s ON e.symbol_id=s.id WHERE s.repo_id=?",
+                (repo_id,),
+            )
+        ]
     analysis = analyze_repository(repo_id, files)
     symbols, edges, errors, unresolved = (
         analysis.symbols,
@@ -36,6 +52,12 @@ def rebuild(repo_id, embeddings=False):
     symbols += extra
     edges += relationships
     chunks = repository_chunks(symbols, edges)
+    unchanged = {
+        s["id"]
+        for s in symbols
+        if previous.get(s["id"]) == (s["qualified"], s["source"], s["docstring"], s["signature"])
+    }
+    retained_vectors = [v for v in old_vectors if v["symbol_id"] in unchanged]
     # Whole replacement is transactional. Old model vectors cannot accidentally
     # remain associated with altered symbol contents.
     with db.connection() as c:
@@ -64,8 +86,15 @@ def rebuild(repo_id, embeddings=False):
             ],
         )
         c.executemany(
+            "INSERT OR REPLACE INTO embeddings (symbol_id,model,vector,signature) VALUES (:symbol_id,:model,:vector,:signature)",
+            retained_vectors,
+        )
+        c.executemany(
             "UPDATE files SET file_id=?,language=?,role=? WHERE repo_id=? AND path=?",
-            [(file_id(repo_id, p), detect_language(p), file_role(p), repo_id, p) for p in files],
+            [
+                (file_id(repo_id, p), detect_language(p, files[p]), file_role(p), repo_id, p)
+                for p in files
+            ],
         )
         c.execute("DELETE FROM issues WHERE repo_id=?", (repo_id,))
         c.execute("DELETE FROM unresolved_references WHERE repo_id=?", (repo_id,))
@@ -73,20 +102,35 @@ def rebuild(repo_id, embeddings=False):
             "INSERT INTO unresolved_references VALUES (?,?)",
             [(repo_id, json.dumps(item)) for item in unresolved],
         )
+    cfg = provider_settings()
+    current_vectors = [
+        v
+        for v in retained_vectors
+        if v["model"] == cfg["embedding_model"] and v["signature"] == embedding_signature()
+    ]
+    embedding_ready = bool(cfg["embedding_model"]) and len(current_vectors) == sum(
+        eligible(s) for s in symbols
+    )
     stats = {
         **repo["stats"],
-        "languages": dict(Counter(detect_language(p) for p in files)),
+        "languages": dict(Counter(detect_language(p, files[p]) for p in files)),
         "symbols": len(symbols),
         "edges": len(edges),
         "parse_errors": errors,
         "unresolved_count": len(unresolved),
         "unresolved": unresolved[:100],
         "index_version": INDEX_VERSION,
-        "embedding_status": "not_configured",
+        "embedding_status": "ready"
+        if embedding_ready
+        else ("stale" if cfg["embedding_model"] else "not_configured"),
     }
     if embeddings:
         try:
-            stats["embedding_status"] = index_embeddings(symbols)
+            stats["embedding_status"] = (
+                "ready"
+                if embedding_ready
+                else index_embeddings(symbols, cached_vectors=current_vectors)
+            )
         except Exception as exc:
             stats.update(embedding_status="failed", embedding_error=str(exc))
     db.update_repository(repo_id, stats=json.dumps(stats))

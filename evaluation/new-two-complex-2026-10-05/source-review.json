@@ -1,0 +1,83 @@
+{
+  "reviewer": "Codex review against pinned source, not independent human grading",
+  "rubric": "review-rubric.json",
+  "cases": [
+    {
+      "case_id": "aiohttp-easy",
+      "category": "incomplete",
+      "assessment": "Correct retained statements, but shared-connector behavior and the already-closed no-op are not explained clearly. Both source anchors were present in generation context.",
+      "essential_coverage": [
+        true,
+        false,
+        false
+      ],
+      "citation_notes": "The owned-connector claim omits the already-closed guard from its exact span; surrounding implementation confirms it."
+    },
+    {
+      "case_id": "aiohttp-medium",
+      "category": "incomplete",
+      "assessment": "Correct main cleanup paths: waiter removal, empty bucket deletion, placeholder release and global/per-host removal. Does not explicitly explain BaseException including cancellation or re-raising; the helper already-closed early return is also omitted.",
+      "essential_coverage": [
+        false,
+        true,
+        true
+      ],
+      "citation_notes": "The waiter removal citation is line 756, omitting finally at 755; the exception citation is lines 702\u2013703, omitting BaseException at 701. Source review confirms the described cleanup, but the spans are too narrow to establish all stated conditions."
+    },
+    {
+      "case_id": "aiohttp-hard",
+      "category": "incorrect_or_unsupported",
+      "assessment": "Material errors: says 307/308 POST becomes GET (source preserves body), says 303 changes HEAD to GET (HEAD is excluded), and prints a rejected claim that HTTP-origin changes do not clear cookies/authentication. It also omits the consumed-payload replay failure and the three cleared header names.",
+      "essential_coverage": [
+        false,
+        false,
+        false
+      ],
+      "citation_notes": "Rewrite claims omit required branch guards. Cookie/authentication claim cites URL-scheme validation at 867\u2013872, not clearing at 891\u2013895. Only one of three frozen source anchors reached generation context. The same-model reviewer accepted false statements; an insufficient_evidence claim is displayed as declarative negative text."
+    },
+    {
+      "case_id": "werkzeug-easy",
+      "category": "incomplete",
+      "assessment": "Correct iterable-first and callback-order descriptions, but withholds whether an iterable-close exception prevents callbacks. The complete short implementation establishes that callbacks are not reached if iterable close raises.",
+      "essential_coverage": [
+        true,
+        false
+      ],
+      "citation_notes": "Order citations identify the correct lines. Missing exception guarantee is an unnecessary refusal with the full relevant source present."
+    },
+    {
+      "case_id": "werkzeug-medium",
+      "category": "incomplete",
+      "assessment": "Explains force bypassing MIME check and cache reuse correctly, but omits silent, default 415 MIME errors versus 400 parse errors, cache=False, and separate normal/silent cache-slot behavior. All frozen source anchors were supplied to generation.",
+      "essential_coverage": [
+        false,
+        false,
+        false
+      ],
+      "citation_notes": "Force and cache reuse cite the correct implementation, though force is applied only after the earlier cache hit check. Most requested error and cache semantics are withheld."
+    },
+    {
+      "case_id": "werkzeug-hard",
+      "category": "incorrect_or_unsupported",
+      "assessment": "Explains part of SlashRequired-to-RequestPath and method collection, but incorrectly calls the internal NoMatch an HTTP exception (it inherits Exception). Omits MapAdapter conversion to RequestRedirect/MethodNotAllowed/WebsocketMismatch/NotFound and omits method-before-websocket precedence despite all required anchors reaching the prompt.",
+      "essential_coverage": [
+        false,
+        false,
+        false
+      ],
+      "citation_notes": "The NoMatch assertion cites matcher lines 98\u2013100 and 166\u2013167, which check the method and update have_match_for, not a NoMatch raise. NoMatch is an internal Exception (routing/exceptions.py:170), not an HTTPException. RequestPath citation starts at 178 and omits the except SlashRequired guard at 177. The same-model reviewer retained the unsupported HTTP-exception claim."
+    },
+    {
+      "case_id": "aiohttp-unanswerable",
+      "category": "appropriate_abstention",
+      "assessment": "Correctly states that an indexed snapshot cannot establish current deployment status or live traffic. No invented operational facts or model call.",
+      "essential_coverage": []
+    },
+    {
+      "case_id": "werkzeug-unanswerable",
+      "category": "appropriate_abstention",
+      "assessment": "Correctly states that an indexed snapshot cannot establish current deployment status or live traffic. No invented operational facts or model call.",
+      "essential_coverage": []
+    }
+  ]
+}

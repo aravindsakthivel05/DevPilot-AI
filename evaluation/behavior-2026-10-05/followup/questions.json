@@ -1,0 +1,151 @@
+{
+  "provenance": "Codex source-authored references frozen before generation; not independent human review. First use of these repositories in this workspace. No tuning on answers before this run.",
+  "cases": [
+    {
+      "id": "tenacity-result",
+      "repository": "tenacity",
+      "difficulty": "medium",
+      "question": "Compare retry_if_result.__call__ and retry_if_not_result.__call__: what happens when outcome is missing, when the outcome failed, and when it succeeded?",
+      "answerable": true,
+      "expected_answer": "Both raise RuntimeError for missing outcome; both return False for failed outcomes without calling the result predicate. On success retry_if_result returns predicate(outcome.result()), while retry_if_not_result returns its boolean negation.",
+      "expected_sources": [
+        {
+          "path": "tenacity/retry.py",
+          "name": "__call__",
+          "anchor_line": 212,
+          "anchor_text": "return self.predicate(retry_state.outcome.result())"
+        },
+        {
+          "path": "tenacity/retry.py",
+          "name": "__call__",
+          "anchor_line": 228,
+          "anchor_text": "return not self.predicate(retry_state.outcome.result())"
+        }
+      ],
+      "required_details": [
+        "RuntimeError for unset outcome",
+        "Failed outcomes return False in both strategies",
+        "Failed outcomes do not invoke predicate",
+        "Success invokes predicate with outcome.result()",
+        "Only not-result negates predicate"
+      ]
+    },
+    {
+      "id": "tenacity-cause",
+      "repository": "tenacity",
+      "difficulty": "hard",
+      "question": "In retry_if_exception_cause_type.__call__, does matching the raised exception itself trigger retry, how are deeper causes and cycles handled, and what happens for a missing or successful outcome?",
+      "answerable": true,
+      "expected_answer": "Missing outcome raises RuntimeError. A successful outcome returns False. For failure it starts at outcome.exception(), but tests exc.__cause__ rather than exc itself; a matching raised exception alone with no matching cause returns False. It follows explicit __cause__ links, returns True on any matching cause, and records id(exc) in seen to stop on cycles or None, returning False if no cause matched.",
+      "expected_sources": [
+        {
+          "path": "tenacity/retry.py",
+          "name": "__call__",
+          "anchor_line": 193,
+          "anchor_text": "if isinstance(exc.__cause__, self.exception_cause_types):"
+        }
+      ],
+      "required_details": [
+        "Raised exception itself is not the tested object",
+        "Tests explicit __cause__ at each step",
+        "Follows deeper causes",
+        "seen id set terminates cycles",
+        "Missing outcome RuntimeError",
+        "Successful outcome False",
+        "No matching cause False"
+      ]
+    },
+    {
+      "id": "boltons-path",
+      "repository": "boltons",
+      "difficulty": "hard",
+      "question": "In get_path, how does a dotted string path access a numeric list index, which lookup errors are wrapped, and how do an omitted default and an explicit None default differ?",
+      "answerable": true,
+      "expected_answer": "String paths split on dots and traversal indexes cur[seg]. KeyError/IndexError immediately become PathAccessError. Only TypeError tries int(seg) then re-indexes, enabling numeric string list indexes; a mapping KeyError for a numeric string is not retried as an integer. Failed conversion/re-indexing becomes PathAccessError, with a non-indexable object message when cur is not iterable. An outer PathAccessError is re-raised when default is the _UNSET sentinel; any explicit default, including None, is returned. Successful traversal returns cur.",
+      "expected_sources": [
+        {
+          "path": "boltons/iterutils.py",
+          "name": "get_path",
+          "anchor_line": 1371,
+          "anchor_text": "seg = int(seg)"
+        },
+        {
+          "path": "boltons/iterutils.py",
+          "name": "is_iterable",
+          "anchor_line": 75,
+          "anchor_text": "return False"
+        }
+      ],
+      "required_details": [
+        "Split string on dots",
+        "Integer fallback only after TypeError",
+        "KeyError and IndexError wrapped without integer fallback",
+        "Conversion or fallback failure wrapped",
+        "Omitted sentinel re-raises",
+        "Explicit None returned on failure",
+        "Successful traversal returns cur"
+      ]
+    },
+    {
+      "id": "boltons-cache",
+      "repository": "boltons",
+      "difficulty": "medium",
+      "question": "In LRU.__getitem__, what changes on a hit, on a miss without on_miss, when on_miss returns, and when on_miss raises?",
+      "answerable": true,
+      "expected_answer": "Under the lock it gets the link and moves it to the most recently used position. Hit increments hit_count and returns link[VALUE]. A KeyError increments miss_count before checking on_miss; without a truthy callback it re-raises. With callback it evaluates on_miss(key), stores the returned value via self[key] assignment and returns it without incrementing hit_count for this miss. If callback raises, it propagates and no returned value is inserted; miss_count remains incremented.",
+      "expected_sources": [
+        {
+          "path": "boltons/cacheutils.py",
+          "name": "__getitem__",
+          "anchor_line": 373,
+          "anchor_text": "ret = self[key] = self.on_miss(key)"
+        },
+        {
+          "path": "boltons/cacheutils.py",
+          "name": "_get_link_and_move_to_front_of_ll",
+          "anchor_line": 183,
+          "anchor_text": "return newest"
+        },
+        {
+          "path": "boltons/cacheutils.py",
+          "name": "__setitem__",
+          "anchor_line": 231,
+          "anchor_text": "super().__setitem__(key, value)"
+        }
+      ],
+      "required_details": [
+        "Lock guards lookup",
+        "Hit moves entry to recent position",
+        "Hit increments hit_count and returns stored value",
+        "Miss increments miss_count before callback",
+        "No callback re-raises KeyError",
+        "Callback result inserted and returned without hit increment",
+        "Callback exception propagates without inserting value"
+      ]
+    },
+    {
+      "id": "tenacity-guard",
+      "repository": "tenacity",
+      "difficulty": "unanswerable",
+      "question": "What is the exact current value in my running production process for the cache or retry counter now?",
+      "answerable": false,
+      "expected_answer": "Indexed source cannot establish current private runtime values.",
+      "expected_sources": [],
+      "required_details": [
+        "No invented live runtime value"
+      ]
+    },
+    {
+      "id": "boltons-guard",
+      "repository": "boltons",
+      "difficulty": "unanswerable",
+      "question": "What is the exact current value in my running production process for the cache or retry counter now?",
+      "answerable": false,
+      "expected_answer": "Indexed source cannot establish current private runtime values.",
+      "expected_sources": [],
+      "required_details": [
+        "No invented live runtime value"
+      ]
+    }
+  ]
+}

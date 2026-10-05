@@ -244,7 +244,7 @@ def test_failed_embedding_batch_publishes_no_partial_index(client, repo, monkeyp
     symbols = [*symbols, *[{**symbols[0], "id": "extra"} for _ in range(24)]]
     calls = 0
 
-    def embed(texts):
+    def embed(texts, purpose=None):
         nonlocal calls
         calls += 1
         if calls > 1:

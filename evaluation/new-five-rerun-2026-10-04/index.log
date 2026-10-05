@@ -1,0 +1,20 @@
+axios indexing c4303eeb601d3d5914a0f425cc7539616fdc7ea7
+axios ready files=449 symbols=12142 seconds=189.593
+gin indexing 43fe48e8a0f44af783116cdb010725e6bb50255f
+gin ready files=123 symbols=4180 seconds=66.643
+clap indexing 4be56132cf7a5ef6e237409a13225a5829cb24e4
+clap failed files=None symbols=None seconds=4.343
+fmt indexing 9197f51593dab5f637454a8889fb9638e737711a
+support/docopt.py:160: SyntaxWarning: "\S" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\S"? A raw string is also an option.
+support/docopt.py:161: SyntaxWarning: "\[" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\["? A raw string is also an option.
+support/docopt.py:200: SyntaxWarning: "\[" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\["? A raw string is also an option.
+support/docopt.py:291: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+support/docopt.py:457: SyntaxWarning: "\S" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\S"? A raw string is also an option.
+<unknown>:160: SyntaxWarning: "\S" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\S"? A raw string is also an option.
+<unknown>:161: SyntaxWarning: "\[" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\["? A raw string is also an option.
+<unknown>:200: SyntaxWarning: "\[" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\["? A raw string is also an option.
+<unknown>:291: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+<unknown>:457: SyntaxWarning: "\S" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\S"? A raw string is also an option.
+fmt failed files=None symbols=None seconds=17.856
+fluentvalidation indexing fa3c160b17796ff67d6aa5ae6c4b05b471f1a791
+fluentvalidation ready files=275 symbols=6274 seconds=132.364

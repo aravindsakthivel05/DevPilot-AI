@@ -7,16 +7,20 @@ import time
 from collections import Counter, defaultdict
 from contextvars import ContextVar
 
+import httpx
+
 from .. import db
 from ..config import provider_settings
+from ..embedding_policy import SQL_KINDS, eligible
 from ..evidence import excerpt
 from ..providers import (
     ANSWER_PROMPT_VERSION,
+    answer_output_tokens,
     context_window,
     embedding_signature,
     generate,
 )
-from ..question_analysis import analyze_query, answer_aspects
+from ..question_analysis import analyze_query, answer_aspects, code_query, symbol_references
 from ..search import indexed_candidates
 from ..test_links import is_test_path
 from .context import role
@@ -26,10 +30,11 @@ from .graph_retrieval import relationship_weight
 from .lexical import bm25
 from .reranker import rerank, structural_score
 from .settings import settings
+from .tokenization import stem
 from .vector_store import LocalVectorStore
 
 TRACE = ContextVar("devpilot_retrieval_trace", default=None)
-RETRIEVAL_VERSION = "2026-10-04-custom-modular-rag-v1"
+RETRIEVAL_VERSION = "2026-10-05-branch-diverse-context-v5"
 
 SYMBOL_REFERENCE = re.compile(r"\b[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)+\b")
 
@@ -101,16 +106,7 @@ def tokens(text):
     for term in re.findall(r"[a-z0-9]+", text.lower()):
         if term in STOP or len(term) <= 1:
             continue
-        if len(term) > 5 and term.endswith("ies"):
-            term = term[:-3] + "y"
-        for suffix in ("ing", "ed", "ion", "or", "er", "s"):
-            if len(term) - len(suffix) >= 4 and term.endswith(suffix):
-                if suffix == "s" and term.endswith("ss"):
-                    continue
-                term = term[: -len(suffix)]
-                break
-        if len(term) > 5 and term.endswith("e"):
-            term = term[:-1]
+        term = stem(term)
         if len(term) > 1:
             normalized.append(term)
     return normalized
@@ -118,7 +114,7 @@ def tokens(text):
 
 def explicit_symbol_references(question):
     """Find code identifiers the user actually named, rather than terms in snippets."""
-    return {match.group().lower() for match in SYMBOL_REFERENCE.finditer(question)}
+    return symbol_references(question)
 
 
 def is_multi_stage(question):
@@ -181,7 +177,7 @@ def anchor_named_symbols(question, text):
     return text
 
 
-def generation_context(repo_id, question, evidence):
+def generation_context(repo_id, question, evidence, *, reserve_tokens=0):
     """Preserve per-aspect helpers with original line mappings and a token budget."""
     records = {r["id"]: r for r in db.symbols_by_ids(repo_id, [e["id"] for e in evidence])}
     with db.connection() as connection:
@@ -208,12 +204,31 @@ def generation_context(repo_id, question, evidence):
         if pair and pair[1]["id"] not in {item["id"] for _, item in selected}:
             selected.append(pair)
 
+    def is_implementation(pair):
+        record = records.get(pair[1]["id"], pair[1])
+        return (
+            record.get("kind") in ("function", "method", "constructor", "macro")
+            and not is_test_path(record["path"])
+            and (
+                record.get("kind") == "macro"
+                or "{" in record.get("source", "")
+                or record["path"].endswith(".py")
+            )
+        )
+
     for pair in indexed:
         if any(
             pair[1]["qualified"].lower().endswith("." + ref) or pair[1]["qualified"].lower() == ref
             for ref in references
         ):
             add(pair)
+    primary = [pair for pair in indexed if is_implementation(pair)][:2]
+    for pair in primary:
+        add(pair)
+    primary_ids = {pair[1]["id"] for pair in primary}
+    helpers = [pair for pair in indexed if primary_ids & set(pair[1].get("helper_for", []))]
+    for pair in helpers[:3]:
+        add(pair)
 
     def context_score(pair, aspect):
         record = records.get(pair[1]["id"], pair[1])
@@ -222,9 +237,11 @@ def generation_context(repo_id, question, evidence):
         name_hits = len(terms & set(tokens(pair[1]["qualified"])))
         score = 3 * name_hits + len(terms & body_terms) / max(1, len(body_terms) ** 0.4)
         if record.get("kind") in ("class", "interface", "module"):
-            score *= 0.5
-        if any(edge.get("kind") in ("calls", "aliases") for edge in pair[1].get("traversal", [])):
-            score += 3
+            score *= 0.3
+        if is_test_path(record["path"]) and not re.search(r"\btests?\b", question, re.I):
+            score *= 0.1
+        if is_implementation(pair):
+            score += 2
         return score
 
     for aspect in aspects:
@@ -234,24 +251,48 @@ def generation_context(repo_id, question, evidence):
         if ranked:
             add(ranked[0])
     for pair in indexed:
+        if is_implementation(pair):
+            add(pair)
+    for pair in indexed:
         add(pair)
     selected = selected[:8]
-    output_tokens = min(3072, max(768, 384 * len(aspects)))
+    output_tokens = answer_output_tokens(aspects)
     # Line-numbered JSON and metadata need substantial space beyond source text.
     budget = min(
         int(os.environ.get("DEVPILOT_SOURCE_TOKEN_BUDGET", "4096")),
-        max(128, (context_window() - output_tokens - 1500) // 2),
+        max(128, (context_window() - output_tokens - 1500 - max(0, reserve_tokens)) // 2),
     )
     context = []
     for index, (number, metadata) in enumerate(selected):
+        if budget < 128:
+            break
         record = records.get(metadata["id"], metadata)
+        if metadata.get("read_extended"):
+            record = {**record, "source": metadata["source"], "start_line": metadata["start_line"]}
         if not record.get("source"):
             continue
-        allowance = max(1, budget // (len(selected) - index))
+        from ..evidence import estimated_tokens
+
+        remaining = len(selected) - index
+        complete_cost = sum(estimated_tokens(line + "\n") for line in record["source"].splitlines())
+        # Give complete small definitions their actual cost. Primary definitions
+        # may use most of the budget; unrelated snippets cannot force equal slices.
+        ceiling = int(budget * (0.7 if index < 2 and remaining > 1 else 0.5))
+        allowance = max(1, min(complete_cost, max(budget // remaining, ceiling)))
         item = excerpt(record, question, allowance)
         if not item["source"]:
             continue
         budget -= item["estimated_source_tokens"]
+        from .behavior import behavior_table
+
+        facts = behavior_table(record, item, limit=8, question=question) if index < 2 else []
+        # Tables repeat source text: account for them in the same context budget.
+        while facts and estimated_tokens(json.dumps(facts)) > min(
+            800, max(0, budget - 128 * (remaining - 1))
+        ):
+            facts.pop()
+        budget -= estimated_tokens(json.dumps(facts)) if facts else 0
+        facts.sort(key=lambda row: row["start_line"])
         context.append(
             {
                 **metadata,
@@ -260,6 +301,7 @@ def generation_context(repo_id, question, evidence):
                 "evidence_role": role(metadata),
                 "relationships": chunks.get(metadata["id"], {}).get("relationships", [])[:20],
                 "public_aliases": metadata.get("public_aliases", []),
+                "behavior_table": facts,
             }
         )
     return context
@@ -306,10 +348,12 @@ def retrieve(repo_id, question, mode="hybrid", limit=8, hops=2, overrides=None):
             elif not isinstance(value, (int, float)) or not 0 <= value <= 100:
                 raise ValueError("Invalid retrieval override")
             cfg_weights[key] = value
-    candidate_ids, rows, graph, stats = indexed_candidates(repo_id, question, tokens)
+    search_question = code_query(question)
+    candidate_ids, rows, graph, stats = indexed_candidates(repo_id, search_question, tokens)
     trace = {
         "question": question,
         "query_analysis": analyze_query(question),
+        "expanded_query": search_question,
         "mode": mode,
         "hops": hops,
         "settings": cfg_weights,
@@ -323,12 +367,10 @@ def retrieve(repo_id, question, mode="hybrid", limit=8, hops=2, overrides=None):
     }
     TRACE.set(trace)
     lookup = {row["id"]: row for row in rows}
-    query = Counter(tokens(question))
+    query = Counter(tokens(search_question))
     references = explicit_symbol_references(question)
     legacy_requested = bool(re.search(r"\b(?:v1|legacy|deprecated)\b", question, re.I))
-    tests_requested = bool(
-        re.search(r"\b(?:tests?|regression|behavior|behaviour|contract)\b", question, re.I)
-    )
+    tests_requested = bool(re.search(r"\b(?:tests?|regression|benchmarks?)\b", question, re.I))
     exact_ids = {
         row["id"]
         for row in rows
@@ -378,7 +420,7 @@ def retrieve(repo_id, question, mode="hybrid", limit=8, hops=2, overrides=None):
         elif row["kind"] in ("class", "interface", "enum"):
             score *= 0.75
         if is_test_path(row["path"]) and not tests_requested:
-            score *= 0.6
+            score *= 0.15
         if not legacy_requested and ("/v1/" in row["path"] or "/deprecated/" in row["path"]):
             score *= 0.25
         if sid in exact_ids:
@@ -397,15 +439,18 @@ def retrieve(repo_id, question, mode="hybrid", limit=8, hops=2, overrides=None):
     ):
         with db.connection() as c:
             vectors = c.execute(
-                "SELECT e.* FROM embeddings e JOIN symbols s ON e.symbol_id=s.id WHERE s.repo_id=? AND e.model=? AND e.signature=?",
+                "SELECT e.* FROM embeddings e JOIN symbols s ON e.symbol_id=s.id WHERE s.repo_id=? AND e.model=? AND e.signature=? AND s.kind IN ("
+                + SQL_KINDS
+                + ")",
                 (repo_id, cfg["embedding_model"], embedding_signature()),
             ).fetchall()
-        if len(vectors) != len(rows):
-            warning = f"Embedding coverage is incomplete for the configured provider/model revision ({len(vectors)}/{len(rows)} symbols); using lexical/graph retrieval."
+        expected_vectors = sum(eligible(row) for row in rows)
+        if len(vectors) != expected_vectors:
+            warning = f"Embedding coverage is incomplete for the configured provider/model revision ({len(vectors)}/{expected_vectors} dense candidates); using lexical/graph retrieval."
             vectors = []
         if vectors:
             try:
-                vector = embed([question])[0]
+                vector = embed([question], purpose="query")[0]
                 dimensions = {len(json.loads(v["vector"])) for v in vectors}
                 if dimensions != {len(vector)}:
                     raise ValueError(
@@ -498,11 +543,45 @@ def retrieve(repo_id, question, mode="hybrid", limit=8, hops=2, overrides=None):
             ]
         )
     )[: cfg_weights["candidate_limit"]]
+    neural = None
+    if os.environ.get("DEVPILOT_NEURAL_RERANKER") and mode in ("lexical", "hybrid"):
+        from .neural_reranker import rank
+
+        try:
+            candidates = db.symbols_by_ids(repo_id, pool)
+            if not tests_requested:
+                candidates = [s for s in candidates if not is_test_path(s["path"])]
+            neural = rank(question, candidates)
+            if neural:
+                pool.sort(key=lambda sid: -neural.get(sid, -1e9))
+            trace["neural_reranker"] = {
+                "model": os.environ["DEVPILOT_NEURAL_RERANKER"],
+                "scores": neural,
+            }
+        except (ImportError, ValueError, OSError) as exc:
+            warning = "Local neural reranker unavailable: " + type(exc).__name__
+            trace["neural_reranker"] = {"status": "unavailable", "error_type": type(exc).__name__}
     ranked = (
         rerank(pool, lookup, fused, question, references, cfg_weights["structural_weight"])
-        if cfg_weights["rerank"] and mode != "semantic"
+        if cfg_weights["rerank"] and mode != "semantic" and not neural
         else pool
     )[:limit]
+    if mode in ("lexical", "hybrid") and cfg_weights["lexical_weight"] > 0:
+        implementation = analyze_query(question)["type"] not in (
+            "architecture",
+            "repository_summary",
+            "dependency",
+        )
+        protected = [sid for sid in lexical if sid in exact_ids]
+        if implementation and not tests_requested and not neural:
+            protected += [
+                sid
+                for sid in lexical
+                if lookup[sid]["kind"] in ("function", "method", "constructor")
+                and not is_test_path(lookup[sid]["path"])
+            ][: max(1, limit // (4 if neural else 2))]
+        ranked = list(dict.fromkeys([*protected, *ranked]))[:limit]
+        trace["protected_lexical"] = protected
     for sid in ranked:
         reasons.setdefault(sid, "fused lexical / semantic candidate")
         paths.setdefault(sid, [])
@@ -590,23 +669,59 @@ def answer(repo_id, question, mode="hybrid", limit=8, hops=2, use_model=True):
         )
     evidence, warning, semantic = retrieve(repo_id, question, mode, limit, hops)
     return answer_from_evidence(
-        repo_id, question, evidence, warning, semantic, mode, use_model, start
+        repo_id,
+        question,
+        evidence,
+        warning,
+        semantic,
+        mode,
+        use_model,
+        start,
+        source_limit=limit,
     )
 
 
 def answer_from_evidence(
-    repo_id, question, evidence, warning, semantic, mode, use_model=True, start=None
+    repo_id,
+    question,
+    evidence,
+    warning,
+    semantic,
+    mode,
+    use_model=True,
+    start=None,
+    *,
+    source_limit=None,
 ):
     """Apply the same answer and citation policy to direct or orchestrated retrieval."""
     if start is None:
         start = time.perf_counter()
+    investigation = None
+    if evidence and use_model and provider_settings()["model"]:
+        from .investigation import recover
+        from .source_selection import select
+
+        primary_trace = TRACE.get()
+        try:
+            evidence, selection = select(repo_id, question, evidence)
+            evidence, investigation = recover(
+                repo_id,
+                question,
+                evidence,
+                retrieve,
+                limit=source_limit if source_limit is not None else min(16, len(evidence)),
+            )
+            investigation["source_selection"] = selection
+        finally:
+            TRACE.set(primary_trace)
     original_warning = warning
-    usage = {}
+    usage = dict((investigation or {}).get("source_selection", {}).get("usage", {}))
     generation_diagnostics = {"attempt_count": 0, "total_request_ms": 0, "attempts": []}
     generated = False
     focus_warning = None
     aspect_statuses = []
     context = []
+    accepted = []
     if evidence and use_model and provider_settings()["model"]:
         try:
             text = ""
@@ -627,7 +742,7 @@ def answer_from_evidence(
                         attempt_metrics = {}
                     else:
                         candidate, attempt_usage, attempt_metrics = generated_result
-                except ValueError as exc:
+                except (ValueError, httpx.HTTPError, OSError) as exc:
                     text = str(exc)
                     attempt_metrics = getattr(exc, "metrics", {})
                     for key, value in attempt_metrics.get("usage", {}).items():
@@ -705,6 +820,54 @@ def answer_from_evidence(
                     generated = True
                     generation_diagnostics["attempts"][-1]["outcome"] = "accepted"
                     warning = original_warning
+                    accepted.append(
+                        (candidate, statuses, len(generation_diagnostics["attempts"]) - 1, context)
+                    )
+                    if attempt == 0:
+                        from .claim_repair import feedback
+
+                        retry_feedback = feedback(attempt_metrics)
+                        if retry_feedback:
+                            generation_diagnostics["attempts"][-1]["outcome"] = (
+                                "accepted_pending_repair"
+                            )
+                            # A repair can use additional source, not another
+                            # guess over the identical incomplete excerpt.
+                            focused = []
+                            details = [
+                                detail
+                                for c in attempt_metrics.get("claim_audit", {}).get("coverage", [])
+                                if c["status"] == "partial"
+                                for detail in c["missing_details"]
+                            ][:2]
+                            for detail in details:
+                                query = question + " " + detail
+                                reads, _, _ = retrieve(repo_id, query, "lexical", 4, 0)
+                                focused.extend(reads)
+                                if investigation is not None:
+                                    investigation.setdefault("repair_queries", []).append(query)
+                            extra, extra_warning, used = retrieve(repo_id, question, mode, 15, 2)
+                            known = {item["id"] for item in evidence}
+                            evidence = [
+                                *evidence,
+                                *[
+                                    item
+                                    for item in {s["id"]: s for s in [*focused, *extra]}.values()
+                                    if item["id"] not in known
+                                ],
+                            ][:15]
+                            semantic = semantic or used
+                            original_warning = original_warning or extra_warning
+                            from ..evidence import estimated_tokens
+
+                            context = generation_context(
+                                repo_id,
+                                question,
+                                evidence,
+                                reserve_tokens=estimated_tokens(retry_feedback) + 512,
+                            )
+                            allowed = {item["citation_number"] for item in context}
+                            continue
                     break
                 issues = []
                 if not citation_check["has_citations"] or citation_check["invalid"]:
@@ -736,6 +899,39 @@ def answer_from_evidence(
             text = ""
     else:
         text = ""
+    if accepted:
+        from .claim_repair import preserves, quality
+
+        first_claims = generation_diagnostics["attempts"][accepted[0][2]].get("claims", [])
+        eligible = [accepted[0]]
+        for item in accepted[1:]:
+            if preserves(
+                first_claims, generation_diagnostics["attempts"][item[2]].get("claims", [])
+            ):
+                eligible.append(item)
+            else:
+                generation_diagnostics["attempts"][item[2]]["repair_warning"] = (
+                    "Repair dropped retained claims; original accepted answer preserved."
+                )
+        text, aspect_statuses, selected_attempt, context = max(
+            eligible, key=lambda item: quality(item[1])
+        )
+        for _, _, index, _ in accepted:
+            generation_diagnostics["attempts"][index]["outcome"] = (
+                "accepted" if index == selected_attempt else "accepted_not_selected"
+            )
+        generation_diagnostics["selected_attempt"] = selected_attempt + 1
+        selected_claims = generation_diagnostics["attempts"][selected_attempt].get("claims", [])
+        supported_text = "\n\n".join(
+            p
+            for p in text.split("\n\n")
+            if not any(
+                p == f"Aspect {c['aspect_id']}: {c['text'].strip()}"
+                for c in selected_claims
+                if c["status"] != "supported"
+            )
+        )
+        warning = original_warning
     if not text:
         if not evidence:
             text = "No matching evidence was found in this snapshot. Try a function name, file path, or a more specific behaviour."
@@ -767,6 +963,7 @@ def answer_from_evidence(
                     continue
     result = dict(
         answer=text,
+        investigation=investigation,
         citation_provenance=provenance,
         claims=[
             c
@@ -787,10 +984,13 @@ def answer_from_evidence(
         semantic_used=semantic,
         generated=generated,
         abstained=not evidence
-        or (bool(aspect_statuses) and all(s["status"] != "supported" for s in aspect_statuses)),
+        or (
+            bool(aspect_statuses)
+            and all(s["status"] not in ("supported", "partial") for s in aspect_statuses)
+        ),
         partial=bool(aspect_statuses)
         and any(s["status"] != "supported" for s in aspect_statuses)
-        and any(s["status"] == "supported" for s in aspect_statuses),
+        and any(s["status"] in ("supported", "partial") for s in aspect_statuses),
         aspect_statuses=aspect_statuses,
         generation_context=[
             {
@@ -801,6 +1001,7 @@ def answer_from_evidence(
                 "source_line_numbers": item["source_line_numbers"],
                 "source": item["source"],
                 "truncated": item["truncated"],
+                "executable_complete": item.get("executable_complete", False),
             }
             for item in context
         ],

@@ -1,0 +1,3641 @@
+{
+  "started_at": "2026-10-05T17:43:34.641021+00:00",
+  "model": "qwen2.5-coder:14b",
+  "embedding_model": "nomic-embed-text:latest",
+  "answer_prompt_version": "2026-10-05-repair-aware-claims-v4",
+  "retrieval_version": "2026-10-05-executable-context-v3",
+  "backend_hashes": {
+    "backend/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend/agent_investigation.py": "0a40abcdda8cb0b0ece21671b7714b1b1918c3ad9732b5861930a1bcba734776",
+    "backend/agent_repair.py": "632c3146501caa4e7b6adf08758bd0a833530e58fecdcc9df673a5b967afcd18",
+    "backend/analysis.py": "27182c8db480f02c22a9fb7e66dc04224d48669b28ee2bd73b82d3a6fbc20573",
+    "backend/api/__init__.py": "5bdfd37eb33fca32f78d83009c6f3514d7f4862e59e5bd0131c025deb8227918",
+    "backend/api/research.py": "504991c4036f410a491416c50ef85ad39471bef652b27f74ab18d1b14839c36b",
+    "backend/claim_audit.py": "cfbeccd05fd4193af718f02d3a3206031fed7f7e3c32ab52aec84e6b40816a93",
+    "backend/config.py": "f107297484420d1cf0445d09b784ef4abef399d591188df318798b6f1204a37c",
+    "backend/config_links.py": "ee0b19ab0e7ea7d9f3c2241a11d295f65eb3f90e6618ab3cb2e27daa50474063",
+    "backend/db.py": "b933af389b1fb21453291cbd2da27b698cd606ab0cb83c277933d633f7788965",
+    "backend/embedding_policy.py": "a39e9d6ce96fcb6519be4cbf28bc71a0fe5be5930912ea7fee15713340719681",
+    "backend/errors/__init__.py": "1d0e68b396925219c50921cf808e6ba02e2bd19436ad9a425f706f0a41d86651",
+    "backend/errors/dependencies.py": "6d4b47bac6187b059774b32c68d276e33579eca8b64d3a655bf199e34b8dd17c",
+    "backend/errors/detector.py": "13a91e59a38e2af5611e52a2e10b08fefa153aa658cc16754bcbb21b4960dd0e",
+    "backend/errors/explanation.py": "28c23ba3b091cdac387c5ff60cc97decb4ec2e323d1d85274a04b2bac624f578",
+    "backend/errors/localisation.py": "b8761c4cae9fdc18dbc11a9eea34b692c49b610f0723c0b7756873d54c620cff",
+    "backend/errors/models.py": "409255b02f8a55e78395f36bb10f41a16f45e198c30f0fa3cd3ef3828e391a6d",
+    "backend/errors/rules.py": "9e1094fff7da75e421c43f01473b80657c68101976451e7bc583f662719d98ee",
+    "backend/errors/suggestions.py": "76470cb65232ea7477ff2cf9437ed70ba2f300b7f5e07560e6f8907b572d1976",
+    "backend/evaluation.py": "6a95d1d95b403906f43624ebb89832bf0cb01d440e8848a6ea480a361b8fd06c",
+    "backend/evidence.py": "edbddb812cd352ac3a8a133f827a600b39bc0457a38153e8112ec12aba80ef3e",
+    "backend/execution.py": "0e7e814054dcf29745b0849c4438d3c8f7ed9c7e76b503700b212341f827e20d",
+    "backend/graph.py": "30a82a107c36e7b600e40966b24ca6738d47eec1f17a7ae84db80d7408eb8a77",
+    "backend/indexing.py": "1d1367f4ed3ae9313e6e0955380e3126661579f457f5e133d0bbec34f0b0e56a",
+    "backend/ingestion.py": "e84fc329fa27f6ba29e241e40f969baa92bbedbb47fb32b61c98b90a4b44db54",
+    "backend/java_analysis.py": "38099a9b7faf2910285229e059aeccf02ecada37d537ff3a3c57bfb6cebd0812",
+    "backend/languages/__init__.py": "f3b817f570edc6583f57fec0ec5cac757ef5aa0b22cb76f96a72474f976820bd",
+    "backend/languages/base.py": "e1c100dd3a6a9d5593c437cd4d9d4d6291a6308c6c134744357f32c3d6832e07",
+    "backend/languages/c/__init__.py": "49e0d3db6876367aae36498d97c8c0640b3fef0593308dcbad0ca7023a03f797",
+    "backend/languages/c/parser.py": "d4be9f676d5303effadc3c6d553cbddcfe2ba2c4589d7426fbca3ae786f16cf2",
+    "backend/languages/c/resolver.py": "18e4ec316a29dcce5756826a8aadef93c571c6e86fd705277eb78d398bcc1cc6",
+    "backend/languages/cpp/__init__.py": "87de18f83c5d787e3b7fd364f5e63687d531495260cad79bec471ae3a4172fc8",
+    "backend/languages/cpp/parser.py": "8b2ce3ab93389b3acad1b6c77474adb5c1c9b296289e901a2860749d3310178c",
+    "backend/languages/cpp/resolver.py": "46752f368eb094f3bddb65d29c9a1fe06bbf7ddc7f8e7d5a8eb3572b570a1ac4",
+    "backend/languages/csharp/__init__.py": "e49a7b1f2a87ac61f232e5762f2abf9d56f03f846b2c9eef70ab18e3e23664db",
+    "backend/languages/csharp/parser.py": "ffb9b67fb60002011c256259211ec7c537a019bfb4fea87b84610d9a7c5d4698",
+    "backend/languages/csharp/resolver.py": "c99b0b988ce64e2c3524d1e69429c4188a35728860d1b77366d8faf86d6df923",
+    "backend/languages/go/__init__.py": "12a634a00dd20a4acce2c5fc2c34b4fb27bee3ee7a9bea60cc0da11f38ce3b08",
+    "backend/languages/go/parser.py": "52c5522ff924cbff43b682c9bebfb96842a147cc047ca7bc7dd2757372831f52",
+    "backend/languages/go/resolver.py": "8eed1c27cf579779c476a51844e07ce6d54b333c952a4f76b8c6ff4e6639abbf",
+    "backend/languages/java/__init__.py": "6a62d88aa2cb51aad9880d9a6eb36960fe18d9bf053033d81029263a0de9ac40",
+    "backend/languages/java/parser.py": "575a5369d79319cc39d521010344acb89b8f10fa030aa89403571ca6c44a5ae0",
+    "backend/languages/java/resolver.py": "4a51197eab879c36889dcbb8a0ee4862df94b68c77b7d3b77d0abcf631df21ea",
+    "backend/languages/javascript/__init__.py": "147f9155c2a3f091ebe4875942443684d346a8b04551c9715f49859065f35717",
+    "backend/languages/javascript/parser.py": "d4e7306bacee6ad456e8d8eb6984bb346e6d2209a7ea8dd13eb22fa7d3345f15",
+    "backend/languages/javascript/resolver.py": "d1dbc05a387e34ef4a3fcd59a3920e90c01d40eed248c86128b108a7854787f1",
+    "backend/languages/python/__init__.py": "7ae6ecd260808702847a9e9aa2e4385fff1938439a01172ece7b6cc5daecca8d",
+    "backend/languages/python/parser.py": "595584cf6e85659c0ba47b840389382bef0e6a9e47054ea7962fa5a250b01869",
+    "backend/languages/python/resolver.py": "509cd1d7fd06da4a98a1f57d349e0295e39aaa695ec6bfbb28b1be04a2d07d0f",
+    "backend/languages/registry.py": "647e71f7e9bb621ce1a8145860da5585370a7a1ea9fd5241f81679d58ba8fcbc",
+    "backend/languages/resolution.py": "342999ef6fc5ce0907629a7b7ee05af848c573a8d0be616fb8cb0b9ca4a56575",
+    "backend/languages/rust/__init__.py": "954a0c80d659ee278186734ed619ba78551c4bfc16f8539575e3a4e7b9a022c3",
+    "backend/languages/rust/parser.py": "79dd67eaf7537f5f6f7393c70944a3ee553c18f4d60cec734d731d03c05390e7",
+    "backend/languages/rust/resolver.py": "19ff497a3632dce6883c01e807e181e14e993b95ea9281e0f5948c90633ebd04",
+    "backend/languages/tree_parser.py": "27adf624aac322905b2a8db4f51cdacc4af8b3f15381ac3a2470a28ab32bb54f",
+    "backend/languages/typescript/__init__.py": "be14ccb7d9e56122f4cd765b73e79f93a89701d28392bf715d9a0ff654657c73",
+    "backend/languages/typescript/parser.py": "885fd4c7e6180424707fe3c240900aaa664ff11ed7b5d11f29e81472fde15c92",
+    "backend/languages/typescript/resolver.py": "31ec35b805742453926f78b84d8d1251cfa3fcdbb20cc88ec80cdd04979d6c20",
+    "backend/learning.py": "1282cbb283263a7850f88a6cc889eec4957a9ba613409461c2fbd4a03166d6fb",
+    "backend/legacy/__init__.py": "5c86d21d8002fa9a888b76b88c7d56ce6305464c181d67615b17c540b633a001",
+    "backend/legacy/agent_repair.py": "2ef36e6e974c4ba59b38bc2eacc7f3d1a6258bb14f2553148e6863437644bf43",
+    "backend/legacy/execution.py": "825f13bf828ccd45c1d45daa5836f5555bc11d2c8268e409f163c3ad186bf2a8",
+    "backend/legacy/routes.py": "47275fbfdca47d53233954ce123a4dc04d3c7104b7f7703d41e5424f6c49a570",
+    "backend/main.py": "9ac3dd054740eed7cbde544113cb71f44589a8afb5a993621e79cb4dc13349a0",
+    "backend/migrations.py": "d86047c0f7b417acc382b2ada127b6852115e11611a71dc06abeb54035326897",
+    "backend/model_providers.py": "79c4502dadec06d5a149d4122334c2d2a75a1bb758936777e755404ef4574f74",
+    "backend/models.py": "f6a6e0011a6e1962c0087328373dc1cc77db60eae1beaa3e7b34eb767a7f11dc",
+    "backend/namespaces.py": "e42ebc55dea6f490acc51ea06ac15567be6b9f01e03fefda8e52bd5656c5b273",
+    "backend/proposals.py": "0b26243c5392edd2043f611016f05b1c0da098a89124c1b8b9a210e9ba10be41",
+    "backend/providers.py": "f37cfe762ef602c84a0d68da8e0d544da5cb66a67d6aa3bb5683da60d3354c6e",
+    "backend/question_analysis.py": "d95abd1bac22767454be8a290ffe98617f4fff46aa43f4be2aa08383c4e4d34d",
+    "backend/rag/__init__.py": "48b2a24c6ee1b59c59ad4f316d7fef3761c27a35ef0d56661f0a6aadd77ae4cc",
+    "backend/rag/abstention.py": "3aa0d1296b4ac557c6597c9bbdbbfdfbc4a2b3526fba133da04d689f307be694",
+    "backend/rag/answer.py": "f0ba43bbafe345e7b5374ea01d0373f7b5efd875be8787aca5b16a3683b3396a",
+    "backend/rag/chunking.py": "6233260bf686e61c0bb16d45e8930672fbf4522ffe3841c7bcfb7470e386623c",
+    "backend/rag/citation_repair.py": "af040a6b7304e3d24c7165dcf8058a7d9551fc04c77c1f32f407d7f8aa3e1047",
+    "backend/rag/citations.py": "7871578c964abdb873d8cb0e253c92be3661e01ad15a45e57bc3cc5b0f5665c1",
+    "backend/rag/claim_repair.py": "5d3989c85f2e2486c56929be67ff5f8d15720b764fe08d5388877fc2ce0339a8",
+    "backend/rag/context.py": "b26fbd23414ce10907fc31fe6df5aef20966c6cee043a2562d66b022c2f27164",
+    "backend/rag/embeddings.py": "47e063f6e9903f60f0cd78132733e44a46960eade2319ad73de9e46091481ef4",
+    "backend/rag/fusion.py": "727c72d4493db958c96e3504093fb90a0377bbcbdc5fb1089b8a661cfa4ab448",
+    "backend/rag/graph_retrieval.py": "2ef72e15ed895d35d7b6523ec98de208394483d7db287135eb559a6609f0090d",
+    "backend/rag/investigation.py": "ea1fab050666144d1c03145c44da55abbf98f8e96668d641ef9f3f6ce555c50c",
+    "backend/rag/lexical.py": "a9898a4ef167b8d34fbc87c80c6127475c95b45f327642ecfdcd6499566f4e0e",
+    "backend/rag/neural_reranker.py": "59926a4935690aa632f146df4ce56f9fee4066eba65fdf9372b1bc6d8320d7a5",
+    "backend/rag/pipeline.py": "0cb9440a891e02956dace25f493399c30ac45babd1d4eb74141282492ab2722b",
+    "backend/rag/reranker.py": "ce850ec38e73d06dfc2a881264eb462015a2f3441962eb8f761f721b0ce5dd21",
+    "backend/rag/settings.py": "5c9b53f1b91eb3659836e2f9dcf4cc27b66c8fd2c423cd196fd0aa3f1424b13e",
+    "backend/rag/source_selection.py": "e350dd248a7c76cc86bd2de22e423ef93bcf040717b0be89f619f88af1423ce5",
+    "backend/rag/support_checks.py": "8146ecd6424e86e21ae8d6e2f469fb7357431200a549857318dc517ed92100ea",
+    "backend/rag/tokenization.py": "8321fedad58886b4772e4b054b4d935912645d75cb3c48717c4f8e220a713f37",
+    "backend/rag/vector_store.py": "7a6366ce5acb64a1ca2cea3afb66ab3bd9b6e8fb836b7043607a2b151d01af50",
+    "backend/readiness.py": "ed7b5e14a08b3e96dd2bc4286d0798d6b0dc283c6daa0bb78746be5a2f941e2c",
+    "backend/retrieval.py": "3f3e8a2f9b97e057b4f92171adab51c55acf3f54e11ac754fc0b5a5df306a605",
+    "backend/search.py": "17213ff93ffee4cd56bf34bf43031799248e2cd681a158951e58e57cb35b8dbd",
+    "backend/structural_metadata.py": "ff6067cb1e08cdc82ade1877fc95e8dacbdbbd1f852b5611c8440bbfbdc6b221",
+    "backend/structure.py": "db4daa86fa933ba85d9ce045976cd10184ad0d40d602957736b6bd0dcf4c0c29",
+    "backend/test_links.py": "ac5fded20fc0915e840d02d94855c9882a99d590b88d70a37339ae5f3cd3520f",
+    "backend/test_results.py": "ff754e0e4fb9cacd9dde380f21155da933cfc1cdb2438591ee9977065f507956"
+  },
+  "questions_sha256": "62eac3fbd01d05358ec4bd816a95959c5e6d0aec14ddfbbcb7511126686d234b",
+  "repeats": 1,
+  "results": [
+    {
+      "case_id": "werkzeug-hard",
+      "repository": "werkzeug",
+      "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception, and which mismatch takes precedence?",
+      "answerable": true,
+      "difficulty": "hard",
+      "expected_sources": [
+        {
+          "path": "src/werkzeug/routing/matcher.py",
+          "name": "match",
+          "anchor_line": 114,
+          "anchor_text": "raise SlashRequired()"
+        },
+        {
+          "path": "src/werkzeug/routing/matcher.py",
+          "name": "match",
+          "anchor_line": 178,
+          "anchor_text": "raise RequestPath(f\"{path}/\")"
+        },
+        {
+          "path": "src/werkzeug/routing/map.py",
+          "name": "match",
+          "anchor_line": 662,
+          "anchor_text": "new_path = quote(e.path_info"
+        },
+        {
+          "path": "src/werkzeug/routing/map.py",
+          "name": "match",
+          "anchor_line": 678,
+          "anchor_text": "raise MethodNotAllowed(valid_methods=list(e.have_match_for))"
+        }
+      ],
+      "expected_answer": "For an otherwise eligible rule behind a trailing slash, the state matcher requires the method and websocket mode to match; strict_slashes raises SlashRequired, converted to RequestPath(path + slash), whereas a non-strict rule can match directly. MapAdapter catches RequestPath, URL-quotes its path, constructs the redirect URL with query arguments, and raises RequestRedirect. The matcher accumulates allowed methods when a rule rejects the method, and marks websocket_mismatch only in the elif when method matches. NoMatch carries both flags. MapAdapter checks nonempty have_match_for first and raises MethodNotAllowed with valid methods; only otherwise websocket_mismatch raises WebsocketMismatch, otherwise NotFound. Thus the method mismatch takes precedence when both are present.",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "commit": "594452f6a4fe4de38a544962fbf04bfc9d37fbc2",
+      "source_review": null,
+      "result": {
+        "answer": "StateMachineMatcher.match turns a missing trailing slash into a redirect by raising SlashRequired exception which is caught and re-raised as RequestPath with the path appended with a slash [1].\n\nAspect 1: Some requested details could not be established from the supplied source evidence.\n\nMapAdapter.match handles the exceptions raised by StateMachineMatcher.match and converts them into appropriate HTTP exceptions: RequestPath becomes RequestRedirect, NoMatch with have_match_for set raises MethodNotAllowed, NoMatch with websocket_mismatch set raises WebsocketMismatch, and any other NoMatch raises NotFound [2] [1].\n\nThe precedence of mismatches is determined by the order in which they are checked: missing trailing slash takes precedence over HTTP method mismatch and WebSocket mismatch [1].",
+        "investigation": {
+          "source_reads": [
+            {
+              "id": "7931323b6d70089b9f87ba81",
+              "reason": "candidate helper identifier read; dispatch not proven"
+            },
+            {
+              "id": "f5c6fe97bb572e1f2cb17b7d",
+              "reason": "candidate helper identifier read; dispatch not proven"
+            },
+            {
+              "id": "a311f9703d7de7f7afffdcf5",
+              "reason": "follow-up lexical source read"
+            }
+          ],
+          "followup_queries": [
+            "mapadapter",
+            "mapadapter.match"
+          ],
+          "limit": 8,
+          "source_selection": {
+            "status": "completed",
+            "selected": [
+              "aec0c795fb5ab98b8f8b97fd",
+              "ac1deda3f66699239ec3c46c",
+              "aa2eecceebed4b4f11c49cc3",
+              "dc65eb03351e386adbe7b1da"
+            ],
+            "provider_calls": 1,
+            "usage": {
+              "prompt_tokens": 1987,
+              "completion_tokens": 19,
+              "total_tokens": 2006
+            },
+            "elapsed_ms": 1867
+          }
+        },
+        "citation_provenance": [
+          {
+            "file": "src/werkzeug/routing/matcher.py",
+            "symbol": "werkzeug.routing.matcher.StateMachineMatcher.match",
+            "start_line": 96,
+            "end_line": 96,
+            "relationship": [],
+            "text": "            if parts == []:",
+            "entailment_proven": false
+          },
+          {
+            "file": "src/werkzeug/routing/matcher.py",
+            "symbol": "werkzeug.routing.matcher.StateMachineMatcher.match",
+            "start_line": 108,
+            "end_line": 116,
+            "relationship": [],
+            "text": "                if \"\" in state.static:\n                    for rule in state.static[\"\"].rules:\n                        if websocket == rule.websocket and (\n                            rule.methods is None or method in rule.methods\n                        ):\n                            if rule.strict_slashes:\n                                raise SlashRequired()\n                            else:\n                                return rule, values",
+            "entailment_proven": false
+          },
+          {
+            "file": "src/werkzeug/routing/matcher.py",
+            "symbol": "werkzeug.routing.matcher.StateMachineMatcher.match",
+            "start_line": 175,
+            "end_line": 175,
+            "relationship": [],
+            "text": "        try:",
+            "entailment_proven": false
+          },
+          {
+            "file": "src/werkzeug/routing/matcher.py",
+            "symbol": "werkzeug.routing.matcher.StateMachineMatcher.match",
+            "start_line": 177,
+            "end_line": 179,
+            "relationship": [],
+            "text": "        except SlashRequired:\n            raise RequestPath(f\"{path}/\") from None\n",
+            "entailment_proven": false
+          },
+          {
+            "file": "src/werkzeug/routing/map.py",
+            "symbol": "werkzeug.routing.map.MapAdapter.match",
+            "start_line": 658,
+            "end_line": 660,
+            "relationship": [],
+            "text": "        try:\n            result = self.map._matcher.match(domain_part, path_part, method, websocket)\n        except RequestPath as e:",
+            "entailment_proven": false
+          },
+          {
+            "file": "src/werkzeug/routing/map.py",
+            "symbol": "werkzeug.routing.map.MapAdapter.match",
+            "start_line": 677,
+            "end_line": 684,
+            "relationship": [],
+            "text": "            if e.have_match_for:\n                raise MethodNotAllowed(valid_methods=list(e.have_match_for)) from None\n\n            if e.websocket_mismatch:\n                raise WebsocketMismatch() from None\n\n            raise NotFound() from None\n        else:",
+            "entailment_proven": false
+          },
+          {
+            "file": "src/werkzeug/routing/matcher.py",
+            "symbol": "werkzeug.routing.matcher.StateMachineMatcher.match",
+            "start_line": 75,
+            "end_line": 75,
+            "relationship": [],
+            "text": "    def match(",
+            "entailment_proven": false
+          },
+          {
+            "file": "src/werkzeug/routing/matcher.py",
+            "symbol": "werkzeug.routing.matcher.StateMachineMatcher.match",
+            "start_line": 96,
+            "end_line": 104,
+            "relationship": [],
+            "text": "            if parts == []:\n                for rule in state.rules:\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n",
+            "entailment_proven": false
+          },
+          {
+            "file": "src/werkzeug/routing/matcher.py",
+            "symbol": "werkzeug.routing.matcher.StateMachineMatcher.match",
+            "start_line": 162,
+            "end_line": 173,
+            "relationship": [],
+            "text": "            if parts == [\"\"]:\n                for rule in state.rules:\n                    if rule.strict_slashes:\n                        continue\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n\n            return None",
+            "entailment_proven": false
+          }
+        ],
+        "claims": [
+          {
+            "text": "StateMachineMatcher.match turns a missing trailing slash into a redirect by raising SlashRequired exception which is caught and re-raised as RequestPath with the path appended with a slash.",
+            "aspect_id": 1,
+            "status": "supported",
+            "citations": [
+              {
+                "source_id": 1,
+                "start_line": 96,
+                "end_line": 96
+              },
+              {
+                "source_id": 1,
+                "start_line": 108,
+                "end_line": 116
+              },
+              {
+                "source_id": 1,
+                "start_line": 175,
+                "end_line": 175
+              },
+              {
+                "source_id": 1,
+                "start_line": 177,
+                "end_line": 179
+              }
+            ]
+          },
+          {
+            "text": "Some requested details could not be established from the supplied source evidence.",
+            "aspect_id": 1,
+            "status": "insufficient_evidence",
+            "citations": []
+          },
+          {
+            "text": "MapAdapter.match handles the exceptions raised by StateMachineMatcher.match and converts them into appropriate HTTP exceptions: RequestPath becomes RequestRedirect, NoMatch with have_match_for set raises MethodNotAllowed, NoMatch with websocket_mismatch set raises WebsocketMismatch, and any other NoMatch raises NotFound.",
+            "aspect_id": 1,
+            "status": "supported",
+            "citations": [
+              {
+                "source_id": 2,
+                "start_line": 658,
+                "end_line": 660
+              },
+              {
+                "source_id": 2,
+                "start_line": 677,
+                "end_line": 684
+              },
+              {
+                "source_id": 1,
+                "start_line": 75,
+                "end_line": 75
+              }
+            ]
+          },
+          {
+            "text": "The precedence of mismatches is determined by the order in which they are checked: missing trailing slash takes precedence over HTTP method mismatch and WebSocket mismatch.",
+            "aspect_id": 2,
+            "status": "supported",
+            "citations": [
+              {
+                "source_id": 1,
+                "start_line": 96,
+                "end_line": 104
+              },
+              {
+                "source_id": 1,
+                "start_line": 162,
+                "end_line": 173
+              }
+            ]
+          }
+        ],
+        "missing_information": [
+          "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception"
+        ],
+        "confidence": "partial",
+        "related_symbols": [
+          "werkzeug.routing.matcher.StateMachineMatcher.match",
+          "werkzeug.routing.map.MapAdapter.match",
+          "werkzeug.routing.map.MapAdapter.match",
+          "werkzeug.routing.map.MapAdapter.match",
+          "werkzeug.routing.matcher.StateMachineMatcher.update",
+          "werkzeug.routing.map.MapAdapter.make_alias_redirect_url",
+          "werkzeug.routing.map.MapAdapter.match._handle_match",
+          "werkzeug.routing.matcher.StateMachineMatcher",
+          "werkzeug.routing.map.MapAdapter",
+          "examples.wsecho.websocket",
+          "werkzeug.routing.matcher.StateMachineMatcher.match.websocket",
+          "werkzeug.routing.map.MapAdapter.match.websocket",
+          "werkzeug.routing.map.MapAdapter.match.websocket",
+          "werkzeug.routing.map.MapAdapter.match.websocket",
+          "werkzeug.routing.rules.Rule.__init__.websocket"
+        ],
+        "retrieval_trace": {
+          "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception, and which mismatch takes precedence?",
+          "query_analysis": {
+            "type": "error",
+            "entities": [
+              "mapadapter",
+              "mapadapter.match",
+              "statemachinematcher",
+              "statemachinematcher.match",
+              "websocket"
+            ],
+            "aspects": [
+              "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception",
+              "which mismatch takes precedence"
+            ]
+          },
+          "expanded_query": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception, and which mismatch takes precedence?",
+          "mode": "hybrid",
+          "hops": 2,
+          "settings": {
+            "lexical_weight": 2.0,
+            "semantic_weight": 0.5,
+            "graph_weight": 0.5,
+            "structural_weight": 0.002,
+            "exact_boost": 50.0,
+            "candidate_limit": 50,
+            "rerank": true
+          },
+          "lexical_candidates": [
+            {
+              "id": "aec0c795fb5ab98b8f8b97fd",
+              "score": 102.00255842425858
+            },
+            {
+              "id": "ac1deda3f66699239ec3c46c",
+              "score": 96.6566170914565
+            },
+            {
+              "id": "58b38aa71bc9cd95c7b7d498",
+              "score": 86.55291892549633
+            },
+            {
+              "id": "dbf320254cf5cee59895c21e",
+              "score": 77.02935582004304
+            },
+            {
+              "id": "aa2eecceebed4b4f11c49cc3",
+              "score": 76.41266165240258
+            },
+            {
+              "id": "dc65eb03351e386adbe7b1da",
+              "score": 76.41266165240258
+            },
+            {
+              "id": "a4681908f61a1850e3b70e02",
+              "score": 61.392530028539845
+            },
+            {
+              "id": "debcf037e9ac369ef32b25f5",
+              "score": 57.645559702145974
+            },
+            {
+              "id": "06e25ee13f65fec70662016e",
+              "score": 54.330860287179824
+            },
+            {
+              "id": "2e7e712668c03604221554b3",
+              "score": 54.330860287179824
+            },
+            {
+              "id": "d2ed9708aa27504ce3caf3f3",
+              "score": 54.330860287179824
+            },
+            {
+              "id": "93e08813f5820160743c24b5",
+              "score": 51.0
+            },
+            {
+              "id": "e6f1b8bb572f9509b4fb1426",
+              "score": 45.63888083493685
+            },
+            {
+              "id": "2c64eb08f2ae253d376016ff",
+              "score": 40.46454577666694
+            },
+            {
+              "id": "a54265b27c221c7af208dd32",
+              "score": 40.46454577666694
+            },
+            {
+              "id": "6e8d8f43555a43e8f404d225",
+              "score": 40.46454577666694
+            },
+            {
+              "id": "7bbaf53f324e08152b35b1ba",
+              "score": 35.64820548982079
+            },
+            {
+              "id": "e06514463b8e0427b49b27ec",
+              "score": 33.476778369359565
+            },
+            {
+              "id": "81cef699daa055993bc8b044",
+              "score": 31.582975583467903
+            },
+            {
+              "id": "a630c993fba3d643c5d37a4d",
+              "score": 31.435575514347622
+            },
+            {
+              "id": "a6e7c33cd24d590726ea6985",
+              "score": 31.29473683614606
+            },
+            {
+              "id": "bfc0140caf5f799df0ef394d",
+              "score": 29.585633489188748
+            },
+            {
+              "id": "f17630b12c5e29de441a8a8f",
+              "score": 29.494637183880375
+            },
+            {
+              "id": "461c503dc1b998846b306ce3",
+              "score": 29.166268192984102
+            },
+            {
+              "id": "4866bc0368fa88823d1c27da",
+              "score": 29.166268192984102
+            },
+            {
+              "id": "0b64df8f26ec196fbabcb122",
+              "score": 27.594989696497443
+            },
+            {
+              "id": "7cfcc5efb6bf282a563f0ad3",
+              "score": 27.486161709814997
+            },
+            {
+              "id": "14c10238d7aeb58bacea77d2",
+              "score": 27.014713135732457
+            },
+            {
+              "id": "65cf10114e18e28020265010",
+              "score": 26.21664512983481
+            },
+            {
+              "id": "859fad17fd78b4042023b829",
+              "score": 25.810649708803602
+            },
+            {
+              "id": "0d8d84eefc5a2caa09d50da9",
+              "score": 25.069275641629442
+            },
+            {
+              "id": "7931323b6d70089b9f87ba81",
+              "score": 24.92511492091225
+            },
+            {
+              "id": "1d6c57d587190d88f0dd11ec",
+              "score": 24.37271244498656
+            },
+            {
+              "id": "75c260dd0c51b23865a1499a",
+              "score": 23.760390826665834
+            },
+            {
+              "id": "1cf83b6505eab197d30fc8fa",
+              "score": 23.677328722356325
+            },
+            {
+              "id": "30653a191bd8fbd257df1ce8",
+              "score": 23.459282457341757
+            },
+            {
+              "id": "48334cd2df45aa1183bf946d",
+              "score": 23.28117677590312
+            },
+            {
+              "id": "ea039766393f6e667db566aa",
+              "score": 22.935709724665728
+            },
+            {
+              "id": "36e304e74697a440b3785d0f",
+              "score": 22.70314747277607
+            },
+            {
+              "id": "1beac74dd4df26b139472baf",
+              "score": 22.299556357561492
+            },
+            {
+              "id": "3bc4b07ab68c759f9d2ac90e",
+              "score": 22.27804291569476
+            },
+            {
+              "id": "05f6570dd12d80bf9a72d7e9",
+              "score": 21.978112697268223
+            },
+            {
+              "id": "71d6535044997e0ebb8d09b2",
+              "score": 21.339855343009
+            },
+            {
+              "id": "84e26758363d09579be994ce",
+              "score": 20.531891592178702
+            },
+            {
+              "id": "3756854f603c4583a9a164d3",
+              "score": 20.422537905708225
+            },
+            {
+              "id": "ccb0d66696590ffa3337d0d2",
+              "score": 20.3654784784203
+            },
+            {
+              "id": "a9b052708be39a4d517b9c50",
+              "score": 20.346168630055917
+            },
+            {
+              "id": "381061f7218ceec4cfd07ea0",
+              "score": 20.23990994074333
+            },
+            {
+              "id": "fb0f0d18d66fada61257916e",
+              "score": 20.17909012276634
+            },
+            {
+              "id": "76f7eea20bd4ec0a33477e22",
+              "score": 20.105840895480327
+            }
+          ],
+          "semantic_candidates": [
+            {
+              "id": "aec0c795fb5ab98b8f8b97fd",
+              "similarity": 0.8226361870765686
+            },
+            {
+              "id": "58b38aa71bc9cd95c7b7d498",
+              "similarity": 0.8117539882659912
+            },
+            {
+              "id": "e6f1b8bb572f9509b4fb1426",
+              "similarity": 0.7906394600868225
+            },
+            {
+              "id": "ac1deda3f66699239ec3c46c",
+              "similarity": 0.7486956119537354
+            },
+            {
+              "id": "a514b37436461b729413a729",
+              "similarity": 0.7321417331695557
+            },
+            {
+              "id": "fa945836cf845f397d86dfee",
+              "similarity": 0.7284949421882629
+            },
+            {
+              "id": "65cf10114e18e28020265010",
+              "similarity": 0.7278944253921509
+            },
+            {
+              "id": "81cef699daa055993bc8b044",
+              "similarity": 0.717531681060791
+            },
+            {
+              "id": "e06514463b8e0427b49b27ec",
+              "similarity": 0.7123121619224548
+            },
+            {
+              "id": "dc65eb03351e386adbe7b1da",
+              "similarity": 0.7110191583633423
+            },
+            {
+              "id": "aa2eecceebed4b4f11c49cc3",
+              "similarity": 0.7099258899688721
+            },
+            {
+              "id": "afdef6a86f31cd012da5bb74",
+              "similarity": 0.6999874711036682
+            },
+            {
+              "id": "a311f9703d7de7f7afffdcf5",
+              "similarity": 0.6928688287734985
+            },
+            {
+              "id": "1cf83b6505eab197d30fc8fa",
+              "similarity": 0.68880295753479
+            },
+            {
+              "id": "7cfcc5efb6bf282a563f0ad3",
+              "similarity": 0.6865451335906982
+            },
+            {
+              "id": "9a8d4517c4f687dcc02c07ef",
+              "similarity": 0.6792536973953247
+            },
+            {
+              "id": "21223693f037cdc55780dd9d",
+              "similarity": 0.6771034002304077
+            },
+            {
+              "id": "21310e55fd4ec724c9f3c9f5",
+              "similarity": 0.672982394695282
+            },
+            {
+              "id": "dc1958d360e7fe2a5ee7042e",
+              "similarity": 0.6723736524581909
+            },
+            {
+              "id": "f17630b12c5e29de441a8a8f",
+              "similarity": 0.6721081137657166
+            },
+            {
+              "id": "5e8974f7e8abe214fa8a9b5f",
+              "similarity": 0.6719634532928467
+            },
+            {
+              "id": "891cca6054c0898999c10608",
+              "similarity": 0.6700753569602966
+            },
+            {
+              "id": "4d3d26803989c2eed0987c5d",
+              "similarity": 0.6647646427154541
+            },
+            {
+              "id": "aa34e856c630e71a8d7f5039",
+              "similarity": 0.6641165614128113
+            },
+            {
+              "id": "3c2927c6c15ebec272f09371",
+              "similarity": 0.663985013961792
+            },
+            {
+              "id": "1d6c57d587190d88f0dd11ec",
+              "similarity": 0.6639223098754883
+            },
+            {
+              "id": "6649b9c292d33634f9c118ae",
+              "similarity": 0.6632628440856934
+            },
+            {
+              "id": "7931323b6d70089b9f87ba81",
+              "similarity": 0.6624294519424438
+            },
+            {
+              "id": "eecb59ba1a6985ca54a91f08",
+              "similarity": 0.6624270677566528
+            },
+            {
+              "id": "dec96a909b9145f4c56bbc01",
+              "similarity": 0.661071240901947
+            },
+            {
+              "id": "05d383ec2e04d236dc02f923",
+              "similarity": 0.6596906185150146
+            },
+            {
+              "id": "b2c6672b217366566be7ec5e",
+              "similarity": 0.6594212055206299
+            },
+            {
+              "id": "ce1138a4daac4ca91eadc5ff",
+              "similarity": 0.6583741903305054
+            },
+            {
+              "id": "cf7455001821ff3af6958615",
+              "similarity": 0.6579427719116211
+            },
+            {
+              "id": "3123344bcbc9c5972d72fe53",
+              "similarity": 0.6575323939323425
+            },
+            {
+              "id": "3327f5a9d7dcd9baf0952c77",
+              "similarity": 0.6550191044807434
+            },
+            {
+              "id": "dbf320254cf5cee59895c21e",
+              "similarity": 0.6544073224067688
+            },
+            {
+              "id": "29b0c9baa5fe529c35935602",
+              "similarity": 0.6534155607223511
+            },
+            {
+              "id": "80e78beaecbf77e5e1e2cbe1",
+              "similarity": 0.6506077647209167
+            },
+            {
+              "id": "1de0970edde3f6dc29569712",
+              "similarity": 0.6496220827102661
+            },
+            {
+              "id": "80cc9d8c3193b05f452a6751",
+              "similarity": 0.649016261100769
+            },
+            {
+              "id": "f2ca9659835094ae0317b0a1",
+              "similarity": 0.6486127972602844
+            },
+            {
+              "id": "1c5e4ea48c3bacade27fca7b",
+              "similarity": 0.6484877467155457
+            },
+            {
+              "id": "1f4dd3042858f78cdb17581b",
+              "similarity": 0.6484709978103638
+            },
+            {
+              "id": "43c396e9c37ca619eb53be93",
+              "similarity": 0.6457562446594238
+            },
+            {
+              "id": "75c260dd0c51b23865a1499a",
+              "similarity": 0.6455208659172058
+            },
+            {
+              "id": "d4a09d49d3b1b46e7226c726",
+              "similarity": 0.6454955339431763
+            },
+            {
+              "id": "91bb9316bd70aa771d608f47",
+              "similarity": 0.6451741456985474
+            },
+            {
+              "id": "16b8b3f16b6d6b61aac27df9",
+              "similarity": 0.6442102789878845
+            },
+            {
+              "id": "1bf5a73dce32cf70ed67192d",
+              "similarity": 0.6440988183021545
+            }
+          ],
+          "graph_seeds": [
+            "aec0c795fb5ab98b8f8b97fd",
+            "ac1deda3f66699239ec3c46c",
+            "aa2eecceebed4b4f11c49cc3",
+            "58b38aa71bc9cd95c7b7d498",
+            "dc65eb03351e386adbe7b1da",
+            "dbf320254cf5cee59895c21e",
+            "a4681908f61a1850e3b70e02"
+          ],
+          "graph_expanded": [
+            {
+              "id": "d1996b0c1e5285f3ee4d2867",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "aec0c795fb5ab98b8f8b97fd",
+                  "target": "d1996b0c1e5285f3ee4d2867",
+                  "kind": "calls",
+                  "line": 205,
+                  "confidence": "static",
+                  "label": "RequestAliasRedirect"
+                }
+              ]
+            },
+            {
+              "id": "8eeca2c9f43e5b68f561d6b7",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "7cfcc5efb6bf282a563f0ad3",
+                  "target": "dbf320254cf5cee59895c21e",
+                  "kind": "imports",
+                  "line": 16,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.map.MapAdapter"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "7cfcc5efb6bf282a563f0ad3",
+                  "target": "8eeca2c9f43e5b68f561d6b7",
+                  "kind": "imports",
+                  "line": 17,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.rules.Rule"
+                }
+              ]
+            },
+            {
+              "id": "debcf037e9ac369ef32b25f5",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "aec0c795fb5ab98b8f8b97fd",
+                  "target": "debcf037e9ac369ef32b25f5",
+                  "kind": "accepts",
+                  "line": 76,
+                  "confidence": "exact",
+                  "label": "websocket"
+                }
+              ]
+            },
+            {
+              "id": "5aad70e08249def047a5f25f",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "5aad70e08249def047a5f25f",
+                  "target": "58b38aa71bc9cd95c7b7d498",
+                  "kind": "imports",
+                  "line": 126,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.matcher.StateMachineMatcher"
+                }
+              ]
+            },
+            {
+              "id": "4b43a70815d6693d032ec512",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "5aad70e08249def047a5f25f",
+                  "target": "58b38aa71bc9cd95c7b7d498",
+                  "kind": "imports",
+                  "line": 126,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.matcher.StateMachineMatcher"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "4b43a70815d6693d032ec512",
+                  "target": "5aad70e08249def047a5f25f",
+                  "kind": "imports",
+                  "line": 10,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.Map"
+                }
+              ]
+            },
+            {
+              "id": "2e7e712668c03604221554b3",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "aa2eecceebed4b4f11c49cc3",
+                  "target": "2e7e712668c03604221554b3",
+                  "kind": "accepts",
+                  "line": 538,
+                  "confidence": "exact",
+                  "label": "websocket"
+                }
+              ]
+            },
+            {
+              "id": "84e26758363d09579be994ce",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "84e26758363d09579be994ce",
+                  "target": "58b38aa71bc9cd95c7b7d498",
+                  "kind": "imports",
+                  "line": 29,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.matcher.StateMachineMatcher"
+                }
+              ]
+            },
+            {
+              "id": "a859f2309aa9035a1f9399f2",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "a859f2309aa9035a1f9399f2",
+                  "kind": "calls",
+                  "line": 664,
+                  "confidence": "inferred",
+                  "label": "self.make_redirect_url"
+                }
+              ]
+            },
+            {
+              "id": "6558af205d75a824762943fa",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "5aad70e08249def047a5f25f",
+                  "target": "58b38aa71bc9cd95c7b7d498",
+                  "kind": "imports",
+                  "line": 126,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.matcher.StateMachineMatcher"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "5aad70e08249def047a5f25f",
+                  "target": "6558af205d75a824762943fa",
+                  "kind": "imports",
+                  "line": 113,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.converters.PathConverter"
+                }
+              ]
+            },
+            {
+              "id": "e0f291fbf4adf10ff6b7b0ea",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "f5c6fe97bb572e1f2cb17b7d",
+                  "kind": "calls",
+                  "line": 668,
+                  "confidence": "inferred",
+                  "label": "self.make_alias_redirect_url"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "f5c6fe97bb572e1f2cb17b7d",
+                  "target": "e0f291fbf4adf10ff6b7b0ea",
+                  "kind": "calls",
+                  "line": 837,
+                  "confidence": "inferred",
+                  "label": "self.encode_query_args"
+                }
+              ]
+            },
+            {
+              "id": "a54e4eb76573e17519bb04bc",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "a54e4eb76573e17519bb04bc",
+                  "kind": "calls",
+                  "line": 663,
+                  "confidence": "static",
+                  "label": "RequestRedirect"
+                }
+              ]
+            },
+            {
+              "id": "2830e2cf7d2d6ce77a8998b1",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "a859f2309aa9035a1f9399f2",
+                  "kind": "calls",
+                  "line": 664,
+                  "confidence": "inferred",
+                  "label": "self.make_redirect_url"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "a859f2309aa9035a1f9399f2",
+                  "target": "2830e2cf7d2d6ce77a8998b1",
+                  "kind": "calls",
+                  "line": 820,
+                  "confidence": "inferred",
+                  "label": "self.get_host"
+                }
+              ]
+            },
+            {
+              "id": "1beac74dd4df26b139472baf",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "5aad70e08249def047a5f25f",
+                  "target": "58b38aa71bc9cd95c7b7d498",
+                  "kind": "imports",
+                  "line": 126,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.matcher.StateMachineMatcher"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "5aad70e08249def047a5f25f",
+                  "target": "1beac74dd4df26b139472baf",
+                  "kind": "imports",
+                  "line": 124,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.map.Map"
+                }
+              ]
+            },
+            {
+              "id": "81cef699daa055993bc8b044",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "81cef699daa055993bc8b044",
+                  "kind": "calls",
+                  "line": 681,
+                  "confidence": "static",
+                  "label": "WebsocketMismatch"
+                }
+              ]
+            },
+            {
+              "id": "c7a7e371ab14d8df179b90f6",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "c7a7e371ab14d8df179b90f6",
+                  "kind": "calls",
+                  "line": 688,
+                  "confidence": "inferred",
+                  "label": "self.get_default_redirect"
+                }
+              ]
+            },
+            {
+              "id": "3a6109e3a2f6f91932dea4a2",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "aec0c795fb5ab98b8f8b97fd",
+                  "target": "d1996b0c1e5285f3ee4d2867",
+                  "kind": "calls",
+                  "line": 205,
+                  "confidence": "static",
+                  "label": "RequestAliasRedirect"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "d1996b0c1e5285f3ee4d2867",
+                  "target": "3a6109e3a2f6f91932dea4a2",
+                  "kind": "contains",
+                  "line": 85,
+                  "confidence": "exact",
+                  "label": "__init__"
+                }
+              ]
+            },
+            {
+              "id": "f5c6fe97bb572e1f2cb17b7d",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "f5c6fe97bb572e1f2cb17b7d",
+                  "kind": "calls",
+                  "line": 668,
+                  "confidence": "inferred",
+                  "label": "self.make_alias_redirect_url"
+                }
+              ]
+            },
+            {
+              "id": "a514b37436461b729413a729",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "aec0c795fb5ab98b8f8b97fd",
+                  "target": "fa945836cf845f397d86dfee",
+                  "kind": "calls",
+                  "line": 188,
+                  "confidence": "static",
+                  "label": "NoMatch"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "fa945836cf845f397d86dfee",
+                  "target": "a514b37436461b729413a729",
+                  "kind": "contains",
+                  "line": 173,
+                  "confidence": "exact",
+                  "label": "__init__"
+                }
+              ]
+            },
+            {
+              "id": "15f5976d71f9385cd2a50ab7",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "15f5976d71f9385cd2a50ab7",
+                  "kind": "calls",
+                  "line": 678,
+                  "confidence": "static",
+                  "label": "MethodNotAllowed"
+                }
+              ]
+            },
+            {
+              "id": "fa945836cf845f397d86dfee",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "aec0c795fb5ab98b8f8b97fd",
+                  "target": "fa945836cf845f397d86dfee",
+                  "kind": "calls",
+                  "line": 188,
+                  "confidence": "static",
+                  "label": "NoMatch"
+                }
+              ]
+            },
+            {
+              "id": "65cf10114e18e28020265010",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "aec0c795fb5ab98b8f8b97fd",
+                  "target": "fa945836cf845f397d86dfee",
+                  "kind": "calls",
+                  "line": 188,
+                  "confidence": "static",
+                  "label": "NoMatch"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "65cf10114e18e28020265010",
+                  "target": "fa945836cf845f397d86dfee",
+                  "kind": "imports",
+                  "line": 10,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.exceptions.NoMatch"
+                }
+              ]
+            },
+            {
+              "id": "d2ed9708aa27504ce3caf3f3",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "d2ed9708aa27504ce3caf3f3",
+                  "kind": "accepts",
+                  "line": 547,
+                  "confidence": "exact",
+                  "label": "websocket"
+                }
+              ]
+            },
+            {
+              "id": "54aa1e2d503c5c0162faa8ff",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "a54e4eb76573e17519bb04bc",
+                  "kind": "calls",
+                  "line": 663,
+                  "confidence": "static",
+                  "label": "RequestRedirect"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "a54e4eb76573e17519bb04bc",
+                  "target": "54aa1e2d503c5c0162faa8ff",
+                  "kind": "inherits",
+                  "line": 51,
+                  "confidence": "static",
+                  "label": "RoutingException"
+                }
+              ]
+            },
+            {
+              "id": "ea039766393f6e667db566aa",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "84e26758363d09579be994ce",
+                  "target": "58b38aa71bc9cd95c7b7d498",
+                  "kind": "imports",
+                  "line": 29,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.matcher.StateMachineMatcher"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ea039766393f6e667db566aa",
+                  "target": "84e26758363d09579be994ce",
+                  "kind": "calls",
+                  "line": 509,
+                  "confidence": "static",
+                  "label": "map"
+                }
+              ]
+            },
+            {
+              "id": "cc3886fd37896a81bfe5b3f3",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "7cfcc5efb6bf282a563f0ad3",
+                  "target": "dbf320254cf5cee59895c21e",
+                  "kind": "imports",
+                  "line": 16,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.map.MapAdapter"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "7cfcc5efb6bf282a563f0ad3",
+                  "target": "cc3886fd37896a81bfe5b3f3",
+                  "kind": "imports",
+                  "line": 9,
+                  "confidence": "static",
+                  "label": "werkzeug.utils.redirect"
+                }
+              ]
+            },
+            {
+              "id": "0cb69528b2f8f075fcc5d3df",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "84e26758363d09579be994ce",
+                  "target": "58b38aa71bc9cd95c7b7d498",
+                  "kind": "imports",
+                  "line": 29,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.matcher.StateMachineMatcher"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "84e26758363d09579be994ce",
+                  "target": "0cb69528b2f8f075fcc5d3df",
+                  "kind": "imports",
+                  "line": 30,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.rules._simple_rule_re"
+                }
+              ]
+            },
+            {
+              "id": "0eb8cd6b6af4a9b41ae9d033",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "84e26758363d09579be994ce",
+                  "target": "58b38aa71bc9cd95c7b7d498",
+                  "kind": "imports",
+                  "line": 29,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.matcher.StateMachineMatcher"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "84e26758363d09579be994ce",
+                  "target": "0eb8cd6b6af4a9b41ae9d033",
+                  "kind": "imports",
+                  "line": 23,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.exceptions.BuildError"
+                }
+              ]
+            },
+            {
+              "id": "36e304e74697a440b3785d0f",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "ac1deda3f66699239ec3c46c",
+                  "target": "f5c6fe97bb572e1f2cb17b7d",
+                  "kind": "calls",
+                  "line": 668,
+                  "confidence": "inferred",
+                  "label": "self.make_alias_redirect_url"
+                },
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "f5c6fe97bb572e1f2cb17b7d",
+                  "target": "36e304e74697a440b3785d0f",
+                  "kind": "calls",
+                  "line": 833,
+                  "confidence": "inferred",
+                  "label": "self.build"
+                }
+              ]
+            },
+            {
+              "id": "7cfcc5efb6bf282a563f0ad3",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "7cfcc5efb6bf282a563f0ad3",
+                  "target": "dbf320254cf5cee59895c21e",
+                  "kind": "imports",
+                  "line": 16,
+                  "confidence": "static",
+                  "label": "werkzeug.routing.map.MapAdapter"
+                }
+              ]
+            },
+            {
+              "id": "06e25ee13f65fec70662016e",
+              "path": [
+                {
+                  "repo_id": "beaef6532645468a9d92243bab8bd823",
+                  "source": "dc65eb03351e386adbe7b1da",
+                  "target": "06e25ee13f65fec70662016e",
+                  "kind": "accepts",
+                  "line": 528,
+                  "confidence": "exact",
+                  "label": "websocket"
+                }
+              ]
+            }
+          ],
+          "fused_candidates": [
+            {
+              "id": "aec0c795fb5ab98b8f8b97fd",
+              "score": 0.14098360655737707
+            },
+            {
+              "id": "ac1deda3f66699239ec3c46c",
+              "score": 0.14007056451612904
+            },
+            {
+              "id": "aa2eecceebed4b4f11c49cc3",
+              "score": 0.13781148429035753
+            },
+            {
+              "id": "58b38aa71bc9cd95c7b7d498",
+              "score": 0.139810547875064
+            },
+            {
+              "id": "dc65eb03351e386adbe7b1da",
+              "score": 0.13744588744588745
+            },
+            {
+              "id": "dbf320254cf5cee59895c21e",
+              "score": 0.13640463917525775
+            },
+            {
+              "id": "a4681908f61a1850e3b70e02",
+              "score": 0.13178124819915865
+            },
+            {
+              "id": "debcf037e9ac369ef32b25f5",
+              "score": 0.12941176470588237
+            },
+            {
+              "id": "06e25ee13f65fec70662016e",
+              "score": 0.1289855072463768
+            },
+            {
+              "id": "2e7e712668c03604221554b3",
+              "score": 0.1285714285714286
+            },
+            {
+              "id": "d2ed9708aa27504ce3caf3f3",
+              "score": 0.12816901408450704
+            },
+            {
+              "id": "81cef699daa055993bc8b044",
+              "score": 0.04551881301341484
+            },
+            {
+              "id": "7cfcc5efb6bf282a563f0ad3",
+              "score": 0.04367973471382866
+            },
+            {
+              "id": "fa945836cf845f397d86dfee",
+              "score": 0.04276900149031297
+            },
+            {
+              "id": "84e26758363d09579be994ce",
+              "score": 0.042477258505541106
+            },
+            {
+              "id": "a54e4eb76573e17519bb04bc",
+              "score": 0.04225117472964494
+            },
+            {
+              "id": "c7a7e371ab14d8df179b90f6",
+              "score": 0.04182986750232039
+            },
+            {
+              "id": "f5c6fe97bb572e1f2cb17b7d",
+              "score": 0.04165343469270735
+            },
+            {
+              "id": "a859f2309aa9035a1f9399f2",
+              "score": 0.04164331862693758
+            },
+            {
+              "id": "5aad70e08249def047a5f25f",
+              "score": 0.04153165067105609
+            },
+            {
+              "id": "d1996b0c1e5285f3ee4d2867",
+              "score": 0.04075864257040631
+            },
+            {
+              "id": "15f5976d71f9385cd2a50ab7",
+              "score": 0.03998369853565365
+            },
+            {
+              "id": "65cf10114e18e28020265010",
+              "score": 0.02993459667952373
+            },
+            {
+              "id": "a514b37436461b729413a729",
+              "score": 0.02478632478632479
+            },
+            {
+              "id": "1beac74dd4df26b139472baf",
+              "score": 0.022487562189054726
+            },
+            {
+              "id": "ea039766393f6e667db566aa",
+              "score": 0.02199546485260771
+            },
+            {
+              "id": "36e304e74697a440b3785d0f",
+              "score": 0.021610470906245557
+            },
+            {
+              "id": "cc3886fd37896a81bfe5b3f3",
+              "score": 0.01947986237603724
+            },
+            {
+              "id": "3a6109e3a2f6f91932dea4a2",
+              "score": 0.018771526980482206
+            },
+            {
+              "id": "8eeca2c9f43e5b68f561d6b7",
+              "score": 0.017081411807680014
+            },
+            {
+              "id": "0eb8cd6b6af4a9b41ae9d033",
+              "score": 0.01698814229249012
+            },
+            {
+              "id": "2830e2cf7d2d6ce77a8998b1",
+              "score": 0.016667149143121816
+            },
+            {
+              "id": "54aa1e2d503c5c0162faa8ff",
+              "score": 0.014080713528788414
+            },
+            {
+              "id": "e0f291fbf4adf10ff6b7b0ea",
+              "score": 0.013983679525222552
+            },
+            {
+              "id": "6558af205d75a824762943fa",
+              "score": 0.012958023304787309
+            },
+            {
+              "id": "0cb69528b2f8f075fcc5d3df",
+              "score": 0.012907107887922072
+            },
+            {
+              "id": "4b43a70815d6693d032ec512",
+              "score": 0.011439643515115212
+            },
+            {
+              "id": "93e08813f5820160743c24b5",
+              "score": 0.12777777777777777
+            },
+            {
+              "id": "e6f1b8bb572f9509b4fb1426",
+              "score": 0.03533376821048054
+            },
+            {
+              "id": "e06514463b8e0427b49b27ec",
+              "score": 0.03288740245261984
+            },
+            {
+              "id": "f17630b12c5e29de441a8a8f",
+              "score": 0.030346385542168675
+            },
+            {
+              "id": "1cf83b6505eab197d30fc8fa",
+              "score": 0.027809388335704125
+            },
+            {
+              "id": "7931323b6d70089b9f87ba81",
+              "score": 0.027420948616600792
+            },
+            {
+              "id": "2c64eb08f2ae253d376016ff",
+              "score": 0.02702702702702703
+            },
+            {
+              "id": "a54265b27c221c7af208dd32",
+              "score": 0.02666666666666667
+            },
+            {
+              "id": "6e8d8f43555a43e8f404d225",
+              "score": 0.02631578947368421
+            },
+            {
+              "id": "75c260dd0c51b23865a1499a",
+              "score": 0.02599357687675632
+            },
+            {
+              "id": "0d8d84eefc5a2caa09d50da9",
+              "score": 0.02585399097027004
+            },
+            {
+              "id": "1d6c57d587190d88f0dd11ec",
+              "score": 0.027319329832458116
+            },
+            {
+              "id": "bfc0140caf5f799df0ef394d",
+              "score": 0.024390243902439025
+            }
+          ],
+          "reranked_candidates": [
+            "aec0c795fb5ab98b8f8b97fd",
+            "ac1deda3f66699239ec3c46c",
+            "58b38aa71bc9cd95c7b7d498",
+            "dbf320254cf5cee59895c21e",
+            "aa2eecceebed4b4f11c49cc3",
+            "dc65eb03351e386adbe7b1da",
+            "a4681908f61a1850e3b70e02",
+            "debcf037e9ac369ef32b25f5",
+            "06e25ee13f65fec70662016e",
+            "2e7e712668c03604221554b3",
+            "d2ed9708aa27504ce3caf3f3",
+            "93e08813f5820160743c24b5",
+            "e6f1b8bb572f9509b4fb1426",
+            "e06514463b8e0427b49b27ec",
+            "c7a7e371ab14d8df179b90f6"
+          ],
+          "timings_ms": {
+            "lexical": 106.639,
+            "semantic": 410.22,
+            "fusion_and_seed_reranking": 18.553,
+            "graph": 2.717,
+            "reranking": 1.817,
+            "context_records": 3.389,
+            "retrieval": 543.336
+          },
+          "protected_lexical": [
+            "aec0c795fb5ab98b8f8b97fd",
+            "ac1deda3f66699239ec3c46c",
+            "58b38aa71bc9cd95c7b7d498",
+            "dbf320254cf5cee59895c21e",
+            "aa2eecceebed4b4f11c49cc3",
+            "dc65eb03351e386adbe7b1da",
+            "a4681908f61a1850e3b70e02",
+            "debcf037e9ac369ef32b25f5",
+            "06e25ee13f65fec70662016e",
+            "2e7e712668c03604221554b3",
+            "d2ed9708aa27504ce3caf3f3",
+            "93e08813f5820160743c24b5",
+            "aec0c795fb5ab98b8f8b97fd",
+            "ac1deda3f66699239ec3c46c",
+            "aa2eecceebed4b4f11c49cc3",
+            "dc65eb03351e386adbe7b1da",
+            "a4681908f61a1850e3b70e02",
+            "e6f1b8bb572f9509b4fb1426",
+            "e06514463b8e0427b49b27ec"
+          ]
+        },
+        "evidence": [
+          {
+            "id": "aec0c795fb5ab98b8f8b97fd",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/matcher.py",
+            "name": "match",
+            "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+            "kind": "method",
+            "start_line": 75,
+            "end_line": 209,
+            "source": "    def match(\n        self, domain: str, path: str, method: str, websocket: bool\n    ) -> tuple[Rule, t.MutableMapping[str, t.Any]]:\n        # To match to a rule we need to start at the root state and\n        # try to follow the transitions until we find a match, or find\n        # there is no transition to follow.\n\n        have_match_for = set()\n        websocket_mismatch = False\n\n        def _match(\n            state: State, parts: list[str], values: list[str]\n        ) -> tuple[Rule, list[str]] | None:\n            # This function is meant to be called recursively, and will attempt\n            # to match the head part to the state's transitions.\n            nonlocal have_match_for, websocket_mismatch\n\n            # The base case is when all parts have been matched via\n            # transitions. Hence if there is a rule with methods &\n            # websocket that work return it and the dynamic values\n            # extracted.\n            if parts == []:\n                for rule in state.rules:\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n\n                # Test if there is a match with this path with a\n                # trailing slash, if so raise an exception to report\n                # that matching is possible with an additional slash\n                if \"\" in state.static:\n                    for rule in state.static[\"\"].rules:\n                        if websocket == rule.websocket and (\n                            rule.methods is None or method in rule.methods\n                        ):\n                            if rule.strict_slashes:\n                                raise SlashRequired()\n                            else:\n                                return rule, values\n                return None\n\n            part = parts[0]\n            # To match this part try the static transitions first\n            if part in state.static:\n                rv = _match(state.static[part], parts[1:], values)\n                if rv is not None:\n                    return rv\n            # No match via the static transitions, so try the dynamic\n            # ones.\n            for test_part, new_state in state.dynamic:\n                target = part\n                remaining = parts[1:]\n                # A final part indicates a transition that always\n                # consumes the remaining parts i.e. transitions to a\n                # final state.\n                if test_part.final:\n                    target = \"/\".join(parts)\n                    remaining = []\n                match = re.compile(test_part.content).match(target)\n                if match is not None:\n                    if test_part.suffixed:\n                        # If a part_isolating=False part has a slash suffix, remove the\n                        # suffix from the match and check for the slash redirect next.\n                        suffix = match.groups()[-1]\n                        if suffix == \"/\":\n                            remaining = [\"\"]\n\n                    converter_groups = sorted(\n                        (\n                            item\n                            for item in match.groupdict().items()\n                            if item[0].startswith(\"__werkzeug_\")\n                        ),\n                        key=lambda item: int(item[0][11:]),\n                    )\n                    groups = [item[1] for item in converter_groups]\n                    rv = _match(new_state, remaining, values + groups)\n                    if rv is not None:\n                        return rv\n\n            # If there is no match and the only part left is a\n            # trailing slash (\"\") consider rules that aren't\n            # strict-slashes as these should match if there is a final\n            # slash part.\n            if parts == [\"\"]:\n                for rule in state.rules:\n                    if rule.strict_slashes:\n                        continue\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n\n            return None\n\n        try:\n            rv = _match(self._root, [domain, *path.split(\"/\")], [])\n        except SlashRequired:\n            raise RequestPath(f\"{path}/\") from None\n\n        if self.merge_slashes and rv is None:\n            # Try to match again, but with slashes merged\n            path = re.sub(\"/{2,}\", \"/\", path)\n            try:\n                rv = _match(self._root, [domain, *path.split(\"/\")], [])\n            except SlashRequired:\n                raise RequestPath(f\"{path}/\") from None\n           ",
+            "docstring": "",
+            "parent_id": "58b38aa71bc9cd95c7b7d498",
+            "file_id": "9fad6bc26d5fc8fdf311e589f4c7c146",
+            "language": "python",
+            "signature": "def match(",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.StateMachineMatcher.match",
+              "werkzeug.routing.matcher.StateMachineMatcher.match"
+            ],
+            "score": 0.14098,
+            "component_scores": {
+              "lexical": 102.00255842425858,
+              "semantic": 0.8226361870765686,
+              "graph": 0,
+              "structural": 6,
+              "final": 0.15298360655737708
+            },
+            "retrieval_sources": [
+              "lexical",
+              "semantic"
+            ],
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": true
+          },
+          {
+            "id": "ac1deda3f66699239ec3c46c",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/map.py",
+            "name": "match",
+            "qualified": "werkzeug.routing.map.MapAdapter.match",
+            "kind": "method",
+            "start_line": 541,
+            "end_line": 718,
+            "source": "    def match(\n        self,\n        path_info: str | None = None,\n        method: str | None = None,\n        return_rule: bool = False,\n        query_args: t.Mapping[str, t.Any] | str | None = None,\n        websocket: bool | None = None,\n    ) -> tuple[t.Any | Rule, t.Mapping[str, t.Any]]:\n        \"\"\"The usage is simple: you just pass the match method the current\n        path info as well as the method (which defaults to `GET`).  The\n        following things can then happen:\n\n        - you receive a `NotFound` exception that indicates that no URL is\n          matching.  A `NotFound` exception is also a WSGI application you\n          can call to get a default page not found page (happens to be the\n          same object as `werkzeug.exceptions.NotFound`)\n\n        - you receive a `MethodNotAllowed` exception that indicates that there\n          is a match for this URL but not for the current request method.\n          This is useful for RESTful applications.\n\n        - you receive a `RequestRedirect` exception with a `new_url`\n          attribute.  This exception is used to notify you about a request\n          Werkzeug requests from your WSGI application.  This is for example the\n          case if you request ``/foo`` although the correct URL is ``/foo/``\n          You can use the `RequestRedirect` instance as response-like object\n          similar to all other subclasses of `HTTPException`.\n\n        - you receive a ``WebsocketMismatch`` exception if the only\n          match is a WebSocket rule but the bind is an HTTP request, or\n          if the match is an HTTP rule but the bind is a WebSocket\n          request.\n\n        - you get a tuple in the form ``(endpoint, arguments)`` if there is\n          a match (unless `return_rule` is True, in which case you get a tuple\n          in the form ``(rule, arguments)``)\n\n        If the path info is not passed to the match method the default path\n        info of the map is used (defaults to the root URL if not defined\n        explicitly).\n\n        All of the exceptions raised are subclasses of `HTTPException` so they\n        can be used as WSGI responses. They will all render generic error or\n        redirect pages.\n\n        Here is a small example for matching:\n\n        >>> m = Map([\n        ...     Rule('/', endpoint='index'),\n        ...     Rule('/downloads/', endpoint='downloads/index'),\n        ...     Rule('/downloads/<int:id>', endpoint='downloads/show')\n        ... ])\n        >>> urls = m.bind(\"example.com\", \"/\")\n        >>> urls.match(\"/\", \"GET\")\n        ('index', {})\n        >>> urls.match(\"/downloads/42\")\n        ('downloads/show', {'id': 42})\n\n        And here is what happens on redirect and missing URLs:\n\n        >>> urls.match(\"/downloads\")\n        Traceback (most recent call last):\n          ...\n        RequestRedirect: http://example.com/downloads/\n        >>> urls.match(\"/missing\")\n        Traceback (most recent call last):\n          ...\n        NotFound: 404 Not Found\n\n        :param path_info: the path info to use for matching.  Overrides the\n                          path info specified on binding.\n        :param method: the HTTP method used for matching.  Overrides the\n                       method specified on binding.\n        :param return_rule: return the rule that matched instead of just the\n                            endpoint (defaults to `False`).\n        :param query_args: optional query arguments that are used for\n                           automatic redirects as string or dictionary.  It's\n                           currently not possible to use the query arguments\n                           for URL matching.\n        :param websocket: Match WebSocket instead of HTTP requests. A\n            websocket request has a ``ws`` or ``wss``\n            :attr:`url_scheme`. This overrides that detection.\n\n        .. versionadded:: 1.0\n            Added ``websocket``.\n\n        .. versionchanged:: 0.8\n            ``query_args`` can be a string.\n\n        .. versionadded:: 0.7\n            Added ``query_args``.\n\n        .. versionadded:: 0.6\n            Added ``return_rule``.\n        \"\"\"\n        self.map.update()\n\n        if path_info is None:\n            path_info = self.path_info\n\n        if query_args is None:\n            query_args = self.query_args or {}\n\n        method = (method or self.default_method).upper()\n\n        if websocket is None:\n            websocket = self.websocket\n\n        if self.map.subdomain_matching:\n            domain_part = self.subdomain\n        elif self.map.host_matching:\n            domain_part = self.server_name\n        else:\n            domain_part = \"\"\n\n        path_part = f\"/{path_info.lstrip('/')}\" if path_info else \"\"\n\n        try:\n            result = self.map._matcher.match(domain_part, path_part, method, websocket)\n        except RequestPath as e:\n            # safe = https://url.spec.whatwg.org/#url-path-segment-string\n            new_path = quote(e.path_info, safe=\"!$&'()*+,/:;=@\")\n            raise RequestRedirect",
+            "docstring": "The usage is simple: you just pass the match method the current\npath info as well as the method (which defaults to `GET`).  The\nfollowing things can then happen:\n\n- you receive a `NotFound` exception that indicates that no URL is\n  matching.  A `NotFound` exception is also a WSGI application you\n  can call to get a default page not found page (happens to be the\n  same object as `werkzeug.exceptions.NotFound`)\n\n- you receive a `MethodNotAllowed` exception that indicates that there\n  is a match for this URL but not for the current request method.\n  This is useful for RESTful applications.\n\n- you receive a `RequestRedirect` exception with a `new_url`\n  attribute.  This exception is used to notify you about a request\n  Werkzeug requests from your WSGI application.  This is for example the\n  case if you request ``/foo`` although the correct URL is ``/foo/``\n  You can use the `RequestRedirect` instance as response-like object\n  similar to all other subclasses of `HTTPException`.\n\n- you receive a ``WebsocketMismatch`` exception if the only\n  match is a WebSocket rule but the bind is an HTTP request, or\n  if the match is an HTTP rule but the bind is a WebSocket\n  request.\n\n- you get a tuple in the form ``(endpoint, arguments)`` if there is\n  a match (unless `return_rule` is True, in which case you get a tuple\n  in the form ``(rule, arguments)``)\n\nIf the path info is not passed to the match method the default path\ninfo of the map is used (defaults to the root URL if not defined\nexplicitly).\n\nAll of the exceptions raised are subclasses of `HTTPException` so they\ncan be used as WSGI responses. They will all render generic error or\nredirect pages.\n\nHere is a small example for matching:\n\n>>> m = Map([\n...     Rule('/', endpoint='index'),\n...     Rule('/downloads/', endpoint='downloads/index'),\n...     Rule('/downloads/<int:id>', endpoint='downloads/show')\n... ])\n>>> urls = m.bind(\"example.com\", \"/\")\n>>> urls.match(\"/\", \"GET\")\n('index', {})\n>>> urls.match(\"/downloads/42\")\n('downloads/show', {'id': 42})\n\nAnd here is what happens on redirect and missing URLs:\n\n>>> urls.match(\"/downloads\")\nTraceback (most recent call last):\n  ...\nRequestRedirect: http://example.com/downloads/\n>>> urls.match(\"/missing\")\nTraceback (most recent call last):\n  ...\nNotFound: 404 Not Found\n\n:param path_info: the path info to use for matching.  Overrides the\n                  path info specified on binding.\n:param method: the HTTP method used for matching.  Overrides the\n               method specified on binding.\n:param return_rule: return the rule that matched instead of just the\n                    endpoint (defaults to `False`).\n:param query_args: optional query arguments that are used for\n                   automatic redirects as string or dictionary.  It's\n                   currently not possible to use the query arguments\n                   for URL matching.\n:param websocket: Match WebSocket instead of HTTP requests. A\n    websocket request has a ``ws`` or ``wss``\n    :attr:`url_scheme`. This overrides that detection.\n\n.. versionadded:: 1.0\n    Added ``websocket``.\n\n.. versionchanged:: 0.8\n    ``query_args`` can be a string.\n\n.. versionadded:: 0.7\n    Added ``query_args``.\n\n.. versionadded:: 0.6\n    Added ``return_rule``.",
+            "parent_id": "dbf320254cf5cee59895c21e",
+            "file_id": "5596fec82edd6bb960be5983c7d7a3b5",
+            "language": "python",
+            "signature": "def match(",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.MapAdapter.match",
+              "werkzeug.routing.map.MapAdapter.match"
+            ],
+            "score": 0.14007,
+            "component_scores": {
+              "lexical": 96.6566170914565,
+              "semantic": 0.7486956119537354,
+              "graph": 0,
+              "structural": 6,
+              "final": 0.15207056451612905
+            },
+            "retrieval_sources": [
+              "lexical",
+              "semantic"
+            ],
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": true
+          },
+          {
+            "id": "aa2eecceebed4b4f11c49cc3",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/map.py",
+            "name": "match",
+            "qualified": "werkzeug.routing.map.MapAdapter.match",
+            "kind": "method",
+            "start_line": 531,
+            "end_line": 539,
+            "source": "    @t.overload\n    def match(\n        self,\n        path_info: str | None = None,\n        method: str | None = None,\n        return_rule: t.Literal[True] = True,\n        query_args: t.Mapping[str, t.Any] | str | None = None,\n        websocket: bool | None = None,\n    ) -> tuple[Rule, t.Mapping[str, t.Any]]: ...",
+            "docstring": "",
+            "parent_id": "dbf320254cf5cee59895c21e",
+            "file_id": "5596fec82edd6bb960be5983c7d7a3b5",
+            "language": "python",
+            "signature": "def match(",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.MapAdapter.match",
+              "werkzeug.routing.map.MapAdapter.match"
+            ],
+            "score": 0.13781,
+            "component_scores": {
+              "lexical": 76.41266165240258,
+              "semantic": 0.7099258899688721,
+              "graph": 0,
+              "structural": 6,
+              "final": 0.14981148429035754
+            },
+            "retrieval_sources": [
+              "lexical",
+              "semantic"
+            ],
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "dc65eb03351e386adbe7b1da",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/map.py",
+            "name": "match",
+            "qualified": "werkzeug.routing.map.MapAdapter.match",
+            "kind": "method",
+            "start_line": 521,
+            "end_line": 529,
+            "source": "    @t.overload\n    def match(\n        self,\n        path_info: str | None = None,\n        method: str | None = None,\n        return_rule: t.Literal[False] = False,\n        query_args: t.Mapping[str, t.Any] | str | None = None,\n        websocket: bool | None = None,\n    ) -> tuple[t.Any, t.Mapping[str, t.Any]]: ...",
+            "docstring": "",
+            "parent_id": "dbf320254cf5cee59895c21e",
+            "file_id": "5596fec82edd6bb960be5983c7d7a3b5",
+            "language": "python",
+            "signature": "def match(",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.MapAdapter.match",
+              "werkzeug.routing.map.MapAdapter.match"
+            ],
+            "score": 0.13745,
+            "component_scores": {
+              "lexical": 76.41266165240258,
+              "semantic": 0.7110191583633423,
+              "graph": 0.049759056182219846,
+              "structural": 6,
+              "final": 0.14944588744588747
+            },
+            "retrieval_sources": [
+              "lexical",
+              "semantic",
+              "graph"
+            ],
+            "reason": "contains relationship with MapAdapter",
+            "traversal": [
+              {
+                "repo_id": "beaef6532645468a9d92243bab8bd823",
+                "source": "dbf320254cf5cee59895c21e",
+                "target": "ac1deda3f66699239ec3c46c",
+                "kind": "contains",
+                "line": 541,
+                "confidence": "exact",
+                "label": "match"
+              },
+              {
+                "repo_id": "beaef6532645468a9d92243bab8bd823",
+                "source": "dbf320254cf5cee59895c21e",
+                "target": "dc65eb03351e386adbe7b1da",
+                "kind": "contains",
+                "line": 521,
+                "confidence": "exact",
+                "label": "match"
+              }
+            ],
+            "truncated": false
+          },
+          {
+            "id": "7931323b6d70089b9f87ba81",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/matcher.py",
+            "name": "update",
+            "qualified": "werkzeug.routing.matcher.StateMachineMatcher.update",
+            "kind": "method",
+            "start_line": 61,
+            "end_line": 73,
+            "source": "    def update(self) -> None:\n        # For every state the dynamic transitions should be sorted by\n        # the weight of the transition\n        state = self._root\n\n        def _update_state(state: State) -> None:\n            state.dynamic.sort(key=lambda entry: entry[0].weight)\n            for new_state in state.static.values():\n                _update_state(new_state)\n            for _, new_state in state.dynamic:\n                _update_state(new_state)\n\n        _update_state(state)",
+            "docstring": "",
+            "parent_id": "58b38aa71bc9cd95c7b7d498",
+            "file_id": "9fad6bc26d5fc8fdf311e589f4c7c146",
+            "language": "python",
+            "signature": "def update(self) -> None:",
+            "role": "source",
+            "helper_for": [
+              "aec0c795fb5ab98b8f8b97fd",
+              "aec0c795fb5ab98b8f8b97fd"
+            ],
+            "reason": "candidate helper identifier read; dispatch not proven",
+            "traversal": [],
+            "public_aliases": [],
+            "recovered": true
+          },
+          {
+            "id": "f5c6fe97bb572e1f2cb17b7d",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/map.py",
+            "name": "make_alias_redirect_url",
+            "qualified": "werkzeug.routing.map.MapAdapter.make_alias_redirect_url",
+            "kind": "method",
+            "start_line": 824,
+            "end_line": 839,
+            "source": "    def make_alias_redirect_url(\n        self,\n        path: str,\n        endpoint: t.Any,\n        values: t.Mapping[str, t.Any],\n        method: str,\n        query_args: t.Mapping[str, t.Any] | str,\n    ) -> str:\n        \"\"\"Internally called to make an alias redirect URL.\"\"\"\n        url = self.build(\n            endpoint, values, method, append_unknown=False, force_external=True\n        )\n        if query_args:\n            url += f\"?{self.encode_query_args(query_args)}\"\n        assert url != path, \"detected invalid alias setting. No canonical URL found\"\n        return url",
+            "docstring": "Internally called to make an alias redirect URL.",
+            "parent_id": "dbf320254cf5cee59895c21e",
+            "file_id": "5596fec82edd6bb960be5983c7d7a3b5",
+            "language": "python",
+            "signature": "def make_alias_redirect_url(",
+            "role": "source",
+            "helper_for": [
+              "ac1deda3f66699239ec3c46c"
+            ],
+            "reason": "candidate helper identifier read; dispatch not proven",
+            "traversal": [],
+            "public_aliases": [],
+            "recovered": true
+          },
+          {
+            "id": "a311f9703d7de7f7afffdcf5",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/map.py",
+            "name": "_handle_match",
+            "qualified": "werkzeug.routing.map.MapAdapter.match._handle_match",
+            "kind": "function",
+            "start_line": 695,
+            "end_line": 697,
+            "source": "                    def _handle_match(match: t.Match[str]) -> str:\n                        value = rv[match.group(1)]\n                        return rule._converters[match.group(1)].to_url(value)",
+            "docstring": "",
+            "parent_id": "ac1deda3f66699239ec3c46c",
+            "file_id": "5596fec82edd6bb960be5983c7d7a3b5",
+            "language": "python",
+            "signature": "def _handle_match(match: t.Match[str]) -> str:",
+            "role": "source",
+            "public_aliases": [],
+            "score": 0.0303,
+            "component_scores": {
+              "lexical": 9.655975590738969,
+              "semantic": 0,
+              "graph": 0,
+              "structural": 3,
+              "final": 0.0363030303030303
+            },
+            "retrieval_sources": [
+              "lexical"
+            ],
+            "reason": "follow-up lexical source read",
+            "traversal": [],
+            "truncated": false,
+            "recovered": true
+          },
+          {
+            "id": "58b38aa71bc9cd95c7b7d498",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/matcher.py",
+            "name": "StateMachineMatcher",
+            "qualified": "werkzeug.routing.matcher.StateMachineMatcher",
+            "kind": "class",
+            "start_line": 34,
+            "end_line": 209,
+            "source": "class StateMachineMatcher:\n    def __init__(self, merge_slashes: bool) -> None:\n        self._root = State()\n        self.merge_slashes = merge_slashes\n\n    def add(self, rule: Rule) -> None:\n        state = self._root\n        for part in rule._parts:\n            if part.static:\n                state.static.setdefault(part.content, State())\n                state = state.static[part.content]\n            else:\n                for test_part, new_state in state.dynamic:\n                    if test_part == part:\n                        state = new_state\n                        break\n                else:\n                    new_state = State()\n                    state.dynamic.append((part, new_state))\n                    state = new_state\n\n        for existing in state.rules:\n            if rule.is_duplicate(existing):\n                raise DuplicateRuleError(existing, rule)\n\n        state.rules.append(rule)\n\n    def update(self) -> None:\n        # For every state the dynamic transitions should be sorted by\n        # the weight of the transition\n        state = self._root\n\n        def _update_state(state: State) -> None:\n            state.dynamic.sort(key=lambda entry: entry[0].weight)\n            for new_state in state.static.values():\n                _update_state(new_state)\n            for _, new_state in state.dynamic:\n                _update_state(new_state)\n\n        _update_state(state)\n\n    def match(\n        self, domain: str, path: str, method: str, websocket: bool\n    ) -> tuple[Rule, t.MutableMapping[str, t.Any]]:\n        # To match to a rule we need to start at the root state and\n        # try to follow the transitions until we find a match, or find\n        # there is no transition to follow.\n\n        have_match_for = set()\n        websocket_mismatch = False\n\n        def _match(\n            state: State, parts: list[str], values: list[str]\n        ) -> tuple[Rule, list[str]] | None:\n            # This function is meant to be called recursively, and will attempt\n            # to match the head part to the state's transitions.\n            nonlocal have_match_for, websocket_mismatch\n\n            # The base case is when all parts have been matched via\n            # transitions. Hence if there is a rule with methods &\n            # websocket that work return it and the dynamic values\n            # extracted.\n            if parts == []:\n                for rule in state.rules:\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n\n                # Test if there is a match with this path with a\n                # trailing slash, if so raise an exception to report\n                # that matching is possible with an additional slash\n                if \"\" in state.static:\n                    for rule in state.static[\"\"].rules:\n                        if websocket == rule.websocket and (\n                            rule.methods is None or method in rule.methods\n                        ):\n                            if rule.strict_slashes:\n                                raise SlashRequired()\n                            else:\n                                return rule, values\n                return None\n\n            part = parts[0]\n            # To match this part try the static transitions first\n            if part in state.static:\n                rv = _match(state.static[part], parts[1:], values)\n                if rv is not None:\n                    return rv\n            # No match via the static transitions, so try the dynamic\n            # ones.\n            for test_part, new_state in state.dynamic:\n                target = part\n                remaining = parts[1:]\n                # A final part indicates a transition that always\n                # consumes the remaining parts i.e. transitions to a\n                # final state.\n                if test_part.final:\n                    target = \"/\".join(parts)\n                    remaining = []\n                match = re.compile(test_part.content).match(target)\n                if match is not None:\n                    if test_part.suffixed:\n                        # If a part_isolating=False part has a slash suffix, remove the\n                        # suffix from the match and check for the slash redirect next.\n                        suffix = match.groups()[-1]\n                        if suffix == \"/\":\n                            remaining = [\"\"]\n\n                    converter_groups = sorted(\n                        (\n                            item\n                            for item in match.groupdict().items()\n                            if item[0].startswith(\"__werkzeug_\")\n                        ),\n                        key=lambda item: int(item[0][11:]),\n                    )\n             ",
+            "docstring": "",
+            "parent_id": "65cf10114e18e28020265010",
+            "file_id": "9fad6bc26d5fc8fdf311e589f4c7c146",
+            "language": "python",
+            "signature": "class StateMachineMatcher:",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.StateMachineMatcher",
+              "werkzeug.routing.matcher.StateMachineMatcher"
+            ],
+            "score": 0.13981,
+            "component_scores": {
+              "lexical": 86.55291892549633,
+              "semantic": 0.8117539882659912,
+              "graph": 0,
+              "structural": 5,
+              "final": 0.149810547875064
+            },
+            "retrieval_sources": [
+              "lexical",
+              "semantic"
+            ],
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": true
+          },
+          {
+            "id": "dbf320254cf5cee59895c21e",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/map.py",
+            "name": "MapAdapter",
+            "qualified": "werkzeug.routing.map.MapAdapter",
+            "kind": "class",
+            "start_line": 431,
+            "end_line": 984,
+            "source": "class MapAdapter:\n    \"\"\"Returned by :meth:`Map.bind` or :meth:`Map.bind_to_environ` and does\n    the URL matching and building based on runtime information.\n    \"\"\"\n\n    def __init__(\n        self,\n        map: Map,\n        server_name: str,\n        script_name: str,\n        subdomain: str | None,\n        url_scheme: str,\n        path_info: str,\n        default_method: str,\n        query_args: t.Mapping[str, t.Any] | str | None = None,\n    ):\n        self.map = map\n        self.server_name = server_name\n\n        if not script_name.endswith(\"/\"):\n            script_name += \"/\"\n\n        self.script_name = script_name\n        self.subdomain = subdomain or \"\"\n        self.url_scheme = url_scheme\n        self.path_info = path_info\n        self.default_method = default_method\n        self.query_args = query_args\n        self.websocket = self.url_scheme in {\"ws\", \"wss\"}\n\n    def dispatch(\n        self,\n        view_func: t.Callable[[str, t.Mapping[str, t.Any]], WSGIApplication],\n        path_info: str | None = None,\n        method: str | None = None,\n        catch_http_exceptions: bool = False,\n    ) -> WSGIApplication:\n        \"\"\"Does the complete dispatching process.  `view_func` is called with\n        the endpoint and a dict with the values for the view.  It should\n        look up the view function, call it, and return a response object\n        or WSGI application.  http exceptions are not caught by default\n        so that applications can display nicer error messages by just\n        catching them by hand.  If you want to stick with the default\n        error messages you can pass it ``catch_http_exceptions=True`` and\n        it will catch the http exceptions.\n\n        Here a small example for the dispatch usage::\n\n            from werkzeug.wrappers import Request, Response\n            from werkzeug.wsgi import responder\n            from werkzeug.routing import Map, Rule\n\n            def on_index(request):\n                return Response('Hello from the index')\n\n            url_map = Map([Rule('/', endpoint='index')])\n            views = {'index': on_index}\n\n            @responder\n            def application(environ, start_response):\n                request = Request(environ)\n                urls = url_map.bind_to_environ(environ)\n                return urls.dispatch(lambda e, v: views[e](request, **v),\n                                     catch_http_exceptions=True)\n\n        Keep in mind that this method might return exception objects, too, so\n        use :class:`Response.force_type` to get a response object.\n\n        :param view_func: a function that is called with the endpoint as\n                          first argument and the value dict as second.  Has\n                          to dispatch to the actual view function with this\n                          information.  (see above)\n        :param path_info: the path info to use for matching.  Overrides the\n                          path info specified on binding.\n        :param method: the HTTP method used for matching.  Overrides the\n                       method specified on binding.\n        :param catch_http_exceptions: set to `True` to catch any of the\n                                      werkzeug :class:`HTTPException`\\\\s.\n        \"\"\"\n        try:\n            try:\n                endpoint, args = self.match(path_info, method)\n            except RequestRedirect as e:\n                return e\n            return view_func(endpoint, args)\n        except HTTPException as e:\n            if catch_http_exceptions:\n                return e\n            raise\n\n    @t.overload\n    def match(\n        self,\n        path_info: str | None = None,\n        method: str | None = None,\n        return_rule: t.Literal[False] = False,\n        query_args: t.Mapping[str, t.Any] | str | None = None,\n        websocket: bool | None = None,\n    ) -> tuple[t.Any, t.Mapping[str, t.Any]]: ...\n\n    @t.overload\n    def match(\n        self,\n        path_info: str | None = None,\n        method: str | None = None,\n        return_rule: t.Literal[True] = True,\n        query_args: t.Mapping[str, t.Any] | str | None = None,\n        websocket: bool | None = None,\n    ) -> tuple[Rule, t.Mapping[str, t.Any]]: ...\n\n    def match(\n        self,\n        path_info: str | None = None,\n        method: str | None = None,\n        return_rule: bool = False,\n        query_args: t.Mapping[str, t.Any] | str | None = None,\n        websocket: bool | None = None,\n    ) -> tuple[t.Any | Rule, t.Mapping[str, t.Any]]:\n        \"\"\"The usage is simple: you just pass the match method the current\n        path info as well as the method (which defaults to `GET`).  The\n        following things can then happen:\n\n        - you receive a `NotFound` exception that indicates that no URL is\n          matching.  A `NotFound` exception is also a WSGI application you\n          can call to get a default page not found page (happens to be the\n          same object as `werkzeug.exceptions.NotFound`)\n\n        - you receive a `MethodNot",
+            "docstring": "Returned by :meth:`Map.bind` or :meth:`Map.bind_to_environ` and does\nthe URL matching and building based on runtime information.",
+            "parent_id": "84e26758363d09579be994ce",
+            "file_id": "5596fec82edd6bb960be5983c7d7a3b5",
+            "language": "python",
+            "signature": "class MapAdapter:",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.MapAdapter",
+              "werkzeug.routing.map.MapAdapter"
+            ],
+            "score": 0.1364,
+            "component_scores": {
+              "lexical": 77.02935582004304,
+              "semantic": 0.6544073224067688,
+              "graph": 0,
+              "structural": 5,
+              "final": 0.14640463917525776
+            },
+            "retrieval_sources": [
+              "lexical",
+              "semantic"
+            ],
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": true
+          },
+          {
+            "id": "a4681908f61a1850e3b70e02",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "examples/wsecho.py",
+            "name": "websocket",
+            "qualified": "examples.wsecho.websocket",
+            "kind": "function",
+            "start_line": 19,
+            "end_line": 75,
+            "source": "@Request.application\ndef websocket(request):\n    # The underlying socket must be provided by the server. Gunicorn and\n    # Werkzeug's dev server are known to support this.\n    stream = request.environ.get(\"werkzeug.socket\")\n\n    if stream is None:\n        stream = request.environ.get(\"gunicorn.socket\")\n\n    if stream is None:\n        raise InternalServerError()\n\n    # Initialize the wsproto connection. Need to recreate the request\n    # data that was read by the WSGI server already.\n    ws = WSConnection(ConnectionType.SERVER)\n    in_data = b\"GET %s HTTP/1.1\\r\\n\" % request.path.encode(\"utf8\")\n\n    for header, value in request.headers.items():\n        in_data += f\"{header}: {value}\\r\\n\".encode()\n\n    in_data += b\"\\r\\n\"\n    ws.receive_data(in_data)\n    running = True\n\n    while True:\n        out_data = b\"\"\n\n        for event in ws.events():\n            if isinstance(event, WSRequest):\n                out_data += ws.send(AcceptConnection())\n            elif isinstance(event, CloseConnection):\n                out_data += ws.send(event.response())\n                running = False\n            elif isinstance(event, Ping):\n                out_data += ws.send(event.response())\n            elif isinstance(event, TextMessage):\n                # echo the incoming message back to the client\n                if event.data == \"quit\":\n                    out_data += ws.send(\n                        CloseConnection(CloseReason.NORMAL_CLOSURE, \"bye\")\n                    )\n                    running = False\n                else:\n                    out_data += ws.send(Message(data=event.data))\n\n        if out_data:\n            stream.send(out_data)\n\n        if not running:\n            break\n\n        in_data = stream.recv(4096)\n        ws.receive_data(in_data)\n\n    # The connection will be closed at this point, but WSGI still\n    # requires a response.\n    return Response(\"\", status=204)",
+            "docstring": "",
+            "parent_id": "add21c746f17ee9f07306103",
+            "file_id": "29b74ccd71e8724f847af3b811bb6565",
+            "language": "python",
+            "signature": "def websocket(request):",
+            "role": "source",
+            "public_aliases": [
+              "examples.wsecho.websocket"
+            ],
+            "score": 0.13178,
+            "component_scores": {
+              "lexical": 61.392530028539845,
+              "semantic": 0.6015735864639282,
+              "graph": 0,
+              "structural": 5,
+              "final": 0.14178124819915866
+            },
+            "retrieval_sources": [
+              "lexical",
+              "semantic"
+            ],
+            "reason": "symbol / text match",
+            "traversal": [],
+            "truncated": false
+          },
+          {
+            "id": "debcf037e9ac369ef32b25f5",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/matcher.py",
+            "name": "websocket",
+            "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match.websocket",
+            "kind": "parameter",
+            "start_line": 76,
+            "end_line": 76,
+            "source": "        self, domain: str, path: str, method: str, websocket: bool",
+            "docstring": "",
+            "parent_id": "aec0c795fb5ab98b8f8b97fd",
+            "file_id": "9fad6bc26d5fc8fdf311e589f4c7c146",
+            "language": "python",
+            "signature": "        self, domain: str, path: str, method: str, websocket: bool",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.StateMachineMatcher.match.websocket",
+              "werkzeug.routing.matcher.StateMachineMatcher.match.websocket"
+            ],
+            "score": 0.12941,
+            "component_scores": {
+              "lexical": 57.645559702145974,
+              "semantic": 0,
+              "graph": 0.044462873674059794,
+              "structural": 6,
+              "final": 0.14141176470588238
+            },
+            "retrieval_sources": [
+              "lexical",
+              "graph"
+            ],
+            "reason": "accepts relationship with match",
+            "traversal": [
+              {
+                "repo_id": "beaef6532645468a9d92243bab8bd823",
+                "source": "aec0c795fb5ab98b8f8b97fd",
+                "target": "debcf037e9ac369ef32b25f5",
+                "kind": "accepts",
+                "line": 76,
+                "confidence": "exact",
+                "label": "websocket"
+              }
+            ],
+            "truncated": false
+          },
+          {
+            "id": "06e25ee13f65fec70662016e",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/map.py",
+            "name": "websocket",
+            "qualified": "werkzeug.routing.map.MapAdapter.match.websocket",
+            "kind": "parameter",
+            "start_line": 528,
+            "end_line": 528,
+            "source": "        websocket: bool | None = None,",
+            "docstring": "",
+            "parent_id": "dc65eb03351e386adbe7b1da",
+            "file_id": "5596fec82edd6bb960be5983c7d7a3b5",
+            "language": "python",
+            "signature": "        websocket: bool | None = None,",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.MapAdapter.match.websocket",
+              "werkzeug.routing.map.MapAdapter.match.websocket"
+            ],
+            "score": 0.12899,
+            "component_scores": {
+              "lexical": 54.330860287179824,
+              "semantic": 0,
+              "graph": 0.044193487671748535,
+              "structural": 6,
+              "final": 0.14098550724637682
+            },
+            "retrieval_sources": [
+              "lexical",
+              "graph"
+            ],
+            "reason": "accepts relationship with match",
+            "traversal": [
+              {
+                "repo_id": "beaef6532645468a9d92243bab8bd823",
+                "source": "dc65eb03351e386adbe7b1da",
+                "target": "06e25ee13f65fec70662016e",
+                "kind": "accepts",
+                "line": 528,
+                "confidence": "exact",
+                "label": "websocket"
+              }
+            ],
+            "truncated": false
+          },
+          {
+            "id": "2e7e712668c03604221554b3",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/map.py",
+            "name": "websocket",
+            "qualified": "werkzeug.routing.map.MapAdapter.match.websocket",
+            "kind": "parameter",
+            "start_line": 538,
+            "end_line": 538,
+            "source": "        websocket: bool | None = None,",
+            "docstring": "",
+            "parent_id": "aa2eecceebed4b4f11c49cc3",
+            "file_id": "5596fec82edd6bb960be5983c7d7a3b5",
+            "language": "python",
+            "signature": "        websocket: bool | None = None,",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.MapAdapter.match.websocket",
+              "werkzeug.routing.map.MapAdapter.match.websocket"
+            ],
+            "score": 0.12857,
+            "component_scores": {
+              "lexical": 54.330860287179824,
+              "semantic": 0,
+              "graph": 0.044083887943042875,
+              "structural": 6,
+              "final": 0.1405714285714286
+            },
+            "retrieval_sources": [
+              "lexical",
+              "graph"
+            ],
+            "reason": "accepts relationship with match",
+            "traversal": [
+              {
+                "repo_id": "beaef6532645468a9d92243bab8bd823",
+                "source": "aa2eecceebed4b4f11c49cc3",
+                "target": "2e7e712668c03604221554b3",
+                "kind": "accepts",
+                "line": 538,
+                "confidence": "exact",
+                "label": "websocket"
+              }
+            ],
+            "truncated": false
+          },
+          {
+            "id": "d2ed9708aa27504ce3caf3f3",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/map.py",
+            "name": "websocket",
+            "qualified": "werkzeug.routing.map.MapAdapter.match.websocket",
+            "kind": "parameter",
+            "start_line": 547,
+            "end_line": 547,
+            "source": "        websocket: bool | None = None,",
+            "docstring": "",
+            "parent_id": "ac1deda3f66699239ec3c46c",
+            "file_id": "5596fec82edd6bb960be5983c7d7a3b5",
+            "language": "python",
+            "signature": "        websocket: bool | None = None,",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.MapAdapter.match.websocket",
+              "werkzeug.routing.map.MapAdapter.match.websocket"
+            ],
+            "score": 0.12817,
+            "component_scores": {
+              "lexical": 54.330860287179824,
+              "semantic": 0,
+              "graph": 0.04405352680599727,
+              "structural": 6,
+              "final": 0.14016901408450705
+            },
+            "retrieval_sources": [
+              "lexical",
+              "graph"
+            ],
+            "reason": "accepts relationship with match",
+            "traversal": [
+              {
+                "repo_id": "beaef6532645468a9d92243bab8bd823",
+                "source": "ac1deda3f66699239ec3c46c",
+                "target": "d2ed9708aa27504ce3caf3f3",
+                "kind": "accepts",
+                "line": 547,
+                "confidence": "exact",
+                "label": "websocket"
+              }
+            ],
+            "truncated": false
+          },
+          {
+            "id": "93e08813f5820160743c24b5",
+            "repo_id": "beaef6532645468a9d92243bab8bd823",
+            "path": "src/werkzeug/routing/rules.py",
+            "name": "websocket",
+            "qualified": "werkzeug.routing.rules.Rule.__init__.websocket",
+            "kind": "parameter",
+            "start_line": 471,
+            "end_line": 471,
+            "source": "        websocket: bool = False,",
+            "docstring": "",
+            "parent_id": "ea039766393f6e667db566aa",
+            "file_id": "1f5576de28033fbb5ecc50a2a4870a40",
+            "language": "python",
+            "signature": "        websocket: bool = False,",
+            "role": "source",
+            "public_aliases": [
+              "werkzeug.routing.Rule.__init__.websocket",
+              "werkzeug.routing.rules.Rule.__init__.websocket"
+            ],
+            "score": 0.12778,
+            "component_scores": {
+              "lexical": 51.0,
+              "semantic": 0,
+              "graph": 0,
+              "structural": 5,
+              "final": 0.13777777777777778
+            },
+            "retrieval_sources": [
+              "lexical"
+            ],
+            "reason": "fused lexical / semantic candidate",
+            "traversal": [],
+            "truncated": false
+          }
+        ],
+        "mode": "hybrid",
+        "semantic_used": true,
+        "generated": true,
+        "abstained": false,
+        "partial": true,
+        "aspect_statuses": [
+          {
+            "aspect_id": 1,
+            "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception",
+            "status": "partial",
+            "coverage_status": "complete",
+            "missing_details": []
+          },
+          {
+            "aspect_id": 2,
+            "question": "which mismatch takes precedence",
+            "status": "supported",
+            "coverage_status": "complete",
+            "missing_details": []
+          }
+        ],
+        "generation_context": [
+          {
+            "source_id": 1,
+            "id": "aec0c795fb5ab98b8f8b97fd",
+            "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+            "path": "src/werkzeug/routing/matcher.py",
+            "source_line_numbers": [
+              75,
+              76,
+              77,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              90,
+              91,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              108,
+              109,
+              110,
+              111,
+              112,
+              113,
+              114,
+              115,
+              116,
+              117,
+              118,
+              119,
+              121,
+              122,
+              123,
+              124,
+              127,
+              128,
+              129,
+              133,
+              134,
+              135,
+              136,
+              137,
+              138,
+              141,
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              153,
+              154,
+              155,
+              156,
+              157,
+              162,
+              163,
+              164,
+              165,
+              166,
+              167,
+              168,
+              169,
+              170,
+              171,
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              180,
+              182,
+              183,
+              184,
+              185,
+              186,
+              187,
+              188,
+              189,
+              190,
+              191,
+              192,
+              193,
+              194,
+              195,
+              196,
+              197,
+              198,
+              199,
+              200,
+              201,
+              202,
+              203,
+              204,
+              205,
+              206,
+              207,
+              208,
+              209
+            ],
+            "source": "    def match(\n        self, domain: str, path: str, method: str, websocket: bool\n    ) -> tuple[Rule, t.MutableMapping[str, t.Any]]:\n\n        have_match_for = set()\n        websocket_mismatch = False\n\n        def _match(\n            state: State, parts: list[str], values: list[str]\n        ) -> tuple[Rule, list[str]] | None:\n            nonlocal have_match_for, websocket_mismatch\n\n            if parts == []:\n                for rule in state.rules:\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n\n                if \"\" in state.static:\n                    for rule in state.static[\"\"].rules:\n                        if websocket == rule.websocket and (\n                            rule.methods is None or method in rule.methods\n                        ):\n                            if rule.strict_slashes:\n                                raise SlashRequired()\n                            else:\n                                return rule, values\n                return None\n\n            part = parts[0]\n            if part in state.static:\n                rv = _match(state.static[part], parts[1:], values)\n                if rv is not None:\n                    return rv\n            for test_part, new_state in state.dynamic:\n                target = part\n                remaining = parts[1:]\n                if test_part.final:\n                    target = \"/\".join(parts)\n                    remaining = []\n                match = re.compile(test_part.content).match(target)\n                if match is not None:\n                    if test_part.suffixed:\n                        suffix = match.groups()[-1]\n                        if suffix == \"/\":\n                            remaining = [\"\"]\n\n                    converter_groups = sorted(\n                        (\n                            item\n                            for item in match.groupdict().items()\n                            if item[0].startswith(\"__werkzeug_\")\n                        ),\n                        key=lambda item: int(item[0][11:]),\n                    )\n                    groups = [item[1] for item in converter_groups]\n                    rv = _match(new_state, remaining, values + groups)\n                    if rv is not None:\n                        return rv\n\n            if parts == [\"\"]:\n                for rule in state.rules:\n                    if rule.strict_slashes:\n                        continue\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n\n            return None\n\n        try:\n            rv = _match(self._root, [domain, *path.split(\"/\")], [])\n        except SlashRequired:\n            raise RequestPath(f\"{path}/\") from None\n\n        if self.merge_slashes and rv is None:\n            path = re.sub(\"/{2,}\", \"/\", path)\n            try:\n                rv = _match(self._root, [domain, *path.split(\"/\")], [])\n            except SlashRequired:\n                raise RequestPath(f\"{path}/\") from None\n            if rv is None or rv[0].merge_slashes is False:\n                raise NoMatch(have_match_for, websocket_mismatch)\n            else:\n                raise RequestPath(f\"{path}\")\n        elif rv is not None:\n            rule, values = rv\n\n            result = {}\n            for name, value in zip(rule._converters.keys(), values, strict=True):\n                try:\n                    value = rule._converters[name].to_python(value)\n                except ValidationError as e:\n                    raise NoMatch(have_match_for, websocket_mismatch) from e\n                result[str(name)] = value\n            if rule.defaults:\n                result.update(rule.defaults)\n\n            if rule.alias and rule.map.redirect_defaults:\n                raise RequestAliasRedirect(result, rule.endpoint)\n\n            return rule, result\n\n        raise NoMatch(have_match_for, websocket_mismatch)",
+            "truncated": true,
+            "executable_complete": true
+          },
+          {
+            "source_id": 2,
+            "id": "ac1deda3f66699239ec3c46c",
+            "qualified": "werkzeug.routing.map.MapAdapter.match",
+            "path": "src/werkzeug/routing/map.py",
+            "source_line_numbers": [
+              541,
+              542,
+              543,
+              544,
+              545,
+              546,
+              547,
+              636,
+              637,
+              638,
+              639,
+              640,
+              641,
+              642,
+              643,
+              644,
+              645,
+              646,
+              647,
+              648,
+              649,
+              650,
+              651,
+              652,
+              653,
+              654,
+              655,
+              657,
+              658,
+              659,
+              660,
+              662,
+              663,
+              664,
+              665,
+              666,
+              667,
+              675,
+              676,
+              677,
+              678,
+              679,
+              680,
+              681,
+              682,
+              683,
+              684,
+              685,
+              686,
+              687,
+              688,
+              689,
+              690,
+              691,
+              697,
+              698,
+              699,
+              700,
+              701,
+              702,
+              708,
+              709,
+              710,
+              711,
+              712,
+              713
+            ],
+            "source": "    def match(\n        self,\n        path_info: str | None = None,\n        method: str | None = None,\n        return_rule: bool = False,\n        query_args: t.Mapping[str, t.Any] | str | None = None,\n        websocket: bool | None = None,\n        self.map.update()\n\n        if path_info is None:\n            path_info = self.path_info\n\n        if query_args is None:\n            query_args = self.query_args or {}\n\n        method = (method or self.default_method).upper()\n\n        if websocket is None:\n            websocket = self.websocket\n\n        if self.map.subdomain_matching:\n            domain_part = self.subdomain\n        elif self.map.host_matching:\n            domain_part = self.server_name\n        else:\n            domain_part = \"\"\n\n\n        try:\n            result = self.map._matcher.match(domain_part, path_part, method, websocket)\n        except RequestPath as e:\n            new_path = quote(e.path_info, safe=\"!$&'()*+,/:;=@\")\n            raise RequestRedirect(\n                self.make_redirect_url(new_path, query_args)\n            ) from None\n        except RequestAliasRedirect as e:\n            raise RequestRedirect(\n            ) from None\n        except NoMatch as e:\n            if e.have_match_for:\n                raise MethodNotAllowed(valid_methods=list(e.have_match_for)) from None\n\n            if e.websocket_mismatch:\n                raise WebsocketMismatch() from None\n\n            raise NotFound() from None\n        else:\n            rule, rv = result\n\n            if self.map.redirect_defaults:\n                redirect_url = self.get_default_redirect(rule, method, rv, query_args)\n                if redirect_url is not None:\n                    raise RequestRedirect(redirect_url)\n\n                        return rule._converters[match.group(1)].to_url(value)\n\n                    redirect_url = _simple_rule_re.sub(_handle_match, rule.redirect_to)\n                else:\n                    redirect_url = rule.redirect_to(self, **rv)\n\n                raise RequestRedirect(\n                    urljoin(\n                        f\"{self.url_scheme or 'http'}://{netloc}{self.script_name}\",\n                        redirect_url,\n                    )\n                )",
+            "truncated": true,
+            "executable_complete": false
+          },
+          {
+            "source_id": 3,
+            "id": "aa2eecceebed4b4f11c49cc3",
+            "qualified": "werkzeug.routing.map.MapAdapter.match",
+            "path": "src/werkzeug/routing/map.py",
+            "source_line_numbers": [
+              531,
+              532,
+              533,
+              534,
+              535,
+              536,
+              537,
+              538,
+              539
+            ],
+            "source": "    @t.overload\n    def match(\n        self,\n        path_info: str | None = None,\n        method: str | None = None,\n        return_rule: t.Literal[True] = True,\n        query_args: t.Mapping[str, t.Any] | str | None = None,\n        websocket: bool | None = None,\n    ) -> tuple[Rule, t.Mapping[str, t.Any]]: ...",
+            "truncated": false,
+            "executable_complete": true
+          },
+          {
+            "source_id": 4,
+            "id": "dc65eb03351e386adbe7b1da",
+            "qualified": "werkzeug.routing.map.MapAdapter.match",
+            "path": "src/werkzeug/routing/map.py",
+            "source_line_numbers": [
+              521,
+              522,
+              523,
+              524,
+              525,
+              526,
+              527,
+              528,
+              529
+            ],
+            "source": "    @t.overload\n    def match(\n        self,\n        path_info: str | None = None,\n        method: str | None = None,\n        return_rule: t.Literal[False] = False,\n        query_args: t.Mapping[str, t.Any] | str | None = None,\n        websocket: bool | None = None,\n    ) -> tuple[t.Any, t.Mapping[str, t.Any]]: ...",
+            "truncated": false,
+            "executable_complete": true
+          },
+          {
+            "source_id": 5,
+            "id": "7931323b6d70089b9f87ba81",
+            "qualified": "werkzeug.routing.matcher.StateMachineMatcher.update",
+            "path": "src/werkzeug/routing/matcher.py",
+            "source_line_numbers": [
+              61,
+              64,
+              71,
+              72,
+              73
+            ],
+            "source": "    def update(self) -> None:\n        state = self._root\n                _update_state(new_state)\n\n        _update_state(state)",
+            "truncated": true,
+            "executable_complete": false
+          },
+          {
+            "source_id": 6,
+            "id": "f5c6fe97bb572e1f2cb17b7d",
+            "qualified": "werkzeug.routing.map.MapAdapter.make_alias_redirect_url",
+            "path": "src/werkzeug/routing/map.py",
+            "source_line_numbers": [
+              824,
+              825,
+              826,
+              827
+            ],
+            "source": "    def make_alias_redirect_url(\n        self,\n        path: str,\n        endpoint: t.Any,",
+            "truncated": true,
+            "executable_complete": false
+          }
+        ],
+        "verification": "not_executed",
+        "citation_check": {
+          "invalid": [],
+          "has_citations": true,
+          "uncited_paragraphs": [],
+          "uncited_sentences": [],
+          "reference_section": false,
+          "entailment_checked": false,
+          "source_identity_checked": true
+        },
+        "warning": null,
+        "usage": {
+          "prompt_tokens": 20737,
+          "completion_tokens": 1775,
+          "total_tokens": 22512
+        },
+        "generation_diagnostics": {
+          "attempt_count": 2,
+          "total_request_ms": 212532,
+          "attempts": [
+            {
+              "load_duration_ms": 138,
+              "prompt_eval_duration_ms": 93,
+              "eval_duration_ms": 53763,
+              "prompt_tokens": 5267,
+              "completion_tokens": 668,
+              "request_ms": 77144,
+              "estimated_prompt_tokens": 5905,
+              "context_window": 8192,
+              "entailment_checked": false,
+              "provider_calls": 2,
+              "usage": {
+                "prompt_tokens": 9977,
+                "completion_tokens": 949,
+                "total_tokens": 10926
+              },
+              "draft_claims": [
+                {
+                  "text": "StateMachineMatcher.match turns a missing trailing slash into a redirect by raising SlashRequired exception which is caught and re-raised as RequestPath with the path appended with a slash.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 114,
+                      "end_line": 116
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 178,
+                      "end_line": 179
+                    }
+                  ]
+                },
+                {
+                  "text": "StateMachineMatcher.match turns an HTTP method mismatch into a MethodNotAllowed exception by checking if the method is not in rule.methods and raising NoMatch with have_match_for set to the allowed methods.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 98,
+                      "end_line": 99
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 166,
+                      "end_line": 167
+                    }
+                  ]
+                },
+                {
+                  "text": "StateMachineMatcher.match turns a WebSocket mismatch into a WebsocketMismatch exception by setting websocket_mismatch to True when the rule.websocket does not match the provided websocket parameter.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 100,
+                      "end_line": 101
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 168,
+                      "end_line": 169
+                    }
+                  ]
+                },
+                {
+                  "text": "MapAdapter.match handles the exceptions raised by StateMachineMatcher.match and converts them into appropriate HTTP exceptions: RequestPath becomes RequestRedirect, NoMatch with have_match_for set raises MethodNotAllowed, NoMatch with websocket_mismatch set raises WebsocketMismatch, and any other NoMatch raises NotFound.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 2,
+                      "start_line": 658,
+                      "end_line": 660
+                    },
+                    {
+                      "source_id": 2,
+                      "start_line": 677,
+                      "end_line": 679
+                    },
+                    {
+                      "source_id": 2,
+                      "start_line": 680,
+                      "end_line": 682
+                    },
+                    {
+                      "source_id": 2,
+                      "start_line": 683,
+                      "end_line": 684
+                    }
+                  ]
+                },
+                {
+                  "text": "The precedence of mismatches is determined by the order in which they are checked: missing trailing slash takes precedence over HTTP method mismatch and WebSocket mismatch.",
+                  "aspect_id": 2,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 96,
+                      "end_line": 104
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 162,
+                      "end_line": 173
+                    }
+                  ]
+                }
+              ],
+              "claim_validation_failures": [],
+              "citation_repairs": [
+                {
+                  "claim_index": 0,
+                  "changes": [
+                    {
+                      "source_id": 1,
+                      "added_lines": [
+                        96,
+                        108,
+                        109,
+                        110,
+                        111,
+                        112,
+                        113,
+                        175,
+                        177
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "claim_index": 1,
+                  "changes": [
+                    {
+                      "source_id": 1,
+                      "added_lines": [
+                        96,
+                        97,
+                        162,
+                        163
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "claim_index": 3,
+                  "changes": [
+                    {
+                      "source_id": 1,
+                      "added_lines": [
+                        75
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "claim_audit": {
+                "status": "completed",
+                "decisions": [
+                  {
+                    "claim_index": 0,
+                    "verdict": "supported",
+                    "reason": "StateMachineMatcher.match raises SlashRequired, which is caught and re-raised as RequestPath with a/"
+                  },
+                  {
+                    "claim_index": 1,
+                    "verdict": "uncertain",
+                    "reason": "Named identifier MethodNotAllowed is not established by the cited source."
+                  },
+                  {
+                    "claim_index": 2,
+                    "verdict": "uncertain",
+                    "reason": "Named identifier WebsocketMismatch is not established by the cited source."
+                  },
+                  {
+                    "claim_index": 3,
+                    "verdict": "supported",
+                    "reason": "MapAdapter.match converts exceptions: RequestPath to RequestRedirect, NoMatch with have_match_for to"
+                  },
+                  {
+                    "claim_index": 4,
+                    "verdict": "supported",
+                    "reason": "StateMachineMatcher.match checks missing trailing slash before HTTP method and WebSocket mismatch"
+                  }
+                ],
+                "coverage": [
+                  {
+                    "aspect_id": 1,
+                    "status": "complete",
+                    "missing_details": []
+                  },
+                  {
+                    "aspect_id": 2,
+                    "status": "complete",
+                    "missing_details": []
+                  }
+                ],
+                "coverage_status": "reviewed",
+                "provider_calls": 1,
+                "elapsed_ms": 22983,
+                "model": "qwen2.5-coder:14b",
+                "factual_support_proven": false,
+                "deterministic_guard_rejections": [
+                  1,
+                  2
+                ],
+                "original_claims": [
+                  {
+                    "text": "StateMachineMatcher.match turns a missing trailing slash into a redirect by raising SlashRequired exception which is caught and re-raised as RequestPath with the path appended with a slash.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 96,
+                        "end_line": 96
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 108,
+                        "end_line": 116
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 175,
+                        "end_line": 175
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 177,
+                        "end_line": 179
+                      }
+                    ]
+                  },
+                  {
+                    "text": "StateMachineMatcher.match turns an HTTP method mismatch into a MethodNotAllowed exception by checking if the method is not in rule.methods and raising NoMatch with have_match_for set to the allowed methods.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 96,
+                        "end_line": 99
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 162,
+                        "end_line": 163
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 166,
+                        "end_line": 167
+                      }
+                    ]
+                  },
+                  {
+                    "text": "StateMachineMatcher.match turns a WebSocket mismatch into a WebsocketMismatch exception by setting websocket_mismatch to True when the rule.websocket does not match the provided websocket parameter.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 100,
+                        "end_line": 101
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 168,
+                        "end_line": 169
+                      }
+                    ]
+                  },
+                  {
+                    "text": "MapAdapter.match handles the exceptions raised by StateMachineMatcher.match and converts them into appropriate HTTP exceptions: RequestPath becomes RequestRedirect, NoMatch with have_match_for set raises MethodNotAllowed, NoMatch with websocket_mismatch set raises WebsocketMismatch, and any other NoMatch raises NotFound.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 2,
+                        "start_line": 658,
+                        "end_line": 660
+                      },
+                      {
+                        "source_id": 2,
+                        "start_line": 677,
+                        "end_line": 684
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 75,
+                        "end_line": 75
+                      }
+                    ]
+                  },
+                  {
+                    "text": "The precedence of mismatches is determined by the order in which they are checked: missing trailing slash takes precedence over HTTP method mismatch and WebSocket mismatch.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 96,
+                        "end_line": 104
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 162,
+                        "end_line": 173
+                      }
+                    ]
+                  }
+                ]
+              },
+              "supporting_lines": [
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 96,
+                  "end_line": 96,
+                  "text": "            if parts == []:"
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 108,
+                  "end_line": 116,
+                  "text": "                if \"\" in state.static:\n                    for rule in state.static[\"\"].rules:\n                        if websocket == rule.websocket and (\n                            rule.methods is None or method in rule.methods\n                        ):\n                            if rule.strict_slashes:\n                                raise SlashRequired()\n                            else:\n                                return rule, values"
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 175,
+                  "end_line": 175,
+                  "text": "        try:"
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 177,
+                  "end_line": 179,
+                  "text": "        except SlashRequired:\n            raise RequestPath(f\"{path}/\") from None\n"
+                },
+                {
+                  "source_id": 2,
+                  "path": "src/werkzeug/routing/map.py",
+                  "qualified": "werkzeug.routing.map.MapAdapter.match",
+                  "start_line": 658,
+                  "end_line": 660,
+                  "text": "        try:\n            result = self.map._matcher.match(domain_part, path_part, method, websocket)\n        except RequestPath as e:"
+                },
+                {
+                  "source_id": 2,
+                  "path": "src/werkzeug/routing/map.py",
+                  "qualified": "werkzeug.routing.map.MapAdapter.match",
+                  "start_line": 677,
+                  "end_line": 684,
+                  "text": "            if e.have_match_for:\n                raise MethodNotAllowed(valid_methods=list(e.have_match_for)) from None\n\n            if e.websocket_mismatch:\n                raise WebsocketMismatch() from None\n\n            raise NotFound() from None\n        else:"
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 75,
+                  "end_line": 75,
+                  "text": "    def match("
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 96,
+                  "end_line": 104,
+                  "text": "            if parts == []:\n                for rule in state.rules:\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n"
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 162,
+                  "end_line": 173,
+                  "text": "            if parts == [\"\"]:\n                for rule in state.rules:\n                    if rule.strict_slashes:\n                        continue\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n\n            return None"
+                }
+              ],
+              "aspect_statuses": [
+                {
+                  "aspect_id": 1,
+                  "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception",
+                  "status": "partial",
+                  "coverage_status": "complete",
+                  "missing_details": []
+                },
+                {
+                  "aspect_id": 2,
+                  "question": "which mismatch takes precedence",
+                  "status": "supported",
+                  "coverage_status": "complete",
+                  "missing_details": []
+                }
+              ],
+              "claims": [
+                {
+                  "text": "StateMachineMatcher.match turns a missing trailing slash into a redirect by raising SlashRequired exception which is caught and re-raised as RequestPath with the path appended with a slash.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 96,
+                      "end_line": 96
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 108,
+                      "end_line": 116
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 175,
+                      "end_line": 175
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 177,
+                      "end_line": 179
+                    }
+                  ]
+                },
+                {
+                  "text": "Some requested details could not be established from the supplied source evidence.",
+                  "aspect_id": 1,
+                  "status": "insufficient_evidence",
+                  "citations": []
+                },
+                {
+                  "text": "MapAdapter.match handles the exceptions raised by StateMachineMatcher.match and converts them into appropriate HTTP exceptions: RequestPath becomes RequestRedirect, NoMatch with have_match_for set raises MethodNotAllowed, NoMatch with websocket_mismatch set raises WebsocketMismatch, and any other NoMatch raises NotFound.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 2,
+                      "start_line": 658,
+                      "end_line": 660
+                    },
+                    {
+                      "source_id": 2,
+                      "start_line": 677,
+                      "end_line": 684
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 75,
+                      "end_line": 75
+                    }
+                  ]
+                },
+                {
+                  "text": "The precedence of mismatches is determined by the order in which they are checked: missing trailing slash takes precedence over HTTP method mismatch and WebSocket mismatch.",
+                  "aspect_id": 2,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 96,
+                      "end_line": 104
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 162,
+                      "end_line": 173
+                    }
+                  ]
+                }
+              ],
+              "source_identity_checked": true,
+              "outcome": "accepted"
+            },
+            {
+              "load_duration_ms": 131,
+              "prompt_eval_duration_ms": 40800,
+              "eval_duration_ms": 45080,
+              "prompt_tokens": 4981,
+              "completion_tokens": 568,
+              "request_ms": 135388,
+              "estimated_prompt_tokens": 5815,
+              "context_window": 8192,
+              "entailment_checked": false,
+              "provider_calls": 2,
+              "usage": {
+                "prompt_tokens": 8773,
+                "completion_tokens": 807,
+                "total_tokens": 9580
+              },
+              "draft_claims": [
+                {
+                  "text": "StateMachineMatcher.match turns a missing trailing slash into a redirect by raising SlashRequired exception which is caught and re-raised as RequestPath with the path appended with a slash.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 96,
+                      "end_line": 96
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 108,
+                      "end_line": 116
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 175,
+                      "end_line": 175
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 177,
+                      "end_line": 179
+                    }
+                  ]
+                },
+                {
+                  "text": "MapAdapter.match handles the exceptions raised by StateMachineMatcher.match and converts them into appropriate HTTP exceptions: RequestPath becomes RequestRedirect, NoMatch with have_match_for set raises MethodNotAllowed, NoMatch with websocket_mismatch set raises WebsocketMismatch, and any other NoMatch raises NotFound.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 2,
+                      "start_line": 658,
+                      "end_line": 660
+                    },
+                    {
+                      "source_id": 2,
+                      "start_line": 677,
+                      "end_line": 684
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 75,
+                      "end_line": 75
+                    }
+                  ]
+                },
+                {
+                  "text": "The precedence of mismatches is determined by the order in which they are checked: missing trailing slash takes precedence over HTTP method mismatch and WebSocket mismatch.",
+                  "aspect_id": 2,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 96,
+                      "end_line": 104
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 162,
+                      "end_line": 172
+                    }
+                  ]
+                },
+                {
+                  "text": "StateMachineMatcher.match does not handle HTTP method mismatch or WebSocket mismatch directly; it only records these mismatches in have_match_for and websocket_mismatch variables.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 98,
+                      "end_line": 100
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 166,
+                      "end_line": 168
+                    }
+                  ]
+                }
+              ],
+              "claim_validation_failures": [],
+              "citation_repairs": [],
+              "claim_audit": {
+                "status": "completed",
+                "decisions": [
+                  {
+                    "claim_index": 0,
+                    "verdict": "supported",
+                    "reason": "StateMachineMatcher.match raises SlashRequired, which is caught and re-raised as RequestPath with a/"
+                  },
+                  {
+                    "claim_index": 1,
+                    "verdict": "supported",
+                    "reason": "MapAdapter.match converts exceptions to appropriate HTTP exceptions based on exception type and NoM"
+                  },
+                  {
+                    "claim_index": 2,
+                    "verdict": "uncertain",
+                    "reason": "An incomplete excerpt cannot establish an absence claim."
+                  },
+                  {
+                    "claim_index": 3,
+                    "verdict": "supported",
+                    "reason": "Missing trailing slash takes precedence over other mismatches due to order of checks in match()"
+                  }
+                ],
+                "coverage": [
+                  {
+                    "aspect_id": 1,
+                    "status": "complete",
+                    "missing_details": []
+                  },
+                  {
+                    "aspect_id": 2,
+                    "status": "complete",
+                    "missing_details": []
+                  }
+                ],
+                "coverage_status": "reviewed",
+                "provider_calls": 1,
+                "elapsed_ms": 49171,
+                "model": "qwen2.5-coder:14b",
+                "factual_support_proven": false,
+                "deterministic_guard_rejections": [
+                  2
+                ],
+                "original_claims": [
+                  {
+                    "text": "StateMachineMatcher.match turns a missing trailing slash into a redirect by raising SlashRequired exception which is caught and re-raised as RequestPath with the path appended with a slash.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 96,
+                        "end_line": 96
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 108,
+                        "end_line": 116
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 175,
+                        "end_line": 175
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 177,
+                        "end_line": 179
+                      }
+                    ]
+                  },
+                  {
+                    "text": "MapAdapter.match handles the exceptions raised by StateMachineMatcher.match and converts them into appropriate HTTP exceptions: RequestPath becomes RequestRedirect, NoMatch with have_match_for set raises MethodNotAllowed, NoMatch with websocket_mismatch set raises WebsocketMismatch, and any other NoMatch raises NotFound.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 2,
+                        "start_line": 658,
+                        "end_line": 660
+                      },
+                      {
+                        "source_id": 2,
+                        "start_line": 677,
+                        "end_line": 684
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 75,
+                        "end_line": 75
+                      }
+                    ]
+                  },
+                  {
+                    "text": "StateMachineMatcher.match does not handle HTTP method mismatch or WebSocket mismatch directly; it only records these mismatches in have_match_for and websocket_mismatch variables.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 98,
+                        "end_line": 100
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 166,
+                        "end_line": 168
+                      }
+                    ]
+                  },
+                  {
+                    "text": "The precedence of mismatches is determined by the order in which they are checked: missing trailing slash takes precedence over HTTP method mismatch and WebSocket mismatch.",
+                    "aspect_id": 2,
+                    "status": "supported",
+                    "citations": [
+                      {
+                        "source_id": 1,
+                        "start_line": 96,
+                        "end_line": 104
+                      },
+                      {
+                        "source_id": 1,
+                        "start_line": 162,
+                        "end_line": 172
+                      }
+                    ]
+                  }
+                ]
+              },
+              "supporting_lines": [
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 96,
+                  "end_line": 96,
+                  "text": "            if parts == []:"
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 108,
+                  "end_line": 116,
+                  "text": "                if \"\" in state.static:\n                    for rule in state.static[\"\"].rules:\n                        if websocket == rule.websocket and (\n                            rule.methods is None or method in rule.methods\n                        ):\n                            if rule.strict_slashes:\n                                raise SlashRequired()\n                            else:\n                                return rule, values"
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 175,
+                  "end_line": 175,
+                  "text": "        try:"
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 177,
+                  "end_line": 179,
+                  "text": "        except SlashRequired:\n            raise RequestPath(f\"{path}/\") from None\n"
+                },
+                {
+                  "source_id": 2,
+                  "path": "src/werkzeug/routing/map.py",
+                  "qualified": "werkzeug.routing.map.MapAdapter.match",
+                  "start_line": 658,
+                  "end_line": 660,
+                  "text": "        try:\n            result = self.map._matcher.match(domain_part, path_part, method, websocket)\n        except RequestPath as e:"
+                },
+                {
+                  "source_id": 2,
+                  "path": "src/werkzeug/routing/map.py",
+                  "qualified": "werkzeug.routing.map.MapAdapter.match",
+                  "start_line": 677,
+                  "end_line": 684,
+                  "text": "            if e.have_match_for:\n                raise MethodNotAllowed(valid_methods=list(e.have_match_for)) from None\n\n            if e.websocket_mismatch:\n                raise WebsocketMismatch() from None\n\n            raise NotFound() from None\n        else:"
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 75,
+                  "end_line": 75,
+                  "text": "    def match("
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 96,
+                  "end_line": 104,
+                  "text": "            if parts == []:\n                for rule in state.rules:\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n"
+                },
+                {
+                  "source_id": 1,
+                  "path": "src/werkzeug/routing/matcher.py",
+                  "qualified": "werkzeug.routing.matcher.StateMachineMatcher.match",
+                  "start_line": 162,
+                  "end_line": 172,
+                  "text": "            if parts == [\"\"]:\n                for rule in state.rules:\n                    if rule.strict_slashes:\n                        continue\n                    if rule.methods is not None and method not in rule.methods:\n                        have_match_for.update(rule.methods)\n                    elif rule.websocket != websocket:\n                        websocket_mismatch = True\n                    else:\n                        return rule, values\n"
+                }
+              ],
+              "aspect_statuses": [
+                {
+                  "aspect_id": 1,
+                  "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception",
+                  "status": "partial",
+                  "coverage_status": "complete",
+                  "missing_details": []
+                },
+                {
+                  "aspect_id": 2,
+                  "question": "which mismatch takes precedence",
+                  "status": "supported",
+                  "coverage_status": "complete",
+                  "missing_details": []
+                }
+              ],
+              "claims": [
+                {
+                  "text": "StateMachineMatcher.match turns a missing trailing slash into a redirect by raising SlashRequired exception which is caught and re-raised as RequestPath with the path appended with a slash.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 96,
+                      "end_line": 96
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 108,
+                      "end_line": 116
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 175,
+                      "end_line": 175
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 177,
+                      "end_line": 179
+                    }
+                  ]
+                },
+                {
+                  "text": "MapAdapter.match handles the exceptions raised by StateMachineMatcher.match and converts them into appropriate HTTP exceptions: RequestPath becomes RequestRedirect, NoMatch with have_match_for set raises MethodNotAllowed, NoMatch with websocket_mismatch set raises WebsocketMismatch, and any other NoMatch raises NotFound.",
+                  "aspect_id": 1,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 2,
+                      "start_line": 658,
+                      "end_line": 660
+                    },
+                    {
+                      "source_id": 2,
+                      "start_line": 677,
+                      "end_line": 684
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 75,
+                      "end_line": 75
+                    }
+                  ]
+                },
+                {
+                  "text": "Some requested details could not be established from the supplied source evidence.",
+                  "aspect_id": 1,
+                  "status": "insufficient_evidence",
+                  "citations": []
+                },
+                {
+                  "text": "The precedence of mismatches is determined by the order in which they are checked: missing trailing slash takes precedence over HTTP method mismatch and WebSocket mismatch.",
+                  "aspect_id": 2,
+                  "status": "supported",
+                  "citations": [
+                    {
+                      "source_id": 1,
+                      "start_line": 96,
+                      "end_line": 104
+                    },
+                    {
+                      "source_id": 1,
+                      "start_line": 162,
+                      "end_line": 172
+                    }
+                  ]
+                }
+              ],
+              "source_identity_checked": true,
+              "outcome": "accepted_not_selected"
+            }
+          ],
+          "selected_attempt": 1,
+          "provider_calls": 4
+        },
+        "elapsed_ms": 215676,
+        "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+        "model": "qwen2.5-coder:14b",
+        "answer_prompt_version": "2026-10-05-repair-aware-claims-v4",
+        "retrieval_version": "2026-10-05-executable-context-v3",
+        "evidence_sufficiency": {
+          "supported_aspects": 1,
+          "partially_supported_aspects": 1,
+          "requested_aspects": 2,
+          "all_aspects_supported": false,
+          "reviewed_complete_aspects": 2,
+          "coverage_reviewed": true,
+          "confidence": "partial",
+          "factual_correctness_proven": false
+        }
+      },
+      "required_ranges_recall_at_8": 1.0,
+      "required_anchor_context_recall": 1.0,
+      "graph_check": {
+        "nodes": 35,
+        "edges": 52,
+        "truncated": false
+      },
+      "wall_seconds": 215.785
+    },
+    {
+      "case_id": "werkzeug-unanswerable",
+      "repository": "werkzeug",
+      "question": "What is the current production deployment status and live traffic of werkzeug at this moment?",
+      "answerable": false,
+      "difficulty": "live-state guard",
+      "expected_sources": [],
+      "expected_answer": "Abstain: an indexed source snapshot cannot establish current production deployment status or live traffic.",
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "commit": "594452f6a4fe4de38a544962fbf04bfc9d37fbc2",
+      "source_review": null,
+      "result": {
+        "answer": "The indexed source snapshot cannot establish that live, private, or future value. Check the running system, its configuration, or its logs for the actual result.",
+        "evidence": [],
+        "mode": "hybrid",
+        "semantic_used": false,
+        "generated": false,
+        "abstained": true,
+        "claims": [],
+        "confidence": "insufficient",
+        "missing_information": [
+          "Live/private/future state is outside the source snapshot."
+        ],
+        "related_symbols": [],
+        "verification": "not_executed",
+        "citation_check": {
+          "invalid": [],
+          "has_citations": false,
+          "uncited_paragraphs": [],
+          "uncited_sentences": [],
+          "reference_section": false,
+          "entailment_checked": false
+        },
+        "warning": null,
+        "usage": {},
+        "elapsed_ms": 0,
+        "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+        "model": "qwen2.5-coder:14b",
+        "answer_prompt_version": "2026-10-05-repair-aware-claims-v4",
+        "retrieval_version": "2026-10-05-executable-context-v3"
+      },
+      "wall_seconds": 0.001
+    }
+  ],
+  "retrieval_experiments": {
+    "werkzeug": {
+      "snapshot": "12951ae30500a469a192a780c8a733168cb704ef51413d8b424a8ec03de9bf2f",
+      "results": [
+        {
+          "variant": {
+            "name": "lexical",
+            "mode": "lexical",
+            "hops": 0,
+            "settings": {
+              "rerank": false
+            }
+          },
+          "cases": [
+            {
+              "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception, and which mismatch takes precedence?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.4,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 222.375,
+              "retrieved": [
+                "aec0c795fb5ab98b8f8b97fd",
+                "ac1deda3f66699239ec3c46c",
+                "58b38aa71bc9cd95c7b7d498",
+                "dbf320254cf5cee59895c21e",
+                "aa2eecceebed4b4f11c49cc3",
+                "dc65eb03351e386adbe7b1da",
+                "a4681908f61a1850e3b70e02",
+                "debcf037e9ac369ef32b25f5",
+                "06e25ee13f65fec70662016e",
+                "2e7e712668c03604221554b3"
+              ],
+              "semantic_used": false,
+              "warning": null
+            }
+          ]
+        },
+        {
+          "variant": {
+            "name": "semantic",
+            "mode": "semantic",
+            "hops": 0
+          },
+          "cases": [
+            {
+              "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception, and which mismatch takes precedence?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.4,
+                "mrr": 1.0,
+                "ndcg": 0.8772153153380493,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.2857142857142857,
+                "mrr": 1.0,
+                "ndcg": 0.8772153153380493,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 650.948,
+              "retrieved": [
+                "aec0c795fb5ab98b8f8b97fd",
+                "58b38aa71bc9cd95c7b7d498",
+                "e6f1b8bb572f9509b4fb1426",
+                "ac1deda3f66699239ec3c46c",
+                "a514b37436461b729413a729",
+                "fa945836cf845f397d86dfee",
+                "65cf10114e18e28020265010"
+              ],
+              "semantic_used": true,
+              "warning": null
+            }
+          ]
+        },
+        {
+          "variant": {
+            "name": "graph",
+            "mode": "graph",
+            "hops": 2
+          },
+          "cases": [
+            {
+              "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception, and which mismatch takes precedence?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.4,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 105.261,
+              "retrieved": [
+                "aec0c795fb5ab98b8f8b97fd",
+                "ac1deda3f66699239ec3c46c",
+                "aa2eecceebed4b4f11c49cc3",
+                "dc65eb03351e386adbe7b1da",
+                "58b38aa71bc9cd95c7b7d498",
+                "debcf037e9ac369ef32b25f5",
+                "dbf320254cf5cee59895c21e",
+                "06e25ee13f65fec70662016e",
+                "2e7e712668c03604221554b3",
+                "d2ed9708aa27504ce3caf3f3"
+              ],
+              "semantic_used": false,
+              "warning": null
+            }
+          ]
+        },
+        {
+          "variant": {
+            "name": "hybrid",
+            "mode": "hybrid",
+            "hops": 2
+          },
+          "cases": [
+            {
+              "question": "How do StateMachineMatcher.match and MapAdapter.match turn a missing trailing slash, HTTP method mismatch and WebSocket mismatch into a redirect or an HTTP exception, and which mismatch takes precedence?",
+              "available": true,
+              "at_5": {
+                "recall": 1.0,
+                "precision": 0.4,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "at_10": {
+                "recall": 1.0,
+                "precision": 0.2,
+                "mrr": 1.0,
+                "ndcg": 1.0,
+                "all_required_evidence": true
+              },
+              "elapsed_ms": 512.77,
+              "retrieved": [
+                "aec0c795fb5ab98b8f8b97fd",
+                "ac1deda3f66699239ec3c46c",
+                "58b38aa71bc9cd95c7b7d498",
+                "dbf320254cf5cee59895c21e",
+                "aa2eecceebed4b4f11c49cc3",
+                "dc65eb03351e386adbe7b1da",
+                "a4681908f61a1850e3b70e02",
+                "debcf037e9ac369ef32b25f5",
+                "06e25ee13f65fec70662016e",
+                "2e7e712668c03604221554b3"
+              ],
+              "semantic_used": true,
+              "warning": null
+            }
+          ]
+        }
+      ],
+      "answer_scores": null,
+      "notice": "Retrieval metrics only. Graph mode uses lexical seeds; hybrid can use lexical/semantic seeds. Answer, error and suggestion correctness require separate reviewed labels.",
+      "labelled_questions": 1,
+      "expected_source_count": 4,
+      "missing_source_labels": [],
+      "labelled_symbols": 2
+    }
+  },
+  "split": "development",
+  "notice": "Frozen source-authored questions; Codex review is not independent human evaluation. No model weight updates, patch application or target code execution. Development cases may guide implementation changes; holdout cases must not guide tuning before their recorded run.",
+  "backend_unchanged": true,
+  "finished_at": "2026-10-05T17:47:12.031858+00:00"
+}

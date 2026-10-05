@@ -1,0 +1,93 @@
+{
+  "provenance": "Codex source-authored questions, frozen before outputs; no independent human labels. Expected answers and source labels are withheld from retrieval/generation. Untouched repositories at freeze.",
+  "cases": [
+    {
+      "id": "itsdangerous-medium",
+      "repository": "itsdangerous",
+      "difficulty": "medium",
+      "question": "How does URLSafeSerializerMixin.dump_payload decide whether to compress a serialized payload, and how does it indicate compression in the returned bytes?",
+      "answerable": true,
+      "expected_answer": "Serializes via super; zlib-compresses but uses compressed data only when len(compressed)<len(json)-1. Base64-encodes chosen bytes; prefixes b dot only if compressed.",
+      "expected_sources": [
+        {
+          "path": "src/itsdangerous/url_safe.py",
+          "name": "dump_payload",
+          "anchor_line": 60,
+          "anchor_text": "len(compressed) < (len(json) - 1)"
+        }
+      ]
+    },
+    {
+      "id": "itsdangerous-hard",
+      "repository": "itsdangerous",
+      "difficulty": "hard",
+      "question": "In TimestampSigner.unsign, which age checks can expire a correctly signed value when max_age is supplied, and what changes when return_timestamp is true?",
+      "answerable": true,
+      "expected_answer": "After signature and timestamp validity checks, computes age = get_timestamp()-ts_int; raises SignatureExpired when age>max_age or age<0. Boundary equal max_age is allowed. With return_timestamp returns value and converted timestamp; otherwise value alone.",
+      "expected_sources": [
+        {
+          "path": "src/itsdangerous/timed.py",
+          "name": "unsign",
+          "anchor_line": 141,
+          "anchor_text": "age > max_age"
+        }
+      ]
+    },
+    {
+      "id": "zod-medium",
+      "repository": "zod",
+      "difficulty": "medium",
+      "question": "How do the core _safeParse and _safeParseAsync implementations handle a Promise returned by schema validation and choose the success or failure result?",
+      "answerable": true,
+      "expected_answer": "Sync ctx.async=false and throws ZodAsyncError for Promise. Async ctx.async=true and awaits Promise. Both use issues.length to call failure or return success:true,data:value.",
+      "expected_sources": [
+        {
+          "path": "packages/zod/src/v4/core/parse.ts",
+          "name": "_safeParse",
+          "anchor_line": 75,
+          "anchor_text": "throw new core.$ZodAsyncError()"
+        },
+        {
+          "path": "packages/zod/src/v4/core/parse.ts",
+          "name": "_safeParseAsync",
+          "anchor_line": 114,
+          "anchor_text": "if (result instanceof Promise) result = await result"
+        }
+      ]
+    },
+    {
+      "id": "zod-hard",
+      "repository": "zod",
+      "difficulty": "hard",
+      "question": "In the core safe-parse failure helper, when is the error constructed, is it reused, and how are captured issues and context released when an error is read or replaced?",
+      "answerable": true,
+      "expected_answer": "failure returns success:false and getter/setter error. Getter creates Err from finalized issues only if cached error falsy, clears issues/context then returns cached error. Setter stores supplied error and clears captures. Later read reuses truthy cached error.",
+      "expected_sources": [
+        {
+          "path": "packages/zod/src/v4/core/parse.ts",
+          "name": "failure",
+          "anchor_line": 88,
+          "anchor_text": "if (!error)"
+        }
+      ]
+    },
+    {
+      "id": "itsdangerous-unanswerable",
+      "repository": "itsdangerous",
+      "difficulty": "unanswerable",
+      "question": "What is the current production deployment status and live traffic of itsdangerous at this moment?",
+      "answerable": false,
+      "expected_answer": "Abstain: source snapshots do not establish live deployment or traffic.",
+      "expected_sources": []
+    },
+    {
+      "id": "zod-unanswerable",
+      "repository": "zod",
+      "difficulty": "unanswerable",
+      "question": "What is the current production deployment status and live traffic of zod at this moment?",
+      "answerable": false,
+      "expected_answer": "Abstain: source snapshots do not establish live deployment or traffic.",
+      "expected_sources": []
+    }
+  ]
+}

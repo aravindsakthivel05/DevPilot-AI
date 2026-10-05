@@ -10,7 +10,7 @@ class LLMProvider(Protocol):
 
 class EmbeddingProvider(Protocol):
     def embed(self, text: str) -> list[float]: ...
-    def embed_batch(self, texts: list[str]) -> list[list[float]]: ...
+    def embed_batch(self, texts: list[str], purpose=None) -> list[list[float]]: ...
 
 
 class ConfiguredLLMProvider:
@@ -31,7 +31,7 @@ class ConfiguredEmbeddingProvider:
     def embed(self, text):
         return self.embed_batch([text])[0]
 
-    def embed_batch(self, texts):
+    def embed_batch(self, texts, purpose=None):
         from .providers import embed
 
-        return embed(texts)
+        return embed(texts, purpose=purpose)

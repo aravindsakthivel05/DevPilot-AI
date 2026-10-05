@@ -1,0 +1,3575 @@
+{
+  "issues": [
+    {
+      "id": "56ada9f39ca1adc5949d9e22cbf67cdb",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/cargo.rs",
+      "line": 36,
+      "end_line": 36,
+      "symbol": "tests.builder.cargo.crate_description",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/cargo.rs",
+          "start_line": 36,
+          "end_line": 36
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "bfd853bcc86bedd077dca622",
+          "symbol": "tests.builder.cargo",
+          "file": "tests/builder/cargo.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "dd94cec98f25b9580822dc33a250bb16",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/cargo.rs",
+      "line": 59,
+      "end_line": 59,
+      "symbol": "tests.builder.cargo.crate_authors",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/cargo.rs",
+          "start_line": 59,
+          "end_line": 59
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "bfd853bcc86bedd077dca622",
+          "symbol": "tests.builder.cargo",
+          "file": "tests/builder/cargo.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "50b77b5851cdbacb212dd70e829da306",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/cargo.rs",
+      "line": 82,
+      "end_line": 82,
+      "symbol": "tests.builder.cargo.crate_authors_with_sep",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/cargo.rs",
+          "start_line": 82,
+          "end_line": 82
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "bfd853bcc86bedd077dca622",
+          "symbol": "tests.builder.cargo",
+          "file": "tests/builder/cargo.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "6fcd5928500459b201385924808bbd25",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/cargo.rs",
+      "line": 104,
+      "end_line": 104,
+      "symbol": "tests.builder.cargo.crate_name",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/cargo.rs",
+          "start_line": 104,
+          "end_line": 104
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "bfd853bcc86bedd077dca622",
+          "symbol": "tests.builder.cargo",
+          "file": "tests/builder/cargo.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "612e5f5b22de54276d2e3cc67099ae71",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/default_vals.rs",
+      "line": 53,
+      "end_line": 53,
+      "symbol": "tests.builder.default_vals.opt_without_value_fail",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/default_vals.rs",
+          "start_line": 53,
+          "end_line": 53
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "65377902fad0a43c58fe11e7",
+          "symbol": "tests.builder.default_vals",
+          "file": "tests/builder/default_vals.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ed3287db29b2ef1bc46e78838c1c4934",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/double_require.rs",
+      "line": 46,
+      "end_line": 46,
+      "symbol": "tests.builder.double_require.help_text",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/double_require.rs",
+          "start_line": 46,
+          "end_line": 46
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b7e92729dfafe756e0515a35",
+          "symbol": "tests.builder.double_require",
+          "file": "tests/builder/double_require.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ef2d2e737cc40020e0b3bc1f",
+          "symbol": "tests.builder.double_require.cmd",
+          "file": "tests/builder/double_require.rs",
+          "line": 6,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "ef2d2e737cc40020e0b3bc1f",
+          "symbol": "tests.builder.double_require.cmd",
+          "file": "tests/builder/double_require.rs",
+          "line": 6,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "000b8509dd9ebbc90dcbfbf881349367",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/double_require.rs",
+      "line": 67,
+      "end_line": 67,
+      "symbol": "tests.builder.double_require.no_duplicate_error",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/double_require.rs",
+          "start_line": 67,
+          "end_line": 67
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b7e92729dfafe756e0515a35",
+          "symbol": "tests.builder.double_require",
+          "file": "tests/builder/double_require.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ef2d2e737cc40020e0b3bc1f",
+          "symbol": "tests.builder.double_require.cmd",
+          "file": "tests/builder/double_require.rs",
+          "line": 6,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "ef2d2e737cc40020e0b3bc1f",
+          "symbol": "tests.builder.double_require.cmd",
+          "file": "tests/builder/double_require.rs",
+          "line": 6,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "ef2d2e737cc40020e0b3bc1f",
+          "symbol": "tests.builder.double_require.cmd",
+          "file": "tests/builder/double_require.rs",
+          "line": 6,
+          "relationship": "tests",
+          "confidence": "static"
+        },
+        {
+          "id": "ef2d2e737cc40020e0b3bc1f",
+          "symbol": "tests.builder.double_require.cmd",
+          "file": "tests/builder/double_require.rs",
+          "line": 6,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "6ad363e328cec8b1ead2e31c373d4d32",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/double_require.rs",
+      "line": 85,
+      "end_line": 85,
+      "symbol": "tests.builder.double_require.no_duplicate_error",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/double_require.rs",
+          "start_line": 85,
+          "end_line": 85
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b7e92729dfafe756e0515a35",
+          "symbol": "tests.builder.double_require",
+          "file": "tests/builder/double_require.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ef2d2e737cc40020e0b3bc1f",
+          "symbol": "tests.builder.double_require.cmd",
+          "file": "tests/builder/double_require.rs",
+          "line": 6,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "ef2d2e737cc40020e0b3bc1f",
+          "symbol": "tests.builder.double_require.cmd",
+          "file": "tests/builder/double_require.rs",
+          "line": 6,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "ef2d2e737cc40020e0b3bc1f",
+          "symbol": "tests.builder.double_require.cmd",
+          "file": "tests/builder/double_require.rs",
+          "line": 6,
+          "relationship": "tests",
+          "confidence": "static"
+        },
+        {
+          "id": "ef2d2e737cc40020e0b3bc1f",
+          "symbol": "tests.builder.double_require.cmd",
+          "file": "tests/builder/double_require.rs",
+          "line": 6,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "8f986667ea88817464d719085a141a61",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 8,
+      "end_line": 8,
+      "symbol": "tests.builder.error.app_error",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 8,
+          "end_line": 8
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "323ba5622a3119f96f3760a8fc32017a",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 74,
+      "end_line": 74,
+      "symbol": "tests.builder.error.kind_prints_help",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 74,
+          "end_line": 74
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "2f97be5a1fadd780aa5983dda12a77db",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 93,
+      "end_line": 93,
+      "symbol": "tests.builder.error.kind_formats_validation_error",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 93,
+          "end_line": 93
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "9e5dbae8d9539c9fba45e6d027078b16",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 108,
+      "end_line": 108,
+      "symbol": "tests.builder.error.rich_formats_validation_error",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 108,
+          "end_line": 108
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "df92e3afbc81779deb1baad66f398fd4",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 128,
+      "end_line": 128,
+      "symbol": "tests.builder.error.suggest_trailing",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 128,
+          "end_line": 128
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e21b728f16c33a9d834eec6059391b50",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 152,
+      "end_line": 152,
+      "symbol": "tests.builder.error.suggest_trailing_last",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 152,
+          "end_line": 152
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "dac0fa7568066369f94d06152e1412b2",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 175,
+      "end_line": 175,
+      "symbol": "tests.builder.error.trailing_already_in_use",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 175,
+          "end_line": 175
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ca7e85d5b9baa7cb90d3ff6f105120b2",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 195,
+      "end_line": 195,
+      "symbol": "tests.builder.error.cant_use_trailing",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 195,
+          "end_line": 195
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "1d314add2b42315776ed6ceebdd40040",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 218,
+      "end_line": 218,
+      "symbol": "tests.builder.error.edit_error",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 218,
+          "end_line": 218
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "188182e47936ecd0cd49646ce8fd7af4",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 238,
+      "end_line": 238,
+      "symbol": "tests.builder.error.edit_error",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 238,
+          "end_line": 238
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e77458a68b1f0b2528959116ef0f5448",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 261,
+      "end_line": 261,
+      "symbol": "tests.builder.error.cant_use_trailing_subcommand",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 261,
+          "end_line": 261
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "9e5ee4322921beb30892fe2f03436ad8",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 297,
+      "end_line": 297,
+      "symbol": "tests.builder.error.unknown_argument_option",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 297,
+          "end_line": 297
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "227e7e45aa08e21c6a7ce837c1af34b0",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/error.rs",
+      "line": 334,
+      "end_line": 334,
+      "symbol": "tests.builder.error.unknown_argument_flag",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/error.rs",
+          "start_line": 334,
+          "end_line": 334
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "e912b426d974ee89038974db",
+          "symbol": "tests.builder.error",
+          "file": "tests/builder/error.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "fd17cbfec00728d582d25d99",
+          "symbol": "tests.builder.utils.assert_error",
+          "file": "tests/builder/utils.rs",
+          "line": 40,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "b469c7c68af7da26681464fb09e0362c",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/groups.rs",
+      "line": 149,
+      "end_line": 149,
+      "symbol": "tests.builder.groups.req_group_usage_string",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/groups.rs",
+          "start_line": 149,
+          "end_line": 149
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "4fb5ed933005de7ab9edfb11",
+          "symbol": "tests.builder.groups",
+          "file": "tests/builder/groups.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "c3eb8091ef2bdfaca3fd0f0605eb2616",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/groups.rs",
+      "line": 179,
+      "end_line": 179,
+      "symbol": "tests.builder.groups.req_group_with_conflict_usage_string",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/groups.rs",
+          "start_line": 179,
+          "end_line": 179
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "4fb5ed933005de7ab9edfb11",
+          "symbol": "tests.builder.groups",
+          "file": "tests/builder/groups.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e08b493d9f495e24096ed2c996fbbeb4",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/groups.rs",
+      "line": 207,
+      "end_line": 207,
+      "symbol": "tests.builder.groups.req_group_with_conflict_usage_string_only_options",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/groups.rs",
+          "start_line": 207,
+          "end_line": 207
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "4fb5ed933005de7ab9edfb11",
+          "symbol": "tests.builder.groups",
+          "file": "tests/builder/groups.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "653f0998a45c0732f6a3c398f2ddcd53",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/groups.rs",
+      "line": 230,
+      "end_line": 230,
+      "symbol": "tests.builder.groups.conflict_with_group",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/groups.rs",
+          "start_line": 230,
+          "end_line": 230
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "4fb5ed933005de7ab9edfb11",
+          "symbol": "tests.builder.groups",
+          "file": "tests/builder/groups.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "cdcdc82d1bd3f7148e5e55e0a2139d3f",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/groups.rs",
+      "line": 302,
+      "end_line": 302,
+      "symbol": "tests.builder.groups.group_usage_use_val_name",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/groups.rs",
+          "start_line": 302,
+          "end_line": 302
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "4fb5ed933005de7ab9edfb11",
+          "symbol": "tests.builder.groups",
+          "file": "tests/builder/groups.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "21d5d0bd67c86d5a7444df2f00ae4eb6",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/groups.rs",
+      "line": 350,
+      "end_line": 350,
+      "symbol": "tests.builder.groups.conflict_with_overlapping_group_in_error",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/groups.rs",
+          "start_line": 350,
+          "end_line": 350
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "4fb5ed933005de7ab9edfb11",
+          "symbol": "tests.builder.groups",
+          "file": "tests/builder/groups.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "3be7e8ce4632b5e3146ad32f398bde4f",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/groups.rs",
+      "line": 374,
+      "end_line": 374,
+      "symbol": "tests.builder.groups.requires_group_with_overlapping_group_in_error",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/groups.rs",
+          "start_line": 374,
+          "end_line": 374
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "4fb5ed933005de7ab9edfb11",
+          "symbol": "tests.builder.groups",
+          "file": "tests/builder/groups.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "f92c5b29920556a732040ac61d042960",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 109,
+      "end_line": 109,
+      "symbol": "tests.builder.help.req_last_arg_usage",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 109,
+          "end_line": 109
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "441e819af4c87b9faa6129e2b6fb969c",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 162,
+      "end_line": 162,
+      "symbol": "tests.builder.help.args_with_last_usage",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 162,
+          "end_line": 162
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "4183911b8ea29018c6d720755cc2ebbe",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 206,
+      "end_line": 206,
+      "symbol": "tests.builder.help.complex_help_output",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 206,
+          "end_line": 206
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ae1defc53b2d4ecbe9effbdf6c1109f3",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 249,
+      "end_line": 249,
+      "symbol": "tests.builder.help.after_and_before_help_output",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 249,
+          "end_line": 249
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "acc7d805e503b663314565fc7e34b897",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 265,
+      "end_line": 265,
+      "symbol": "tests.builder.help.after_and_before_help_output",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 265,
+          "end_line": 265
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "d065c44c1271a557254fd40edb44a365",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 292,
+      "end_line": 292,
+      "symbol": "tests.builder.help.after_and_before_long_help_output",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 292,
+          "end_line": 292
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "632c6715f9350c83d27188607a6b94ef",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 311,
+      "end_line": 311,
+      "symbol": "tests.builder.help.after_and_before_long_help_output",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 311,
+          "end_line": 311
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "bafedf8b21d168f3ba8492d0ad4f9741",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 350,
+      "end_line": 350,
+      "symbol": "tests.builder.help.multi_level_sc_help",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 350,
+          "end_line": 350
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "7fd9435ea6ae6fe6a0fc2ee9f7c90fe6",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 369,
+      "end_line": 369,
+      "symbol": "tests.builder.help.no_wrap_default_help",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 369,
+          "end_line": 369
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "9be4223d2e637c6627e9fa6b6f6e5f7a",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 384,
+      "end_line": 384,
+      "symbol": "tests.builder.help.try_help_default",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 384,
+          "end_line": 384
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "7bd6115dc35bbd674238e04ff6f565a7",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 408,
+      "end_line": 408,
+      "symbol": "tests.builder.help.try_help_custom_flag",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 408,
+          "end_line": 408
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "a01a148f759578884ab3a9e2f87fb64f",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 427,
+      "end_line": 427,
+      "symbol": "tests.builder.help.try_help_custom_flag_short",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 427,
+          "end_line": 427
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "fc7ab841a2a19a8c011d1fc6e24131b2",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 446,
+      "end_line": 446,
+      "symbol": "tests.builder.help.try_help_custom_flag_long",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 446,
+          "end_line": 446
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "1bc24ab38da927dce4614489e24c9165",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 466,
+      "end_line": 466,
+      "symbol": "tests.builder.help.try_help_custom_flag_no_action",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 466,
+          "end_line": 466
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "4e74ffcf3001ac71f4a3d0b280f8c604",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 482,
+      "end_line": 482,
+      "symbol": "tests.builder.help.try_help_subcommand_default",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 482,
+          "end_line": 482
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "594762395464db5f4387f8cfb071418b",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 508,
+      "end_line": 508,
+      "symbol": "tests.builder.help.try_help_subcommand_custom_flag",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 508,
+          "end_line": 508
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "58119e9fef936a6a8f153466b08564a9",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 529,
+      "end_line": 529,
+      "symbol": "tests.builder.help.try_help_subcommand_custom_flag_no_action",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 529,
+          "end_line": 529
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "34a9565e2fb3fba27da2e1683458fc1a",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 575,
+      "end_line": 575,
+      "symbol": "tests.builder.help.wrapped_help",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 575,
+          "end_line": 575
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "103b1aafb9baca00abd57884e2c6ebc3",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 632,
+      "end_line": 632,
+      "symbol": "tests.builder.help.unwrapped_help",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 632,
+          "end_line": 632
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "550219a88b0f1af426651b9bf34e05da",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 690,
+      "end_line": 690,
+      "symbol": "tests.builder.help.possible_value_wrapped_help",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 690,
+          "end_line": 690
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "296426a3b137c52e627d0d1bb4159896",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 723,
+      "end_line": 723,
+      "symbol": "tests.builder.help.complex_subcommand_help_output",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 723,
+          "end_line": 723
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "9086184111b145ddce37b90e1ef22d62",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 763,
+      "end_line": 763,
+      "symbol": "tests.builder.help.issue_626_unicode_cutoff",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 763,
+          "end_line": 763
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "590a69a5804b0d85db637a8a3d6bc195",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 806,
+      "end_line": 806,
+      "symbol": "tests.builder.help.hide_possible_vals",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 806,
+          "end_line": 806
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "6c75f812a562f06a85aeccf38ac79f40",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 845,
+      "end_line": 845,
+      "symbol": "tests.builder.help.hide_single_possible_val",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 845,
+          "end_line": 845
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e10acdb74d75905415844224425d77fa",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 884,
+      "end_line": 884,
+      "symbol": "tests.builder.help.possible_vals_with_help",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 884,
+          "end_line": 884
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "614de75533fa2bb64816aa03bfb2764c",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 960,
+      "end_line": 960,
+      "symbol": "tests.builder.help.visible_aliases_with_short_help",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 960,
+          "end_line": 960
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "40c5fdaaa4d613ec26689453",
+          "symbol": "tests.builder.help.setup_aliases",
+          "file": "tests/builder/help.rs",
+          "line": 909,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "40c5fdaaa4d613ec26689453",
+          "symbol": "tests.builder.help.setup_aliases",
+          "file": "tests/builder/help.rs",
+          "line": 909,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "6046a3099af8f60404c500658ed09dcb",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 983,
+      "end_line": 983,
+      "symbol": "tests.builder.help.visible_aliases_with_long_help",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 983,
+          "end_line": 983
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "40c5fdaaa4d613ec26689453",
+          "symbol": "tests.builder.help.setup_aliases",
+          "file": "tests/builder/help.rs",
+          "line": 909,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "40c5fdaaa4d613ec26689453",
+          "symbol": "tests.builder.help.setup_aliases",
+          "file": "tests/builder/help.rs",
+          "line": 909,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "4faf3d8f2bd12ada2add55712f331d58",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 1019,
+      "end_line": 1019,
+      "symbol": "tests.builder.help.hidden_possible_vals",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 1019,
+          "end_line": 1019
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "7ac070b538e76c8bef16195c2f9f6c17",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 1047,
+      "end_line": 1047,
+      "symbol": "tests.builder.help.issue_626_panic",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 1047,
+          "end_line": 1047
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "498213f77156a5efc981d1b7703a138d",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/help.rs",
+      "line": 1092,
+      "end_line": 1092,
+      "symbol": "tests.builder.help.final_word_wrapping",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/help.rs",
+          "start_line": 1092,
+          "end_line": 1092
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "d053717da02d2a23fede1adc",
+          "symbol": "tests.builder.help",
+          "file": "tests/builder/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "7ce8916133e77564ee3cdd124461d320",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/ignore_errors.rs",
+      "line": 132,
+      "end_line": 132,
+      "symbol": "tests.builder.ignore_errors.did_you_mean",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/ignore_errors.rs",
+          "start_line": 132,
+          "end_line": 132
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "7b86f543d10381732e24a6b9",
+          "symbol": "tests.builder.ignore_errors",
+          "file": "tests/builder/ignore_errors.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "6c50b8f22d6b4d72663f981c5c18df17",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/ignore_errors.rs",
+      "line": 215,
+      "end_line": 215,
+      "symbol": "tests.builder.ignore_errors.help_flag",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/ignore_errors.rs",
+          "start_line": 215,
+          "end_line": 215
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "7b86f543d10381732e24a6b9",
+          "symbol": "tests.builder.ignore_errors",
+          "file": "tests/builder/ignore_errors.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "72773730d6d3c5939801e8cab192b034",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/ignore_errors.rs",
+      "line": 235,
+      "end_line": 235,
+      "symbol": "tests.builder.ignore_errors.help_flag_subcommand",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/ignore_errors.rs",
+          "start_line": 235,
+          "end_line": 235
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "7b86f543d10381732e24a6b9",
+          "symbol": "tests.builder.ignore_errors",
+          "file": "tests/builder/ignore_errors.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "78804d89e49bda8900b370901240cf19",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 186,
+      "end_line": 186,
+      "symbol": "tests.builder.multiple_values.option_exact_less",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 186,
+          "end_line": 186
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "2638991536f971106c7dd2086112df8a",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 218,
+      "end_line": 218,
+      "symbol": "tests.builder.multiple_values.option_exact_more",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 218,
+          "end_line": 218
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ffbb63ce9c04bb7496531da742e38237",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 273,
+      "end_line": 273,
+      "symbol": "tests.builder.multiple_values.option_min_less",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 273,
+          "end_line": 273
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "022ce093aff759142589427ede0f72a4",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 408,
+      "end_line": 408,
+      "symbol": "tests.builder.multiple_values.option_max_zero",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 408,
+          "end_line": 408
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "fd1ebe7cd99238a47b0d1d8e931b26cc",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 462,
+      "end_line": 462,
+      "symbol": "tests.builder.multiple_values.option_max_more",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 462,
+          "end_line": 462
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "084d2184099db06ad2b67cdd1707d435",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 570,
+      "end_line": 570,
+      "symbol": "tests.builder.multiple_values.positional_exact_less",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 570,
+          "end_line": 570
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "dbe45f0ce48e6c4b23a9da841fad8d21",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 594,
+      "end_line": 594,
+      "symbol": "tests.builder.multiple_values.positional_exact_more",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 594,
+          "end_line": 594
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "75ceafae9ad15dafd879098cffea440e",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 637,
+      "end_line": 637,
+      "symbol": "tests.builder.multiple_values.positional_min_less",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 637,
+          "end_line": 637
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "fc0523981e7a7d1ebd77abf27e945e86",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 718,
+      "end_line": 718,
+      "symbol": "tests.builder.multiple_values.positional_max_more",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 718,
+          "end_line": 718
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "3fad1540c4029a8cc5c3d3b698e87994",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 1647,
+      "end_line": 1647,
+      "symbol": "tests.builder.multiple_values.multiple_value_terminator_positional",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 1647,
+          "end_line": 1647
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "af9df45e77c844d658720163f95758a1",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 2045,
+      "end_line": 2045,
+      "symbol": "tests.builder.multiple_values.issue_1480_max_values_consumes_extra_arg_2",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 2045,
+          "end_line": 2045
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "3f54d3bcf23d659ae0900076fbb69c53",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 2069,
+      "end_line": 2069,
+      "symbol": "tests.builder.multiple_values.issue_1480_max_values_consumes_extra_arg_3",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 2069,
+          "end_line": 2069
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e12ef11f194355cf7b07ae74b94618ca",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/multiple_values.rs",
+      "line": 2210,
+      "end_line": 2210,
+      "symbol": "tests.builder.multiple_values.issue_2229",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/multiple_values.rs",
+          "start_line": 2210,
+          "end_line": 2210
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2d2a9f60eae74d205c87899b",
+          "symbol": "tests.builder.multiple_values",
+          "file": "tests/builder/multiple_values.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ccc7e65a0091899caa0e98510e4973b8",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/subcommands.rs",
+      "line": 505,
+      "end_line": 505,
+      "symbol": "tests.builder.subcommands.bad_multicall_command_error",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/subcommands.rs",
+          "start_line": 505,
+          "end_line": 505
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "9d7eafbc053706b7df9ff9ee",
+          "symbol": "tests.builder.subcommands",
+          "file": "tests/builder/subcommands.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "b5b9a319127f2dc3793d415a43816aac",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/version.rs",
+      "line": 35,
+      "end_line": 35,
+      "symbol": "tests.builder.version.version_short_flag_no_version",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/version.rs",
+          "start_line": 35,
+          "end_line": 35
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5039fc0014bcdc243be61a31",
+          "symbol": "tests.builder.version",
+          "file": "tests/builder/version.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7d25882126ba18b160b14e13",
+          "symbol": "tests.builder.version.common",
+          "file": "tests/builder/version.rs",
+          "line": 6,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "7d25882126ba18b160b14e13",
+          "symbol": "tests.builder.version.common",
+          "file": "tests/builder/version.rs",
+          "line": 6,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "b9147b23a1e1e0cb959a09ed4925ae9b",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/version.rs",
+      "line": 56,
+      "end_line": 56,
+      "symbol": "tests.builder.version.version_long_flag_no_version",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/version.rs",
+          "start_line": 56,
+          "end_line": 56
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5039fc0014bcdc243be61a31",
+          "symbol": "tests.builder.version",
+          "file": "tests/builder/version.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7d25882126ba18b160b14e13",
+          "symbol": "tests.builder.version.common",
+          "file": "tests/builder/version.rs",
+          "line": 6,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "7d25882126ba18b160b14e13",
+          "symbol": "tests.builder.version.common",
+          "file": "tests/builder/version.rs",
+          "line": 6,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e4c33649d1cfc63ad07e576757bc9f7e",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/version.rs",
+      "line": 77,
+      "end_line": 77,
+      "symbol": "tests.builder.version.version_short_flag_with_version",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/version.rs",
+          "start_line": 77,
+          "end_line": 77
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5039fc0014bcdc243be61a31",
+          "symbol": "tests.builder.version",
+          "file": "tests/builder/version.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7919045016ef434eeced20c5",
+          "symbol": "tests.builder.version.with_version",
+          "file": "tests/builder/version.rs",
+          "line": 10,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "7919045016ef434eeced20c5",
+          "symbol": "tests.builder.version.with_version",
+          "file": "tests/builder/version.rs",
+          "line": 10,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "d02c19b97aa6389a0defcae29b605208",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/version.rs",
+      "line": 94,
+      "end_line": 94,
+      "symbol": "tests.builder.version.version_long_flag_with_version",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/version.rs",
+          "start_line": 94,
+          "end_line": 94
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5039fc0014bcdc243be61a31",
+          "symbol": "tests.builder.version",
+          "file": "tests/builder/version.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7919045016ef434eeced20c5",
+          "symbol": "tests.builder.version.with_version",
+          "file": "tests/builder/version.rs",
+          "line": 10,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "7919045016ef434eeced20c5",
+          "symbol": "tests.builder.version.with_version",
+          "file": "tests/builder/version.rs",
+          "line": 10,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "fc0862f69b59200d228d08d0de45974e",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/version.rs",
+      "line": 111,
+      "end_line": 111,
+      "symbol": "tests.builder.version.version_short_flag_with_long_version",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/version.rs",
+          "start_line": 111,
+          "end_line": 111
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5039fc0014bcdc243be61a31",
+          "symbol": "tests.builder.version",
+          "file": "tests/builder/version.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "9c91c17d5205af45c1e6e371",
+          "symbol": "tests.builder.version.with_long_version",
+          "file": "tests/builder/version.rs",
+          "line": 14,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "9c91c17d5205af45c1e6e371",
+          "symbol": "tests.builder.version.with_long_version",
+          "file": "tests/builder/version.rs",
+          "line": 14,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "2a7053a82f48c47a2e2f10e4fa54e1c2",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/version.rs",
+      "line": 128,
+      "end_line": 128,
+      "symbol": "tests.builder.version.version_long_flag_with_long_version",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/version.rs",
+          "start_line": 128,
+          "end_line": 128
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5039fc0014bcdc243be61a31",
+          "symbol": "tests.builder.version",
+          "file": "tests/builder/version.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "9c91c17d5205af45c1e6e371",
+          "symbol": "tests.builder.version.with_long_version",
+          "file": "tests/builder/version.rs",
+          "line": 14,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "9c91c17d5205af45c1e6e371",
+          "symbol": "tests.builder.version.with_long_version",
+          "file": "tests/builder/version.rs",
+          "line": 14,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "270d37e91fa7acec2db8a058a005cbae",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/version.rs",
+      "line": 145,
+      "end_line": 145,
+      "symbol": "tests.builder.version.version_short_flag_with_both",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/version.rs",
+          "start_line": 145,
+          "end_line": 145
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5039fc0014bcdc243be61a31",
+          "symbol": "tests.builder.version",
+          "file": "tests/builder/version.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "2ebd28877a28f3a79092bca9",
+          "symbol": "tests.builder.version.with_both",
+          "file": "tests/builder/version.rs",
+          "line": 18,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "2ebd28877a28f3a79092bca9",
+          "symbol": "tests.builder.version.with_both",
+          "file": "tests/builder/version.rs",
+          "line": 18,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e921d5a9fc39277bba2fa035fe9870dc",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/builder/version.rs",
+      "line": 159,
+      "end_line": 159,
+      "symbol": "tests.builder.version.version_long_flag_with_both",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/builder/version.rs",
+          "start_line": 159,
+          "end_line": 159
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5039fc0014bcdc243be61a31",
+          "symbol": "tests.builder.version",
+          "file": "tests/builder/version.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "2ebd28877a28f3a79092bca9",
+          "symbol": "tests.builder.version.with_both",
+          "file": "tests/builder/version.rs",
+          "line": 18,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "2ebd28877a28f3a79092bca9",
+          "symbol": "tests.builder.version.with_both",
+          "file": "tests/builder/version.rs",
+          "line": 18,
+          "relationship": "tests",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "25fabb4f6768df548a9d0adaa271bdcd",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/derive/doc_comments_help.rs",
+      "line": 441,
+      "end_line": 441,
+      "symbol": "tests.derive.doc_comments_help.respect_subcommand_doc_comment",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/derive/doc_comments_help.rs",
+          "start_line": 441,
+          "end_line": 441
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "c0054fd9c03ca3fa10b2c335",
+          "symbol": "tests.derive.doc_comments_help",
+          "file": "tests/derive/doc_comments_help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "dfe08c13bcad5b8d92ce050d",
+          "symbol": "tests.derive.doc_comments_help.respect_subcommand_doc_comment.Cmd",
+          "file": "tests/derive/doc_comments_help.rs",
+          "line": 429,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "faadfd957ddf53f40d746aaa",
+          "symbol": "tests.derive.doc_comments_help.respect_subcommand_doc_comment.Child",
+          "file": "tests/derive/doc_comments_help.rs",
+          "line": 436,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "04fd2cb14d23f4c12f88b7d8e91269e9",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/derive/groups.rs",
+      "line": 48,
+      "end_line": 48,
+      "symbol": "tests.derive.groups.implicit_struct_group",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/derive/groups.rs",
+          "start_line": 48,
+          "end_line": 48
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "431db9be02ce8397f8cd2637",
+          "symbol": "tests.derive.groups",
+          "file": "tests/derive/groups.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1434bfb4179582df7ee55c30",
+          "symbol": "tests.derive.groups.implicit_struct_group.Opt",
+          "file": "tests/derive/groups.rs",
+          "line": 31,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "119084e58cc2911da030a6f9",
+          "symbol": "tests.derive.groups.implicit_struct_group.Source",
+          "file": "tests/derive/groups.rs",
+          "line": 40,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "a38b7d1a950f032bcda328542b48a4bc",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/derive/groups.rs",
+      "line": 234,
+      "end_line": 234,
+      "symbol": "tests.derive.groups.required_group",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/derive/groups.rs",
+          "start_line": 234,
+          "end_line": 234
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "431db9be02ce8397f8cd2637",
+          "symbol": "tests.derive.groups",
+          "file": "tests/derive/groups.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "b1a0e1b3ff10c732cd363677",
+          "symbol": "tests.derive.groups.required_group.Opt",
+          "file": "tests/derive/groups.rs",
+          "line": 210,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "92d536285382b2f7f428f4ca",
+          "symbol": "tests.derive.groups.required_group.Source",
+          "file": "tests/derive/groups.rs",
+          "line": 217,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "008815bf1706ba2f67fbb493d1c28c72",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/derive/groups.rs",
+      "line": 295,
+      "end_line": 295,
+      "symbol": "tests.derive.groups.suggestion",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/derive/groups.rs",
+          "start_line": 295,
+          "end_line": 295
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "431db9be02ce8397f8cd2637",
+          "symbol": "tests.derive.groups",
+          "file": "tests/derive/groups.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ed2663bfc16a387595349a35",
+          "symbol": "tests.derive.groups.suggestion.Args",
+          "file": "tests/derive/groups.rs",
+          "line": 251,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ae9a13917baf9008982e7568bd01bf21",
+      "repository_id": "9642a9450e8c49a78b16dc6956c2f862",
+      "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+      "type": "syntax_error",
+      "severity": "error",
+      "confidence": "medium",
+      "file": "tests/derive/help.rs",
+      "line": 230,
+      "end_line": 230,
+      "symbol": "tests.derive.help.derive_generated_error_has_full_context",
+      "message": "Tree-sitter syntax error or missing token",
+      "evidence": [
+        {
+          "file": "tests/derive/help.rs",
+          "start_line": 230,
+          "end_line": 230
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "66867f7ca2d1c52d4c8f72c4",
+          "symbol": "tests.derive.help",
+          "file": "tests/derive/help.rs",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "72fbc0c006f5ccc6854dd790",
+          "symbol": "tests.derive.help.derive_generated_error_has_full_context.Opts",
+          "file": "tests/derive/help.rs",
+          "line": 207,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "05cffa106a67121153ff376e",
+          "symbol": "tests.derive.help.derive_generated_error_has_full_context.SubCommands",
+          "file": "tests/derive/help.rs",
+          "line": 216,
+          "relationship": "contains",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "The configured parser could not parse this source region. Grammar/dialect limitations can also produce this diagnostic.",
+      "suggested_fix": "Inspect the indicated syntax and the language/dialect capability report.",
+      "suggested_test": "Add a parse/compile check using the project’s configured language toolchain after correcting the indicated syntax.",
+      "status": "static_candidate",
+      "verified": false
+    }
+  ],
+  "snapshot": "d00e4fa7473f826d1ac44081d60f19fcadfc1896ed3e1fdb19ce87c3db1915cf",
+  "detector_version": "2026-10-04-conservative-static-v1",
+  "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+}

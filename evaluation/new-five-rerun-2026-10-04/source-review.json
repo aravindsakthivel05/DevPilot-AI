@@ -1,0 +1,107 @@
+{
+  "reviewer": "Codex manual comparison against pinned source and actual cited excerpts; not independent human evaluation.",
+  "criteria": "A complete answer must cover the explicit question conditions without unsupported claims. Citation support is assessed separately from whether cited coordinates exist.",
+  "cases": {
+    "axios-easy": {
+      "correctness": "inadequate_answer",
+      "citation_support": "unsupported_for_required_claims",
+      "notes": "Misses all settle status/validateStatus conditions and the 4xx-versus-other rejection classification. Cites dispatch/catch and transport/body-size/timeout errors instead of lib/core/settle.js:14-27. Generation acceptance is not a pass."
+    },
+    "axios-medium": {
+      "correctness": "incorrect",
+      "citation_support": "unsupported",
+      "notes": "Rerun again claims no explicit temporary-response cleanup and attributes it to garbage collection. This contradicts dispatchRequest.js:59-66 (config.response assigned, transformed, then deleted in finally). Cites Axios request/_request and interceptor excerpts instead of the required transform/cleanup source."
+    },
+    "axios-hard": {
+      "correctness": "no_validated_answer",
+      "citation_support": "not_applicable",
+      "notes": "Source contains interceptor-ordering and synchronous-path logic, but no validated explanation was produced. Warning: Conflicting aspect statuses. Not an answer pass; the rejection avoids exposing the rejected draft as correct."
+    },
+    "gin-easy": {
+      "correctness": "no_validated_answer",
+      "citation_support": "not_applicable",
+      "notes": "Only one of the three source anchors was in the final model context. Generation validation rejected the ShouldBindJSON source identity. Source exists; failure is a retrieval/generation coverage miss, not an unanswerable question."
+    },
+    "gin-medium": {
+      "correctness": "incorrect",
+      "citation_support": "unsupported",
+      "notes": "Wrongly attributes oversized-body classification to plainBinding io.ReadAll and invents exceeding-memory-limit detection. Actual MustBindWith (context.go:832-850) uses errors.As for *http.MaxBytesError and aborts with 413; other errors use 400, returning the original error. The cited plain binder does not prove the memory-limit or HTTP-classification claims."
+    },
+    "gin-hard": {
+      "correctness": "incomplete_with_type_inaccuracy",
+      "citation_support": "partial",
+      "notes": "Correctly describes decode-error return, validate invocation and unknown-field rejection. UseNumber explanation drops Number: source json.go:16-18 says a number stored in any becomes Number rather than float64, not any rather than float64. Omits Validator==nil / ValidateStruct branching (binding.go:122-127). Thus useful partial content but not a complete accurate answer."
+    },
+    "clap-easy": {
+      "correctness": "blocked_by_indexing",
+      "citation_support": "not_applicable",
+      "notes": "Index failed with duplicate symbol IDs. No model answer or abstention test was attempted."
+    },
+    "clap-medium": {
+      "correctness": "blocked_by_indexing",
+      "citation_support": "not_applicable",
+      "notes": "Index failed with duplicate symbol IDs. No model answer or abstention test was attempted."
+    },
+    "clap-hard": {
+      "correctness": "blocked_by_indexing",
+      "citation_support": "not_applicable",
+      "notes": "Index failed with duplicate symbol IDs. No model answer or abstention test was attempted."
+    },
+    "fmt-easy": {
+      "correctness": "blocked_by_indexing",
+      "citation_support": "not_applicable",
+      "notes": "Index failed with duplicate symbol IDs. No model answer or abstention test was attempted."
+    },
+    "fmt-medium": {
+      "correctness": "blocked_by_indexing",
+      "citation_support": "not_applicable",
+      "notes": "Index failed with duplicate symbol IDs. No model answer or abstention test was attempted."
+    },
+    "fmt-hard": {
+      "correctness": "blocked_by_indexing",
+      "citation_support": "not_applicable",
+      "notes": "Index failed with duplicate symbol IDs. No model answer or abstention test was attempted."
+    },
+    "fluentvalidation-easy": {
+      "correctness": "no_validated_answer",
+      "citation_support": "not_applicable",
+      "notes": "Required ValidateInternalAsync source was retrieved and supplied, but the identity validator rejected AbstractValidator.cs as a named symbol. No validated explanation of PreValidate before null checking was produced."
+    },
+    "fluentvalidation-medium": {
+      "correctness": "incorrect",
+      "citation_support": "unsupported_for_required_claims",
+      "notes": "Conflates validators within a single rule with all separate rules for the same property. Class stop exits Rules iteration after new failures (AbstractValidator.cs:166); rule stop exits Components iteration (PropertyRule.cs:132). Citations show test setup assignments, not assertions or implementation establishing these scopes."
+    },
+    "fluentvalidation-hard": {
+      "correctness": "incorrect",
+      "citation_support": "partial",
+      "notes": "Conflates a nullable-struct validator null check with arbitrary rule/component conditions controlling lazy property evaluation. Omits PropertyFunc running once only after the first eligible component (PropertyRule.cs:112-120). Says dependent rules need no failures, but actual condition is no new failures relative to totalFailures (137-142); previous failures may exist. Cancellation description is supported."
+    },
+    "axios-unanswerable": {
+      "correctness": "safe_abstention",
+      "citation_support": "not_applicable",
+      "notes": "Correctly refuses to infer live production deployment and traffic from source. Pre-model guard; no model generation."
+    },
+    "gin-unanswerable": {
+      "correctness": "safe_abstention",
+      "citation_support": "not_applicable",
+      "notes": "Correctly refuses to infer live production deployment and traffic from source. Pre-model guard; no model generation."
+    },
+    "clap-unanswerable": {
+      "correctness": "blocked_by_indexing",
+      "citation_support": "not_applicable",
+      "notes": "Index failed with duplicate symbol IDs. No model answer or abstention test was attempted."
+    },
+    "fmt-unanswerable": {
+      "correctness": "blocked_by_indexing",
+      "citation_support": "not_applicable",
+      "notes": "Index failed with duplicate symbol IDs. No model answer or abstention test was attempted."
+    },
+    "fluentvalidation-unanswerable": {
+      "correctness": "safe_abstention",
+      "citation_support": "not_applicable",
+      "notes": "Correctly refuses to infer live production deployment and traffic from source. Pre-model guard; no model generation."
+    }
+  },
+  "notice": "Reviewed fresh outputs against the same pinned source and prior criteria. Labels agree with baseline because the substantive failures reproduced; raw wording differences are recorded separately."
+}

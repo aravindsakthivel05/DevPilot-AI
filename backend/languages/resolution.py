@@ -169,6 +169,16 @@ def resolve(repo_id, files, symbols, calls, language):
                         for s in by_name.get(name, [])
                         if s["parent_id"] == owner["parent_id"] and s["path"] == path
                     ]
+            elif language == "go":
+                owner = by_id.get(call["source"], {})
+                receiver = owner.get("receiver_name")
+                owner_type = owner.get("receiver_type")
+                if receiver and owner_type and label == receiver + "." + name:
+                    candidates = [
+                        s
+                        for s in by_name.get(name, [])
+                        if s["path"] in allowed[path] and s.get("receiver_type") == owner_type
+                    ]
             elif language == "csharp":
                 # Resolve explicit class-qualified static calls only. Instance
                 # receiver names are not inferred from capitalization alone.

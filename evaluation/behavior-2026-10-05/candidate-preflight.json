@@ -1,0 +1,26 @@
+[
+  {
+    "id": "tenacity-result",
+    "contract_and_coordinates_valid": true,
+    "semantic_review": "pending",
+    "target_reviewed": false
+  },
+  {
+    "id": "tenacity-cause",
+    "contract_and_coordinates_valid": true,
+    "semantic_review": "pending",
+    "target_reviewed": false
+  },
+  {
+    "id": "boltons-path",
+    "contract_and_coordinates_valid": true,
+    "semantic_review": "pending",
+    "target_reviewed": false
+  },
+  {
+    "id": "boltons-cache",
+    "contract_and_coordinates_valid": true,
+    "semantic_review": "pending",
+    "target_reviewed": false
+  }
+]

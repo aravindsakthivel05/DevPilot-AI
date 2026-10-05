@@ -9,6 +9,33 @@ _ASK = re.compile(
 _TRACE = re.compile(r"\b(?:trace|explain|walk through)\b", re.I)
 
 
+def symbol_references(question):
+    """Identifiers explicitly written by the user, including unqualified methods."""
+    references = set(re.findall(r"\b[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)+\b", question))
+    references.update(re.findall(r"`([A-Za-z_]\w*)`", question))
+    for word in re.findall(r"\b[A-Za-z_]\w*\b", question):
+        if "_" in word or re.search(r"[a-z][A-Z]", word):
+            references.add(word)
+    return {r.lower() for r in references}
+
+
+def code_query(question):
+    """Small language-independent vocabulary bridges; never repository facts."""
+    concepts = {
+        r"\basynchronous\b": "async",
+        r"\b(?:stop|stops|stopping)\b": "break cascade",
+        r"\b(?:oversized|too large)\b": "max bytes limit",
+        r"\b(?:clean.?up|cleaned up)\b": "finally delete remove",
+        r"\b(?:reject|rejection)\b": "reject error",
+        r"\bfallible\b": "try result error non panicking",
+        r"\bsingle[- ]value\b": "one value",
+        r"\blookup\b": "get access",
+        r"\b(?:supplied|explicit)\b.{0,30}\b(?:CLI\s+)?arguments\b": "from args",
+    }
+    additions = [value for pattern, value in concepts.items() if re.search(pattern, question, re.I)]
+    return question + (" " + " ".join(additions) if additions else "")
+
+
 def question_aspects(question, limit=8):
     """Return the distinct requested parts of a question in their original order.
 
@@ -18,6 +45,7 @@ def question_aspects(question, limit=8):
     """
     asks = list(_ASK.finditer(question))
     aspects = []
+    scope = ""
 
     if asks:
         first_ask = asks[0].start()
@@ -27,6 +55,10 @@ def question_aspects(question, limit=8):
             traced = prefix[trace.end() :].strip(" ,:.-")
             if len(re.findall(r"[A-Za-z0-9_]+", traced)) >= 3:
                 aspects.append(traced)
+        elif re.match(r"\s*(?:for|in|within|when|at|regarding|given|using|with)\b", prefix, re.I):
+            # Retain caller-supplied scope in every obligation. Dropping it can
+            # turn explicit-argument questions into environment-argument ones.
+            scope = re.sub(r"\s+", " ", prefix).strip(" ,:;.!?-")
 
         for index, match in enumerate(asks):
             end = asks[index + 1].start() if index + 1 < len(asks) else len(question)
@@ -37,7 +69,7 @@ def question_aspects(question, limit=8):
             # "arguments, options, priority and queue" must not collapse into
             # one aspect with a three-claim limit.
             listing = re.match(
-                r"(how\s+are\s+)(.+?,.+?)(\s+(?:carried|configured|handled|passed|restored)\b.*)",
+                r"(how\s+(?:are|do|does|will|can)\s+)(.+?,.+?)(\s+(?:carried|configured|handled|passed|restored|change|affect|influence|control|work|behave)\b.*)",
                 aspect,
                 re.I,
             )
@@ -47,6 +79,16 @@ def question_aspects(question, limit=8):
                 if 2 <= len(parts) <= 6:
                     header, _, tail = (listing or categories).groups()
                     aspects.extend(header + part.strip() + tail for part in parts if part.strip())
+                    continue
+            objects = re.match(
+                r"(.+?\b(?:control|handle|affect|manage|implement|support)\s+)([^,;?]+,[^;?]+)$",
+                aspect,
+                re.I,
+            )
+            if objects:
+                parts = re.split(r",\s*|\s+and\s+", objects[2])
+                if 2 <= len(parts) <= 6:
+                    aspects.extend(objects[1] + part.strip() for part in parts if part.strip())
                     continue
             steps = re.split(r"\band\s+(?=(?:then|after|before|on|when)\b)", aspect, flags=re.I)
             for step in steps:
@@ -70,6 +112,8 @@ def question_aspects(question, limit=8):
         steps = re.split(r"\s+(?:through|into|then|to)\s+", aspects[0], flags=re.I)
         if len(steps) > 1 and all(len(re.findall(r"[A-Za-z0-9_]+", step)) >= 3 for step in steps):
             aspects = steps
+    if scope:
+        aspects = [scope + ", " + aspect for aspect in aspects]
     return aspects[:limit]
 
 
@@ -103,6 +147,6 @@ def analyze_query(question):
             (name for name, pattern in patterns if re.search(pattern, question, re.I)),
             "implementation",
         ),
-        "entities": re.findall(r"\b[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)+\b", question),
+        "entities": sorted(symbol_references(question)),
         "aspects": answer_aspects(question),
     }

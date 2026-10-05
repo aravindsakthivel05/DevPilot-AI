@@ -1,0 +1,77 @@
+{
+  "issues": [
+    {
+      "id": "4d19146aaf791bc587ac675ccd83acd9",
+      "repository_id": "73301d93ccb0425099783d9227759b40",
+      "snapshot": "b93f1eaf873a2c0291f6c77e9064a1cdd8e4ca23b6d5ad93f53cd950ad4a7ec8",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "tests/test_itsdangerous/test_serializer.py",
+      "line": 25,
+      "end_line": 25,
+      "symbol": "tests.test_itsdangerous.test_serializer.coerce_str.ref",
+      "message": "Top-level definition coerce_str replaces an earlier definition at line 21.",
+      "evidence": [
+        {
+          "file": "tests/test_itsdangerous/test_serializer.py",
+          "start_line": 25,
+          "end_line": 25
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "90d395ff4f5718e1c6be0772",
+          "symbol": "tests.test_itsdangerous.test_serializer.coerce_str",
+          "file": "tests/test_itsdangerous/test_serializer.py",
+          "line": 24,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ee96c9a80931ddce06bb1431fd15669b",
+      "repository_id": "73301d93ccb0425099783d9227759b40",
+      "snapshot": "b93f1eaf873a2c0291f6c77e9064a1cdd8e4ca23b6d5ad93f53cd950ad4a7ec8",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "tests/test_itsdangerous/test_serializer.py",
+      "line": 28,
+      "end_line": 32,
+      "symbol": "tests.test_itsdangerous.test_serializer.coerce_str.ref",
+      "message": "Top-level definition coerce_str replaces an earlier definition at line 25.",
+      "evidence": [
+        {
+          "file": "tests/test_itsdangerous/test_serializer.py",
+          "start_line": 28,
+          "end_line": 32
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b4fffeb268800e4fb3d4908a",
+          "symbol": "tests.test_itsdangerous.test_serializer.coerce_str",
+          "file": "tests/test_itsdangerous/test_serializer.py",
+          "line": 28,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    }
+  ],
+  "snapshot": "b93f1eaf873a2c0291f6c77e9064a1cdd8e4ca23b6d5ad93f53cd950ad4a7ec8",
+  "detector_version": "2026-10-04-conservative-static-v1",
+  "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+}

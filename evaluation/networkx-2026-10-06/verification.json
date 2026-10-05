@@ -1,0 +1,12 @@
+{
+  "all_cases_recorded": true,
+  "frozen_questions_hash_matches": true,
+  "backend_unchanged": true,
+  "reference_scenarios_passed": 9,
+  "required_anchor_context_recall": {
+    "networkx-easy": 1.0,
+    "networkx-medium": 1.0,
+    "networkx-hard": 1.0
+  },
+  "report_sha256": "c408c9882d61a14e82d4692ec22d100b80e3aefc522fd9c4e0a1d3b1e8473fa1"
+}

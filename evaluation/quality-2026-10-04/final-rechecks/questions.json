@@ -1,0 +1,115 @@
+{
+  "provenance": "Codex-authored source-backed questions; not independent human labels. Frozen before model generation. Expected answers and source labels are not supplied to DevPilot. Targeted rechecks after general scope, coordinated-obligation and macro-value fixes. These are development questions, not new holdouts.",
+  "cases": [
+    {
+      "id": "axios-hard",
+      "repository": "axios",
+      "difficulty": "hard",
+      "question": "How do skipped interceptors, the legacy ordering option and synchronous versus asynchronous request interceptors change the request/response processing chain?",
+      "answerable": true,
+      "expected_answer": "Functional runWhen returning false skips a request interceptor. ANDs synchronous flags of included interceptors. legacyInterceptorReqResOrdering true unshifts request pairs, otherwise pushes them; response pairs push. Any included nonsynchronous interceptor selects Promise.resolve(config) chained through request/dispatch/response pairs. Otherwise request callbacks run directly then dispatch, and response pairs use then. InterceptorManager.use defaults synchronous to false when options absent.",
+      "expected_sources": [
+        {
+          "path": "lib/core/Axios.js",
+          "name": "_request",
+          "anchor_line": 176,
+          "anchor_text": "synchronousRequestInterceptors = synchronousRequestInterceptors && interceptor.synchronous"
+        },
+        {
+          "path": "lib/core/InterceptorManager.js",
+          "name": "use",
+          "anchor_line": 71,
+          "anchor_text": "synchronous: options ? options.synchronous : false"
+        }
+      ]
+    },
+    {
+      "id": "gin-hard",
+      "repository": "gin",
+      "difficulty": "hard",
+      "question": "How does JSON binding handle decoder errors and struct validation, and which global switches alter the decoder behavior?",
+      "answerable": true,
+      "expected_answer": "decodeJSON constructs json.API decoder, calls UseNumber and DisallowUnknownFields conditionally according to EnableDecoderUseNumber and EnableDecoderDisallowUnknownFields (both false defaults). Decode error returns before validate. After successful decode, validate returns nil if Validator nil, else Validator.ValidateStruct(obj).",
+      "expected_sources": [
+        {
+          "path": "binding/json.go",
+          "name": "decodeJSON",
+          "anchor_line": 52,
+          "anchor_text": "if err := decoder.Decode(obj); err != nil"
+        },
+        {
+          "path": "binding/binding.go",
+          "name": "validate",
+          "anchor_line": 126,
+          "anchor_text": "return Validator.ValidateStruct(obj)"
+        }
+      ]
+    },
+    {
+      "id": "clap-easy",
+      "repository": "clap",
+      "difficulty": "easy",
+      "question": "For explicitly supplied CLI arguments, how do the ordinary and fallible match-parsing entry points handle a parse failure?",
+      "answerable": true,
+      "expected_answer": "Command.get_matches_from consumes self, calls try_get_matches_from_mut, then on error drops self and e.exit(). Command.try_get_matches_from consumes self and returns try_get_matches_from_mut result without exiting on returned error.",
+      "expected_sources": [
+        {
+          "path": "clap_builder/src/builder/command.rs",
+          "name": "get_matches_from",
+          "anchor_line": 763,
+          "anchor_text": "self.try_get_matches_from_mut(itr).unwrap_or_else"
+        },
+        {
+          "path": "clap_builder/src/builder/command.rs",
+          "name": "try_get_matches_from",
+          "anchor_line": 813,
+          "anchor_text": "pub fn try_get_matches_from<I, T>(mut self, itr: I) -> ClapResult<ArgMatches>"
+        }
+      ]
+    },
+    {
+      "id": "fmt-hard",
+      "repository": "fmt",
+      "difficulty": "hard",
+      "question": "How are formatting errors reported with exceptions enabled or disabled, and how does a caller-provided throw macro affect that behavior?",
+      "answerable": true,
+      "expected_answer": "report_error invokes FMT_THROW(format_error(message)). If FMT_THROW predefined retain it; otherwise exception mode throws x, disabled mode calls fmt::assert_fail(file,line,x.what()). assert_fail prints file,line,message to stderr then aborts. Source alone does not establish the active build mode.",
+      "expected_sources": [
+        {
+          "path": "include/fmt/format-inl.h",
+          "name": "report_error",
+          "anchor_line": 164,
+          "anchor_text": "FMT_THROW(format_error(message))"
+        },
+        {
+          "path": "include/fmt/format.h",
+          "name": "format.h",
+          "anchor_line": 167,
+          "anchor_text": "#  define FMT_THROW(x) ::fmt::assert_fail(__FILE__, __LINE__, (x).what())"
+        },
+        {
+          "path": "include/fmt/format-inl.h",
+          "name": "assert_fail",
+          "anchor_line": 52,
+          "anchor_text": "std::fprintf(stderr, \"%s:%d: assertion failed: %s\", file, line, message)"
+        }
+      ]
+    },
+    {
+      "id": "fluentvalidation-hard",
+      "repository": "fluentvalidation",
+      "difficulty": "hard",
+      "question": "In asynchronous property validation, how do rule conditions and component conditions control property access, cancellation and dependent rules?",
+      "answerable": true,
+      "expected_answer": "Return when selector or rule Condition/AsyncCondition vetoes. Per component check cancellation, reset message formatter, skip false sync/async conditions. Evaluate PropertyFunc lazily only at first eligible component; wrap NullReferenceException with When guidance. Failure adds error; Stop can break. Nonnull dependent rules run only with no new failures and each checks cancellation.",
+      "expected_sources": [
+        {
+          "path": "src/FluentValidation/Internal/PropertyRule.cs",
+          "name": "ValidateAsync",
+          "anchor_line": 115,
+          "anchor_text": "propValue = PropertyFunc(context.InstanceToValidate)"
+        }
+      ]
+    }
+  ]
+}

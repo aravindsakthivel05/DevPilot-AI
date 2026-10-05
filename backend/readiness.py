@@ -2,6 +2,8 @@
 
 from . import db, providers
 from .config import provider_settings
+from .embedding_policy import SQL_KINDS
+from .indexing import INDEX_VERSION
 from .search import VERSION
 
 
@@ -83,12 +85,17 @@ def provider_status(probe=False):
 
 def index_status(repo_id):
     repo = db.repository(repo_id)
+    cfg = provider_settings()
     with db.connection() as c:
         total = c.execute("SELECT COUNT(*) FROM symbols WHERE repo_id=?", (repo_id,)).fetchone()[0]
+        eligible = c.execute(
+            "SELECT COUNT(*) FROM symbols WHERE repo_id=? AND kind IN (" + SQL_KINDS + ")",
+            (repo_id,),
+        ).fetchone()[0]
         embedded = c.execute(
             "SELECT COUNT(*) FROM embeddings e JOIN symbols s ON s.id=e.symbol_id "
-            "WHERE s.repo_id=? AND e.signature=?",
-            (repo_id, providers.embedding_signature()),
+            "WHERE s.repo_id=? AND e.signature=? AND e.model=? AND s.kind IN (" + SQL_KINDS + ")",
+            (repo_id, providers.embedding_signature(), cfg["embedding_model"]),
         ).fetchone()[0]
         state = c.execute("SELECT * FROM search_state WHERE repo_id=?", (repo_id,)).fetchone()
         revision = c.execute(
@@ -102,16 +109,14 @@ def index_status(repo_id):
         "index_version": repo["stats"].get("index_version", "legacy"),
         "symbols": total,
         "embedded_symbols": embedded,
-        "embedding_coverage": embedded / total if total else 0,
-        "semantic_ready": bool(
-            total and embedded == total and provider_settings()["embedding_model"]
-        ),
+        "embedding_eligible_symbols": eligible,
+        "embedding_coverage": embedded / eligible if eligible else 0,
+        "semantic_ready": bool(eligible and embedded == eligible and cfg["embedding_model"]),
         "lexical_ready": bool(
             state and state["version"] == VERSION and revision and state["revision"] == revision[0]
         ),
         "unresolved_references_stored": unresolved,
-        "derived_index_current": repo["stats"].get("index_version")
-        == "2026-10-04-language-adapters-v1",
+        "derived_index_current": repo["stats"].get("index_version") == INDEX_VERSION,
         "analysis_scope": __import__(
             "backend.languages.registry", fromlist=["capabilities"]
         ).capabilities(),

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-05",
+  "repositories": [
+    "aiohttp",
+    "werkzeug"
+  ],
+  "model": "qwen2.5-coder:14b",
+  "embedding_model": "nomic-embed-text:latest",
+  "answerable_cases": 6,
+  "answer_categories": {
+    "incomplete": 4,
+    "incorrect_or_unsupported": 2
+  },
+  "strict_fully_correct_and_adequate": 0,
+  "live_state_guards_passed": 2,
+  "live_state_guards_total": 2,
+  "all_required_source_anchors_in_context": 5,
+  "mean_required_anchor_context_recall": 0.8888888888888888,
+  "median_answer_wall_seconds": 104.2815,
+  "answer_time_range_seconds": [
+    50.307,
+    149.299
+  ],
+  "backend_unchanged": true,
+  "questions_sha256": "1b3c97463eae99190e6901dade0193a5660e433c7332ed8a8de5fd69cc8fac17",
+  "evaluation_notice": "One run per question, source-authored and reviewed by Codex; no independent human or runtime evaluation of target projects. No training or implementation changes during this run."
+}

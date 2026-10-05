@@ -1,0 +1,5 @@
+networkx four retrieval modes complete
+networkx-easy generated=True partial=False recall=1.0 seconds=115.101
+networkx-medium generated=True partial=True recall=1.0 seconds=168.14
+networkx-hard generated=True partial=False recall=1.0 seconds=166.573
+networkx-guard generated=False partial=None recall=None seconds=0.001
