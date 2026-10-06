@@ -1,0 +1,22 @@
+{
+  "questions_unchanged": true,
+  "backend_unchanged": true,
+  "all_scheduled_results_and_reviews_present": true,
+  "artifact_json_valid": true,
+  "no_provider_errors": true,
+  "no_model_weight_updates": true,
+  "no_implementation_tuning": true,
+  "no_target_code_execution": true,
+  "repeats": 1,
+  "actual_answer_attempt_counts": {
+    "marshmallow-easy": 1,
+    "marshmallow-medium": 2,
+    "marshmallow-hard": 2,
+    "marshmallow-guard": 0
+  },
+  "models_unchanged": true,
+  "all_claim_audits_completed": true,
+  "all_snapshot_fingerprints_match": true,
+  "evaluation_driver_ruff_passed": true,
+  "evaluation_driver_format_passed": true
+}

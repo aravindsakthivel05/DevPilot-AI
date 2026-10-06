@@ -1,0 +1,280 @@
+{
+  "issues": [
+    {
+      "id": "5427e13b60283777fc5de0dc78ea43ac",
+      "repository_id": "7c655b23a9314b56be290c260252b966",
+      "snapshot": "05b2a4e313ea567fd717f76dbb0b604613a9eae44d74b6efa958e659d950a312",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/marshmallow/class_registry.py",
+      "line": 77,
+      "end_line": 79,
+      "symbol": "marshmallow.class_registry.get_class",
+      "message": "Top-level definition get_class replaces an earlier definition at line 73.",
+      "evidence": [
+        {
+          "file": "src/marshmallow/class_registry.py",
+          "start_line": 77,
+          "end_line": 79
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "4422bf7208605b649f2bee10",
+          "symbol": "marshmallow.class_registry",
+          "file": "src/marshmallow/class_registry.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d0586f63ae7378f15e6595cc",
+          "symbol": "marshmallow.class_registry.get_class.classname",
+          "file": "src/marshmallow/class_registry.py",
+          "line": 78,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "9714fa86b14980d407e8a5ea",
+          "symbol": "marshmallow.class_registry.get_class.all",
+          "file": "src/marshmallow/class_registry.py",
+          "line": 78,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "bf53ebc220f56231c4162371fac18444",
+      "repository_id": "7c655b23a9314b56be290c260252b966",
+      "snapshot": "05b2a4e313ea567fd717f76dbb0b604613a9eae44d74b6efa958e659d950a312",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/marshmallow/class_registry.py",
+      "line": 82,
+      "end_line": 103,
+      "symbol": "marshmallow.class_registry.get_class.classname",
+      "message": "Top-level definition get_class replaces an earlier definition at line 77.",
+      "evidence": [
+        {
+          "file": "src/marshmallow/class_registry.py",
+          "start_line": 82,
+          "end_line": 103
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "5772c5c0e4af8ec780bd3f32",
+          "symbol": "marshmallow.class_registry.get_class",
+          "file": "src/marshmallow/class_registry.py",
+          "line": 82,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "6bd02d7eed8e0ca3daf32b5cfd2934e5",
+      "repository_id": "7c655b23a9314b56be290c260252b966",
+      "snapshot": "05b2a4e313ea567fd717f76dbb0b604613a9eae44d74b6efa958e659d950a312",
+      "type": "circular_dependency",
+      "severity": "info",
+      "confidence": "medium",
+      "file": "src/marshmallow/__init__.py",
+      "line": 1,
+      "end_line": 1,
+      "symbol": "marshmallow",
+      "message": "Indexed imports form a cycle: src/marshmallow/__init__.py → src/marshmallow/class_registry.py → src/marshmallow/fields.py → src/marshmallow/schema.py",
+      "evidence": [
+        {
+          "file": "src/marshmallow/__init__.py",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "800ce1d6c699f58b12778605",
+          "symbol": "examples.flask_example",
+          "file": "examples/flask_example.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "f01304afe386d98117b422e1",
+          "symbol": "examples.inflection_example",
+          "file": "examples/inflection_example.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "8f3647b994393e3e33e36a74",
+          "symbol": "examples.package_json_example",
+          "file": "examples/package_json_example.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "ebbc6e908d49fed5e2d0b0b8",
+          "symbol": "performance.benchmark",
+          "file": "performance/benchmark.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "9fb0d629e59450d5db185818",
+          "symbol": "marshmallow.constants",
+          "file": "src/marshmallow/constants.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "949d1b8d0c55de91862f2800",
+          "symbol": "marshmallow.decorators.post_dump",
+          "file": "src/marshmallow/decorators.py",
+          "line": 152,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "e9f9ba65ad1a1e05cd2f482a",
+          "symbol": "marshmallow.decorators.post_load",
+          "file": "src/marshmallow/decorators.py",
+          "line": 196,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "6c86f9ea7401f9e4267eaa56",
+          "symbol": "marshmallow.decorators.pre_dump",
+          "file": "src/marshmallow/decorators.py",
+          "line": 133,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "b8b96064fda1f8f71ab2f0fc",
+          "symbol": "marshmallow.decorators.pre_load",
+          "file": "src/marshmallow/decorators.py",
+          "line": 175,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "90746d642c1f261218818451",
+          "symbol": "marshmallow.decorators.validates",
+          "file": "src/marshmallow/decorators.py",
+          "line": 86,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "563603c85492afb9bdca71af",
+          "symbol": "marshmallow.decorators.validates_schema",
+          "file": "src/marshmallow/decorators.py",
+          "line": 97,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "ac5dac16149ed249bf8fb6d2",
+          "symbol": "marshmallow.exceptions.ValidationError",
+          "file": "src/marshmallow/exceptions.py",
+          "line": 15,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "6fc97f3423fcfc516e7e8f6d",
+          "symbol": "marshmallow.schema.Schema",
+          "file": "src/marshmallow/schema.py",
+          "line": 225,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "de0ac3fb9fbdfee684e5613a",
+          "symbol": "marshmallow.schema.SchemaOpts",
+          "file": "src/marshmallow/schema.py",
+          "line": 202,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "e3fe04f636a833cdaa8cd07e",
+          "symbol": "marshmallow.fields",
+          "file": "src/marshmallow/fields.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "4422bf7208605b649f2bee10",
+          "symbol": "marshmallow.class_registry",
+          "file": "src/marshmallow/class_registry.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "e620677cb8dc26ace0e35cb6",
+          "symbol": "tests.base",
+          "file": "tests/base.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "57d4a2b842b6d704bcbcc1ad",
+          "symbol": "tests.foo_serializer",
+          "file": "tests/foo_serializer.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "8ae903e361eb21584dc9809d",
+          "symbol": "tests.mypy_test_cases.test_schema",
+          "file": "tests/mypy_test_cases/test_schema.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "d6e4da2b44b9c7847de07a52",
+          "symbol": "tests.mypy_test_cases.test_validation_error",
+          "file": "tests/mypy_test_cases/test_validation_error.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "Established file-import edges form a strongly connected component. Such cycles can be intentional and are not proof of runtime failure.",
+      "suggested_fix": "Review initialization order and consider moving shared contracts into an independent module if the cycle causes a problem.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    }
+  ],
+  "snapshot": "05b2a4e313ea567fd717f76dbb0b604613a9eae44d74b6efa958e659d950a312",
+  "detector_version": "2026-10-04-conservative-static-v1",
+  "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+}

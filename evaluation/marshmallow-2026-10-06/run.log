@@ -1,0 +1,5 @@
+marshmallow four retrieval modes complete
+marshmallow-easy generated=True partial=False recall=1.0 seconds=194.653
+marshmallow-medium generated=True partial=True recall=1.0 seconds=315.74
+marshmallow-hard generated=True partial=False recall=1.0 seconds=321.847
+marshmallow-guard generated=False partial=None recall=None seconds=0.001

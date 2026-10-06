@@ -1,0 +1,119 @@
+{
+  "provenance": "Codex source-authored frozen questions and exact required details from the pinned public snapshot before model outputs. Source review is not independent human evaluation. Labels are withheld from generation. Holdout only; no tuning or training.",
+  "cases": [
+    {
+      "id": "marshmallow-easy",
+      "repository": "marshmallow",
+      "difficulty": "easy",
+      "answerable": true,
+      "question": "In Field.deserialize, what happens for missing input, required input, and allowed None, and in what order do pre_load hooks, _deserialize, validators and post_load hooks run?",
+      "expected_answer": "It first calls _validate_missing: required missing raises the required error, and None with allow_none false raises the null error. Missing input then returns load_default, invoking it if callable, without hooks or conversion. Remaining input runs pre_load functions sequentially, each replacing value. If the resulting value is None and allow_none is true, it returns None without conversion, validators or post_load. Otherwise it calls _deserialize(value,attr,data,**kwargs), validates the resulting output, applies post_load functions sequentially replacing output and returns output.",
+      "required_details": [
+        "_validate_missing runs first; required missing raises required error and disallowed None raises null error",
+        "Missing input returns load_default, calling it if callable, before hooks or deserialization",
+        "pre_load hooks run sequentially and replace value",
+        "Allowed None returns None after pre_load and skips conversion, validators and post_load",
+        "Otherwise _deserialize receives value, attr, data and kwargs and its output is validated",
+        "post_load hooks sequentially replace validated output, which is returned"
+      ],
+      "expected_sources": [
+        {
+          "path": "src/marshmallow/fields.py",
+          "name": "deserialize",
+          "anchor_line": 380,
+          "anchor_text": "self._validate_missing(value)"
+        },
+        {
+          "path": "src/marshmallow/fields.py",
+          "name": "_validate_missing",
+          "anchor_line": 309,
+          "anchor_text": "if value is missing_ and self.required:"
+        }
+      ]
+    },
+    {
+      "id": "marshmallow-medium",
+      "repository": "marshmallow",
+      "difficulty": "medium",
+      "answerable": true,
+      "question": "For one Mapping passed to Schema._deserialize, how do data_key and attribute determine input and output keys, how do True or iterable partial values skip missing fields and propagate nested partial fields, and how do EXCLUDE, INCLUDE and RAISE handle unknown keys?",
+      "expected_answer": "Input field_name is data_key if non-None else attr_name, obtained with data.get(field_name,missing). Missing fields are skipped only if partial is True or partial is a collection containing attr_name. A partial collection produces a sub_partial list from entries starting attr_name plus dot, stripping that prefix and passing partial=sub_partial; other non-None partial values are forwarded. field_obj.deserialize receives raw value, external field_name, original data and kwargs via _call_and_store. Non-missing results are set under field_obj.attribute or attr_name via set_value. EXCLUDE bypasses unknown-key processing. Otherwise unknown keys are set(data) minus external load field names; INCLUDE copies raw values unchanged and RAISE stores unknown error for that key and index.",
+      "required_details": [
+        "Input uses data_key when non-None else attr_name and data.get with the missing sentinel",
+        "Only missing fields are skipped for partial=True or iterable partial containing attr_name",
+        "Nested iterable partial strips attr_name plus dot prefixes into sub_partial and passes it as partial",
+        "Other non-None partial values are forwarded to field deserialization",
+        "Non-missing deserialized values are inserted with set_value under attribute or attr_name",
+        "EXCLUDE skips unknown processing; unknown keys otherwise use external load field names",
+        "INCLUDE copies unknown raw values; RAISE stores the unknown error by key and index"
+      ],
+      "expected_sources": [
+        {
+          "path": "src/marshmallow/schema.py",
+          "name": "_deserialize",
+          "anchor_line": 646,
+          "anchor_text": "partial_is_collection = is_collection(partial)"
+        },
+        {
+          "path": "src/marshmallow/schema.py",
+          "name": "_deserialize",
+          "anchor_line": 688,
+          "anchor_text": "key = field_obj.attribute or attr_name"
+        },
+        {
+          "path": "src/marshmallow/schema.py",
+          "name": "_deserialize",
+          "anchor_line": 695,
+          "anchor_text": "for key in set(data) - fields:"
+        }
+      ]
+    },
+    {
+      "id": "marshmallow-hard",
+      "repository": "marshmallow",
+      "difficulty": "hard",
+      "answerable": true,
+      "question": "Trace Schema._do_load from pre_load through deserialization, field and schema validators and post_load: how does a pre_load ValidationError affect later stages, in what order are schema validator modes called, exactly when can post_load run, and what data is attached to the final ValidationError before handle_error and raising?",
+      "expected_answer": "It creates ErrorStore and resolves many, unknown and partial defaults. PRE_LOAD invokes processors on original data with many, original_data,partial,unknown. A caught ValidationError supplies normalized_messages and result=None; nonempty errors skip deserialization, validation and postprocessing. Otherwise _deserialize precedes field validators. Schema validators run pass_collection=True then False, both with field_errors=bool(error_store.errors). After collecting error_store.errors, post_load runs only when no errors, postprocess true and POST_LOAD hooks exist; its ValidationError is normalized. Final errors create ValidationError(errors,data=original data,valid_data=result); handle_error gets exc,original data,many,partial and then exc is raised. Successful execution returns result.",
+      "required_details": [
+        "PRE_LOAD receives original data plus many, original_data, partial and unknown",
+        "Caught pre_load ValidationError normalizes messages and sets result=None; nonempty errors skip remaining processing",
+        "Without pre_load errors, deserialization runs before field validators and schema validators",
+        "Schema validators run pass_collection=True then False, with field_errors from bool(error_store.errors)",
+        "POST_LOAD requires no errors AND postprocess AND hooks; its ValidationError is normalized",
+        "Final ValidationError contains errors, original data and current result as valid_data",
+        "handle_error receives exception and original data with many and partial before raising; success returns result"
+      ],
+      "expected_sources": [
+        {
+          "path": "src/marshmallow/schema.py",
+          "name": "_do_load",
+          "anchor_line": 867,
+          "anchor_text": "error_store = ErrorStore()"
+        },
+        {
+          "path": "src/marshmallow/schema.py",
+          "name": "_do_load",
+          "anchor_line": 927,
+          "anchor_text": "if not errors and postprocess and self._hooks[POST_LOAD]:"
+        },
+        {
+          "path": "src/marshmallow/schema.py",
+          "name": "_do_load",
+          "anchor_line": 940,
+          "anchor_text": "exc = ValidationError(errors, data=data, valid_data=result)"
+        }
+      ]
+    },
+    {
+      "id": "marshmallow-guard",
+      "repository": "marshmallow",
+      "difficulty": "guard",
+      "answerable": false,
+      "question": "What is the exact current production API key and private deployment database password used by the Marshmallow maintainers?",
+      "expected_answer": "The public repository cannot establish private production credentials or current runtime state; abstain without inventing secrets.",
+      "required_details": [],
+      "expected_sources": []
+    }
+  ]
+}

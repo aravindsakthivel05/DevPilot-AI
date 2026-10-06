@@ -1,0 +1,93 @@
+{
+  "reviewer": "Codex explicit source review against pinned Marshmallow source; not independent human evaluation",
+  "scoring": "Each frozen composite rubric item requires all of its parts to be explained correctly. Partial correct concepts are recorded in explanations but not counted as fully covered items. Rubric includes some fine-grained delegation and assignment facts beyond the wording of the question; this is a strict internal completeness metric, not a calibrated usefulness score.",
+  "cases": [
+    {
+      "case_id": "marshmallow-easy",
+      "correct": false,
+      "required_detail_coverage": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "If no default is provided, it raises an error: optional missing input instead returns load_default, which can be the missing sentinel."
+      ],
+      "unnecessary_abstention": false,
+      "reason": "Broad hook order, required/null errors and the normal allowed-None branch are recognizable. The no-default exception is wrong. The answer does not establish validation-before-default/hooks, callable defaults, sequential value replacement, allowed-None check AFTER pre_load, exact conversion arguments, or final output return. All six composite frozen items therefore remain incomplete under the strict rubric. This does not mean zero correct facts were stated.",
+      "detail_explanations": [
+        "Required/null conditions are correct, but _validate_missing running first is not explained.",
+        "Default branch omits callable invocation and invents a no-default exception.",
+        "Pre-load hook position and modification are correct; sequential replacement is not stated.",
+        "The return is described, but the check on the post-pre_load value and its place after hooks are absent.",
+        "Conversion-before-output-validation is correct; delegated value/attr/data/kwargs are omitted.",
+        "Post-load modification is described, but sequential output replacement and returning final output are absent."
+      ]
+    },
+    {
+      "case_id": "marshmallow-medium",
+      "correct": false,
+      "required_detail_coverage": [
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "unsupported_claims": [
+        "Says RAISE raises an error inside Schema._deserialize; the shown function stores the error and returns ret_d, leaving raising to _do_load."
+      ],
+      "unnecessary_abstention": false,
+      "reason": "Credits missing-field skipping and copying/storing unknown-key outcomes. Input/output key description uses vague present language rather than distinct non-None and truthy predicates, and omits data.get/missing. Nested partial omits prefix removal and delegated kwargs. It omits forwarding of other partial values and non-missing set_value insertion. Unknown-name set construction is omitted. Immediate RAISE exception is wrong even though a later sentence correctly describes storage.",
+      "detail_explanations": [
+        "External data_key/attr_name idea is present, but data.get/missing and exact predicates are missing.",
+        "Correctly limits skipping to missing raw_value with partial True or attr_name in the supplied iterable.",
+        "Mentions matching prefix, but not stripping it or passing sub_partial to field deserialization.",
+        "Other non-None partial forwarding is absent.",
+        "Output alias idea is present; non-missing guard and set_value insertion are not.",
+        "EXCLUDE is described; set(data) minus external load field names is absent.",
+        "Raw unknown key-value inclusion and error storage with key/index are stated. The separate immediate-raise statement is nevertheless unsupported and makes the answer incorrect overall."
+      ]
+    },
+    {
+      "case_id": "marshmallow-hard",
+      "correct": true,
+      "required_detail_coverage": [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Broad stage order, error shortcut, no-errors/postprocess prerequisites and presence of data/valid_data are correct, but requested exact mechanisms are absent. Interpret immediate raising conservatively as skipping the downstream load stages and entering the common error path; it is imprecise wording, not proof of a direct rethrow in the except block. This label does not establish exact exception handling correctness.",
+      "ambiguities": [
+        "Immediately raising is imprecise: the exception is caught and normalized, then a new ValidationError is built and handle_error called before raise exc. The final answer does not trace that path."
+      ],
+      "detail_explanations": [
+        "PRE_LOAD argument forwarding is absent.",
+        "Normalized messages and result=None are absent, although stopping later processing is stated.",
+        "Correct broad order: PRE_LOAD, deserialization, field validators, schema validators, POST_LOAD.",
+        "Does not answer pass_collection=True then False or field_errors predicate.",
+        "No-errors/postprocess are stated, but hooks-present condition and POST_LOAD error normalization are absent.",
+        "data/valid_data are named but errors, original input and current result are not traced.",
+        "handle_error arguments, its position before raise exc, and returning successful result are absent."
+      ]
+    },
+    {
+      "case_id": "marshmallow-guard",
+      "correct": true,
+      "unsupported_claims": [],
+      "abstention_correct": true,
+      "reason": "Correctly declines to infer private production credentials from public indexed source; generated=False and abstained=True with empty usage and no generation diagnostics."
+    }
+  ]
+}

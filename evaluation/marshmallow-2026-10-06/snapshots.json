@@ -1,0 +1,877 @@
+{
+  "marshmallow": {
+    "id": "7c655b23a9314b56be290c260252b966",
+    "url": "https://github.com/marshmallow-code/marshmallow",
+    "commit": "d08471b17880c62b789971ada638707a11d3f8d4",
+    "fingerprint": "05b2a4e313ea567fd717f76dbb0b604613a9eae44d74b6efa958e659d950a312",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 33.285,
+    "stats": {
+      "files": 91,
+      "python_files": 38,
+      "java_files": 0,
+      "languages": {
+        "text": 53,
+        "python": 38
+      },
+      "symbols": 4000,
+      "edges": 7402,
+      "parse_errors": [],
+      "unresolved_count": 3768,
+      "unresolved": [
+        {
+          "source": "4cac7661ed19d5be631e54b7",
+          "label": "importlib.metadata",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "4cac7661ed19d5be631e54b7",
+          "label": "importlib.metadata.version",
+          "kind": "calls",
+          "line": 27
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 10
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "datetime",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "flask.Flask",
+          "kind": "imports",
+          "line": 14
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "flask.request",
+          "kind": "imports",
+          "line": 14
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "flask_sqlalchemy.SQLAlchemy",
+          "kind": "imports",
+          "line": 15
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "sqlalchemy.exc.NoResultFound",
+          "kind": "imports",
+          "line": 16
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "sqlalchemy.orm.DeclarativeBase",
+          "kind": "imports",
+          "line": 17
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "sqlalchemy.orm.Mapped",
+          "kind": "imports",
+          "line": 17
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "sqlalchemy.orm.mapped_column",
+          "kind": "imports",
+          "line": 17
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "sqlalchemy.orm.relationship",
+          "kind": "imports",
+          "line": 17
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "Flask",
+          "kind": "calls",
+          "line": 21
+        },
+        {
+          "source": "aa7b625302e7c3df97deeb40",
+          "label": "DeclarativeBase",
+          "kind": "inherits",
+          "line": 25
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "SQLAlchemy",
+          "kind": "calls",
+          "line": 29
+        },
+        {
+          "source": "c79b4fc3e89959cb8a4abb86",
+          "label": "db.Model",
+          "kind": "inherits",
+          "line": 34
+        },
+        {
+          "source": "c79b4fc3e89959cb8a4abb86",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 35
+        },
+        {
+          "source": "8eee59f6004ac5ba8fd6413c",
+          "label": "db.Model",
+          "kind": "inherits",
+          "line": 40
+        },
+        {
+          "source": "8eee59f6004ac5ba8fd6413c",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 41
+        },
+        {
+          "source": "8eee59f6004ac5ba8fd6413c",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 42
+        },
+        {
+          "source": "8eee59f6004ac5ba8fd6413c",
+          "label": "mapped_column",
+          "kind": "calls",
+          "line": 43
+        },
+        {
+          "source": "8eee59f6004ac5ba8fd6413c",
+          "label": "db.ForeignKey",
+          "kind": "calls",
+          "line": 43
+        },
+        {
+          "source": "8eee59f6004ac5ba8fd6413c",
+          "label": "relationship",
+          "kind": "calls",
+          "line": 44
+        },
+        {
+          "source": "8eee59f6004ac5ba8fd6413c",
+          "label": "db.backref",
+          "kind": "calls",
+          "line": 44
+        },
+        {
+          "source": "5008fb4ac469816d5305983c",
+          "label": "Schema",
+          "kind": "inherits",
+          "line": 51
+        },
+        {
+          "source": "5008fb4ac469816d5305983c",
+          "label": "fields.Int",
+          "kind": "calls",
+          "line": 52
+        },
+        {
+          "source": "5008fb4ac469816d5305983c",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 53
+        },
+        {
+          "source": "5008fb4ac469816d5305983c",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 54
+        },
+        {
+          "source": "2dbeb18f7d5edb5304f765b2",
+          "label": "ValidationError",
+          "kind": "calls",
+          "line": 64
+        },
+        {
+          "source": "d712faaf91b769af1735f0c7",
+          "label": "Schema",
+          "kind": "inherits",
+          "line": 67
+        },
+        {
+          "source": "d712faaf91b769af1735f0c7",
+          "label": "fields.Int",
+          "kind": "calls",
+          "line": 68
+        },
+        {
+          "source": "d712faaf91b769af1735f0c7",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 70
+        },
+        {
+          "source": "7641d60b9c11d48ac0d177e8",
+          "label": "pre_load",
+          "kind": "decorated_by",
+          "line": 75
+        },
+        {
+          "source": "7641d60b9c11d48ac0d177e8",
+          "label": "data.get",
+          "kind": "calls",
+          "line": 77
+        },
+        {
+          "source": "7641d60b9c11d48ac0d177e8",
+          "label": "author_name.split",
+          "kind": "calls",
+          "line": 79
+        },
+        {
+          "source": "1a4167cdbf32de7f15282483",
+          "label": "app.route",
+          "kind": "decorated_by",
+          "line": 95
+        },
+        {
+          "source": "1a4167cdbf32de7f15282483",
+          "label": "Author.query.all",
+          "kind": "calls",
+          "line": 97
+        },
+        {
+          "source": "1a4167cdbf32de7f15282483",
+          "label": "authors_schema.dump",
+          "kind": "calls",
+          "line": 99
+        },
+        {
+          "source": "f63cf2c9c4a2ec03cb72b00e",
+          "label": "app.route",
+          "kind": "decorated_by",
+          "line": 103
+        },
+        {
+          "source": "f63cf2c9c4a2ec03cb72b00e",
+          "label": "Author.query.filter",
+          "kind": "calls",
+          "line": 106
+        },
+        {
+          "source": "f63cf2c9c4a2ec03cb72b00e",
+          "label": "author_schema.dump",
+          "kind": "calls",
+          "line": 109
+        },
+        {
+          "source": "f63cf2c9c4a2ec03cb72b00e",
+          "label": "quotes_schema.dump",
+          "kind": "calls",
+          "line": 110
+        },
+        {
+          "source": "f63cf2c9c4a2ec03cb72b00e",
+          "label": "author.quotes.all",
+          "kind": "calls",
+          "line": 110
+        },
+        {
+          "source": "63dfcb5d52e58538b6cdf61d",
+          "label": "app.route",
+          "kind": "decorated_by",
+          "line": 114
+        },
+        {
+          "source": "63dfcb5d52e58538b6cdf61d",
+          "label": "Quote.query.all",
+          "kind": "calls",
+          "line": 116
+        },
+        {
+          "source": "63dfcb5d52e58538b6cdf61d",
+          "label": "quotes_schema.dump",
+          "kind": "calls",
+          "line": 117
+        },
+        {
+          "source": "5c83805fa5b1d2d77edf655f",
+          "label": "app.route",
+          "kind": "decorated_by",
+          "line": 121
+        },
+        {
+          "source": "5c83805fa5b1d2d77edf655f",
+          "label": "Quote.query.filter",
+          "kind": "calls",
+          "line": 124
+        },
+        {
+          "source": "5c83805fa5b1d2d77edf655f",
+          "label": "quote_schema.dump",
+          "kind": "calls",
+          "line": 127
+        },
+        {
+          "source": "091e8a78945593817db822b6",
+          "label": "app.route",
+          "kind": "decorated_by",
+          "line": 131
+        },
+        {
+          "source": "091e8a78945593817db822b6",
+          "label": "request.get_json",
+          "kind": "calls",
+          "line": 133
+        },
+        {
+          "source": "091e8a78945593817db822b6",
+          "label": "quote_schema.load",
+          "kind": "calls",
+          "line": 138
+        },
+        {
+          "source": "091e8a78945593817db822b6",
+          "label": "Author.query.filter_by",
+          "kind": "calls",
+          "line": 142
+        },
+        {
+          "source": "091e8a78945593817db822b6",
+          "label": "db.session.add",
+          "kind": "calls",
+          "line": 146
+        },
+        {
+          "source": "091e8a78945593817db822b6",
+          "label": "datetime.datetime.now",
+          "kind": "calls",
+          "line": 151
+        },
+        {
+          "source": "091e8a78945593817db822b6",
+          "label": "db.session.add",
+          "kind": "calls",
+          "line": 153
+        },
+        {
+          "source": "091e8a78945593817db822b6",
+          "label": "db.session.commit",
+          "kind": "calls",
+          "line": 154
+        },
+        {
+          "source": "091e8a78945593817db822b6",
+          "label": "quote_schema.dump",
+          "kind": "calls",
+          "line": 155
+        },
+        {
+          "source": "091e8a78945593817db822b6",
+          "label": "Quote.query.get",
+          "kind": "calls",
+          "line": 155
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "app.app_context",
+          "kind": "calls",
+          "line": 160
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "db.create_all",
+          "kind": "calls",
+          "line": 161
+        },
+        {
+          "source": "800ce1d6c699f58b12778605",
+          "label": "app.run",
+          "kind": "calls",
+          "line": 162
+        },
+        {
+          "source": "fab4b70ea0f331e0f4d958f1",
+          "label": "iter",
+          "kind": "calls",
+          "line": 11
+        },
+        {
+          "source": "fab4b70ea0f331e0f4d958f1",
+          "label": "s.split",
+          "kind": "calls",
+          "line": 11
+        },
+        {
+          "source": "fab4b70ea0f331e0f4d958f1",
+          "label": "next",
+          "kind": "calls",
+          "line": 12
+        },
+        {
+          "source": "fab4b70ea0f331e0f4d958f1",
+          "label": "i.title",
+          "kind": "calls",
+          "line": 12
+        },
+        {
+          "source": "8fea6c62a38009e7e74789cd",
+          "label": "Schema",
+          "kind": "inherits",
+          "line": 15
+        },
+        {
+          "source": "c03f8608d7faea74750e9cc9",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 28
+        },
+        {
+          "source": "c03f8608d7faea74750e9cc9",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 29
+        },
+        {
+          "source": "f01304afe386d98117b422e1",
+          "label": "schema.load",
+          "kind": "calls",
+          "line": 33
+        },
+        {
+          "source": "f01304afe386d98117b422e1",
+          "label": "print",
+          "kind": "calls",
+          "line": 34
+        },
+        {
+          "source": "f01304afe386d98117b422e1",
+          "label": "print",
+          "kind": "calls",
+          "line": 35
+        },
+        {
+          "source": "f01304afe386d98117b422e1",
+          "label": "schema.dump",
+          "kind": "calls",
+          "line": 36
+        },
+        {
+          "source": "f01304afe386d98117b422e1",
+          "label": "print",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "f01304afe386d98117b422e1",
+          "label": "print",
+          "kind": "calls",
+          "line": 38
+        },
+        {
+          "source": "8f3647b994393e3e33e36a74",
+          "label": "json",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "8f3647b994393e3e33e36a74",
+          "label": "sys",
+          "kind": "imports",
+          "line": 9
+        },
+        {
+          "source": "8f3647b994393e3e33e36a74",
+          "label": "pprint.pprint",
+          "kind": "imports",
+          "line": 10
+        },
+        {
+          "source": "8f3647b994393e3e33e36a74",
+          "label": "packaging.version",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "10c80dc320c54475e3204ac5",
+          "label": "",
+          "kind": "inherits",
+          "line": 17
+        },
+        {
+          "source": "1dccc6976f0f7dd90294f8b8",
+          "label": "version.Version",
+          "kind": "calls",
+          "line": 22
+        },
+        {
+          "source": "1dccc6976f0f7dd90294f8b8",
+          "label": "ValidationError",
+          "kind": "calls",
+          "line": 24
+        },
+        {
+          "source": "8d1c972b359dc10c39441735",
+          "label": "str",
+          "kind": "calls",
+          "line": 27
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "Schema",
+          "kind": "inherits",
+          "line": 30
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 31
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 33
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 34
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.URL",
+          "kind": "calls",
+          "line": 35
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 36
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 36
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 38
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 38
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 40
+        },
+        {
+          "source": "08ebe48b221eab35e234a574",
+          "label": "fields.Str",
+          "kind": "calls",
+          "line": 41
+        },
+        {
+          "source": "8f3647b994393e3e33e36a74",
+          "label": "json.load",
+          "kind": "calls",
+          "line": 52
+        },
+        {
+          "source": "8f3647b994393e3e33e36a74",
+          "label": "pprint",
+          "kind": "calls",
+          "line": 54
+        },
+        {
+          "source": "8f3647b994393e3e33e36a74",
+          "label": "print",
+          "kind": "calls",
+          "line": 56
+        },
+        {
+          "source": "8f3647b994393e3e33e36a74",
+          "label": "pprint",
+          "kind": "calls",
+          "line": 57
+        },
+        {
+          "source": "8f3647b994393e3e33e36a74",
+          "label": "sys.exit",
+          "kind": "calls",
+          "line": 58
+        }
+      ],
+      "skipped_files": 12,
+      "coverage": {
+        "indexed_files": 91,
+        "skipped_files": 12,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "lockfile": 1,
+          "unsupported_extension": 11
+        },
+        "indexed_extensions": {
+          ".css": 1,
+          ".ini": 1,
+          ".json": 4,
+          ".md": 2,
+          ".py": 38,
+          ".rst": 40,
+          ".toml": 1,
+          ".yaml": 1,
+          ".yml": 3
+        },
+        "recorded_entries": 104,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "timings_ms": {
+        "read_and_snapshot": 25.16,
+        "analysis_and_graph": 775.311,
+        "chunks_and_storage": 445.618,
+        "embeddings": 32034.781,
+        "total_index": 33280.875
+      }
+    },
+    "split": "holdout",
+    "lexical_warmup_seconds": 0.223,
+    "index_status": {
+      "snapshot": "05b2a4e313ea567fd717f76dbb0b604613a9eae44d74b6efa958e659d950a312",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "symbols": 4000,
+      "embedded_symbols": 1825,
+      "embedding_eligible_symbols": 1825,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 3768,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "macro",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "macro",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 91,
+        "skipped_files": 12,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "lockfile": 1,
+          "unsupported_extension": 11
+        },
+        "indexed_extensions": {
+          ".css": 1,
+          ".ini": 1,
+          ".json": 4,
+          ".md": 2,
+          ".py": 38,
+          ".rst": 40,
+          ".toml": 1,
+          ".yaml": 1,
+          ".yml": 3
+        },
+        "recorded_entries": 104,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 0.313,
+    "static_candidate_count": 3,
+    "static_candidate_types": {
+      "duplicate_definition": 2,
+      "circular_dependency": 1
+    }
+  }
+}

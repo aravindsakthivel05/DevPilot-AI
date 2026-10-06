@@ -1,0 +1,41 @@
+{
+  "reviewer": "Codex explicit source review against pinned Marshmallow source; not independent human evaluation",
+  "answerable_questions": 3,
+  "correct_answers": 1,
+  "fully_adequate": 0,
+  "covered_details": 3,
+  "required_details": 20,
+  "detail_coverage_fraction": 0.15,
+  "unsupported_claim_count": 2,
+  "abstention_correct": 1,
+  "guard_questions": 1,
+  "source_reviewed_unnecessary_abstentions": 0,
+  "median_answerable_seconds": 315.74,
+  "per_case": [
+    {
+      "case_id": "marshmallow-easy",
+      "correct": false,
+      "fully_adequate": false,
+      "covered_details": 0,
+      "required_details": 6,
+      "unsupported_claims": 1
+    },
+    {
+      "case_id": "marshmallow-medium",
+      "correct": false,
+      "fully_adequate": false,
+      "covered_details": 2,
+      "required_details": 7,
+      "unsupported_claims": 1
+    },
+    {
+      "case_id": "marshmallow-hard",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 1,
+      "required_details": 7,
+      "unsupported_claims": 0
+    }
+  ],
+  "notice": "Small source-reviewed sample; correctness is distinct from completeness. Not independent human review."
+}
