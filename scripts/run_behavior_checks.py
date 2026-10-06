@@ -44,8 +44,15 @@ def main():
         content = path.read_text()
         if len(content.encode()) > 50000:
             raise ValueError("Behavior check is too large")
-        target = "tests/test_devpilot_behavior_check.py"
-        result = execute(pinned["id"], args.image, target, 60, extra_tests={target: content})
+        target = "tests/devpilot_scenarios/test_behavior_check.py"
+        result = execute(
+            pinned["id"],
+            args.image,
+            target,
+            60,
+            extra_tests={target: content},
+            scenario_isolation=True,
+        )
         report["results"].append(
             {
                 "repository": name,

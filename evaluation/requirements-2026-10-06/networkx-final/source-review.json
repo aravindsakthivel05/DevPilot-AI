@@ -1,0 +1,60 @@
+{
+  "reviewer": "Codex manual source review against unchanged pinned NetworkX source and frozen requirements; not independent human review",
+  "cases": [
+    {
+      "case_id": "networkx-easy",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Exact BFS graph, remaining-node count and start node are now explained. Global seen.update(c) before yield remains absent; both model coverage labels can still overestimate completeness."
+    },
+    {
+      "case_id": "networkx-medium",
+      "correct": false,
+      "required_detail_coverage": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "Generalizes graph mutation to RuntimeError without missing-current-generation-node or KeyError predicates.",
+        "Generalizes cycle/graph mutation to NetworkXUnfeasible without the nonempty remaining indegree_map predicate."
+      ],
+      "unnecessary_abstention": false,
+      "validation_false_rejections": [],
+      "reason": "List type and conditional MultiDiGraph statement remain. The precise decrement, RuntimeError/chaining and post-loop map predicates are omitted."
+    },
+    {
+      "case_id": "networkx-hard",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Now explains valid weight=None normalization as well as invalid-method rejection. Three algorithm calls use the reversed graph and target, with weight passed when needed; paths are reversed. It still omits copy=False reverse-view semantics and original-source mapping keys."
+    },
+    {
+      "case_id": "networkx-guard",
+      "correct": true,
+      "unsupported_claims": [],
+      "abstention_correct": true,
+      "reason": "Correct private-runtime abstention without an LLM call."
+    }
+  ]
+}

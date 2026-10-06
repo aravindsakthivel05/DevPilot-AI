@@ -1,0 +1,214 @@
+{
+  "reviewer": "Codex explicit manual source review against frozen pinned NetworkX references; not independent human review",
+  "variants": [
+    {
+      "model": "qwen2.5-coder:14b",
+      "reviewer": "qwen2.5-coder:14b",
+      "cases": 3,
+      "correct": 1,
+      "fully_adequate": 0,
+      "covered_details": 3,
+      "required_details": 17,
+      "unsupported_claims": 2,
+      "validation_false_rejections": 1,
+      "failures": 0,
+      "audit_failures": 1,
+      "median_seconds": 146.506,
+      "per_case": [
+        {
+          "case_id": "networkx-easy",
+          "correct": true,
+          "fully_adequate": false,
+          "covered_details": 2,
+          "required_details": 4,
+          "unsupported_claims": 0,
+          "validation_false_rejections": 0,
+          "elapsed_ms": 146506,
+          "failed": false,
+          "audit_failed": false
+        },
+        {
+          "case_id": "networkx-medium",
+          "correct": false,
+          "fully_adequate": false,
+          "covered_details": 1,
+          "required_details": 5,
+          "unsupported_claims": 2,
+          "validation_false_rejections": 0,
+          "elapsed_ms": 137542,
+          "failed": false,
+          "audit_failed": false
+        },
+        {
+          "case_id": "networkx-hard",
+          "correct": false,
+          "fully_adequate": false,
+          "covered_details": 0,
+          "required_details": 8,
+          "unsupported_claims": 0,
+          "validation_false_rejections": 1,
+          "elapsed_ms": 162192,
+          "failed": false,
+          "audit_failed": true
+        }
+      ]
+    },
+    {
+      "model": "qwen2.5-coder:14b",
+      "reviewer": "gemma3:12b",
+      "cases": 3,
+      "correct": 1,
+      "fully_adequate": 0,
+      "covered_details": 3,
+      "required_details": 17,
+      "unsupported_claims": 2,
+      "validation_false_rejections": 1,
+      "failures": 0,
+      "audit_failures": 1,
+      "median_seconds": 139.462,
+      "per_case": [
+        {
+          "case_id": "networkx-easy",
+          "correct": true,
+          "fully_adequate": false,
+          "covered_details": 2,
+          "required_details": 4,
+          "unsupported_claims": 0,
+          "validation_false_rejections": 0,
+          "elapsed_ms": 139462,
+          "failed": false,
+          "audit_failed": false
+        },
+        {
+          "case_id": "networkx-medium",
+          "correct": false,
+          "fully_adequate": false,
+          "covered_details": 1,
+          "required_details": 5,
+          "unsupported_claims": 2,
+          "validation_false_rejections": 0,
+          "elapsed_ms": 126241,
+          "failed": false,
+          "audit_failed": false
+        },
+        {
+          "case_id": "networkx-hard",
+          "correct": false,
+          "fully_adequate": false,
+          "covered_details": 0,
+          "required_details": 8,
+          "unsupported_claims": 0,
+          "validation_false_rejections": 1,
+          "elapsed_ms": 162924,
+          "failed": false,
+          "audit_failed": true
+        }
+      ]
+    },
+    {
+      "model": "gemma3:12b",
+      "reviewer": "qwen2.5-coder:14b",
+      "cases": 3,
+      "correct": 0,
+      "fully_adequate": 0,
+      "covered_details": 8,
+      "required_details": 17,
+      "unsupported_claims": 4,
+      "validation_false_rejections": 1,
+      "failures": 0,
+      "audit_failures": 0,
+      "median_seconds": 188.943,
+      "per_case": [
+        {
+          "case_id": "networkx-easy",
+          "correct": false,
+          "fully_adequate": false,
+          "covered_details": 2,
+          "required_details": 4,
+          "unsupported_claims": 1,
+          "validation_false_rejections": 0,
+          "elapsed_ms": 188943,
+          "failed": false,
+          "audit_failed": false
+        },
+        {
+          "case_id": "networkx-medium",
+          "correct": false,
+          "fully_adequate": false,
+          "covered_details": 1,
+          "required_details": 5,
+          "unsupported_claims": 2,
+          "validation_false_rejections": 1,
+          "elapsed_ms": 140946,
+          "failed": false,
+          "audit_failed": false
+        },
+        {
+          "case_id": "networkx-hard",
+          "correct": false,
+          "fully_adequate": false,
+          "covered_details": 5,
+          "required_details": 8,
+          "unsupported_claims": 1,
+          "validation_false_rejections": 0,
+          "elapsed_ms": 198106,
+          "failed": false,
+          "audit_failed": false
+        }
+      ]
+    },
+    {
+      "model": "gemma3:12b",
+      "reviewer": "gemma3:12b",
+      "cases": 3,
+      "correct": 0,
+      "fully_adequate": 0,
+      "covered_details": 8,
+      "required_details": 17,
+      "unsupported_claims": 4,
+      "validation_false_rejections": 1,
+      "failures": 0,
+      "audit_failures": 0,
+      "median_seconds": 161.493,
+      "per_case": [
+        {
+          "case_id": "networkx-easy",
+          "correct": false,
+          "fully_adequate": false,
+          "covered_details": 2,
+          "required_details": 4,
+          "unsupported_claims": 1,
+          "validation_false_rejections": 0,
+          "elapsed_ms": 161493,
+          "failed": false,
+          "audit_failed": false
+        },
+        {
+          "case_id": "networkx-medium",
+          "correct": false,
+          "fully_adequate": false,
+          "covered_details": 1,
+          "required_details": 5,
+          "unsupported_claims": 2,
+          "validation_false_rejections": 1,
+          "elapsed_ms": 107846,
+          "failed": false,
+          "audit_failed": false
+        },
+        {
+          "case_id": "networkx-hard",
+          "correct": false,
+          "fully_adequate": false,
+          "covered_details": 5,
+          "required_details": 8,
+          "unsupported_claims": 1,
+          "validation_false_rejections": 0,
+          "elapsed_ms": 171780,
+          "failed": false,
+          "audit_failed": false
+        }
+      ]
+    }
+  ],
+  "notice": "Small frozen-context comparison. Reviewer/model agreement is not proof. Loading and review latency are included; no automatic model promotion."
+}

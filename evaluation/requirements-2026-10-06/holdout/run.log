@@ -1,0 +1,8 @@
+anyio four retrieval modes complete
+pluggy four retrieval modes complete
+anyio-threads generated=True partial=False recall=1.0 seconds=193.329
+anyio-deadlines generated=True partial=True recall=1.0 seconds=265.711
+pluggy-firstresult generated=True partial=False recall=1.0 seconds=129.552
+pluggy-history generated=True partial=False recall=1.0 seconds=154.776
+anyio-guard generated=False partial=None recall=None seconds=0.001
+pluggy-guard generated=False partial=None recall=None seconds=0.001

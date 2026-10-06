@@ -1,0 +1,8 @@
+tenacity four retrieval modes complete
+boltons four retrieval modes complete
+tenacity-result generated=True partial=False recall=1.0 seconds=131.269
+tenacity-cause generated=True partial=True recall=1.0 seconds=338.11
+boltons-path generated=True partial=False recall=1.0 seconds=147.292
+boltons-cache generated=True partial=False recall=0.6666666666666666 seconds=160.617
+tenacity-guard generated=False partial=None recall=None seconds=0.001
+boltons-guard generated=False partial=None recall=None seconds=0.001

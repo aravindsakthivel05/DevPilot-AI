@@ -1,0 +1,49 @@
+{
+  "reviewer": "Codex explicit manual source review against frozen pinned AnyIO and Pluggy source and the 18 previously executed supplied scenarios; not independent human review",
+  "answerable_questions": 4,
+  "correct_answers": 3,
+  "fully_adequate": 0,
+  "covered_details": 10,
+  "required_details": 28,
+  "detail_coverage_fraction": 0.35714285714285715,
+  "unsupported_claim_count": 1,
+  "abstention_correct": 2,
+  "guard_questions": 2,
+  "source_reviewed_unnecessary_abstentions": 0,
+  "median_answerable_seconds": 174.0525,
+  "per_case": [
+    {
+      "case_id": "anyio-threads",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 3,
+      "required_details": 7,
+      "unsupported_claims": 0
+    },
+    {
+      "case_id": "anyio-deadlines",
+      "correct": false,
+      "fully_adequate": false,
+      "covered_details": 2,
+      "required_details": 7,
+      "unsupported_claims": 1
+    },
+    {
+      "case_id": "pluggy-firstresult",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 1,
+      "required_details": 7,
+      "unsupported_claims": 0
+    },
+    {
+      "case_id": "pluggy-history",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 4,
+      "required_details": 7,
+      "unsupported_claims": 0
+    }
+  ],
+  "notice": "Small source-reviewed sample; correctness is distinct from completeness. Not independent human review."
+}

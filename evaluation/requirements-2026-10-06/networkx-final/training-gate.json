@@ -1,0 +1,8 @@
+{
+  "ready_examples": 0,
+  "development_repositories": 0,
+  "holdout_repositories": 0,
+  "pending_targets": 3,
+  "minimum_examples": 100,
+  "training_ready": false
+}

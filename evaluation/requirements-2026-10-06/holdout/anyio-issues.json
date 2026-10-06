@@ -1,0 +1,2310 @@
+{
+  "issues": [
+    {
+      "id": "0e79a4ae35d48db0cddfc9333a1ab138",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_concurrency_utils.py",
+      "line": 34,
+      "end_line": 39,
+      "symbol": "anyio._core._concurrency_utils.gather",
+      "message": "Top-level definition gather replaces an earlier definition at line 28.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "start_line": 34,
+          "end_line": 39
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3e835ffd7fb617457d49b26f",
+          "symbol": "anyio._core._concurrency_utils",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a67c215152cdb053c52f4947",
+          "symbol": "anyio._core._concurrency_utils.gather.coro1",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 35,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "2c5565157abc6cad479c8239",
+          "symbol": "anyio._core._concurrency_utils.gather.coro2",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 36,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "714a7c489fba85c3f93693b8",
+          "symbol": "anyio._core._concurrency_utils.gather.coro3",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 37,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "587da1dbeb9081d2ddfa598fa6d3ca3c",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_concurrency_utils.py",
+      "line": 43,
+      "end_line": 49,
+      "symbol": "anyio._core._concurrency_utils.gather",
+      "message": "Top-level definition gather replaces an earlier definition at line 34.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "start_line": 43,
+          "end_line": 49
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3e835ffd7fb617457d49b26f",
+          "symbol": "anyio._core._concurrency_utils",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "4433261cf8940fde25bbba59",
+          "symbol": "anyio._core._concurrency_utils.gather.coro1",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 44,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "d7ddd46f62f0fd32c9d14961",
+          "symbol": "anyio._core._concurrency_utils.gather.coro2",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 45,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "e7735c5c147976200620632b",
+          "symbol": "anyio._core._concurrency_utils.gather.coro3",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 46,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "ae4b4b94c45afb5f8002762a",
+          "symbol": "anyio._core._concurrency_utils.gather.coro4",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 47,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "3a123583b07d2e2602a58d897a8cf297",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_concurrency_utils.py",
+      "line": 53,
+      "end_line": 60,
+      "symbol": "anyio._core._concurrency_utils.gather",
+      "message": "Top-level definition gather replaces an earlier definition at line 43.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "start_line": 53,
+          "end_line": 60
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3e835ffd7fb617457d49b26f",
+          "symbol": "anyio._core._concurrency_utils",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "028c8e74d25322dce8b4be12",
+          "symbol": "anyio._core._concurrency_utils.gather.coro1",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 54,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "32c67b00ac5cf8eba23a709c",
+          "symbol": "anyio._core._concurrency_utils.gather.coro2",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 55,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "367592ca7c026b8c193eb2cf",
+          "symbol": "anyio._core._concurrency_utils.gather.coro3",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 56,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "5ed8bb98b5c6ad80c48f2fa5",
+          "symbol": "anyio._core._concurrency_utils.gather.coro4",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 57,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "a14cbaad767cee5991301371",
+          "symbol": "anyio._core._concurrency_utils.gather.coro5",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 58,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "c7fc3574f796f2b7779143c86f67d81a",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_concurrency_utils.py",
+      "line": 64,
+      "end_line": 72,
+      "symbol": "anyio._core._concurrency_utils.gather",
+      "message": "Top-level definition gather replaces an earlier definition at line 53.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "start_line": 64,
+          "end_line": 72
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "3e835ffd7fb617457d49b26f",
+          "symbol": "anyio._core._concurrency_utils",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7834758746b8e6a9956502d8",
+          "symbol": "anyio._core._concurrency_utils.gather.coro1",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 65,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "e76f676c6db1d6f396e9a612",
+          "symbol": "anyio._core._concurrency_utils.gather.coro2",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 66,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "956ad273031032f0cb85c976",
+          "symbol": "anyio._core._concurrency_utils.gather.coro3",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 67,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "a1d34c243fb86b8409ece4b4",
+          "symbol": "anyio._core._concurrency_utils.gather.coro4",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 68,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "11abbe88b742ba2b1f8f2a66",
+          "symbol": "anyio._core._concurrency_utils.gather.coro5",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 69,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "abcdad8986b67862fd04cedc",
+          "symbol": "anyio._core._concurrency_utils.gather.coro6",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 70,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "9d3240044204a6da8810d6dd3431a553",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_concurrency_utils.py",
+      "line": 77,
+      "end_line": 77,
+      "symbol": "anyio._core._concurrency_utils.gather.coros",
+      "message": "Top-level definition gather replaces an earlier definition at line 64.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "start_line": 77,
+          "end_line": 77
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "fd101125abf83b85cce14c91",
+          "symbol": "anyio._core._concurrency_utils.gather",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 76,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "f3bae0bbb2c1093be12e54a30b72f593",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_concurrency_utils.py",
+      "line": 80,
+      "end_line": 93,
+      "symbol": "anyio._core._concurrency_utils.gather.coros",
+      "message": "Top-level definition gather replaces an earlier definition at line 77.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "start_line": 80,
+          "end_line": 93
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "de64c05c91cd80b62da63c88",
+          "symbol": "anyio._core._concurrency_utils.gather",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 80,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "2416b583e769b5dbc9220b9321f32219",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_fileio.py",
+      "line": 192,
+      "end_line": 203,
+      "symbol": "anyio._core._fileio.open_file",
+      "message": "Top-level definition open_file replaces an earlier definition at line 177.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_fileio.py",
+          "start_line": 192,
+          "end_line": 203
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "323cbe5b6196766800d6aa24",
+          "symbol": "anyio._core._fileio",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1b4a103c1f04d6dc86a821e8",
+          "symbol": "anyio._core._fileio.open_file.file",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 193,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "d753a8d79abfcf6c99b11340",
+          "symbol": "anyio._core._fileio.open_file.mode",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 194,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "9eefcc983390e3a4e3cd2c81",
+          "symbol": "anyio._core._fileio.open_file.buffering",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 195,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "9983409b7b0b26982bd12b8a",
+          "symbol": "anyio._core._fileio.open_file.encoding",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 196,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "29fcc845135c406997225b30",
+          "symbol": "anyio._core._fileio.open_file.errors",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 197,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "d7fea0480b6ee67f7c83e204",
+          "symbol": "anyio._core._fileio.open_file.newline",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 198,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "a56ba896679cc6a17183335b",
+          "symbol": "anyio._core._fileio.open_file.closefd",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 199,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "19ad18b74d5c1453c03da21b",
+          "symbol": "anyio._core._fileio.open_file.opener",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 200,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "2e77ebdb0abc631d34163b33",
+          "symbol": "anyio._core._fileio.open_file.limiter",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 202,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "b02eb7f1f4d77c383ca9331a8568b74c",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_fileio.py",
+      "line": 206,
+      "end_line": 243,
+      "symbol": "anyio._core._fileio.open_file",
+      "message": "Top-level definition open_file replaces an earlier definition at line 192.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_fileio.py",
+          "start_line": 206,
+          "end_line": 243
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "323cbe5b6196766800d6aa24",
+          "symbol": "anyio._core._fileio",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7e5d7d8bda247766a3b815c6",
+          "symbol": "anyio.to_thread.run_sync",
+          "file": "src/anyio/to_thread.py",
+          "line": 27,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "f69ef2d5066ebf7d02c73e54",
+          "symbol": "anyio._core._fileio.AsyncFile",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 52,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "156ac647446145fa946882dd",
+          "symbol": "anyio._core._fileio.open_file.file",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 207,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "6cf967ded85834b460b22550",
+          "symbol": "anyio._core._fileio.open_file.mode",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 208,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "f3463f4e230aca24be57b8b0",
+          "symbol": "anyio._core._fileio.open_file.buffering",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 209,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "49efd667da9849bac0cd2952",
+          "symbol": "anyio._core._fileio.open_file.encoding",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 210,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "a33c0e87419177e1e7f5f9ec",
+          "symbol": "anyio._core._fileio.open_file.errors",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 211,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "45e0f91c751a0c3049cfbce5",
+          "symbol": "anyio._core._fileio.open_file.newline",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 212,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "8284350d83d471a58cd545bb",
+          "symbol": "anyio._core._fileio.open_file.closefd",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 213,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "e0869c7e6bcd13a26c7f7f40",
+          "symbol": "anyio._core._fileio.open_file.opener",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 214,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "b1a74e2b0a72819c0895034e",
+          "symbol": "anyio._core._fileio.open_file.limiter",
+          "file": "src/anyio/_core/_fileio.py",
+          "line": 216,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "0812e1be8acf2f5cd548f6d374f675a6",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_sockets.py",
+      "line": 88,
+      "end_line": 98,
+      "symbol": "anyio._core._sockets.connect_tcp",
+      "message": "Top-level definition connect_tcp replaces an earlier definition at line 73.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_sockets.py",
+          "start_line": 88,
+          "end_line": 98
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b9515d81d0367945fa5e5d45",
+          "symbol": "anyio._core._sockets",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d39a20f71837ae14cb584280",
+          "symbol": "anyio._core._sockets.connect_tcp.remote_host",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 89,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "492e0253240fc167564b982b",
+          "symbol": "anyio._core._sockets.connect_tcp.remote_port",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 90,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "f4c886e3bc9a77de48230bb4",
+          "symbol": "anyio._core._sockets.connect_tcp.local_host",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 92,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "bf97bf710381acc8adeef3e6",
+          "symbol": "anyio._core._sockets.connect_tcp.local_port",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 93,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "7462868b96ec523f84c727be",
+          "symbol": "anyio._core._sockets.connect_tcp.ssl_context",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 94,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "5ba558a4af85a6227e683e56",
+          "symbol": "anyio._core._sockets.connect_tcp.tls_standard_compatible",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 95,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "bef37a27ac2368f3bf0f49c3",
+          "symbol": "anyio._core._sockets.connect_tcp.tls_hostname",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 96,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "d4515cb19dbc34ba56c7b1b4",
+          "symbol": "anyio._core._sockets.connect_tcp.happy_eyeballs_delay",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 97,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "eaeaf219434725a5b06c450935de1320",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_sockets.py",
+      "line": 103,
+      "end_line": 114,
+      "symbol": "anyio._core._sockets.connect_tcp",
+      "message": "Top-level definition connect_tcp replaces an earlier definition at line 88.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_sockets.py",
+          "start_line": 103,
+          "end_line": 114
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b9515d81d0367945fa5e5d45",
+          "symbol": "anyio._core._sockets",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6a4b8b86f06c6af85ca9e579",
+          "symbol": "anyio._core._sockets.connect_tcp.remote_host",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 104,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "401bf867588174ceb03758ef",
+          "symbol": "anyio._core._sockets.connect_tcp.remote_port",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 105,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "104da46c0f77023b3a02d034",
+          "symbol": "anyio._core._sockets.connect_tcp.local_host",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 107,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "862f29317eadaa199811b8f5",
+          "symbol": "anyio._core._sockets.connect_tcp.local_port",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 108,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "2f56c34f2ffcb6c3a67b3175",
+          "symbol": "anyio._core._sockets.connect_tcp.tls",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 109,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "ffcc07cb4d98b9ab1fe644f5",
+          "symbol": "anyio._core._sockets.connect_tcp.ssl_context",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 110,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "e08c873b9fe12de3bc9bcb31",
+          "symbol": "anyio._core._sockets.connect_tcp.tls_standard_compatible",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 111,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "3fcf5a42e1b0aca4e5e376b8",
+          "symbol": "anyio._core._sockets.connect_tcp.tls_hostname",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 112,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "f3abba42fe9abd8f26c909d8",
+          "symbol": "anyio._core._sockets.connect_tcp.happy_eyeballs_delay",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 113,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "eb4e203ec850980e05b6c9429f11e29e",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_sockets.py",
+      "line": 119,
+      "end_line": 130,
+      "symbol": "anyio._core._sockets.connect_tcp",
+      "message": "Top-level definition connect_tcp replaces an earlier definition at line 103.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_sockets.py",
+          "start_line": 119,
+          "end_line": 130
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b9515d81d0367945fa5e5d45",
+          "symbol": "anyio._core._sockets",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6eac131b31f1947f7c0fba2d",
+          "symbol": "anyio._core._sockets.connect_tcp.remote_host",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 120,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "1b4fdea22a8d46be34b2d126",
+          "symbol": "anyio._core._sockets.connect_tcp.remote_port",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 121,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "be7f36a3ad701d65604b1848",
+          "symbol": "anyio._core._sockets.connect_tcp.local_host",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 123,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "33dc64bea885392a0feb18a4",
+          "symbol": "anyio._core._sockets.connect_tcp.local_port",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 124,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "640b735505a09a8dbce229b4",
+          "symbol": "anyio._core._sockets.connect_tcp.tls",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 125,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "c89f874b3ec1fdfdb231e60d",
+          "symbol": "anyio._core._sockets.connect_tcp.ssl_context",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 126,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "9ef6934d5b3db0ffd9eb03fe",
+          "symbol": "anyio._core._sockets.connect_tcp.tls_standard_compatible",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 127,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "27de0563f60fc552b2b9899e",
+          "symbol": "anyio._core._sockets.connect_tcp.tls_hostname",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 128,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "6a424b32479921958a5ae9d6",
+          "symbol": "anyio._core._sockets.connect_tcp.happy_eyeballs_delay",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 129,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "29e2651b7aa9e25289f0686547cccb31",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_sockets.py",
+      "line": 135,
+      "end_line": 142,
+      "symbol": "anyio._core._sockets.connect_tcp",
+      "message": "Top-level definition connect_tcp replaces an earlier definition at line 119.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_sockets.py",
+          "start_line": 135,
+          "end_line": 142
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b9515d81d0367945fa5e5d45",
+          "symbol": "anyio._core._sockets",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "428c3190406ae27116a48622",
+          "symbol": "anyio._core._sockets.connect_tcp.remote_host",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 136,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "e498960554b507fc1c6d8953",
+          "symbol": "anyio._core._sockets.connect_tcp.remote_port",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 137,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "e694e3b58866f77dba544214",
+          "symbol": "anyio._core._sockets.connect_tcp.local_host",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 139,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "ff4e3a361c089e5083747e60",
+          "symbol": "anyio._core._sockets.connect_tcp.local_port",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 140,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "baaf7997d1ca772eaefb0477",
+          "symbol": "anyio._core._sockets.connect_tcp.happy_eyeballs_delay",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 141,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "04d69abed831ef8efde0454db3fc88b8",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_sockets.py",
+      "line": 145,
+      "end_line": 282,
+      "symbol": "anyio._core._sockets.connect_tcp",
+      "message": "Top-level definition connect_tcp replaces an earlier definition at line 135.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_sockets.py",
+          "start_line": 145,
+          "end_line": 282
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "b9515d81d0367945fa5e5d45",
+          "symbol": "anyio._core._sockets",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "561a7a5c1a984290c6ee9bde",
+          "symbol": "anyio._core._sockets.connect_tcp.try_connect",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 196,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "2a21f13b6d83f94dff8dfe08",
+          "symbol": "anyio._core._eventloop.get_async_backend",
+          "file": "src/anyio/_core/_eventloop.py",
+          "line": 195,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "dbf9b0531baf337bd30c476d",
+          "symbol": "anyio._core._sockets.getaddrinfo",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 642,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "dbf9b0531baf337bd30c476d",
+          "symbol": "anyio._core._sockets.getaddrinfo",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 642,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "126bb6ceebe6a06eda019432",
+          "symbol": "anyio._core._tasks.create_task_group",
+          "file": "src/anyio/_core/_tasks.py",
+          "line": 238,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "4ea20f0e417f24beca03b5a3",
+          "symbol": "anyio._core._synchronization.Event",
+          "file": "src/anyio/_core/_synchronization.py",
+          "line": 88,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "19ff8d9b8823a1a160242e10",
+          "symbol": "anyio._core._tasks.move_on_after",
+          "file": "src/anyio/_core/_tasks.py",
+          "line": 201,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "bff724e14dfe078802c7682b",
+          "symbol": "anyio.streams.tls.TLSStream.wrap",
+          "file": "src/anyio/streams/tls.py",
+          "line": 99,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "01695e93a3198ceeade8cd07",
+          "symbol": "anyio._core._resources.aclose_forcefully",
+          "file": "src/anyio/_core/_resources.py",
+          "line": 7,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "2fb499c299f1ac30ec7319d4",
+          "symbol": "anyio._core._sockets.connect_tcp.remote_host",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 146,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "d9dd9b29fc8b417b444d9dfb",
+          "symbol": "anyio._core._sockets.connect_tcp.remote_port",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 147,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "0a5eaea20a09d6ff86257e98",
+          "symbol": "anyio._core._sockets.connect_tcp.local_host",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 149,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "bea13af757157b649e342f24",
+          "symbol": "anyio._core._sockets.connect_tcp.local_port",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 150,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "7b9d4969058e9395eebc4c84",
+          "symbol": "anyio._core._sockets.connect_tcp.tls",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 151,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "a6bcf6e5c814dcc40d2b15e7",
+          "symbol": "anyio._core._sockets.connect_tcp.ssl_context",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 152,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "4a40c0e0aad35ed75b45ed6e",
+          "symbol": "anyio._core._sockets.connect_tcp.tls_standard_compatible",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 153,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "41307e09cd79d955e5c62c22",
+          "symbol": "anyio._core._sockets.connect_tcp.tls_hostname",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 154,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "b1e686bf69a876fff0d77660",
+          "symbol": "anyio._core._sockets.connect_tcp.happy_eyeballs_delay",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 155,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "1a06c20bd364bf3a106e0f7d",
+          "symbol": "anyio._core._sockets.connect_tcp.raise OSError(\"All connection attempts failed\") from cause",
+          "file": "src/anyio/_core/_sockets.py",
+          "line": 265,
+          "relationship": "raises",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "7e13f4b82aca1d97c39fc38436960543",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_tempfile.py",
+      "line": 529,
+      "end_line": 534,
+      "symbol": "anyio._core._tempfile.mkstemp",
+      "message": "Top-level definition mkstemp replaces an earlier definition at line 520.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_tempfile.py",
+          "start_line": 529,
+          "end_line": 534
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "7388d4341a2f3a348925a665",
+          "symbol": "anyio._core._tempfile",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "8207131eaf5260decd009ac1",
+          "symbol": "anyio._core._tempfile.mkstemp.suffix",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 530,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "54cb20620f6b611ab8e5c96b",
+          "symbol": "anyio._core._tempfile.mkstemp.prefix",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 531,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "b8b017aca2dc958ed7781608",
+          "symbol": "anyio._core._tempfile.mkstemp.dir",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 532,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "9c0a4f730c34fd53a1fc7aeb",
+          "symbol": "anyio._core._tempfile.mkstemp.text",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 533,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "0c2c9db1256723ab0011e7a01701fd44",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_tempfile.py",
+      "line": 537,
+      "end_line": 556,
+      "symbol": "anyio._core._tempfile.mkstemp",
+      "message": "Top-level definition mkstemp replaces an earlier definition at line 529.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_tempfile.py",
+          "start_line": 537,
+          "end_line": 556
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "7388d4341a2f3a348925a665",
+          "symbol": "anyio._core._tempfile",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7e5d7d8bda247766a3b815c6",
+          "symbol": "anyio.to_thread.run_sync",
+          "file": "src/anyio/to_thread.py",
+          "line": 27,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "49c47fb94052928791140720",
+          "symbol": "anyio._core._tempfile.mkstemp.suffix",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 538,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "ed3556c8d9574dcbd007a808",
+          "symbol": "anyio._core._tempfile.mkstemp.prefix",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 539,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "b558899584a8dba5fe419e82",
+          "symbol": "anyio._core._tempfile.mkstemp.dir",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 540,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "b1cf27a5f93bdffff2e9d78b",
+          "symbol": "anyio._core._tempfile.mkstemp.text",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 541,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "41494e03a26b2637b3d52f954d17ce40",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_tempfile.py",
+      "line": 568,
+      "end_line": 572,
+      "symbol": "anyio._core._tempfile.mkdtemp",
+      "message": "Top-level definition mkdtemp replaces an earlier definition at line 560.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_tempfile.py",
+          "start_line": 568,
+          "end_line": 572
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "7388d4341a2f3a348925a665",
+          "symbol": "anyio._core._tempfile",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "d4796c72e2cc29ec4588cb8e",
+          "symbol": "anyio._core._tempfile.mkdtemp.suffix",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 569,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "46502d6d081824e8e78612e3",
+          "symbol": "anyio._core._tempfile.mkdtemp.prefix",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 570,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "9446c7e5a90a8e332196b1e6",
+          "symbol": "anyio._core._tempfile.mkdtemp.dir",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 571,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "89acf8caffb77bfe77b9c49e74e0001a",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/_core/_tempfile.py",
+      "line": 575,
+      "end_line": 591,
+      "symbol": "anyio._core._tempfile.mkdtemp",
+      "message": "Top-level definition mkdtemp replaces an earlier definition at line 568.",
+      "evidence": [
+        {
+          "file": "src/anyio/_core/_tempfile.py",
+          "start_line": 575,
+          "end_line": 591
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "7388d4341a2f3a348925a665",
+          "symbol": "anyio._core._tempfile",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "7e5d7d8bda247766a3b815c6",
+          "symbol": "anyio.to_thread.run_sync",
+          "file": "src/anyio/to_thread.py",
+          "line": 27,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "02c8de0961838d47ea5fe17d",
+          "symbol": "anyio._core._tempfile.mkdtemp.suffix",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 576,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "de550d1a57b6d12d03bc9b86",
+          "symbol": "anyio._core._tempfile.mkdtemp.prefix",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 577,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "20076e407dd2878f24cf3bdb",
+          "symbol": "anyio._core._tempfile.mkdtemp.dir",
+          "file": "src/anyio/_core/_tempfile.py",
+          "line": 578,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "052c235842f89bc83ee25f9fe82bad44",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/functools.py",
+      "line": 263,
+      "end_line": 263,
+      "symbol": "anyio.functools.cache.func",
+      "message": "Top-level definition cache replaces an earlier definition at line 257.",
+      "evidence": [
+        {
+          "file": "src/anyio/functools.py",
+          "start_line": 263,
+          "end_line": 263
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "303b6ccc3ff7467f075cc9f5",
+          "symbol": "anyio.functools.cache",
+          "file": "src/anyio/functools.py",
+          "line": 262,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "6d8b1f6774fbd262d6097d4759e1049f",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/functools.py",
+      "line": 266,
+      "end_line": 273,
+      "symbol": "anyio.functools.cache.func",
+      "message": "Top-level definition cache replaces an earlier definition at line 263.",
+      "evidence": [
+        {
+          "file": "src/anyio/functools.py",
+          "start_line": 266,
+          "end_line": 273
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "37f9b0dd380cfb670b685b73",
+          "symbol": "anyio.functools.cache",
+          "file": "src/anyio/functools.py",
+          "line": 266,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "96f23d3bb987046b1ecdfd206bbfd477",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/functools.py",
+      "line": 287,
+      "end_line": 289,
+      "symbol": "anyio.functools.lru_cache",
+      "message": "Top-level definition lru_cache replaces an earlier definition at line 277.",
+      "evidence": [
+        {
+          "file": "src/anyio/functools.py",
+          "start_line": 287,
+          "end_line": 289
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2990fb31bac3aa30513e87ab",
+          "symbol": "anyio.functools",
+          "file": "src/anyio/functools.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1cd5d4834b56cb6a4fcacb0d",
+          "symbol": "anyio.functools.lru_cache.func",
+          "file": "src/anyio/functools.py",
+          "line": 288,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "728e720fd01c3ece8c3d75f9e91e67c1",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/functools.py",
+      "line": 293,
+      "end_line": 293,
+      "symbol": "anyio.functools.lru_cache.func",
+      "message": "Top-level definition lru_cache replaces an earlier definition at line 287.",
+      "evidence": [
+        {
+          "file": "src/anyio/functools.py",
+          "start_line": 293,
+          "end_line": 293
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "1021d9aaaf3e83724ba206a0",
+          "symbol": "anyio.functools.lru_cache",
+          "file": "src/anyio/functools.py",
+          "line": 292,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "ee26397b099663dba2d1a205a277a3a3",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/functools.py",
+      "line": 296,
+      "end_line": 324,
+      "symbol": "anyio.functools.lru_cache",
+      "message": "Top-level definition lru_cache replaces an earlier definition at line 293.",
+      "evidence": [
+        {
+          "file": "src/anyio/functools.py",
+          "start_line": 296,
+          "end_line": 324
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2990fb31bac3aa30513e87ab",
+          "symbol": "anyio.functools",
+          "file": "src/anyio/functools.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6d6bf30128f66f66621975b6",
+          "symbol": "anyio.functools._LRUCacheWrapper",
+          "file": "src/anyio/functools.py",
+          "line": 226,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "6d6bf30128f66f66621975b6",
+          "symbol": "anyio.functools._LRUCacheWrapper",
+          "file": "src/anyio/functools.py",
+          "line": 226,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "1daf5f9f8628d57fb92979d9",
+          "symbol": "anyio.functools.lru_cache.func",
+          "file": "src/anyio/functools.py",
+          "line": 297,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "19b1f312be63e6bf4963ab3a",
+          "symbol": "anyio.functools.lru_cache.maxsize",
+          "file": "src/anyio/functools.py",
+          "line": 300,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "407d10a072cd9804b1413f4d",
+          "symbol": "anyio.functools.lru_cache.typed",
+          "file": "src/anyio/functools.py",
+          "line": 301,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "8e34b6f2c8696c8e089d0015",
+          "symbol": "anyio.functools.lru_cache.always_checkpoint",
+          "file": "src/anyio/functools.py",
+          "line": 302,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "3e546a4dc1cc36fc0a2d24ba",
+          "symbol": "anyio.functools.lru_cache.ttl",
+          "file": "src/anyio/functools.py",
+          "line": 303,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "2721c295ab6842e541244960",
+          "symbol": "anyio.functools.lru_cache.raise TypeError(\"the first argument must be callable\")",
+          "file": "src/anyio/functools.py",
+          "line": 322,
+          "relationship": "raises",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "f16640f71e714662df46c3acd5c89c09",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/functools.py",
+      "line": 337,
+      "end_line": 341,
+      "symbol": "anyio.functools.reduce",
+      "message": "Top-level definition reduce replaces an earlier definition at line 328.",
+      "evidence": [
+        {
+          "file": "src/anyio/functools.py",
+          "start_line": 337,
+          "end_line": 341
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2990fb31bac3aa30513e87ab",
+          "symbol": "anyio.functools",
+          "file": "src/anyio/functools.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "ef97c87a27024c8fdaa83758",
+          "symbol": "anyio.functools.reduce.function",
+          "file": "src/anyio/functools.py",
+          "line": 338,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "f1c336b2847e2997c104acde",
+          "symbol": "anyio.functools.reduce.iterable",
+          "file": "src/anyio/functools.py",
+          "line": 339,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "6836cea107fdbfc2d012ba0539553455",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/functools.py",
+      "line": 344,
+      "end_line": 400,
+      "symbol": "anyio.functools.reduce",
+      "message": "Top-level definition reduce replaces an earlier definition at line 337.",
+      "evidence": [
+        {
+          "file": "src/anyio/functools.py",
+          "start_line": 344,
+          "end_line": 400
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "2990fb31bac3aa30513e87ab",
+          "symbol": "anyio.functools",
+          "file": "src/anyio/functools.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a8bcb6a70d274d0d40314c12",
+          "symbol": "anyio.lowlevel.checkpoint",
+          "file": "src/anyio/lowlevel.py",
+          "line": 28,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "3226f093194bbc0a90f57be8",
+          "symbol": "anyio.functools.reduce.function",
+          "file": "src/anyio/functools.py",
+          "line": 345,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "a0bd957cc3eacfe72ab86f0d",
+          "symbol": "anyio.functools.reduce.iterable",
+          "file": "src/anyio/functools.py",
+          "line": 346,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "a60bdd4a0b4c9c8d8a102267",
+          "symbol": "anyio.functools.reduce.initial",
+          "file": "src/anyio/functools.py",
+          "line": 348,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "ebc69639dbd8bc4563a7db44",
+          "symbol": "anyio.functools.reduce.raise TypeError(\n                    \"reduce() of empty sequence with no initial value\"\n                ) from None",
+          "file": "src/anyio/functools.py",
+          "line": 368,
+          "relationship": "raises",
+          "confidence": "declared"
+        },
+        {
+          "id": "d8800dcd4f408d0ba20b05b4",
+          "symbol": "anyio.functools.reduce.raise TypeError(\n                    \"reduce() of empty sequence with no initial value\"\n                ) from None",
+          "file": "src/anyio/functools.py",
+          "line": 383,
+          "relationship": "raises",
+          "confidence": "declared"
+        },
+        {
+          "id": "a4262c6e6513f5b1cf7ee870",
+          "symbol": "anyio.functools.reduce.raise TypeError(\"reduce() argument 2 must be an iterable or async iterable\")",
+          "file": "src/anyio/functools.py",
+          "line": 393,
+          "relationship": "raises",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "23859d1a0e222e49c5aaa25f520c7158",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/itertools.py",
+      "line": 343,
+      "end_line": 346,
+      "symbol": "anyio.itertools.groupby",
+      "message": "Top-level definition groupby replaces an earlier definition at line 337.",
+      "evidence": [
+        {
+          "file": "src/anyio/itertools.py",
+          "start_line": 343,
+          "end_line": 346
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "aaf85d53ab133a1382ace9a9",
+          "symbol": "anyio.itertools",
+          "file": "src/anyio/itertools.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "8ad897cd6adf763e2a43b8c3",
+          "symbol": "anyio.itertools.groupby.iterable",
+          "file": "src/anyio/itertools.py",
+          "line": 344,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "6f1a7c0c8cf900444c4d6d0c",
+          "symbol": "anyio.itertools.groupby.key",
+          "file": "src/anyio/itertools.py",
+          "line": 345,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "c7f58286017f05b27eee5704192edc4e",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/itertools.py",
+      "line": 349,
+      "end_line": 373,
+      "symbol": "anyio.itertools.groupby",
+      "message": "Top-level definition groupby replaces an earlier definition at line 343.",
+      "evidence": [
+        {
+          "file": "src/anyio/itertools.py",
+          "start_line": 349,
+          "end_line": 373
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "aaf85d53ab133a1382ace9a9",
+          "symbol": "anyio.itertools",
+          "file": "src/anyio/itertools.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "1d0f352177d2d52e6b5f39a6",
+          "symbol": "anyio.itertools._iterate",
+          "file": "src/anyio/itertools.py",
+          "line": 69,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "a8bcb6a70d274d0d40314c12",
+          "symbol": "anyio.lowlevel.checkpoint",
+          "file": "src/anyio/lowlevel.py",
+          "line": 28,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "c015d4a18f03f82e18c9f2b3",
+          "symbol": "anyio.itertools.groupby.iterable",
+          "file": "src/anyio/itertools.py",
+          "line": 350,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "ab5ad72376ea7b323983f071",
+          "symbol": "anyio.itertools.groupby.key",
+          "file": "src/anyio/itertools.py",
+          "line": 351,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "3c36dab59dab28ee3fb706a4b28c658c",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/itertools.py",
+      "line": 385,
+      "end_line": 391,
+      "symbol": "anyio.itertools.islice",
+      "message": "Top-level definition islice replaces an earlier definition at line 377.",
+      "evidence": [
+        {
+          "file": "src/anyio/itertools.py",
+          "start_line": 385,
+          "end_line": 391
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "aaf85d53ab133a1382ace9a9",
+          "symbol": "anyio.itertools",
+          "file": "src/anyio/itertools.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "6ab4fae903265ac24a89b5fb",
+          "symbol": "anyio.itertools.islice.iterable",
+          "file": "src/anyio/itertools.py",
+          "line": 386,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "0a5250ef7693ce705ff81f6d",
+          "symbol": "anyio.itertools.islice.start",
+          "file": "src/anyio/itertools.py",
+          "line": 387,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "00c042915da151e60f6270ce",
+          "symbol": "anyio.itertools.islice.stop",
+          "file": "src/anyio/itertools.py",
+          "line": 388,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "07bc32fa016c3663e5dd7881",
+          "symbol": "anyio.itertools.islice.step",
+          "file": "src/anyio/itertools.py",
+          "line": 389,
+          "relationship": "accepts",
+          "confidence": "exact"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "59f739fc43525249e6f35da803900050",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "duplicate_definition",
+      "severity": "warning",
+      "confidence": "medium",
+      "file": "src/anyio/itertools.py",
+      "line": 394,
+      "end_line": 466,
+      "symbol": "anyio.itertools.islice",
+      "message": "Top-level definition islice replaces an earlier definition at line 385.",
+      "evidence": [
+        {
+          "file": "src/anyio/itertools.py",
+          "start_line": 394,
+          "end_line": 466
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "aaf85d53ab133a1382ace9a9",
+          "symbol": "anyio.itertools",
+          "file": "src/anyio/itertools.py",
+          "line": 1,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "95eb468e06cac0920481f3a7",
+          "symbol": "anyio.itertools.islice.normalize_index",
+          "file": "src/anyio/itertools.py",
+          "line": 413,
+          "relationship": "contains",
+          "confidence": "exact"
+        },
+        {
+          "id": "a8bcb6a70d274d0d40314c12",
+          "symbol": "anyio.lowlevel.checkpoint",
+          "file": "src/anyio/lowlevel.py",
+          "line": 28,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "1d0f352177d2d52e6b5f39a6",
+          "symbol": "anyio.itertools._iterate",
+          "file": "src/anyio/itertools.py",
+          "line": 69,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "a8bcb6a70d274d0d40314c12",
+          "symbol": "anyio.lowlevel.checkpoint",
+          "file": "src/anyio/lowlevel.py",
+          "line": 28,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "a8bcb6a70d274d0d40314c12",
+          "symbol": "anyio.lowlevel.checkpoint",
+          "file": "src/anyio/lowlevel.py",
+          "line": 28,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "71213ea58f168f2690224b99",
+          "symbol": "anyio.itertools.islice.iterable",
+          "file": "src/anyio/itertools.py",
+          "line": 395,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "9873a909ce73e3aeffa44d09",
+          "symbol": "anyio.itertools.islice.args",
+          "file": "src/anyio/itertools.py",
+          "line": 396,
+          "relationship": "accepts",
+          "confidence": "exact"
+        },
+        {
+          "id": "0ffcf3aa1740699fd5944338",
+          "symbol": "anyio.itertools.islice.raise TypeError(\"islice expected at least 2 arguments, got 1\")",
+          "file": "src/anyio/itertools.py",
+          "line": 399,
+          "relationship": "raises",
+          "confidence": "declared"
+        },
+        {
+          "id": "d5225b7f1a9eaa512fad2cbc",
+          "symbol": "anyio.itertools.islice.raise TypeError(f\"islice expected at most 4 arguments, got {len(args) + 1}\")",
+          "file": "src/anyio/itertools.py",
+          "line": 401,
+          "relationship": "raises",
+          "confidence": "declared"
+        },
+        {
+          "id": "f5ec12d198a04cc891f5be31",
+          "symbol": "anyio.itertools.islice.raise ValueError(step_message)",
+          "file": "src/anyio/itertools.py",
+          "line": 439,
+          "relationship": "raises",
+          "confidence": "declared"
+        }
+      ],
+      "root_cause": "Two unconditional top-level definitions bind the same name in file order. Replacement can be intentional.",
+      "suggested_fix": "If replacement is unintended, rename or consolidate the definitions; otherwise document the override.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    },
+    {
+      "id": "e4f33214f869255a6985fdd6146a1379",
+      "repository_id": "01b8c25a478247dab52f5486ba968b59",
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "type": "circular_dependency",
+      "severity": "info",
+      "confidence": "medium",
+      "file": "src/anyio/__init__.py",
+      "line": 5,
+      "end_line": 5,
+      "symbol": "anyio",
+      "message": "Indexed imports form a cycle: src/anyio/__init__.py → src/anyio/_core/_concurrency_utils.py → src/anyio/_core/_eventloop.py → src/anyio/_core/_fileio.py → src/anyio/_core/_futures.py → src/anyio/_core/_resources.py → src/anyio/_core/_signals.py → src/anyio/_core/_sockets.py → src/anyio/_core/_streams.py → src/anyio/_core/_subprocesses.py → src/anyio/_core/_synchronization.py → src/anyio/_core/_tasks.py → src/anyio/_core/_tempfile.py → src/anyio/_core/_testing.py → src/anyio/abc/__init__.py → src/anyio/abc/_eventloop.py → src/anyio/abc/_sockets.py → src/anyio/abc/_streams.py → src/anyio/abc/_subprocesses.py → src/anyio/abc/_tasks.py → src/anyio/from_thread.py → src/anyio/functools.py → src/anyio/itertools.py → src/anyio/lowlevel.py → src/anyio/streams/buffered.py → src/anyio/streams/memory.py → src/anyio/streams/stapled.py → src/anyio/streams/tls.py → src/anyio/to_interpreter.py → src/anyio/to_process.py → src/anyio/to_thread.py",
+      "evidence": [
+        {
+          "file": "src/anyio/__init__.py",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "related_symbols": [
+        {
+          "id": "4215b88b9f9471ef0046cdb5",
+          "symbol": "anyio._lazyimport.fix_package_names",
+          "file": "src/anyio/_lazyimport.py",
+          "line": 70,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "d9052fffdebda28db516c1ca",
+          "symbol": "anyio._lazyimport.install_lazy_importer",
+          "file": "src/anyio/_lazyimport.py",
+          "line": 18,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "3ce82c9d3ac91fe46787bf2c",
+          "symbol": "anyio._lazyimport.set_deprecated_aliases",
+          "file": "src/anyio/_lazyimport.py",
+          "line": 91,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "d9052fffdebda28db516c1ca",
+          "symbol": "anyio._lazyimport.install_lazy_importer",
+          "file": "src/anyio/_lazyimport.py",
+          "line": 18,
+          "relationship": "calls",
+          "confidence": "static"
+        },
+        {
+          "id": "f70ce66c2003b5c0ed6139fb",
+          "symbol": "anyio._core._concurrency_utils.amap",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 141,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "6d60b77a8c9a8fa308739d47",
+          "symbol": "anyio._core._concurrency_utils.as_completed",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 96,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "3e835ffd7fb617457d49b26f",
+          "symbol": "anyio._core._concurrency_utils",
+          "file": "src/anyio/_core/_concurrency_utils.py",
+          "line": 1,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "5989bda5c47b56c234cba6f8",
+          "symbol": "anyio._core._contextmanagers.AsyncContextManagerMixin",
+          "file": "src/anyio/_core/_contextmanagers.py",
+          "line": 109,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "78689ca0507ab3b391123bb2",
+          "symbol": "anyio._core._contextmanagers.ContextManagerMixin",
+          "file": "src/anyio/_core/_contextmanagers.py",
+          "line": 23,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "e38fb1b400cf19c34bedf1c1",
+          "symbol": "anyio._core._eventloop.current_time",
+          "file": "src/anyio/_core/_eventloop.py",
+          "line": 128,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "3980216e8ead596274711608",
+          "symbol": "anyio._core._eventloop.get_all_backends",
+          "file": "src/anyio/_core/_eventloop.py",
+          "line": 140,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "fb9d4f92d711ca434840b6f0",
+          "symbol": "anyio._core._eventloop.get_available_backends",
+          "file": "src/anyio/_core/_eventloop.py",
+          "line": 145,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "e5b74e4380a4fe54ead8c03f",
+          "symbol": "anyio._core._eventloop.get_cancelled_exc_class",
+          "file": "src/anyio/_core/_eventloop.py",
+          "line": 166,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "5519895f8f6e67dc7774a3f7",
+          "symbol": "anyio._core._eventloop.run",
+          "file": "src/anyio/_core/_eventloop.py",
+          "line": 38,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "589022fc1d54e4088faa0515",
+          "symbol": "anyio._core._eventloop.sleep",
+          "file": "src/anyio/_core/_eventloop.py",
+          "line": 88,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "f706075fe64d554ad568a5fb",
+          "symbol": "anyio._core._eventloop.sleep_forever",
+          "file": "src/anyio/_core/_eventloop.py",
+          "line": 102,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "cf8336e0e0db44b047a5a957",
+          "symbol": "anyio._core._eventloop.sleep_until",
+          "file": "src/anyio/_core/_eventloop.py",
+          "line": 114,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "39756053cab04be9ffb6fbc3",
+          "symbol": "anyio._core._exceptions.BrokenResourceError",
+          "file": "src/anyio/_core/_exceptions.py",
+          "line": 12,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "7e777e791e00c05950f2f09b",
+          "symbol": "anyio._core._exceptions.BrokenWorkerInterpreter",
+          "file": "src/anyio/_core/_exceptions.py",
+          "line": 26,
+          "relationship": "imports",
+          "confidence": "static"
+        },
+        {
+          "id": "585484615bb68ec6d1b5e886",
+          "symbol": "anyio._core._exceptions.BrokenWorkerProcess",
+          "file": "src/anyio/_core/_exceptions.py",
+          "line": 19,
+          "relationship": "imports",
+          "confidence": "static"
+        }
+      ],
+      "root_cause": "Established file-import edges form a strongly connected component. Such cycles can be intentional and are not proof of runtime failure.",
+      "suggested_fix": "Review initialization order and consider moving shared contracts into an independent module if the cycle causes a problem.",
+      "suggested_test": "Add a focused regression case exercising this condition and its intended behavior using the repository’s existing test conventions.",
+      "status": "static_candidate",
+      "verified": false
+    }
+  ],
+  "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+  "detector_version": "2026-10-04-conservative-static-v1",
+  "notice": "Static candidates, not execution-confirmed errors. Unresolved calls alone are not defects."
+}

@@ -21,7 +21,7 @@ def _captured_getter_cache(text):
     return None
 
 
-def support_warning(claim, sources):
+def support_warning(claim, sources, contextual_names=()):
     sentence = claim["text"]
     text = "\n".join(line["text"] for s in sources for line in s.get("lines", []))
     identities = "\n".join(s.get("qualified", "") for s in sources)
@@ -34,6 +34,8 @@ def support_warning(claim, sources):
         not in ("JavaScript", "TypeScript", "OpenAPI", "GraphQL", "PostgreSQL", "SQLite", "NaN")
     }
     for name in sorted(code_names):
+        if name in contextual_names:
+            continue
         if not re.search(r"(?<!\w)" + re.escape(name) + r"(?!\w)", text + "\n" + identities, re.I):
             # Ordinary terminology can be a component of a snake-case symbol,
             # e.g. WebSocket in websocket_mismatch. Exact configuration names

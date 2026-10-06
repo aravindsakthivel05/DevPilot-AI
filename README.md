@@ -8,6 +8,10 @@ DevPilot indexes a public GitHub repository or local folder, extracts source str
 
 See [source reasoning and quality evaluation](docs/behavior-quality.md) for behavior tables, focused reading, generator/reviewer comparisons, isolated checks and the gated local training workflow.
 
+See [complete source-grounded answers](docs/requirement-answers.md) for per-question requirements, reviewed corrections, conditional subject handling, prompt budgeting and stage timings.
+
+The [latest validation report](evaluation/requirements-2026-10-06/REPORT.md) records local model comparisons and five-repository results. NetworkX detail coverage improved from 8/17 to 10/17, but answers remain incomplete; passing software checks does not establish answer correctness.
+
 ## Start on this Mac
 
 ```sh

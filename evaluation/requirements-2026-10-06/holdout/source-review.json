@@ -1,0 +1,86 @@
+{
+  "reviewer": "Codex explicit manual source review against frozen pinned AnyIO and Pluggy source and the 18 previously executed supplied scenarios; not independent human review",
+  "cases": [
+    {
+      "case_id": "anyio-threads",
+      "correct": true,
+      "required_detail_coverage": [
+        false,
+        false,
+        true,
+        false,
+        true,
+        true,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Resolved False is correct, but the explanation refers to the default False rather than explicitly tracing the supplied True and non-None precedence. Warning branch and forwarded argument names are correct. None/no-change, warning category/stacklevel and await/return are absent."
+    },
+    {
+      "case_id": "anyio-deadlines",
+      "correct": false,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "Substitutes a cancelled scope for the exact cancelled_caught predicate in the TimeoutError condition."
+      ],
+      "unnecessary_abstention": false,
+      "validation_false_rejections": [],
+      "reason": "Numeric/None deadlines are correct. The required caught-cancellation status is omitted, and shield/reason forwarding, scope construction/yield and reason-dependent error text are missing. First repair candidate is not selected; its receiving-reason statement is itself incorrect for move_on_after."
+    },
+    {
+      "case_id": "pluggy-firstresult",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Three displayed facts are correct: reversed order, non-None firstresult break, and a missing required argument raising HookCallError. It omits result append/filtering, return shape, caller_kwargs/argnames lookup, KeyError chaining and teardown. Composite frozen details require those mechanisms, not only the broad outcomes."
+    },
+    {
+      "case_id": "pluggy-history",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Correct initial normalization/defaults/verification, recorded tuple, copied dispatch and callback elements. Replay explanation omits the historic guard, complete name/single-method/False dispatch and truthy-result/non-None-callback/res[0] behavior."
+    },
+    {
+      "case_id": "anyio-guard",
+      "correct": true,
+      "unsupported_claims": [],
+      "abstention_correct": true,
+      "reason": "Correct private-runtime abstention, no LLM call."
+    },
+    {
+      "case_id": "pluggy-guard",
+      "correct": true,
+      "unsupported_claims": [],
+      "abstention_correct": true,
+      "reason": "Correct private-runtime abstention, no LLM call."
+    }
+  ]
+}

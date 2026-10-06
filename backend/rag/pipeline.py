@@ -16,6 +16,7 @@ from ..evidence import excerpt
 from ..providers import (
     ANSWER_PROMPT_VERSION,
     answer_output_tokens,
+    answer_request,
     context_window,
     embedding_signature,
     generate,
@@ -34,7 +35,7 @@ from .tokenization import stem
 from .vector_store import LocalVectorStore
 
 TRACE = ContextVar("devpilot_retrieval_trace", default=None)
-RETRIEVAL_VERSION = "2026-10-05-branch-diverse-context-v5"
+RETRIEVAL_VERSION = "2026-10-06-requirement-context-v6"
 
 SYMBOL_REFERENCE = re.compile(r"\b[A-Za-z_]\w*(?:\.[A-Za-z_]\w*)+\b")
 
@@ -304,6 +305,27 @@ def generation_context(repo_id, question, evidence, *, reserve_tokens=0):
                 "behavior_table": facts,
             }
         )
+    # Budget the actual prompt serialization as well as code excerpts. Retain
+    # the primary implementation first; trim repeated syntax tables and the
+    # lowest-priority sources before a predictable over-budget model request.
+    while context:
+        payload, *_ = answer_request(question, context)
+        prompt_cost = sum(estimated_tokens(m["content"]) for m in payload["messages"])
+        if prompt_cost + output_tokens + 256 + max(0, reserve_tokens) <= context_window():
+            break
+        tables = [item for item in reversed(context) if item.get("behavior_table")]
+        if tables:
+            tables[0]["behavior_table"].pop()
+        elif len(context) > 1:
+            context.pop()
+        else:
+            # Keep valid source coordinates; no silent slicing through guards.
+            allowance = max(1, context[0]["estimated_source_tokens"] * 3 // 4)
+            record = records.get(context[0]["id"], context[0])
+            smaller = excerpt(record, question, allowance)
+            if not smaller["source"] or smaller["source"] == context[0]["source"]:
+                break
+            context[0].update(smaller)
     return context
 
 
@@ -332,6 +354,43 @@ def executable_source(symbol):
 
 
 def retrieve(repo_id, question, mode="hybrid", limit=8, hops=2, overrides=None):
+    if mode != "lexical" or os.environ.get("DEVPILOT_RETRIEVAL_CACHE", "1").lower() not in (
+        "1",
+        "true",
+        "yes",
+    ):
+        return _retrieve(repo_id, question, mode, limit, hops, overrides)
+    from . import retrieval_cache
+
+    started = time.perf_counter()
+    state = retrieval_cache.identity(repo_id)
+    config = json.dumps(
+        {
+            "settings": settings(),
+            "overrides": overrides,
+            "reranker": os.environ.get("DEVPILOT_NEURAL_RERANKER", ""),
+        },
+        sort_keys=True,
+    )
+    tail = (question, limit, hops, config, RETRIEVAL_VERSION)
+    cached = retrieval_cache.get((state, tail)) if state else None
+    if cached is not None:
+        result, trace = cached
+        trace["cached_original_timings_ms"] = trace.pop("timings_ms", {})
+        trace["timings_ms"] = {"retrieval": round((time.perf_counter() - started) * 1000, 3)}
+        trace["cache_hit"] = True
+        TRACE.set(trace)
+        return result
+    result = _retrieve(repo_id, question, mode, limit, hops, overrides)
+    # Never bind results to a state that changed during retrieval. Initial FTS
+    # warming may therefore need one extra read before reuse.
+    after = retrieval_cache.identity(repo_id)
+    if after and state == after and result[1] is None:
+        retrieval_cache.put((after, tail), (result, TRACE.get()))
+    return result
+
+
+def _retrieve(repo_id, question, mode="hybrid", limit=8, hops=2, overrides=None):
     started = time.perf_counter()
     cfg_weights = settings()
     if overrides:
@@ -697,6 +756,8 @@ def answer_from_evidence(
     if start is None:
         start = time.perf_counter()
     investigation = None
+    stage_times = {"initial_retrieval_ms": round((time.perf_counter() - start) * 1000)}
+    reading_started = time.perf_counter()
     if evidence and use_model and provider_settings()["model"]:
         from .investigation import recover
         from .source_selection import select
@@ -714,6 +775,7 @@ def answer_from_evidence(
             investigation["source_selection"] = selection
         finally:
             TRACE.set(primary_trace)
+    stage_times["source_reading_ms"] = round((time.perf_counter() - reading_started) * 1000)
     original_warning = warning
     usage = dict((investigation or {}).get("source_selection", {}).get("usage", {}))
     generation_diagnostics = {"attempt_count": 0, "total_request_ms": 0, "attempts": []}
@@ -906,15 +968,21 @@ def answer_from_evidence(
         eligible = [accepted[0]]
         for item in accepted[1:]:
             if preserves(
-                first_claims, generation_diagnostics["attempts"][item[2]].get("claims", [])
+                first_claims,
+                generation_diagnostics["attempts"][item[2]].get("claims", []),
+                generation_diagnostics["attempts"][item[2]].get("approved_revisions", []),
             ):
                 eligible.append(item)
             else:
                 generation_diagnostics["attempts"][item[2]]["repair_warning"] = (
-                    "Repair dropped retained claims; original accepted answer preserved."
+                    "Repair dropped retained information without a reviewed correction; original accepted answer preserved."
                 )
         text, aspect_statuses, selected_attempt, context = max(
-            eligible, key=lambda item: quality(item[1])
+            eligible,
+            key=lambda item: (
+                quality(item[1]),
+                len(generation_diagnostics["attempts"][item[2]].get("approved_revisions", [])),
+            ),
         )
         for _, _, index, _ in accepted:
             generation_diagnostics["attempts"][index]["outcome"] = (
@@ -961,6 +1029,11 @@ def answer_from_evidence(
                     )
                 except (ValueError, KeyError):
                     continue
+    stage_times.update(
+        generation_ms=sum(a.get("generation_ms", 0) for a in generation_diagnostics["attempts"]),
+        review_ms=sum(a.get("review_ms", 0) for a in generation_diagnostics["attempts"]),
+        validation_ms=sum(a.get("validation_ms", 0) for a in generation_diagnostics["attempts"]),
+    )
     result = dict(
         answer=text,
         investigation=investigation,
@@ -992,6 +1065,14 @@ def answer_from_evidence(
         and any(s["status"] != "supported" for s in aspect_statuses)
         and any(s["status"] in ("supported", "partial") for s in aspect_statuses),
         aspect_statuses=aspect_statuses,
+        requirement_coverage=next(
+            (
+                a.get("requirement_coverage", {})
+                for a in generation_diagnostics["attempts"]
+                if a.get("outcome") == "accepted"
+            ),
+            {},
+        ),
         generation_context=[
             {
                 "source_id": item["citation_number"],
@@ -1015,6 +1096,7 @@ def answer_from_evidence(
         warning=warning,
         usage=usage,
         generation_diagnostics=generation_diagnostics,
+        stage_timings_ms=stage_times,
         elapsed_ms=round((time.perf_counter() - start) * 1000),
         snapshot=db.repository(repo_id)["fingerprint"],
         model=provider_settings()["model"] or None,

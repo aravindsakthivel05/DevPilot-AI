@@ -1,0 +1,5 @@
+{
+  "evaluation/requirements-2026-10-06/networkx/questions.json": "70f5fd08603782494c54bb8cfc614bc8ee8a45d13258b62c38f3f1500d62cd50",
+  "evaluation/requirements-2026-10-06/holdout/questions.json": "5e86109ad8dab67535dfbcd6a045beb3347da4eb6efcc662346e3f3480ae7618",
+  "evaluation/requirements-2026-10-06/comparison-cases.jsonl": "19ed0491d2011d5c46e7759ea1dc76cbcb978638f9737a53c02f65017a4f077b"
+}

@@ -1,0 +1,108 @@
+{
+  "image_id": "sha256:9cca9f0a59ce14380a4b6f0fab88278449c4d534453776dc1d3b4c5afc4dc4dc",
+  "verification_scope": "Only supplied behavior scenarios, not all answers or repository tests",
+  "results": [
+    {
+      "repository": "anyio",
+      "commit": "e3dff72e07ddb1607fd9d219f047ce3b19c7e828",
+      "test_sha256": "c18bf1c00f34e3c42b88f4b2b48a988f88ed752b5eebb4b7ce2701a867157633",
+      "exit_code": 4,
+      "status": "failed",
+      "test_report": {
+        "available": false,
+        "total": 0,
+        "passed": 0,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "cases": [],
+        "parse_errors": []
+      },
+      "output": "ImportError while loading conftest '/workspace/tests/conftest.py'.\ntests/conftest.py:14: in <module>\n    import trustme\nE   ModuleNotFoundError: No module named 'trustme'\n",
+      "elapsed_ms": 462,
+      "image": "devpilot-runner:local",
+      "target": "tests/test_devpilot_behavior_check.py",
+      "output_truncated": false,
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "network": "disabled",
+      "patch_applied": false,
+      "runner": "python"
+    },
+    {
+      "repository": "pluggy",
+      "commit": "60b15251ee18560f781c557b6b9ef3de4d786bee",
+      "test_sha256": "0f4be898a01a706fa32711d8bef7309457a429ae6e1f466cdad98b177b361dff",
+      "exit_code": 0,
+      "status": "passed",
+      "test_report": {
+        "available": true,
+        "total": 7,
+        "passed": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "cases": [
+          {
+            "id": "tests.test_devpilot_behavior_check::test_reverse_order_and_non_none_result_handling[False]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_reverse_order_and_non_none_result_handling[True]",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_empty_firstresult_returns_none",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_missing_required_argument_is_chained",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_history_recorded_before_dispatch_and_callback_per_result",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_replay_single_new_method_with_saved_arguments",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          },
+          {
+            "id": "tests.test_devpilot_behavior_check::test_nonhistoric_hook_does_not_replay",
+            "status": "passed",
+            "failure_type": "",
+            "detail": "",
+            "report": ".devpilot-test-results.xml"
+          }
+        ],
+        "parse_errors": []
+      },
+      "output": ".......                                                                  [100%]\n---------- generated xml file: /workspace/.devpilot-test-results.xml -----------\n7 passed in 0.04s\n",
+      "elapsed_ms": 359,
+      "image": "devpilot-runner:local",
+      "target": "tests/test_devpilot_behavior_check.py",
+      "output_truncated": false,
+      "snapshot": "0947d08ccfbd4c2559b3f178f547c84730c947df8bcef72017cf5468581d490c",
+      "network": "disabled",
+      "patch_applied": false,
+      "runner": "python"
+    }
+  ]
+}

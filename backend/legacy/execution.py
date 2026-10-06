@@ -53,8 +53,23 @@ def validate_runner_settings(image, target, runner):
         raise ValueError("Java test target must be a class or test pattern.")
 
 
-def execute(repo_id, image, target, timeout, patch=None, extra_tests=None, runner="python"):
+def execute(
+    repo_id,
+    image,
+    target,
+    timeout,
+    patch=None,
+    extra_tests=None,
+    runner="python",
+    scenario_isolation=False,
+):
     validate_runner_settings(image, target, runner)
+    if scenario_isolation and (
+        runner != "python" or not extra_tests or not target.startswith("tests/devpilot_scenarios/")
+    ):
+        raise ValueError(
+            "Scenario isolation requires supplied Python tests in the dedicated scenario directory."
+        )
     status = docker_status()
     if not status["available"]:
         raise ValueError(status["reason"])
@@ -163,6 +178,10 @@ def execute(repo_id, image, target, timeout, patch=None, extra_tests=None, runne
                 "--tb=short",
                 "--junitxml=/workspace/.devpilot-test-results.xml",
             ]
+            if scenario_isolation:
+                # Supplied source scenarios use controlled fixtures; loading a
+                # repository's suite conftest/addopts would change their scope.
+                cmd += ["-c", "/dev/null", "--confcutdir=/workspace/tests/devpilot_scenarios"]
         elif runner == "maven":
             if not (work / "pom.xml").is_file():
                 raise ValueError("Maven runner requires pom.xml in the indexed snapshot.")

@@ -1,0 +1,237 @@
+{
+  "reviewer": "Codex explicit manual source review against frozen pinned NetworkX references; not independent human review",
+  "cases": [
+    {
+      "case_id": "networkx-easy",
+      "model": "qwen2.5-coder:14b",
+      "reviewer": "qwen2.5-coder:14b",
+      "repeat": 1,
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "reason": "Correct set and skip behavior, but exact BFS arguments and caller seen.update before yield are omitted."
+    },
+    {
+      "case_id": "networkx-medium",
+      "model": "qwen2.5-coder:14b",
+      "reviewer": "qwen2.5-coder:14b",
+      "repeat": 1,
+      "correct": false,
+      "required_detail_coverage": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "Generalizes graph mutation, including any node addition, to RuntimeError.",
+        "Claims cycle/graph change alone triggers NetworkXUnfeasible without the remaining indegree_map predicate."
+      ],
+      "reason": "Both reviewers accept the same incomplete, broad mutation explanations."
+    },
+    {
+      "case_id": "networkx-hard",
+      "model": "qwen2.5-coder:14b",
+      "reviewer": "qwen2.5-coder:14b",
+      "repeat": 1,
+      "correct": false,
+      "required_detail_coverage": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "validation_false_rejections": [
+        "Correct invalid-method ValueError detail withheld because reviewer context preflight failed."
+      ],
+      "reason": "All facts withheld after audit context overflow. The draft also incorrectly carries the invalid-method assumption into independent valid algorithm cases."
+    },
+    {
+      "case_id": "networkx-easy",
+      "model": "qwen2.5-coder:14b",
+      "reviewer": "gemma3:12b",
+      "repeat": 1,
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "reason": "Correct set and skip behavior, but exact BFS arguments and caller seen.update before yield are omitted."
+    },
+    {
+      "case_id": "networkx-medium",
+      "model": "qwen2.5-coder:14b",
+      "reviewer": "gemma3:12b",
+      "repeat": 1,
+      "correct": false,
+      "required_detail_coverage": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "Generalizes graph mutation, including any node addition, to RuntimeError.",
+        "Claims cycle/graph change alone triggers NetworkXUnfeasible without the remaining indegree_map predicate."
+      ],
+      "reason": "Both reviewers accept the same incomplete, broad mutation explanations."
+    },
+    {
+      "case_id": "networkx-hard",
+      "model": "qwen2.5-coder:14b",
+      "reviewer": "gemma3:12b",
+      "repeat": 1,
+      "correct": false,
+      "required_detail_coverage": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "validation_false_rejections": [
+        "Correct invalid-method ValueError detail withheld because reviewer context preflight failed."
+      ],
+      "reason": "All facts withheld after audit context overflow. The draft also incorrectly carries the invalid-method assumption into independent valid algorithm cases."
+    },
+    {
+      "case_id": "networkx-easy",
+      "model": "gemma3:12b",
+      "reviewer": "qwen2.5-coder:14b",
+      "repeat": 1,
+      "correct": false,
+      "required_detail_coverage": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "unsupported_claims": [
+        "Calls n-len(seen) a component size; it is the count of all remaining unseen graph nodes, potentially spanning several components."
+      ],
+      "reason": "Correct BFS argument expressions and skip test. Yielded collection type and global seen update before yield are not explained; the size description is wrong."
+    },
+    {
+      "case_id": "networkx-medium",
+      "model": "gemma3:12b",
+      "reviewer": "qwen2.5-coder:14b",
+      "repeat": 1,
+      "correct": false,
+      "required_detail_coverage": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "Says topological_generations yields a generator object; the yielded object is this_generation, a list.",
+        "Generalizes cycle/graph change to NetworkXUnfeasible without the precise nonempty remaining-map predicate."
+      ],
+      "validation_false_rejections": [
+        "Correct parallel-edge count withheld because plural MultiDiGraphs was treated as an invented identifier."
+      ],
+      "reason": "Both generator-object/type confusion and omitted map/chaining predicates remain. The plural conditional subject guard incorrectly removes a sound count explanation."
+    },
+    {
+      "case_id": "networkx-hard",
+      "model": "gemma3:12b",
+      "reviewer": "qwen2.5-coder:14b",
+      "repeat": 1,
+      "correct": false,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "Adds an if-paths-not-from-source-to-target condition to reversal; native target-only code reverses every path list unconditionally."
+      ],
+      "reason": "Algorithm calls and weight normalization are explained, but reverse(copy=False), exact unconditional path reversal, and original-source keys are missing."
+    },
+    {
+      "case_id": "networkx-easy",
+      "model": "gemma3:12b",
+      "reviewer": "gemma3:12b",
+      "repeat": 1,
+      "correct": false,
+      "required_detail_coverage": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "unsupported_claims": [
+        "Calls n-len(seen) a component size; it is the count of all remaining unseen graph nodes, potentially spanning several components."
+      ],
+      "reason": "Correct BFS argument expressions and skip test. Yielded collection type and global seen update before yield are not explained; the size description is wrong."
+    },
+    {
+      "case_id": "networkx-medium",
+      "model": "gemma3:12b",
+      "reviewer": "gemma3:12b",
+      "repeat": 1,
+      "correct": false,
+      "required_detail_coverage": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "Says topological_generations yields a generator object; the yielded object is this_generation, a list.",
+        "Generalizes cycle/graph change to NetworkXUnfeasible without the precise nonempty remaining-map predicate."
+      ],
+      "validation_false_rejections": [
+        "Correct parallel-edge count withheld because plural MultiDiGraphs was treated as an invented identifier."
+      ],
+      "reason": "Both generator-object/type confusion and omitted map/chaining predicates remain. The plural conditional subject guard incorrectly removes a sound count explanation."
+    },
+    {
+      "case_id": "networkx-hard",
+      "model": "gemma3:12b",
+      "reviewer": "gemma3:12b",
+      "repeat": 1,
+      "correct": false,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "Adds an if-paths-not-from-source-to-target condition to reversal; native target-only code reverses every path list unconditionally."
+      ],
+      "reason": "Algorithm calls and weight normalization are explained, but reverse(copy=False), exact unconditional path reversal, and original-source keys are missing."
+    }
+  ]
+}

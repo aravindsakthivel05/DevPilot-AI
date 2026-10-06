@@ -11,7 +11,7 @@ DevPilot expands source citations before rejecting individual claims, distinguis
 5. Run a separate, fallible model review of individual claims and coverage of the requested behaviors. A reviewer contradiction verdict needs bounded, available source coordinates; without them it becomes uncertainty. This is not proof that a contradiction exists.
 6. Preserve supported claims. Unverified model prose is replaced by neutral uncertainty in the answer, while drafts, reasons and original claims remain diagnostic data.
 7. If concrete rejection or missing-coverage feedback exists and accepted details remain, allow one correction. Read additional source candidates, provide retained claims, reserve context space for that feedback, and keep the total generation-attempt limit at two.
-8. Select a correction only if it preserves every accepted claim's text and has at least as good reviewed coverage. Preserve the original answer, source context and citation provenance on failure or dropped details.
+8. Select a correction only if it preserves accepted text, or explicitly replaces a mistaken claim through the separate source-reviewed correction protocol, and has at least as good reviewed coverage. Preserve the original answer, source context and citation provenance on failure or dropped details.
 
 ## Completeness and uncertainty
 
@@ -19,7 +19,7 @@ DevPilot expands source citations before rejecting individual claims, distinguis
 
 `aspect_statuses[].status` describes claim support. `coverage_status` is a separate reviewer judgment (`complete`, `partial`, or `unknown`). One accepted claim is not a completeness guarantee. The UI states when requested details are missing or completeness is unknown. Coverage can still be judged incorrectly by the same model.
 
-The repair loop preserves literal accepted claim text to prevent silent omissions. This is deliberately conservative: a better paraphrase may be rejected. Repair does not upgrade a model-supported claim to ground truth, and a model error accepted on the first pass may remain in the fallback.
+The repair loop preserves accepted information to prevent silent omissions. From October 6, a mistaken accepted claim can be superseded by an explicit cited correction in the same aspect, with separately reviewed source coordinates explaining the mistake. Unreviewed revisions and dropped information preserve the original fallback. A supported correction remains a fallible reviewer judgment, not ground truth. See [complete source-grounded answers](requirement-answers.md).
 
 ## Configuration
 

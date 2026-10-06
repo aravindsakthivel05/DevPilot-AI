@@ -1,0 +1,41 @@
+{
+  "reviewer": "Codex manual source review against unchanged pinned NetworkX source and frozen requirements; not independent human review",
+  "answerable_questions": 3,
+  "correct_answers": 2,
+  "fully_adequate": 0,
+  "covered_details": 10,
+  "required_details": 17,
+  "detail_coverage_fraction": 0.5882352941176471,
+  "unsupported_claim_count": 2,
+  "abstention_correct": 1,
+  "guard_questions": 1,
+  "source_reviewed_unnecessary_abstentions": 0,
+  "median_answerable_seconds": 269.143,
+  "per_case": [
+    {
+      "case_id": "networkx-easy",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 3,
+      "required_details": 4,
+      "unsupported_claims": 0
+    },
+    {
+      "case_id": "networkx-medium",
+      "correct": false,
+      "fully_adequate": false,
+      "covered_details": 1,
+      "required_details": 5,
+      "unsupported_claims": 2
+    },
+    {
+      "case_id": "networkx-hard",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 6,
+      "required_details": 8,
+      "unsupported_claims": 0
+    }
+  ],
+  "notice": "Small source-reviewed sample; correctness is distinct from completeness. Not independent human review."
+}

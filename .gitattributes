@@ -1,0 +1,4 @@
+# Unified diff context includes a mandatory space on otherwise empty lines.
+evaluation/requirements-2026-10-06/comparison-backend-from-980c6e8.patch whitespace=-blank-at-eol
+# Retain the upstream license bytes, including its original CRLF endings.
+evaluation/requirements-2026-10-06/licenses/boltons.txt -text whitespace=cr-at-eol

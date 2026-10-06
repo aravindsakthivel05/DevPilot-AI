@@ -1,0 +1,84 @@
+{
+  "reviewer": "Codex explicit manual source review against unchanged frozen Tenacity/Boltons references and pinned code; not independent human review",
+  "cases": [
+    {
+      "case_id": "tenacity-result",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Correct missing-outcome error, failed False, successful predicate argument and not-result negation. It does not explicitly state that failed outcomes skip predicate invocation."
+    },
+    {
+      "case_id": "tenacity-cause",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Covers direct raised-exception match alone versus explicit causes, deeper traversal, ID-set cycle handling, missing/successful outcomes and no-match False. The direct-match statement is read with the following explicit-cause qualification: a root appearing again as an explicit cause can still match. Neutral missing-detail messages remain, but all frozen details are explained."
+    },
+    {
+      "case_id": "boltons-path",
+      "correct": false,
+      "required_detail_coverage": [
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "unsupported_claims": [
+        "Describes numeric conversion without the necessary TypeError fallback condition.",
+        "Claims lookup TypeError is wrapped even though an initial TypeError may be recovered by successful integer indexing."
+      ],
+      "unnecessary_abstention": false,
+      "reason": "String splitting, failed fallback wrapping and omitted versus explicit None defaults are explained. Initial TypeError is a fallback trigger, not an unconditional wrapped failure; mapping KeyError does not trigger integer fallback. Successful cur return is omitted."
+    },
+    {
+      "case_id": "boltons-cache",
+      "correct": true,
+      "required_detail_coverage": [
+        false,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Correct hit/miss counters, stored-value return, no-callback KeyError, callback caching and exception propagation. It omits lock and recency, exact pre-callback counter order, no hit increment on callback success, and explicit no-insertion on callback failure."
+    },
+    {
+      "case_id": "tenacity-guard",
+      "correct": true,
+      "unsupported_claims": [],
+      "abstention_correct": true,
+      "reason": "Correct private-runtime abstention without a model call."
+    },
+    {
+      "case_id": "boltons-guard",
+      "correct": true,
+      "unsupported_claims": [],
+      "abstention_correct": true,
+      "reason": "Correct private-runtime abstention without a model call."
+    }
+  ]
+}

@@ -20,6 +20,13 @@ export default function AnswerCoverage({ aspects = [] }) {
             {aspect.coverage_status === 'unknown' && (
               <small> — Completeness has not been established</small>
             )}
+            {aspect.missing_details?.length > 0 && (
+              <ul>
+                {aspect.missing_details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>

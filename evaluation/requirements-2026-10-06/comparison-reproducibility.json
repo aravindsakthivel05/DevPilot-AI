@@ -1,0 +1,8 @@
+{
+  "base_commit": "980c6e8aaa674bd0f8b28a20468685efcb9c1c76",
+  "patch": "comparison-backend-from-980c6e8.patch",
+  "reconstructed_backend_hashes_match": true,
+  "backend_files": 103,
+  "all_scheduled_outputs_recorded": true,
+  "frozen_context_hashes_match_all_outputs": true
+}

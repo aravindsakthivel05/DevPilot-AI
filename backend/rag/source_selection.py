@@ -37,8 +37,23 @@ def select(repo_id, question, evidence):
         for r in candidates
         if any(r["qualified"].lower().endswith("." + ref) for ref in references)
     ]
-    if len(exact) == 1:
-        order = [exact[0]["id"], *[e["id"] for e in evidence if e["id"] != exact[0]["id"]]]
+    matched = {
+        ref: [
+            r
+            for r in exact
+            if r["qualified"].lower() == ref or r["qualified"].lower().endswith("." + ref)
+        ]
+        for ref in sorted(references)
+    }
+    anchored_paths = {rows[0]["path"] for rows in matched.values() if len(rows) == 1}
+    for ref, rows in matched.items():
+        local = [r for r in rows if r["path"] in anchored_paths]
+        if len(rows) > 1 and len(local) == 1:
+            matched[ref] = local
+    if exact and all(len(rows) <= 1 for rows in matched.values()):
+        chosen = {r["id"] for rows in matched.values() for r in rows}
+        ids = [r["id"] for r in exact if r["id"] in chosen][:4]
+        order = [*ids, *[e["id"] for e in evidence if e["id"] not in ids]]
         lookup = {e["id"]: e for e in evidence}
         return [lookup[i] for i in order], {"status": "exact_identifier", "provider_calls": 0}
     candidates = candidates[:12]

@@ -1,0 +1,890 @@
+{
+  "networkx": {
+    "id": "e59f48f2a3da4021aa371eca24edc743",
+    "url": "https://github.com/networkx/networkx",
+    "commit": "31b74e96903d7f873b30c8ff36d71a4c9252b107",
+    "fingerprint": "38f39a9da91fb93ba04df0d6ea7047c1bf25fec5a81743cb6ee723101d3c6746",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 226.471,
+    "stats": {
+      "files": 929,
+      "python_files": 693,
+      "java_files": 0,
+      "languages": {
+        "text": 234,
+        "python": 693,
+        "javascript": 2
+      },
+      "symbols": 22109,
+      "edges": 29376,
+      "parse_errors": [],
+      "unresolved_count": 53038,
+      "unresolved": [
+        {
+          "source": "482f6157f88d4b9a4afbd688",
+          "label": "random",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "482f6157f88d4b9a4afbd688",
+          "label": "benchmarks.utils.benchmark_name_from_func_call",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "482f6157f88d4b9a4afbd688",
+          "label": "benchmarks.utils.fetch_drug_interaction_network",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "482f6157f88d4b9a4afbd688",
+          "label": "benchmarks.utils.weighted_graph",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "c8efd616513da764d05dd3f1",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 21
+        },
+        {
+          "source": "c8efd616513da764d05dd3f1",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 22
+        },
+        {
+          "source": "c8efd616513da764d05dd3f1",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 23
+        },
+        {
+          "source": "15618e8fd59fd0f50486a559",
+          "label": "dict",
+          "kind": "calls",
+          "line": 35
+        },
+        {
+          "source": "15618e8fd59fd0f50486a559",
+          "label": "zip",
+          "kind": "calls",
+          "line": 35
+        },
+        {
+          "source": "15618e8fd59fd0f50486a559",
+          "label": "fetch_drug_interaction_network",
+          "kind": "calls",
+          "line": 39
+        },
+        {
+          "source": "00329460e2a2c907c569216a",
+          "label": "nx.betweenness_centrality",
+          "kind": "calls",
+          "line": 44
+        },
+        {
+          "source": "4879029641cc493f896f55af",
+          "label": "community.greedy_modularity_communities",
+          "kind": "calls",
+          "line": 47
+        },
+        {
+          "source": "1ecebf20cb0a9706aad5bd75",
+          "label": "community.louvain_communities",
+          "kind": "calls",
+          "line": 50
+        },
+        {
+          "source": "3ce5ef1422aaa2770bdfb180",
+          "label": "nx.pagerank",
+          "kind": "calls",
+          "line": 53
+        },
+        {
+          "source": "10765a03959e19b8d90fd7c2",
+          "label": "list",
+          "kind": "calls",
+          "line": 56
+        },
+        {
+          "source": "10765a03959e19b8d90fd7c2",
+          "label": "nx.connected_components",
+          "kind": "calls",
+          "line": 56
+        },
+        {
+          "source": "0e05b59474c0581a1eaa993e",
+          "label": "nx.k_core",
+          "kind": "calls",
+          "line": 59
+        },
+        {
+          "source": "d2f2f33b16666315a143ed35",
+          "label": "nx.average_clustering",
+          "kind": "calls",
+          "line": 62
+        },
+        {
+          "source": "ebcc1813687cc47946f47855",
+          "label": "nx.minimum_spanning_tree",
+          "kind": "calls",
+          "line": 65
+        },
+        {
+          "source": "cdfd87113d50e07dd03a9bf0",
+          "label": "nx.clustering",
+          "kind": "calls",
+          "line": 68
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 75
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 76
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 77
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 78
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 79
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 80
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 81
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 82
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 83
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 84
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 85
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 86
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 87
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.empty_graph",
+          "kind": "calls",
+          "line": 88
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.empty_graph",
+          "kind": "calls",
+          "line": 89
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.empty_graph",
+          "kind": "calls",
+          "line": 90
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.complete_graph",
+          "kind": "calls",
+          "line": 91
+        },
+        {
+          "source": "ec8876ee584d9b3e619e8511",
+          "label": "nx.complete_graph",
+          "kind": "calls",
+          "line": 92
+        },
+        {
+          "source": "fa46b15450a3cd3f4cd98905",
+          "label": "dict",
+          "kind": "calls",
+          "line": 118
+        },
+        {
+          "source": "fa46b15450a3cd3f4cd98905",
+          "label": "zip",
+          "kind": "calls",
+          "line": 118
+        },
+        {
+          "source": "bdabc1345969affde6aeb2ca",
+          "label": "list",
+          "kind": "calls",
+          "line": 121
+        },
+        {
+          "source": "bdabc1345969affde6aeb2ca",
+          "label": "nx.strongly_connected_components",
+          "kind": "calls",
+          "line": 121
+        },
+        {
+          "source": "c4be8c8d24836faabcb666fa",
+          "label": "list",
+          "kind": "calls",
+          "line": 124
+        },
+        {
+          "source": "c4be8c8d24836faabcb666fa",
+          "label": "nx.kosaraju_strongly_connected_components",
+          "kind": "calls",
+          "line": 124
+        },
+        {
+          "source": "faff963b61e154a5c0883643",
+          "label": "nx.clustering",
+          "kind": "calls",
+          "line": 127
+        },
+        {
+          "source": "b1a40c0db6ae11dc38c93231",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 134
+        },
+        {
+          "source": "b1a40c0db6ae11dc38c93231",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 135
+        },
+        {
+          "source": "b1a40c0db6ae11dc38c93231",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 136
+        },
+        {
+          "source": "9cfd8637ef9aecf7dc5cce09",
+          "label": "dict",
+          "kind": "calls",
+          "line": 147
+        },
+        {
+          "source": "9cfd8637ef9aecf7dc5cce09",
+          "label": "zip",
+          "kind": "calls",
+          "line": 147
+        },
+        {
+          "source": "97e9954e005fbff816419d3e",
+          "label": "nx.eigenvector_centrality_numpy",
+          "kind": "calls",
+          "line": 152
+        },
+        {
+          "source": "225f0ba62a598f3d21292a07",
+          "label": "nx.square_clustering",
+          "kind": "calls",
+          "line": 155
+        },
+        {
+          "source": "52fa408f9711da033da50974",
+          "label": "nx.tournament.random_tournament",
+          "kind": "calls",
+          "line": 162
+        },
+        {
+          "source": "eeaa2f4f9a52072c94f4fb67",
+          "label": "list",
+          "kind": "calls",
+          "line": 173
+        },
+        {
+          "source": "f2a8e033147688d51173c889",
+          "label": "sorted",
+          "kind": "calls",
+          "line": 177
+        },
+        {
+          "source": "f2a8e033147688d51173c889",
+          "label": "random.Random",
+          "kind": "calls",
+          "line": 178
+        },
+        {
+          "source": "f2a8e033147688d51173c889",
+          "label": "rng.sample",
+          "kind": "calls",
+          "line": 179
+        },
+        {
+          "source": "8ba1b4114e163d6e2783b0e1",
+          "label": "nx.tournament.is_reachable",
+          "kind": "calls",
+          "line": 182
+        },
+        {
+          "source": "e9d3f7a353244400d46385d4",
+          "label": "nx.empty_graph",
+          "kind": "calls",
+          "line": 210
+        },
+        {
+          "source": "e9d3f7a353244400d46385d4",
+          "label": "range",
+          "kind": "calls",
+          "line": 211
+        },
+        {
+          "source": "e9d3f7a353244400d46385d4",
+          "label": "range",
+          "kind": "calls",
+          "line": 212
+        },
+        {
+          "source": "e9d3f7a353244400d46385d4",
+          "label": "G.add_edge",
+          "kind": "calls",
+          "line": 213
+        },
+        {
+          "source": "188c64d735bae388ac7cd400",
+          "label": "benchmark_name_from_func_call",
+          "kind": "calls",
+          "line": 217
+        },
+        {
+          "source": "188c64d735bae388ac7cd400",
+          "label": "benchmark_name_from_func_call",
+          "kind": "calls",
+          "line": 225
+        },
+        {
+          "source": "188c64d735bae388ac7cd400",
+          "label": "dict",
+          "kind": "calls",
+          "line": 228
+        },
+        {
+          "source": "2287fd073dd3849d904a9bf1",
+          "label": "list",
+          "kind": "calls",
+          "line": 240
+        },
+        {
+          "source": "668e11aec80c1e95bfebc576",
+          "label": "f",
+          "kind": "calls",
+          "line": 244
+        },
+        {
+          "source": "668e11aec80c1e95bfebc576",
+          "label": "sorted",
+          "kind": "calls",
+          "line": 245
+        },
+        {
+          "source": "9365cc4fada4f672a3637955",
+          "label": "nx.single_source_dijkstra",
+          "kind": "calls",
+          "line": 251
+        },
+        {
+          "source": "3f37b497e1d942a1102e9a3e",
+          "label": "nx.shortest_path",
+          "kind": "calls",
+          "line": 258
+        },
+        {
+          "source": "666a9dc04d68a01578ff97e0",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 10
+        },
+        {
+          "source": "666a9dc04d68a01578ff97e0",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 11
+        },
+        {
+          "source": "666a9dc04d68a01578ff97e0",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 12
+        },
+        {
+          "source": "666a9dc04d68a01578ff97e0",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 13
+        },
+        {
+          "source": "666a9dc04d68a01578ff97e0",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 14
+        },
+        {
+          "source": "666a9dc04d68a01578ff97e0",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 15
+        },
+        {
+          "source": "666a9dc04d68a01578ff97e0",
+          "label": "nx.erdos_renyi_graph",
+          "kind": "calls",
+          "line": 16
+        },
+        {
+          "source": "666a9dc04d68a01578ff97e0",
+          "label": "nx.complete_graph",
+          "kind": "calls",
+          "line": 17
+        },
+        {
+          "source": "666a9dc04d68a01578ff97e0",
+          "label": "nx.complete_graph",
+          "kind": "calls",
+          "line": 18
+        },
+        {
+          "source": "666a9dc04d68a01578ff97e0",
+          "label": "nx.star_graph",
+          "kind": "calls",
+          "line": 19
+        },
+        {
+          "source": "7fe77efd9dc9af8a05114c2e",
+          "label": "dict",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "7fe77efd9dc9af8a05114c2e",
+          "label": "zip",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "027782c6da612a9b2bb776ea",
+          "label": "nx.is_aperiodic",
+          "kind": "calls",
+          "line": 40
+        },
+        {
+          "source": "097b59962545c4b86ceb44e7",
+          "label": "nx.star_graph",
+          "kind": "calls",
+          "line": 9
+        },
+        {
+          "source": "097b59962545c4b86ceb44e7",
+          "label": "nx.wheel_graph",
+          "kind": "calls",
+          "line": 10
+        },
+        {
+          "source": "097b59962545c4b86ceb44e7",
+          "label": "nx.complete_graph",
+          "kind": "calls",
+          "line": 11
+        },
+        {
+          "source": "097b59962545c4b86ceb44e7",
+          "label": "nx.path_graph",
+          "kind": "calls",
+          "line": 12
+        },
+        {
+          "source": "097b59962545c4b86ceb44e7",
+          "label": "nx.cycle_graph",
+          "kind": "calls",
+          "line": 13
+        },
+        {
+          "source": "c1951cbbc0e49faaa1bdfe67",
+          "label": "nx.is_chordal",
+          "kind": "calls",
+          "line": 17
+        },
+        {
+          "source": "2b9c1c2ddc1344592f01c280",
+          "label": "nx.is_chordal",
+          "kind": "calls",
+          "line": 21
+        },
+        {
+          "source": "b712316832186b1da0576706",
+          "label": "nx.is_chordal",
+          "kind": "calls",
+          "line": 25
+        },
+        {
+          "source": "1e405e6b26253cfdda049e99",
+          "label": "nx.is_chordal",
+          "kind": "calls",
+          "line": 29
+        },
+        {
+          "source": "81eaf5b7baad9eb9125a1401",
+          "label": "nx.is_chordal",
+          "kind": "calls",
+          "line": 33
+        },
+        {
+          "source": "9d7f542753440e1f673e25a7",
+          "label": "itertools.permutations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "f123ff1c6fd16e3225e661d9",
+          "label": "list",
+          "kind": "calls",
+          "line": 11
+        },
+        {
+          "source": "f123ff1c6fd16e3225e661d9",
+          "label": "range",
+          "kind": "calls",
+          "line": 11
+        },
+        {
+          "source": "f123ff1c6fd16e3225e661d9",
+          "label": "list",
+          "kind": "calls",
+          "line": 13
+        },
+        {
+          "source": "f123ff1c6fd16e3225e661d9",
+          "label": "range",
+          "kind": "calls",
+          "line": 13
+        },
+        {
+          "source": "f123ff1c6fd16e3225e661d9",
+          "label": "list",
+          "kind": "calls",
+          "line": 14
+        },
+        {
+          "source": "f123ff1c6fd16e3225e661d9",
+          "label": "range",
+          "kind": "calls",
+          "line": 14
+        }
+      ],
+      "skipped_files": 46,
+      "coverage": {
+        "indexed_files": 929,
+        "skipped_files": 46,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "file_too_large": 1,
+          "hidden_directory": 1,
+          "ignored_directory": 1,
+          "symlink_file": 1,
+          "unsupported_extension": 44
+        },
+        "indexed_extensions": {
+          ".css": 2,
+          ".html": 1,
+          ".js": 2,
+          ".json": 2,
+          ".md": 9,
+          ".py": 693,
+          ".rst": 180,
+          ".toml": 1,
+          ".txt": 22,
+          ".xml": 1,
+          ".yaml": 2,
+          ".yml": 13,
+          "[none]": 1
+        },
+        "recorded_entries": 977,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "timings_ms": {
+        "read_and_snapshot": 156.979,
+        "analysis_and_graph": 7440.699,
+        "chunks_and_storage": 2271.641,
+        "embeddings": 216586.202,
+        "total_index": 226455.527
+      }
+    },
+    "split": "holdout",
+    "lexical_warmup_seconds": 1.767,
+    "index_status": {
+      "snapshot": "38f39a9da91fb93ba04df0d6ea7047c1bf25fec5a81743cb6ee723101d3c6746",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "symbols": 22109,
+      "embedded_symbols": 9377,
+      "embedding_eligible_symbols": 9377,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 53038,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "macro",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "macro",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 929,
+        "skipped_files": 46,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "file_too_large": 1,
+          "hidden_directory": 1,
+          "ignored_directory": 1,
+          "symlink_file": 1,
+          "unsupported_extension": 44
+        },
+        "indexed_extensions": {
+          ".css": 2,
+          ".html": 1,
+          ".js": 2,
+          ".json": 2,
+          ".md": 9,
+          ".py": 693,
+          ".rst": 180,
+          ".toml": 1,
+          ".txt": 22,
+          ".xml": 1,
+          ".yaml": 2,
+          ".yml": 13,
+          "[none]": 1
+        },
+        "recorded_entries": 977,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 3.257,
+    "static_candidate_count": 2,
+    "static_candidate_types": {
+      "unreachable_statement": 1,
+      "circular_dependency": 1
+    }
+  }
+}

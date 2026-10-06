@@ -1,0 +1,42 @@
+[
+  {
+    "repository": "networkx",
+    "url": "https://github.com/networkx/networkx",
+    "commit": "31b74e96903d7f873b30c8ff36d71a4c9252b107",
+    "upstream_file": "LICENSE.txt",
+    "copy": "networkx.txt",
+    "sha256": "6025f323ea29dc2f0ee0abd9523bf910186f55b0e148e6ebf646c55566278e2e"
+  },
+  {
+    "repository": "anyio",
+    "url": "https://github.com/agronholm/anyio",
+    "commit": "e3dff72e07ddb1607fd9d219f047ce3b19c7e828",
+    "upstream_file": "LICENSE",
+    "copy": "anyio.txt",
+    "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+  },
+  {
+    "repository": "pluggy",
+    "url": "https://github.com/pytest-dev/pluggy",
+    "commit": "60b15251ee18560f781c557b6b9ef3de4d786bee",
+    "upstream_file": "LICENSE",
+    "copy": "pluggy.txt",
+    "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606"
+  },
+  {
+    "repository": "tenacity",
+    "url": "https://github.com/jd/tenacity",
+    "commit": "8be01b1daf2010566fd936a5c2214efefa43edff",
+    "upstream_file": "LICENSE",
+    "copy": "tenacity.txt",
+    "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+  },
+  {
+    "repository": "boltons",
+    "url": "https://github.com/mahmoud/boltons",
+    "commit": "4e5faa3d7e4008d89e0d8bf1ea87b6d9a061a16d",
+    "upstream_file": "LICENSE",
+    "copy": "boltons.txt",
+    "sha256": "c301912653a8d8c99eab6212aa3aea8d164ea249d8ad53c941e0558a0a5ac1e3"
+  }
+]

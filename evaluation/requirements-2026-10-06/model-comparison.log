@@ -1,0 +1,13 @@
+networkx-easy qwen2.5-coder:14b: 146506 ms
+networkx-medium qwen2.5-coder:14b: 137542 ms
+networkx-hard qwen2.5-coder:14b: 162192 ms
+networkx-easy qwen2.5-coder:14b: 139462 ms
+networkx-medium qwen2.5-coder:14b: 126241 ms
+networkx-hard qwen2.5-coder:14b: 162924 ms
+networkx-easy gemma3:12b: 188943 ms
+networkx-medium gemma3:12b: 140946 ms
+networkx-hard gemma3:12b: 198106 ms
+networkx-easy gemma3:12b: 161493 ms
+networkx-medium gemma3:12b: 107846 ms
+networkx-hard gemma3:12b: 171780 ms
+evaluation/requirements-2026-10-06/model-comparison.json

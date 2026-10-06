@@ -1,0 +1,49 @@
+{
+  "reviewer": "Codex explicit manual source review against unchanged frozen Tenacity/Boltons references and pinned code; not independent human review",
+  "answerable_questions": 4,
+  "correct_answers": 3,
+  "fully_adequate": 1,
+  "covered_details": 17,
+  "required_details": 26,
+  "detail_coverage_fraction": 0.6538461538461539,
+  "unsupported_claim_count": 2,
+  "abstention_correct": 2,
+  "guard_questions": 2,
+  "source_reviewed_unnecessary_abstentions": 0,
+  "median_answerable_seconds": 153.9545,
+  "per_case": [
+    {
+      "case_id": "tenacity-result",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 4,
+      "required_details": 5,
+      "unsupported_claims": 0
+    },
+    {
+      "case_id": "tenacity-cause",
+      "correct": true,
+      "fully_adequate": true,
+      "covered_details": 7,
+      "required_details": 7,
+      "unsupported_claims": 0
+    },
+    {
+      "case_id": "boltons-path",
+      "correct": false,
+      "fully_adequate": false,
+      "covered_details": 4,
+      "required_details": 7,
+      "unsupported_claims": 2
+    },
+    {
+      "case_id": "boltons-cache",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 2,
+      "required_details": 7,
+      "unsupported_claims": 0
+    }
+  ],
+  "notice": "Small source-reviewed sample; correctness is distinct from completeness. Not independent human review."
+}

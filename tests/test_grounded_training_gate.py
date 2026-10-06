@@ -2,7 +2,47 @@ import json
 
 import pytest
 
+from backend.rag.obligations import requirements
 from scripts.prepare_grounded_training import export, validate_target
+
+
+def test_current_training_target_requires_reviewed_requirement_references():
+    question = "What does get_value return?"
+    req = requirements(question)
+    row = {
+        "target_reviewed": True,
+        "reviewer": "fixture-reviewer",
+        "question": question,
+        "aspects": [question.strip("?")],
+        "answer_requirements": req,
+        "source_evidence": [
+            {
+                "path": "a.py",
+                "qualified": "get_value",
+                "start_line": 1,
+                "source": "def get_value():\n    return value",
+            }
+        ],
+        "target": {
+            "claims": [
+                {
+                    "text": "get_value returns value.",
+                    "aspect_id": 1,
+                    "status": "supported",
+                    "citations": [{"source_id": 1, "start_line": 2, "end_line": 2}],
+                }
+            ]
+        },
+    }
+    with pytest.raises(ValueError, match="reviewed requirement coverage"):
+        validate_target(row)
+    row["target"]["requirement_coverage"] = [
+        {"requirement_id": r["id"], "status": "covered", "claim_indices": [0]} for r in req
+    ]
+    validate_target(row)
+    row["target"]["requirement_coverage"][0]["claim_indices"] = [999]
+    with pytest.raises(ValueError, match="own aspect"):
+        validate_target(row)
 
 
 def test_pending_targets_do_not_create_training_files(tmp_path):

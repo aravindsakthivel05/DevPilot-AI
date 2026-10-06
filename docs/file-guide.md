@@ -16,6 +16,7 @@ Start with the public workflow, then follow one layer at a time:
 | `backend/rag/pipeline.py` | Complete custom query-to-answer flow |
 | `backend/rag/source_selection.py`, `investigation.py` | Bounded read planning, helper/default recovery, explicit distinction from proven call resolution |
 | `backend/rag/behavior.py`, `obligations.py` | Source-linked Python syntax tables and question checklists; reading aids rather than semantic proof |
+| `backend/rag/subject_scope.py`, `retrieval_cache.py` | Conditional subjects supplied by the question and snapshot-bound lexical evidence reuse |
 | `backend/embedding_policy.py`, `rag/tokenization.py` | Dense-entity eligibility and compact document representation, thread-local English stemming |
 | `backend/rag/support_checks.py`, `citation_repair.py`, `claim_repair.py` | Evidence-aware citation expansion, necessary-support guards and one bounded correction with retained-claim/context fallback; not a semantic correctness prover |
 | Other `backend/rag/*.py` | Inspectable chunk, BM25, vector, graph, fusion, reranking, context, citation and sufficiency logic |
@@ -25,10 +26,11 @@ Start with the public workflow, then follow one layer at a time:
 | `frontend/src/App.jsx`, `api.js` | Workspace state, navigation and HTTP helper |
 | `frontend/src/components/*Page.jsx`, `ResearchUI.jsx` | Individual preserved pages and new research workflows |
 | `scripts/validate_research_prototype.py` | Repeatable local provider integration; target source is never executed |
-| `scripts/compare_local_models.py`, `run_behavior_checks.py`, `summarize_source_review.py` | Frozen generator/reviewer experiments, supplied scenarios in Docker and explicit source-review metrics |
+| `scripts/compare_local_models.py`, `summarize_model_comparison.py`, `run_behavior_checks.py`, `summarize_source_review.py` | Frozen generator/reviewer experiments, supplied scenarios in Docker and explicit source-review metrics that retain scheduled failures |
 | `scripts/prepare_grounded_training.py`, `train_grounded_adapter.py`, `evaluate_grounded_adapter.py` | Source-backed review packs and corrections, gated local training and held-out candidate evaluation |
 | `tests/test_answer_quality.py` | Regressions for indexing IDs, source coordinates, helper reads, model failures, embeddings and claim validation |
 | `tests/test_behavior_reasoning.py`, `test_local_training_workflow.py` | Branch/exception/coordinate cases, table selection, review gates and split/tampering checks |
+| `tests/test_requirement_answers.py`, `test_model_comparison_scoring.py` | Requirement references, conditional subject scope, source-reviewed corrections, cache invalidation and complete comparison denominators |
 | `tests/test_language_adapters.py`, `test_research_core.py`, `test_research_suggestions.py` | New parser, graph, migration, API and suggestion regression checks |
 | `backend/legacy/`, `infra/` | Historical optional execution experiments, excluded from core |
 

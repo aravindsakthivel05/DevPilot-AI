@@ -1,0 +1,124 @@
+{
+  "notice": "Combined source-reviewed small benchmark. Development and held-out cases remain separately reported; this combined figure is not an unseen generalization score. Labels are Codex reviews, not independent human review.",
+  "answerable_questions": 11,
+  "correct_answers": 8,
+  "fully_adequate": 1,
+  "covered_details": 37,
+  "required_details": 71,
+  "unsupported_claim_count": 5,
+  "guard_questions": 5,
+  "correct_guards": 5,
+  "median_answerable_seconds": 160.617,
+  "per_case": [
+    {
+      "case_id": "networkx-easy",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 3,
+      "required_details": 4,
+      "unsupported_claims": 0,
+      "dataset": "networkx-final",
+      "wall_seconds": 269.143
+    },
+    {
+      "case_id": "networkx-medium",
+      "correct": false,
+      "fully_adequate": false,
+      "covered_details": 1,
+      "required_details": 5,
+      "unsupported_claims": 2,
+      "dataset": "networkx-final",
+      "wall_seconds": 121.063
+    },
+    {
+      "case_id": "networkx-hard",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 6,
+      "required_details": 8,
+      "unsupported_claims": 0,
+      "dataset": "networkx-final",
+      "wall_seconds": 380.83
+    },
+    {
+      "case_id": "tenacity-result",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 4,
+      "required_details": 5,
+      "unsupported_claims": 0,
+      "dataset": "behavior-final",
+      "wall_seconds": 131.269
+    },
+    {
+      "case_id": "tenacity-cause",
+      "correct": true,
+      "fully_adequate": true,
+      "covered_details": 7,
+      "required_details": 7,
+      "unsupported_claims": 0,
+      "dataset": "behavior-final",
+      "wall_seconds": 338.11
+    },
+    {
+      "case_id": "boltons-path",
+      "correct": false,
+      "fully_adequate": false,
+      "covered_details": 4,
+      "required_details": 7,
+      "unsupported_claims": 2,
+      "dataset": "behavior-final",
+      "wall_seconds": 147.292
+    },
+    {
+      "case_id": "boltons-cache",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 2,
+      "required_details": 7,
+      "unsupported_claims": 0,
+      "dataset": "behavior-final",
+      "wall_seconds": 160.617
+    },
+    {
+      "case_id": "anyio-threads",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 3,
+      "required_details": 7,
+      "unsupported_claims": 0,
+      "dataset": "holdout",
+      "wall_seconds": 193.329
+    },
+    {
+      "case_id": "anyio-deadlines",
+      "correct": false,
+      "fully_adequate": false,
+      "covered_details": 2,
+      "required_details": 7,
+      "unsupported_claims": 1,
+      "dataset": "holdout",
+      "wall_seconds": 265.711
+    },
+    {
+      "case_id": "pluggy-firstresult",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 1,
+      "required_details": 7,
+      "unsupported_claims": 0,
+      "dataset": "holdout",
+      "wall_seconds": 129.552
+    },
+    {
+      "case_id": "pluggy-history",
+      "correct": true,
+      "fully_adequate": false,
+      "covered_details": 4,
+      "required_details": 7,
+      "unsupported_claims": 0,
+      "dataset": "holdout",
+      "wall_seconds": 154.776
+    }
+  ]
+}

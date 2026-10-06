@@ -1,0 +1,49 @@
+{
+  "notice": "Frozen source-authored labels, not independent human review. Historical development cases are not fresh holdouts. Run status must be checked against results and backend hashes. No automatic training or model promotion.",
+  "datasets": [
+    {
+      "questions": "evaluation/requirements-2026-10-06/networkx/questions.json",
+      "split": "development",
+      "sha256": "70f5fd08603782494c54bb8cfc614bc8ee8a45d13258b62c38f3f1500d62cd50",
+      "cases": 4,
+      "answerable": 3,
+      "repositories": [
+        "networkx"
+      ],
+      "executed_with_current_pipeline": true,
+      "results": "evaluation/requirements-2026-10-06/networkx-final/results.json",
+      "source_review": "evaluation/requirements-2026-10-06/networkx-final/source-review.json",
+      "summary": "evaluation/requirements-2026-10-06/networkx-final/summary.json"
+    },
+    {
+      "questions": "evaluation/behavior-2026-10-05/questions.json",
+      "split": "development",
+      "sha256": "81a258c49654d5fdba6241dff33656bab4745a673f0b2e6272521e1b5659a683",
+      "cases": 6,
+      "answerable": 4,
+      "repositories": [
+        "boltons",
+        "tenacity"
+      ],
+      "executed_with_current_pipeline": true,
+      "results": "evaluation/requirements-2026-10-06/behavior-final/results.json",
+      "source_review": "evaluation/requirements-2026-10-06/behavior-final/source-review.json",
+      "summary": "evaluation/requirements-2026-10-06/behavior-final/summary.json"
+    },
+    {
+      "questions": "evaluation/requirements-2026-10-06/holdout/questions.json",
+      "split": "holdout",
+      "sha256": "5e86109ad8dab67535dfbcd6a045beb3347da4eb6efcc662346e3f3480ae7618",
+      "cases": 6,
+      "answerable": 4,
+      "repositories": [
+        "anyio",
+        "pluggy"
+      ],
+      "executed_with_current_pipeline": true,
+      "results": "evaluation/requirements-2026-10-06/holdout/results.json",
+      "source_review": "evaluation/requirements-2026-10-06/holdout/source-review.json",
+      "summary": "evaluation/requirements-2026-10-06/holdout/summary.json"
+    }
+  ]
+}

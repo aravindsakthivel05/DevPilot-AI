@@ -1,0 +1,18 @@
+{
+  "notice": "Offline replay of the exact formerly oversized Qwen draft with a stub transport. Confirms budgeting and source retention only; does not establish factual accuracy.",
+  "old_audit_status": "failed",
+  "old_audit_reason": "Claim audit exceeds the context budget.",
+  "new_audit_status": "completed",
+  "provider_requests_reached": 1,
+  "budget": {
+    "context_window": 8192,
+    "derived_tables_omitted": true,
+    "estimated_prompt_tokens": 5826,
+    "output_tokens": 2048,
+    "output_budget_reduced": false
+  },
+  "all_cited_and_enclosing_source_preserved": true,
+  "source_line_counts": {
+    "1": 40
+  }
+}

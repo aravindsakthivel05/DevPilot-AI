@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/aravinds/Documents/ChatGPT/Final year project/scripts/run_behavior_checks.py", line 62, in <module>
+    main()
+    ~~~~^^
+  File "/Users/aravinds/Documents/ChatGPT/Final year project/scripts/run_behavior_checks.py", line 25, in main
+    image_id = subprocess.run(
+               ~~~~~~~~~~~~~~^
+        ["docker", "image", "inspect", args.image, "--format", "{{.Id}}"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        text=True,
+        ^^^^^^^^^^
+    ).stdout.strip()
+    ^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['docker', 'image', 'inspect', 'devpilot-runner:local', '--format', '{{.Id}}']' returned non-zero exit status 1.

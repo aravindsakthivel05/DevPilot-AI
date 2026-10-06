@@ -1,0 +1,1743 @@
+{
+  "anyio": {
+    "id": "01b8c25a478247dab52f5486ba968b59",
+    "url": "https://github.com/agronholm/anyio",
+    "commit": "e3dff72e07ddb1607fd9d219f047ce3b19c7e828",
+    "fingerprint": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 56.043,
+    "stats": {
+      "files": 134,
+      "python_files": 79,
+      "java_files": 0,
+      "languages": {
+        "text": 55,
+        "python": 79
+      },
+      "symbols": 7296,
+      "edges": 10255,
+      "parse_errors": [],
+      "unresolved_count": 8975,
+      "unresolved": [
+        {
+          "source": "88dfa37553b7f34a240b1b0f",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "88dfa37553b7f34a240b1b0f",
+          "label": "subprocess",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "88dfa37553b7f34a240b1b0f",
+          "label": "sys",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "88dfa37553b7f34a240b1b0f",
+          "label": "importlib.metadata.version",
+          "kind": "imports",
+          "line": 5
+        },
+        {
+          "source": "88dfa37553b7f34a240b1b0f",
+          "label": "pathlib.Path",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "88dfa37553b7f34a240b1b0f",
+          "label": "packaging.version.parse",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "88dfa37553b7f34a240b1b0f",
+          "label": "sphinx.application.Sphinx",
+          "kind": "imports",
+          "line": 9
+        },
+        {
+          "source": "88dfa37553b7f34a240b1b0f",
+          "label": "parse",
+          "kind": "calls",
+          "line": 26
+        },
+        {
+          "source": "88dfa37553b7f34a240b1b0f",
+          "label": "get_version",
+          "kind": "calls",
+          "line": 26
+        },
+        {
+          "source": "62936506a4d2a9350c4410f1",
+          "label": "module.startswith",
+          "kind": "calls",
+          "line": 41
+        },
+        {
+          "source": "62936506a4d2a9350c4410f1",
+          "label": "module.startswith",
+          "kind": "calls",
+          "line": 43
+        },
+        {
+          "source": "88dfa37553b7f34a240b1b0f",
+          "label": "Path",
+          "kind": "calls",
+          "line": 55
+        },
+        {
+          "source": "78792bcc172b9265ab93487f",
+          "label": "any",
+          "kind": "calls",
+          "line": 61
+        },
+        {
+          "source": "78792bcc172b9265ab93487f",
+          "label": "project_root.joinpath",
+          "kind": "calls",
+          "line": 63
+        },
+        {
+          "source": "78792bcc172b9265ab93487f",
+          "label": "subprocess.run",
+          "kind": "calls",
+          "line": 65
+        },
+        {
+          "source": "c98e3eba6b8488081522072f",
+          "label": "app.connect",
+          "kind": "calls",
+          "line": 77
+        },
+        {
+          "source": "5739eca796b7bbe7a09ef739",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "5739eca796b7bbe7a09ef739",
+          "label": "typing.TYPE_CHECKING",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "array",
+          "kind": "imports",
+          "line": 3
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "concurrent.futures",
+          "kind": "imports",
+          "line": 5
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "math",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "os",
+          "kind": "imports",
+          "line": 7
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "socket",
+          "kind": "imports",
+          "line": 8
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "sys",
+          "kind": "imports",
+          "line": 9
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "threading",
+          "kind": "imports",
+          "line": 10
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "weakref",
+          "kind": "imports",
+          "line": 11
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.AbstractEventLoop",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.CancelledError",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.all_tasks",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.create_task",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.current_task",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.get_running_loop",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.sleep",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.base_events._run_until_complete_cb",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "collections.OrderedDict",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "collections.deque",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "collections.abc.AsyncGenerator",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "collections.abc.AsyncIterator",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "collections.abc.Awaitable",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "collections.abc.Callable",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "collections.abc.Collection",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "collections.abc.Coroutine",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "collections.abc.Iterable",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "collections.abc.Sequence",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "concurrent.futures.Future",
+          "kind": "imports",
+          "line": 33
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "contextlib.AbstractContextManager",
+          "kind": "imports",
+          "line": 34
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "contextlib.suppress",
+          "kind": "imports",
+          "line": 34
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "contextvars.Context",
+          "kind": "imports",
+          "line": 35
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "contextvars.copy_context",
+          "kind": "imports",
+          "line": 35
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "dataclasses.dataclass",
+          "kind": "imports",
+          "line": 36
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "dataclasses.field",
+          "kind": "imports",
+          "line": 36
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "functools.partial",
+          "kind": "imports",
+          "line": 37
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "functools.wraps",
+          "kind": "imports",
+          "line": 37
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "inspect.CORO_RUNNING",
+          "kind": "imports",
+          "line": 38
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "inspect.CORO_SUSPENDED",
+          "kind": "imports",
+          "line": 38
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "inspect.getcoroutinestate",
+          "kind": "imports",
+          "line": 38
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "io.IOBase",
+          "kind": "imports",
+          "line": 43
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "os.PathLike",
+          "kind": "imports",
+          "line": 44
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "queue.Queue",
+          "kind": "imports",
+          "line": 45
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "signal.Signals",
+          "kind": "imports",
+          "line": 46
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "socket.AddressFamily",
+          "kind": "imports",
+          "line": 47
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "socket.SocketKind",
+          "kind": "imports",
+          "line": 47
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "threading.Thread",
+          "kind": "imports",
+          "line": 48
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "types.CodeType",
+          "kind": "imports",
+          "line": 49
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "types.TracebackType",
+          "kind": "imports",
+          "line": 49
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing.IO",
+          "kind": "imports",
+          "line": 50
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing.TYPE_CHECKING",
+          "kind": "imports",
+          "line": 50
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing.Any",
+          "kind": "imports",
+          "line": 50
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing.Literal",
+          "kind": "imports",
+          "line": 50
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing.ParamSpec",
+          "kind": "imports",
+          "line": 50
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing.TypeVar",
+          "kind": "imports",
+          "line": 50
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing.cast",
+          "kind": "imports",
+          "line": 50
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "weakref.WeakKeyDictionary",
+          "kind": "imports",
+          "line": 59
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "_typeshed.FileDescriptorLike",
+          "kind": "imports",
+          "line": 106
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.Runner",
+          "kind": "imports",
+          "line": 114
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing.Self",
+          "kind": "imports",
+          "line": 115
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing.TypeVarTuple",
+          "kind": "imports",
+          "line": 115
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing.Unpack",
+          "kind": "imports",
+          "line": 115
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "contextvars",
+          "kind": "imports",
+          "line": 117
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "enum",
+          "kind": "imports",
+          "line": 118
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "signal",
+          "kind": "imports",
+          "line": 119
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.coroutines",
+          "kind": "imports",
+          "line": 120
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.events",
+          "kind": "imports",
+          "line": 120
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.exceptions",
+          "kind": "imports",
+          "line": 120
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "asyncio.tasks",
+          "kind": "imports",
+          "line": 120
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "exceptiongroup.BaseExceptionGroup",
+          "kind": "imports",
+          "line": 122
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing_extensions.Self",
+          "kind": "imports",
+          "line": 123
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing_extensions.TypeVarTuple",
+          "kind": "imports",
+          "line": 123
+        },
+        {
+          "source": "b96c51560b30980cfe205813",
+          "label": "typing_extensions.Unpack",
+          "kind": "imports",
+          "line": 123
+        },
+        {
+          "source": "80a15dad41e9ed59f1c0979f",
+          "label": "enum.Enum",
+          "kind": "inherits",
+          "line": 125
+        },
+        {
+          "source": "b9a933ba168853d500d8e4c8",
+          "label": "loop.run_until_complete",
+          "kind": "calls",
+          "line": 165
+        },
+        {
+          "source": "b9a933ba168853d500d8e4c8",
+          "label": "loop.shutdown_asyncgens",
+          "kind": "calls",
+          "line": 165
+        },
+        {
+          "source": "b9a933ba168853d500d8e4c8",
+          "label": "hasattr",
+          "kind": "calls",
+          "line": 166
+        },
+        {
+          "source": "b9a933ba168853d500d8e4c8",
+          "label": "loop.run_until_complete",
+          "kind": "calls",
+          "line": 167
+        },
+        {
+          "source": "b9a933ba168853d500d8e4c8",
+          "label": "loop.shutdown_default_executor",
+          "kind": "calls",
+          "line": 167
+        },
+        {
+          "source": "b9a933ba168853d500d8e4c8",
+          "label": "loop.run_until_complete",
+          "kind": "calls",
+          "line": 169
+        },
+        {
+          "source": "b9a933ba168853d500d8e4c8",
+          "label": "events.set_event_loop",
+          "kind": "calls",
+          "line": 172
+        },
+        {
+          "source": "b9a933ba168853d500d8e4c8",
+          "label": "loop.close",
+          "kind": "calls",
+          "line": 173
+        }
+      ],
+      "skipped_files": 4,
+      "coverage": {
+        "indexed_files": 134,
+        "skipped_files": 4,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 4
+        },
+        "indexed_extensions": {
+          ".md": 3,
+          ".py": 79,
+          ".rst": 40,
+          ".toml": 1,
+          ".yaml": 3,
+          ".yml": 8
+        },
+        "recorded_entries": 139,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "timings_ms": {
+        "read_and_snapshot": 41.619,
+        "analysis_and_graph": 1284.488,
+        "chunks_and_storage": 788.717,
+        "embeddings": 53921.566,
+        "total_index": 56036.393
+      }
+    },
+    "split": "holdout",
+    "lexical_warmup_seconds": 0.439,
+    "index_status": {
+      "snapshot": "4e585df66efd02f4eaec5453e769390b94b40480500d467298e26d746cea73fd",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "symbols": 7296,
+      "embedded_symbols": 3058,
+      "embedding_eligible_symbols": 3058,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 8975,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "macro",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "macro",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 134,
+        "skipped_files": 4,
+        "ignored_directories": 1,
+        "reason_counts": {
+          "ignored_directory": 1,
+          "unsupported_extension": 4
+        },
+        "indexed_extensions": {
+          ".md": 3,
+          ".py": 79,
+          ".rst": 40,
+          ".toml": 1,
+          ".yaml": 3,
+          ".yml": 8
+        },
+        "recorded_entries": 139,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 0.57,
+    "static_candidate_count": 29,
+    "static_candidate_types": {
+      "duplicate_definition": 28,
+      "circular_dependency": 1
+    }
+  },
+  "pluggy": {
+    "id": "b9cdf6aefa4e4f828d9657693462a5e2",
+    "url": "https://github.com/pytest-dev/pluggy",
+    "commit": "60b15251ee18560f781c557b6b9ef3de4d786bee",
+    "fingerprint": "0947d08ccfbd4c2559b3f178f547c84730c947df8bcef72017cf5468581d490c",
+    "status": "ready",
+    "error": null,
+    "index_wall_seconds": 16.352,
+    "stats": {
+      "files": 88,
+      "python_files": 36,
+      "java_files": 0,
+      "languages": {
+        "text": 52,
+        "python": 36
+      },
+      "symbols": 2078,
+      "edges": 2423,
+      "parse_errors": [],
+      "unresolved_count": 1833,
+      "unresolved": [
+        {
+          "source": "6788719a6289afb00e7f40f6",
+          "label": "importlib.metadata",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "6788719a6289afb00e7f40f6",
+          "label": "typing.TYPE_CHECKING",
+          "kind": "imports",
+          "line": 2
+        },
+        {
+          "source": "6788719a6289afb00e7f40f6",
+          "label": "sphinx.application",
+          "kind": "imports",
+          "line": 6
+        },
+        {
+          "source": "6788719a6289afb00e7f40f6",
+          "label": "metadata.version",
+          "kind": "calls",
+          "line": 31
+        },
+        {
+          "source": "6788719a6289afb00e7f40f6",
+          "label": "release.split",
+          "kind": "calls",
+          "line": 33
+        },
+        {
+          "source": "c260f966a5d0eb634588f720",
+          "label": "logging",
+          "kind": "imports",
+          "line": 116
+        },
+        {
+          "source": "c260f966a5d0eb634588f720",
+          "label": "sphinx.util.logging",
+          "kind": "imports",
+          "line": 118
+        },
+        {
+          "source": "c9b621cd054598732a89e8c9",
+          "label": "logging.Filter",
+          "kind": "inherits",
+          "line": 120
+        },
+        {
+          "source": "8bb5bfcc24215707f33e2bbe",
+          "label": "record.msg.startswith",
+          "kind": "calls",
+          "line": 126
+        },
+        {
+          "source": "c260f966a5d0eb634588f720",
+          "label": "logging.getLogger",
+          "kind": "calls",
+          "line": 130
+        },
+        {
+          "source": "c260f966a5d0eb634588f720",
+          "label": "len",
+          "kind": "calls",
+          "line": 132
+        },
+        {
+          "source": "c260f966a5d0eb634588f720",
+          "label": "WarnLogFilter",
+          "kind": "calls",
+          "line": 133
+        },
+        {
+          "source": "6bd365081b95a4667f8c04ba",
+          "label": "eggsample",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "668de12d2dc6d3fe3e77899a",
+          "label": "eggsample.hookimpl",
+          "kind": "decorated_by",
+          "line": 4
+        },
+        {
+          "source": "8e38438ae170af08a8561abc",
+          "label": "eggsample.hookimpl",
+          "kind": "decorated_by",
+          "line": 14
+        },
+        {
+          "source": "139820619261736acc90202a",
+          "label": "setuptools.setup",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "139820619261736acc90202a",
+          "label": "setup",
+          "kind": "calls",
+          "line": 4
+        },
+        {
+          "source": "a6ddd20bd604370fa10ff306",
+          "label": "pluggy.HookimplMarker",
+          "kind": "calls",
+          "line": 4
+        },
+        {
+          "source": "e5b4d9ca2ab50b91fa6f2202",
+          "label": "pluggy.HookspecMarker",
+          "kind": "calls",
+          "line": 4
+        },
+        {
+          "source": "6d40e0acf57c38cbca02c1ee",
+          "label": "hookspec",
+          "kind": "decorated_by",
+          "line": 7
+        },
+        {
+          "source": "47199b165dc017cf4e7fb3b1",
+          "label": "hookspec",
+          "kind": "decorated_by",
+          "line": 16
+        },
+        {
+          "source": "0e3843ab1571e53466f28da4",
+          "label": "itertools",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "0e3843ab1571e53466f28da4",
+          "label": "random",
+          "kind": "imports",
+          "line": 2
+        },
+        {
+          "source": "0e3843ab1571e53466f28da4",
+          "label": "eggsample.hookspecs",
+          "kind": "imports",
+          "line": 4
+        },
+        {
+          "source": "0e3843ab1571e53466f28da4",
+          "label": "eggsample.lib",
+          "kind": "imports",
+          "line": 5
+        },
+        {
+          "source": "83bb152e84de652dc37b08f4",
+          "label": "cook.add_ingredients",
+          "kind": "calls",
+          "line": 16
+        },
+        {
+          "source": "83bb152e84de652dc37b08f4",
+          "label": "cook.prepare_the_food",
+          "kind": "calls",
+          "line": 17
+        },
+        {
+          "source": "83bb152e84de652dc37b08f4",
+          "label": "cook.serve_the_food",
+          "kind": "calls",
+          "line": 18
+        },
+        {
+          "source": "80daba919462d14ccdcf26bd",
+          "label": "pluggy.PluginManager",
+          "kind": "calls",
+          "line": 22
+        },
+        {
+          "source": "80daba919462d14ccdcf26bd",
+          "label": "pm.add_hookspecs",
+          "kind": "calls",
+          "line": 23
+        },
+        {
+          "source": "80daba919462d14ccdcf26bd",
+          "label": "pm.load_setuptools_entrypoints",
+          "kind": "calls",
+          "line": 24
+        },
+        {
+          "source": "80daba919462d14ccdcf26bd",
+          "label": "pm.register",
+          "kind": "calls",
+          "line": 25
+        },
+        {
+          "source": "b591ac6098813225f3ce4c24",
+          "label": "self.hook.eggsample_add_ingredients",
+          "kind": "calls",
+          "line": 37
+        },
+        {
+          "source": "b591ac6098813225f3ce4c24",
+          "label": "list",
+          "kind": "calls",
+          "line": 40
+        },
+        {
+          "source": "b591ac6098813225f3ce4c24",
+          "label": "list",
+          "kind": "calls",
+          "line": 42
+        },
+        {
+          "source": "b591ac6098813225f3ce4c24",
+          "label": "itertools.chain",
+          "kind": "calls",
+          "line": 42
+        },
+        {
+          "source": "c49a54d59c674fc46e0998dc",
+          "label": "random.shuffle",
+          "kind": "calls",
+          "line": 46
+        },
+        {
+          "source": "86aba7a7431171a3c85e0583",
+          "label": "self.hook.eggsample_prep_condiments",
+          "kind": "calls",
+          "line": 49
+        },
+        {
+          "source": "86aba7a7431171a3c85e0583",
+          "label": "print",
+          "kind": "calls",
+          "line": 52
+        },
+        {
+          "source": "86aba7a7431171a3c85e0583",
+          "label": "print",
+          "kind": "calls",
+          "line": 53
+        },
+        {
+          "source": "86aba7a7431171a3c85e0583",
+          "label": "condiments_tray.keys",
+          "kind": "calls",
+          "line": 53
+        },
+        {
+          "source": "86aba7a7431171a3c85e0583",
+          "label": "any",
+          "kind": "calls",
+          "line": 54
+        },
+        {
+          "source": "86aba7a7431171a3c85e0583",
+          "label": "print",
+          "kind": "calls",
+          "line": 55
+        },
+        {
+          "source": "54811d0051ca13e10dc851cb",
+          "label": "eggsample",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "f50b6427bb5c045fabeecc4b",
+          "label": "eggsample.hookimpl",
+          "kind": "decorated_by",
+          "line": 4
+        },
+        {
+          "source": "1cc80e196f8d837022e2e8a2",
+          "label": "eggsample.hookimpl",
+          "kind": "decorated_by",
+          "line": 12
+        },
+        {
+          "source": "077b85af291a85fdb9a8ea5b",
+          "label": "setuptools.find_packages",
+          "kind": "imports",
+          "line": 1
+        },
+        {
+          "source": "077b85af291a85fdb9a8ea5b",
+          "label": "setuptools.setup",
+          "kind": "imports",
+          "line": 2
+        },
+        {
+          "source": "077b85af291a85fdb9a8ea5b",
+          "label": "setup",
+          "kind": "calls",
+          "line": 5
+        },
+        {
+          "source": "077b85af291a85fdb9a8ea5b",
+          "label": "find_packages",
+          "kind": "calls",
+          "line": 9
+        },
+        {
+          "source": "ae8cec6cd4a02eea111bf9c8",
+          "label": "pluggy.HookspecMarker",
+          "kind": "calls",
+          "line": 4
+        },
+        {
+          "source": "ae8cec6cd4a02eea111bf9c8",
+          "label": "pluggy.HookimplMarker",
+          "kind": "calls",
+          "line": 5
+        },
+        {
+          "source": "4477f7c6f8ac682ed0d8a4fd",
+          "label": "hookspec",
+          "kind": "decorated_by",
+          "line": 11
+        },
+        {
+          "source": "c6a0dce10a3aec20028ce6ff",
+          "label": "hookimpl",
+          "kind": "decorated_by",
+          "line": 19
+        },
+        {
+          "source": "c6a0dce10a3aec20028ce6ff",
+          "label": "print",
+          "kind": "calls",
+          "line": 21
+        },
+        {
+          "source": "ffc9376f09f26351d852b2db",
+          "label": "hookimpl",
+          "kind": "decorated_by",
+          "line": 28
+        },
+        {
+          "source": "ffc9376f09f26351d852b2db",
+          "label": "print",
+          "kind": "calls",
+          "line": 30
+        },
+        {
+          "source": "ae8cec6cd4a02eea111bf9c8",
+          "label": "pluggy.PluginManager",
+          "kind": "calls",
+          "line": 35
+        },
+        {
+          "source": "ae8cec6cd4a02eea111bf9c8",
+          "label": "pm.add_hookspecs",
+          "kind": "calls",
+          "line": 36
+        },
+        {
+          "source": "ae8cec6cd4a02eea111bf9c8",
+          "label": "pm.register",
+          "kind": "calls",
+          "line": 38
+        },
+        {
+          "source": "ae8cec6cd4a02eea111bf9c8",
+          "label": "pm.register",
+          "kind": "calls",
+          "line": 39
+        },
+        {
+          "source": "ae8cec6cd4a02eea111bf9c8",
+          "label": "pm.hook.myhook",
+          "kind": "calls",
+          "line": 41
+        },
+        {
+          "source": "ae8cec6cd4a02eea111bf9c8",
+          "label": "print",
+          "kind": "calls",
+          "line": 42
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "__future__.annotations",
+          "kind": "imports",
+          "line": 7
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "argparse",
+          "kind": "imports",
+          "line": 9
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "collections.abc.Mapping",
+          "kind": "imports",
+          "line": 10
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "collections.abc.Sequence",
+          "kind": "imports",
+          "line": 11
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "os",
+          "kind": "imports",
+          "line": 12
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "pathlib.Path",
+          "kind": "imports",
+          "line": 13
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "shlex",
+          "kind": "imports",
+          "line": 14
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "subprocess",
+          "kind": "imports",
+          "line": 15
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "sys",
+          "kind": "imports",
+          "line": 16
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "typing.Annotated",
+          "kind": "imports",
+          "line": 17
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "pydantic.BaseModel",
+          "kind": "imports",
+          "line": 19
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "pydantic.ConfigDict",
+          "kind": "imports",
+          "line": 20
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "pydantic.Field",
+          "kind": "imports",
+          "line": 21
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "pydantic.field_validator",
+          "kind": "imports",
+          "line": 22
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "pydantic.model_validator",
+          "kind": "imports",
+          "line": 23
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "pydantic.ValidationError",
+          "kind": "imports",
+          "line": 24
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "tomllib",
+          "kind": "imports",
+          "line": 25
+        },
+        {
+          "source": "7010606e40baa603c6aaac37",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 28
+        },
+        {
+          "source": "7010606e40baa603c6aaac37",
+          "label": "ConfigDict",
+          "kind": "calls",
+          "line": 29
+        },
+        {
+          "source": "244322d44d390704b622b2db",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 36
+        },
+        {
+          "source": "244322d44d390704b622b2db",
+          "label": "ConfigDict",
+          "kind": "calls",
+          "line": 39
+        },
+        {
+          "source": "244322d44d390704b622b2db",
+          "label": "Field",
+          "kind": "calls",
+          "line": 41
+        },
+        {
+          "source": "244322d44d390704b622b2db",
+          "label": "Field",
+          "kind": "calls",
+          "line": 42
+        },
+        {
+          "source": "244322d44d390704b622b2db",
+          "label": "Field",
+          "kind": "calls",
+          "line": 43
+        },
+        {
+          "source": "d2fc44c709ce096fa084c7c8",
+          "label": "field_validator",
+          "kind": "decorated_by",
+          "line": 45
+        },
+        {
+          "source": "d2fc44c709ce096fa084c7c8",
+          "label": "classmethod",
+          "kind": "decorated_by",
+          "line": 46
+        },
+        {
+          "source": "d2fc44c709ce096fa084c7c8",
+          "label": "enumerate",
+          "kind": "calls",
+          "line": 48
+        },
+        {
+          "source": "d2fc44c709ce096fa084c7c8",
+          "label": "s.strip",
+          "kind": "calls",
+          "line": 49
+        },
+        {
+          "source": "d2fc44c709ce096fa084c7c8",
+          "label": "ValueError",
+          "kind": "calls",
+          "line": 51
+        },
+        {
+          "source": "b4c3a013b372c7829aba34a4",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 55
+        },
+        {
+          "source": "b4c3a013b372c7829aba34a4",
+          "label": "ConfigDict",
+          "kind": "calls",
+          "line": 58
+        },
+        {
+          "source": "adc861b233df883202f5a71c",
+          "label": "Field",
+          "kind": "calls",
+          "line": 65
+        },
+        {
+          "source": "5da37ebc4d3443281f12be44",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 69
+        },
+        {
+          "source": "5da37ebc4d3443281f12be44",
+          "label": "ConfigDict",
+          "kind": "calls",
+          "line": 70
+        },
+        {
+          "source": "5da37ebc4d3443281f12be44",
+          "label": "Field",
+          "kind": "calls",
+          "line": 72
+        },
+        {
+          "source": "5da37ebc4d3443281f12be44",
+          "label": "Field",
+          "kind": "calls",
+          "line": 73
+        },
+        {
+          "source": "dc2c36f5e9d2f4c8e68c5b8b",
+          "label": "BaseModel",
+          "kind": "inherits",
+          "line": 76
+        }
+      ],
+      "skipped_files": 9,
+      "coverage": {
+        "indexed_files": 88,
+        "skipped_files": 9,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "hidden_directory": 1,
+          "ignored_directory": 1,
+          "lockfile": 1,
+          "unsupported_extension": 8
+        },
+        "indexed_extensions": {
+          ".in": 1,
+          ".ini": 1,
+          ".md": 4,
+          ".py": 36,
+          ".rst": 28,
+          ".toml": 8,
+          ".txt": 2,
+          ".yaml": 1,
+          ".yml": 7
+        },
+        "recorded_entries": 99,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      },
+      "embedding_status": "ready",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "timings_ms": {
+        "read_and_snapshot": 40.92,
+        "analysis_and_graph": 257.97,
+        "chunks_and_storage": 184.361,
+        "embeddings": 15865.75,
+        "total_index": 16349.008
+      }
+    },
+    "split": "holdout",
+    "lexical_warmup_seconds": 0.103,
+    "index_status": {
+      "snapshot": "0947d08ccfbd4c2559b3f178f547c84730c947df8bcef72017cf5468581d490c",
+      "index_version": "2026-10-04-language-adapters-v4",
+      "symbols": 2078,
+      "embedded_symbols": 1042,
+      "embedding_eligible_symbols": 1042,
+      "embedding_coverage": 1.0,
+      "semantic_ready": true,
+      "lexical_ready": true,
+      "unresolved_references_stored": 1833,
+      "derived_index_current": true,
+      "analysis_scope": [
+        {
+          "language": "python",
+          "extensions": [
+            ".py"
+          ],
+          "parser": "Tree-sitter + Python AST scope/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "java",
+          "extensions": [
+            ".java"
+          ],
+          "parser": "Tree-sitter + Java declared receiver/import resolver",
+          "relationships": "existing tested static relationships",
+          "limitations": [
+            "No runtime dispatch, reflection or complete compiler typing"
+          ]
+        },
+        {
+          "language": "javascript",
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".mjs",
+            ".cjs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "function",
+            "method",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "typescript",
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "interface",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "c",
+          "extensions": [
+            ".c",
+            ".h"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "enum",
+            "function",
+            "macro",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "cpp",
+          "extensions": [
+            ".cpp",
+            ".cc",
+            ".cxx",
+            ".hpp",
+            ".hh",
+            ".hxx"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "enum",
+            "function",
+            "macro",
+            "namespace",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "go",
+          "extensions": [
+            ".go"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "function",
+            "method",
+            "type",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "rust",
+          "extensions": [
+            ".rs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "constant",
+            "enum",
+            "function",
+            "interface",
+            "module",
+            "struct",
+            "variable"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        },
+        {
+          "language": "csharp",
+          "extensions": [
+            ".cs"
+          ],
+          "parser": "Tree-sitter",
+          "symbols": [
+            "class",
+            "constructor",
+            "enum",
+            "interface",
+            "method",
+            "namespace",
+            "property",
+            "struct"
+          ],
+          "relationships": "containment, literal imports, uniquely resolved lexical/static calls, syntactic parameter/return/raise references",
+          "limitations": [
+            "No compiler type checking or runtime dispatch",
+            "Overloads, computed imports, macro expansion and ambiguous receivers remain unresolved"
+          ]
+        }
+      ],
+      "coverage": {
+        "indexed_files": 88,
+        "skipped_files": 9,
+        "ignored_directories": 2,
+        "reason_counts": {
+          "hidden_directory": 1,
+          "ignored_directory": 1,
+          "lockfile": 1,
+          "unsupported_extension": 8
+        },
+        "indexed_extensions": {
+          ".in": 1,
+          ".ini": 1,
+          ".md": 4,
+          ".py": 36,
+          ".rst": 28,
+          ".toml": 8,
+          ".txt": 2,
+          ".yaml": 1,
+          ".yml": 7
+        },
+        "recorded_entries": 99,
+        "entries_capped": false,
+        "ignored_directory_contents_scanned": false
+      }
+    },
+    "static_analysis_seconds": 0.133,
+    "static_candidate_count": 0,
+    "static_candidate_types": {}
+  }
+}

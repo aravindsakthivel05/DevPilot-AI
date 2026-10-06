@@ -1,0 +1,60 @@
+{
+  "reviewer": "Codex manual source review against unchanged pinned NetworkX references and previously executed scenarios; not independent human review",
+  "cases": [
+    {
+      "case_id": "networkx-easy",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Displayed component and skip facts are correct, but exact BFS arguments and seen.update before yield are still omitted. Both model coverage passes call these aspects complete."
+    },
+    {
+      "case_id": "networkx-medium",
+      "correct": false,
+      "required_detail_coverage": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "unsupported_claims": [
+        "RuntimeError is raised if the graph changes during iteration (e.g., a node is removed or added).",
+        "NetworkXUnfeasible is raised if the graph contains a cycle or changes during iteration."
+      ],
+      "unnecessary_abstention": false,
+      "validation_false_rejections": [],
+      "reason": "The class-scope rejection is resolved and parallel-edge counting is retained. It omits the ordinary-graph decrement and precise RuntimeError/remaining-indegree-map predicates. Generalizing all node additions or graph changes to the named exceptions is not established."
+    },
+    {
+      "case_id": "networkx-hard",
+      "correct": true,
+      "required_detail_coverage": [
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "unsupported_claims": [],
+      "unnecessary_abstention": false,
+      "reason": "Correct invalid-method rejection, reverse graph, algorithms with target and weight, and path reversal. It omits valid weight=None override, copy=False view semantics and original-source dictionary keys."
+    },
+    {
+      "case_id": "networkx-guard",
+      "correct": true,
+      "unsupported_claims": [],
+      "abstention_correct": true,
+      "reason": "Scope guard correctly withholds private runtime contents without a model call."
+    }
+  ]
+}
